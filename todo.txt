@@ -1,6 +1,6 @@
 MOUNTAIN SUPERTYPE
 ✓ GROVE TYPE
-grove
+✓ grove
 cherry grove
 WINDSWEPT TYPE
 ✓ meadow
@@ -38,7 +38,7 @@ snowy taiga
 old growth pine
 old growth spruce
 JUNGLE TYPE
-jungle
+✓ jungle
 bamboo jungle
 sparse jungle
 
