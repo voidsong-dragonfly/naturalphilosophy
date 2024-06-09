@@ -82,7 +82,7 @@
       "naturalphilosophy:forest_supertype/jungle_type/substory",
       "naturalphilosophy:forest_supertype/jungle_type/understory",
       "naturalphilosophy:forest_supertype/jungle_type/melon_patch",
-      "minecraft:flower_warm",
+      "naturalphilosophy:forest_supertype/jungle_type/flowers",
       "naturalphilosophy:forest_supertype/jungle_type/vegetation"
     ],
     [
