@@ -4,23 +4,17 @@
     "config": {
       "features": [
         {
-          "chance": 0.1,
-          "feature": "naturalphilosophy:checked_trees/flowering_azalea_shrub"
-        },
-        {
-          "chance": 0.2,
-          "feature": "naturalphilosophy:checked_trees/oak_shrub"
+          "chance": 1.0,
+          "feature": "naturalphilosophy:checked_trees/jungle_understory"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_bush"
+      "default": "naturalphilosophy:checked_trees/jungle"
     }
   },
   "placement": [
     {
-      "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 48,
-      "noise_factor": 0.5,
-      "noise_offset": 0.2
+      "type": "minecraft:count",
+      "count": 8
     },
     {
       "type": "minecraft:in_square"

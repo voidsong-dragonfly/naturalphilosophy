@@ -1,11 +1,9 @@
 {
-  "feature": "naturalphilosophy:trees/jungle_understory",
+  "feature": "naturalphilosophy:trees/jungle_substory",
   "placement": [
     {
-      "type": "minecraft:environment_scan",
-      "direction_of_search": "down",
-      "max_steps": 32,
-      "target_condition": {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
         "type": "minecraft:all_of",
         "predicates": [
           {
@@ -149,78 +147,6 @@
                 }
               ]
             }
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              1,
-              2,
-              0
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              0,
-              2,
-              1
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              -1,
-              2,
-              0
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              0,
-              2,
-              -1
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              1,
-              2,
-              1
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              -1,
-              2,
-              1
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              -1,
-              2,
-              1
-            ],
-            "blocks": "minecraft:air"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              -1,
-              2,
-              -1
-            ],
-            "blocks": "minecraft:air"
           }
         ]
       }

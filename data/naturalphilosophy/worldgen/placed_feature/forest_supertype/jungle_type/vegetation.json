@@ -18,7 +18,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 96
+      "count": 48
     },
     {
       "type": "minecraft:in_square"

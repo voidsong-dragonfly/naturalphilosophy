@@ -40,7 +40,7 @@ old growth spruce
 JUNGLE TYPE
 ✓ jungle
 bamboo jungle
-sparse jungle
+✓ sparse jungle
 
 WATER SUPERTYPE
 OCEAN TYPE

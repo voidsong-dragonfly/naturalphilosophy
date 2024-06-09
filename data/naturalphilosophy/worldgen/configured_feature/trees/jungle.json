@@ -4,7 +4,7 @@
     "decorators": [
       {
         "type": "minecraft:cocoa",
-        "probability": 0.2
+        "probability": 0.4
       },
       {
         "type": "minecraft:trunk_vine"
