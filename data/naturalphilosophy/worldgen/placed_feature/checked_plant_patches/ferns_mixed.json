@@ -1,19 +1,4 @@
 {
   "feature": "naturalphilosophy:plant_patches/ferns_mixed",
-  "placement": [
-    {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:would_survive",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
-        "state": {
-          "Name": "minecraft:fern"
-        }
-      }
-    }
-  ]
+  "placement": [ ]
 }
