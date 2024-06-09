@@ -1,0 +1,78 @@
+MOUNTAIN SUPERTYPE
+✓ GROVE TYPE
+grove
+cherry grove
+WINDSWEPT TYPE
+✓ meadow
+windswept forest
+windswept hills
+windswept gravelly hills
+windswept savanna
+SCOURED TYPE
+✓ snowy slopes
+✓ stony peaks
+✓ jagged peaks
+✓ frozen peaks
+
+DESERT SUPERTYPE
+SAND TYPE
+desert
+BADLANDS TYPE
+eroded badlands
+badlands
+wooded badlands
+COLD TYPE
+snowy plains
+✓ ice spikes
+
+FOREST SUPERTYPE
+DECIDUOUS TYPE
+forest
+flower forest
+birch forest
+dark forest
+old growth birch
+TAIGA TYPE
+taiga
+snowy taiga
+old growth pine
+old growth spruce
+JUNGLE TYPE
+jungle
+bamboo jungle
+sparse jungle
+
+WATER SUPERTYPE
+OCEAN TYPE
+✓ warm ocean
+✓ lukewarm ocean
+✓ ocean
+✓ cold ocean
+✓ frozen ocean
+DEEP OCEAN SUBTYPE
+✓ deep lukewarm ocean
+✓ deep ocean
+✓ deep cold ocean
+✓ deep frozen ocean
+RIVER TYPE
+river
+frozen river
+SHORE TYPE
+beach
+snowy beach
+stony shore
+
+PLAINS SUPERTYPE
+PRAIRIE TYPE
+sunflower plains
+plains
+SAVANNA TYPE
+savanna
+savanna plateau
+
+WETLAND SUPERTYPE
+mangrove swamp
+swamp
+
+IGNORE
+✓ mushroom island

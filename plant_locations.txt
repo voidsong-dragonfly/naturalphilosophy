@@ -1,0 +1,27 @@
+PUMPKIN: North America, not too cold (not snowy or windswept), not too wet (swamps) or too dry (deserts)
+
+PEONY: Cold and temperate areas
+LILAC: Temperate areas
+ROSE BUSH: Cold and temperate areas
+SUNFLOWER: Fertile, moist, well drained soils. Climate like texas plains/prairie
+
+DANDELION: Temperate regions
+POPPY: Medeterranian?? Jungle?
+BLUE ORCHID: Wet?
+ALLIUM: Temperate
+AZURE BLUET: cliffs, alpine zones, forests, meadows and shores of rivers or lakes.[4]  It thrives in moist acidic soils in shady areas, growing especially well among grasses.[5]
+TULIP: Steppes and mountainous areas with temperature climates
+OXEYE DAISY: Grassland
+CORNFLOWER: Grassland
+LILY OF THE VALLEY: Cool temperate, partial shade
+
+
+
+Jungle flowers: Blue Orchid, Poppy?
+Swamp Flowers: Blue Orchid
+Plains flowers: Sunflower, Dandelion, Allium, Tulip, Oxeye Daisy, Cornflower
+Meadow Flowers: Dandelion, Oxeye Daisy, Azure Bluet, Tulip
+Forest Flowers: Peony, Lilac, Rose Bush, Allium, Azure Bluet, Lily of the Valley
+Birch Forest: Peony, Rose Bush, Allium, Azure Bluet, Lily of the Valley
+Taiga Flowers: Peony, Rose Bush, Azure Bluet, lily of the valley
+Windswept Forest Flowers: Azure Bluet

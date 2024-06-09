@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "minecraft:spring_lava_frozen"
+  ],
+  "step": "fluid_springs"
+}

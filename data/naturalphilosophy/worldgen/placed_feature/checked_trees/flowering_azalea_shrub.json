@@ -1,0 +1,19 @@
+{
+  "feature": "naturalphilosophy:trees/flowering_azalea_shrub",
+  "placement": [
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 32,
+      "target_condition": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "minecraft:azalea",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}
