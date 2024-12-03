@@ -39,7 +39,7 @@ old growth pine
 old growth spruce
 JUNGLE TYPE
 ✓ jungle
-bamboo jungle
+✓ bamboo jungle
 ✓ sparse jungle
 
 WATER SUPERTYPE

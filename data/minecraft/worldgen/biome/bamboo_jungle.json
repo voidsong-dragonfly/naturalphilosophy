@@ -77,13 +77,15 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:bamboo",
-      "minecraft:bamboo_vegetation",
-      "minecraft:flower_warm",
-      "minecraft:patch_grass_jungle",
-      "minecraft:patch_sugar_cane",
-      "minecraft:vines",
-      "minecraft:patch_melon"
+      "naturalphilosophy:forest_supertype/jungle_type/overstory",
+      "naturalphilosophy:forest_supertype/jungle_type/substory",
+      "naturalphilosophy:forest_supertype/jungle_type/understory",
+      "naturalphilosophy:forest_supertype/jungle_type/bamboo_undergrowth",
+      "naturalphilosophy:forest_supertype/jungle_type/bamboo",
+      "naturalphilosophy:forest_supertype/jungle_type/bamboo_podzol",
+      "naturalphilosophy:forest_supertype/jungle_type/melon_patch",
+      "naturalphilosophy:forest_supertype/jungle_type/flowers",
+      "naturalphilosophy:forest_supertype/jungle_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
