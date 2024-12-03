@@ -8,7 +8,7 @@ Minecraft's biomes had a certain, unfinished charm when they were introduced ear
 
 As the game developed, more content was added. More biomes, more variety, more blocks and items. But the cracks in the design never went away, and instead of being charming and surreal as early on in the game's development, the issues with the design style have become more and more prominent over time.
 
-To put it simply: _do not feel finished_. They have, most of the time, almost the same amount of content they did in 1.0.0 in terms of decorations and style. What was once charming and surreal has, with the expansion of content, become boring and uninspired. At any time in the last decade, more work could have been put in to bring old biomes into a cohesive set of content.
+To put it simply: _they do not feel finished_. They have, most of the time, almost the same amount of content they did in 1.0.0 in terms of decorations and style. What was once charming and surreal has, with the expansion of content, become boring and uninspired. At any time in the last decade, more work could have been put in to bring old biomes into a cohesive set of content.
 
 Instead, a few new biomes have been added that _do_ spice up the world, some desperately needed (oceanic biomes) and some less so; and forests' largest change was the introduction of bees.
 
@@ -28,8 +28,8 @@ Natural Philosophy specifically takes biomes that have been underdeveloped by th
 
 ### Inspirations & Suggested Mods
 
-[Geophilic](https://modrinth.com/datapack/geophilic) is a large inspiration of Natural Philosophy. If you're looking for something a little less involved, do check it out!    
-[Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions. If you want better terrain shapes, do check it out!
+[Geophilic](https://modrinth.com/datapack/geophilic) is a large inspiration of Natural Philosophy, but is less intensive.   
+[Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions.
 
 Other inspirations come from too many biome mods to count, here and there. While Biomes o' Plenty is not recommended due to the sparseness of its biomes, if you're simply looking for more, it can't hurt to check it and Oh The Biomes We'll Go out.
 
