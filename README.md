@@ -28,8 +28,8 @@ Natural Philosophy specifically takes biomes that have been underdeveloped by th
 
 ### Inspirations & Suggested Mods
 
-[Geophilic](https://modrinth.com/datapack/geophilic) is a large inspiration of Natural Philosophy. If you're looking for something a little less involved, do check it out!
-[Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain shape generators out for current versions. If you want better terrain shapes, do check it out!
+[Geophilic](https://modrinth.com/datapack/geophilic) is a large inspiration of Natural Philosophy. If you're looking for something a little less involved, do check it out!    
+[Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions. If you want better terrain shapes, do check it out!
 
 Other inspirations come from too many biome mods to count, here and there. While Biomes o' Plenty is not recommended due to the sparseness of its biomes, if you're simply looking for more, it can't hurt to check it and Oh The Biomes We'll Go out.
 
