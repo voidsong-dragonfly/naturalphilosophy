@@ -4,15 +4,15 @@
     "config": {
       "features": [
         {
-          "chance": 0.1,
+          "chance": 0.15,
           "feature": "naturalphilosophy:checked_trees/oak_canopy"
         },
         {
           "chance": 0.05,
-          "feature": "naturalphilosophy:checked_trees/jungle_substory"
+          "feature": "naturalphilosophy:checked_trees/jungle"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/jungle"
+      "default": "naturalphilosophy:checked_trees/jungle_substory"
     }
   },
   "placement": [

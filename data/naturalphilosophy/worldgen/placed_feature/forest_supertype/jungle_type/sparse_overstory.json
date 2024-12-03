@@ -4,17 +4,21 @@
     "config": {
       "features": [
         {
-          "chance": 0.075,
-          "feature": "naturalphilosophy:checked_trees/jungle_emergent"
+          "chance": 0.1,
+          "feature": "naturalphilosophy:checked_trees/oak_canopy"
+        },
+        {
+          "chance": 0.05,
+          "feature": "naturalphilosophy:checked_trees/jungle_substory"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/jungle_canopy"
+      "default": "naturalphilosophy:checked_trees/jungle"
     }
   },
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 32
+      "count": 24
     },
     {
       "type": "minecraft:in_square"
@@ -25,7 +29,7 @@
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR_WG"
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"
