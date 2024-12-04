@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "minecraft:disk_clay"
+  ],
+  "step": "underground_ores"
+}
