@@ -80,16 +80,11 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_badlands",
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_dead_bush_badlands",
-      "minecraft:patch_sugar_cane_badlands",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_cactus_decorated"
+      "naturalphilosophy:desert_supertype/badlands_type/badland_woodlands",
+      "naturalphilosophy:desert_supertype/badlands_type/badland_shrublands",
+      "naturalphilosophy:desert_supertype/badlands_type/vegetation"
     ],
-    [
-      "minecraft:freeze_top_layer"
-    ]
+    []
   ],
   "has_precipitation": false,
   "spawn_costs": {},

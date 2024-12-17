@@ -79,11 +79,10 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "naturalphilosophy:desert_supertype/badlands_type/vegetation"
     ],
-    [
-      "minecraft:freeze_top_layer"
-    ]
+    []
   ],
   "has_precipitation": false,
   "spawn_costs": {},
