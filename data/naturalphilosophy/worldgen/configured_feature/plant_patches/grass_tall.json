@@ -29,7 +29,7 @@
           "predicate": {
             "type": "minecraft:would_survive",
             "state": {
-              "Name": "minecraft:grass"
+              "Name": "minecraft:short_grass"
             }
           }
         }
