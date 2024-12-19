@@ -6,24 +6,16 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.0,
+  "downfall": 0.3,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 10387789,
-    "grass_color": 9470285,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.badlands"
-    },
-    "sky_color": 7254527,
+    "sky_color": 8233727,
     "water_color": 4159204,
     "water_fog_color": 329011
   },
@@ -68,25 +60,30 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "minecraft:ore_emerald"
     ],
-    [],
+    [
+      "minecraft:ore_infested"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "naturalphilosophy:desert_supertype/badlands_type/badland_woodlands",
-      "naturalphilosophy:desert_supertype/badlands_type/badland_shrublands",
-      "naturalphilosophy:desert_supertype/badlands_type/vegetation"
+      "minecraft:trees_windswept_forest",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_pumpkin"
     ],
-    []
+    [
+      "minecraft:freeze_top_layer"
+    ]
   ],
-  "has_precipitation": false,
+  "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
     "ambient": [
@@ -98,7 +95,38 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
+      },
+      {
+        "type": "minecraft:pig",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:chicken",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:cow",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 8
+      },
+      {
+        "type": "minecraft:llama",
+        "maxCount": 6,
+        "minCount": 4,
+        "weight": 5
+      }
+    ],
     "misc": [],
     "monster": [
       {
@@ -161,5 +189,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 2.0
+  "temperature": 0.2
 }

@@ -80,7 +80,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "naturalphilosophy:desert_supertype/badlands_type/vegetation"
+      "naturalphilosophy:desert_supertype/badlands_type/vegetation",
+      "naturalphilosophy:desert_supertype/desert_vegetation"
     ],
     []
   ],
