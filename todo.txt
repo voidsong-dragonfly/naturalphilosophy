@@ -16,7 +16,7 @@ SCOURED TYPE
 
 DESERT SUPERTYPE
 SAND TYPE
-desert
+✓ desert
 BADLANDS TYPE
 ✓ eroded badlands
 ✓ badlands

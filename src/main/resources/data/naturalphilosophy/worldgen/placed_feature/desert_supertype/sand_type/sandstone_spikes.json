@@ -1,0 +1,47 @@
+{
+  "feature": "naturalphilosophy:formations/sandstone_spike",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "weight": 1,
+            "data": {
+              "type": "minecraft:biased_to_bottom",
+              "value": {
+                "min_inclusive": 0,
+                "max_inclusive": 2
+              }
+            }
+          },
+          {
+            "weight": 1,
+            "data": {
+              "type": "minecraft:biased_to_bottom",
+              "value": {
+                "min_inclusive": 0,
+                "max_inclusive": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 28
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

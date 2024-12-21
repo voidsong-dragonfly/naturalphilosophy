@@ -32,7 +32,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "naturalphilosophy:desert_supertype/sand_type/sandstone_spikes"
     ],
     [
       "minecraft:fossil_upper",
@@ -81,8 +82,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_dead_bush_2",
-      "minecraft:patch_cactus_desert"
+      "naturalphilosophy:desert_supertype/sand_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
