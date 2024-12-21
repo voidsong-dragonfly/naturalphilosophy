@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "half=lower,red_sand=false": {
+            "model": "naturalphilosophy:block/tall_dune_grass_bottom_sand"
+        },
+        "half=upper,red_sand=false": {
+            "model": "naturalphilosophy:block/tall_dune_grass_top"
+        },
+        "half=lower,red_sand=true": {
+            "model": "naturalphilosophy:block/tall_dune_grass_bottom_red_sand"
+        },
+        "half=upper,red_sand=true": {
+            "model": "naturalphilosophy:block/tall_dune_grass_top"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "naturalphilosophy:block/partial_tinted_cross",
+    "textures": {
+        "tinted": "naturalphilosophy:block/tall_dune_grass_top",
+        "untinted": "naturalphilosophy:block/tall_dune_grass_overlay"
+    }
+}

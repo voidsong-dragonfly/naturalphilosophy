@@ -1,0 +1,7 @@
+{
+    "parent": "naturalphilosophy:block/partial_tinted_cross",
+    "textures": {
+        "tinted": "minecraft:block/tall_grass_bottom",
+        "untinted": "naturalphilosophy:block/tall_red_sand_overlay"
+    }
+}
