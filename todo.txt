@@ -18,9 +18,9 @@ DESERT SUPERTYPE
 SAND TYPE
 desert
 BADLANDS TYPE
-eroded badlands
-badlands
-wooded badlands
+✓ eroded badlands
+✓ badlands
+✓ wooded badlands
 COLD TYPE
 snowy plains
 ✓ ice spikes
