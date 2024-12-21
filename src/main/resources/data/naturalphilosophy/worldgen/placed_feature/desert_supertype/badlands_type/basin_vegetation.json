@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.1,
+          "chance": 0.15,
           "feature": "naturalphilosophy:checked_plant_patches/dead_bushes"
         },
         {
@@ -12,11 +12,11 @@
           "feature": "naturalphilosophy:checked_plant_patches/cactus"
         },
         {
-          "chance": 0.65,
-          "feature": "naturalphilosophy:checked_plant_patches/red_dune_grass"
+          "chance": 0.05,
+          "feature": "naturalphilosophy:checked_plant_patches/red_dune_grass_mixed"
         }
       ],
-      "default": "naturalphilosophy:checked_plant_patches/red_dune_grass_mixed"
+      "default": "naturalphilosophy:checked_plant_patches/red_dune_grass"
     }
   },
   "placement": [
@@ -24,7 +24,7 @@
       "type": "minecraft:noise_based_count",
       "noise_to_count_ratio": 48,
       "noise_factor": 0.5,
-      "noise_offset": -0.25
+      "noise_offset": -0.375
     },
     {
       "type": "minecraft:in_square"
