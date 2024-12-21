@@ -31,7 +31,7 @@
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 28
+      "chance": 48
     },
     {
       "type": "minecraft:in_square"
