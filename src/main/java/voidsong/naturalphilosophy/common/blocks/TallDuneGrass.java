@@ -34,7 +34,7 @@ public class TallDuneGrass extends DoublePlantBlock {
         BlockState below = level.getBlockState(pos.below());
         if (state.getBlock() != this) return super.canSurvive(state, level, pos);
         if (state.getValue(HALF) != DoubleBlockHalf.UPPER) {
-            return below.is(BlockTags.SAND) || below.is(Tags.Blocks.SAND);
+            return state.getValue(NPProperties.RED_SAND) ? below.is(Blocks.RED_SAND) : below.is(Blocks.SAND);
         } else {
             return below.getBlock() == this && below.getValue(HALF) == DoubleBlockHalf.LOWER;
         }

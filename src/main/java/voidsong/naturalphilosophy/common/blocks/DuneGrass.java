@@ -36,7 +36,7 @@ public class DuneGrass extends TallGrassBlock {
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState below = level.getBlockState(pos.below());
         if (state.getBlock() != this) return super.canSurvive(state, level, pos);
-        return below.is(BlockTags.SAND) || below.is(Tags.Blocks.SAND);
+        return state.getValue(NPProperties.RED_SAND) ? below.is(Blocks.RED_SAND) : below.is(Blocks.SAND);
     }
 
     @Override
