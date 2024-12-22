@@ -58,8 +58,8 @@ RIVER TYPE
 river
 frozen river
 SHORE TYPE
-beach
-snowy beach
+✓ beach
+✓ snowy beach
 stony shore
 
 PLAINS SUPERTYPE
