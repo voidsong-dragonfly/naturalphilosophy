@@ -26,7 +26,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "naturalphilosophy:water_supertype/shore_type/cold_suspicious_sand"
     ],
     [
       "minecraft:monster_room",

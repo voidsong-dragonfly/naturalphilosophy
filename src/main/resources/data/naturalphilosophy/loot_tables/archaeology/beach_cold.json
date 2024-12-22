@@ -9,7 +9,6 @@
           "name": "minecraft:stick",
           "weight": 32
         },
-
         {
           "type": "minecraft:item",
           "name": "minecraft:oak_planks",
@@ -25,8 +24,6 @@
           "name": "minecraft:spruce_planks",
           "weight": 24
         },
-
-
         {
           "type": "minecraft:item",
           "name": "minecraft:kelp",
@@ -52,7 +49,6 @@
           "name": "minecraft:prismarine_crystals",
           "weight": 9
         },
-
         {
           "type": "minecraft:item",
           "name": "minecraft:potion",
@@ -67,7 +63,17 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:fishing_rod",
-          "weight": 3
+          "weight": 3,
+          "functions" : [
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.25,
+                "max": 0.0
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -78,6 +84,14 @@
               "function": "minecraft:enchant_with_levels",
               "levels": 8,
               "treasure": true
+            },
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.25,
+                "max": 0.0
+              }
             }
           ]
         },
@@ -90,6 +104,14 @@
               "function": "minecraft:enchant_with_levels",
               "levels": 12,
               "treasure": true
+            },
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.35,
+                "max": 0.1
+              }
             }
           ]
         },
@@ -102,10 +124,17 @@
               "function": "minecraft:enchant_with_levels",
               "levels": 20,
               "treasure": true
+            },
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.25
+              }
             }
           ]
         },
-
         {
           "type": "minecraft:item",
           "name": "minecraft:compass",
