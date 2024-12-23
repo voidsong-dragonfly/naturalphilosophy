@@ -71,12 +71,9 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass",
-      "minecraft:trees_savanna",
-      "minecraft:flower_warm",
-      "minecraft:patch_grass_savanna",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "naturalphilosophy:plains_supertype/pumpkin_patch",
+      "naturalphilosophy:plains_supertype/savanna_type/flowers",
+      "naturalphilosophy:plains_supertype/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
