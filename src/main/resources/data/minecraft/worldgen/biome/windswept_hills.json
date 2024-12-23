@@ -74,10 +74,9 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_windswept_hills",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_sugar_cane"
+      "naturalphilosophy:mountain_supertype/windswept_type/groundcover",
+      "naturalphilosophy:mountain_supertype/windswept_type/flowers",
+      "naturalphilosophy:mountain_supertype/windswept_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

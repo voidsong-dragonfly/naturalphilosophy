@@ -74,10 +74,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_windswept_forest",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_pumpkin"
+      "naturalphilosophy:mountain_supertype/windswept_type/forest",
+      "naturalphilosophy:mountain_supertype/windswept_type/groundcover",
+      "naturalphilosophy:mountain_supertype/windswept_type/forest_flowers",
+      "naturalphilosophy:mountain_supertype/windswept_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
