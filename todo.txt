@@ -7,7 +7,7 @@ WINDSWEPT TYPE
 ✓ windswept forest
 ✓ windswept hills
 ✓ windswept gravelly hills
-windswept savanna
+✓ windswept savanna
 SCOURED TYPE
 ✓ snowy slopes
 ✓ stony peaks
@@ -67,8 +67,8 @@ PRAIRIE TYPE
 sunflower plains
 plains
 SAVANNA TYPE
-savanna
-savanna plateau
+✓ savanna
+✓ savanna plateau
 
 WETLAND SUPERTYPE
 mangrove swamp
