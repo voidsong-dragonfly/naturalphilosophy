@@ -26,7 +26,9 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "naturalphilosophy:mountain_supertype/windswept_type/stone_rocks_grass",
+      "naturalphilosophy:mountain_supertype/windswept_type/stone_rocks_gravel"
     ],
     [
       "minecraft:monster_room",

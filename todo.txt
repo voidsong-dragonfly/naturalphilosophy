@@ -4,9 +4,9 @@ GROVE TYPE
 cherry grove
 WINDSWEPT TYPE
 ✓ meadow
-windswept forest
-windswept hills
-windswept gravelly hills
+✓ windswept forest
+✓ windswept hills
+✓ windswept gravelly hills
 windswept savanna
 SCOURED TYPE
 ✓ snowy slopes

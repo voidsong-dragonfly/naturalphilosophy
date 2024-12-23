@@ -8,7 +8,7 @@ SUNFLOWER: Fertile, moist, well drained soils. Climate like texas plains/prairie
 DANDELION: Temperate regions
 POPPY: Medeterranian?? Jungle?
 BLUE ORCHID: Wet?
-ALLIUM: Temperate, but has alpine variations? 
+ALLIUM: Temperate, but has alpine variations?
 AZURE BLUET: cliffs, alpine zones, forests, meadows and shores of rivers or lakes.[4]  It thrives in moist acidic soils in shady areas, growing especially well among grasses.[5]
 TULIP: Steppes and mountainous areas with temperature climates
 OXEYE DAISY: Grassland
@@ -25,4 +25,7 @@ Plains flowers: Sunflower, Dandelion, Allium, Tulip, Oxeye Daisy, Cornflower
 Forest Flowers: Peony, Lilac, Rose Bush, Allium, Azure Bluet, Lily of the Valley
 Birch Forest: Peony, Rose Bush, Allium, Azure Bluet, Lily of the Valley
 Taiga Flowers: Peony, Rose Bush, Azure Bluet, lily of the valley
-Windswept Forest Flowers: Azure Bluet
+✓ Windswept Forest Flowers: Azure Bluet
+
+ROCK (STONE): Windswept Gravelly Hills, Windswept Hills, Windswept Forest, Cherry Grove (?), Snowy Plains (?), Windswept Savanna
+
