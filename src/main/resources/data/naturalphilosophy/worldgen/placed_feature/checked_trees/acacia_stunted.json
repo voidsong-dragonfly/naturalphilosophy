@@ -1,5 +1,5 @@
 {
-  "feature": "naturalphilosophy:trees/acacia_bush_stunted",
+  "feature": "naturalphilosophy:trees/acacia_stunted",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",

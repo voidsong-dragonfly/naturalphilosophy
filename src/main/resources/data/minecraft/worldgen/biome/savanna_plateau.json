@@ -71,6 +71,7 @@
     ],
     [
       "minecraft:glow_lichen",
+      "naturalphilosophy:plains_supertype/savanna_type/groundcover",
       "naturalphilosophy:plains_supertype/pumpkin_patch",
       "naturalphilosophy:plains_supertype/savanna_type/flowers",
       "naturalphilosophy:plains_supertype/vegetation"
