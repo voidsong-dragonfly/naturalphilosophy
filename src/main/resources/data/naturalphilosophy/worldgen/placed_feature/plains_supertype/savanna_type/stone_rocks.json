@@ -7,13 +7,13 @@
         "type": "minecraft:biased_to_bottom",
         "value": {
           "min_inclusive": 0,
-          "max_inclusive": 3
+          "max_inclusive": 2
         }
       }
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 6
+      "chance": 3
     },
     {
       "type": "minecraft:in_square"
@@ -28,13 +28,13 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
+        "type": "minecraft:matching_block_tag",
         "offset": [
           0,
           -1,
           0
         ],
-        "blocks": "minecraft:grass"
+        "tag": "minecraft:dirt"
       }
     }
   ]

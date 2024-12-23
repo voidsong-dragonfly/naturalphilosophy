@@ -26,7 +26,9 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "naturalphilosophy:plains_supertype/savanna_type/stone_rocks",
+      "naturalphilosophy:plains_supertype/savanna_type/stone_rocks_gravel"
     ],
     [
       "minecraft:monster_room",
@@ -71,10 +73,9 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_windswept_savanna",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_normal",
-      "minecraft:patch_sugar_cane"
+      "naturalphilosophy:plains_supertype/savanna_type/groundcover",
+      "naturalphilosophy:plains_supertype/savanna_type/flowers",
+      "naturalphilosophy:plains_supertype/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
