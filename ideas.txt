@@ -1,0 +1,51 @@
+BETTERDEFAULTBIOMES
+ - Cattails, rocks, other biome decorations
+ - Better shaped swamp trees (structure >_>)
+ - Giant mushrooms in swamps
+BIOME MAKEOVER
+ - New special tree (Ancient Oak) in Dark Oak forests
+     - Tree has several branches a la Fancy trunk placer, but tufted leaves a la dark oak
+ - Mineral fissure with new minerals in dark forests
+ - Structure reworks (Badlands, Dark Forest)
+ - 2x new Swamp tree, one with "fancy" branching trunk placer, one with straight but rooted placer. both have lumps of leaves, no known foliage placer
+ - New blocks (reeds, cattails, hanging branches/moss, Saguaro, Mushroom Foliage)
+ - Fossils in Badlands
+BLOOMINGNATURE
+ - Trees in Snowy Plains, with similar-to random-removed spruce foliage placer leaves, straight trunks. Also snowy taiga, but some lower trunks
+ - Birch trees are tall and thin-leaved, with aspens among them in yellow in similar foliage
+ - 2x2 tall dark oak + roots trunk placer, random removed leaves + cherry or dark oak or acacia foliage placer baobas in Savannas
+ - Roots on dark oak trees + tall + more branches
+ - Acacia leaf placer + fancy trunk placer + vines on swamp trees
+ - Floating leaves block, dripleaf, cattails, reeds in swamps
+ARBORIA
+ - Standing and fallen dead trees, some of which use partial stripping on logs
+ - Acacia-like brown mushrooms in places
+ - Roots roots roots roots
+ - Cherry leaves + fancy + mangrove roots for some trees in swamps
+BLOOMING BIOSPHERE
+ - Apply "badlands" surface rule to other biomes, incl. desert and savanna
+ - Mangrove roots + small cherry foliage on swamp oaks + cherry trunk placer
+ - Some mangroves (small ones) using Cherry placer??
+TERRALITH
+ - Use slabs to make steps look better (stone)
+ - Check out "pine" foliage placer, probably has some good stuff for trees, & add it to some mixed biomes
+ - Bigger mushrooms like trees
+ - Chunk-distributed blocks are a good way to do fairly performant cliffs without surface rule problems
+ECOTONES
+ - Cherry leaf placer for small bushes works surprisingly well
+ - Dead standing trees without stripped blocks, look worse than ones with partial stripping
+ - Changed biome sky colors are intensely atmospheric
+ - Mangrove roots on swamp trees + minimal foliage
+WILDNATURE
+ - Mixed tree shapes within the same biome and tree type make for gorgeous vistas
+ - Highly variable grass colors
+REGIONS UNEXPLORED
+ - Windswept grass blocks lean to one side in plains and prairies
+ - Pine trees in pine barrens have a section of stripped bark on their bottom 3-4 blocks of log
+ - Hanging moss in bayou biomes on trees with roots on every tree, but using swamp oak placer
+ - Small dead stunted trees atop marsh with randomized water and grass blocks, short/tall grass atop
+ - Elephant ear and other water-loving plants commonly decorate old growth bayou, incl. willow shrubs
+ - Overgrown stones for underground cave biomes
+
+
+ Cliffs
