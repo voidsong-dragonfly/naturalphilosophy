@@ -6,6 +6,8 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
+import javax.annotation.Nonnull;
+
 public class CliffSurfaceRule {
 
     public enum Cliff implements SurfaceRules.ConditionSource {
@@ -14,12 +16,13 @@ public class CliffSurfaceRule {
         public static final KeyDispatchDataCodec<CliffSurfaceRule.Cliff> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
+        @Nonnull
         public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
             return CODEC;
         }
 
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return pContext.cliff;
+            return ((ContextExtension)(Object)pContext).naturalphilosophy$getCliff();
         }
     }
 
