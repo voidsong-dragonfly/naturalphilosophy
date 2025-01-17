@@ -27,7 +27,7 @@ public abstract class SurfaceRulesMixin {
     }
 
     @SuppressWarnings("unused")
-    @Mixin(Context.class)
+    @Mixin(SurfaceRules.Context.class)
     protected static final class Context implements ContextExtension {
         @SuppressWarnings("DataFlowIssue")
         @Unique
