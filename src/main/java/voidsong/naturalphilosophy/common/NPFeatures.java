@@ -7,6 +7,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.features.ArchaeologyBlockFeature;
 
+@SuppressWarnings("unused")
 public class NPFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(BuiltInRegistries.FEATURE, NaturalPhilosophy.MODID);
 

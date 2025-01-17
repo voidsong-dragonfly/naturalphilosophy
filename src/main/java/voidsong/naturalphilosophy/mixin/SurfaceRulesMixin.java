@@ -26,8 +26,10 @@ public abstract class SurfaceRulesMixin {
         }
     }
 
+    @SuppressWarnings("unused")
     @Mixin(Context.class)
     protected static final class Context implements ContextExtension {
+        @SuppressWarnings("DataFlowIssue")
         @Unique
         final SurfaceRules.Condition naturalphilosophy$cliff = new CliffSurfaceRule.CliffMaterialCondition((SurfaceRules.Context)(Object)this);
 

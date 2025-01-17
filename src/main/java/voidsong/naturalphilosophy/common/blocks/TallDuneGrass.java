@@ -12,7 +12,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.common.PlantType;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 public class TallDuneGrass extends DoublePlantBlock {
 
@@ -22,7 +23,7 @@ public class TallDuneGrass extends DoublePlantBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(@Nonnull StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(NPProperties.RED_SAND);
     }
@@ -39,13 +40,13 @@ public class TallDuneGrass extends DoublePlantBlock {
     }
 
     @Override
-    @NotNull
-    public PlantType getPlantType(@NotNull BlockGetter world, @NotNull BlockPos pos) {
+    @Nonnull
+    public PlantType getPlantType(@Nonnull BlockGetter world, @Nonnull BlockPos pos) {
         return PlantType.DESERT;
     }
 
     @Override
-    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
+    public BlockState getStateForPlacement(@Nonnull BlockPlaceContext context) {
         BlockState state = super.getStateForPlacement(context);
         return context.getLevel().getBlockState(context.getClickedPos().below()).is(Blocks.RED_SAND) ? state.setValue(NPProperties.RED_SAND, true) : state;
     }

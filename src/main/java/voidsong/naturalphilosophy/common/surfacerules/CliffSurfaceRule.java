@@ -21,6 +21,7 @@ public class CliffSurfaceRule {
             return CODEC;
         }
 
+        @SuppressWarnings("DataFlowIssue")
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
             return ((ContextExtension)(Object)pContext).naturalphilosophy$getCliff();
         }

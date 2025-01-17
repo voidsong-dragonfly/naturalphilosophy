@@ -17,6 +17,7 @@ public class NPItems {
     public static final DeferredItem<BlockItem> DUNE_GRASS_ITEM = ITEMS.registerSimpleBlockItem("dune_grass", NPBlocks.DUNE_GRASS);
 
     // Creates a creative tab for the mod & adds all Natural Philosophy items to the tab
+    @SuppressWarnings("unused")
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_TAB = CREATIVE_MODE_TABS.register("naturalphilosophy_tab", () -> CreativeModeTab.builder()
         .title(Component.translatable("itemGroup.naturalphilosophy"))
         .icon(() -> DUNE_GRASS_ITEM.get().getDefaultInstance())
