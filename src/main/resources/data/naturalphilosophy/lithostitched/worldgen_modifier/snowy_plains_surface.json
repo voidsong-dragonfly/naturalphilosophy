@@ -63,7 +63,7 @@
                     "if_true": {
                       "type": "minecraft:noise_threshold",
                       "max_threshold": 1.7976931348623157E308,
-                      "min_threshold": 1.375,
+                      "min_threshold": 2.5,
                       "noise": "naturalphilosophy:surface_randomness"
                     },
                     "then_run": {
