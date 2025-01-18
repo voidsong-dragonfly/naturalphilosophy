@@ -13,6 +13,7 @@ import voidsong.naturalphilosophy.common.surfacerules.ContextExtension;
 
 import java.util.function.Function;
 
+@SuppressWarnings("unused")
 @Mixin(SurfaceRules.class)
 public abstract class SurfaceRulesMixin {
 
@@ -26,7 +27,6 @@ public abstract class SurfaceRulesMixin {
         }
     }
 
-    @SuppressWarnings("unused")
     @Mixin(SurfaceRules.Context.class)
     protected static final class Context implements ContextExtension {
         @SuppressWarnings("DataFlowIssue")
