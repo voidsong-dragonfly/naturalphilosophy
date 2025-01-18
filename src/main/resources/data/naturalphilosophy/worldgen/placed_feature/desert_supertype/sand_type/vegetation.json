@@ -5,18 +5,30 @@
       "features": [
         {
           "chance": 0.1,
-          "feature": "naturalphilosophy:checked_plant_patches/dead_bushes"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/dead_bushes",
+            "placement": []
+          }
         },
         {
           "chance": 0.15,
-          "feature": "naturalphilosophy:checked_plant_patches/cactus"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/cactus",
+            "placement": []
+          }
         },
         {
           "chance": 0.025,
-          "feature": "naturalphilosophy:checked_plant_patches/dune_grass_mixed"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/dune_grass_mixed",
+            "placement": []
+          }
         }
       ],
-      "default": "naturalphilosophy:checked_plant_patches/dune_grass"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/dune_grass",
+        "placement": []
+      }
     }
   },
   "placement": [

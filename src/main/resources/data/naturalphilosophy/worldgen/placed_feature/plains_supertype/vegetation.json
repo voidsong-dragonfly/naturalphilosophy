@@ -5,14 +5,23 @@
       "features": [
         {
           "chance": 0.05,
-          "feature": "naturalphilosophy:checked_plant_patches/grass_tall"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/grass_tall",
+            "placement": []
+          }
         },
         {
           "chance": 0.1,
-          "feature": "naturalphilosophy:checked_plant_patches/grass_mixed"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/grass_mixed",
+            "placement": []
+          }
         }
       ],
-      "default": "naturalphilosophy:checked_plant_patches/grass"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/grass",
+        "placement": []
+      }
     }
   },
   "placement": [

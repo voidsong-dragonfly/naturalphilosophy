@@ -5,10 +5,16 @@
       "features": [
         {
           "chance": 0.25,
-          "feature": "naturalphilosophy:checked_plant_patches/poppies"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/poppies",
+            "placement": []
+          }
         }
       ],
-      "default": "naturalphilosophy:checked_plant_patches/blue_orchids"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/blue_orchids",
+        "placement": []
+      }
     }
   },
   "placement": [

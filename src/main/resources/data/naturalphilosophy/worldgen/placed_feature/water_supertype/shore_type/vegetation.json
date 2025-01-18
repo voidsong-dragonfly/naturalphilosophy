@@ -1,44 +1,50 @@
 {
-    "feature": {
-        "type": "minecraft:random_selector",
-        "config": {
-            "features": [
-                {
-                    "chance": 0.875,
-                    "feature": "naturalphilosophy:checked_plant_patches/dune_grass_mixed"
-                }
-            ],
-            "default": "naturalphilosophy:checked_plant_patches/dune_grass"
+  "feature": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "features": [
+        {
+          "chance": 0.875,
+          "feature": {
+              "feature": "naturalphilosophy:plant_patches/dune_grass_mixed",
+              "placement": []
+          }
         }
+      ],
+      "default": {
+          "feature": "naturalphilosophy:plant_patches/dune_grass",
+          "placement": []
+      }
+    }
+  },
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 48,
+      "noise_factor": 0.5,
+      "noise_offset": -0.175
     },
-    "placement": [
-        {
-            "type": "minecraft:noise_based_count",
-            "noise_to_count_ratio": 48,
-            "noise_factor": 0.5,
-            "noise_offset": -0.175
-        },
-        {
-            "type": "minecraft:in_square"
-        },
-        {
-            "type": "minecraft:heightmap",
-            "heightmap": "WORLD_SURFACE_WG"
-        },
-        {
-            "type": "minecraft:block_predicate_filter",
-            "predicate": {
-                "type": "minecraft:matching_block_tag",
-                "offset": [
-                    0,
-                    -1,
-                    0
-                ],
-                "tag": "minecraft:sand"
-            }
-        },
-        {
-            "type": "minecraft:biome"
-        }
-    ]
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_block_tag",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "tag": "minecraft:sand"
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
 }
