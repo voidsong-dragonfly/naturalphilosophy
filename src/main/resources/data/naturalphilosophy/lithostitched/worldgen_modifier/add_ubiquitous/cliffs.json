@@ -1,0 +1,98 @@
+{
+  "type": "lithostitched:add_surface_rule",
+  "levels": [
+    "minecraft:overworld"
+  ],
+  "surface_rule": {
+    "type": "minecraft:condition",
+    "if_true": {
+      "type": "minecraft:cliff"
+    },
+    "then_run": {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:above_preliminary_surface"
+      },
+      "then_run": {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "minecraft:ice_spikes"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1.7976931348623157E308,
+                    "min_threshold": 0.0,
+                    "noise": "minecraft:surface"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:packed_ice"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:blue_ice"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "minecraft:desert"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:sandstone"
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:not",
+              "invert": {
+                "type": "minecraft:biome",
+                "biome_is": [
+                  "minecraft:wooded_badlands",
+                  "minecraft:badlands",
+                  "minecraft:eroded_badlands",
+                  "minecraft:snowy_slopes",
+                  "minecraft:jagged_peaks",
+                  "minecraft:frozen_peaks",
+                  "minecraft:ice_spikes",
+                  "minecraft:desert"
+                ]
+              }
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:stone"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
