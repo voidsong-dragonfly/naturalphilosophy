@@ -46,6 +46,10 @@ REGIONS UNEXPLORED
  - Small dead stunted trees atop marsh with randomized water and grass blocks, short/tall grass atop
  - Elephant ear and other water-loving plants commonly decorate old growth bayou, incl. willow shrubs
  - Overgrown stones for underground cave biomes
+SWAMPIER SWAMPS
+ - Cattail blocks with actual heads atop stems made of panes of grasslike blocks, along with large and small lilypads decorate the water
+ - Either cherry or fancy trunk placer, or jungle trunk additions? Combined with roots and acacia like foliage placer make for cypress like trees
+WILLIAM WITHERS
 
 
  Cliffs
