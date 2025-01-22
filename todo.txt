@@ -1,7 +1,7 @@
 MOUNTAIN SUPERTYPE
 GROVE TYPE
 ✓ grove
-cherry grove
+✓ cherry grove
 WINDSWEPT TYPE
 ✓ meadow
 ✓ windswept forest
