@@ -34,7 +34,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "naturalphilosophy:mountain_supertype/grove_type/mossy_rocks"
     ],
     [
       "minecraft:monster_room",
@@ -82,10 +83,12 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
-      "minecraft:patch_grass_plain",
-      "minecraft:flower_cherry",
-      "minecraft:trees_cherry"
+      "naturalphilosophy:mountain_supertype/grove_type/grove",
+      "naturalphilosophy:mountain_supertype/grove_type/bamboo",
+      "naturalphilosophy:mountain_supertype/grove_type/flowers",
+      "naturalphilosophy:mountain_supertype/grove_type/petals",
+      "naturalphilosophy:mountain_supertype/grove_type/grove_vegetation",
+      "naturalphilosophy:mountain_supertype/grove_type/bamboo_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

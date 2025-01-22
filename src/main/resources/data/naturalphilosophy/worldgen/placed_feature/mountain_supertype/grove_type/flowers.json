@@ -1,0 +1,73 @@
+{
+  "feature": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "features": [
+        {
+          "chance": 0.25,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/lilacs",
+            "placement": [
+              {
+                "type": "minecraft:block_predicate_filter",
+                "predicate": {
+                  "type": "minecraft:matching_blocks",
+                  "offset": [
+                    0,
+                    -2,
+                    0
+                  ],
+                  "blocks": [
+                    "minecraft:rooted_dirt"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "chance": 0.25,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/peonies",
+            "placement": [
+              {
+                "type": "minecraft:block_predicate_filter",
+                "predicate": {
+                  "type": "minecraft:matching_blocks",
+                  "offset": [
+                    0,
+                    -2,
+                    0
+                  ],
+                  "blocks": [
+                    "minecraft:rooted_dirt"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/lilies_of_the_valley",
+        "placement": []
+      }
+    }
+  },
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 4
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
