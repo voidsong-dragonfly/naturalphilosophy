@@ -17,8 +17,8 @@ LILY OF THE VALLEY: Cool temperate, partial shade
 
 
 
-Jungle flowers: Blue Orchid, Poppy
-Savanna flowers: Poppy
+✓ Jungle flowers: Blue Orchid, Poppy
+✓ Savanna flowers: Poppy
 Swamp Flowers: Blue Orchid
 Plains flowers: Sunflower, Dandelion, Allium, Tulip, Oxeye Daisy, Cornflower
 ✓ Meadow Flowers: Dandelion, Oxeye Daisy, Azure Bluet, Red Tulip, Allium, White Tulip
@@ -26,6 +26,7 @@ Forest Flowers: Peony, Lilac, Rose Bush, Allium, Azure Bluet, Lily of the Valley
 Birch Forest: Peony, Rose Bush, Allium, Azure Bluet, Lily of the Valley
 Taiga Flowers: Peony, Rose Bush, Azure Bluet, lily of the valley
 ✓ Windswept Forest Flowers: Azure Bluet
+Cherry Grove Flowers: Peony, Lilac, Lily of the Valley
 
 ROCK (STONE): Windswept Gravelly Hills, Windswept Hills, Windswept Forest, Cherry Grove (?), Snowy Plains (?), Windswept Savanna
 

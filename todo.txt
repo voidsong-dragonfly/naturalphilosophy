@@ -22,7 +22,7 @@ BADLANDS TYPE
 ✓ badlands
 ✓ wooded badlands
 COLD TYPE
-snowy plains
+✓ snowy plains
 ✓ ice spikes
 
 FOREST SUPERTYPE
