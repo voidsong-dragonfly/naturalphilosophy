@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=lower": {
+            "model": "naturalphilosophy:block/cattails_bottom"
+        },
+        "half=upper": {
+            "model": "naturalphilosophy:block/cattails_top"
+        }
+    }
+}

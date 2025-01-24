@@ -16,6 +16,7 @@ public class NPItems {
 
     public static final DeferredItem<BlockItem> DUNE_GRASS_ITEM = ITEMS.registerSimpleBlockItem("dune_grass", NPBlocks.DUNE_GRASS);
     public static final DeferredItem<BlockItem> RUSHES_ITEM = ITEMS.registerSimpleBlockItem("rushes", NPBlocks.RUSHES);
+    public static final DeferredItem<BlockItem> CATTAILS_ITEM = ITEMS.registerSimpleBlockItem("cattails", NPBlocks.CATTAILS);
 
     // Creates a creative tab for the mod & adds all Natural Philosophy items to the tab
     @SuppressWarnings("unused")
@@ -25,5 +26,6 @@ public class NPItems {
         .displayItems((parameters, output) -> {
             output.accept(DUNE_GRASS_ITEM.get());
             output.accept(RUSHES_ITEM.get());
+            output.accept(CATTAILS_ITEM.get());
         }).build());
 }
