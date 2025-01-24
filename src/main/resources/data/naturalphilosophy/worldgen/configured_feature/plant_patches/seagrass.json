@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:seagrass",
+        "config": {
+          "probability": 0.0
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:would_survive",
+            "state": {
+              "Name": "minecraft:seagrass"
+            }
+          }
+        }
+      ]
+    },
+    "tries": 48,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

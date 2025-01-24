@@ -56,7 +56,7 @@ DEEP OCEAN SUBTYPE
 ✓ deep frozen ocean
 RIVER TYPE
 river
-frozen river
+✓ frozen river
 SHORE TYPE
 ✓ beach
 ✓ snowy beach

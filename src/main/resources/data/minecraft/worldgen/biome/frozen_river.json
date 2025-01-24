@@ -70,7 +70,8 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "naturalphilosophy:water_supertype/river_type/vegetation_scattered"
     ],
     [
       "minecraft:freeze_top_layer"
