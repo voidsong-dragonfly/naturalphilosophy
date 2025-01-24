@@ -4,37 +4,32 @@
     "config": {
       "features": [
         {
-          "chance": 0.05,
-          "feature": {
-            "feature": "naturalphilosophy:plant_patches/grass_tall",
-            "placement": []
-          }
+          "chance": 0.175,
+          "feature": "naturalphilosophy:checked_trees/oak_shrub"
         },
         {
-          "chance": 0.1,
-          "feature": {
-            "feature": "naturalphilosophy:plant_patches/grass_mixed",
-            "placement": []
-          }
+          "chance": 0.025,
+          "feature": "naturalphilosophy:checked_trees/oak_fancy"
         }
       ],
-      "default": {
-        "feature": "naturalphilosophy:plant_patches/grass",
-        "placement": []
-      }
+      "default": "naturalphilosophy:checked_trees/oak_plains"
     }
   },
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 48
+      "count": 36
     },
     {
       "type": "minecraft:in_square"
     },
     {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"
@@ -50,7 +45,7 @@
             -1,
             0
           ],
-          "blocks": "minecraft:podzol"
+          "blocks": "minecraft:grass_block"
         }
       }
     }

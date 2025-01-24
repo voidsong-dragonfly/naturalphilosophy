@@ -1,0 +1,69 @@
+{
+  "feature": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "features": [
+        {
+          "chance": 0.30,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/cornflowers",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.20,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/oxeye_daisies",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.1,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/alliums",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.25,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/tulips",
+            "placement": []
+          }
+        }
+      ],
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/dandelions",
+        "placement": []
+      }
+    }
+  },
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 5
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": "minecraft:grass_block"
+      }
+    }
+  ]
+}
