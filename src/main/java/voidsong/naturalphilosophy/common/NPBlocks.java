@@ -10,6 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.blocks.DuneGrass;
 import voidsong.naturalphilosophy.common.blocks.TallDuneGrass;
+import voidsong.naturalphilosophy.common.blocks.WaterPlantBlock;
 
 public class NPBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NaturalPhilosophy.MODID);
@@ -35,4 +36,5 @@ public class NPBlocks {
 
     public static final DeferredBlock<Block> DUNE_GRASS = BLOCKS.registerBlock("dune_grass", DuneGrass::new, GRASS_PROPERTIES);
     public static final DeferredBlock<Block> TALL_DUNE_GRASS = BLOCKS.registerBlock("tall_dune_grass", TallDuneGrass::new, TALL_GRASS_PROPERTIES);
+    public static final DeferredBlock<Block> RUSHES = BLOCKS.registerBlock("rushes", WaterPlantBlock::new, GRASS_PROPERTIES);
 }

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=lower": {
+            "model": "naturalphilosophy:block/rushes_bottom"
+        },
+        "half=upper": {
+            "model": "naturalphilosophy:block/rushes_top"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "naturalphilosophy:block/cross_cutout",
+  "textures": {
+    "cross": "naturalphilosophy:block/rush_bottom"
+  }
+}
