@@ -39,15 +39,15 @@ public class CliffSurfaceRule {
             int k = Math.max(j - 1, 0);
             int l = Math.min(j + 1, 15);
             ChunkAccess chunkaccess = this.context.chunk;
-            int i1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, k);
-            int j1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, l);
+            int i1 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, k);
+            int j1 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, l);
             if (Math.abs(j1 - i1) > 3) {
                 return true;
             } else {
                 int k1 = Math.max(i - 1, 0);
                 int l1 = Math.min(i + 1, 15);
-                int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
-                int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
+                int i2 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, k1, j);
+                int j2 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, l1, j);
                 return Math.abs(j2 - i2) > 3;
             }
         }
