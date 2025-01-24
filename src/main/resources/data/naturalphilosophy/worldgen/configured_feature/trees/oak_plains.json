@@ -20,15 +20,26 @@
       "radius": 2
     },
     "foliage_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:oak_leaves",
-        "Properties": {
-          "distance": "7",
-          "persistent": "false",
-          "waterlogged": "false"
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "weight": 8,
+          "data": {
+            "Name": "minecraft:oak_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          }
         }
-      }
+      ]
     },
     "force_dirt": true,
     "ignore_vines": true,
