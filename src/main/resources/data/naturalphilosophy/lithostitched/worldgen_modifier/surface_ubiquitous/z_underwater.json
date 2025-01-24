@@ -64,6 +64,23 @@
                   }
                 },
                 {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:biome",
+                    "biome_is": [
+                      "minecraft:stony_shore",
+                      "minecraft:frozen_ocean",
+                      "minecraft:deep_frozen_ocean"
+                    ]
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:gravel"
+                    }
+                  }
+                },
+                {
                   "type": "minecraft:block",
                   "result_state": {
                     "Name": "minecraft:mud"
