@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:noise_threshold_provider",
+            "default_state": {
+              "Name": "naturalphilosophy:rushes",
+              "Properties": {
+                "half": "lower"
+              }
+            },
+            "high_chance": 0.33333334,
+            "high_states": [
+              {
+                "Name": "naturalphilosophy:cattails",
+                "Properties": {
+                  "half": "lower"
+                }
+              }
+            ],
+            "low_states": [
+              {
+                "Name": "naturalphilosophy:rushes",
+                "Properties": {
+                  "half": "lower"
+                }
+              }
+            ],
+            "noise": {
+              "amplitudes": [
+                1.0
+              ],
+              "firstOctave": -2.0
+            },
+            "scale": 0.05,
+            "seed": 5432,
+            "threshold": 0.0
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:replaceable"
+          }
+        }
+      ]
+    }
+  }
+}
