@@ -71,13 +71,12 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
-      "minecraft:patch_sunflower",
-      "minecraft:trees_plains",
-      "minecraft:flower_plains",
-      "minecraft:patch_grass_plain",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "naturalphilosophy:plains_supertype/prairie_type/copses",
+      "naturalphilosophy:plains_supertype/prairie_type/groundcover",
+      "naturalphilosophy:plains_supertype/pumpkin_patch",
+      "naturalphilosophy:plains_supertype/prairie_type/sunflowers",
+      "naturalphilosophy:plains_supertype/prairie_type/flowers",
+      "naturalphilosophy:plains_supertype/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
