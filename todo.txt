@@ -64,8 +64,8 @@ stony shore
 
 PLAINS SUPERTYPE
 PRAIRIE TYPE
-sunflower plains
-plains
+✓ sunflower plains
+✓ plains
 SAVANNA TYPE
 ✓ savanna
 ✓ savanna plateau
