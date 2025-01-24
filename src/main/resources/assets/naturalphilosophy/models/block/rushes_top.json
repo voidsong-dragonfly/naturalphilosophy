@@ -1,6 +1,6 @@
 {
   "parent": "naturalphilosophy:block/cross_cutout",
   "textures": {
-    "cross": "naturalphilosophy:block/rush_top"
+    "cross": "naturalphilosophy:block/rushes_top"
   }
 }

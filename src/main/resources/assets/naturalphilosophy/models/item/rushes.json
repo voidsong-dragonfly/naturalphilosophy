@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "naturalphilosophy:block/rush_top"
+        "layer0": "naturalphilosophy:block/rushes_top"
     }
 }

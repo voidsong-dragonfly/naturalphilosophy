@@ -43,7 +43,7 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
             BlockState below = level.getBlockState(pos.below());
             boolean fluid = level.getFluidState(pos).is(Fluids.WATER);
             if(level.getFluidState(pos).isEmpty())
-                for(BlockPos search : BlockPos.betweenClosed(pos.offset(-4, -1, -4), pos.offset(4, -1, 4)))
+                for(BlockPos search : BlockPos.betweenClosed(pos.offset(-3, -1, -3), pos.offset(3, -1, 3)))
                     fluid = fluid || level.getFluidState(search).is(Fluids.WATER);
             return below.is(NPTags.Blocks.WATER_PLANTS) && fluid;
         } else {
