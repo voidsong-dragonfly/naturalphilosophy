@@ -4,33 +4,6 @@
     "config": {
       "features": [
         {
-          "chance": 1,
-          "feature": {
-            "feature": "naturalphilosophy:plant_patches/azure_bluets",
-            "placement": [
-              {
-                "type": "minecraft:block_predicate_filter",
-                "predicate": {
-                  "type": "minecraft:not",
-                  "predicate": {
-                    "type": "minecraft:matching_blocks",
-                    "offset": [
-                      0,
-                      -1,
-                      0
-                    ],
-                    "blocks": [
-                      "minecraft:coarse_dirt",
-                      "minecraft:rooted_dirt",
-                      "minecraft:podzol"
-                    ]
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
           "chance": 0.125,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/lilies_of_the_valley",
@@ -77,7 +50,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 5
+      "chance": 6
     },
     {
       "type": "minecraft:in_square"

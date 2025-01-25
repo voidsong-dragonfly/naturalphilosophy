@@ -30,7 +30,7 @@ DECIDUOUS TYPE
 forest
 flower forest
 birch forest
-dark forest
+✓ dark forest
 old growth birch
 TAIGA TYPE
 taiga
