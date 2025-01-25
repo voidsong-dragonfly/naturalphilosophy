@@ -81,10 +81,10 @@
       "naturalphilosophy:forest_supertype/deciduous_type/dark_oak_canopy",
       "naturalphilosophy:forest_supertype/deciduous_type/undergrowth",
       "naturalphilosophy:forest_supertype/deciduous_type/mushrooms",
-      "minecraft:forest_flowers",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_forest",
-      "minecraft:patch_pumpkin"
+      "naturalphilosophy:forest_supertype/pumpkin_patch",
+      "naturalphilosophy:forest_supertype/deciduous_type/temperate_flowers",
+      "naturalphilosophy:forest_supertype/deciduous_type/vegetation"
+
     ],
     [
       "minecraft:freeze_top_layer"
