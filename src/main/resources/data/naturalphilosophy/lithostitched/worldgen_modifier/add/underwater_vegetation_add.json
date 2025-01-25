@@ -1,0 +1,6 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#naturalphilosophy:non_water",
+  "features": "naturalphilosophy:underwater_vegetation",
+  "step": "vegetal_decoration"
+}

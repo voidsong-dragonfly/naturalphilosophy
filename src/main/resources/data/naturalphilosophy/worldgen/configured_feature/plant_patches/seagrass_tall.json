@@ -17,6 +17,18 @@
               "Name": "minecraft:seagrass"
             }
           }
+        },
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_fluids",
+            "offset": [
+              0,
+              1,
+              0
+            ],
+            "fluids": "minecraft:water"
+          }
         }
       ]
     },
