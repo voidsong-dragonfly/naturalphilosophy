@@ -4,12 +4,26 @@
     "root_placer": {
       "type": "minecraft:mangrove_root_placer",
       "root_provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:dark_oak_wood"
-        }
+        "type": "minecraft:weighted_state_provider",
+        "entries": [
+          {
+            "weight": 1,
+            "data": {
+              "Name": "minecraft:air"
+            }
+          },
+          {
+            "weight": 3,
+            "data": {
+              "Name": "minecraft:dark_oak_wood",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          }
+        ]
       },
-      "trunk_offset_y": 0,
+      "trunk_offset_y": 1,
       "mangrove_root_placement": {
         "max_root_width": 1,
         "max_root_length": 3,
@@ -28,7 +42,10 @@
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:rooted_dirt"
+        "Name": "minecraft:dark_oak_log",
+        "Properties": {
+          "axis": "y"
+        }
       }
     },
     "foliage_placer": {

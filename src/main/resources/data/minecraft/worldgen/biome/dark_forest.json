@@ -78,11 +78,12 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:dark_forest_vegetation",
+      "naturalphilosophy:forest_supertype/deciduous_type/dark_oak_canopy",
+      "naturalphilosophy:forest_supertype/deciduous_type/undergrowth",
+      "naturalphilosophy:forest_supertype/deciduous_type/mushrooms",
       "minecraft:forest_flowers",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",
-      "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin"
     ],
     [
