@@ -4,14 +4,14 @@
     "config": {
       "features": [
         {
-          "chance": 0.05,
+          "chance": 0.15,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/grass_tall",
             "placement": []
           }
         },
         {
-          "chance": 0.1,
+          "chance": 0.25,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/grass_mixed",
             "placement": []

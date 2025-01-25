@@ -79,7 +79,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_swamp",
+      "naturalphilosophy:water_supertype/wetland_type/copses",
+      "naturalphilosophy:water_supertype/wetland_type/groundcover",
       "naturalphilosophy:water_supertype/sugar_cane",
       "naturalphilosophy:water_supertype/wetland_type/flowers",
       "naturalphilosophy:water_supertype/wetland_type/waterlilies",
