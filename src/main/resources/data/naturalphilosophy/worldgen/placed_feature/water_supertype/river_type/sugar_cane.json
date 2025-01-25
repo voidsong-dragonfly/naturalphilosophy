@@ -1,0 +1,21 @@
+{
+  "feature": "naturalphilosophy:plant_patches/sugar_cane",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 32,
+      "noise_factor": 0.125,
+      "noise_offset": -0.25
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

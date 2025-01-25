@@ -71,8 +71,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_sugar_cane",
-      "minecraft:seagrass_river"
+      "naturalphilosophy:water_supertype/river_type/sugar_cane",
+      "naturalphilosophy:water_supertype/river_type/vegetation_scattered"
     ],
     [
       "minecraft:freeze_top_layer"
