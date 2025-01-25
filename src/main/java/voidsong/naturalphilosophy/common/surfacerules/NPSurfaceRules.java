@@ -8,12 +8,12 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 
 import javax.annotation.Nonnull;
 
-public class CliffSurfaceRule {
+public class NPSurfaceRules {
 
     public enum Cliff implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<CliffSurfaceRule.Cliff> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<NPSurfaceRules.Cliff> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -24,6 +24,23 @@ public class CliffSurfaceRule {
         @SuppressWarnings("DataFlowIssue")
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
             return ((ContextExtension)(Object)pContext).naturalphilosophy$getCliff();
+        }
+    }
+
+    public enum Flat implements SurfaceRules.ConditionSource {
+        INSTANCE;
+
+        public static final KeyDispatchDataCodec<NPSurfaceRules.Flat> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+
+        @Override
+        @Nonnull
+        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
+            return CODEC;
+        }
+
+        @SuppressWarnings("DataFlowIssue")
+        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
+            return ((ContextExtension)(Object)pContext).naturalphilosophy$getFlat();
         }
     }
 
@@ -50,6 +67,28 @@ public class CliffSurfaceRule {
                 int j2 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, l1, j);
                 return Math.abs(j2 - i2) > 3;
             }
+        }
+    }
+
+    public static class FlatMaterialCondition extends SurfaceRules.LazyXZCondition {
+        public FlatMaterialCondition(SurfaceRules.Context context) {
+            super(context);
+        }
+
+        @Override
+        protected boolean compute() {
+            int i = this.context.blockX & 15;
+            int j = this.context.blockZ & 15;
+            int k = Math.max(j - 2, 0);
+            int l = Math.min(j + 2, 15);
+            int k1 = Math.max(i - 2, 0);
+            int l1 = Math.min(i + 2, 15);
+            ChunkAccess chunkaccess = this.context.chunk;
+            int i1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, k);
+            int j1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, l);
+            int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
+            int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
+            return Math.abs(j2 - i2) < 2 && Math.abs(j1 - i1) < 2;
         }
     }
 }
