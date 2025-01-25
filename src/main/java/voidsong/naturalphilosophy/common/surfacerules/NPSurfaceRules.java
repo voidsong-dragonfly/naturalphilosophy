@@ -79,16 +79,16 @@ public class NPSurfaceRules {
         protected boolean compute() {
             int i = this.context.blockX & 15;
             int j = this.context.blockZ & 15;
-            int k = Math.max(j - 2, 0);
-            int l = Math.min(j + 2, 15);
-            int k1 = Math.max(i - 2, 0);
-            int l1 = Math.min(i + 2, 15);
+            int k = Math.max(j - 1, 0);
+            int l = Math.min(j + 1, 15);
+            int k1 = Math.max(i - 1, 0);
+            int l1 = Math.min(i + 1, 15);
             ChunkAccess chunkaccess = this.context.chunk;
             int i1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, k);
             int j1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, l);
             int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
-            return Math.abs(j2 - i2) < 2 && Math.abs(j1 - i1) < 2;
+            return Math.abs(j2 - i2) == 0 && Math.abs(j1 - i1) == 0;
         }
     }
 }
