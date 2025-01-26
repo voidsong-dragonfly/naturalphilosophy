@@ -26,6 +26,12 @@
             "type": "minecraft:matching_blocks",
             "blocks": "minecraft:air"
           }
+        },
+        {
+          "type": "minecraft:surface_relative_threshold_filter",
+          "heightmap": "WORLD_SURFACE",
+          "min_inclusive": 0,
+          "max_inclusive": 3
         }
       ]
     }
