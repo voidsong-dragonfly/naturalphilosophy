@@ -23,7 +23,6 @@ public abstract class FreezeSurfaceMixin {
         WorldGenLevel worldgenlevel = context.level();
         BlockPos blockpos = context.origin();
         BlockPos.MutableBlockPos top = new BlockPos.MutableBlockPos();
-        BlockPos.MutableBlockPos top_leaves = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos surface = new BlockPos.MutableBlockPos();
 
         for(int i = 0; i < 16; ++i) {
@@ -31,9 +30,7 @@ public abstract class FreezeSurfaceMixin {
                 int k = blockpos.getX() + i;
                 int l = blockpos.getZ() + j;
                 int i1 = worldgenlevel.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, k, l);
-                int i2 = worldgenlevel.getHeight(Heightmap.Types.MOTION_BLOCKING, k, l);
                 top.set(k, i1, l);
-                top_leaves.set(k, i2, l);
                 surface.set(top).move(Direction.DOWN, 1);
                 Biome biome = worldgenlevel.getBiome(top).value();
                 if (biome.shouldFreeze(worldgenlevel, surface, false)) {
@@ -42,13 +39,6 @@ public abstract class FreezeSurfaceMixin {
 
                 if (biome.shouldSnow(worldgenlevel, top)) {
                     worldgenlevel.setBlock(top, Blocks.SNOW.defaultBlockState(), 2);
-                    BlockState blockstate = worldgenlevel.getBlockState(surface);
-                    if (blockstate.hasProperty(SnowyDirtBlock.SNOWY)) {
-                        worldgenlevel.setBlock(surface, blockstate.setValue(SnowyDirtBlock.SNOWY, Boolean.TRUE), 2);
-                    }
-                }
-                if (i1 != i2 && biome.shouldSnow(worldgenlevel, top_leaves)) {
-                    worldgenlevel.setBlock(top_leaves, Blocks.SNOW.defaultBlockState(), 2);
                     BlockState blockstate = worldgenlevel.getBlockState(surface);
                     if (blockstate.hasProperty(SnowyDirtBlock.SNOWY)) {
                         worldgenlevel.setBlock(surface, blockstate.setValue(SnowyDirtBlock.SNOWY, Boolean.TRUE), 2);
