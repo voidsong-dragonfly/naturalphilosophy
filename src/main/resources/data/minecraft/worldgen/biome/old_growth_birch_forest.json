@@ -77,12 +77,12 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:birch_tall",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_forest",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_copses",
+      "naturalphilosophy:forest_supertype/deciduous_type/birch_undergrowth",
+      "naturalphilosophy:forest_supertype/deciduous_type/clearing_flowers",
+      "naturalphilosophy:forest_supertype/deciduous_type/cold_flowers",
+      "naturalphilosophy:forest_supertype/deciduous_type/clearing_vegetation",
+      "naturalphilosophy:forest_supertype/deciduous_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

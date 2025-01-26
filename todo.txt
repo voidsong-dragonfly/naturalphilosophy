@@ -31,7 +31,7 @@ DECIDUOUS TYPE
 ✓ flower forest
 ✓ birch forest
 ✓ dark forest
-old growth birch
+✓ old growth birch
 TAIGA TYPE
 taiga
 snowy taiga
