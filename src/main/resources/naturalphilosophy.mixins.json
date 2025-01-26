@@ -5,7 +5,8 @@
   "mixins": [
     "SurfaceRulesMixin",
     "SurfaceRulesMixin$ConditionSource",
-    "SurfaceRulesMixin$Context"
+    "SurfaceRulesMixin$Context",
+    "FreezeSurfaceMixin"
   ],
   "client": [],
   "injectors": {
