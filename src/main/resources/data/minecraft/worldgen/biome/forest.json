@@ -77,12 +77,13 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:trees_birch_and_oak",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_forest",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "naturalphilosophy:forest_supertype/deciduous_type/forest_canopy",
+      "naturalphilosophy:forest_supertype/deciduous_type/undergrowth",
+      "naturalphilosophy:forest_supertype/pumpkin_patch",
+      "naturalphilosophy:forest_supertype/deciduous_type/clearing_flowers",
+      "naturalphilosophy:forest_supertype/deciduous_type/temperate_flowers",
+      "naturalphilosophy:forest_supertype/deciduous_type/clearing_vegetation",
+      "naturalphilosophy:forest_supertype/deciduous_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
