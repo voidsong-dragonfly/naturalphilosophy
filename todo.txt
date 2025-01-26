@@ -29,7 +29,7 @@ FOREST SUPERTYPE
 DECIDUOUS TYPE
 ✓ forest
 ✓ flower forest
-birch forest
+✓ birch forest
 ✓ dark forest
 old growth birch
 TAIGA TYPE

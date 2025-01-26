@@ -38,7 +38,8 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "minecraft:flower_forest"
+                "minecraft:flower_forest",
+                "minecraft:birch_forest"
               ]
             },
             "then_run": {

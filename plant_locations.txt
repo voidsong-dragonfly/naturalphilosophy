@@ -23,7 +23,7 @@ LILY OF THE VALLEY: Cool temperate, partial shade
 ✓ Plains flowers: Sunflower, Dandelion, Allium, Tulip, Oxeye Daisy, Cornflower
 ✓ Meadow Flowers: Dandelion, Oxeye Daisy, Azure Bluet, Red Tulip, Allium, White Tulip
 ✓ Forest Flowers: Peony, Lilac, Rose Bush, Allium, Azure Bluet, Lily of the Valley
-Birch Forest: Peony, Rose Bush, Allium, Azure Bluet, Lily of the Valley
+✓ Birch Forest: Peony, Rose Bush, Allium, Azure Bluet, Lily of the Valley
 Taiga Flowers: Peony, Rose Bush, Azure Bluet, lily of the valley
 ✓ Windswept Forest Flowers: Azure Bluet
 ✓ Cherry Grove Flowers: Peony, Lilac, Lily of the Valley
