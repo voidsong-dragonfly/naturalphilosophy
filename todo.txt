@@ -27,8 +27,8 @@ COLD TYPE
 
 FOREST SUPERTYPE
 DECIDUOUS TYPE
-forest
-flower forest
+✓ forest
+✓ flower forest
 birch forest
 ✓ dark forest
 old growth birch
