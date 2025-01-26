@@ -3,7 +3,8 @@
     "#minecraft:is_beach",
     "#minecraft:is_ocean",
     "#minecraft:is_river",
-    "#minecraft:is_deep_ocean"
+    "#minecraft:is_deep_ocean",
+    "#forge:is_snowy"
   ],
   "values": [
     "#minecraft:is_overworld"

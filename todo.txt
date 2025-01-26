@@ -34,7 +34,7 @@ DECIDUOUS TYPE
 ✓ old growth birch
 TAIGA TYPE
 taiga
-snowy taiga
+✓ snowy taiga
 old growth pine
 old growth spruce
 JUNGLE TYPE

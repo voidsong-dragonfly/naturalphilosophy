@@ -2,6 +2,7 @@
   "remove": [
     "#minecraft:is_beach",
     "#minecraft:is_ocean",
+    "#forge:is_snowy",
     "minecraft:mushroom_island",
     "minecraft:frozen_river"
   ],
