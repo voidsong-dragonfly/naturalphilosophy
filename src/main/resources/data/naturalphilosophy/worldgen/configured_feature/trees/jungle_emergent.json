@@ -3,6 +3,10 @@
   "config": {
     "decorators": [
       {
+        "type": "minecraft:cocoa",
+        "probability": 0.2
+      },
+      {
         "type": "minecraft:trunk_vine"
       },
       {
