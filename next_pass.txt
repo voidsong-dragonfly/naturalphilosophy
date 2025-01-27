@@ -11,4 +11,4 @@
 ✓ 10. Fix cocoa beans not being on Jungle trees
 11. Changes to cave biomes to make them look better?
 12. Water colors from Bedrock as necessary
-13. Fix jungle bushes spawning too deep in water
+✓ 13. Fix jungle bushes spawning too deep in water
