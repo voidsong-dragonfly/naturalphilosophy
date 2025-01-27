@@ -33,7 +33,7 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "minecraft:forest_rock"
+      "naturalphilosophy:forest_supertype/evergreen_type/mossy_rocks"
     ],
     [
       "minecraft:monster_room",
@@ -78,14 +78,13 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_large_fern",
-      "minecraft:trees_old_growth_spruce_taiga",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_taiga",
-      "minecraft:patch_dead_bush",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common"
+      "naturalphilosophy:forest_supertype/evergreen_type/old_growth_spruce_copses",
+      "naturalphilosophy:forest_supertype/evergreen_type/old_growth_spruce_undergrowth",
+      "naturalphilosophy:forest_supertype/sweet_berries",
+      "naturalphilosophy:forest_supertype/evergreen_type/clearing_flowers",
+      "naturalphilosophy:forest_supertype/evergreen_type/flowers",
+      "naturalphilosophy:forest_supertype/evergreen_type/clearing_vegetation",
+      "naturalphilosophy:forest_supertype/evergreen_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

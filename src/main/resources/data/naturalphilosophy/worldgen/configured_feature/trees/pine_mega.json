@@ -1,20 +1,7 @@
 {
   "type": "minecraft:tree",
   "config": {
-    "decorators": [
-      {
-        "type": "minecraft:alter_ground",
-        "provider": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "minecraft:podzol",
-            "Properties": {
-              "snowy": "false"
-            }
-          }
-        }
-      }
-    ],
+    "decorators": [ ],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
@@ -26,8 +13,8 @@
       "crown_height": {
         "type": "minecraft:uniform",
         "value": {
-          "max_inclusive": 12,
-          "min_inclusive": 7
+          "max_inclusive": 13,
+          "min_inclusive": 9
         }
       },
       "offset": 0,
@@ -54,9 +41,9 @@
     },
     "trunk_placer": {
       "type": "minecraft:giant_trunk_placer",
-      "base_height": 20,
+      "base_height": 22,
       "height_rand_a": 2,
-      "height_rand_b": 7
+      "height_rand_b": 5
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
