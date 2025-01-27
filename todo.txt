@@ -35,8 +35,8 @@ DECIDUOUS TYPE
 TAIGA TYPE
 taiga
 ✓ snowy taiga
-old growth pine
-old growth spruce
+✓ old growth pine
+✓ old growth spruce
 JUNGLE TYPE
 ✓ jungle
 ✓ bamboo jungle

@@ -1,0 +1,9 @@
+0. Mushrooms! Removed these on first pass by mistake
+1. Berries! These need to be in more biomes
+2. Moss
+3. Fallen trees
+4. Dead trees
+5. Roots to some trees (jungle)
+6. More block variations in jungle surface rules
+7. Possibly some floor decorations (sticks, small rocks)
+8. Anything else from PVJ I miss because it does a lot of the same things this mod does
