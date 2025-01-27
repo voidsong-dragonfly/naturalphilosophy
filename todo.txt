@@ -60,7 +60,7 @@ RIVER TYPE
 SHORE TYPE
 ✓ beach
 ✓ snowy beach
-stony shore
+✓ stony shore
 WETLAND TYPE
 ✓ mangrove swamp
 ✓ swamp

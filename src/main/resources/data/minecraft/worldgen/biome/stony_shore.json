@@ -27,8 +27,8 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "naturalphilosophy:water_supertype/ocean_type/stone_rocks",
-      "naturalphilosophy:water_supertype/ocean_type/stone_spikes"
+      "naturalphilosophy:water_supertype/shore_type/mossy_rocks",
+      "naturalphilosophy:water_supertype/shore_type/suspicious_gravel"
     ],
     [
       "minecraft:monster_room",

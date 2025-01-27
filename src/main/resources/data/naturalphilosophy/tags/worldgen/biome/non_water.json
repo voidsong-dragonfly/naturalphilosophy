@@ -4,7 +4,8 @@
     "#minecraft:is_ocean",
     "#minecraft:is_river",
     "#minecraft:is_deep_ocean",
-    "#forge:is_snowy"
+    "#forge:is_snowy",
+    "minecraft:stony_shore"
   ],
   "values": [
     "#minecraft:is_overworld"
