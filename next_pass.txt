@@ -7,3 +7,4 @@
 6. More block variations in jungle surface rules
 7. Possibly some floor decorations (sticks, small rocks)
 8. Anything else from PVJ I miss because it does a lot of the same things this mod does
+9. Fix Wooded Badlands surface rules to properly replace normal Wooded Badlands on cliffs
