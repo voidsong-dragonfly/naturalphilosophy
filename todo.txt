@@ -33,7 +33,7 @@ DECIDUOUS TYPE
 ✓ dark forest
 ✓ old growth birch
 TAIGA TYPE
-taiga
+✓ taiga
 ✓ snowy taiga
 ✓ old growth pine
 ✓ old growth spruce

@@ -71,13 +71,14 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_large_fern",
-      "minecraft:trees_taiga",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_taiga_2",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common"
+      "naturalphilosophy:forest_supertype/evergreen_type/taiga_pine",
+      "naturalphilosophy:forest_supertype/evergreen_type/taiga_spruce",
+      "naturalphilosophy:forest_supertype/evergreen_type/taiga_undergrowth",
+      "naturalphilosophy:forest_supertype/sweet_berries",
+      "naturalphilosophy:forest_supertype/evergreen_type/clearing_flowers",
+      "naturalphilosophy:forest_supertype/evergreen_type/flowers",
+      "naturalphilosophy:forest_supertype/evergreen_type/clearing_vegetation",
+      "naturalphilosophy:forest_supertype/evergreen_type/vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
