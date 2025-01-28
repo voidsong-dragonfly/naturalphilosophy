@@ -17,7 +17,7 @@ Mods which do minimal overhauls of Vanilla biomes are considered to be 'extraneo
 [Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions.  
 [Improved Village Placement](https://modrinth.com/mod/improved-village-placement) helps with Vanilla's terrible habit of cliff villages.  
 [Regrowth](https://modrinth.com/mod/regrowth) adds dynamicity to a normally static Vanilla world.   
-[Better Biome Reblend](https://modrinth.com/mod/bbrb) smooths out the sharp biome & water color transitions Vanilla has.
+[Better Biome Reblend](https://modrinth.com/mod/bbrb) smooths out the sharp biome & water color transitions Vanilla has.    
 [Project: Vibrant Journeys](https://www.curseforge.com/minecraft/mc-mods/project-vibrant-journeys) adds decorations out of scope for Natural Philosophy.
 
 ### Important Information for Project: Vibrant Journeys
