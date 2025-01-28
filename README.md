@@ -12,16 +12,27 @@ Natural Philosophy also replaces many Vanilla generation objects with its own, m
 
 Mods which do minimal overhauls of Vanilla biomes are considered to be 'extraneous' or 'actively detrimental' and are listed below, after the suggested mods heading. These are _not_ suggested for use with Natural Philosophy.
 
-## Gallery
-
 ## Suggested Mods
 
 [Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions.  
 [Improved Village Placement](https://modrinth.com/mod/improved-village-placement) helps with Vanilla's terrible habit of cliff villages.  
-[Repurposed Structures](https://modrinth.com/mod/repurposed-structures-forge) adds some more Vanilla-style structures to your game without overdoing it.    
 [Regrowth](https://modrinth.com/mod/regrowth) adds dynamicity to a normally static Vanilla world.   
 [Better Biome Reblend](https://modrinth.com/mod/bbrb) smooths out the sharp biome & water color transitions Vanilla has.
+[Project: Vibrant Journeys](https://www.curseforge.com/minecraft/mc-mods/project-vibrant-journeys) adds decorations out of scope for Natural Philosophy.
 
+### Important Information for Project: Vibrant Journeys
+
+Natural Philosophy has many features which overlap heavily with that of Project: Vibrant Journeys. It is suggested to disable the following P:VJ features for best compatibility between the two mods.
+
+ - Sea Oats, `enableSeaOats`
+ - Cattails `enableCattails`
+ - Beach Grass `enableBeachGrass`
+ - Reeds `enableReeds`
+ - Extra Seagrass `enableExtraSeagrass`
+ - Tide Pools `enableTidePools`
+ - Cherry Grove Bamboo `enableCherryGroveBamboo`
+ - Plains Buses `enableBushes`
+ 
 ## Supplanted Mods
 
 #### Natural Philosophy Implements These Mods
@@ -43,7 +54,6 @@ Mods which do minimal overhauls of Vanilla biomes are considered to be 'extraneo
  - Scorched
  - Geophilic & Geophilic Reforged
  - Arboria
- - Project: Vibrant Journeys
  - Better Trees
  - Wilder Wild
 
