@@ -1,14 +1,28 @@
-0. Mushrooms! Removed these on first pass by mistake
+✓ 0. Mushrooms! Removed these on first pass by mistake
 ✓ 1. Berries! These need to be in more biomes (Birch Forest)
 2. Moss
 3. Fallen trees
 4. Dead trees
 5. Roots to some trees (jungle)
-6. More block variations in jungle surface rules
-7. Possibly some floor decorations (sticks, small rocks)
-8. Anything else from PVJ I miss because it does a lot of the same things this mod does
-✓ 9. Fix Wooded Badlands surface rules to properly replace normal Wooded Badlands on cliffs
-✓ 10. Fix cocoa beans not being on Jungle trees
-11. Changes to cave biomes to make them look better?
-12. Water colors from Bedrock as necessary
-✓ 13. Fix jungle bushes spawning too deep in water
+✓ 6. More block variations in jungle surface rules
+✓ 7. Fix Wooded Badlands surface rules to properly replace normal Wooded Badlands on cliffs
+✓ 8. Fix cocoa beans not being on Jungle trees
+9. Water colors from Bedrock as necessary
+✓ 10. Fix jungle bushes spawning too deep in water
+✓ 11. Fix flat surface rule not properly comparing
+
+
+
+2.0.0:
+1. Pale Garden up to Natural Philosophy standards
+    Pale garden is already pretty good, add more moss and more grass?
+    Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
+    Add some ground vegetation maybe?
+2. Nether biomes?
+    PVJ: Cindercane, glowcap, crimson & warped nettles,
+3. Anything else from PVJ I miss because it does a lot of the same things this mod does
+      Muddy bones, tropical fish, bones & seashells?, pink vines, bogged remains?
+4. Changes to cave biomes to make them look better?
+    Glowing light blue mushrooms for Deep Dark
+
+TODO: Moss, Bedrock water colors
