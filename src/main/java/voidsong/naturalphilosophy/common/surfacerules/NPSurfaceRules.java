@@ -88,7 +88,7 @@ public class NPSurfaceRules {
             int j1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, l);
             int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
-            return Math.abs(j2 - i2) == Math.abs(j1 - i1) == 0 && i1 == i2;
+            return Math.abs(j2 - i2) == 0 && Math.abs(j1 - i1) == 0 && i1 == i2;
         }
     }
 }
