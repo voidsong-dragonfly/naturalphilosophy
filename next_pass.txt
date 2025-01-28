@@ -7,9 +7,10 @@
 ✓ 6. More block variations in jungle surface rules
 ✓ 7. Fix Wooded Badlands surface rules to properly replace normal Wooded Badlands on cliffs
 ✓ 8. Fix cocoa beans not being on Jungle trees
-9. Water colors from Bedrock as necessary
+✓ 9. Water colors from Bedrock as necessary
 ✓ 10. Fix jungle bushes spawning too deep in water
 ✓ 11. Fix flat surface rule not properly comparing
+12. Fix Snowy Plains to have more trees? See 'Better snowy biome' for more information, as well as possibly tinting leaves white in those biomes or during snowfall?
 
 
 
@@ -24,5 +25,4 @@
       Muddy bones, tropical fish, bones & seashells?, pink vines, bogged remains?
 4. Changes to cave biomes to make them look better?
     Glowing light blue mushrooms for Deep Dark
-
-TODO: Moss, Bedrock water colors
+    Water color changes for Lush Caves if their water is not already green-ish

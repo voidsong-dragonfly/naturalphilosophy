@@ -19,7 +19,8 @@ Mods which do minimal overhauls of Vanilla biomes are considered to be 'extraneo
 [Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions.  
 [Improved Village Placement](https://modrinth.com/mod/improved-village-placement) helps with Vanilla's terrible habit of cliff villages.  
 [Repurposed Structures](https://modrinth.com/mod/repurposed-structures-forge) adds some more Vanilla-style structures to your game without overdoing it.    
-[Regrowth](https://modrinth.com/mod/regrowth) adds dynamicity to a normally static Vanilla world.
+[Regrowth](https://modrinth.com/mod/regrowth) adds dynamicity to a normally static Vanilla world.   
+[Better Biome Reblend](https://modrinth.com/mod/bbrb) smooths out the sharp biome & water color transitions Vanilla has.
 
 ## Supplanted Mods
 
