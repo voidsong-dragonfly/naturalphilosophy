@@ -1,0 +1,46 @@
+{
+  "feature": {
+    "type": "minecraft:random_selector",
+    "config": {
+      "features": [
+        {
+          "chance": 0.0625,
+          "feature": {
+            "feature": "naturalphilosophy:trees/spruce",
+            "placement": []
+          }
+        }
+      ],
+      "default": {
+        "feature": "naturalphilosophy:trees/spruce_stunted",
+        "placement": []
+      }
+    }
+  },
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 3
+    },
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 12,
+      "noise_factor": 1,
+      "noise_offset": -0.375
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

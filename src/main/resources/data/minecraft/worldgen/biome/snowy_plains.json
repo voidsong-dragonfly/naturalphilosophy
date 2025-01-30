@@ -71,7 +71,8 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "naturalphilosophy:plains_supertype/cold_type/copses"
     ],
     [
       "minecraft:freeze_top_layer"
