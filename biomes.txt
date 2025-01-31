@@ -1,0 +1,11 @@
+Necessary Biomes & Placement:
+
+Prairie (cold plains locations)
+Add Savanna to a few more places
+Move Birch Forest to colder climes
+Warm Beach (warm beach locations)
+Sandy Cliffs (warm stony shore)
+Snowy Desert (cold dry locations)
+Frigid Cliffs (windswept cliffs replacement in colder biomes)
+Overgrown Spires (windswept cliffs replacement in warmer biomes, or move bamboo or sparse jungle there?)
+Warm River (warm river locations)

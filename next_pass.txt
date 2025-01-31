@@ -29,5 +29,7 @@
 3. Changes to cave biomes to make them look better?
     Glowing light blue mushrooms for Deep Dark
     Water color changes for Lush Caves if their water is not already green-ish
+4. Add some custom biomes to the game?
+    Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
 
 Don't want to duplicate things PVJ does because they do them just fine. Work on things PVJ does NOT do instead
