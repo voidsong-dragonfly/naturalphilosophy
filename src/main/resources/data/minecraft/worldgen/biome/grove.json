@@ -81,7 +81,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_grove"
+      "naturalphilosophy:mountain_supertype/grove_type/snowy_copses",
+      "naturalphilosophy:mountain_supertype/grove_type/snowy_undergrowth"
     ],
     [
       "minecraft:freeze_top_layer"

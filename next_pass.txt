@@ -9,8 +9,9 @@
 ✓ 8. Water colors from Bedrock as necessary
 ✓ 9. Fix jungle bushes spawning too deep in water
 ✓ 10. Fix flat surface rule not properly comparing
-11. Fix Snowy Plains to have more trees? See 'Better snowy biome' for more information, as well as possibly tinting leaves white in those biomes or during snowfall?
+✓ 11. Fix Snowy Plains to have more trees? See 'Better snowy biome' for more information, as well as possibly tinting leaves white in those biomes or during snowfall?
 ✓ 12. Fix blocks not having loot tables
+✓ 13. Fix Grove trees being mostly Minecraft-native trees still
 
 
 
@@ -23,5 +24,5 @@
 3. Changes to cave biomes to make them look better?
     Glowing light blue mushrooms for Deep Dark
     Water color changes for Lush Caves if their water is not already green-ish
-    
+
 Don't want to duplicate things PVJ does because they do them just fine. Work on things PVJ does NOT do instead
