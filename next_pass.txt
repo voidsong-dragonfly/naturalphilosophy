@@ -1,6 +1,7 @@
+1.1.0 & 1.2.0:
 ✓ 0. Mushrooms! Removed these on first pass by mistake
 ✓ 1. Berries! These need to be in more biomes (Birch Forest)
-2. Moss
+✓ 2. Moss
 3. Dead trees
 4. Roots to some trees (jungle)
 ✓ 5. More block variations in jungle surface rules
@@ -12,8 +13,12 @@
 ✓ 11. Fix Snowy Plains to have more trees? See 'Better snowy biome' for more information, as well as possibly tinting leaves white in those biomes or during snowfall?
 ✓ 12. Fix blocks not having loot tables
 ✓ 13. Fix Grove trees being mostly Minecraft-native trees still
+14. Revisit Mushroom Island, possibly? How much can I really do for the biome?
 
-
+1.3.0:
+1. Dead trees
+2. Roots to some trees (jungle)
+3. Revisit Mushroom Island, possibly? How much can I really do for the biome?
 
 2.0.0:
 1. Pale Garden up to Natural Philosophy standards
