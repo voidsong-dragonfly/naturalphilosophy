@@ -4,6 +4,20 @@
     "config": {
       "features": [
         {
+          "chance": 0.1,
+          "feature": {
+            "feature": "naturalphilosophy:mushrooms/brown_mushroom",
+            "placement": [ ]
+          }
+        },
+        {
+          "chance": 0.1,
+          "feature": {
+            "feature": "naturalphilosophy:mushrooms/red_mushroom",
+            "placement": [ ]
+          }
+        },
+        {
           "chance": 0.4,
           "feature": {
             "feature": "minecraft:huge_red_mushroom",
@@ -41,16 +55,13 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:not",
-        "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            -1,
-            0
-          ],
-          "blocks": "minecraft:grass_block"
-        }
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": "minecraft:mycelium"
       }
     }
   ]
