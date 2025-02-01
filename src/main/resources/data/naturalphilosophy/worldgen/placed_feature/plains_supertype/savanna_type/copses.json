@@ -43,7 +43,10 @@
           -1,
           0
         ],
-        "blocks": "minecraft:rooted_dirt"
+        "blocks": [
+          "minecraft:rooted_dirt",
+          "minecraft:coarse_dirt"
+        ]
       }
     }
   ]
