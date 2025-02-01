@@ -16,11 +16,13 @@
 14. Revisit Mushroom Island, possibly? How much can I really do for the biome?
 
 1.3.0:
-1. Revisit Mushroom Island, possibly? How much can I really do for the biome?
-2. Moss patches on Stony Shore
+✓ 1. Make mushroom island vegetation better
+✓ 2. Moss patches on Stony Shore
 3. Fix tide pools for both Beach and Stony Shore
+4. Termite mounds in Savanna biomes?
 
 Unknown:
+1. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
 2. More tree shape changes/decorators
     Roots on some trees, such as jungle and large spruce/pine?
     Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)

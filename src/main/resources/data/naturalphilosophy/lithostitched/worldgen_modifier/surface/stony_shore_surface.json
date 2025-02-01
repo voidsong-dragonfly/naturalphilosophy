@@ -20,23 +20,18 @@
       "then_run": {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:biome",
-          "biome_is": [
-            "minecraft:stony_shore"
-          ]
+          "type": "minecraft:water",
+          "add_stone_depth": false,
+          "offset": -1,
+          "surface_depth_multiplier": 0
         },
         "then_run": {
           "type": "minecraft:condition",
           "if_true": {
-            "type": "minecraft:not",
-            "invert": {
-              "type": "minecraft:y_above",
-              "add_stone_depth": true,
-              "anchor": {
-                "absolute": 74
-              },
-              "surface_depth_multiplier": 1
-            }
+            "type": "minecraft:biome",
+            "biome_is": [
+              "minecraft:stony_shore"
+            ]
           },
           "then_run": {
             "type": "minecraft:sequence",
@@ -60,37 +55,156 @@
               {
                 "type": "minecraft:condition",
                 "if_true": {
-                  "type": "minecraft:noise_threshold",
-                  "max_threshold": 1.7976931348623157E308,
-                  "min_threshold": 1.5,
-                  "noise": "naturalphilosophy:surface_randomness"
+                  "type": "minecraft:not",
+                  "invert": {
+                    "type": "minecraft:y_above",
+                    "add_stone_depth": true,
+                    "anchor": {
+                      "absolute": 74
+                    },
+                    "surface_depth_multiplier": 1
+                  }
                 },
                 "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:mossy_cobblestone"
-                  }
+                  "type": "minecraft:sequence",
+                  "sequence": [
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 1.625,
+                        "noise": "naturalphilosophy:surface_randomness"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:stone"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 1.375,
+                        "noise": "naturalphilosophy:surface_randomness"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:mossy_cobblestone"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 0.625,
+                        "noise": "naturalphilosophy:surface_randomness"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:cobblestone"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:gravel"
+                      }
+                    }
+                  ]
                 }
               },
               {
                 "type": "minecraft:condition",
                 "if_true": {
-                  "type": "minecraft:noise_threshold",
-                  "max_threshold": 1.7976931348623157E308,
-                  "min_threshold": 0.625,
-                  "noise": "naturalphilosophy:surface_randomness"
+                  "type": "minecraft:y_above",
+                  "add_stone_depth": true,
+                  "anchor": {
+                    "absolute": 74
+                  },
+                  "surface_depth_multiplier": 1
                 },
                 "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:cobblestone"
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1.7976931348623157E308,
+                    "min_threshold": 0.25,
+                    "noise": "naturalphilosophy:surface_small"
+                  },
+                  "then_run": {
+                    "type": "minecraft:sequence",
+                    "sequence": [
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 1.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:moss_block"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 0.625,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:mossy_cobblestone"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": -0.25,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:mossy_cobblestone"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": -0.625,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:gravel"
+                          }
+                        }
+                      }
+                    ]
                   }
-                }
-              },
-              {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:gravel"
                 }
               }
             ]
