@@ -19,9 +19,9 @@
 ✓ 1. Make mushroom island vegetation better
 ✓ 2. Moss patches on Stony Shore
 ✓ 3. -Fix- REMOVE tide pools for both Beach and Stony Shore
-4. Termite mounds in Savanna biomes?
+4. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
 
-Unknown:
+Unknown Timeline:
 1. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
 2. More tree shape changes/decorators
     Roots on some trees, such as jungle and large spruce/pine?
@@ -37,6 +37,9 @@ Unknown:
     Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
     Add some ground vegetation maybe?
 2. Nether biomes?
+    Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
+    Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
+    Possibly add soul sandstone? or at least when Quark is there, do that?
 3. Changes to cave biomes to make them look better?
     Glowing light blue mushrooms for Deep Dark
     Water color changes for Lush Caves if their water is not already green-ish
