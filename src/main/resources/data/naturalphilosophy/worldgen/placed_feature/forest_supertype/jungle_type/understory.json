@@ -28,6 +28,21 @@
       "max_water_depth": 2
     },
     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_fluids",
+          "offset": [
+            0,
+            2,
+            0
+          ],
+          "fluids": "#minecraft:water"
+        }
+      }
+    },
+    {
       "type": "minecraft:biome"
     }
   ]
