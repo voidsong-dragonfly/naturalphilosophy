@@ -18,7 +18,7 @@
 1.3.0:
 ✓ 1. Make mushroom island vegetation better
 ✓ 2. Moss patches on Stony Shore
-3. Fix tide pools for both Beach and Stony Shore
+✓ 3. -Fix- REMOVE tide pools for both Beach and Stony Shore
 4. Termite mounds in Savanna biomes?
 
 Unknown:
@@ -29,6 +29,7 @@ Unknown:
     Changes to tree shapes to make them feel more alive? This may make a greater departure from Vanilla minecraft than I want
     A branch decorator to make Redwood-esque trees look better?
 3. Rocks or more intelligent water features?
+4. Revisit tide pools with custom feature?
 
 2.0.0:
 1. Pale Garden up to Natural Philosophy standards
