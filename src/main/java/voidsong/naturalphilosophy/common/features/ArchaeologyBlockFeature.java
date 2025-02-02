@@ -3,6 +3,8 @@ package voidsong.naturalphilosophy.common.features;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -24,7 +26,7 @@ public class ArchaeologyBlockFeature extends Feature<ArchaeologyBlockFeature.Arc
         BlockPos pos = context.origin();
         BlockState state = configuration.provider().getState(context.random(), pos);
         boolean placed = level.setBlock(pos, state, 2);
-        level.getBlockEntity(pos, BlockEntityType.BRUSHABLE_BLOCK).ifPresent(brushableBlockEntity -> brushableBlockEntity.setLootTable(configuration.table(), pos.asLong()));
+        level.getBlockEntity(pos, BlockEntityType.BRUSHABLE_BLOCK).ifPresent(brushableBlockEntity -> brushableBlockEntity.setLootTable(ResourceKey.create(Registries.LOOT_TABLE, configuration.table()), pos.asLong()));
         return placed;
     }
 
