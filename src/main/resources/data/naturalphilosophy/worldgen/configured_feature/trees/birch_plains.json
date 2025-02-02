@@ -14,10 +14,8 @@
       "radius": 1,
       "crown_height": {
         "type": "minecraft:uniform",
-        "value": {
-          "max_inclusive": 9,
-          "min_inclusive": 7
-        }
+        "max_inclusive": 9,
+        "min_inclusive": 7
       }
     },
     "foliage_provider": {

@@ -92,8 +92,7 @@
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 8,
-              "treasure": true
+              "levels": 8
             },
             {
               "function": "minecraft:set_damage",
@@ -112,8 +111,7 @@
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 12,
-              "treasure": true
+              "levels": 12
             },
             {
               "function": "minecraft:set_damage",
@@ -132,8 +130,7 @@
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "treasure": true
+              "levels": 20
             },
             {
               "function": "minecraft:set_damage",

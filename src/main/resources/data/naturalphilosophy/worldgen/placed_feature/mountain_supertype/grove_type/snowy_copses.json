@@ -16,7 +16,7 @@
             "feature": "naturalphilosophy:trees/spruce_thick",
             "placement": []
           }
-        },
+        }
       ],
       "default": {
         "feature": "naturalphilosophy:trees/spruce_stunted",
