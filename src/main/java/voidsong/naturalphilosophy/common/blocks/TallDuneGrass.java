@@ -2,7 +2,6 @@ package voidsong.naturalphilosophy.common.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -11,7 +10,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.neoforged.neoforge.common.PlantType;
 
 import javax.annotation.Nonnull;
 
@@ -37,12 +35,6 @@ public class TallDuneGrass extends DoublePlantBlock {
         } else {
             return below.getBlock() == this && below.getValue(HALF) == DoubleBlockHalf.LOWER;
         }
-    }
-
-    @Override
-    @Nonnull
-    public PlantType getPlantType(@Nonnull BlockGetter world, @Nonnull BlockPos pos) {
-        return PlantType.DESERT;
     }
 
     @Override

@@ -18,6 +18,7 @@ import java.util.Set;
 /**
  * Inspired by code from Apollounknowndev in Simple Snowy Fix, and updated to 1.20.4
  */
+@SuppressWarnings("unused")
 @Mixin(TreeFeature.class)
 public class SnowyTreesMixin {
     @Inject(

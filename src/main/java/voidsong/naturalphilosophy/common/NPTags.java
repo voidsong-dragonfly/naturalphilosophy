@@ -13,7 +13,7 @@ public class NPTags {
         public static final TagKey<Block> WATER_PLANTS = tag("water_plant_survivable");
 
         private static TagKey<Block> tag(@Nonnull String name) {
-            return BlockTags.create(new ResourceLocation(NaturalPhilosophy.MODID, name));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NaturalPhilosophy.MODID, name));
         }
     }
 }

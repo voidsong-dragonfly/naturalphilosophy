@@ -1,6 +1,7 @@
 package voidsong.naturalphilosophy.mixin;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,7 +22,7 @@ public abstract class SurfaceRulesMixin {
     public interface ConditionSource extends Function<SurfaceRules.Context, SurfaceRules.Condition> {
         @Inject(method = "bootstrap", at = @At("HEAD"))
         private static void onBootstrap(
-            Registry<Codec<? extends SurfaceRules.ConditionSource>> pRegistry,
+            Registry<MapCodec<? extends SurfaceRules.ConditionSource>> pRegistry,
             CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
             SurfaceRules.register(pRegistry, "cliff", NPSurfaceRules.Cliff.CODEC);
             SurfaceRules.register(pRegistry, "flat", NPSurfaceRules.Flat.CODEC);

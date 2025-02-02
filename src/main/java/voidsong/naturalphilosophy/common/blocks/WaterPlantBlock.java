@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.neoforged.neoforge.common.PlantType;
 import voidsong.naturalphilosophy.common.NPTags;
 
 import javax.annotation.Nonnull;
@@ -49,12 +48,6 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
         } else {
             return super.canSurvive(state, level, pos);
         }
-    }
-
-    @Override
-    @Nonnull
-    public PlantType getPlantType(@Nonnull BlockGetter level, @Nonnull BlockPos pos) {
-        return PlantType.BEACH;
     }
 
     @Override

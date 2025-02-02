@@ -4,12 +4,13 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.NPBlocks;
 
-@Mod.EventBusSubscriber(modid = NaturalPhilosophy.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@SuppressWarnings("unused")
+@EventBusSubscriber(modid = NaturalPhilosophy.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ColorHandler {
 
     @SubscribeEvent

@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -13,7 +12,6 @@ import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.neoforged.neoforge.common.PlantType;
 import voidsong.naturalphilosophy.common.NPBlocks;
 
 import javax.annotation.Nonnull;
@@ -36,12 +34,6 @@ public class DuneGrass extends TallGrassBlock {
         BlockState below = level.getBlockState(pos.below());
         if (state.getBlock() != this) return super.canSurvive(state, level, pos);
         return state.getValue(NPProperties.RED_SAND) ? below.is(Blocks.RED_SAND) : below.is(Blocks.SAND);
-    }
-
-    @Override
-    @Nonnull
-    public PlantType getPlantType(@Nonnull BlockGetter getter, @Nonnull BlockPos pos) {
-        return PlantType.DESERT;
     }
 
     @Override
