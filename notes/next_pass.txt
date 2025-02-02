@@ -19,7 +19,6 @@
 ✓ 1. Make mushroom island vegetation better
 ✓ 2. Moss patches on Stony Shore
 ✓ 3. -Fix- REMOVE tide pools for both Beach and Stony Shore
-4. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
 
 Unknown Timeline:
 1. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
@@ -30,21 +29,26 @@ Unknown Timeline:
     A branch decorator to make Redwood-esque trees look better?
 3. Rocks or more intelligent water features?
 4. Revisit tide pools with custom feature?
+5. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
+
 
 2.0.0:
-0. Check out "minecraft:vines" feature I disabled in 1.0.0
+1. Nether biomes?
+    Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
+    Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
+    Possibly add soul sandstone? or at least when Quark is there, do that?
+2. Changes to cave biomes to make them look better?
+    Glowing light blue mushrooms for Deep Dark
+    Water color changes for Lush Caves if their water is not already green-ish
+
+3.0.0
 1. Pale Garden up to Natural Philosophy standards
     Pale garden is already pretty good, add more moss and more grass?
     Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
     Add some ground vegetation maybe?
-2. Nether biomes?
-    Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
-    Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
-    Possibly add soul sandstone? or at least when Quark is there, do that?
-3. Changes to cave biomes to make them look better?
-    Glowing light blue mushrooms for Deep Dark
-    Water color changes for Lush Caves if their water is not already green-ish
-4. Add some custom biomes to the game?
+2. Add some custom biomes to the game?
     Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
+
+
 
 Don't want to duplicate things PVJ does because they do them just fine. Work on things PVJ does NOT do instead
