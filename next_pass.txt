@@ -32,6 +32,7 @@ Unknown Timeline:
 4. Revisit tide pools with custom feature?
 
 2.0.0:
+0. Check out "minecraft:vines" feature I disabled in 1.0.0
 1. Pale Garden up to Natural Philosophy standards
     Pale garden is already pretty good, add more moss and more grass?
     Don't want to make the trees too tall, or else breaking creaking hearts might become much harder

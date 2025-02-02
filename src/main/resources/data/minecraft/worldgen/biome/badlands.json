@@ -6,6 +6,7 @@
       "minecraft:canyon"
     ]
   },
+  "creature_spawn_probability": 0.03,
   "downfall": 0.0,
   "effects": {
     "fog_color": 12638463,
@@ -62,6 +63,7 @@
       "minecraft:ore_redstone",
       "minecraft:ore_redstone_lower",
       "minecraft:ore_diamond",
+      "minecraft:ore_diamond_medium",
       "minecraft:ore_diamond_large",
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
@@ -83,7 +85,9 @@
       "naturalphilosophy:desert_supertype/badlands_type/highlands_vegetation",
       "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation"
     ],
-    []
+    [
+      "minecraft:freeze_top_layer"
+    ]
   ],
   "has_precipitation": false,
   "spawn_costs": {},
@@ -97,7 +101,14 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:armadillo",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      }
+    ],
     "misc": [],
     "monster": [
       {
