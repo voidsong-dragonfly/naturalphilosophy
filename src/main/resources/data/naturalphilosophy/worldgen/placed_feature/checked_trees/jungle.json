@@ -116,7 +116,7 @@
                     -1,
                     1
                   ],
-                  "tag": "forge:cobblestone"
+                  "tag": "c:cobblestones"
                 },
                 {
                   "type": "minecraft:matching_block_tag",
@@ -125,7 +125,7 @@
                     -1,
                     0
                   ],
-                  "tag": "forge:cobblestone"
+                  "tag": "c:cobblestones"
                 },
                 {
                   "type": "minecraft:matching_block_tag",
@@ -134,7 +134,7 @@
                     -1,
                     -1
                   ],
-                  "tag": "forge:stone_bricks"
+                  "tag": "minecraft:stone_bricks"
                 },
                 {
                   "type": "minecraft:matching_block_tag",
@@ -143,7 +143,7 @@
                     -1,
                     0
                   ],
-                  "tag": "forge:cobblestone"
+                  "tag": "c:cobblestones"
                 }
               ]
             }

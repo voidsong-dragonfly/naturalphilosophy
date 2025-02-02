@@ -1,7 +1,7 @@
 {
   "values": [
     "#minecraft:dirt",
-    "#forge:sand",
+    "#c:sands",
     "minecraft:clay"
   ]
 }
