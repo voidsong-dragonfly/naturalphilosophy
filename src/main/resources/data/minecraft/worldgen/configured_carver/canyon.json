@@ -16,7 +16,13 @@
     },
     "vertical_rotation": 0,
     "y": {
-      "absolute": 5000
+      "type": "minecraft:uniform",
+      "min_inclusive": {
+        "absolute": 2030
+      },
+      "max_inclusive": {
+        "absolute": 2031
+      }
     },
     "yScale": 0
   }
