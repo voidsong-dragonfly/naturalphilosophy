@@ -75,9 +75,7 @@
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
-    [
-      "minecraft:glow_lichen"
-    ],
+    [],
     [
       "minecraft:freeze_top_layer"
     ]

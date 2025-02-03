@@ -38,8 +38,18 @@ Unknown Timeline:
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
 2. Changes to cave biomes to make them look better?
-    Glowing light blue mushrooms for Deep Dark
-    Water color changes for Lush Caves if their water is not already green-ish
+    Water color changes for Lush Caves (greenish) and Deep Darp (deep blue-black inky)
+    Ferns in lush caves, as well as increased changes of Glow Lichen and lilypads
+    More particles in cave biomes? Spore blossom, dripstone, etc?
+    Seagrass in aquifers in lush caves biomes
+    Mushrooms in Dripstone Caves
+    Minor vegetation tweaks in Lush Caves
+    ✓ Lots more glow lichen in every biome, specifically in large patches
+    Smooth basalt mixed with deepslate around lava pools
+    Mossy cobblestone mixed with cobblestone around water pools
+
+    Gravel or cobblestone on the floors of some caves
+    Water & lava features, if I can get them working
 
 3.0.0
 1. Pale Garden up to Natural Philosophy standards

@@ -1,0 +1,6 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "minecraft:glow_lichen",
+  "step": "vegetal_decoration"
+}
