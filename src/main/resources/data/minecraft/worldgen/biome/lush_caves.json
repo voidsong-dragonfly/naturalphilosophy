@@ -86,10 +86,10 @@
     [
       "minecraft:glow_lichen",
       "naturalphilosophy:cavern_supertype/lush_type/ceiling_vegetation",
+      "naturalphilosophy:cavern_supertype/lush_type/spore_blossoms",
       "naturalphilosophy:cavern_supertype/lush_type/vines",
       "naturalphilosophy:cavern_supertype/lush_type/clay_banks",
       "naturalphilosophy:cavern_supertype/lush_type/vegetation",
-      "naturalphilosophy:cavern_supertype/lush_type/spore_blossoms",
       "minecraft:rooted_azalea_tree"
     ],
     [

@@ -6,6 +6,15 @@
       "entries": [
         {
           "data": {
+            "Name": "minecraft:glow_lichen",
+            "Properties": {
+              "down": "true"
+            }
+          },
+          "weight": 15
+        },
+        {
+          "data": {
             "Name": "minecraft:flowering_azalea"
           },
           "weight": 7
@@ -20,13 +29,13 @@
           "data": {
             "Name": "minecraft:moss_carpet"
           },
-          "weight": 25
+          "weight": 20
         },
         {
           "data": {
             "Name": "minecraft:fern"
           },
-          "weight": 45
+          "weight": 40
         },
         {
           "data": {
@@ -42,15 +51,6 @@
             "Name": "minecraft:short_grass"
           },
           "weight": 5
-        },
-        {
-          "data": {
-            "Name": "minecraft:tall_grass",
-            "Properties": {
-              "half": "lower"
-            }
-          },
-          "weight": 1
         }
       ]
     }
