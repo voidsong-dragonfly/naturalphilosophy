@@ -41,13 +41,11 @@ Unknown Timeline:
     ✓ Water color changes for Lush Caves (greenish) and Deep Darp (deep blue-black inky)
     ✓ Ferns in lush caves, as well as increased changes of Glow Lichen and lilypads
     ✓ More particles in cave biomes? Spore blossom, ash in deep dark, etc?
-    Mushrooms in Dripstone Caves
+    ✓ Mushrooms in Dripstone Caves
     ✓ Minor vegetation tweaks in Lush Caves
     ✓ Lots more glow lichen in every biome, specifically in large patches
     Smooth basalt mixed with deepslate around lava pools
-    Mossy cobblestone mixed with cobblestone around water pools
 
-    Gravel or cobblestone on the floors of some caves
     Water & lava features, if I can get them working
 
 3.0.0
