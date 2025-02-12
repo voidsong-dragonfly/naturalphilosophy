@@ -18,7 +18,7 @@
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 48,
+      "noise_to_count_ratio": 40,
       "noise_factor": 0.5,
       "noise_offset": 0.2
     },
