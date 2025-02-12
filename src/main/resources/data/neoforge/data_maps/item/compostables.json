@@ -1,0 +1,13 @@
+{
+  "values": {
+    "naturalphilosophy:dune_grass": {
+      "chance": 0.3
+    },
+    "naturalphilosophy:cattails": {
+      "chance": 0.65
+    },
+    "naturalphilosophy:rushes": {
+      "chance": 0.65
+    }
+  }
+}

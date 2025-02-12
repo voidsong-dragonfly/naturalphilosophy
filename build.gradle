@@ -127,6 +127,10 @@ dependencies {
     // Example mod dependency using a file as dependency
     implementation files("libs/lithostitched-neoforge-${minecraft_version}-${lithostitched_version}.jar")
 
+
+    //runtimeOnly "curse.maven:farmersdelight-398521:6154807" // Farmer's Delight
+
+
     // Example project dependency using a sister or child project:
     // implementation project(":myproject")
 
