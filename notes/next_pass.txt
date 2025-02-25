@@ -30,14 +30,14 @@ Unknown Timeline:
 3. Rocks or more intelligent water features?
 4. Revisit tide pools with custom feature?
 5. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
-
-
-2.0.0:
-1. Nether biomes?
+6. Nether biomes?
     Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
-2. Changes to cave biomes to make them look better?
+
+
+2.0.0:
+1. Changes to cave biomes to make them look better?
     ✓ Water color changes for Lush Caves (greenish) and Deep Darp (deep blue-black inky)
     ✓ Ferns in lush caves, as well as increased changes of Glow Lichen and lilypads
     ✓ More particles in cave biomes? Spore blossom, ash in deep dark, etc?
@@ -47,6 +47,15 @@ Unknown Timeline:
     Smooth basalt mixed with deepslate around lava pools
 
     Water & lava features, if I can get them working
+
+2.2.0:
+1. Look at what Natures Spirit does for their redwoods biomes to improve old growth pine taiga?
+2. Look at reducing the trees in plains copses and possibly adding a few here and there outside them
+✓ 3. Snowy plains should have yellow grass, maybe snowy taiga?
+4. More water in dripstone caves maybe?
+5. Keep plains trees OUT of normal structures. possibly via second under-layer?
+✓ 6. Fix forest path track application level
+7. Possibly add more moss to mossy forest&taiga areas?
 
 3.0.0
 1. Pale Garden up to Natural Philosophy standards
