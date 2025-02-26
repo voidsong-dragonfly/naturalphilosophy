@@ -19,7 +19,7 @@
       "hanging_leaves_chance": 0.125,
       "hanging_leaves_extension_chance": 0.0,
       "height": 4,
-      "offset": 0,
+      "offset": 1,
       "radius": 4,
       "wide_bottom_layer_hole_chance": 0.25
     },
