@@ -82,7 +82,8 @@
     ],
     [
       "naturalphilosophy:desert_supertype/badlands_type/highlands_vegetation",
-      "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation"
+      "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation",
+      "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation_sparse"
     ],
     [
       "minecraft:freeze_top_layer"
