@@ -10,8 +10,6 @@
   "downfall": 0.0,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 10387789,
-    "grass_color": 9470285,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -82,7 +80,8 @@
     ],
     [
       "naturalphilosophy:desert_supertype/badlands_type/highlands_vegetation",
-      "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation"
+      "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation",
+      "naturalphilosophy:desert_supertype/badlands_type/basin_vegetation_sparse"
     ],
     [
       "minecraft:freeze_top_layer"
