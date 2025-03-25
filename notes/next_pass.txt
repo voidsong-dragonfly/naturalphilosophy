@@ -49,13 +49,17 @@ Unknown Timeline:
     Water & lava features, if I can get them working
 
 2.2.0:
-1. Look at what Natures Spirit does for their redwoods biomes to improve old growth pine taiga?
-2. Look at reducing the trees in plains copses and possibly adding a few here and there outside them
+✓ 1. Look at what Natures Spirit does for their redwoods biomes to improve old growth pine taiga?
+    Doesn't do it in a reasonable way. Do it like BoP does and add branches, maybe?
+✓ 2. Look at reducing the trees in plains copses and possibly adding a few here and there outside them
 ✓ 3. Snowy plains should have yellow grass, maybe snowy taiga?
 4. More water in dripstone caves maybe?
-5. Keep plains trees OUT of normal structures. possibly via second under-layer?
+✓ 5. Keep plains trees OUT of normal structures. possibly via second under-layer?
 ✓ 6. Fix forest path track application level
 7. Possibly add more moss to mossy forest&taiga areas?
+✓ 8. Fix snowy biomes snow & mixin issues
+✓ 9. Fix cliff stone visuals & lips
+✓ 10. Clean up internals incl. namespaces
 
 3.0.0
 1. Pale Garden up to Natural Philosophy standards
@@ -64,6 +68,7 @@ Unknown Timeline:
     Add some ground vegetation maybe?
 2. Add some custom biomes to the game?
     Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
+    Deep oceans are a biome BELOW ocean rather than existing on the surface
 
 
 
