@@ -24,8 +24,8 @@ public abstract class SurfaceRulesMixin {
         private static void onBootstrap(
             Registry<MapCodec<? extends SurfaceRules.ConditionSource>> pRegistry,
             CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
-            SurfaceRules.register(pRegistry, "cliff", NPSurfaceRules.Cliff.CODEC);
-            SurfaceRules.register(pRegistry, "flat", NPSurfaceRules.Flat.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff", NPSurfaceRules.Cliff.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPSurfaceRules.Flat.CODEC);
         }
     }
 

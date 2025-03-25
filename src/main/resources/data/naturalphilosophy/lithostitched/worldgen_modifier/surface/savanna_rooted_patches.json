@@ -8,7 +8,7 @@
     "if_true": {
       "type": "minecraft:not",
       "invert": {
-        "type": "minecraft:cliff"
+        "type": "naturalphilosophy:cliff"
       }
     },
     "then_run": {

@@ -6,7 +6,7 @@
   "surface_rule": {
     "type": "minecraft:condition",
     "if_true": {
-      "type": "minecraft:cliff"
+      "type": "naturalphilosophy:cliff"
     },
     "then_run": {
       "type": "minecraft:condition",
