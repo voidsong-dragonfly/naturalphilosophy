@@ -18,8 +18,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import voidsong.naturalphilosophy.common.surfacerules.NPSurfaceRules;
-import voidsong.naturalphilosophy.common.surfacerules.ContextExtension;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.ContextExtension;
 
 import java.util.function.Function;
 

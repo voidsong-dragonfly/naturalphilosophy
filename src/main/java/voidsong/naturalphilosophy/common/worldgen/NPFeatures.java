@@ -1,11 +1,11 @@
-package voidsong.naturalphilosophy.common;
+package voidsong.naturalphilosophy.common.worldgen;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
-import voidsong.naturalphilosophy.common.features.ArchaeologyBlockFeature;
+import voidsong.naturalphilosophy.common.worldgen.features.ArchaeologyBlockFeature;
 
 @SuppressWarnings("unused")
 public class NPFeatures {

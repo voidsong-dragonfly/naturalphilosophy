@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.common.surfacerules;
+package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.util.KeyDispatchDataCodec;

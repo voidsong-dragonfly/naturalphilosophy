@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.common.features;
+package voidsong.naturalphilosophy.common.worldgen.features;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
