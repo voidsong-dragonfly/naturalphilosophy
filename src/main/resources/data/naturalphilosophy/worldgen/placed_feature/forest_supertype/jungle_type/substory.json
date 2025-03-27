@@ -4,11 +4,11 @@
     "config": {
       "features": [
         {
-          "chance": 0.15,
+          "chance": 0.1,
           "feature": "naturalphilosophy:checked_trees/oak_canopy"
         },
         {
-          "chance": 0.05,
+          "chance": 0.1,
           "feature": "naturalphilosophy:checked_trees/jungle"
         }
       ],

@@ -22,7 +22,8 @@
           "minecraft:grass_block",
           "minecraft:podzol",
           "minecraft:coarse_dirt",
-          "minecraft:rooted_dirt"
+          "minecraft:rooted_dirt",
+          "minecraft:mud"
         ],
         "muddy_roots_in": [],
         "muddy_roots_provider": {
