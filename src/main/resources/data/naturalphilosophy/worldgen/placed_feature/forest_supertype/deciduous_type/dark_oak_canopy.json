@@ -8,11 +8,11 @@
           "feature": "naturalphilosophy:checked_trees/dark_oak_emergent"
         },
         {
-          "chance": 0.125,
+          "chance": 0.1875,
           "feature": "naturalphilosophy:checked_trees/dark_oak_full_roots"
         },
         {
-          "chance": 0.25,
+          "chance": 0.375,
           "feature": "naturalphilosophy:checked_trees/dark_oak_roots"
         }
       ],

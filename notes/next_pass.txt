@@ -35,7 +35,7 @@ Unknown Timeline:
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
 7. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
-8. Make sure tree'd hillsides are properly covered in more stunted trees
+✓ 8. Make sure tree'd hillsides are properly covered in more stunted trees
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
