@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.0625,
+          "chance": 0.03125,
           "feature": "naturalphilosophy:checked_trees/pine_thick"
         }
       ],
@@ -14,7 +14,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 32
+      "count": 20
     },
     {
       "type": "minecraft:in_square"

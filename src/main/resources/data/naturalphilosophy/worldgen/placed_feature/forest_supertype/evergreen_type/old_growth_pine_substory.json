@@ -4,24 +4,24 @@
     "config": {
       "features": [
         {
-          "chance": 0.0625,
-          "feature": "naturalphilosophy:checked_trees/pine"
+          "chance": 0.875,
+          "feature": "naturalphilosophy:checked_trees/pine_thick"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/spruce_stunted"
+      "default": "naturalphilosophy:checked_trees/pine"
     }
   },
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 2
+      "count": 24
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR_WG"
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:surface_water_depth_filter",

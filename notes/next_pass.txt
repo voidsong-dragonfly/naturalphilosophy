@@ -21,21 +21,12 @@
 ✓ 3. -Fix- REMOVE tide pools for both Beach and Stony Shore
 
 Unknown Timeline:
-1. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
-2. More tree shape changes/decorators
-    Roots on some trees, such as jungle and large spruce/pine?
-    Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
-    Changes to tree shapes to make them feel more alive? This may make a greater departure from Vanilla minecraft than I want
-    A branch decorator to make Redwood-esque trees look better?
-3. Rocks or more intelligent water features?
-4. Revisit tide pools with custom feature?
-5. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
-6. Nether biomes?
+1. Revisit tide pools with custom feature? => OR, leave to PVJ?
+2. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
+3. Nether biomes?
     Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
-7. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
-✓ 8. Make sure tree'd hillsides are properly covered in more stunted trees
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
@@ -47,14 +38,11 @@ Unknown Timeline:
     ✓ Lots more glow lichen in every biome, specifically in large patches
     Smooth basalt mixed with deepslate around lava pools
 
-    Water & lava features, if I can get them working
-
 2.2.0:
 ✓ 1. Look at what Natures Spirit does for their redwoods biomes to improve old growth pine taiga?
     Doesn't do it in a reasonable way. Do it like BoP does and add branches, maybe?
 ✓ 2. Look at reducing the trees in plains copses and possibly adding a few here and there outside them
 ✓ 3. Snowy plains should have yellow grass, maybe snowy taiga?
-4. More water in dripstone caves maybe?
 ✓ 5. Keep plains trees OUT of normal structures. possibly via second under-layer?
 ✓ 6. Fix forest path track application level
 ✓ 7. Possibly add more moss to mossy forest&taiga areas?
@@ -63,6 +51,25 @@ Unknown Timeline:
 ✓ 10. Clean up internals incl. namespaces
 
 3.0.0
+1. More tree shape changes/decorators
+    ✓ Roots on some trees, such as jungle and large spruce/pine?
+    Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
+    ✓ A branch decorator to make Redwood-esque trees look better?
+    A branch decorator for jungle trees
+2. More water in caves, via waterfalls and such?
+    Water & lava springs, if I can get them working
+    Pools generating, but hopefully not in the side of caves
+3. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
+    Mix of coarse and rooted?
+    Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
+    Can then use that to place ferns as necessary underneath the cliffs
+✓ 4. Make sure tree'd hillsides are properly covered in more stunted trees
+5. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
+6. Other cave tweaks?
+    Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
+    Rocks inside of caves to break up their silhoette a little?
+
+4.0.0
 1. Pale Garden up to Natural Philosophy standards
     Pale garden is already pretty good, add more moss and more grass?
     Don't want to make the trees too tall, or else breaking creaking hearts might become much harder

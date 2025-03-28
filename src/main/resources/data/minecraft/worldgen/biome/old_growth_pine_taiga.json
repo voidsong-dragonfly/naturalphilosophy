@@ -79,6 +79,7 @@
     ],
     [
       "naturalphilosophy:forest_supertype/evergreen_type/old_growth_pine_overstory",
+      "naturalphilosophy:forest_supertype/evergreen_type/old_growth_pine_substory",
       "naturalphilosophy:forest_supertype/evergreen_type/old_growth_pine_undergrowth",
       "naturalphilosophy:forest_supertype/sweet_berries",
       "naturalphilosophy:forest_supertype/evergreen_type/sweet_berries_shaded",
