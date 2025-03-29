@@ -3,7 +3,7 @@
 ✓ 1. Berries! These need to be in more biomes (Birch Forest)
 ✓ 2. Moss
 3. Dead trees
-4. Roots to some trees (jungle)
+✓ 4. Roots to some trees (jungle)
 ✓ 5. More block variations in jungle surface rules
 ✓ 6. Fix Wooded Badlands surface rules to properly replace normal Wooded Badlands on cliffs
 ✓ 7. Fix cocoa beans not being on Jungle trees
@@ -27,6 +27,8 @@ Unknown Timeline:
     Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
+4. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
+5. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
@@ -36,7 +38,6 @@ Unknown Timeline:
     ✓ Mushrooms in Dripstone Caves
     ✓ Minor vegetation tweaks in Lush Caves
     ✓ Lots more glow lichen in every biome, specifically in large patches
-    Smooth basalt mixed with deepslate around lava pools
 
 2.2.0:
 ✓ 1. Look at what Natures Spirit does for their redwoods biomes to improve old growth pine taiga?
@@ -51,13 +52,12 @@ Unknown Timeline:
 ✓ 10. Clean up internals incl. namespaces
 
 3.0.0
-1. More tree shape changes/decorators
+✓ 1. More tree shape changes/decorators
     ✓ Roots on some trees, such as jungle and large spruce/pine?
-    Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
     ✓ A branch decorator to make Redwood-esque trees look better?
     ✓ A branch decorator for jungle trees
 2. More water in caves, via waterfalls and such?
-    Water & lava springs, if I can get them working
+    ✓ Water & lava springs, if I can get them working
     Pools generating, but hopefully not in the side of caves
 3. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
     Mix of coarse and rooted?

@@ -1,0 +1,15 @@
+{
+  "type": "naturalphilosophy:falling_spring",
+  "config": {
+    "hole_count": 2,
+    "requires_block_below": false,
+    "rock_count": 4,
+    "state": {
+      "Name": "minecraft:water",
+      "Properties": {
+        "falling": "true"
+      }
+    },
+    "valid_blocks": "#naturalphilosophy:spring_water_replaceable"
+  }
+}
