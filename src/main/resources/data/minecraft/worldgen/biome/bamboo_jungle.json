@@ -78,6 +78,7 @@
     ],
     [
       "naturalphilosophy:forest_supertype/jungle_type/overstory",
+      "naturalphilosophy:forest_supertype/jungle_type/sparse_overstory",
       "naturalphilosophy:forest_supertype/jungle_type/substory",
       "naturalphilosophy:forest_supertype/jungle_type/understory",
       "naturalphilosophy:forest_supertype/jungle_type/bamboo_undergrowth",

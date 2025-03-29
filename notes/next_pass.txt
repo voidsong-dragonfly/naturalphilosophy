@@ -55,7 +55,7 @@ Unknown Timeline:
     ✓ Roots on some trees, such as jungle and large spruce/pine?
     Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
     ✓ A branch decorator to make Redwood-esque trees look better?
-    A branch decorator for jungle trees
+    ✓ A branch decorator for jungle trees
 2. More water in caves, via waterfalls and such?
     Water & lava springs, if I can get them working
     Pools generating, but hopefully not in the side of caves

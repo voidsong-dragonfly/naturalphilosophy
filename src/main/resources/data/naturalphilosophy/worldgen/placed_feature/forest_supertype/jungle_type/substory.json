@@ -6,10 +6,6 @@
         {
           "chance": 0.1,
           "feature": "naturalphilosophy:checked_trees/oak_canopy"
-        },
-        {
-          "chance": 0.1,
-          "feature": "naturalphilosophy:checked_trees/jungle"
         }
       ],
       "default": "naturalphilosophy:checked_trees/jungle_substory"
@@ -18,7 +14,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 24
+      "count": 8
     },
     {
       "type": "minecraft:in_square"

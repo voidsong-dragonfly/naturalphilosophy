@@ -54,10 +54,10 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:jungle_foliage_placer",
-      "height": 2,
+      "type": "naturalphilosophy:branched_jungle_foliage_placer",
+      "height": 3,
       "offset": 0,
-      "radius": 2
+      "radius": 3
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
@@ -81,7 +81,7 @@
     "trunk_placer": {
       "type": "minecraft:mega_jungle_trunk_placer",
       "base_height": 32,
-      "height_rand_a": 2,
+      "height_rand_a": 3,
       "height_rand_b": 4
     },
     "trunk_provider": {

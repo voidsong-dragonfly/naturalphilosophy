@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.075,
+          "chance": 0.09375,
           "feature": "naturalphilosophy:checked_trees/jungle_emergent"
         }
       ],
@@ -21,7 +21,7 @@
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR_WG"
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:surface_water_depth_filter",

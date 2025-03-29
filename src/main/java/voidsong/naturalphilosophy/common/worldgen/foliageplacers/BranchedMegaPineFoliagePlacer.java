@@ -15,6 +15,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerTy
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
 import voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers;
 
+import javax.annotation.Nonnull;
+
 public class BranchedMegaPineFoliagePlacer extends MegaPineFoliagePlacer {
 
     public static final MapCodec<BranchedMegaPineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(
@@ -27,16 +29,17 @@ public class BranchedMegaPineFoliagePlacer extends MegaPineFoliagePlacer {
     }
 
     @Override
+    @Nonnull
     protected FoliagePlacerType<?> type() {
         return NPFoliagePlacers.BRANCHED_MEGA_PINE_FOLIAGE_PLACER.get();
     }
 
     @Override
     protected void createFoliage(
-        LevelSimulatedReader level,
-        FoliagePlacer.FoliageSetter blockSetter,
-        RandomSource random,
-        TreeConfiguration config,
+        @Nonnull LevelSimulatedReader level,
+        @Nonnull FoliagePlacer.FoliageSetter blockSetter,
+        @Nonnull RandomSource random,
+        @Nonnull TreeConfiguration config,
         int maxFreeTreeHeight,
         FoliagePlacer.FoliageAttachment attachment,
         int foliageHeight,

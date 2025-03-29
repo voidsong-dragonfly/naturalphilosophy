@@ -54,7 +54,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:jungle_foliage_placer",
+      "type": "naturalphilosophy:branched_jungle_foliage_placer",
       "height": 2,
       "offset": 0,
       "radius": 2
