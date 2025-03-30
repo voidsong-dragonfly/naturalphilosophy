@@ -29,6 +29,13 @@ Unknown Timeline:
     Possibly add soul sandstone? or at least when Quark is there, do that?
 4. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
 5. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
+6. Glow lichen in some biomes, such as Dark Forests?
+7. Fog in Dark Forests? Maybe some 1x1 trees as well?
+8. Dripleaves in swamps, maybe? Could do jungles too
+9. Change up tree types in taigas a little bit? Maybe add some mega pine foliage in there too?
+10. Figure out how Geophilic does their stone spires for coasts
+11. Vines & drooping leaves in Dark Forest biomes
+12. Figure out how Geophilic does termite mounds and use 'em with packed mud
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
@@ -56,9 +63,9 @@ Unknown Timeline:
     ✓ Roots on some trees, such as jungle and large spruce/pine?
     ✓ A branch decorator to make Redwood-esque trees look better?
     ✓ A branch decorator for jungle trees
-2. More water in caves, via waterfalls and such?
+✓ 2. More water in caves, via waterfalls and such?
     ✓ Water & lava springs, if I can get them working
-    Pools generating, but hopefully not in the side of caves
+    ✓ Pools generating in Dripstone Caves, but hopefully not in the side of 'em => Not going to happen, the issue with dripstone caves isn't lack of decoration, it's low spawning range.
 3. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
     Mix of coarse and rooted?
     Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
@@ -66,8 +73,9 @@ Unknown Timeline:
 ✓ 4. Make sure tree'd hillsides are properly covered in more stunted trees
 5. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
 6. Other cave tweaks?
-    Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
-    Rocks inside of caves to break up their silhoette a little?
+    ✓ Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
+    Surface rocks rather than plants for cave detection
+✓ 7. Fix orange terracotta spawning at the top of Badlands biomes
 
 4.0.0
 1. Pale Garden up to Natural Philosophy standards
@@ -77,6 +85,7 @@ Unknown Timeline:
 2. Add some custom biomes to the game?
     Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
     Deep oceans are a biome BELOW ocean rather than existing on the surface
+    Cold desert => gravel desert biome, maybe?
 
 
 
