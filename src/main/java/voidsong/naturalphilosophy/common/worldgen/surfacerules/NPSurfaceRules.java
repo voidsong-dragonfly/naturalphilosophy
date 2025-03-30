@@ -117,7 +117,7 @@ public class NPSurfaceRules {
             int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
             // The check to return false on chunk borders is a massive kludge, but I use this with _water_. I can't afford flowing water....
-            return Math.abs(j2 - i2) == 0 && Math.abs(j1 - i1) == 0 && i1 == i2 && !((k == j || l == j)||(k1 == i || l1 == i));
+            return Math.abs(j2 - i2) == 0 && Math.abs(j1 - i1) == 0 && i1 == i2 && !(((k == j || l == j)||(k1 == i || l1 == i))&&this.context.blockY>63);
         }
     }
 }
