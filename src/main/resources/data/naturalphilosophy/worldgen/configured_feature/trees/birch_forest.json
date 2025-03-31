@@ -15,7 +15,7 @@
     },
     "foliage_placer": {
       "type": "minecraft:cherry_foliage_placer",
-      "corner_hole_chance": 0.25,
+      "corner_hole_chance": 0.875,
       "hanging_leaves_chance": 0.125,
       "hanging_leaves_extension_chance": 0.0,
       "height": 5,
