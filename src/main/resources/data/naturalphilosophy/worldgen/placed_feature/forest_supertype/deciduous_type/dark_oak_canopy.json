@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.25,
+          "chance": 0.09375,
           "feature": "naturalphilosophy:checked_trees/dark_oak_emergent"
         },
         {
@@ -22,7 +22,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 24
+      "count": 28
     },
     {
       "type": "minecraft:in_square"

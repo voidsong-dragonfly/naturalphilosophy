@@ -22,20 +22,13 @@
 
 Unknown Timeline:
 1. Revisit tide pools with custom feature? => OR, leave to PVJ?
-2. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
-3. Nether biomes?
+2. Nether biomes?
     Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
-4. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
-5. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
-6. Glow lichen in some biomes, such as Dark Forests?
-7. Dripleaves in swamps, maybe? Could do jungles too
-8. Change up tree types in taigas a little bit? Maybe add some mega pine foliage in there too?
-9. Figure out how Geophilic does their stone spires for coasts
-10. Vines & drooping leaves in Dark Forest biomes
-11. Figure out how Geophilic does termite mounds and use 'em with packed mud
-12. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
+3. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
+4. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
+5. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
     Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
     Can then use that to place ferns as necessary underneath the cliffs
 
@@ -73,12 +66,19 @@ Unknown Timeline:
 ✓ 5. Other cave tweaks?
     ✓ Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
 ✓ 6. Fix orange terracotta spawning at the top of Badlands biomes
+7. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
+    Figure out how Geophilic does termite mounds and use 'em with packed mud
+8. Figure out how Geophilic does their stone spires for coasts
+✓ 9. Vines & drooping leaves in Dark Forest biomes
+10. Small Dripleaves in swamps, maybe? Could do jungles too
+
 
 4.0.0
 1. Pale Garden up to Natural Philosophy standards
     Pale garden is already pretty good, add more moss and more grass?
     Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
     Add some ground vegetation maybe?
+    Glow lichen in the Pale Garden, on the trees?
 2. Add some custom biomes to the game?
     Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
     Deep oceans are a biome BELOW ocean rather than existing on the surface
