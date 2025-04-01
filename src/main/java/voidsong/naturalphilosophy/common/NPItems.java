@@ -17,6 +17,8 @@ public class NPItems {
     public static final DeferredItem<BlockItem> DUNE_GRASS_ITEM = ITEMS.registerSimpleBlockItem("dune_grass", NPBlocks.DUNE_GRASS);
     public static final DeferredItem<BlockItem> RUSHES_ITEM = ITEMS.registerSimpleBlockItem("rushes", NPBlocks.RUSHES);
     public static final DeferredItem<BlockItem> CATTAILS_ITEM = ITEMS.registerSimpleBlockItem("cattails", NPBlocks.CATTAILS);
+    public static final DeferredItem<BlockItem> BASALTIC_MINERAL_SAND_ITEM = ITEMS.registerSimpleBlockItem("basaltic_mineral_sand", NPBlocks.BASALTIC_MINERAL_SAND);
+    public static final DeferredItem<BlockItem> SANDY_MYCELIUM_ITEM = ITEMS.registerSimpleBlockItem("sandy_mycelium", NPBlocks.SANDY_MYCELIUM);
 
     // Creates a creative tab for the mod & adds all Natural Philosophy items to the tab
     @SuppressWarnings("unused")
@@ -27,5 +29,7 @@ public class NPItems {
             output.accept(DUNE_GRASS_ITEM.get());
             output.accept(RUSHES_ITEM.get());
             output.accept(CATTAILS_ITEM.get());
+            output.accept(BASALTIC_MINERAL_SAND_ITEM.get());
+            output.accept(SANDY_MYCELIUM_ITEM.get());
         }).build());
 }

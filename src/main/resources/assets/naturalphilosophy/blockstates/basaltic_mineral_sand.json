@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "naturalphilosophy:block/basaltic_mineral_sand"
+      },
+      {
+        "model": "naturalphilosophy:block/basaltic_mineral_sand",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/basaltic_mineral_sand",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/basaltic_mineral_sand",
+        "y": 270
+      }
+    ]
+  }
+}
