@@ -7,14 +7,14 @@
           "chance": 0.1,
           "feature": {
             "feature": "naturalphilosophy:mushrooms/brown_mushroom",
-            "placement": []
+            "placement": [ ]
           }
         },
         {
           "chance": 0.1,
           "feature": {
             "feature": "naturalphilosophy:mushrooms/red_mushroom",
-            "placement": []
+            "placement": [ ]
           }
         },
         {
@@ -33,8 +33,10 @@
   },
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 16
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 4,
+      "noise_factor": 0.5,
+      "noise_offset": 0.2
     },
     {
       "type": "minecraft:in_square"
@@ -59,7 +61,7 @@
           -1,
           0
         ],
-        "blocks": "minecraft:mycelium"
+        "blocks": "naturalphilosophy:sandy_mycelium"
       }
     }
   ]

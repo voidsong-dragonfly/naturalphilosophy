@@ -16,8 +16,8 @@
       "tick_delay": 6000
     },
     "sky_color": 7842047,
-    "water_color": 9079191,
-    "water_fog_color": 3026483
+    "water_color": 4445678,
+    "water_fog_color": 270131
   },
   "features": [
     [],
@@ -72,7 +72,10 @@
     ],
     [
       "naturalphilosophy:water_supertype/island_type/large_mushrooms",
+      "naturalphilosophy:water_supertype/island_type/sandy_large_mushrooms",
       "naturalphilosophy:water_supertype/island_type/mushrooms",
+      "naturalphilosophy:water_supertype/island_type/sandy_mushrooms",
+      "naturalphilosophy:water_supertype/island_type/sparse_mushrooms",
       "naturalphilosophy:water_supertype/sugar_cane"
     ],
     [
