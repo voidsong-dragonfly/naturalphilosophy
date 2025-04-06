@@ -17,7 +17,9 @@
             "minecraft:dripstone_block",
             "minecraft:calcite",
             "minecraft:tuff",
-            "minecraft:deepslate"
+            "minecraft:deepslate",
+            "minecraft:basalt",
+            "minecraft:smooth_basalt"
           ],
           "can_place_on_ceiling": true,
           "can_place_on_floor": true,
