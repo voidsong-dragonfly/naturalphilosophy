@@ -5,10 +5,10 @@
       "features": [
         {
           "chance": 0.9,
-          "feature": "naturalphilosophy:checked_trees/dark_oak_stunted"
+          "feature": "naturalphilosophy:checked_trees/dark_oak_badlands"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_stunted"
+      "default": "naturalphilosophy:checked_trees/dark_oak_stunted"
     }
   },
   "placement": [

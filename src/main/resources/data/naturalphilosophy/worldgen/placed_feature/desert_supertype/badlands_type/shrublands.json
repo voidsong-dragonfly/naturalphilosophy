@@ -5,10 +5,10 @@
       "features": [
         {
           "chance": 0.85,
-          "feature": "naturalphilosophy:checked_trees/oak_bush"
+          "feature": "naturalphilosophy:checked_trees/dark_oak_bush"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_shrub"
+      "default": "naturalphilosophy:checked_trees/dark_oak_shrub"
     }
   },
   "placement": [
