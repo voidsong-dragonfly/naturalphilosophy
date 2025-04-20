@@ -75,14 +75,14 @@ public class NPSurfaceRules {
             int j1 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.min(j + 1, 15));
             int i2 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.max(i - 1, 0), j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.min(i + 1, 15), j);
-            if (Math.abs(j1 - i1) > 3 || Math.abs(j2 - i2) > 3) {
+            if ((Math.max(i1, Math.max(j1, Math.max(i1, j2))) - Math.min(i1, Math.min(j1, Math.min(i2, j2)))) > 3) {
                 return true;
             } else {
                 int i3 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.max(j - 2, 0));
                 int j3 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.min(j + 2, 15));
                 int i4 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.max(i - 2, 0), j);
                 int j4 = chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.min(i + 2, 15), j);
-                return (Math.abs(j3 - i3) > 6 || Math.abs(j4 - i4) > 6);
+                return ((Math.max(i3, Math.max(j3, Math.max(i4, j4))) - Math.min(i3, Math.min(j3, Math.min(i4, j4)))) > 6);
             }
         }
     }
@@ -117,7 +117,7 @@ public class NPSurfaceRules {
             int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
             // The check to return false on chunk borders is a massive kludge, but I use this with _water_. I can't afford flowing water....
-            return Math.abs(j2 - i2) == 0 && Math.abs(j1 - i1) == 0 && i1 == i2 && !(((k == j || l == j)||(k1 == i || l1 == i))&&this.context.blockY>63);
+            return Math.max(i1, Math.max(j1, Math.max(i2, j2))) - Math.min(i1, Math.min(j1, Math.min(i2, j2))) == 0 && !(((k == j || l == j)||(k1 == i || l1 == i))&&this.context.blockY>63);
         }
     }
 }
