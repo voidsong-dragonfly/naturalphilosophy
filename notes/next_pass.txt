@@ -66,11 +66,10 @@ Unknown Timeline:
 ✓ 5. Other cave tweaks?
     ✓ Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
 ✓ 6. Fix orange terracotta spawning at the top of Badlands biomes
-7. Termite mounds in Savanna biomes? - These are a custom BoP feature, check feasibility? Formations like the rock ones?
-    Figure out how Geophilic does termite mounds and use 'em with packed mud
-8. Figure out how Geophilic does their stone spires for coasts
-✓ 9. Vines & drooping leaves in Dark Forest biomes
-10. Small Dripleaves in swamps, maybe? Could do jungles too
+✓ 7. Vines & drooping leaves in Dark Forest biomes
+8. Small Dripleaves in swamps, maybe? Could do jungles too
+9. Ocean updates
+✓ 10. Fix Badlands biome cliff generation to be more interesting (all `minecraft:badlands` now)
 
 
 4.0.0
