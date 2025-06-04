@@ -76,7 +76,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": 0.5,
                           "noise": "minecraft:surface"
                         },
@@ -91,7 +91,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": 0.45,
                           "noise": "minecraft:surface"
                         },
@@ -99,7 +99,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1E308,
                             "min_threshold": 0.0,
                             "noise": "naturalphilosophy:surface_randomness"
                           },
@@ -115,7 +115,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": 0.25,
                           "noise": "minecraft:surface"
                         },
@@ -123,7 +123,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1E308,
                             "min_threshold": -3.0,
                             "noise": "naturalphilosophy:surface_randomness"
                           },
@@ -139,7 +139,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": -0.25,
                           "noise": "minecraft:surface"
                         },
@@ -147,7 +147,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1E308,
                             "min_threshold": 0.0,
                             "noise": "naturalphilosophy:surface_randomness"
                           },
@@ -163,7 +163,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": -0.375,
                           "noise": "minecraft:surface"
                         },
@@ -171,7 +171,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1E308,
                             "min_threshold": 2.0,
                             "noise": "naturalphilosophy:surface_randomness"
                           },
@@ -187,7 +187,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": -0.875,
                           "noise": "minecraft:surface"
                         },
@@ -202,7 +202,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": -1.0,
                           "noise": "minecraft:surface"
                         },
@@ -210,7 +210,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1E308,
                             "min_threshold": 0.0,
                             "noise": "naturalphilosophy:surface_randomness"
                           },
@@ -241,7 +241,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": 0.625,
                           "noise": "minecraft:surface"
                         },
@@ -249,7 +249,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:noise_threshold",
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1E308,
                             "min_threshold": 0.0,
                             "noise": "naturalphilosophy:surface_randomness"
                           },
@@ -265,7 +265,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": 0.0,
                           "noise": "minecraft:surface"
                         },
@@ -280,7 +280,7 @@
                         "type": "minecraft:condition",
                         "if_true": {
                           "type": "minecraft:noise_threshold",
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1E308,
                           "min_threshold": -0.75,
                           "noise": "minecraft:surface"
                         },
@@ -307,7 +307,7 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:noise_threshold",
-                      "max_threshold": 1.7976931348623157E308,
+                      "max_threshold": 1E308,
                       "min_threshold": 0.5,
                       "noise": "minecraft:surface"
                     },
