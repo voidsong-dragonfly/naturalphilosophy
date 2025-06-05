@@ -79,7 +79,10 @@
       "naturalphilosophy:water_supertype/island_type/mushrooms",
       "naturalphilosophy:water_supertype/island_type/sandy_mushrooms",
       "naturalphilosophy:water_supertype/island_type/sparse_mushrooms",
-      "naturalphilosophy:water_supertype/sugar_cane"
+      "naturalphilosophy:water_supertype/sugar_cane",
+      "naturalphilosophy:water_supertype/island_type/seagrass",
+      "naturalphilosophy:water_supertype/island_type/kelp",
+      "minecraft:sea_pickle"
     ],
     [
       "minecraft:freeze_top_layer"
