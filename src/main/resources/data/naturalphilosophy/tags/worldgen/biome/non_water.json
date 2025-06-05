@@ -5,7 +5,8 @@
     "#minecraft:is_river",
     "#minecraft:is_deep_ocean",
     "#c:is_snowy",
-    "minecraft:stony_shore"
+    "minecraft:stony_shore",
+    "minecraft:mushroom_fields"
   ],
   "values": [
     "#minecraft:is_overworld"

@@ -17,10 +17,12 @@
         {
           "type": "minecraft:condition",
           "if_true": {
-            "type": "minecraft:not",
-            "invert": {
-              "type": "naturalphilosophy:cliff"
-            }
+            "type": "minecraft:y_above",
+            "add_stone_depth": true,
+            "anchor": {
+              "absolute": 64
+            },
+            "surface_depth_multiplier": 1
           },
           "then_run": {
             "type": "minecraft:condition",
@@ -33,29 +35,108 @@
                 {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:not",
-                    "invert": {
-                      "type": "minecraft:y_above",
-                      "add_stone_depth": true,
-                      "anchor": {
-                        "absolute": 64
-                      },
-                      "surface_depth_multiplier": 1
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1E308,
+                    "min_threshold": 0.7125,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:yellow_terracotta"
                     }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1E308,
+                    "min_threshold": 0.675,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:red_sand"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1E308,
+                    "min_threshold": 0.6,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:blackstone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1E308,
+                    "min_threshold": 0.525,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:smooth_basalt"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1E308,
+                    "min_threshold": 0.4,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "naturalphilosophy:basaltic_mineral_sand"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 0.4,
+                    "min_threshold": 0.3,
+                    "noise": "naturalphilosophy:volcanism"
                   },
                   "then_run": {
                     "type": "minecraft:condition",
                     "if_true": {
-                      "type": "minecraft:stone_depth",
-                      "add_surface_depth": false,
-                      "offset": 1,
-                      "secondary_depth_range": 0,
-                      "surface_type": "floor"
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 0.1,
+                      "min_threshold": -0.1,
+                      "noise": "naturalphilosophy:volcanism_sand"
                     },
                     "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "naturalphilosophy:basaltic_mineral_sand"
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:stone_depth",
+                        "add_surface_depth": false,
+                        "offset": 0,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
                       }
                     }
                   }
@@ -63,169 +144,165 @@
                 {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:stone_depth",
-                    "add_surface_depth": false,
-                    "offset": 0,
-                    "secondary_depth_range": 0,
-                    "surface_type": "floor"
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 0.3,
+                    "min_threshold": 0.2,
+                    "noise": "naturalphilosophy:volcanism"
                   },
                   "then_run": {
-                    "type": "minecraft:sequence",
-                    "sequence": [
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": 0.5,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "minecraft:mycelium"
-                          }
-                        }
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 0.06,
+                      "min_threshold": -0.06,
+                      "noise": "naturalphilosophy:volcanism_sand"
+                    },
+                    "then_run": {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:stone_depth",
+                        "add_surface_depth": false,
+                        "offset": 0,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor"
                       },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": 0.45,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "max_threshold": 1E308,
-                            "min_threshold": 0.0,
-                            "noise": "naturalphilosophy:surface_randomness"
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "minecraft:mycelium"
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": 0.25,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "max_threshold": 1E308,
-                            "min_threshold": -3.0,
-                            "noise": "naturalphilosophy:surface_randomness"
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "naturalphilosophy:sandy_mycelium"
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": -0.25,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "max_threshold": 1E308,
-                            "min_threshold": 0.0,
-                            "noise": "naturalphilosophy:surface_randomness"
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "naturalphilosophy:sandy_mycelium"
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": -0.375,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "max_threshold": 1E308,
-                            "min_threshold": 2.0,
-                            "noise": "naturalphilosophy:surface_randomness"
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "naturalphilosophy:sandy_mycelium"
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": -0.875,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "naturalphilosophy:basaltic_mineral_sand"
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": -1.0,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "max_threshold": 1E308,
-                            "min_threshold": 0.0,
-                            "noise": "naturalphilosophy:surface_randomness"
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "naturalphilosophy:basaltic_mineral_sand"
-                            }
-                          }
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
                         }
                       }
-                    ]
+                    }
                   }
                 },
                 {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 0.2,
+                    "min_threshold": 0.1,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 0.03,
+                      "min_threshold": -0.03,
+                      "noise": "naturalphilosophy:volcanism_sand"
+                    },
+                    "then_run": {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:stone_depth",
+                        "add_surface_depth": false,
+                        "offset": 0,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 0.1,
+                    "min_threshold": 0,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 0.015,
+                      "min_threshold": -0.015,
+                      "noise": "naturalphilosophy:volcanism_sand"
+                    },
+                    "then_run": {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:stone_depth",
+                        "add_surface_depth": false,
+                        "offset": 0,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 0,
+                    "min_threshold": -0.05,
+                    "noise": "naturalphilosophy:volcanism"
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 0.006,
+                      "min_threshold": -0.006,
+                      "noise": "naturalphilosophy:volcanism_sand"
+                    },
+                    "then_run": {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:stone_depth",
+                        "add_surface_depth": false,
+                        "offset": 0,
+                        "secondary_depth_range": 0,
+                        "surface_type": "floor"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:above_preliminary_surface"
+          },
+          "then_run": {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:not",
+                  "invert": {
+                    "type": "minecraft:y_above",
+                    "add_stone_depth": true,
+                    "anchor": {
+                      "absolute": 64
+                    },
+                    "surface_depth_multiplier": 1
+                  }
+                },
+                "then_run": {
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:stone_depth",
@@ -235,109 +312,290 @@
                     "surface_type": "floor"
                   },
                   "then_run": {
-                    "type": "minecraft:sequence",
-                    "sequence": [
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": 0.625,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "max_threshold": 1E308,
-                            "min_threshold": 0.0,
-                            "noise": "naturalphilosophy:surface_randomness"
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "minecraft:dirt"
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": 0.0,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "naturalphilosophy:basaltic_mineral_sand"
-                          }
-                        }
-                      },
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": -0.75,
-                          "noise": "minecraft:surface"
-                        },
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "naturalphilosophy:basaltic_mineral_sand"
-                          }
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "minecraft:stone_depth",
-                    "add_surface_depth": false,
-                    "offset": 2,
-                    "secondary_depth_range": 0,
-                    "surface_type": "floor"
-                  },
-                  "then_run": {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "max_threshold": 1E308,
-                      "min_threshold": 0.5,
-                      "noise": "minecraft:surface"
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "naturalphilosophy:basaltic_mineral_sand"
-                      }
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "naturalphilosophy:basaltic_mineral_sand"
                     }
                   }
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:stone_depth",
+                  "add_surface_depth": false,
+                  "offset": 0,
+                  "secondary_depth_range": 0,
+                  "surface_type": "floor"
                 },
-                {
+                "then_run": {
+                  "type": "minecraft:sequence",
+                  "sequence": [
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 0.5,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:mycelium"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 0.45,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 0.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:mycelium"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 0.25,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": -3.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "naturalphilosophy:sandy_mycelium"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": -0.25,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 0.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "naturalphilosophy:sandy_mycelium"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": -0.375,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 2.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "naturalphilosophy:sandy_mycelium"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": -0.875,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": -1.0,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 0.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "naturalphilosophy:basaltic_mineral_sand"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:stone_depth",
+                  "add_surface_depth": false,
+                  "offset": 1,
+                  "secondary_depth_range": 0,
+                  "surface_type": "floor"
+                },
+                "then_run": {
+                  "type": "minecraft:sequence",
+                  "sequence": [
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 0.625,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1.7976931348623157E308,
+                          "min_threshold": 0.0,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:dirt"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": 0.0,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:noise_threshold",
+                        "max_threshold": 1.7976931348623157E308,
+                        "min_threshold": -0.75,
+                        "noise": "minecraft:surface"
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:stone_depth",
+                  "add_surface_depth": false,
+                  "offset": 2,
+                  "secondary_depth_range": 0,
+                  "surface_type": "floor"
+                },
+                "then_run": {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:y_above",
-                    "add_stone_depth": false,
-                    "anchor": {
-                      "absolute": 20
-                    },
-                    "surface_depth_multiplier": 1
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1.7976931348623157E308,
+                    "min_threshold": 0.5,
+                    "noise": "minecraft:surface"
                   },
                   "then_run": {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "minecraft:basalt"
+                      "Name": "naturalphilosophy:basaltic_mineral_sand"
                     }
                   }
                 }
-              ]
-            }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:y_above",
+                  "add_stone_depth": false,
+                  "anchor": {
+                    "absolute": 20
+                  },
+                  "surface_depth_multiplier": 1
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:basalt"
+                  }
+                }
+              }
+            ]
           }
         },
         {

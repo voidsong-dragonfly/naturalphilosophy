@@ -1,0 +1,50 @@
+{
+  "feature": {
+    "type": "minecraft:underwater_magma",
+    "config": {
+      "floor_search_range": 2,
+      "placement_probability_per_valid_position": 0.3,
+      "placement_radius_around_floor": 3
+    }
+  },
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 3,
+        "max_inclusive": 4
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:not",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                0,
+                -1,
+                0
+              ],
+              "blocks": "naturalphilosophy:basaltic_mineral_sand"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

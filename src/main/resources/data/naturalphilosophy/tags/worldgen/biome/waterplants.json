@@ -3,7 +3,7 @@
     "#minecraft:is_beach",
     "#minecraft:is_ocean",
     "#c:is_snowy",
-    "minecraft:mushroom_island",
+    "minecraft:mushroom_fields",
     "minecraft:frozen_river"
   ],
   "values": [
