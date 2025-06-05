@@ -67,13 +67,13 @@
                   "if_true": {
                     "type": "minecraft:noise_threshold",
                     "max_threshold": 1E308,
-                    "min_threshold": 0.6,
+                    "min_threshold": 0.575,
                     "noise": "naturalphilosophy:volcanism"
                   },
                   "then_run": {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "minecraft:blackstone"
+                      "Name": "minecraft:smooth_basalt"
                     }
                   }
                 },
@@ -88,7 +88,7 @@
                   "then_run": {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "minecraft:smooth_basalt"
+                      "Name": "minecraft:basalt"
                     }
                   }
                 },
