@@ -31,6 +31,7 @@ Unknown Timeline:
 5. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
     Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
     Can then use that to place ferns as necessary underneath the cliffs
+6. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
@@ -62,14 +63,17 @@ Unknown Timeline:
     ✓ Water & lava springs, if I can get them working
     ✓ Pools generating in Dripstone Caves, but hopefully not in the side of 'em => Not going to happen, the issue with dripstone caves isn't lack of decoration, it's low spawning range.
 ✓ 3. Make sure tree'd hillsides are properly covered in more stunted trees
-4. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
+✓ 4. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
+4.1 Possibly add Mycelial Growth similar to warped roots
 ✓ 5. Other cave tweaks?
     ✓ Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
+    ✓ Make sure rooted dirt doesn't spawn underwater => blacklist mud maybe, and have a separate mud feature for mangrove swamps?
 ✓ 6. Fix orange terracotta spawning at the top of Badlands biomes
 ✓ 7. Vines & drooping leaves in Dark Forest biomes
 8. Small Dripleaves in swamps, maybe? Could do jungles too
 9. Ocean updates
 ✓ 10. Fix Badlands biome cliff generation to be more interesting (all `minecraft:badlands` now)
+✓ 11. Check whether more optimization of generated item entities can be done => no, roughly 250 forest items per loaded render distance 16 is from trees and only trees
 
 
 4.0.0
