@@ -2,7 +2,7 @@
 
 Natural Philosophy is a mod that aims to transform and rejuvenate how Minecraft biomes are decorated. It takes new blocks only used in a few biomes and new concepts in generation since old biomes such as forests were designed and applies them to all biomes in the game, putting variety and life into Minecraft's biomes.
 
-Natural Philosophy is designed with a goal of using as few modded features as possible, to showcase the power of the systems Mojang implemented with the data-driven world generation updates. Features that are implemented via code are described below, after the inspiration mods heading. 
+Natural Philosophy is designed with the goal of not using modded features (added blocks, new biomes) to paper over the issues of the Vanilla biomes and the Vanilla generation paradigm, while also not shying away from using modded features while appropriate. Natural Philosoph tries to avoid both Biomes o' Plenty and its several kinds of very similar, differently-colored plains biomes and Terralith, with its hidden campfires to produce smoke in its generation paradigms.
 
 ## Important Notes
 
@@ -15,10 +15,8 @@ Mods which do minimal overhauls of Vanilla biomes are considered to be 'extraneo
 ## Suggested Mods
 
 [Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions.  
-[Improved Village Placement](https://modrinth.com/mod/improved-village-placement) helps with Vanilla's terrible habit of cliff villages.  
-[Regrowth](https://modrinth.com/mod/regrowth) adds dynamicity to a normally static Vanilla world.   
 [Better Biome Reblend](https://modrinth.com/mod/bbrb) smooths out the sharp biome & water color transitions Vanilla has.    
-[Project: Vibrant Journeys](https://www.curseforge.com/minecraft/mc-mods/project-vibrant-journeys) adds decorations out of scope for Natural Philosophy.
+[Project: Vibrant Journeys](https://modrinth.com/mod/project-vibrant-journeys) adds decorations out of scope for Natural Philosophy.
 
 ### Important Information for Project: Vibrant Journeys
 
@@ -43,10 +41,8 @@ Natural Philosophy has many features which overlap heavily with that of Project:
  - CliffFace
  - Cliffs
 
-#### Natural Philoosphy Supplants These Mods
+#### Natural Philosophy Supplants These Mods
 
-
- - Cliff Under a Tree
  - Biome Makeover
  - Swampier Swamps
  - BetterDefaultBiomes
@@ -88,27 +84,10 @@ Natural Philosophy specifically takes biomes that have been underdeveloped by th
 ## Inspirations
 
 [Geophilic](https://modrinth.com/datapack/geophilic) is similar to Natural Philosophy but sticks to a Vanilla decoration style.    
-[Project Vibrant Journeys](https://www.curseforge.com/minecraft/mc-mods/project-vibrant-journeys) is focused on adding block-based decoration features.    
+[Project Vibrant Journeys](https://modrinth.com/mod/project-vibrant-journeys) is focused on adding block-based decoration features.    
 [Stony Cliffs Are Cool](https://modrinth.com/datapack/stony-cliffs-are-cool) adds stone cliffs to steep surfaces on generation.    
 [Simple Snowy Fix](https://modrinth.com/mod/simple-snowy-fix) adds snow spawning and ice spawning underneath trees.
 
 Other inspirations come from too many biome mods to count, here and there. A selected list for a few features of note can be found in `ideas.txt` in the main directory.
 
 Simple Snowy Fix and Stony Cliffs are Cool are integrated into Natural Philosophy and need not be included alongside.
-
-## Code Features
-
-**New Blocks**
- - Dune Grass
- - Rushes
- - Cattails
-
-**New Features**
- - Archaeology blocks outside of structures via ArchaeologyBlockFeature    
-
-**New Surface Rule Conditions**
- - `minecraft:cliff` for cliff generation
- - `minecraft:flat` for swamp generation
-
-**Snow Fixes**
- - Snow generates under trees with `minecraft:freeze_top_layer`
