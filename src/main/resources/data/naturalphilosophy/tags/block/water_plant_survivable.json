@@ -1,4 +1,7 @@
 {
+  "remove": [
+    "minecraft:mycelium"
+  ],
   "values": [
     "#minecraft:dirt",
     "#c:sands",
