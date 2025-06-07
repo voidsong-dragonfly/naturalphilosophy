@@ -1,6 +1,9 @@
 {
   "type": "lithostitched:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "naturalphilosophy:cavern_supertype/spring_lava",
+  "features": [
+    "naturalphilosophy:cavern_supertype/spring_lava",
+    "naturalphilosophy:cavern_supertype/spring_lava_low"
+  ],
   "step": "fluid_springs"
 }
