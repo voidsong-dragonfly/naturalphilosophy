@@ -40,7 +40,9 @@ public class FallingSpringFeature extends Feature<SpringConfiguration> {
                 }
                 if (worldgenlevel.getBlockState(blockpos.below()).is(springConfig.validBlocks)) {
                     j++;
-                }
+                // We quarter the incidence of springs above pools to make wall ones more common, but only if they don't expose fluid above them
+                } else if (config.random().nextInt(3) > 0 && !worldgenlevel.getBlockState(blockpos.above()).getFluidState().is(config.config().state.getType()))
+                    return false;
 
                 BlockPos hole = blockpos;
                 int k = 0;
