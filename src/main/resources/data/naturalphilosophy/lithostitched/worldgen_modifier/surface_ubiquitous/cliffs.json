@@ -146,6 +146,34 @@
           {
             "type": "minecraft:condition",
             "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "minecraft:grove",
+                "minecraft:snowy_slopes"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:not",
+                "invert": {
+                  "type": "minecraft:noise_threshold",
+                  "max_threshold": 0.58,
+                  "min_threshold": 0.45,
+                  "noise": "minecraft:powder_snow"
+                }
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:stone"
+                }
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
               "type": "minecraft:not",
               "invert": {
                 "type": "naturalphilosophy:cliff_lip"
@@ -166,7 +194,9 @@
                     "minecraft:frozen_peaks",
                     "minecraft:ice_spikes",
                     "minecraft:desert",
-                    "minecraft:mushroom_fields"
+                    "minecraft:mushroom_fields",
+                    "minecraft:grove",
+                    "minecraft:snowy_slopes"
                   ]
                 }
               },
