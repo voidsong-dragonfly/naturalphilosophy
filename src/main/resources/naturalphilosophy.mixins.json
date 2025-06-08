@@ -3,11 +3,13 @@
   "package": "voidsong.naturalphilosophy.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "FreezeSurfaceMixin",
+    "GlowLichenBlockMixin",
+    "SculkVeinBlockMixin",
+    "SnowyTreesMixin",
     "SurfaceRulesMixin",
     "SurfaceRulesMixin$ConditionSource",
-    "SurfaceRulesMixin$Context",
-    "FreezeSurfaceMixin",
-    "SnowyTreesMixin"
+    "SurfaceRulesMixin$Context"
   ],
   "client": [],
   "injectors": {
