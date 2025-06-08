@@ -12,6 +12,13 @@
         {
           "type": "minecraft:block_predicate_filter",
           "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water"
+          }
+        },
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
             "type": "minecraft:would_survive",
             "state": {
               "Name": "minecraft:seagrass"

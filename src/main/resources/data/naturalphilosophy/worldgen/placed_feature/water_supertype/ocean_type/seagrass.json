@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.25,
+          "chance": 0.5,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/seagrass_mixed",
             "placement": []
