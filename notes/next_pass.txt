@@ -52,7 +52,7 @@ Unknown Timeline:
 ✓ 7. Possibly add more moss to mossy forest&taiga areas?
 ✓ 8. Fix snowy biomes snow & mixin issues
 ✓ 9. Fix cliff stone visuals & lips
-✓ 10. Clean up internals incl. namespaces
+✓ 10. Clean up internals incl. namespaces, -5485 200, -124
 
 3.0.0
 ✓ 1. More tree shape changes/decorators
@@ -72,9 +72,16 @@ Unknown Timeline:
 ✓ 7. Vines & drooping leaves in Dark Forest biomes
 8. Small Dripleaves in swamps, maybe? Could do jungles too
 9. Ocean updates
+    Top Levels (0-30m) in: Frozen Ocean, Cold Ocean, Ocean: Kelp on 0-1 gravel, seagrass on 2+, red algae more common the warmer it is
+    Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Frozen Ocean, Cold Ocean, Ocean: Red algae and bone coral, with more bone coral on rockier portions
+    Top Levels (0-30m) in: Lukewarm Ocean: Kelp on boulders (areas with 1 sand), seagrass & red algae on sand
+    Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Lukewarm Ocean: Red algae and bone coral, with more bone coral on rockier portions
+    Warm ocean has some changes to possibly make coral generate more reef-like, otherwise no need for changes
 ✓ 10. Fix Badlands biome cliff generation to be more interesting (all `minecraft:badlands` now)
 ✓ 11. Check whether more optimization of generated item entities can be done => no, roughly 250 forest items per loaded render distance 16 is from trees and only trees
 ✓ 12. Fix lots of missing tags on NP blocks & items
+✓ 13. Fix powder snow & grove biomes with cliff surface rules
+✓ 14. Reduce spring generation frequency in ceilings & make lava overwrite sculk/glow lichen
 
 
 4.0.0
