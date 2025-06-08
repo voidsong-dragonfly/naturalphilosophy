@@ -18,6 +18,7 @@ public class NPItems {
     public static final DeferredItem<BlockItem> RUSHES_ITEM = ITEMS.registerSimpleBlockItem("rushes", NPBlocks.RUSHES);
     public static final DeferredItem<BlockItem> CATTAILS_ITEM = ITEMS.registerSimpleBlockItem("cattails", NPBlocks.CATTAILS);
     public static final DeferredItem<BlockItem> MYCELIAL_GROWTH_ITEM = ITEMS.registerSimpleBlockItem("mycelial_growth", NPBlocks.MYCELIAL_GROWTH);
+    public static final DeferredItem<BlockItem> RED_ALGAE_ITEM = ITEMS.registerSimpleBlockItem("red_algae", NPBlocks.RED_ALGAE);
     public static final DeferredItem<BlockItem> BASALTIC_MINERAL_SAND_ITEM = ITEMS.registerSimpleBlockItem("basaltic_mineral_sand", NPBlocks.BASALTIC_MINERAL_SAND);
     public static final DeferredItem<BlockItem> SANDY_MYCELIUM_ITEM = ITEMS.registerSimpleBlockItem("sandy_mycelium", NPBlocks.SANDY_MYCELIUM);
 
@@ -31,6 +32,7 @@ public class NPItems {
             output.accept(RUSHES_ITEM);
             output.accept(CATTAILS_ITEM);
             output.accept(MYCELIAL_GROWTH_ITEM);
+            output.accept(RED_ALGAE_ITEM);
             output.accept(BASALTIC_MINERAL_SAND_ITEM);
             output.accept(SANDY_MYCELIUM_ITEM);
         }).build());

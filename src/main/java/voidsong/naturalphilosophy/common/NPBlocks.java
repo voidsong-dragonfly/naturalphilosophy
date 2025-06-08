@@ -13,6 +13,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.blocks.DuneGrass;
 import voidsong.naturalphilosophy.common.blocks.MycelialGrowthBlock;
+import voidsong.naturalphilosophy.common.blocks.RedAlgaeBlock;
 import voidsong.naturalphilosophy.common.blocks.SandyMyceliumBlock;
 import voidsong.naturalphilosophy.common.blocks.TallDuneGrass;
 import voidsong.naturalphilosophy.common.blocks.WaterPlantBlock;
@@ -50,6 +51,15 @@ public class NPBlocks {
             .noCollission()
             .instabreak()
             .sound(SoundType.ROOTS)
+            .offsetType(BlockBehaviour.OffsetType.XZ)
+            .pushReaction(PushReaction.DESTROY));
+    public static final DeferredBlock<Block> RED_ALGAE = BLOCKS.registerBlock("red_algae", RedAlgaeBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WATER)
+            .replaceable()
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
             .offsetType(BlockBehaviour.OffsetType.XZ)
             .pushReaction(PushReaction.DESTROY));
     public static final DeferredBlock<Block> BASALTIC_MINERAL_SAND = BLOCKS.registerBlock("basaltic_mineral_sand", registryName -> new ColoredFallingBlock(new ColorRGBA(-8356741),
