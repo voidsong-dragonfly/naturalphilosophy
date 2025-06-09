@@ -6,6 +6,12 @@
     "block.naturalphilosophy.cattails": "Cattails",
     "block.naturalphilosophy.mycelial_growth": "Mycelial Growth",
     "block.naturalphilosophy.red_algae": "Red Algae",
+    "block.naturalphilosophy.bone_coral": "Bone Coral",
+    "block.naturalphilosophy.bone_coral_fan": "Bone Coral Fan",
+    "block.naturalphilosophy.bone_coral_wall_fan": "Bone Coral Wall Fan",
+    "block.naturalphilosophy.dead_bone_coral": "Dead Bone Coral",
+    "block.naturalphilosophy.dead_bone_coral_fan": "Dead Bone Coral Fan",
+    "block.naturalphilosophy.dead_bone_coral_wall_fan": "Dead Bone Coral Wall Fan",
     "block.naturalphilosophy.sandy_mycelium": "Sandy Mycelium",
     "block.naturalphilosophy.basaltic_mineral_sand": "Basaltic Mineral Sand"
 }

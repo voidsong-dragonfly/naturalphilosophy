@@ -1,8 +1,14 @@
 package voidsong.naturalphilosophy.common;
 
 import net.minecraft.util.ColorRGBA;
+import net.minecraft.world.level.block.BaseCoralFanBlock;
+import net.minecraft.world.level.block.BaseCoralPlantBlock;
+import net.minecraft.world.level.block.BaseCoralWallFanBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColoredFallingBlock;
+import net.minecraft.world.level.block.CoralFanBlock;
+import net.minecraft.world.level.block.CoralPlantBlock;
+import net.minecraft.world.level.block.CoralWallFanBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -62,7 +68,64 @@ public class NPBlocks {
             .sound(SoundType.WET_GRASS)
             .offsetType(BlockBehaviour.OffsetType.XZ)
             .pushReaction(PushReaction.DESTROY));
-    public static final DeferredBlock<Block> BASALTIC_MINERAL_SAND = BLOCKS.registerBlock("basaltic_mineral_sand", registryName -> new ColoredFallingBlock(new ColorRGBA(-8356741),
+    public static final DeferredBlock<Block> DEAD_BONE_CORAL = BLOCKS.registerBlock("dead_bone_coral", BaseCoralPlantBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GRAY)
+            .forceSolidOn()
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresCorrectToolForDrops()
+            .noCollission()
+            .instabreak()
+    );
+    public static final DeferredBlock<Block> DEAD_BONE_CORAL_FAN = BLOCKS.registerBlock("dead_bone_coral_fan", BaseCoralFanBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GRAY)
+            .forceSolidOn()
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresCorrectToolForDrops()
+            .noCollission()
+            .instabreak()
+    );
+    public static final DeferredBlock<Block> DEAD_BONE_CORAL_WALL_FAN = BLOCKS.registerBlock("dead_bone_coral_wall_fan", BaseCoralWallFanBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GRAY)
+            .forceSolidOn()
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresCorrectToolForDrops()
+            .noCollission()
+            .instabreak()
+    );
+    public static final DeferredBlock<Block> BONE_CORAL = BLOCKS.registerBlock("bone_coral", registerName -> new CoralPlantBlock(
+        DEAD_BONE_CORAL.get(),
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_RED)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY)
+        )
+    );
+    public static final DeferredBlock<Block> BONE_CORAL_FAN = BLOCKS.registerBlock("bone_coral_fan", props -> new CoralFanBlock(
+        DEAD_BONE_CORAL_FAN.get(),
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_RED)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY)
+        )
+    );
+    public static final DeferredBlock<Block> BONE_CORAL_WALL_FAN = BLOCKS.registerBlock("bone_coral_wall_fan", props -> new CoralWallFanBlock(
+        DEAD_BONE_CORAL_WALL_FAN.get(),
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_RED)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY)
+        )
+    );
+    public static final DeferredBlock<Block> BASALTIC_MINERAL_SAND = BLOCKS.registerBlock("basaltic_mineral_sand", props -> new ColoredFallingBlock(new ColorRGBA(-8356741),
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLACK)
             .instrument(NoteBlockInstrument.SNARE)

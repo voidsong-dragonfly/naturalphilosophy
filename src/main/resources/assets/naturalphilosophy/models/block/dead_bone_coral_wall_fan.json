@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/coral_wall_fan",
+  "render_type": "cutout",
+  "textures": {
+    "fan": "naturalphilosophy:block/dead_bone_coral_fan"
+  }
+}
