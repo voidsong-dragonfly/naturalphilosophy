@@ -1,0 +1,36 @@
+{
+  "feature":  "naturalphilosophy:plant_patches/bone_coral",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 32
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": "minecraft:cobblestone"
+      }
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_end": 40,
+      "taper_start": 25
+    }
+  ]
+}
