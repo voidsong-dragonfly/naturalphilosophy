@@ -35,8 +35,8 @@ public class DepthFilter extends PlacementFilter {
     @Override
     protected boolean shouldPlace(@Nonnull PlacementContext context, @Nonnull RandomSource random, BlockPos pos) {
         int height = pos.getY();
-        boolean topDown = height >= taperEnd && random.nextInt(taperStart - taperEnd) > (taperStart - height);
-        boolean bottomUp = height <= taperEnd && random.nextInt(taperEnd - taperStart) > (height-taperStart);
+        boolean topDown = height >= taperEnd && random.nextInt(Math.abs(taperStart - taperEnd)) > (taperStart - height);
+        boolean bottomUp = height <= taperEnd && random.nextInt(Math.abs(taperEnd - taperStart)) > (height-taperStart);
         return taperStart < taperEnd ? bottomUp : topDown;
     }
 
