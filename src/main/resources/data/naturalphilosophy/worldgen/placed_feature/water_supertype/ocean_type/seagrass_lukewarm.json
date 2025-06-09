@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 24
+      "count": 48
     },
     {
       "type": "minecraft:in_square"
@@ -30,7 +30,7 @@
     {
       "type": "naturalphilosophy:depth_filter",
       "max_inclusive": 40,
-      "min_inclusive": 30
+      "min_inclusive": 25
     }
   ]
 }
