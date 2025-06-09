@@ -1,11 +1,14 @@
 {
-  "feature": "minecraft:kelp",
+  "feature": {
+    "type": "naturalphilosophy:kelp",
+    "config": {}
+  },
   "placement": [
     {
       "type": "minecraft:noise_based_count",
       "noise_to_count_ratio": 200,
       "noise_factor": 80,
-      "noise_offset": 0.875
+      "noise_offset": 0.75
     },
     {
       "type": "minecraft:in_square"
@@ -30,14 +33,14 @@
           "minecraft:gravel",
           "minecraft:cobblestone",
           "minecraft:mossy_cobblestone",
-          "stone"
+          "minecraft:stone"
         ]
       }
     },
     {
       "type": "naturalphilosophy:depth_filter",
       "max_inclusive": 40,
-      "min_inclusive": 30
+      "min_inclusive": 25
     }
   ]
 }
