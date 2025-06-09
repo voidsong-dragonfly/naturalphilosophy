@@ -3,7 +3,7 @@
   "config": {
     "feature": {
       "feature": {
-        "type": "minecraft:seagrass",
+        "type": "naturalphilosophy:seagrass",
         "config": {
           "probability": 0.0
         }
@@ -36,11 +36,26 @@
             ],
             "fluids": "minecraft:water"
           }
+        },
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:not",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                0,
+                -1,
+                0
+              ],
+              "blocks": "#minecraft:sand"
+            }
+          }
         }
       ]
     },
-    "tries": 48,
-    "xz_spread": 7,
+    "tries": 24,
+    "xz_spread": 5,
     "y_spread": 3
   }
 }
