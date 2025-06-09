@@ -15,27 +15,33 @@ import javax.annotation.Nonnull;
 public class DepthFilter extends PlacementFilter {
     public static final MapCodec<DepthFilter> CODEC = RecordCodecBuilder.mapCodec(
         builder -> builder.group(
-                Codec.INT.optionalFieldOf("min_inclusive", Integer.MIN_VALUE).forGetter(r -> r.minInclusive),
-                Codec.INT.optionalFieldOf("max_inclusive", Integer.MAX_VALUE).forGetter(r -> r.maxInclusive)
+                Codec.INT.optionalFieldOf("taper_end", Integer.MIN_VALUE).forGetter(r -> r.taperEnd),
+                Codec.INT.optionalFieldOf("taper_start", Integer.MAX_VALUE).forGetter(r -> r.taperStart)
             )
             .apply(builder, DepthFilter::new)
     );
-    private final int minInclusive;
-    private final int maxInclusive;
+    private final int taperEnd;
+    private final int taperStart;
 
-    private DepthFilter(int minInclusive, int maxInclusive) {
-        this.minInclusive = minInclusive;
-        this.maxInclusive = maxInclusive;
+    private DepthFilter(int taperEnd, int taperStart) {
+        this.taperEnd = taperEnd;
+        this.taperStart = taperStart;
     }
 
-    public static DepthFilter of(int minInclusive, int maxInclusive) {
-        return new DepthFilter(minInclusive, maxInclusive);
+    public static DepthFilter of(int taperEnd, int taperStart) {
+        return new DepthFilter(taperEnd, taperStart);
     }
 
     @Override
     protected boolean shouldPlace(@Nonnull PlacementContext context, @Nonnull RandomSource random, BlockPos pos) {
         int height = pos.getY();
-        return height >= minInclusive && random.nextInt(maxInclusive - minInclusive) > (maxInclusive - height);
+        int taper_high = taperStart;
+        int taper_low = taperEnd;
+        if (taperStart < taperEnd) {
+            taper_high = taperEnd;
+            taper_low = taperStart;
+        }
+        return height >= taper_low && random.nextInt(taper_high - taper_low) > (taper_high - height);
     }
 
     @Override

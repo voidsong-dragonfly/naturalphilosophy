@@ -39,8 +39,8 @@
     },
     {
       "type": "naturalphilosophy:depth_filter",
-      "max_inclusive": 40,
-      "min_inclusive": 25
+      "taper_start": 40,
+      "taper_end": 25
     }
   ]
 }
