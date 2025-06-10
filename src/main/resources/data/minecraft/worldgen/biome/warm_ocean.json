@@ -75,7 +75,8 @@
       "naturalphilosophy:water_supertype/ocean_type/coral",
       "naturalphilosophy:water_supertype/ocean_type/red_algae_warm",
       "naturalphilosophy:water_supertype/ocean_type/seaplants_reef",
-      "naturalphilosophy:water_supertype/ocean_type/seagrass_warm"
+      "naturalphilosophy:water_supertype/ocean_type/seagrass_warm",
+      "naturalphilosophy:water_supertype/ocean_type/mudflats_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
