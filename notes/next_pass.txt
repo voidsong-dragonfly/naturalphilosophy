@@ -85,7 +85,8 @@ Unknown Timeline:
 15. Kelp & mushrooms have a slight (smaller than normal?) offset like grass & flowers do
 16. Jagged Peaks has some moss or grass on its slopes, but not its highest reaches?
 17. Fix river biomes as best as possible
-
+✓ 18. Fix land when it comes above ocean surfaces not being decorated properly
+✓ 19. Add depth filter to dune grass placement in beaches
 
 
 4.0.0

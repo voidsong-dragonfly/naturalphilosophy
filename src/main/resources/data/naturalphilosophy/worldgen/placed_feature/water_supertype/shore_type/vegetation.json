@@ -45,6 +45,11 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_start": 66,
+      "taper_end": 62
     }
   ]
 }
