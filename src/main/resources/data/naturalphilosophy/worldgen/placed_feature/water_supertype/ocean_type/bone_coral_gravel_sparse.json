@@ -2,8 +2,10 @@
   "feature":  "naturalphilosophy:plant_patches/bone_coral",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 8
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 4,
+      "noise_factor": 40,
+      "noise_offset": 0.0
     },
     {
       "type": "minecraft:in_square"
@@ -24,13 +26,13 @@
           -1,
           0
         ],
-        "blocks": "minecraft:sand"
+        "blocks": "minecraft:gravel"
       }
     },
     {
       "type": "naturalphilosophy:depth_filter",
-      "taper_end": 40,
-      "taper_start": 25
+      "taper_end": 35,
+      "taper_start": 20
     }
   ]
 }

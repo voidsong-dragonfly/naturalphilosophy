@@ -1,9 +1,14 @@
 {
-  "feature":  "naturalphilosophy:plant_patches/bone_coral",
+  "feature": {
+    "type": "naturalphilosophy:kelp",
+    "config": {}
+  },
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 32
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 120,
+      "noise_factor": 80,
+      "noise_offset": 0.75
     },
     {
       "type": "minecraft:in_square"
@@ -24,13 +29,18 @@
           -1,
           0
         ],
-        "blocks": "minecraft:cobblestone"
+        "blocks": [
+          "minecraft:gravel",
+          "minecraft:cobblestone",
+          "minecraft:mossy_cobblestone",
+          "minecraft:stone"
+        ]
       }
     },
     {
       "type": "naturalphilosophy:depth_filter",
-      "taper_end": 35,
-      "taper_start": 20
+      "taper_start": 40,
+      "taper_end": 25
     }
   ]
 }

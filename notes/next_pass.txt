@@ -82,6 +82,8 @@ Unknown Timeline:
 ✓ 12. Fix lots of missing tags on NP blocks & items
 ✓ 13. Fix powder snow & grove biomes with cliff surface rules
 ✓ 14. Reduce spring generation frequency in ceilings & make lava overwrite sculk/glow lichen
+15. Kelp & mushrooms have a slight (smaller than normal?) offset like grass & flowers do
+16. Jagged Peaks has some moss or grass on its slopes, but not its highest reaches?
 
 
 4.0.0

@@ -29,8 +29,8 @@
     },
     {
       "type": "naturalphilosophy:depth_filter",
-      "taper_end": 40,
-      "taper_start": 25
+      "taper_end": 35,
+      "taper_start": 20
     }
   ]
 }

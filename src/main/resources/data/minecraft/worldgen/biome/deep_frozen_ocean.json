@@ -77,9 +77,10 @@
       "minecraft:spring_lava"
     ],
     [
-      "naturalphilosophy:water_supertype/ocean_type/kelp_cold",
+      "naturalphilosophy:water_supertype/ocean_type/kelp_frozen",
       "naturalphilosophy:water_supertype/ocean_type/seagrass_frozen",
-      "naturalphilosophy:water_supertype/ocean_type/red_algae"
+      "naturalphilosophy:water_supertype/ocean_type/red_algae",
+      "naturalphilosophy:water_supertype/ocean_type/bone_coral_gravel_sparse"
     ],
     [
       "minecraft:freeze_top_layer"
