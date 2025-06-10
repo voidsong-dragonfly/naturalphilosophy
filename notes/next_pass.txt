@@ -71,12 +71,12 @@ Unknown Timeline:
 ✓ 6. Fix orange terracotta spawning at the top of Badlands biomes
 ✓ 7. Vines & drooping leaves in Dark Forest biomes
 8. Small Dripleaves in swamps, maybe? Could do jungles too
-9. Ocean updates
-    Top Levels (0-30m) in: Frozen Ocean, Cold Ocean, Ocean: Kelp on 0-1 gravel, seagrass on 2+, red algae more common the warmer it is
-    Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Frozen Ocean, Cold Ocean, Ocean: Red algae and bone coral, with more bone coral on rockier portions
-    Top Levels (0-30m) in: Lukewarm Ocean: Kelp on boulders (areas with 1 sand), seagrass & red algae on sand
-    Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Lukewarm Ocean: Red algae and bone coral, with more bone coral on rockier portions
-    Warm ocean has some changes to possibly make coral generate more reef-like, otherwise no need for changes
+✓ 9. Ocean updates
+    ✓ Top Levels (0-30m) in: Frozen Ocean, Cold Ocean, Ocean: Kelp on 0-1 gravel, seagrass on 2+, red algae more common the warmer it is
+    ✓ Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Frozen Ocean, Cold Ocean, Ocean: Red algae and bone coral, with more bone coral on rockier portions
+    ✓ Top Levels (0-30m) in: Lukewarm Ocean: Kelp on boulders (areas with 1 sand), seagrass & red algae on sand
+    ✓ Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Lukewarm Ocean: Red algae and bone coral, with more bone coral on rockier portions
+    ✓ Warm ocean has some changes to possibly make coral generate more reef-like, otherwise no need for changes
 ✓ 10. Fix Badlands biome cliff generation to be more interesting (all `minecraft:badlands` now)
 ✓ 11. Check whether more optimization of generated item entities can be done => no, roughly 250 forest items per loaded render distance 16 is from trees and only trees
 ✓ 12. Fix lots of missing tags on NP blocks & items
@@ -84,6 +84,8 @@ Unknown Timeline:
 ✓ 14. Reduce spring generation frequency in ceilings & make lava overwrite sculk/glow lichen
 15. Kelp & mushrooms have a slight (smaller than normal?) offset like grass & flowers do
 16. Jagged Peaks has some moss or grass on its slopes, but not its highest reaches?
+17. Fix river biomes as best as possible
+
 
 
 4.0.0

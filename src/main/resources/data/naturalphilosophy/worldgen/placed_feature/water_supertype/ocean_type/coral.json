@@ -1,0 +1,38 @@
+{
+  "feature": "minecraft:warm_ocean_vegetation",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_factor": 100,
+      "noise_offset": 0.875,
+      "noise_to_count_ratio": 128
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": "minecraft:calcite"
+      }
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_start": 40,
+      "taper_end": 25
+    }
+  ]
+}

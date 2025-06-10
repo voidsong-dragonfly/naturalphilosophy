@@ -35,9 +35,9 @@
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:noise_threshold",
-                    "max_threshold": 1E308,
-                    "min_threshold": 0.5,
-                    "noise": "minecraft:surface"
+                    "max_threshold": 0.075,
+                    "min_threshold": -0.075,
+                    "noise": "naturalphilosophy:coral_reefs"
                   },
                   "then_run": {
                     "type": "minecraft:sequence",
@@ -47,7 +47,7 @@
                         "if_true": {
                           "type": "minecraft:noise_threshold",
                           "max_threshold": 1E308,
-                          "min_threshold": 0.625,
+                          "min_threshold": -0.5,
                           "noise": "naturalphilosophy:surface_randomness"
                         },
                         "then_run": {
@@ -57,6 +57,41 @@
                           }
                         }
                       },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "max_threshold": 1E308,
+                          "min_threshold": -0.875,
+                          "noise": "naturalphilosophy:surface_randomness"
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:sandstone"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:sand"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "max_threshold": 1E308,
+                    "min_threshold": 0.5,
+                    "noise": "minecraft:surface"
+                  },
+                  "then_run": {
+                    "type": "minecraft:sequence",
+                    "sequence": [
                       {
                         "type": "minecraft:condition",
                         "if_true": {
@@ -92,21 +127,6 @@
                   "then_run": {
                     "type": "minecraft:sequence",
                     "sequence": [
-                      {
-                        "type": "minecraft:condition",
-                        "if_true": {
-                          "type": "minecraft:noise_threshold",
-                          "max_threshold": 1E308,
-                          "min_threshold": 1.0,
-                          "noise": "naturalphilosophy:surface_randomness"
-                        },
-                        "then_run": {
-                          "type": "minecraft:block",
-                          "result_state": {
-                            "Name": "minecraft:calcite"
-                          }
-                        }
-                      },
                       {
                         "type": "minecraft:condition",
                         "if_true": {

@@ -27,7 +27,7 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "naturalphilosophy:water_supertype/ocean_type/sandstone_rocks"
+      "naturalphilosophy:water_supertype/ocean_type/calcite_rocks"
     ],
     [
       "minecraft:monster_room",
@@ -72,9 +72,10 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:warm_ocean_vegetation",
-      "minecraft:seagrass_warm",
-      "minecraft:sea_pickle"
+      "naturalphilosophy:water_supertype/ocean_type/coral",
+      "naturalphilosophy:water_supertype/ocean_type/red_algae_warm",
+      "naturalphilosophy:water_supertype/ocean_type/seaplants_reef",
+      "naturalphilosophy:water_supertype/ocean_type/seagrass_warm"
     ],
     [
       "minecraft:freeze_top_layer"
