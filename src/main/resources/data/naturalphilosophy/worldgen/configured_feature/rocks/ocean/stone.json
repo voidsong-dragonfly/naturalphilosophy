@@ -2,7 +2,7 @@
   "type": "minecraft:forest_rock",
   "config": {
     "state": {
-      "Name": "minecraft:red_sandstone"
+      "Name": "minecraft:stone"
     }
   }
 }

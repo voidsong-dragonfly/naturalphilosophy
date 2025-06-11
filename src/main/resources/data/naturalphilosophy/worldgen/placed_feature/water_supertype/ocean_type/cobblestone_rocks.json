@@ -6,20 +6,20 @@
         {
           "chance": 0.2,
           "feature": {
-            "feature": "naturalphilosophy:rocks/mossy_cobblestone",
+            "feature": "naturalphilosophy:rocks/ocean/mossy_cobblestone",
             "placement": []
           }
         },
         {
           "chance": 0.4,
           "feature": {
-            "feature": "naturalphilosophy:rocks/stone",
+            "feature": "naturalphilosophy:rocks/ocean/stone",
             "placement": []
           }
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:rocks/cobblestone",
+        "feature": "naturalphilosophy:rocks/ocean/cobblestone",
         "placement": []
       }
     }
