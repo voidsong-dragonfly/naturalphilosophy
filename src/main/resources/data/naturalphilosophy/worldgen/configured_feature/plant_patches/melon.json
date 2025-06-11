@@ -39,13 +39,13 @@
                 "tag": "minecraft:dirt"
               },
               {
-                "type": "minecraft:matching_blocks",
+                "type": "minecraft:matching_block_tag",
                 "offset": [
                   0,
                   1,
                   0
                 ],
-                "blocks": "minecraft:air"
+                "tag": "minecraft:air"
               }
             ]
           }

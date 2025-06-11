@@ -37,6 +37,8 @@
                     "type": "minecraft:matching_blocks",
                     "blocks": [
                       "minecraft:air",
+                      "minecraft:cave_air",
+                      "minecraft:void_air",
                       "minecraft:water"
                     ]
                   },
@@ -99,6 +101,8 @@
                     "type": "minecraft:matching_blocks",
                     "blocks": [
                       "minecraft:air",
+                      "minecraft:cave_air",
+                      "minecraft:void_air",
                       "minecraft:water"
                     ]
                   },
@@ -161,6 +165,8 @@
                     "type": "minecraft:matching_blocks",
                     "blocks": [
                       "minecraft:air",
+                      "minecraft:cave_air",
+                      "minecraft:void_air",
                       "minecraft:water"
                     ]
                   },
@@ -223,6 +229,8 @@
                     "type": "minecraft:matching_blocks",
                     "blocks": [
                       "minecraft:air",
+                      "minecraft:cave_air",
+                      "minecraft:void_air",
                       "minecraft:water"
                     ]
                   },

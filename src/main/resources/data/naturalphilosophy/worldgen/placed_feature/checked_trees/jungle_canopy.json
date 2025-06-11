@@ -155,7 +155,7 @@
               2,
               0
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -164,7 +164,7 @@
               2,
               2
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -173,7 +173,7 @@
               2,
               0
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -182,7 +182,7 @@
               2,
               -2
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -191,7 +191,7 @@
               2,
               -2
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -200,7 +200,7 @@
               2,
               2
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -209,7 +209,7 @@
               2,
               2
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -218,7 +218,7 @@
               2,
               -2
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -227,7 +227,7 @@
               2,
               0
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -236,7 +236,7 @@
               2,
               4
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -245,7 +245,7 @@
               2,
               0
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           },
           {
             "type": "minecraft:matching_blocks",
@@ -254,7 +254,7 @@
               2,
               -4
             ],
-            "blocks": "minecraft:air"
+            "blocks": "#minecraft:air"
           }
         ]
       }

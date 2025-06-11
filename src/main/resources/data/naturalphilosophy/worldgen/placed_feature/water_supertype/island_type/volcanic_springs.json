@@ -73,6 +73,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -88,6 +90,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -103,6 +107,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -118,6 +124,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -133,6 +141,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -148,6 +158,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -163,6 +175,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 },
@@ -178,6 +192,8 @@
                     "minecraft:red_sand",
                     "minecraft:blackstone",
                     "minecraft:air",
+                    "minecraft:cave_air",
+                    "minecraft:void_air",
                     "minecraft:lava"
                   ]
                 }
@@ -230,7 +246,9 @@
                     "minecraft:yellow_terracotta",
                     "minecraft:red_sand",
                     "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",                    "naturalphilosophy:basaltic_mineral_sand",
+                    "naturalphilosophy:basaltic_mineral_sand",
+                    "naturalphilosophy:sandy_mycelium",
+                    "minecraft:mycelium",
                     "minecraft:smooth_basalt",
                     "minecraft:lava"
                   ]
