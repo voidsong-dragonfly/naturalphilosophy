@@ -90,7 +90,8 @@ Unknown Timeline:
 ✓ 20. Fix Windswept biomes gravel rock spawning
 ✓ 21. Fix Stony Shore boulder issues & add new vegetation
 ✓ 22. Move as much as possible to air as a tag
-23. Fix dirt under the water in mangrove swamps
+✓ 23. Fix dirt under the water in mangrove swamps => Mangrove swamps for some reason had a `disk_grass` feature I had not disabled???
+24. Fix "underwater sediment" surface rule
 
 
 4.0.0
