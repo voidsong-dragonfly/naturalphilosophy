@@ -36,13 +36,14 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(pRegistry, "naturalphilosophy:cliff", NPSurfaceRules.Cliff.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:cliff_lip", NPSurfaceRules.CliffLip.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPSurfaceRules.Flat.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPSurfaceRules.FlatLiquid.CODEC);
         }
     }
 
     @Mixin(SurfaceRules.Context.class)
     protected static final class Context implements ContextExtension {
         @Unique
-        SurfaceRules.Condition cliff, flat, cliffLip;
+        SurfaceRules.Condition cliff, flat, cliffLip, flatLiquid;
 
         @Inject(method="<init>", at=@At("RETURN"))
         public void instantiateConditions(SurfaceSystem system,
@@ -57,6 +58,7 @@ public abstract class SurfaceRulesMixin {
             cliff = new NPSurfaceRules.CliffMaterialCondition(self);
             cliffLip = new NPSurfaceRules.CliffLipMaterialCondition(self);
             flat = new NPSurfaceRules.FlatMaterialCondition(self);
+            flatLiquid = new NPSurfaceRules.FlatLiquidMaterialCondition(self);
         }
 
         @Override
@@ -72,6 +74,11 @@ public abstract class SurfaceRulesMixin {
         @Override
         public SurfaceRules.Condition naturalphilosophy$getFlat() {
             return flat;
+        }
+
+        @Override
+        public SurfaceRules.Condition naturalphilosophy$getFlatLiquid() {
+            return flatLiquid;
         }
     }
 
