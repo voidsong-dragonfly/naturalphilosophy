@@ -64,13 +64,13 @@ Unknown Timeline:
     ✓ Pools generating in Dripstone Caves, but hopefully not in the side of 'em => Not going to happen, the issue with dripstone caves isn't lack of decoration, it's low spawning range.
 ✓ 3. Make sure tree'd hillsides are properly covered in more stunted trees
 ✓ 4. Revisit Mushroom Island, possibly? More volcanic, hotsprings, basaltic mineral sands, the lot
-✓ 4.1 Possibly add Mycelial Growth similar to warped roots
+    ✓ Possibly add Mycelial Growth similar to warped roots
 ✓ 5. Other cave tweaks?
     ✓ Rooted dirt + hanging roots on the top of caves near the surface, lush or not?
     ✓ Make sure rooted dirt doesn't spawn underwater => blacklist mud maybe, and have a separate mud feature for mangrove swamps?
 ✓ 6. Fix orange terracotta spawning at the top of Badlands biomes
 ✓ 7. Vines & drooping leaves in Dark Forest biomes
-8. Small Dripleaves in swamps, maybe? Could do jungles too
+✓ 8. Small Dripleaves in swamps, maybe? Could do jungles too => Chose specifically mangrove swamps (hot, humid, wet, overgrown)
 ✓ 9. Ocean updates
     ✓ Top Levels (0-30m) in: Frozen Ocean, Cold Ocean, Ocean: Kelp on 0-1 gravel, seagrass on 2+, red algae more common the warmer it is
     ✓ Mid (fade 30m-40m) to Bottom Levels (40m-down) in: Frozen Ocean, Cold Ocean, Ocean: Red algae and bone coral, with more bone coral on rockier portions
@@ -89,6 +89,8 @@ Unknown Timeline:
 ✓ 19. Add depth filter to dune grass placement in beaches
 ✓ 20. Fix Windswept biomes gravel rock spawning
 ✓ 21. Fix Stony Shore boulder issues & add new vegetation
+✓ 22. Move as much as possible to air as a tag
+23. Fix dirt under the water in mangrove swamps
 
 
 4.0.0
