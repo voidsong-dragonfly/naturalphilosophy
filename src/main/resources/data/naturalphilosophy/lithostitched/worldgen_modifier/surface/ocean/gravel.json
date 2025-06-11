@@ -24,6 +24,7 @@
         "if_true": {
           "type": "minecraft:biome",
           "biome_is": [
+            "minecraft:stony_shore",
             "minecraft:ocean",
             "minecraft:deep_ocean",
             "minecraft:cold_ocean",

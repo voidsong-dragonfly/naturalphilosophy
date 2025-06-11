@@ -88,6 +88,7 @@ Unknown Timeline:
 ✓ 18. Fix land when it comes above ocean surfaces not being decorated properly
 ✓ 19. Add depth filter to dune grass placement in beaches
 ✓ 20. Fix Windswept biomes gravel rock spawning
+✓ 21. Fix Stony Shore boulder issues & add new vegetation
 
 
 4.0.0

@@ -75,7 +75,7 @@
                         "then_run": {
                           "type": "minecraft:condition",
                           "if_true": {
-                            "type": "naturalphilosophy:flat"
+                            "type": "naturalphilosophy:flat_liquid"
                           },
                           "then_run": {
                             "type": "minecraft:block",
@@ -218,7 +218,7 @@
                               "then_run": {
                                 "type": "minecraft:condition",
                                 "if_true": {
-                                  "type": "naturalphilosophy:flat"
+                                  "type": "naturalphilosophy:flat_liquid"
                                 },
                                 "then_run": {
                                   "type": "minecraft:block",
@@ -251,7 +251,7 @@
                             "then_run": {
                               "type": "minecraft:condition",
                               "if_true": {
-                                "type": "naturalphilosophy:flat"
+                                "type": "naturalphilosophy:flat_liquid"
                               },
                               "then_run": {
                                 "type": "minecraft:block",

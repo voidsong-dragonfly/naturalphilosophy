@@ -1,0 +1,58 @@
+{
+  "feature":  {
+    "type": "minecraft:random_selector",
+    "config": {
+      "features": [
+        {
+          "chance": 0.5,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/seagrass_mixed",
+            "placement": []
+          }
+        }
+      ],
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/seagrass",
+        "placement": []
+      }
+    }
+  },
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 48
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": "minecraft:mud"
+      }
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_start": 40,
+      "taper_end": 25
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_end": 60,
+      "taper_start": 55
+    }
+  ]
+}
