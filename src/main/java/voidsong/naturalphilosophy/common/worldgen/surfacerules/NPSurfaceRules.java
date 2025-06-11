@@ -1,6 +1,7 @@
 package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -133,7 +134,7 @@ public class NPSurfaceRules {
             int j1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, l);
             int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
-            return (Math.max(i1, Math.max(j1, Math.max(i2, j2))) - Math.min(i1, Math.min(j1, Math.min(i2, j2)))) == 0;
+            return (Math.max(i1, Math.max(j1, Math.max(i2, j2))) - Math.min(i1, Math.min(j1, Math.min(i2, j2)))) == 0 && i1 == chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, j);
         }
     }
 
@@ -155,8 +156,11 @@ public class NPSurfaceRules {
             int j1 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, l);
             int i2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k1, j);
             int j2 = chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, l1, j);
+            boolean bottom = !chunkaccess.getBlockState(new BlockPos(this.context.blockX, this.context.blockY - 1, this.context.blockZ)).canBeReplaced();
+            boolean flat = Math.max(i1, Math.max(j1, Math.max(i2, j2))) - Math.min(i1, Math.min(j1, Math.min(i2, j2))) == 0 && i1 == chunkaccess.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, j);
             // The check to return false on chunk borders is a massive kludge, but I use this with _water_. I can't afford flowing water....
-            return Math.max(i1, Math.max(j1, Math.max(i2, j2))) - Math.min(i1, Math.min(j1, Math.min(i2, j2))) == 0 && !(((k == j || l == j)||(k1 == i || l1 == i))&&this.context.blockY>63);
+            boolean nonChunkBorder = !(((k == j || l == j)||(k1 == i || l1 == i)) && this.context.blockY > 63);
+            return flat && bottom && nonChunkBorder;
         }
     }
 }
