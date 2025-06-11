@@ -1,0 +1,8 @@
+{
+  "type": "naturalphilosophy:rock",
+  "config": {
+    "state": {
+      "Name": "minecraft:mossy_cobblestone"
+    }
+  }
+}

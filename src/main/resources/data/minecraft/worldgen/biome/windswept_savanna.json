@@ -27,8 +27,8 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "naturalphilosophy:plains_supertype/savanna_type/stone_rocks",
-      "naturalphilosophy:plains_supertype/savanna_type/stone_rocks_gravel"
+      "naturalphilosophy:plains_supertype/savanna_type/rocks",
+      "naturalphilosophy:plains_supertype/savanna_type/gravel_rocks"
     ],
     [
       "minecraft:monster_room",

@@ -27,8 +27,8 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "naturalphilosophy:mountain_supertype/windswept_type/stone_rocks",
-      "naturalphilosophy:mountain_supertype/windswept_type/stone_rocks_gravel"
+      "naturalphilosophy:mountain_supertype/windswept_type/rocks",
+      "naturalphilosophy:mountain_supertype/windswept_type/gravel_rocks"
     ],
     [
       "minecraft:monster_room",
