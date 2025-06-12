@@ -5,6 +5,9 @@
   "mixins": [
     "FreezeSurfaceMixin",
     "GlowLichenBlockMixin",
+    "KelpBlockMixin",
+    "KelpPlantBlockMixin",
+    "MushroomBlockMixin",
     "SculkVeinBlockMixin",
     "SnowyTreesMixin",
     "SurfaceRulesMixin",
