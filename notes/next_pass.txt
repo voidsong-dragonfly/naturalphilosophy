@@ -32,6 +32,7 @@ Unknown Timeline:
     Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
     Can then use that to place ferns as necessary underneath the cliffs
 6. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
+7. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
@@ -86,15 +87,14 @@ Unknown Timeline:
     ✓ Mushrooms should have dynamicshape like flowers so they don't have issues
     ✓ See if dynamicshape can be applied to kelp (it goes outside the block)? Check out what Bamboo does? => Make kelp shape slightly smaller & move that
 16. Jagged Peaks has some moss or grass on its slopes, but not its highest reaches?
-17. Fix river biomes as best as possible
-✓ 18. Fix land when it comes above ocean surfaces not being decorated properly
-✓ 19. Add depth filter to dune grass placement in beaches
-✓ 20. Fix Windswept biomes gravel rock spawning
-✓ 21. Fix Stony Shore boulder issues & add new vegetation
-✓ 22. Move as much as possible to air as a tag
-✓ 23. Fix dirt under the water in mangrove swamps => Mangrove swamps for some reason had a `disk_grass` feature I had not disabled???
-24. Fix "underwater sediment" surface rule
-✓ 25. Fix issues with `flat` and `flat_liquid` surface rule conditions
+✓ 17. Fix land when it comes above ocean surfaces not being decorated properly
+✓ 18. Add depth filter to dune grass placement in beaches
+✓ 19. Fix Windswept biomes gravel rock spawning
+✓ 20. Fix Stony Shore boulder issues & add new vegetation
+✓ 21. Move as much as possible to air as a tag
+✓ 22. Fix dirt under the water in mangrove swamps => Mangrove swamps for some reason had a `disk_grass` feature I had not disabled???
+✓ 23. Fix "underwater sediment" surface rule
+✓ 24. Fix issues with `flat` and `flat_liquid` surface rule conditions
 
 
 4.0.0

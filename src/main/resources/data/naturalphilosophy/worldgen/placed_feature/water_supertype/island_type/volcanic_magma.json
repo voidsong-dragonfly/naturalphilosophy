@@ -37,7 +37,11 @@
             -1,
             0
           ],
-          "blocks": "naturalphilosophy:basaltic_mineral_sand"
+          "blocks": [
+            "naturalphilosophy:basaltic_mineral_sand",
+            "minecraft:mud",
+            "minecraft:clay"
+          ]
         }
       }
     }
