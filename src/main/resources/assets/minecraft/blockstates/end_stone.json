@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/end_stone"
+      },
+      {
+        "model": "minecraft:block/end_stone",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/end_stone",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/end_stone",
+        "y": 270
+      }
+    ]
+  }
+}
