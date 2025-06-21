@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/red_sandstone"
+      },
+      {
+        "model": "minecraft:block/red_sandstone",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/red_sandstone",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/red_sandstone",
+        "y": 270
+      }
+    ]
+  }
+}
