@@ -86,7 +86,7 @@ Unknown Timeline:
 ✓ 15. Kelp & mushrooms have a slight (smaller than normal?) offset like grass & flowers do
     ✓ Mushrooms should have dynamicshape like flowers so they don't have issues
     ✓ See if dynamicshape can be applied to kelp (it goes outside the block)? Check out what Bamboo does? => Make kelp shape slightly smaller & move that
-16. Jagged Peaks has some moss or grass on its slopes, but not its highest reaches?
+16. Stony Peaks has some moss or grass on its slopes, but not its highest reaches?
 ✓ 17. Fix land when it comes above ocean surfaces not being decorated properly
 ✓ 18. Add depth filter to dune grass placement in beaches
 ✓ 19. Fix Windswept biomes gravel rock spawning
@@ -95,6 +95,7 @@ Unknown Timeline:
 ✓ 22. Fix dirt under the water in mangrove swamps => Mangrove swamps for some reason had a `disk_grass` feature I had not disabled???
 ✓ 23. Fix "underwater sediment" surface rule
 ✓ 24. Fix issues with `flat` and `flat_liquid` surface rule conditions
+✓ 25. Texture updates: Grass path sides, moss carpet hanging sides, rotate: coarse dirt, gravel, moss, endstone, stretch in small dripleaf bottom
 
 
 4.0.0
