@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "naturalphilosophy:bone_coral_crafts"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:bone_meal"
+  }
+}
