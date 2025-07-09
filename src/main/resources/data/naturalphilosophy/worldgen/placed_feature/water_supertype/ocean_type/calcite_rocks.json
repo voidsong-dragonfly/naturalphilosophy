@@ -33,6 +33,11 @@
         ],
         "blocks": "minecraft:calcite"
       }
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_start": 35,
+      "taper_end": 20
     }
   ]
 }
