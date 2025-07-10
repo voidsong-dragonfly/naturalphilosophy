@@ -1,0 +1,48 @@
+BASALT DELTAS
+ - "Magma veins" of blackstone, obsidian, then magma, then maybe lava
+ - Areas of the blackstone can have ores, maybe? => Gilded blackstone, perhaps?
+ - Quartz geodes in the nodes of the magma veins
+ - Backdrop of the biome is smooth basalt, possibly around nodules of blackstone
+ - No plants
+SOUL SAND VALLEY
+ - Large fossils and fossil graveyards
+ - Tar pits with fossils (?)
+ - Nether Wart vegetation patches
+ - Some kind of ruined brazier structure or "soulfire blaze" subbiome?
+ - Brown & purple plants mostly if at all
+ - Soul sand also goes very well with gold + white plants (mushroom)
+NETHER WASTES
+ - Common veins of quartz and gold ore
+ - Should there be plants? Maybe have some sort of netherrack sand instead, make it more desertlike?
+NYLIUM FORESTS
+ - Soul sand patches among the nylium for Warped forests
+ - Warped forests are endermen black-purple
+ - Gravel patches among the nylium for Crimson Forests
+ - Veins of quartz and gold ore
+ - Vines hanging from ceilings & maybe some new plant variety
+
+
+Blaze Bamboo either as its own biome or as stands other places
+Some sort of sugarcane-equivalent? Not sure what it would do...
+
+Gunpowder from quenched bamboo or directly from sugarcane, maybe?
+Somehow activate blaze bamboo with a fortress for blaze powder?
+ => Smelting only, but if grown inside a nether fortress becomes "activated" blaze bamboo and can be used for rods?
+ => Maybe the powder can't be used for eyes of ender but can be used for potions?
+
+Some other sorts of vegetation, several types? make some sort of quartz desert?
+
+An obsidian sand desert + obsidian sandstone could be cool => maybe obsidian glass, actually? make it like a giant slagged heap?
+
+Lava rivers? Dual-level lava rivers with lava falls?
+
+glowstone-and-quartz "crystalline caverns?"
+
+Nether dripstone spikes
+Magma patches on top of lava
+Blackened/charred nylium + purple-red-orange-yellow flamelike fade goes very well
+
+Nether biomes?
+    Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
+    Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
+    Possibly add soul sandstone? or at least when Quark is there, do that?

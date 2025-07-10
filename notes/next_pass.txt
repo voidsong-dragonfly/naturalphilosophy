@@ -22,17 +22,19 @@
 
 Unknown Timeline:
 1. Revisit tide pools with custom feature? => OR, leave to PVJ?
-2. Nether biomes?
-    Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
-    Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
-    Possibly add soul sandstone? or at least when Quark is there, do that?
-3. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
-4. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
-5. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
+2. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
+3. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
+4. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
     Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
     Can then use that to place ferns as necessary underneath the cliffs
-6. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
-7. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
+    Do it via depth >0.04 or so? That + can't see height for heightmap, maybe?
+5. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
+6. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
+7. Snowy leaves when there's a snow layer block above or a snowy leaf 1, 2, or 3 blocks above? (save search height to property?)
+8. Plants covered in snow? => snowlogging might be complicated to get working. do I want to do stairs/slabs too, or just plants?
+9. Minor changes to grass colors, like how Bedrock has variation? => see if it works with Sodium, not worth it if it doesn't => Bedrockify, Bedrockoid
+10. Taller textures for stage 1 saplings to show off their partial growth
+11. Make trees correspond to their saplings correctly
 
 2.0.0:
 1. Changes to cave biomes to make them look better?
@@ -96,6 +98,8 @@ Unknown Timeline:
 ✓ 23. Fix "underwater sediment" surface rule
 ✓ 24. Fix issues with `flat` and `flat_liquid` surface rule conditions
 ✓ 25. Texture updates: Grass path sides, moss carpet hanging sides, rotate: coarse dirt, gravel, moss, endstone, stretch in small dripleaf bottom
+✓ 26. Make calcite not spawn in the deep parts of warm algae
+✓ 27. Make red algae and bone coral useful in recipes/brewing
 
 
 4.0.0
@@ -110,6 +114,21 @@ Unknown Timeline:
     Cold desert => gravel desert biome, maybe?
     Add some more new cave biomes to spice up the underground?
         Surface rocks rather than plants for cave detection
+3. Improve caves and add cave biomes
+    Surface rocks rather than plants for cave detection, maybe? Or more obvious plants
+    Stalactites & stalagmites for normal stone (but not for andesite, diorite, or granite)
+        => Rockfall events, maybe? Dropping stalactites/stalagmites
+        => Figure out if I need Lithostitched sequential generators to make top/bottom pairs of speleothems
+    Boulders of fallen rocks in caves
+    Extra fossils in the Deep Dark, especially on the 'surface' of the caves
+    'Magmatic Depths' or 'Volcanic Depths' biome at depth > some limit
+    'Granitic Pluton' and 'Plagioclastic Laccolith' biomes, (Granite), and (Diorite inside, Andesite outside) for base stone types
+        => Placed above the deepslate layer, possibly with "veins" of material making webs down to the Bedrock from them
+    Might have to fix cave shape?
+        => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
+        => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
+        => 
+
 
 
 Don't want to duplicate things PVJ does because they do them just fine. Work on things PVJ does NOT do instead
