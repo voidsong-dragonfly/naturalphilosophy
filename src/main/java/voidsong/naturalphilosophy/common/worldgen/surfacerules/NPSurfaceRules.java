@@ -1,8 +1,11 @@
 package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.KeyDispatchDataCodec;
+import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.SurfaceRules;
@@ -76,6 +79,57 @@ public class NPSurfaceRules {
         @SuppressWarnings("DataFlowIssue")
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
             return ((ContextExtension)(Object)pContext).naturalphilosophy$getFlatLiquid();
+        }
+    }
+
+    public record ClimateSampler(double tempMin, double tempMax,
+                                 double humMin, double humMax,
+                                 double contMin, double contMax,
+                                 double eroMin, double eroMax,
+                                 double weirdMin, double weirdMax,
+                                 double depthMin, double depthMax) implements SurfaceRules.ConditionSource {
+        public static final KeyDispatchDataCodec<NPSurfaceRules.ClimateSampler> CODEC = KeyDispatchDataCodec.of(
+            RecordCodecBuilder.mapCodec(
+                source -> source.group(
+                        Codec.DOUBLE.fieldOf("min_temperature").forGetter(NPSurfaceRules.ClimateSampler::tempMin),
+                        Codec.DOUBLE.fieldOf("max_temperature").forGetter(NPSurfaceRules.ClimateSampler::tempMax),
+                        Codec.DOUBLE.fieldOf("min_humidity").forGetter(NPSurfaceRules.ClimateSampler::humMin),
+                        Codec.DOUBLE.fieldOf("max_humidity").forGetter(NPSurfaceRules.ClimateSampler::humMax),
+                        Codec.DOUBLE.fieldOf("min_continetnalness").forGetter(NPSurfaceRules.ClimateSampler::contMin),
+                        Codec.DOUBLE.fieldOf("max_continetnalness").forGetter(NPSurfaceRules.ClimateSampler::contMax),
+                        Codec.DOUBLE.fieldOf("min_erosion").forGetter(NPSurfaceRules.ClimateSampler::eroMin),
+                        Codec.DOUBLE.fieldOf("max_erosion").forGetter(NPSurfaceRules.ClimateSampler::eroMax),
+                        Codec.DOUBLE.fieldOf("min_weirdness").forGetter(NPSurfaceRules.ClimateSampler::weirdMin),
+                        Codec.DOUBLE.fieldOf("max_weirdness").forGetter(NPSurfaceRules.ClimateSampler::weirdMax),
+                        Codec.DOUBLE.fieldOf("min_depth").forGetter(NPSurfaceRules.ClimateSampler::depthMin),
+                        Codec.DOUBLE.fieldOf("max_depth").forGetter(NPSurfaceRules.ClimateSampler::depthMax)
+                    ).apply(source, NPSurfaceRules.ClimateSampler::new)
+            )
+        );
+
+        @Override
+        @Nonnull
+        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
+            return CODEC;
+        }
+
+        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
+            class ClimateCondition implements SurfaceRules.Condition {
+                final Climate.TargetPoint target = pContext.randomState.sampler().sample(pContext.blockX, pContext.blockY, pContext.blockZ);
+
+                @Override
+                public boolean test() {
+                    boolean temperature = target.temperature() >= tempMin && target.temperature() <= tempMax;
+                    boolean humidity = target.humidity() >= humMin && target.humidity() <= humMax;
+                    boolean continentalness = target.continentalness() >= contMin && target.continentalness() <= contMax;
+                    boolean erosion = target.erosion() >= eroMin && target.erosion() <= eroMax;
+                    boolean weirdness = target.weirdness() >= weirdMin && target.weirdness() <= weirdMax;
+                    boolean depth = target.depth() >= depthMin && target.depth() <= depthMax;
+                    return temperature && humidity && continentalness && erosion && weirdness && depth;
+                }
+            }
+
+            return new ClimateCondition();
         }
     }
 

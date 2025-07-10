@@ -37,6 +37,7 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(pRegistry, "naturalphilosophy:cliff_lip", NPSurfaceRules.CliffLip.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPSurfaceRules.Flat.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPSurfaceRules.FlatLiquid.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:climate_sampler", NPSurfaceRules.ClimateSampler.CODEC);
         }
     }
 
