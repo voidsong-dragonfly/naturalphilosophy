@@ -1,0 +1,53 @@
+{
+  "priority": 2000,
+  "type": "lithostitched:add_surface_rule",
+  "levels": [
+    "minecraft:overworld"
+  ],
+  "surface_rule": {
+    "type": "minecraft:condition",
+    "if_true": {
+      "type": "naturalphilosophy:climate_sampler",
+      "min_depth": 0.04,
+      "max_depth": 1E308
+    },
+    "then_run": {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:above_preliminary_surface"
+      },
+      "then_run": {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:stone_depth",
+          "add_surface_depth": true,
+          "offset": 0,
+          "secondary_depth_range": 0,
+          "surface_type": "floor"
+        },
+        "then_run": {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "naturalphilosophy:heightmap_depth",
+            "depth": 8
+          },
+          "then_run": {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:not",
+              "invert": {
+                "type": "naturalphilosophy:cliff"
+              }
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:pink_concrete"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
