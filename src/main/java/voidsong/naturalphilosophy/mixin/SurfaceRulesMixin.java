@@ -18,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceConditions;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.ContextExtension;
 
@@ -38,6 +39,7 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPSurfaceRules.Flat.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPSurfaceRules.FlatLiquid.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:climate_sampler", NPSurfaceRules.ClimateSampler.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:heightmap_depth", NPSurfaceRules.HeightmapDepth.CODEC);
         }
     }
 
@@ -56,10 +58,10 @@ public abstract class SurfaceRulesMixin {
                                           WorldGenerationContext context,
                                           CallbackInfo ci) {
             SurfaceRules.Context self = (SurfaceRules.Context) (Object) this;
-            cliff = new NPSurfaceRules.CliffMaterialCondition(self);
-            cliffLip = new NPSurfaceRules.CliffLipMaterialCondition(self);
-            flat = new NPSurfaceRules.FlatMaterialCondition(self);
-            flatLiquid = new NPSurfaceRules.FlatLiquidMaterialCondition(self);
+            cliff = new NPSurfaceConditions.CliffMaterialCondition(self);
+            cliffLip = new NPSurfaceConditions.CliffLipMaterialCondition(self);
+            flat = new NPSurfaceConditions.FlatMaterialCondition(self);
+            flatLiquid = new NPSurfaceConditions.FlatLiquidMaterialCondition(self);
         }
 
         @Override
