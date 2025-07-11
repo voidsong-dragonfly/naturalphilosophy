@@ -78,10 +78,10 @@ public class NPSurfaceRules {
         }
     }
 
-    public record ClimateSampler(double tempMin, double tempMax,
-                                 double humMin, double humMax,
-                                 double contMin, double contMax,
-                                 double eroMin, double eroMax,
+    public record ClimateSampler(double tempMin,  double tempMax,
+                                 double humMin,   double humMax,
+                                 double contMin,  double contMax,
+                                 double eroMin,   double eroMax,
                                  double weirdMin, double weirdMax,
                                  double depthMin, double depthMax) implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<NPSurfaceRules.ClimateSampler> CODEC = KeyDispatchDataCodec.of(

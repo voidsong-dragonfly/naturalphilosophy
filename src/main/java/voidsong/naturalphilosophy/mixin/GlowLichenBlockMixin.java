@@ -18,10 +18,12 @@ import javax.annotation.Nullable;
 @Mixin(GlowLichenBlock.class)
 @SuppressWarnings("unused")
 public class GlowLichenBlockMixin {
+    @SuppressWarnings("all")
     public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
         return fluid == Fluids.WATER || ((fluid == Fluids.LAVA || fluid == Fluids.FLOWING_LAVA) && !state.getValue(BlockStateProperties.WATERLOGGED));
     }
 
+    @SuppressWarnings("all")
     public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluidState) {
         if (!state.getValue(BlockStateProperties.WATERLOGGED) && fluidState.getType() == Fluids.WATER) {
             if (!level.isClientSide()) {

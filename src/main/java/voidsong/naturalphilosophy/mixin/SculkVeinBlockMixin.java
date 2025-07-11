@@ -18,10 +18,12 @@ import javax.annotation.Nullable;
 @Mixin(SculkVeinBlock.class)
 @SuppressWarnings("unused")
 public class SculkVeinBlockMixin {
+    @SuppressWarnings("all")
     public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
         return fluid == Fluids.WATER || ((fluid == Fluids.LAVA || fluid == Fluids.FLOWING_LAVA) && !state.getValue(BlockStateProperties.WATERLOGGED));
     }
 
+    @SuppressWarnings("all")
     public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluidState) {
         if (!state.getValue(BlockStateProperties.WATERLOGGED) && fluidState.getType() == Fluids.WATER) {
             if (!level.isClientSide()) {
