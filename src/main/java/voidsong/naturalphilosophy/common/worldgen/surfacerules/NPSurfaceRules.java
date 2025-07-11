@@ -4,7 +4,6 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.KeyDispatchDataCodec;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 import javax.annotation.Nonnull;
@@ -111,22 +110,7 @@ public class NPSurfaceRules {
         }
 
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            class ClimateCondition implements SurfaceRules.Condition {
-                final Climate.TargetPoint target = pContext.randomState.sampler().sample(pContext.blockX, pContext.blockY, pContext.blockZ);
-
-                @Override
-                public boolean test() {
-                    boolean temperature = Climate.unquantizeCoord(target.temperature()) >= tempMin && Climate.unquantizeCoord(target.temperature()) <= tempMax;
-                    boolean humidity = Climate.unquantizeCoord(target.humidity()) >= humMin && Climate.unquantizeCoord(target.humidity()) <= humMax;
-                    boolean continentalness = Climate.unquantizeCoord(target.continentalness()) >= contMin && Climate.unquantizeCoord(target.continentalness()) <= contMax;
-                    boolean erosion = Climate.unquantizeCoord(target.erosion()) >= eroMin && Climate.unquantizeCoord(target.erosion()) <= eroMax;
-                    boolean weirdness = Climate.unquantizeCoord(target.weirdness()) >= weirdMin && Climate.unquantizeCoord(target.weirdness()) <= weirdMax;
-                    boolean depth = Climate.unquantizeCoord(target.depth()) >= depthMin && Climate.unquantizeCoord(target.depth()) <= depthMax;
-                    return temperature && humidity && continentalness && erosion && weirdness && depth;
-                }
-            }
-
-            return new ClimateCondition();
+            return new NPSurfaceConditions.ClimateSamplerCondition(pContext, tempMin, tempMax, humMin, humMax, contMin, contMax, eroMin, eroMax, weirdMin, weirdMax, depthMin, depthMax);
         }
     }
 
