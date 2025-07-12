@@ -6,12 +6,14 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.neoforged.neoforge.common.extensions.IHolderExtension;
 
 import javax.annotation.Nonnull;
+import java.util.function.Predicate;
 
 public class NPSurfaceRules {
 
@@ -139,14 +141,14 @@ public class NPSurfaceRules {
         }
     }
 
-    public static class ExtendedBiomeConditionSource extends SurfaceRules.BiomeConditionSource {
+    public static class ExtendedBiomeConditionSource implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<ExtendedBiomeConditionSource> CODEC = KeyDispatchDataCodec.of(
             RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biome_is").xmap(ExtendedBiomeConditionSource::makeBiomeConditionSource, biomeSource -> biomeSource.biomeSet)
         );
         public final HolderSet<Biome> biomeSet;
+        private Predicate<ResourceKey<Biome>> test;
 
         public ExtendedBiomeConditionSource(HolderSet<Biome> biomes) {
-            super(biomes.stream().map(IHolderExtension::getKey).toList());
             this.biomeSet = biomes;
         }
 
@@ -156,6 +158,36 @@ public class NPSurfaceRules {
             return CODEC;
         }
 
+        public SurfaceRules.Condition apply(final SurfaceRules.Context pContext) {
+            if(test == null) test = biomeSet.stream().map(IHolderExtension::getKey).toList()::contains;
+            class BiomeCondition extends SurfaceRules.LazyYCondition {
+                BiomeCondition() {
+                    super(pContext);
+                }
+
+                @Override
+                protected boolean compute() {
+                    return this.context.biome.get().is(test);
+                }
+            }
+
+            return new BiomeCondition();
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) {
+                return true;
+            } else {
+                return other instanceof ExtendedBiomeConditionSource source && this.biomeSet.equals(source.biomeSet);
+            }
+        }
+
+        @Override
+        public int hashCode() {
+            return this.biomeSet.hashCode();
+        }
+
         private static ExtendedBiomeConditionSource makeBiomeConditionSource(HolderSet<Biome> biomes) {
             return new ExtendedBiomeConditionSource(biomes);
         }
@@ -163,7 +195,7 @@ public class NPSurfaceRules {
         @Override
         @Nonnull
         public String toString() {
-            return "ExtendedBiomeConditionSource[biomes=" + this.biomes + "]";
+            return "ExtendedBiomeConditionSource[biomes=" + this.biomeSet + "]";
         }
     }
 }
