@@ -1,0 +1,15 @@
+{
+  "remove": [
+    "#c:is_aquatic",
+    "#c:is_beach",
+    "#c:is_stony_shores",
+    "#c:is_snowy",
+    "#c:is_sandy",
+    "minecraft:mushroom_fields",
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp"
+  ],
+  "values": [
+    "#minecraft:is_overworld"
+  ]
+}
