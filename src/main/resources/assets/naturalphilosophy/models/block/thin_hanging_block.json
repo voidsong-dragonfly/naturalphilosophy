@@ -1,11 +1,6 @@
 {
   "parent": "block/carpet",
   "render_type": "cutout",
-  "textures": {
-    "particle": "block/moss_block",
-    "moss": "block/moss_block",
-    "side": "block/moss_side_overlay"
-  },
   "elements": [
     {
       "from": [0, 0, 0],
