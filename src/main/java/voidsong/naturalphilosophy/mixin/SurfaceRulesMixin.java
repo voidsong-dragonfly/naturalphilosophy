@@ -2,9 +2,7 @@ package voidsong.naturalphilosophy.mixin;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
+import net.minecraft.core.*;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.NoiseChunk;
@@ -39,7 +37,8 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPSurfaceRules.Flat.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPSurfaceRules.FlatLiquid.CODEC);
             SurfaceRules.register(pRegistry, "naturalphilosophy:climate_sampler", NPSurfaceRules.ClimateSampler.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:heightmap_depth", NPSurfaceRules.HeightmapDepth.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:heightmap_depth", NPSurfaceRules.HeightmapDepthCheck.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:biome", NPSurfaceRules.ExtendedBiomeConditionSource.CODEC);
         }
     }
 
@@ -84,5 +83,4 @@ public abstract class SurfaceRulesMixin {
             return flatLiquid;
         }
     }
-
 }
