@@ -1,0 +1,8 @@
+{
+  "parent": "naturalphilosophy:block/snow_height6",
+  "textures": {
+    "particle": "block/snow",
+    "snow": "block/snow",
+    "side": "block/snow_side_overlay_3"
+  }
+}
