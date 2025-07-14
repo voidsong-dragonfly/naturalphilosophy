@@ -11,27 +11,27 @@
     "then_run": {
       "type": "minecraft:condition",
       "if_true": {
-        "type": "minecraft:stone_depth",
-        "add_surface_depth": false,
-        "offset": 0,
-        "secondary_depth_range": 0,
-        "surface_type": "floor"
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:taiga"
+        ]
       },
       "then_run": {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:water",
-          "add_stone_depth": false,
-          "offset": -1,
-          "surface_depth_multiplier": 0
+          "type": "minecraft:stone_depth",
+          "add_surface_depth": false,
+          "offset": 0,
+          "secondary_depth_range": 0,
+          "surface_type": "floor"
         },
         "then_run": {
           "type": "minecraft:condition",
           "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:taiga"
-            ]
+            "type": "minecraft:water",
+            "add_stone_depth": false,
+            "offset": -1,
+            "surface_depth_multiplier": 0
           },
           "then_run": {
             "type": "minecraft:sequence",
