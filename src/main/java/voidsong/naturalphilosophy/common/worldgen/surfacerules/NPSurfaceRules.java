@@ -8,6 +8,7 @@ import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 import javax.annotation.Nonnull;
@@ -82,27 +83,27 @@ public class NPSurfaceRules {
         }
     }
 
-    public record ClimateSampler(double tempMin,  double tempMax,
-                                 double humMin,   double humMax,
-                                 double contMin,  double contMax,
-                                 double eroMin,   double eroMax,
-                                 double weirdMin, double weirdMax,
-                                 double depthMin, double depthMax) implements SurfaceRules.ConditionSource {
+    public record ClimateSampler(long tempMin,  long tempMax,
+                                 long humMin,   long humMax,
+                                 long contMin,  long contMax,
+                                 long eroMin,   long eroMax,
+                                 long weirdMin, long weirdMax,
+                                 long depthMin, long depthMax) implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<NPSurfaceRules.ClimateSampler> CODEC = KeyDispatchDataCodec.of(
             RecordCodecBuilder.mapCodec(
                 source -> source.group(
-                        Codec.DOUBLE.optionalFieldOf("min_temperature", -1.0).forGetter(NPSurfaceRules.ClimateSampler::tempMin),
-                        Codec.DOUBLE.optionalFieldOf("max_temperature", 1.0).forGetter(NPSurfaceRules.ClimateSampler::tempMax),
-                        Codec.DOUBLE.optionalFieldOf("min_humidity", -1.0).forGetter(NPSurfaceRules.ClimateSampler::humMin),
-                        Codec.DOUBLE.optionalFieldOf("max_humidity", 1.0).forGetter(NPSurfaceRules.ClimateSampler::humMax),
-                        Codec.DOUBLE.optionalFieldOf("min_continentalness", -1.0).forGetter(NPSurfaceRules.ClimateSampler::contMin),
-                        Codec.DOUBLE.optionalFieldOf("max_continentalness", 1.0).forGetter(NPSurfaceRules.ClimateSampler::contMax),
-                        Codec.DOUBLE.optionalFieldOf("min_erosion", -1.0).forGetter(NPSurfaceRules.ClimateSampler::eroMin),
-                        Codec.DOUBLE.optionalFieldOf("max_erosion", 1.0).forGetter(NPSurfaceRules.ClimateSampler::eroMax),
-                        Codec.DOUBLE.optionalFieldOf("min_weirdness", -1.0).forGetter(NPSurfaceRules.ClimateSampler::weirdMin),
-                        Codec.DOUBLE.optionalFieldOf("max_weirdness", 1.0).forGetter(NPSurfaceRules.ClimateSampler::weirdMax),
-                        Codec.DOUBLE.optionalFieldOf("min_depth", -Double.MAX_VALUE).forGetter(NPSurfaceRules.ClimateSampler::depthMin),
-                        Codec.DOUBLE.optionalFieldOf("max_depth", Double.MAX_VALUE).forGetter(NPSurfaceRules.ClimateSampler::depthMax)
+                        Codec.FLOAT.optionalFieldOf("min_temperature", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::tempMin),
+                        Codec.FLOAT.optionalFieldOf("max_temperature", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::tempMax),
+                        Codec.FLOAT.optionalFieldOf("min_humidity", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::humMin),
+                        Codec.FLOAT.optionalFieldOf("max_humidity", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::humMax),
+                        Codec.FLOAT.optionalFieldOf("min_continentalness", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::contMin),
+                        Codec.FLOAT.optionalFieldOf("max_continentalness", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::contMax),
+                        Codec.FLOAT.optionalFieldOf("min_erosion", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::eroMin),
+                        Codec.FLOAT.optionalFieldOf("max_erosion", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::eroMax),
+                        Codec.FLOAT.optionalFieldOf("min_weirdness", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::weirdMin),
+                        Codec.FLOAT.optionalFieldOf("max_weirdness", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::weirdMax),
+                        Codec.FLOAT.optionalFieldOf("min_depth", -Float.MAX_VALUE).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::depthMin),
+                        Codec.FLOAT.optionalFieldOf("max_depth", Float.MAX_VALUE).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPSurfaceRules.ClimateSampler::depthMax)
                     ).apply(source, NPSurfaceRules.ClimateSampler::new)
             )
         );

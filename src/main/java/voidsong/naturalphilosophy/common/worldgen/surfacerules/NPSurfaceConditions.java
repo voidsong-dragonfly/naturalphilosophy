@@ -40,7 +40,25 @@ public class NPSurfaceConditions {
 
         @Override
         protected boolean compute() {
-            return this.context.stoneDepthBelow <= 2;
+            int i = this.context.blockX & 15;
+            int j = this.context.blockZ & 15;
+            ChunkAccess chunkaccess = this.context.chunk;
+            boolean bottom3 = chunkaccess.getBlockState(new BlockPos(this.context.blockX, this.context.blockY+2, this.context.blockZ-j+Math.max(j - 1, 0))).isAir() && this.context.blockY+2 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.max(j - 1, 0));
+            boolean bottom4 = chunkaccess.getBlockState(new BlockPos(this.context.blockX, this.context.blockY+2, this.context.blockZ-j+Math.min(j + 1, 15))).isAir() && this.context.blockY+2 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.min(j + 1, 15));
+            boolean bottom1 = chunkaccess.getBlockState(new BlockPos(this.context.blockX-i+Math.max(i - 1, 0), this.context.blockY+2, this.context.blockZ)).isAir() && this.context.blockY+2 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.max(i - 1, 0), j);
+            boolean bottom2 = chunkaccess.getBlockState(new BlockPos(this.context.blockX-i+Math.min(i + 1, 15), this.context.blockY+2, this.context.blockZ)).isAir() && this.context.blockY+2 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.min(i + 1, 15), j);
+
+            boolean bottomLip = (bottom1 || bottom2 || bottom3 || bottom4);
+
+            if(!bottomLip) {
+                bottom3 = chunkaccess.getBlockState(new BlockPos(this.context.blockX, this.context.blockY+4, this.context.blockZ-j+Math.max(j - 2, 0))).isAir() && this.context.blockY+4 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.max(j - 2, 0));
+                bottom4 = chunkaccess.getBlockState(new BlockPos(this.context.blockX, this.context.blockY+4, this.context.blockZ-j+Math.min(j + 2, 15))).isAir() && this.context.blockY+4 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, Math.min(j + 2, 15));
+                bottom1 = chunkaccess.getBlockState(new BlockPos(this.context.blockX-i+Math.max(i - 2, 0), this.context.blockY+4, this.context.blockZ)).isAir() && this.context.blockY+4 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.max(i - 2, 0), j);
+                bottom2 = chunkaccess.getBlockState(new BlockPos(this.context.blockX-i+Math.min(i + 2, 15), this.context.blockY+4, this.context.blockZ)).isAir() && this.context.blockY+4 < chunkaccess.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, Math.min(i + 2, 15), j);
+                bottomLip = (bottom1 || bottom2 || bottom3 || bottom4);
+            }
+
+            return this.context.stoneDepthBelow <= 2 || bottomLip;
         }
     }
 
@@ -93,16 +111,16 @@ public class NPSurfaceConditions {
     }
 
     public static class ClimateSamplerCondition extends SurfaceRules.LazyYCondition {
-        private final double tempMin, tempMax, humMin, humMax, contMin, contMax, eroMin, eroMax, weirdMin, weirdMax, depthMin, depthMax;
+        private final long tempMin, tempMax, humMin, humMax, contMin, contMax, eroMin, eroMax, weirdMin, weirdMax, depthMin, depthMax;
         final Climate.TargetPoint target;
 
         public ClimateSamplerCondition(SurfaceRules.Context context,
-                                       double tempMin,  double tempMax,
-                                       double humMin,   double humMax,
-                                       double contMin,  double contMax,
-                                       double eroMin,   double eroMax,
-                                       double weirdMin, double weirdMax,
-                                       double depthMin, double depthMax) {
+                                       long tempMin,  long tempMax,
+                                       long humMin,   long humMax,
+                                       long contMin,  long contMax,
+                                       long eroMin,   long eroMax,
+                                       long weirdMin, long weirdMax,
+                                       long depthMin, long depthMax) {
             super(context);
             this.tempMin  = tempMin;  this.tempMax  = tempMax;
             this.humMin   = humMin;   this.humMax   = humMax;
@@ -115,12 +133,12 @@ public class NPSurfaceConditions {
 
         @Override
         protected boolean compute() {
-            boolean temperature = Climate.unquantizeCoord(target.temperature()) >= tempMin && Climate.unquantizeCoord(target.temperature()) <= tempMax;
-            boolean humidity = Climate.unquantizeCoord(target.humidity()) >= humMin && Climate.unquantizeCoord(target.humidity()) <= humMax;
-            boolean continentalness = Climate.unquantizeCoord(target.continentalness()) >= contMin && Climate.unquantizeCoord(target.continentalness()) <= contMax;
-            boolean erosion = Climate.unquantizeCoord(target.erosion()) >= eroMin && Climate.unquantizeCoord(target.erosion()) <= eroMax;
-            boolean weirdness = Climate.unquantizeCoord(target.weirdness()) >= weirdMin && Climate.unquantizeCoord(target.weirdness()) <= weirdMax;
-            boolean depth = Climate.unquantizeCoord(target.depth()) >= depthMin && Climate.unquantizeCoord(target.depth()) <= depthMax;
+            boolean temperature = target.temperature() >= tempMin && target.temperature() <= tempMax;
+            boolean humidity = target.humidity() >= humMin && target.humidity() <= humMax;
+            boolean continentalness = target.continentalness() >= contMin && target.continentalness() <= contMax;
+            boolean erosion = target.erosion() >= eroMin && target.erosion() <= eroMax;
+            boolean weirdness = target.weirdness() >= weirdMin && target.weirdness() <= weirdMax;
+            boolean depth = target.depth() >= depthMin && target.depth() <= depthMax;
             return temperature && humidity && continentalness && erosion && weirdness && depth;
         }
     }
