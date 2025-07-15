@@ -12,7 +12,8 @@
     "SnowyTreesMixin",
     "SurfaceRulesMixin",
     "SurfaceRulesMixin$ConditionSource",
-    "SurfaceRulesMixin$Context"
+    "SurfaceRulesMixin$Context",
+    "SurfaceRulesMixin$RuleSource"
   ],
   "client": [],
   "injectors": {

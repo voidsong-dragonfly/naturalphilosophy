@@ -15,7 +15,7 @@ import java.util.List;
 
 public class NPRuleSources {
     public record NoiseThresholdSelectorRuleSource(ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Double> lowerThresholds) implements SurfaceRules.RuleSource {
-        static final KeyDispatchDataCodec<NoiseThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
+        public static final KeyDispatchDataCodec<NoiseThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceKey.codec(Registries.NOISE).fieldOf("noise").forGetter(NoiseThresholdSelectorRuleSource::noise),
                 SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
@@ -43,7 +43,7 @@ public class NPRuleSources {
     }
 
     public record BilayerFillRuleSource(int surfaceOffset, int secondaryDepthRange, SurfaceRules.RuleSource topRule, SurfaceRules.RuleSource defaultRule) implements SurfaceRules.RuleSource {
-        static final KeyDispatchDataCodec<BilayerFillRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
+        public static final KeyDispatchDataCodec<BilayerFillRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 Codec.INT.fieldOf("surface_offset").forGetter(BilayerFillRuleSource::surfaceOffset),
                 Codec.INT.fieldOf("secondary_depth_range").forGetter(BilayerFillRuleSource::secondaryDepthRange),

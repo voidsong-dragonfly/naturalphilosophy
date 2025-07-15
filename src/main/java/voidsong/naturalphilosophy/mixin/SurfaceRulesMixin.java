@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPRuleSources;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceConditions;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPConditionSources;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.ContextExtension;
@@ -29,16 +30,23 @@ public abstract class SurfaceRulesMixin {
     @Mixin(SurfaceRules.ConditionSource.class)
     public interface ConditionSource extends Function<SurfaceRules.Context, SurfaceRules.Condition> {
         @Inject(method = "bootstrap", at = @At("HEAD"))
-        private static void onBootstrap(
-            Registry<MapCodec<? extends SurfaceRules.ConditionSource>> pRegistry,
-            CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
-            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff_lip", NPConditionSources.CliffLip.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquid.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:climate_sampler", NPConditionSources.ClimateSampler.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:heightmap_depth", NPConditionSources.HeightmapDepthCheck.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
+        private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.ConditionSource>> registry, CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
+            SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:cliff_lip", NPConditionSources.CliffLip.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquid.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:climate_sampler", NPConditionSources.ClimateSampler.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:heightmap_depth", NPConditionSources.HeightmapDepthCheck.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
+        }
+    }
+
+    @Mixin(SurfaceRules.RuleSource.class)
+    public interface RuleSource extends Function<SurfaceRules.Context, SurfaceRules.SurfaceRule> {
+        @Inject(method = "bootstrap", at = @At("HEAD"))
+        private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.RuleSource>> registry, CallbackInfoReturnable<MapCodec<? extends SurfaceRules.RuleSource>> cir) {
+            SurfaceRules.register(registry, "naturalphilosophy:noise_threshold_selector", NPRuleSources.NoiseThresholdSelectorRuleSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:bilayer_fill", NPRuleSources.BilayerFillRuleSource.CODEC);
         }
     }
 
