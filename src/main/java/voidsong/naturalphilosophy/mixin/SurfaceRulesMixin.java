@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceConditions;
-import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPConditionSources;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.ContextExtension;
 
 import java.util.function.Function;
@@ -32,13 +32,13 @@ public abstract class SurfaceRulesMixin {
         private static void onBootstrap(
             Registry<MapCodec<? extends SurfaceRules.ConditionSource>> pRegistry,
             CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
-            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff", NPSurfaceRules.Cliff.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff_lip", NPSurfaceRules.CliffLip.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPSurfaceRules.Flat.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPSurfaceRules.FlatLiquid.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:climate_sampler", NPSurfaceRules.ClimateSampler.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:heightmap_depth", NPSurfaceRules.HeightmapDepthCheck.CODEC);
-            SurfaceRules.register(pRegistry, "naturalphilosophy:biome", NPSurfaceRules.ExtendedBiomeConditionSource.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:cliff_lip", NPConditionSources.CliffLip.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquid.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:climate_sampler", NPConditionSources.ClimateSampler.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:heightmap_depth", NPConditionSources.HeightmapDepthCheck.CODEC);
+            SurfaceRules.register(pRegistry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
         }
     }
 
