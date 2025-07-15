@@ -30,7 +30,8 @@ public abstract class SurfaceRulesMixin {
     @Mixin(SurfaceRules.ConditionSource.class)
     public interface ConditionSource extends Function<SurfaceRules.Context, SurfaceRules.Condition> {
         @Inject(method = "bootstrap", at = @At("HEAD"))
-        private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.ConditionSource>> registry, CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
+        private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.ConditionSource>> registry,
+                                        CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
             SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:cliff_lip", NPConditionSources.CliffLip.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
@@ -44,7 +45,8 @@ public abstract class SurfaceRulesMixin {
     @Mixin(SurfaceRules.RuleSource.class)
     public interface RuleSource extends Function<SurfaceRules.Context, SurfaceRules.SurfaceRule> {
         @Inject(method = "bootstrap", at = @At("HEAD"))
-        private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.RuleSource>> registry, CallbackInfoReturnable<MapCodec<? extends SurfaceRules.RuleSource>> cir) {
+        private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.RuleSource>> registry,
+                                        CallbackInfoReturnable<MapCodec<? extends SurfaceRules.RuleSource>> cir) {
             SurfaceRules.register(registry, "naturalphilosophy:noise_threshold_selector", NPRuleSources.NoiseThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:bilayer_fill", NPRuleSources.BilayerFillRuleSource.CODEC);
         }
@@ -61,7 +63,7 @@ public abstract class SurfaceRulesMixin {
                                           ChunkAccess chunk,
                                           NoiseChunk noiseChunk,
                                           Function<BlockPos, Holder<Biome>> biomeGetter,
-                                          Registry<Biome> p_224621_,
+                                          Registry<Biome> biomeRegistry,
                                           WorldGenerationContext context,
                                           CallbackInfo ci) {
             SurfaceRules.Context self = (SurfaceRules.Context) (Object) this;
