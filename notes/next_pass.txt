@@ -20,22 +20,6 @@
 ✓ 2. Moss patches on Stony Shore
 ✓ 3. -Fix- REMOVE tide pools for both Beach and Stony Shore
 
-Unknown Timeline:
-1. Revisit tide pools with custom feature? => OR, leave to PVJ?
-2. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
-3. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
-4. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
-    Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk?
-    Can then use that to place ferns as necessary underneath the cliffs
-    Do it via depth >0.04 or so? That + can't see height for heightmap, maybe?
-5. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
-6. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
-7. Snowy leaves when there's a snow layer block above or a snowy leaf 1, 2, or 3 blocks above? (save search height to property?)
-8. Plants covered in snow? => snowlogging might be complicated to get working. do I want to do stairs/slabs too, or just plants?
-9. Minor changes to grass colors, like how Bedrock has variation? => see if it works with Sodium, not worth it if it doesn't => Bedrockify, Bedrockoid
-10. Taller textures for stage 1 saplings to show off their partial growth
-11. Make trees correspond to their saplings correctly
-
 2.0.0:
 1. Changes to cave biomes to make them look better?
     ✓ Water color changes for Lush Caves (greenish) and Deep Darp (deep blue-black inky)
@@ -100,6 +84,26 @@ Unknown Timeline:
 ✓ 25. Texture updates: Grass path sides, moss carpet hanging sides, rotate: coarse dirt, gravel, moss, endstone, stretch in small dripleaf bottom
 ✓ 26. Make calcite not spawn in the deep parts of warm algae
 ✓ 27. Make red algae and bone coral useful in recipes/brewing
+✓ 28. Make grass that spawns in caves actually dirt, coarse dirt, or rooted dirt
+    ✓ Do it with a feature instead of something else, placed by search below the surface at specified points in the chunk? => did it with surface rule
+    ✓ Can then use that to place ferns as necessary underneath the cliffs => cliffs are hard, didn't bother
+    ✓ Do it via depth >0.04 or so? That + can't see height for heightmap, maybe? => did direct from heightmap, depth is useless
+✓ 29. Variation in moss hanging textures
+✓ 30. Fix cliff issues with flat tops having stone & the ring of stone around the bottom
+
+
+Unknown Timeline:
+1. Revisit tide pools with custom feature? => OR, leave to PVJ?
+2. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
+3. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
+4. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
+5. Plants covered in snow? => snowlogging might be complicated to get working. do I want to do stairs/slabs too, or just plants?
+
+Plausible for 3.0.0
+1. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
+2. Taller textures for stage 1 saplings to show off their partial growth
+3. Make trees correspond to their saplings correctly
+4. Leaves have a curtain of snow draped around them when there is a snow layer on top
 
 
 4.0.0
@@ -127,7 +131,7 @@ Unknown Timeline:
     Might have to fix cave shape?
         => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
         => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
-        => 
+        =>
 
 
 

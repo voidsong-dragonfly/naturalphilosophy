@@ -46,3 +46,6 @@ Nether biomes?
     Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
+
+
+"Soulfire Brazier" and "Dread Lantern" maybe?
