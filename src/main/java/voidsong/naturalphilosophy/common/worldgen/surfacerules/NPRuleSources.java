@@ -61,11 +61,14 @@ public class NPRuleSources {
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
             // Check to make sure we're above water, and return a specialty BlockState rule if we fail
             if(pContext.waterHeight != Integer.MIN_VALUE) return new NullStateRule();
-            // Calculate the secondary depth we need to check against, zero for no depth
-            int secondary = secondaryDepthRange == 0 ? 0 : (int) Mth.map(pContext.getSurfaceSecondary(), -1.0, 1.0, 0.0, secondaryDepthRange);
             // Check which bin we're in for surface rules
-            if(pContext.stoneDepthAbove <= 1) return topRule.apply(pContext);
-            else if(pContext.stoneDepthAbove <= 1 + surfaceOffset + pContext.surfaceDepth + secondary) return defaultRule.apply(pContext);
+            if(pContext.stoneDepthAbove <= 1)
+                return topRule.apply(pContext);
+            // Calculate the secondary depth we need to check against, zero for no depth; this is after top check for performance
+            int secondary = secondaryDepthRange == 0 ? 0 : (int) Mth.map(pContext.getSurfaceSecondary(), -1.0, 1.0, 0.0, secondaryDepthRange);
+            // Second bin necessitates more checks to form the 'bottom' effectively
+            if(pContext.stoneDepthAbove <= 1 + surfaceOffset + pContext.surfaceDepth + secondary)
+                return defaultRule.apply(pContext);
             // Return a null BlockState in if we fail to be in either bin
             else return new NullStateRule();
         }
