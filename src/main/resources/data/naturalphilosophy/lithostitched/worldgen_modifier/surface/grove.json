@@ -40,8 +40,8 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:noise_threshold",
-                  "max_threshold": 0.6,
-                  "min_threshold": 0.35,
+                  "max_threshold": 0.58,
+                  "min_threshold": 0.45,
                   "noise": "minecraft:powder_snow"
                 },
                 "then_run": {
