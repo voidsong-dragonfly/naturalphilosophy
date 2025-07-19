@@ -1,9 +1,0 @@
-CASCADE ORDER:
-above_preliminary_surface       //this removes the most blocks by placing only near the surface
-biome                           //this removes the most checks by deduplicating a lot of checks of stone_depth and such
-cliff, flat, flat_liquid, etc   //these are precomputed and so we do these next to save on the next set of checks
-heightmap_depth possibly?       //not quite precomputed but not a hard check. only applies for deep biomes though
-stone_depth                     //needs some computing but not necessarily a huge amount
-water_depth                     //needs a bit more computing than stone_depth
-noise_threshold maybe?          //does compute some pieces of noise to run, and also generally the final place
-climate sampling                //does a lot of compute comparisons - two per climate parameter

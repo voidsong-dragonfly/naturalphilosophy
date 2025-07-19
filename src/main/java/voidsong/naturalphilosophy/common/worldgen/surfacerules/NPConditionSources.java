@@ -32,23 +32,6 @@ public class NPConditionSources {
         }
     }
 
-    public enum CliffLip implements SurfaceRules.ConditionSource {
-        INSTANCE;
-
-        public static final KeyDispatchDataCodec<NPConditionSources.CliffLip> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
-
-        @Override
-        @Nonnull
-        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
-            return CODEC;
-        }
-
-        @SuppressWarnings("DataFlowIssue")
-        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return ((ContextExtension)(Object)pContext).naturalphilosophy$getCliffLip();
-        }
-    }
-
     public enum Flat implements SurfaceRules.ConditionSource {
         INSTANCE;
 
@@ -156,32 +139,14 @@ public class NPConditionSources {
         }
 
         public SurfaceRules.Condition apply(final SurfaceRules.Context pContext) {
-            class BiomeCondition extends SurfaceRules.LazyYCondition {
-                BiomeCondition() {
-                    super(pContext);
-                }
-
+            class BiomeCondition implements SurfaceRules.Condition {
                 @Override
-                protected boolean compute() {
-                    return biomeSet.contains(context.biome.get());
+                public boolean test() {
+                    return biomeSet.contains(pContext.biome.get());
                 }
             }
 
             return new BiomeCondition();
-        }
-
-        @Override
-        public boolean equals(Object other) {
-            if (this == other) {
-                return true;
-            } else {
-                return other instanceof ExtendedBiomeConditionSource source && this.biomeSet.equals(source.biomeSet);
-            }
-        }
-
-        @Override
-        public int hashCode() {
-            return this.biomeSet.hashCode();
         }
 
         private static ExtendedBiomeConditionSource makeBiomeConditionSource(HolderSet<Biome> biomes) {
