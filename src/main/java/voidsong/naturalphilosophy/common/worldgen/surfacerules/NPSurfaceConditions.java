@@ -1,7 +1,6 @@
 package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.SurfaceRules;
@@ -97,53 +96,6 @@ public class NPSurfaceConditions {
             boolean nonChunkBorder = !(((k == j || l == j)||(k1 == i || l1 == i)) && this.context.blockY > 63);
             // Combine all the checks together
             return flat && bottom && nonChunkBorder;
-        }
-    }
-
-    public static class ClimateSamplerCondition extends SurfaceRules.LazyYCondition {
-        private final long tempMin, tempMax, humMin, humMax, contMin, contMax, eroMin, eroMax, weirdMin, weirdMax, depthMin, depthMax;
-        final Climate.TargetPoint target;
-
-        public ClimateSamplerCondition(SurfaceRules.Context context,
-                                       long tempMin,  long tempMax,
-                                       long humMin,   long humMax,
-                                       long contMin,  long contMax,
-                                       long eroMin,   long eroMax,
-                                       long weirdMin, long weirdMax,
-                                       long depthMin, long depthMax) {
-            super(context);
-            this.tempMin  = tempMin;  this.tempMax  = tempMax;
-            this.humMin   = humMin;   this.humMax   = humMax;
-            this.contMin  = contMin;  this.contMax  = contMax;
-            this.eroMin   = eroMin;   this.eroMax   = eroMax;
-            this.weirdMin = weirdMin; this.weirdMax = weirdMax;
-            this.depthMin = depthMin; this.depthMax = depthMax;
-            this.target = context.randomState.sampler().sample(context.blockX, context.blockY, context.blockZ);
-        }
-
-        @Override
-        protected boolean compute() {
-            boolean temperature = target.temperature() >= tempMin && target.temperature() <= tempMax;
-            boolean humidity = target.humidity() >= humMin && target.humidity() <= humMax;
-            boolean continentalness = target.continentalness() >= contMin && target.continentalness() <= contMax;
-            boolean erosion = target.erosion() >= eroMin && target.erosion() <= eroMax;
-            boolean weirdness = target.weirdness() >= weirdMin && target.weirdness() <= weirdMax;
-            boolean depth = target.depth() >= depthMin && target.depth() <= depthMax;
-            return temperature && humidity && continentalness && erosion && weirdness && depth;
-        }
-    }
-
-    public static class HeightmapDepthCondition extends SurfaceRules.LazyYCondition {
-        private final int depth;
-
-        public HeightmapDepthCondition(SurfaceRules.Context context, int depth) {
-            super(context);
-            this.depth = depth;
-        }
-
-        @Override
-        protected boolean compute() {
-            return ((ContextExtension)(Object)this.context).naturalphilosophy$getOceanHeightmapDepth() - depth >= context.blockY;
         }
     }
 }

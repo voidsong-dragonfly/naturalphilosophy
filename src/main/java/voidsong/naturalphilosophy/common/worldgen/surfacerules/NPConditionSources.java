@@ -8,7 +8,6 @@ import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 import javax.annotation.Nonnull;
@@ -66,42 +65,6 @@ public class NPConditionSources {
         }
     }
 
-    public record ClimateSampler(long tempMin,  long tempMax,
-                                 long humMin,   long humMax,
-                                 long contMin,  long contMax,
-                                 long eroMin,   long eroMax,
-                                 long weirdMin, long weirdMax,
-                                 long depthMin, long depthMax) implements SurfaceRules.ConditionSource {
-        public static final KeyDispatchDataCodec<NPConditionSources.ClimateSampler> CODEC = KeyDispatchDataCodec.of(
-            RecordCodecBuilder.mapCodec(
-                source -> source.group(
-                        Codec.FLOAT.optionalFieldOf("min_temperature", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::tempMin),
-                        Codec.FLOAT.optionalFieldOf("max_temperature", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::tempMax),
-                        Codec.FLOAT.optionalFieldOf("min_humidity", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::humMin),
-                        Codec.FLOAT.optionalFieldOf("max_humidity", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::humMax),
-                        Codec.FLOAT.optionalFieldOf("min_continentalness", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::contMin),
-                        Codec.FLOAT.optionalFieldOf("max_continentalness", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::contMax),
-                        Codec.FLOAT.optionalFieldOf("min_erosion", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::eroMin),
-                        Codec.FLOAT.optionalFieldOf("max_erosion", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::eroMax),
-                        Codec.FLOAT.optionalFieldOf("min_weirdness", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::weirdMin),
-                        Codec.FLOAT.optionalFieldOf("max_weirdness", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::weirdMax),
-                        Codec.FLOAT.optionalFieldOf("min_depth", -Float.MAX_VALUE).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::depthMin),
-                        Codec.FLOAT.optionalFieldOf("max_depth", Float.MAX_VALUE).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::depthMax)
-                    ).apply(source, NPConditionSources.ClimateSampler::new)
-            )
-        );
-
-        @Override
-        @Nonnull
-        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
-            return CODEC;
-        }
-
-        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return new NPSurfaceConditions.ClimateSamplerCondition(pContext, tempMin, tempMax, humMin, humMax, contMin, contMax, eroMin, eroMax, weirdMin, weirdMax, depthMin, depthMax);
-        }
-    }
-
     public record HeightmapDepthCheck(int depth) implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<HeightmapDepthCheck> CODEC = KeyDispatchDataCodec.of(
             RecordCodecBuilder.mapCodec(
@@ -118,13 +81,20 @@ public class NPConditionSources {
         }
 
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return new NPSurfaceConditions.HeightmapDepthCondition(pContext, depth);
+            class HeightmapDepthCondition implements SurfaceRules.Condition {
+                @Override
+                public boolean test() {
+                    return ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth() - depth >= pContext.blockY;
+                }
+            }
+
+            return new HeightmapDepthCondition();
         }
     }
 
     public static class ExtendedBiomeConditionSource implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<ExtendedBiomeConditionSource> CODEC = KeyDispatchDataCodec.of(
-            RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biome_is").xmap(ExtendedBiomeConditionSource::makeBiomeConditionSource, biomeSource -> biomeSource.biomeSet)
+            RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biome_is").xmap(ExtendedBiomeConditionSource::new, biomeSource -> biomeSource.biomeSet)
         );
         public final HolderSet<Biome> biomeSet;
 
@@ -147,10 +117,6 @@ public class NPConditionSources {
             }
 
             return new BiomeCondition();
-        }
-
-        private static ExtendedBiomeConditionSource makeBiomeConditionSource(HolderSet<Biome> biomes) {
-            return new ExtendedBiomeConditionSource(biomes);
         }
 
         @Override

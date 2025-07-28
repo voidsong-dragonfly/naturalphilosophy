@@ -36,7 +36,6 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquid.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:climate_sampler", NPConditionSources.ClimateSampler.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:heightmap_depth", NPConditionSources.HeightmapDepthCheck.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
         }
