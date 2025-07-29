@@ -7,12 +7,12 @@
   "surface_rule": {
     "type": "minecraft:condition",
     "if_true": {
-      "type": "naturalphilosophy:cliff"
+      "type": "minecraft:above_preliminary_surface"
     },
     "then_run": {
       "type": "minecraft:condition",
       "if_true": {
-        "type": "minecraft:above_preliminary_surface"
+        "type": "naturalphilosophy:cliff"
       },
       "then_run": {
         "type": "minecraft:sequence",
