@@ -52,7 +52,7 @@ public class NPRuleSources {
                 ResourceLocation.CODEC.fieldOf("random_name").forGetter(RandomThresholdSelectorRuleSource::randomName),
                 BlockState.CODEC.optionalFieldOf("default_state", null).xmap(StateRule::new, StateRule::state).forGetter(RandomThresholdSelectorRuleSource::defaultState),
                 BlockState.CODEC.listOf().fieldOf("state_set").xmap(s -> s.stream().map(StateRule::new).toList(), s -> s.stream().map(StateRule::state).toList()).forGetter(RandomThresholdSelectorRuleSource::stateSet),
-                Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(RandomThresholdSelectorRuleSource::lowerThresholds)
+                Codec.DOUBLE.listOf().fieldOf("lower_random_thresholds").forGetter(RandomThresholdSelectorRuleSource::lowerThresholds)
             ).apply(instance, RandomThresholdSelectorRuleSource::new)
         ));
 
