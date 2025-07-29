@@ -22,7 +22,7 @@ public class NPRuleSources {
         public static final KeyDispatchDataCodec<NoiseThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceKey.codec(Registries.NOISE).fieldOf("noise").forGetter(NoiseThresholdSelectorRuleSource::noise),
-                SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
+                SurfaceRules.RuleSource.CODEC.optionalFieldOf("default_rule", null).forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(NoiseThresholdSelectorRuleSource::ruleset),
                 Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(NoiseThresholdSelectorRuleSource::lowerThresholds)
             ).apply(instance, NoiseThresholdSelectorRuleSource::new)
@@ -42,7 +42,7 @@ public class NPRuleSources {
                 if(d0 > lowerThresholds.get(i)) return ruleset.get(i).apply(pContext);
             }
             // Return the default rule if we're not in any noise bin
-            return defaultRule.apply(pContext);
+            return defaultRule == null ? new NullStateRule() : defaultRule.apply(pContext);
         }
     }
 
@@ -50,7 +50,7 @@ public class NPRuleSources {
         public static final KeyDispatchDataCodec<RandomThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("random_name").forGetter(RandomThresholdSelectorRuleSource::randomName),
-                BlockState.CODEC.fieldOf("default_state").xmap(StateRule::new, StateRule::state).forGetter(RandomThresholdSelectorRuleSource::defaultState),
+                BlockState.CODEC.optionalFieldOf("default_state", null).xmap(StateRule::new, StateRule::state).forGetter(RandomThresholdSelectorRuleSource::defaultState),
                 BlockState.CODEC.listOf().fieldOf("state_set").xmap(s -> s.stream().map(StateRule::new).toList(), s -> s.stream().map(StateRule::state).toList()).forGetter(RandomThresholdSelectorRuleSource::stateSet),
                 Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(RandomThresholdSelectorRuleSource::lowerThresholds)
             ).apply(instance, RandomThresholdSelectorRuleSource::new)
@@ -79,8 +79,8 @@ public class NPRuleSources {
     public record BilayerFillRuleSource(int surfaceOffset, int secondaryDepthRange, SurfaceRules.RuleSource topRule, SurfaceRules.RuleSource defaultRule) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<BilayerFillRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
-                Codec.INT.fieldOf("surface_offset").forGetter(BilayerFillRuleSource::surfaceOffset),
-                Codec.INT.fieldOf("secondary_depth_range").forGetter(BilayerFillRuleSource::secondaryDepthRange),
+                Codec.INT.optionalFieldOf("surface_offset", 0).forGetter(BilayerFillRuleSource::surfaceOffset),
+                Codec.INT.optionalFieldOf("secondary_depth_range", 0).forGetter(BilayerFillRuleSource::secondaryDepthRange),
                 SurfaceRules.RuleSource.CODEC.fieldOf("top_layer").forGetter(BilayerFillRuleSource::topRule),
                 SurfaceRules.RuleSource.CODEC.fieldOf("sublayer").forGetter(BilayerFillRuleSource::defaultRule)
             ).apply(instance, BilayerFillRuleSource::new)
@@ -106,12 +106,12 @@ public class NPRuleSources {
             // Return a null BlockState in if we fail to be in either bin
             else return new NullStateRule();
         }
+    }
 
-        private record NullStateRule() implements SurfaceRules.SurfaceRule {
-            @Override
-            public BlockState tryApply(int x, int y, int z) {
-                return null;
-            }
+    private record NullStateRule() implements SurfaceRules.SurfaceRule {
+        @Override
+        public BlockState tryApply(int x, int y, int z) {
+            return null;
         }
     }
 }
