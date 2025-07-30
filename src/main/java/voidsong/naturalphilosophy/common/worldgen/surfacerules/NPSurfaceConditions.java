@@ -6,8 +6,8 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class NPSurfaceConditions {
-    public static class CliffMaterialCondition extends SurfaceRules.LazyXZCondition {
-        public CliffMaterialCondition(SurfaceRules.Context context) {
+    public static class CliffCondition extends SurfaceRules.LazyXZCondition {
+        public CliffCondition(SurfaceRules.Context context) {
             super(context);
         }
 
@@ -41,8 +41,8 @@ public class NPSurfaceConditions {
         }
     }
 
-    public static class FlatMaterialCondition extends SurfaceRules.LazyXZCondition {
-        public FlatMaterialCondition(SurfaceRules.Context context) {
+    public static class FlatCondition extends SurfaceRules.LazyXZCondition {
+        public FlatCondition(SurfaceRules.Context context) {
             super(context);
         }
 
@@ -67,8 +67,8 @@ public class NPSurfaceConditions {
         }
     }
 
-    public static class FlatLiquidMaterialCondition extends SurfaceRules.LazyXZCondition {
-        public FlatLiquidMaterialCondition(SurfaceRules.Context context) {
+    public static class FlatMaterialCondition extends SurfaceRules.LazyXZCondition {
+        public FlatMaterialCondition(SurfaceRules.Context context) {
             super(context);
         }
 

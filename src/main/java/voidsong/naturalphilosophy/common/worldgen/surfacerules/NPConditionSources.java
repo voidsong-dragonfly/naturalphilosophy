@@ -14,10 +14,10 @@ import javax.annotation.Nonnull;
 
 public class NPConditionSources {
 
-    public enum Cliff implements SurfaceRules.ConditionSource {
+    public enum CliffConditionSource implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<NPConditionSources.Cliff> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<CliffConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -31,10 +31,10 @@ public class NPConditionSources {
         }
     }
 
-    public enum Flat implements SurfaceRules.ConditionSource {
+    public enum FlatConditionSource implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<NPConditionSources.Flat> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<FlatConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -48,10 +48,10 @@ public class NPConditionSources {
         }
     }
 
-    public enum FlatLiquid implements SurfaceRules.ConditionSource {
+    public enum FlatLiquidConditionSource implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<NPConditionSources.FlatLiquid> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<FlatLiquidConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -65,12 +65,12 @@ public class NPConditionSources {
         }
     }
 
-    public record HeightmapDepthCheck(int depth) implements SurfaceRules.ConditionSource {
-        public static final KeyDispatchDataCodec<HeightmapDepthCheck> CODEC = KeyDispatchDataCodec.of(
+    public record UnderwaterConditionSource(boolean shallow) implements SurfaceRules.ConditionSource {
+        public static final KeyDispatchDataCodec<UnderwaterConditionSource> CODEC = KeyDispatchDataCodec.of(
             RecordCodecBuilder.mapCodec(
                 source -> source.group(
-                    Codec.INT.fieldOf("depth").forGetter(HeightmapDepthCheck::depth)
-                ).apply(source, HeightmapDepthCheck::new)
+                    Codec.BOOL.optionalFieldOf("shallow", false).forGetter(UnderwaterConditionSource::shallow)
+                ).apply(source, UnderwaterConditionSource::new)
             )
         );
 
@@ -81,14 +81,44 @@ public class NPConditionSources {
         }
 
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            class HeightmapDepthCondition implements SurfaceRules.Condition {
+            class UnderwaterCondition implements SurfaceRules.Condition {
+                @Override
+                public boolean test() {
+                    // Exit early if we're above water
+                    if (pContext.waterHeight == Integer.MIN_VALUE) return false;
+                    // If we don't care about shallowness, return early, else check the Vanilla "shallow water" parameters
+                    return !shallow || ((pContext.blockY + pContext.stoneDepthAbove) >= (pContext.waterHeight - 6 - pContext.surfaceDepth));
+                }
+            }
+
+            return new UnderwaterCondition();
+        }
+    }
+
+    public record CaveDepthConditionSource(int depth) implements SurfaceRules.ConditionSource {
+        public static final KeyDispatchDataCodec<CaveDepthConditionSource> CODEC = KeyDispatchDataCodec.of(
+            RecordCodecBuilder.mapCodec(
+                source -> source.group(
+                    Codec.INT.fieldOf("depth").forGetter(CaveDepthConditionSource::depth)
+                ).apply(source, CaveDepthConditionSource::new)
+            )
+        );
+
+        @Override
+        @Nonnull
+        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
+            return CODEC;
+        }
+
+        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
+            class CaveDepthCondition implements SurfaceRules.Condition {
                 @Override
                 public boolean test() {
                     return ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth() - depth >= pContext.blockY;
                 }
             }
 
-            return new HeightmapDepthCondition();
+            return new CaveDepthCondition();
         }
     }
 

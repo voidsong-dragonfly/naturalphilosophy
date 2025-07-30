@@ -33,10 +33,11 @@ public abstract class SurfaceRulesMixin {
         @Inject(method = "bootstrap", at = @At("HEAD"))
         private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.ConditionSource>> registry,
                                         CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
-            SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquid.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:heightmap_depth", NPConditionSources.HeightmapDepthCheck.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.CliffConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.FlatConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquidConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:underwater", NPConditionSources.UnderwaterConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:cave_depth", NPConditionSources.CaveDepthConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
         }
     }
@@ -89,9 +90,9 @@ public abstract class SurfaceRulesMixin {
                                           WorldGenerationContext context,
                                           CallbackInfo ci) {
             SurfaceRules.Context self = (SurfaceRules.Context) (Object) this;
-            cliff = new NPSurfaceConditions.CliffMaterialCondition(self);
-            flat = new NPSurfaceConditions.FlatMaterialCondition(self);
-            flatLiquid = new NPSurfaceConditions.FlatLiquidMaterialCondition(self);
+            cliff = new NPSurfaceConditions.CliffCondition(self);
+            flat = new NPSurfaceConditions.FlatCondition(self);
+            flatLiquid = new NPSurfaceConditions.FlatMaterialCondition(self);
         }
 
         @Override
