@@ -3,6 +3,7 @@ package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
@@ -114,7 +115,16 @@ public class NPConditionSources {
             class CaveDepthCondition implements SurfaceRules.Condition {
                 @Override
                 public boolean test() {
-                    return ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth() - depth >= pContext.blockY;
+                    int heightmapDepth = ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth();
+                    // Return early if we're above the necessary depth
+                    if (heightmapDepth - depth <= pContext.blockY) return false;
+                    // If we're shallower than twelve blocks, we do not need to check the air blocks above us
+                    if (heightmapDepth < 12) return true;
+                    // Check to make sure we're not underneath a massive overhang by checking if greater than 2/3ths what's above is air
+                    MutableBlockPos pos = new MutableBlockPos(pContext.blockX, pContext.blockY, pContext.blockZ);
+                    for (int i  = 1; i < (depth*2)/3; i++)
+                        if (!pContext.chunk.getBlockState(pos.setY(pContext.blockY + i)).canBeReplaced()) return true;
+                    return false;
                 }
             }
 
