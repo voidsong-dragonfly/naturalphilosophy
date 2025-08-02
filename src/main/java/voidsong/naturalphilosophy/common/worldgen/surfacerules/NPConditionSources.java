@@ -133,9 +133,9 @@ public class NPConditionSources {
                     // Movements within the chunk for close block checks
                     int searchLevel = pContext.blockY + pContext.stoneDepthAbove- 2;
                     int north = Math.max(j - 1, 0);
-                    int east = Math.min(i + 1, 15);
+                    int east  = Math.min(i + 1, 15);
                     int south = Math.min(j + 1, 15);
-                    int west = Math.max(i - 1, 0);
+                    int west  = Math.max(i - 1, 0);
                     // Now we check to make sure we're not on the side of a cliff in a windswept biome
                     boolean lip = false;
                     lip = lip || pContext.chunk.getBlockState(new BlockPos(pContext.blockX, searchLevel, pContext.blockZ-j+north)).isAir();

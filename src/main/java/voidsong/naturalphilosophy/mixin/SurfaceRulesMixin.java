@@ -92,7 +92,7 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.Context self = (SurfaceRules.Context) (Object) this;
             cliff = new NPSurfaceConditions.CliffCondition(self);
             flat = new NPSurfaceConditions.FlatCondition(self);
-            flatLiquid = new NPSurfaceConditions.FlatMaterialCondition(self);
+            flatLiquid = new NPSurfaceConditions.FlatLiquidCondition(self);
         }
 
         @Override
