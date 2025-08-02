@@ -1,17 +1,15 @@
 package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 
+import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.KeyDispatchDataCodec;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.PositionalRandomFactory;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.SurfaceRules.StateRule;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
 import javax.annotation.Nonnull;
@@ -35,23 +33,21 @@ public class NPRuleSources {
         }
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
-            // Check the noise we're using for values, and grab our double value
-            double d0 = ((ContextExtension)(Object)pContext).naturalphilosophy$getCachedNoise(noise);
-            // Iterate through the rules to figure out which rule to provide, and return the rule for the noise bin we're in
-            for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
-                if(d0 > lowerThresholds.get(i)) return ruleset.get(i).apply(pContext);
-            }
-            // Return the default rule if we're not in any noise bin
-            return defaultRule == null ? new NullStateRule() : defaultRule.apply(pContext);
+            // Follow what SurfaceRules$SequenceRuleSource#apply() does and use an immutable list builder
+            ImmutableList.Builder<SurfaceRules.SurfaceRule> builder = ImmutableList.builder();
+            for (SurfaceRules.RuleSource ruleSource : this.ruleset)
+                builder.add(ruleSource.apply(pContext));
+            // Return a new rule with the necessary parameters
+            return new NPSurfaceRules.NoiseThresholdSelectorRule(pContext, noise, defaultRule.apply(pContext), builder.build(), lowerThresholds);
         }
     }
 
-    public record RandomThresholdSelectorRuleSource(ResourceLocation randomName, StateRule defaultState, List<StateRule> stateSet, List<Double> lowerThresholds) implements SurfaceRules.RuleSource {
+    public record RandomThresholdSelectorRuleSource(ResourceLocation randomName, BlockState defaultState, List<BlockState> stateSet, List<Double> lowerThresholds) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<RandomThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("random_name").forGetter(RandomThresholdSelectorRuleSource::randomName),
-                BlockState.CODEC.optionalFieldOf("default_state", null).xmap(StateRule::new, StateRule::state).forGetter(RandomThresholdSelectorRuleSource::defaultState),
-                BlockState.CODEC.listOf().fieldOf("state_set").xmap(s -> s.stream().map(StateRule::new).toList(), s -> s.stream().map(StateRule::state).toList()).forGetter(RandomThresholdSelectorRuleSource::stateSet),
+                BlockState.CODEC.optionalFieldOf("default_state", null).forGetter(RandomThresholdSelectorRuleSource::defaultState),
+                BlockState.CODEC.listOf().fieldOf("state_set").forGetter(RandomThresholdSelectorRuleSource::stateSet),
                 Codec.DOUBLE.listOf().fieldOf("lower_random_thresholds").forGetter(RandomThresholdSelectorRuleSource::lowerThresholds)
             ).apply(instance, RandomThresholdSelectorRuleSource::new)
         ));
@@ -63,16 +59,10 @@ public class NPRuleSources {
         }
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
-            // Check the noise we're using for values, and grab our double value
-            final PositionalRandomFactory positionalrandomfactory = pContext.randomState.getOrCreateRandomFactory(this.randomName());
-            RandomSource randomsource = positionalrandomfactory.at(pContext.blockX, pContext.blockY, pContext.blockZ);
-            double d0 = randomsource.nextDouble();
-            // Iterate through the rules to figure out which rule to provide, and return the rule for the noise bin we're in
-            for(int i = 0; i < Math.min(lowerThresholds.size(), stateSet().size()); i++) {
-                if(d0 > lowerThresholds.get(i)) return stateSet.get(i);
-            }
-            // Return the default rule if we're not in any noise bin
-            return defaultState;
+            // The random factory can be created outside the rule itself (see VerticalGradientRuleSource)
+            final PositionalRandomFactory positionalRandomFactory = pContext.randomState.getOrCreateRandomFactory(this.randomName());
+            // Return a new rule with the necessary parameters
+            return new NPSurfaceRules.RandomThresholdSelectorRule(pContext, positionalRandomFactory, defaultState, stateSet, lowerThresholds);
         }
     }
 
@@ -93,25 +83,8 @@ public class NPRuleSources {
         }
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
-            // Check to make sure we're above water, and return a specialty BlockState rule if we fail
-            if(pContext.waterHeight != Integer.MIN_VALUE) return new NullStateRule();
-            // Check which bin we're in for surface rules
-            if(pContext.stoneDepthAbove <= 1)
-                return topRule.apply(pContext);
-            // Calculate the secondary depth we need to check against, zero for no depth; this is after top check for performance
-            int secondary = secondaryDepthRange == 0 ? 0 : (int) Mth.map(pContext.getSurfaceSecondary(), -1.0, 1.0, 0.0, secondaryDepthRange);
-            // Second bin necessitates more checks to form the 'bottom' effectively
-            if(pContext.stoneDepthAbove <= 1 + surfaceOffset + pContext.surfaceDepth + secondary)
-                return defaultRule.apply(pContext);
-            // Return a null BlockState in if we fail to be in either bin
-            else return new NullStateRule();
-        }
-    }
-
-    private record NullStateRule() implements SurfaceRules.SurfaceRule {
-        @Override
-        public BlockState tryApply(int x, int y, int z) {
-            return null;
+            // Return a new rule with the necessary parameters
+            return new NPSurfaceRules.BilayerFillRule(pContext, surfaceOffset, secondaryDepthRange, topRule.apply(pContext), defaultRule.apply(pContext));
         }
     }
 }
