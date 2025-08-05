@@ -20,7 +20,7 @@ public class NPRuleSources {
         public static final KeyDispatchDataCodec<NoiseThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceKey.codec(Registries.NOISE).fieldOf("noise").forGetter(NoiseThresholdSelectorRuleSource::noise),
-                SurfaceRules.RuleSource.CODEC.optionalFieldOf("default_rule", null).forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
+                SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(NoiseThresholdSelectorRuleSource::ruleset),
                 Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(NoiseThresholdSelectorRuleSource::lowerThresholds)
             ).apply(instance, NoiseThresholdSelectorRuleSource::new)
