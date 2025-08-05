@@ -9,6 +9,7 @@ public interface ContextExtension {
     SurfaceRules.Condition naturalphilosophy$getCliff();
     SurfaceRules.Condition naturalphilosophy$getFlat();
     SurfaceRules.Condition naturalphilosophy$getFlatLiquid();
+    SurfaceRules.Condition naturalphilosophy$getLandTopLayer();
     // Value return functions for cached parameterized rules & conditions
     int naturalphilosophy$getOceanHeightmapDepth();
     double naturalphilosophy$getCachedNoise(ResourceKey<NormalNoise.NoiseParameters> noise);

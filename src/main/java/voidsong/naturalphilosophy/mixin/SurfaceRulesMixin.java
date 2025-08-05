@@ -36,6 +36,7 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.CliffConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.FlatConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquidConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:land_top_layer", NPConditionSources.LandTopLayerConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:underwater", NPConditionSources.UnderwaterConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:cave_depth", NPConditionSources.CaveDepthConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
@@ -64,7 +65,7 @@ public abstract class SurfaceRulesMixin {
         // Variables for the cached conditions
         @Unique
         @SuppressWarnings("all")
-        SurfaceRules.Condition cliff, flat, cliffLip, flatLiquid;
+        SurfaceRules.Condition cliff, flat, flatLiquid, aboveWater;
         // Caches for heightmaps& noises
         @Unique
         @SuppressWarnings("all")
@@ -93,6 +94,7 @@ public abstract class SurfaceRulesMixin {
             cliff = new NPSurfaceConditions.CliffCondition(self);
             flat = new NPSurfaceConditions.FlatCondition(self);
             flatLiquid = new NPSurfaceConditions.FlatLiquidCondition(self);
+            aboveWater = new NPSurfaceConditions.LandTopLayerCondition(self);
         }
 
         @Override
@@ -108,6 +110,11 @@ public abstract class SurfaceRulesMixin {
         @Override
         public SurfaceRules.Condition naturalphilosophy$getFlatLiquid() {
             return flatLiquid;
+        }
+
+        @Override
+        public SurfaceRules.Condition naturalphilosophy$getLandTopLayer() {
+            return aboveWater;
         }
 
         @Override

@@ -12,68 +12,55 @@
     "then_run": {
       "type": "minecraft:condition",
       "if_true": {
-        "type": "minecraft:stone_depth",
-        "add_surface_depth": false,
-        "offset": 0,
-        "secondary_depth_range": 0,
-        "surface_type": "floor"
+        "type": "naturalphilosophy:land_top_layer"
       },
       "then_run": {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:water",
-          "add_stone_depth": false,
-          "offset": -1,
-          "surface_depth_multiplier": 0
+          "type": "naturalphilosophy:biome",
+          "biome_is": "#naturalphilosophy:forest_tracks"
         },
         "then_run": {
           "type": "minecraft:condition",
           "if_true": {
-            "type": "naturalphilosophy:biome",
-            "biome_is": "#naturalphilosophy:forest_tracks"
+            "type": "minecraft:noise_threshold",
+            "max_threshold": 0.0125,
+            "min_threshold": -0.0125,
+            "noise": "naturalphilosophy:forest_paths"
           },
           "then_run": {
             "type": "minecraft:condition",
             "if_true": {
-              "type": "minecraft:noise_threshold",
-              "max_threshold": 0.0125,
-              "min_threshold": -0.0125,
-              "noise": "naturalphilosophy:forest_paths"
+              "type": "minecraft:not",
+              "invert": {
+                "type": "minecraft:noise_threshold",
+                "max_threshold": 1E308,
+                "min_threshold": 0.375,
+                "noise": "minecraft:surface_swamp"
+              }
             },
             "then_run": {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:not",
-                "invert": {
-                  "type": "minecraft:noise_threshold",
-                  "max_threshold": 1E308,
-                  "min_threshold": 0.375,
-                  "noise": "minecraft:surface_swamp"
-                }
+              "type": "naturalphilosophy:random_threshold_selector",
+              "random_name": "forest_path_randomness",
+              "default_state": {
+                "Name": "minecraft:dirt_path"
               },
-              "then_run": {
-                "type": "naturalphilosophy:random_threshold_selector",
-                "random_name": "forest_path_randomness",
-                "default_state": {
-                  "Name": "minecraft:dirt_path"
+              "lower_random_thresholds": [
+                0.95,
+                0.30,
+                0.20
+              ],
+              "state_set": [
+                {
+                  "Name": "minecraft:gravel"
                 },
-                "lower_random_thresholds": [
-                  0.95,
-                  0.30,
-                  0.20
-                ],
-                "state_set": [
-                  {
-                    "Name": "minecraft:gravel"
-                  },
-                  {
-                    "Name": "minecraft:coarse_dirt"
-                  },
-                  {
-                    "Name": "minecraft:rooted_dirt"
-                  }
-                ]
-              }
+                {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                {
+                  "Name": "minecraft:rooted_dirt"
+                }
+              ]
             }
           }
         }
