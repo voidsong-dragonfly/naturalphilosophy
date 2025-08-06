@@ -102,7 +102,7 @@ public class NPSurfaceConditions {
     public record LandTopLayerCondition(SurfaceRules.Context context) implements SurfaceRules.Condition {
         @Override
         public boolean test() {
-            return context.waterHeight == Integer.MIN_VALUE && context.stoneDepthAbove == 0;
+            return context.waterHeight == Integer.MIN_VALUE && context.stoneDepthAbove <= 1;
         }
     }
 }
