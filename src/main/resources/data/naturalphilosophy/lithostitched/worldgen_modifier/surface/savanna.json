@@ -18,72 +18,94 @@
         ]
       },
       "then_run": {
-        "type": "minecraft:condition",
-        "if_true": {
-          "type": "minecraft:stone_depth",
-          "add_surface_depth": false,
-          "offset": 0,
-          "secondary_depth_range": 0,
-          "surface_type": "floor"
-        },
-        "then_run": {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:water",
-            "add_stone_depth": false,
-            "offset": -1,
-            "surface_depth_multiplier": 0
+        "type": "naturalphilosophy:bilayer_fill",
+        "top_layer": {
+          "type": "naturalphilosophy:noise_threshold_selector",
+          "noise": "minecraft:surface",
+          "default_rule": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:grass_block"
+            }
           },
-          "then_run": {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:noise_threshold",
-              "max_threshold": 1E308,
-              "min_threshold": 0.625,
-              "noise": "minecraft:surface"
+          "lower_noise_thresholds": [
+            0.625,
+            0.5625
+          ],
+          "ruleset": [
+            {
+              "type": "naturalphilosophy:random_threshold_selector",
+              "random_name": "surface_randomness",
+              "default_state": {
+                "Name": "minecraft:grass_block"
+              },
+              "lower_random_thresholds": [
+                0.90,
+                0.60
+              ],
+              "state_set": [
+                {
+                  "Name": "minecraft:rooted_dirt"
+                },
+                {
+                  "Name": "minecraft:coarse_dirt"
+                }
+              ]
             },
-            "then_run": {
-              "type": "minecraft:sequence",
-              "sequence": [
+            {
+              "type": "naturalphilosophy:random_threshold_selector",
+              "random_name": "surface_randomness",
+              "default_state": {
+                "Name": "minecraft:grass_block"
+              },
+              "lower_random_thresholds": [
+                0.95,
+                0.875
+              ],
+              "state_set": [
                 {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "minecraft:noise_threshold",
-                    "max_threshold": 1E308,
-                    "min_threshold": 1.2,
-                    "noise": "naturalphilosophy:surface_randomness"
-                  },
-                  "then_run": {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:rooted_dirt"
-                    }
-                  }
+                  "Name": "minecraft:rooted_dirt"
                 },
                 {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "minecraft:noise_threshold",
-                    "max_threshold": 1E308,
-                    "min_threshold": 0.2,
-                    "noise": "naturalphilosophy:surface_randomness"
-                  },
-                  "then_run": {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:coarse_dirt"
-                    }
-                  }
-                },
-                {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:grass_block"
-                  }
+                  "Name": "minecraft:coarse_dirt"
                 }
               ]
             }
-          }
+          ]
+        },
+        "sublayer": {
+          "type": "naturalphilosophy:noise_threshold_selector",
+          "noise": "minecraft:surface",
+          "default_rule": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:dirt"
+            }
+          },
+          "lower_noise_thresholds": [
+            0.625
+          ],
+          "ruleset": [
+            {
+              "type": "naturalphilosophy:random_threshold_selector",
+              "random_name": "surface_randomness",
+              "default_state": {
+                "Name": "minecraft:dirt"
+              },
+              "lower_random_thresholds": [
+                0.80,
+                0.60
+              ],
+              "state_set": [
+                {
+                  "Name": "minecraft:rooted_dirt"
+                },
+                {
+                  "Name": "minecraft:coarse_dirt"
+                }
+              ]
+            }
+          ]
         }
       }
     }
