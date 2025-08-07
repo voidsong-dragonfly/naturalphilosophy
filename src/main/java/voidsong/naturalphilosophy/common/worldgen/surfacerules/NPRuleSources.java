@@ -117,9 +117,10 @@ public class NPRuleSources {
         }
     }
 
-    public record BilayerFillRuleSource(int surfaceOffset, int secondaryDepthRange, SurfaceRules.RuleSource topRule, SurfaceRules.RuleSource defaultRule) implements SurfaceRules.RuleSource {
+    public record BilayerFillRuleSource(boolean land, int surfaceOffset, int secondaryDepthRange, SurfaceRules.RuleSource topRule, SurfaceRules.RuleSource defaultRule) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<BilayerFillRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
+                Codec.BOOL.optionalFieldOf("land", true).forGetter(BilayerFillRuleSource::land),
                 Codec.INT.optionalFieldOf("surface_offset", 0).forGetter(BilayerFillRuleSource::surfaceOffset),
                 Codec.INT.optionalFieldOf("secondary_depth_range", 0).forGetter(BilayerFillRuleSource::secondaryDepthRange),
                 SurfaceRules.RuleSource.CODEC.fieldOf("top_layer").forGetter(BilayerFillRuleSource::topRule),
@@ -135,7 +136,7 @@ public class NPRuleSources {
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.BilayerFillRule(pContext, surfaceOffset, secondaryDepthRange, topRule.apply(pContext), defaultRule.apply(pContext));
+            return new NPSurfaceRules.BilayerFillRule(pContext, land, surfaceOffset, secondaryDepthRange, topRule.apply(pContext), defaultRule.apply(pContext));
         }
     }
 }

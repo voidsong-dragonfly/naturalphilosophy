@@ -78,12 +78,12 @@ public class NPSurfaceRules {
         }
     }
 
-    record BilayerFillRule(SurfaceRules.Context pContext, int surfaceOffset, int secondaryDepthRange, SurfaceRules.SurfaceRule topRule, SurfaceRules.SurfaceRule defaultRule) implements SurfaceRules.SurfaceRule {
+    record BilayerFillRule(SurfaceRules.Context pContext, boolean land, int surfaceOffset, int secondaryDepthRange, SurfaceRules.SurfaceRule topRule, SurfaceRules.SurfaceRule defaultRule) implements SurfaceRules.SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
-            // Check to make sure we're above water, and return a null if we fail
-            if(pContext.waterHeight != Integer.MIN_VALUE) return null;
+            // Check to make sure we are in the correct land/water bin and return null if we fail
+            if(land == (pContext.waterHeight != Integer.MIN_VALUE)) return null;
             // Check which bin we're in for surface rules
             if(pContext.stoneDepthAbove <= 1)
                 return topRule.tryApply(x, y, z);
