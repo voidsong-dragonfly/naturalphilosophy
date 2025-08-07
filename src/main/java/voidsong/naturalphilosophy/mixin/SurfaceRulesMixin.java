@@ -51,6 +51,7 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(registry, "naturalphilosophy:noise_threshold_selector", NPRuleSources.NoiseThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:random_threshold_selector", NPRuleSources.RandomThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:height_threshold_selector", NPRuleSources.HeightThresholdSelectorRuleSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:stone_depth_threshold_selector", NPRuleSources.StoneDepthThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:bilayer_fill", NPRuleSources.BilayerFillRuleSource.CODEC);
         }
     }

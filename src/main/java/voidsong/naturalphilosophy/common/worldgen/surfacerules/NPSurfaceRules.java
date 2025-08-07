@@ -67,6 +67,17 @@ public class NPSurfaceRules {
         }
     }
 
+    record StoneDepthThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, int length) implements SurfaceRules.SurfaceRule {
+        @Nullable
+        @Override
+        public BlockState tryApply(int x, int y, int z) {
+            // Get the rule we want at the specified depth and evaluate it for this position
+            BlockState result = pContext.stoneDepthAbove >= length ? null : ruleset.get(pContext.stoneDepthAbove - 1).tryApply(x, y, z);
+            // Return the default rule if we're not in any depth bin or have a height bin that does not resolve
+            return result == null ? defaultRule.tryApply(x, y, z) : result;
+        }
+    }
+
     record BilayerFillRule(SurfaceRules.Context pContext, int surfaceOffset, int secondaryDepthRange, SurfaceRules.SurfaceRule topRule, SurfaceRules.SurfaceRule defaultRule) implements SurfaceRules.SurfaceRule {
         @Nullable
         @Override
