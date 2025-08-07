@@ -24,7 +24,7 @@ public class NPSurfaceRules {
                 if(d0 > lowerThresholds.get(i)) return ruleset.get(i).tryApply(x, y, z);
             }
             // Return the default rule if we're not in any noise bin
-            return defaultRule == null ? null : defaultRule.tryApply(x, y, z);
+            return defaultRule.tryApply(x, y, z);
         }
     }
 
@@ -54,7 +54,7 @@ public class NPSurfaceRules {
                 if(comparisonYValue > lowerThresholds.get(i)) return ruleset.get(i).tryApply(x, y, z);
             }
             // Return the default rule if we're not in any height bin
-            return defaultRule == null ? null : defaultRule.tryApply(x, y, z);
+            return defaultRule.tryApply(x, y, z);
         }
     }
 
