@@ -66,6 +66,33 @@ public class NPRuleSources {
         }
     }
 
+    public record HeightThresholdSelectorRuleSource(SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth) implements SurfaceRules.RuleSource {
+        public static final KeyDispatchDataCodec<HeightThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
+            instance -> instance.group(
+                SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(HeightThresholdSelectorRuleSource::defaultRule),
+                SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(HeightThresholdSelectorRuleSource::ruleset),
+                Codec.INT.listOf().fieldOf("lower_height_thresholds").forGetter(HeightThresholdSelectorRuleSource::lowerThresholds),
+                Codec.intRange(-20, 20).fieldOf("surface_depth_multiplier").forGetter(HeightThresholdSelectorRuleSource::surfaceDepthMultiplier),
+                Codec.BOOL.fieldOf("add_stone_depth").forGetter(HeightThresholdSelectorRuleSource::addStoneDepth)
+            ).apply(instance, HeightThresholdSelectorRuleSource::new)
+        ));
+
+        @Override
+        @Nonnull
+        public KeyDispatchDataCodec<? extends SurfaceRules.RuleSource> codec() {
+            return CODEC;
+        }
+
+        public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
+            // Follow what SurfaceRules$SequenceRuleSource#apply() does and use an immutable list builder
+            ImmutableList.Builder<SurfaceRules.SurfaceRule> builder = ImmutableList.builder();
+            for (SurfaceRules.RuleSource ruleSource : this.ruleset)
+                builder.add(ruleSource.apply(pContext));
+            // Return a new rule with the necessary parameters
+            return new NPSurfaceRules.HeightThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), lowerThresholds, surfaceDepthMultiplier, addStoneDepth);
+        }
+    }
+
     public record BilayerFillRuleSource(int surfaceOffset, int secondaryDepthRange, SurfaceRules.RuleSource topRule, SurfaceRules.RuleSource defaultRule) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<BilayerFillRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(

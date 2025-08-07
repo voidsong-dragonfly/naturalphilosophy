@@ -44,6 +44,20 @@ public class NPSurfaceRules {
         }
     }
 
+    record HeightThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth) implements SurfaceRules.SurfaceRule {
+        @Nullable
+        @Override
+        public BlockState tryApply(int x, int y, int z) {
+            int comparisonYValue = pContext.blockY + (addStoneDepth ? pContext.stoneDepthAbove : 0) - pContext.surfaceDepth * surfaceDepthMultiplier;
+            // Iterate through the rules to figure out which rule to provide, and return the rule for the height bin we're in
+            for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
+                if(comparisonYValue > lowerThresholds.get(i)) return ruleset.get(i).tryApply(x, y, z);
+            }
+            // Return the default rule if we're not in any height bin
+            return defaultRule == null ? null : defaultRule.tryApply(x, y, z);
+        }
+    }
+
     record BilayerFillRule(SurfaceRules.Context pContext, int surfaceOffset, int secondaryDepthRange, SurfaceRules.SurfaceRule topRule, SurfaceRules.SurfaceRule defaultRule) implements SurfaceRules.SurfaceRule {
         @Nullable
         @Override
