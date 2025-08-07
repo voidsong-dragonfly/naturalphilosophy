@@ -20,11 +20,15 @@ public class NPSurfaceRules {
             // Check the noise we're using for values, and grab our double value
             double d0 = ((ContextExtension)(Object)pContext).naturalphilosophy$getCachedNoise(noise);
             // Iterate through the rules to figure out which rule to provide, and return the rule for the noise bin we're in
+            BlockState result = null;
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
-                if(d0 > lowerThresholds.get(i)) return ruleset.get(i).tryApply(x, y, z);
+                if(d0 > lowerThresholds.get(i)) {
+                    result = ruleset.get(i).tryApply(x, y, z);
+                    break;
+                }
             }
-            // Return the default rule if we're not in any noise bin
-            return defaultRule.tryApply(x, y, z);
+            // Return the default rule if we're not in any height bin or have a noise bin that does not resolve
+            return result == null ? defaultRule.tryApply(x, y, z) : result;
         }
     }
 
@@ -48,13 +52,18 @@ public class NPSurfaceRules {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
+            // Get the height that we want to compare against
             int comparisonYValue = pContext.blockY + (addStoneDepth ? pContext.stoneDepthAbove : 0) - pContext.surfaceDepth * surfaceDepthMultiplier;
             // Iterate through the rules to figure out which rule to provide, and return the rule for the height bin we're in
+            BlockState result = null;
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
-                if(comparisonYValue > lowerThresholds.get(i)) return ruleset.get(i).tryApply(x, y, z);
+                if(comparisonYValue > lowerThresholds.get(i)) {
+                    result = ruleset.get(i).tryApply(x, y, z);
+                    break;
+                }
             }
-            // Return the default rule if we're not in any height bin
-            return defaultRule.tryApply(x, y, z);
+            // Return the default rule if we're not in any height bin or have a height bin that does not resolve
+            return result == null ? defaultRule.tryApply(x, y, z) : result;
         }
     }
 
