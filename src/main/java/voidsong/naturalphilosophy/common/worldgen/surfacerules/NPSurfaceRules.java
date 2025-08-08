@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NPSurfaceRules {
-    record NoiseThresholdSelectorRule(SurfaceRules.Context pContext, ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Double> lowerThresholds) implements SurfaceRules.SurfaceRule {
+    record NoiseThresholdSelectorRule(SurfaceRules.Context pContext, ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Double> lowerThresholds, boolean cascade) implements SurfaceRules.SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -24,7 +24,7 @@ public class NPSurfaceRules {
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
                 if(d0 > lowerThresholds.get(i)) {
                     result = ruleset.get(i).tryApply(x, y, z);
-                    break;
+                    if (cascade && result != null) break;
                 }
             }
             // Return the default rule if we're not in any height bin or have a noise bin that does not resolve
@@ -48,7 +48,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record HeightThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth) implements SurfaceRules.SurfaceRule {
+    record HeightThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth, boolean cascade) implements SurfaceRules.SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -59,7 +59,7 @@ public class NPSurfaceRules {
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
                 if(comparisonYValue > lowerThresholds.get(i)) {
                     result = ruleset.get(i).tryApply(x, y, z);
-                    break;
+                    if (cascade && result != null) break;
                 }
             }
             // Return the default rule if we're not in any height bin or have a height bin that does not resolve

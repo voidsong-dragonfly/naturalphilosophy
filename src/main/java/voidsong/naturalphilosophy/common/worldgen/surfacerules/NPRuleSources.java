@@ -14,15 +14,17 @@ import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Optional;
 
 public class NPRuleSources {
-    public record NoiseThresholdSelectorRuleSource(ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Double> lowerThresholds) implements SurfaceRules.RuleSource {
+    public record NoiseThresholdSelectorRuleSource(ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Double> lowerThresholds, boolean cascade) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<NoiseThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceKey.codec(Registries.NOISE).fieldOf("noise").forGetter(NoiseThresholdSelectorRuleSource::noise),
                 SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(NoiseThresholdSelectorRuleSource::ruleset),
-                Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(NoiseThresholdSelectorRuleSource::lowerThresholds)
+                Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(NoiseThresholdSelectorRuleSource::lowerThresholds),
+                Codec.BOOL.optionalFieldOf("cascade", false).forGetter(NoiseThresholdSelectorRuleSource::cascade)
             ).apply(instance, NoiseThresholdSelectorRuleSource::new)
         ));
 
@@ -38,15 +40,15 @@ public class NPRuleSources {
             for (SurfaceRules.RuleSource ruleSource : this.ruleset)
                 builder.add(ruleSource.apply(pContext));
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.NoiseThresholdSelectorRule(pContext, noise, defaultRule.apply(pContext), builder.build(), lowerThresholds);
+            return new NPSurfaceRules.NoiseThresholdSelectorRule(pContext, noise, defaultRule.apply(pContext), builder.build(), lowerThresholds, cascade);
         }
     }
 
-    public record RandomThresholdSelectorRuleSource(ResourceLocation randomName, BlockState defaultState, List<BlockState> stateSet, List<Double> lowerThresholds) implements SurfaceRules.RuleSource {
+    public record RandomThresholdSelectorRuleSource(ResourceLocation randomName, Optional<BlockState> defaultState, List<BlockState> stateSet, List<Double> lowerThresholds) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<RandomThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("random_name").forGetter(RandomThresholdSelectorRuleSource::randomName),
-                BlockState.CODEC.optionalFieldOf("default_state", null).forGetter(RandomThresholdSelectorRuleSource::defaultState),
+                BlockState.CODEC.optionalFieldOf("default_state").forGetter(RandomThresholdSelectorRuleSource::defaultState),
                 BlockState.CODEC.listOf().fieldOf("state_set").forGetter(RandomThresholdSelectorRuleSource::stateSet),
                 Codec.DOUBLE.listOf().fieldOf("lower_random_thresholds").forGetter(RandomThresholdSelectorRuleSource::lowerThresholds)
             ).apply(instance, RandomThresholdSelectorRuleSource::new)
@@ -62,18 +64,19 @@ public class NPRuleSources {
             // The random factory can be created outside the rule itself (see VerticalGradientRuleSource)
             final PositionalRandomFactory positionalRandomFactory = pContext.randomState.getOrCreateRandomFactory(this.randomName());
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.RandomThresholdSelectorRule(pContext, positionalRandomFactory, defaultState, stateSet, lowerThresholds);
+            return new NPSurfaceRules.RandomThresholdSelectorRule(pContext, positionalRandomFactory, defaultState.orElse(null), stateSet, lowerThresholds);
         }
     }
 
-    public record HeightThresholdSelectorRuleSource(SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth) implements SurfaceRules.RuleSource {
+    public record HeightThresholdSelectorRuleSource(SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth, boolean cascade) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<HeightThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(HeightThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(HeightThresholdSelectorRuleSource::ruleset),
                 Codec.INT.listOf().fieldOf("lower_height_thresholds").forGetter(HeightThresholdSelectorRuleSource::lowerThresholds),
                 Codec.intRange(-20, 20).optionalFieldOf("surface_depth_multiplier", 0).forGetter(HeightThresholdSelectorRuleSource::surfaceDepthMultiplier),
-                Codec.BOOL.optionalFieldOf("add_stone_depth", false).forGetter(HeightThresholdSelectorRuleSource::addStoneDepth)
+                Codec.BOOL.optionalFieldOf("add_stone_depth", false).forGetter(HeightThresholdSelectorRuleSource::addStoneDepth),
+                Codec.BOOL.optionalFieldOf("cascade", false).forGetter(HeightThresholdSelectorRuleSource::cascade)
             ).apply(instance, HeightThresholdSelectorRuleSource::new)
         ));
 
@@ -89,7 +92,7 @@ public class NPRuleSources {
             for (SurfaceRules.RuleSource ruleSource : this.ruleset)
                 builder.add(ruleSource.apply(pContext));
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.HeightThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), lowerThresholds, surfaceDepthMultiplier, addStoneDepth);
+            return new NPSurfaceRules.HeightThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), lowerThresholds, surfaceDepthMultiplier, addStoneDepth, cascade);
         }
     }
 
