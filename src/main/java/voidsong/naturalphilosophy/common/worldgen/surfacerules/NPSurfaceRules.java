@@ -24,7 +24,8 @@ public class NPSurfaceRules {
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
                 if(d0 > lowerThresholds.get(i)) {
                     result = ruleset.get(i).tryApply(x, y, z);
-                    if (cascade && result != null) break;
+                    // Break the loop if we have gotten a value OR we're not cascading
+                    if (result != null || !cascade) break;
                 }
             }
             // Return the default rule if we're not in any height bin or have a noise bin that does not resolve
@@ -59,7 +60,8 @@ public class NPSurfaceRules {
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
                 if(comparisonYValue > lowerThresholds.get(i)) {
                     result = ruleset.get(i).tryApply(x, y, z);
-                    if (cascade && result != null) break;
+                    // Break the loop if we have gotten a value OR we're not cascading
+                    if (result != null || !cascade) break;
                 }
             }
             // Return the default rule if we're not in any height bin or have a height bin that does not resolve
