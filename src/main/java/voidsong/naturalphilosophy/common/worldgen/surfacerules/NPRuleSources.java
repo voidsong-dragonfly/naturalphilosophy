@@ -21,7 +21,7 @@ public class NPRuleSources {
         public static final KeyDispatchDataCodec<NoiseThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
                 ResourceKey.codec(Registries.NOISE).fieldOf("noise").forGetter(NoiseThresholdSelectorRuleSource::noise),
-                SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
+                SurfaceRules.RuleSource.CODEC.optionalFieldOf("default_rule", new PassthroughRuleSource()).forGetter(NoiseThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(NoiseThresholdSelectorRuleSource::ruleset),
                 Codec.DOUBLE.listOf().fieldOf("lower_noise_thresholds").forGetter(NoiseThresholdSelectorRuleSource::lowerThresholds),
                 Codec.BOOL.optionalFieldOf("cascade", false).forGetter(NoiseThresholdSelectorRuleSource::cascade)
@@ -71,7 +71,7 @@ public class NPRuleSources {
     public record HeightThresholdSelectorRuleSource(SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth, boolean cascade) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<HeightThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
-                SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(HeightThresholdSelectorRuleSource::defaultRule),
+                SurfaceRules.RuleSource.CODEC.optionalFieldOf("default_rule", new PassthroughRuleSource()).forGetter(HeightThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(HeightThresholdSelectorRuleSource::ruleset),
                 Codec.INT.listOf().fieldOf("lower_height_thresholds").forGetter(HeightThresholdSelectorRuleSource::lowerThresholds),
                 Codec.intRange(-20, 20).optionalFieldOf("surface_depth_multiplier", 0).forGetter(HeightThresholdSelectorRuleSource::surfaceDepthMultiplier),
@@ -99,7 +99,7 @@ public class NPRuleSources {
     public record StoneDepthThresholdSelectorRuleSource(SurfaceRules.RuleSource defaultRule, List<SurfaceRules.RuleSource> ruleset) implements SurfaceRules.RuleSource {
         public static final KeyDispatchDataCodec<StoneDepthThresholdSelectorRuleSource> CODEC = KeyDispatchDataCodec.of(RecordCodecBuilder.mapCodec(
             instance -> instance.group(
-                SurfaceRules.RuleSource.CODEC.fieldOf("default_rule").forGetter(StoneDepthThresholdSelectorRuleSource::defaultRule),
+                SurfaceRules.RuleSource.CODEC.optionalFieldOf("default_rule", new PassthroughRuleSource()).forGetter(StoneDepthThresholdSelectorRuleSource::defaultRule),
                 SurfaceRules.RuleSource.CODEC.listOf().fieldOf("ruleset").forGetter(StoneDepthThresholdSelectorRuleSource::ruleset)
             ).apply(instance, StoneDepthThresholdSelectorRuleSource::new)
         ));
@@ -140,6 +140,18 @@ public class NPRuleSources {
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
             // Return a new rule with the necessary parameters
             return new NPSurfaceRules.BilayerFillRule(pContext, land, surfaceOffset, secondaryDepthRange, topRule.apply(pContext), defaultRule.apply(pContext));
+        }
+    }
+
+    private static class PassthroughRuleSource implements SurfaceRules.RuleSource {
+        @Override
+        @SuppressWarnings("all")
+        public KeyDispatchDataCodec<? extends SurfaceRules.RuleSource> codec() {
+            return null;
+        }
+
+        public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
+            return (x, y, z) -> null;
         }
     }
 }
