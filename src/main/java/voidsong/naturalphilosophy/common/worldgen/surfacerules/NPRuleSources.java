@@ -12,6 +12,15 @@ import net.minecraft.world.level.levelgen.PositionalRandomFactory;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.NoiseThresholdSelectorRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.NoiseThresholdRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.RandomThresholdSelectorRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.RandomThresholdRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.HeightThresholdSelectorRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.HeightThresholdRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.StoneDepthThresholdSelectorRule;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceRules.BilayerFillRule;
+
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
@@ -35,12 +44,15 @@ public class NPRuleSources {
         }
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
+            // Check if we have a singleton list for lower thresholds && ruleset
+            if (ruleset.size() == 1 && lowerThresholds.size() == 1)
+                return new NoiseThresholdRule(pContext, noise, defaultRule.apply(pContext), ruleset.getFirst().apply(pContext), lowerThresholds.getFirst());
             // Follow what SurfaceRules$SequenceRuleSource#apply() does and use an immutable list builder
             ImmutableList.Builder<SurfaceRules.SurfaceRule> builder = ImmutableList.builder();
             for (SurfaceRules.RuleSource ruleSource : this.ruleset)
                 builder.add(ruleSource.apply(pContext));
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.NoiseThresholdSelectorRule(pContext, noise, defaultRule.apply(pContext), builder.build(), lowerThresholds, cascade);
+            return new NoiseThresholdSelectorRule(pContext, noise, defaultRule.apply(pContext), builder.build(), lowerThresholds, cascade);
         }
     }
 
@@ -63,8 +75,11 @@ public class NPRuleSources {
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
             // The random factory can be created outside the rule itself (see VerticalGradientRuleSource)
             final PositionalRandomFactory positionalRandomFactory = pContext.randomState.getOrCreateRandomFactory(this.randomName());
+            // Check if we have a singleton list for lower thresholds && ruleset
+            if (stateSet.size() == 1 && lowerThresholds.size() == 1)
+                return new RandomThresholdRule(pContext, positionalRandomFactory, defaultState.orElse(null), stateSet.getFirst(), lowerThresholds.getFirst());
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.RandomThresholdSelectorRule(pContext, positionalRandomFactory, defaultState.orElse(null), stateSet, lowerThresholds);
+            return new RandomThresholdSelectorRule(pContext, positionalRandomFactory, defaultState.orElse(null), stateSet, lowerThresholds);
         }
     }
 
@@ -87,12 +102,15 @@ public class NPRuleSources {
         }
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
+            // Check if we have a singleton list for lower thresholds && ruleset
+            if (ruleset.size() == 1 && lowerThresholds.size() == 1)
+                return new HeightThresholdRule(pContext, defaultRule.apply(pContext), ruleset.getFirst().apply(pContext), lowerThresholds.getFirst(), surfaceDepthMultiplier, addStoneDepth);
             // Follow what SurfaceRules$SequenceRuleSource#apply() does and use an immutable list builder
             ImmutableList.Builder<SurfaceRules.SurfaceRule> builder = ImmutableList.builder();
             for (SurfaceRules.RuleSource ruleSource : this.ruleset)
                 builder.add(ruleSource.apply(pContext));
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.HeightThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), lowerThresholds, surfaceDepthMultiplier, addStoneDepth, cascade);
+            return new HeightThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), lowerThresholds, surfaceDepthMultiplier, addStoneDepth, cascade);
         }
     }
 
@@ -116,7 +134,7 @@ public class NPRuleSources {
             for (SurfaceRules.RuleSource ruleSource : this.ruleset)
                 builder.add(ruleSource.apply(pContext));
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.StoneDepthThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), ruleset.size());
+            return new StoneDepthThresholdSelectorRule(pContext, defaultRule.apply(pContext), builder.build(), ruleset.size());
         }
     }
 
@@ -139,7 +157,7 @@ public class NPRuleSources {
 
         public SurfaceRules.SurfaceRule apply(SurfaceRules.Context pContext) {
             // Return a new rule with the necessary parameters
-            return new NPSurfaceRules.BilayerFillRule(pContext, land, surfaceOffset, secondaryDepthRange, topRule.apply(pContext), defaultRule.apply(pContext));
+            return new BilayerFillRule(pContext, land, surfaceOffset, secondaryDepthRange, topRule.apply(pContext), defaultRule.apply(pContext));
         }
     }
 
