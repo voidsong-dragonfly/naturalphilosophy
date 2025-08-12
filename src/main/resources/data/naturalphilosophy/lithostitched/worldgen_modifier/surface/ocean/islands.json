@@ -42,155 +42,89 @@
             "surface_type": "floor"
           },
           "then_run": {
-            "type": "minecraft:sequence",
-            "sequence": [
+            "type": "naturalphilosophy:height_threshold_selector",
+            "add_stone_depth": true,
+            "surface_depth_multiplier": 1,
+            "lower_height_thresholds": [
+              66,
+              64
+            ],
+            "ruleset": [
               {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:not",
-                  "invert": {
-                    "type": "minecraft:y_above",
-                    "add_stone_depth": true,
-                    "anchor": {
-                      "absolute": 64
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 1E308,
+                      "min_threshold": 0.375,
+                      "noise": "minecraft:surface"
                     },
-                    "surface_depth_multiplier": 1
-                  }
-                },
-                "then_run": {
-                  "type": "minecraft:sequence",
-                  "sequence": [
-                    {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "max_threshold": 1E308,
-                        "min_threshold": 0.375,
-                        "noise": "minecraft:surface"
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:clay"
-                        }
-                      }
-                    },
-                    {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "max_threshold": 1E308,
-                        "min_threshold": 0.25,
-                        "noise": "naturalphilosophy:surface"
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:sand"
-                        }
-                      }
-                    },
-                    {
+                    "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "minecraft:mud"
+                        "Name": "minecraft:clay"
                       }
                     }
-                  ]
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:not",
-                  "invert": {
-                    "type": "minecraft:y_above",
-                    "add_stone_depth": true,
-                    "anchor": {
-                      "absolute": 66
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 1E308,
+                      "min_threshold": 0.25,
+                      "noise": "naturalphilosophy:surface"
                     },
-                    "surface_depth_multiplier": 1
-                  }
-                },
-                "then_run": {
-                  "type": "minecraft:sequence",
-                  "sequence": [
-                    {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "max_threshold": 1E308,
-                        "min_threshold": 0.375,
-                        "noise": "minecraft:surface"
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:clay"
-                        }
-                      }
-                    },
-                    {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "max_threshold": 1E308,
-                        "min_threshold": 0.25,
-                        "noise": "naturalphilosophy:surface"
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:sand"
-                        }
-                      }
-                    },
-                    {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:stone_depth",
-                        "add_surface_depth": false,
-                        "offset": 0,
-                        "secondary_depth_range": 0,
-                        "surface_type": "floor"
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:grass_block"
-                        }
-                      }
-                    },
-                    {
+                    "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "minecraft:dirt"
+                        "Name": "minecraft:sand"
                       }
                     }
-                  ]
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:stone_depth",
-                  "add_surface_depth": false,
-                  "offset": 0,
-                  "secondary_depth_range": 0,
-                  "surface_type": "floor"
-                },
-                "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:grass_block"
                   }
-                }
+                ]
               },
               {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:dirt"
-                }
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 1E308,
+                      "min_threshold": 0.375,
+                      "noise": "minecraft:surface"
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:clay"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold": 1E308,
+                      "min_threshold": 0.25,
+                      "noise": "naturalphilosophy:surface"
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:sand"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mud"
+                    }
+                  }
+                ]
               }
             ]
           }
