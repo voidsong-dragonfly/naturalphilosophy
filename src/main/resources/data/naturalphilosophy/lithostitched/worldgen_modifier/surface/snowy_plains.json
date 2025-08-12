@@ -47,14 +47,10 @@
               "default_state": {
                 "Name": "minecraft:snow_block"
               },
-              "lower_random_thresholds": [
-                0.25
-              ],
-              "state_set": [
-                {
-                  "Name": "minecraft:grass_block"
-                }
-              ]
+              "lower_random_thresholds": [ 0.25 ],
+              "state_set": [{
+                "Name": "minecraft:grass_block"
+              }]
             }
           ]
         }

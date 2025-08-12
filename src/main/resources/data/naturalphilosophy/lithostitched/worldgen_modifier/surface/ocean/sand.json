@@ -30,8 +30,8 @@
             }
           },
           "lower_noise_thresholds": [
-            0.625,
-            0.375,
+             0.625,
+             0.375,
             -0.25,
             -0.3125,
             -0.4375
@@ -43,14 +43,10 @@
               "default_state": {
                 "Name": "minecraft:sand"
               },
-              "lower_random_thresholds": [
-                0.50
-              ],
-              "state_set": [
-                {
-                  "Name": "minecraft:gravel"
-                }
-              ]
+              "lower_random_thresholds": [ 0.50 ],
+              "state_set": [{
+                "Name": "minecraft:gravel"
+              }]
             },
             {
               "type": "naturalphilosophy:random_threshold_selector",
@@ -58,14 +54,10 @@
               "default_state": {
                 "Name": "minecraft:sand"
               },
-              "lower_random_thresholds": [
-                0.65
-              ],
-              "state_set": [
-                {
-                  "Name": "minecraft:gravel"
-                }
-              ]
+              "lower_random_thresholds": [ 0.65 ],
+              "state_set": [{
+                "Name": "minecraft:gravel"
+              }]
             },
             {
               "type": "minecraft:block",
@@ -79,14 +71,10 @@
               "default_state": {
                 "Name": "minecraft:mud"
               },
-              "lower_random_thresholds": [
-                0.5
-              ],
-              "state_set": [
-                {
-                  "Name": "minecraft:sand"
-                }
-              ]
+              "lower_random_thresholds": [ 0.5 ],
+              "state_set": [{
+                "Name": "minecraft:sand"
+              }]
             },
             {
               "type": "naturalphilosophy:random_threshold_selector",
@@ -94,14 +82,10 @@
               "default_state": {
                 "Name": "minecraft:mud"
               },
-              "lower_random_thresholds": [
-                0.85
-              ],
-              "state_set": [
-                {
-                  "Name": "minecraft:sand"
-                }
-              ]
+              "lower_random_thresholds": [ 0.85 ],
+              "state_set": [{
+                "Name": "minecraft:sand"
+              }]
             }
           ]
         },

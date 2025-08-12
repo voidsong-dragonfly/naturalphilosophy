@@ -217,14 +217,10 @@
                         "default_state": {
                           "Name": "naturalphilosophy:sandy_mycelium"
                         },
-                        "lower_random_thresholds": [
-                          0.50
-                        ],
-                        "state_set": [
-                          {
-                            "Name": "minecraft:mycelium"
-                          }
-                        ]
+                        "lower_random_thresholds": [ 0.50 ],
+                        "state_set": [{
+                          "Name": "minecraft:mycelium"
+                        }]
                       },
                       {
                         "type": "naturalphilosophy:random_threshold_selector",
@@ -232,14 +228,10 @@
                         "default_state": {
                           "Name": "naturalphilosophy:basaltic_mineral_sand"
                         },
-                        "lower_random_thresholds": [
-                          0.025
-                        ],
-                        "state_set": [
-                          {
-                            "Name": "naturalphilosophy:sandy_mycelium"
-                          }
-                        ]
+                        "lower_random_thresholds": [ 0.025 ],
+                        "state_set": [{
+                          "Name": "naturalphilosophy:sandy_mycelium"
+                        }]
                       },
                       {
                         "type": "naturalphilosophy:random_threshold_selector",
@@ -247,14 +239,10 @@
                         "default_state": {
                           "Name": "naturalphilosophy:basaltic_mineral_sand"
                         },
-                        "lower_random_thresholds": [
-                          0.5
-                        ],
-                        "state_set": [
-                          {
-                            "Name": "naturalphilosophy:sandy_mycelium"
-                          }
-                        ]
+                        "lower_random_thresholds": [ 0.5 ],
+                        "state_set": [{
+                          "Name": "naturalphilosophy:sandy_mycelium"
+                        }]
                       },
                       {
                         "type": "naturalphilosophy:random_threshold_selector",
@@ -262,14 +250,10 @@
                         "default_state": {
                           "Name": "naturalphilosophy:basaltic_mineral_sand"
                         },
-                        "lower_random_thresholds": [
-                          0.95
-                        ],
-                        "state_set": [
-                          {
-                            "Name": "naturalphilosophy:sandy_mycelium"
-                          }
-                        ]
+                        "lower_random_thresholds": [ 0.95 ],
+                        "state_set": [{
+                          "Name": "naturalphilosophy:sandy_mycelium"
+                        }]
                       },
                       {
                         "type": "minecraft:block",
@@ -283,14 +267,10 @@
                         "default_state": {
                           "Name": "naturalphilosophy:basaltic_mineral_sand"
                         },
-                        "lower_random_thresholds": [
-                          0.5
-                        ],
-                        "state_set": [
-                          {
-                            "Name": "naturalphilosophy:basaltic_mineral_sand"
-                          }
-                        ]
+                        "lower_random_thresholds": [ 0.5 ],
+                        "state_set": [{
+                          "Name": "naturalphilosophy:basaltic_mineral_sand"
+                        }]
                       }
                     ]
                   }
@@ -317,14 +297,10 @@
                     "default_state": {
                       "Name": "naturalphilosophy:basaltic_mineral_sand"
                     },
-                    "lower_random_thresholds": [
-                      0.50
-                    ],
-                    "state_set": [
-                      {
-                        "Name": "minecraft:dirt"
-                      }
-                    ]
+                    "lower_random_thresholds": [ 0.50 ],
+                    "state_set": [{
+                      "Name": "minecraft:dirt"
+                    }]
                   },
                   {
                     "type": "minecraft:block",
@@ -338,14 +314,10 @@
                     "default_state": {
                       "Name": "naturalphilosophy:basaltic_mineral_sand"
                     },
-                    "lower_random_thresholds": [
-                      0.50
-                    ],
-                    "state_set": [
-                      {
-                        "Name": "minecraft:basalt"
-                      }
-                    ]
+                    "lower_random_thresholds": [ 0.50 ],
+                    "state_set": [{
+                      "Name": "minecraft:basalt"
+                    }]
                   }
                 ]
               },
@@ -358,17 +330,13 @@
                     "Name": "minecraft:basalt"
                   }
                 },
-                "lower_noise_thresholds": [
-                  0.5
-                ],
-                "ruleset": [
-                  {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "naturalphilosophy:basaltic_mineral_sand"
-                    }
+                "lower_noise_thresholds": [ 0.5 ],
+                "ruleset": [{
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "naturalphilosophy:basaltic_mineral_sand"
                   }
-                ]
+                }]
               }
             ]
           }
