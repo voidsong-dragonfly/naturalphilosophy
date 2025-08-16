@@ -3,11 +3,9 @@ package voidsong.naturalphilosophy.mixin;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.*;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,7 +19,6 @@ import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPSurfaceConditio
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPConditionSources;
 import voidsong.naturalphilosophy.common.worldgen.surfacerules.ContextExtension;
 
-import java.util.IdentityHashMap;
 import java.util.function.Function;
 
 @SuppressWarnings("unused")
@@ -68,20 +65,13 @@ public abstract class SurfaceRulesMixin {
         @Unique
         @SuppressWarnings("all")
         SurfaceRules.Condition cliff, flat, flatLiquid, aboveWater;
-        // Caches for heightmaps& noises
+        // Caches for heightmaps & the last update value for it
         @Unique
         @SuppressWarnings("all")
         private int oceanHeightmapDepthCache = -Integer.MAX_VALUE;
         @Unique
         @SuppressWarnings("all")
-        private IdentityHashMap<ResourceKey<NormalNoise.NoiseParameters>, Double> noiseCache = new IdentityHashMap<>();
-        // Update timers for heightmaps, biomes, and noises
-        @Unique
-        @SuppressWarnings("all")
         private long lastUpdateHeightmapDepth;
-        @Unique
-        @SuppressWarnings("all")
-        private long lastUpdateNoises;
 
         @Inject(method="<init>", at=@At("RETURN"))
         public void instantiateConditions(SurfaceSystem system,
@@ -126,15 +116,6 @@ public abstract class SurfaceRulesMixin {
                 lastUpdateHeightmapDepth = lastUpdateXZ;
             }
             return oceanHeightmapDepthCache;
-        }
-
-        @Override
-        public double naturalphilosophy$getCachedNoise(ResourceKey<NormalNoise.NoiseParameters> noise) {
-            if(lastUpdateXZ != lastUpdateNoises) {
-                noiseCache.clear();
-                lastUpdateNoises = lastUpdateXZ;
-            }
-            return noiseCache.computeIfAbsent(noise, v -> randomState.getOrCreateNoise(noise).getValue(blockX, 0.0, blockZ));
         }
     }
 }

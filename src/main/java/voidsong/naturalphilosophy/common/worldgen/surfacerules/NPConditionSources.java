@@ -134,6 +134,8 @@ public class NPConditionSources {
                 @Override
                 public boolean test() {
                     int heightmapDepth = ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth();
+                    // Return early if this isn't a cave - ie, if the ground above is solid
+                    if (pContext.stoneDepthAbove >= (heightmapDepth-pContext.blockY+1)) return false;
                     // Return early if we're above the necessary depth
                     if (heightmapDepth - depth <= pContext.blockY) return false;
                     // If we're shallower than twelve blocks, we do not need to check the air blocks above this block
