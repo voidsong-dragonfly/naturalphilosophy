@@ -1,0 +1,59 @@
+4.0.0 (The Feature Update) & 5.0.0 (The Biome Update)
+1. Pale Garden up to Natural Philosophy standards
+    Pale garden is already pretty good, add more moss and more grass?
+    Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
+    Add some ground vegetation maybe?
+    Glow lichen in the Pale Garden, on the trees?
+2. Add some custom biomes to the game?
+    Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
+    Cold desert => gravel desert biome, maybe?
+    Add some more new cave biomes to spice up the underground?
+        Surface rocks rather than plants for cave detection
+3. Improve caves and add cave biomes
+    Surface rocks rather than plants for cave detection, maybe? Or more obvious plants
+    Stalactites & stalagmites for normal stone (but not for andesite, diorite, or granite)
+        => Rockfall events, maybe? Dropping stalactites/stalagmites
+        => Figure out if I need Lithostitched sequential generators to make top/bottom pairs of speleothems
+    Boulders of fallen rocks in caves
+    Extra fossils in the Deep Dark, especially on the 'surface' of the caves
+    'Magmatic Depths' or 'Volcanic Depths' biome at depth > some limit
+    'Granitic Pluton' and 'Plagioclastic Laccolith' biomes, (Granite), and (Diorite inside, Andesite outside) for base stone types
+        => Placed above the deepslate layer, possibly with "veins" of material making webs down to the Bedrock from them
+    Might have to fix cave shape, if it's even possible to do effectively?
+        => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
+        => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
+        =>
+4. Significant overhaul of rivers & low-lying areas
+    Change the spawning requirements of rushes & cattails, allow them in low-lying areas & not just water
+    Move rushes & cattails away from direct water contact and more towards low-lying ground in general
+    Filter trees out of low-lying areas across all biomes, make instead open "grassy" or "shrubby" or "rushy" areas at the edges of rivers/lakes
+        => Rushes, grasses, bushes, trees should be the general progression from y63 to y71 or so
+    More variety to rushes and cattails
+        => More models, have the vary either over large spaces or over small spaces
+        => Maybe make the models square?
+    New blocks for rivers/beaches: Water/river gravel, water/river sand, muddy rocks/river cobbles, possibly something else?
+        => Less saturated, more uniform in tone than Vanilla sand/gravel/mud/etc
+        => Should help make river biomes more cohesive
+    Gravel, sand, clay mixture for the bottom of rivers; less mud in rivers and more in other biomes
+        => Gravel/sand beaches for the first 1-2 blocks above water
+        => Blend into the mixture of rushes/shrubbery/etc above that
+        => Try to mimic pictures of shallow rivers if possible
+5. More plant variety in general
+    Grass should have multiple models that it varies between to remove the monotone green of plains
+        => Models should be bushier to more accurately display foliage thickness
+    Add new plants: At minimum goldenrod, possibly joe pye weed or something similar? Check out ferdinand's flowers, verdant vibes, habitat, etc
+6. Go back over current biomes & make sure they're the best they can be
+    Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
+    Badlands biomes have more plants
+    Desert biomes get an overhaul and split into two: Dunes & xeric shrublands, where dunes are just sand and shrublands have some few plants
+7. Rocky biome changes to make them feel more rock-like and less like bare edifices of stone with nothing growing and no cracks
+    New rock generator, either cubic with shifted corners or ore-vein based; make it follow IRL rock shapes more
+    New block to make rocks less likely to blend into the stone below them?
+    Make rocky biomes have a layer of gravel and dirt on top, except for on cliffs, to make the rock less obvious?
+    Cobblestone not being used in world generation due to its uniformity and lacking in the texture of normal cobble-gravel beds
+8. Updates to existing features in biomes
+    With the new update, fallen trees across multiple biomes
+    Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
+    Dead trees in many biomes to go alongside the fallen trees
+    Make trees correspond to their saplings correctly & taller textures for stage 1 saplings to show off their partial growth
+    Leaves have a curtain of snow draped around them when there is a snow layer on top => maybe all blocks do, and we just ignore certain blocks (snow, snowy grass, etc)

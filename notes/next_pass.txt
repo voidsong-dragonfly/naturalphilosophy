@@ -99,40 +99,6 @@ Unknown Timeline:
 4. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
 5. Plants covered in snow? => snowlogging might be complicated to get working. do I want to do stairs/slabs too, or just plants?
 
-Plausible for 3.0.0
-1. Dead trees in some biomes? (WILL need custom placers in some cases to look good, I think)
-2. Taller textures for stage 1 saplings to show off their partial growth
-3. Make trees correspond to their saplings correctly
-4. Leaves have a curtain of snow draped around them when there is a snow layer on top
-
-
-4.0.0
-1. Pale Garden up to Natural Philosophy standards
-    Pale garden is already pretty good, add more moss and more grass?
-    Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
-    Add some ground vegetation maybe?
-    Glow lichen in the Pale Garden, on the trees?
-2. Add some custom biomes to the game?
-    Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
-    Deep oceans are a biome BELOW ocean rather than existing on the surface
-    Cold desert => gravel desert biome, maybe?
-    Add some more new cave biomes to spice up the underground?
-        Surface rocks rather than plants for cave detection
-3. Improve caves and add cave biomes
-    Surface rocks rather than plants for cave detection, maybe? Or more obvious plants
-    Stalactites & stalagmites for normal stone (but not for andesite, diorite, or granite)
-        => Rockfall events, maybe? Dropping stalactites/stalagmites
-        => Figure out if I need Lithostitched sequential generators to make top/bottom pairs of speleothems
-    Boulders of fallen rocks in caves
-    Extra fossils in the Deep Dark, especially on the 'surface' of the caves
-    'Magmatic Depths' or 'Volcanic Depths' biome at depth > some limit
-    'Granitic Pluton' and 'Plagioclastic Laccolith' biomes, (Granite), and (Diorite inside, Andesite outside) for base stone types
-        => Placed above the deepslate layer, possibly with "veins" of material making webs down to the Bedrock from them
-    Might have to fix cave shape?
-        => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
-        => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
-        =>
-
 
 
 Don't want to duplicate things PVJ does because they do them just fine. Work on things PVJ does NOT do instead
