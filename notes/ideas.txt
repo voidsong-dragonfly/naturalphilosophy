@@ -49,7 +49,3 @@ REGIONS UNEXPLORED
 SWAMPIER SWAMPS
  - Cattail blocks with actual heads atop stems made of panes of grasslike blocks, along with large and small lilypads decorate the water
  - Either cherry or fancy trunk placer, or jungle trunk additions? Combined with roots and acacia like foliage placer make for cypress like trees
-WILLIAM WITHERS
-
-
- Cliffs

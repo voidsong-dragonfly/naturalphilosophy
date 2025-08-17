@@ -8,4 +8,9 @@ Sandy Cliffs (warm stony shore)
 Snowy Desert (cold dry locations)
 Frigid Cliffs (windswept cliffs replacement in colder biomes)
 Overgrown Spires (windswept cliffs replacement in warmer biomes, or move bamboo or sparse jungle there?)
-Warm River (warm river locations)
+Warm River (warm river locations) => split swamp into marsh and swamp, have swampy forests up in top of marshes but overall like current, instead for swamp have lots o trees
+Salt Marsh (non-beach biome on coastlines)
+Desert Dunes (current desert replacement, normal desert => lusher)
+
+Temp HIGH: Desert Dunes, Desert, Savanna, Sparse Jungle, Jungle
+This currently goes savanna -> sparse jungle though, might want something in the middle? a woodland biome maybe?

@@ -1,0 +1,17 @@
+UNTAMED WILDS
+    Floating plants of some type (water hyacinth)
+    Actually growing reeds?
+    Anemones (multiple model colors)
+    Creosote bushes for deserts/badlands? => bushes are a cube of leaves with diagonal texture for stem + bushiness, not Vanilla texture
+    Orchids for swamps, mangrove swamps, & jungles?
+TERRESTRIA
+    Barrel cactus & saguaro maybe?
+    Short dry grass from 1.21.5 is a very good pick for deserts alongside normal grass
+VERDURE
+    Brown & red shelf mushrooms to match MC mushrooms; place on the side of logs/rocks to get
+    Hanging moss in swamps, jungles (?), and lush caves
+WILDER WILD
+    More large mushrooms places - Minecraft has them, why not use them?
+    More plants and plant types scattered around - especially small amounts of vines/ivy on trees, maybe make an ivy plant for this purpose?
+    Frozen grass of some kind that can be snowlogged? => Figure out how Wilder Wilds does their plant snowlogging
+    Some sort of flower plains to accompiany flower forest? Alongside sunflower plains?

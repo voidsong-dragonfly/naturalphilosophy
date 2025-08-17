@@ -9,6 +9,7 @@
     Cold desert => gravel desert biome, maybe?
     Add some more new cave biomes to spice up the underground?
         Surface rocks rather than plants for cave detection
+    Consider maybe an ocean trenches biome surrounding mushroom islands? Tubeworm blocks and smokers, etc?
 3. Improve caves and add cave biomes
     Surface rocks rather than plants for cave detection, maybe? Or more obvious plants
     Stalactites & stalagmites for normal stone (but not for andesite, diorite, or granite)
@@ -23,11 +24,15 @@
         => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
         => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
         =>
+    Some sort of slime vegetation or slime residue to indicate slime chunks?
 4. Significant overhaul of rivers & low-lying areas
     Change the spawning requirements of rushes & cattails, allow them in low-lying areas & not just water
     Move rushes & cattails away from direct water contact and more towards low-lying ground in general
     Filter trees out of low-lying areas across all biomes, make instead open "grassy" or "shrubby" or "rushy" areas at the edges of rivers/lakes
         => Rushes, grasses, bushes, trees should be the general progression from y63 to y71 or so
+        => May or may not want to do this, Vanilla generation can be highly flat at times and y71 might be too high
+        => Maybe only go up to y68 or so (so +5 blocks from bottom) and not y71
+        => Either that or have different fades based on biome; plains biomes have one and forests another?
     More variety to rushes and cattails
         => More models, have the vary either over large spaces or over small spaces
         => Maybe make the models square?
@@ -38,13 +43,20 @@
         => Gravel/sand beaches for the first 1-2 blocks above water
         => Blend into the mixture of rushes/shrubbery/etc above that
         => Try to mimic pictures of shallow rivers if possible
+    Going to need some way to ensure low-lying areas away from rivers are not taken over too badly by the block placement, as Vanilla terrain can be v. low
+        => Likely will require reading PV (or mod. PV) and also continentalness/erosion to identify key areas
+        => Reading of continentalness/erosion will also allow for tailoring river surface placement to rough heightvalue areas
 5. More plant variety in general
     Grass should have multiple models that it varies between to remove the monotone green of plains
         => Models should be bushier to more accurately display foliage thickness
+    Lilypads should have multiple models of varying sizes
+        => Lilypad models should also have roots that hang down into the water
+        => Some lilypads should also be flowering
+    Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
     Add new plants: At minimum goldenrod, possibly joe pye weed or something similar? Check out ferdinand's flowers, verdant vibes, habitat, etc
 6. Go back over current biomes & make sure they're the best they can be
     Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
-    Badlands biomes have more plants
+    Badlands biomes have more plants; possible grassy transitional badlands biome for blending into Savannas
     Desert biomes get an overhaul and split into two: Dunes & xeric shrublands, where dunes are just sand and shrublands have some few plants
 7. Rocky biome changes to make them feel more rock-like and less like bare edifices of stone with nothing growing and no cracks
     New rock generator, either cubic with shifted corners or ore-vein based; make it follow IRL rock shapes more
@@ -57,3 +69,13 @@
     Dead trees in many biomes to go alongside the fallen trees
     Make trees correspond to their saplings correctly & taller textures for stage 1 saplings to show off their partial growth
     Leaves have a curtain of snow draped around them when there is a snow layer on top => maybe all blocks do, and we just ignore certain blocks (snow, snowy grass, etc)
+    Possibly add charred trees to some biomes? Lightning-struck tree features + charred logs
+        => Make it a Gasworks integration if I add better fire spread to gasworks?
+9. Port over some of the interesting features of Immersive Weathering
+    Mossy stone and other mossy blocks, to make mossiness not just a cobblestone thing
+    Sandy bricks (?) sand piles (?) or other sand accoutrements, alongside desert precipitation changes
+        => Normal rain should be sandstorms/windstorms
+        => Thunderstorms should be rain
+    Fulgurite/vitrified sand that happens from lightning strikes + some naturally generating fulgurite; also for red sand?
+    New kinds of soil; consider permafrost for snowy biome dirt alongside some sort of leaf loam or leaf litter for non-coniferous forests
+10. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
