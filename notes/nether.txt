@@ -15,12 +15,16 @@ NETHER WASTES
  - Common veins of quartz and gold ore
  - Should there be plants? Maybe have some sort of netherrack sand instead, make it more desertlike?
 NYLIUM FORESTS
- - Soul sand patches among the nylium for Warped forests
+ - Soul sand patches among the nylium for Warped forests (?)
  - Warped forests are endermen black-purple
  - Gravel patches among the nylium for Crimson Forests
  - Veins of quartz and gold ore
  - Vines hanging from ceilings & maybe some new plant variety
 
+Do we want veins at all? Ores do have their own issues, but veins might be too large of a change. Consider thoroughly
+ - Definitely want to keep magma veins
+ - May not want to keep gold/quartz veins
+ - Look up how geodes form and consider closely
 
 Blaze Bamboo either as its own biome or as stands other places
 Some sort of sugarcane-equivalent? Not sure what it would do...
@@ -28,6 +32,7 @@ Some sort of sugarcane-equivalent? Not sure what it would do...
 Gunpowder from quenched bamboo or directly from sugarcane, maybe?
 Somehow activate blaze bamboo with a fortress for blaze powder?
  => Smelting only, but if grown inside a nether fortress becomes "activated" blaze bamboo and can be used for rods?
+ => Grown both near a blaze spawner & within a nether fortress structure produced 'activated', otherwise the bamboo is 'quenched' bamboo
  => Maybe the powder can't be used for eyes of ender but can be used for potions?
 
 Some other sorts of vegetation, several types? make some sort of quartz desert?
@@ -47,5 +52,8 @@ Nether biomes?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
 
+Lava marshes biome at the bottom near lava lakes, with thorny plants. Sort of a combination of the BoP soul sand vines valley with a lava swamp idea
+ => Magma thorns perhaps, which feed off of lava and burn the player rather than prick them?
+ => Only have them burn the player if their "source" is near lava or magma blocks
 
 "Soulfire Brazier" and "Dread Lantern" maybe?
