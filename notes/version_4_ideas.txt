@@ -79,3 +79,19 @@
     Fulgurite/vitrified sand that happens from lightning strikes + some naturally generating fulgurite; also for red sand?
     New kinds of soil; consider permafrost for snowy biome dirt alongside some sort of leaf loam or leaf litter for non-coniferous forests
 10. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
+    Do we actually need custom foliage types? Might just want to make a few trunk-placer changes to allow for better shaping
+    Could do limits on where branches can propagate to but otherwise use the fancy oak tree placer => similar to plains trees
+    Should have multiple types of trees in deciduous forests
+        => One type is straight trunk, ball-ish of leaves
+        => One type is a more branching tree
+        => One type we want more branches down lower but not too many of them
+        => Stop using cherry trunk placer as much (?)
+11. Need to stop using as much feathering and move closer to noise patches
+    Reduce complexity of overall borders and block swathes, instead move to a more patchy system with larger patches
+        => Oceans should have very little feathering if any at all (?)
+        => Where feathering might be necessary, make feathering zones larger
+    Use something closer to swamp noise for most "feathering" to make it instead obvious patches like IRL
+    Possibly split these out into other files & pull in via Lithostitched new rules. "Dirt patches", etc. Would need some work, but possible....
+    Rather than feathering some block types with high contrast, instead give variant models that can show up to reduce overall contrast
+    Overall simplification of things like forest floors is quite reasonable when there is more variety to the decoration of the forests
+
