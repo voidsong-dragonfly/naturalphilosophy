@@ -1,0 +1,54 @@
+{
+  "type": "naturalphilosophy:noise_threshold_selector",
+  "noise": "minecraft:surface",
+  "default_rule": {
+    "type": "minecraft:block",
+    "result_state": {
+      "Name": "minecraft:grass_block"
+    }
+  },
+  "lower_noise_thresholds": [
+    0.625,
+    0.5625
+  ],
+  "ruleset": [
+    {
+      "type": "naturalphilosophy:random_threshold_selector",
+      "random_name": "surface_randomness",
+      "default_state": {
+        "Name": "minecraft:grass_block"
+      },
+      "lower_random_thresholds": [
+        0.90,
+        0.60
+      ],
+      "state_set": [
+        {
+          "Name": "minecraft:rooted_dirt"
+        },
+        {
+          "Name": "minecraft:coarse_dirt"
+        }
+      ]
+    },
+    {
+      "type": "naturalphilosophy:random_threshold_selector",
+      "random_name": "surface_randomness",
+      "default_state": {
+        "Name": "minecraft:grass_block"
+      },
+      "lower_random_thresholds": [
+        0.95,
+        0.875
+      ],
+      "state_set": [
+        {
+          "Name": "minecraft:rooted_dirt"
+        },
+        {
+          "Name": "minecraft:coarse_dirt"
+        }
+      ]
+    }
+  ]
+}
