@@ -42,7 +42,7 @@ public class NPSurfaceRules {
             // Apply the rule and store the result, with null if we are not within the noise bin
             BlockState result = d0 > lowerThreshold ? rule.tryApply(x, y, z) : null;
             // Return the default rule if we're not in the noise bin or have a noise bin that does not resolve
-            return result == null ? defaultRule.tryApply(x, y, z) : null;
+            return result == null ? defaultRule.tryApply(x, y, z) : result;
         }
     }
 
@@ -104,7 +104,7 @@ public class NPSurfaceRules {
             // Apply the rule and store the result, with null if we are not within the height bin
             BlockState result = comparisonYValue > lowerThreshold ? rule.tryApply(x, y, z) : null;
             // Return the default rule if we're not in the height bin or have a height bin that does not resolve
-            return result == null ? defaultRule.tryApply(x, y, z) : null;
+            return result == null ? defaultRule.tryApply(x, y, z) : result;
         }
     }
 
