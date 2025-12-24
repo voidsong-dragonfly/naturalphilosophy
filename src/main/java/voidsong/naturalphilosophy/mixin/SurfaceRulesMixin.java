@@ -5,12 +5,10 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.*;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.ChunkAccess;
-import net.minecraft.world.level.levelgen.NoiseChunk;
-import net.minecraft.world.level.levelgen.RandomState;
-import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.SurfaceSystem;
-import net.minecraft.world.level.levelgen.WorldGenerationContext;
+import net.minecraft.world.level.levelgen.*;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -32,12 +30,12 @@ public abstract class SurfaceRulesMixin {
         @Inject(method = "bootstrap", at = @At("HEAD"))
         private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.ConditionSource>> registry,
                                         CallbackInfoReturnable<Codec<SurfaceRules.ConditionSource>> cir) {
-            SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.Cliff.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:cliff_lip", NPConditionSources.CliffLip.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.Flat.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquid.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:climate_sampler", NPConditionSources.ClimateSampler.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:heightmap_depth", NPConditionSources.HeightmapDepthCheck.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:cliff", NPConditionSources.CliffConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:flat", NPConditionSources.FlatConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquidConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:land_top_layer", NPConditionSources.LandTopLayerConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:underwater", NPConditionSources.UnderwaterConditionSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:cave_depth", NPConditionSources.CaveDepthConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
         }
     }
@@ -48,14 +46,32 @@ public abstract class SurfaceRulesMixin {
         private static void onBootstrap(Registry<MapCodec<? extends SurfaceRules.RuleSource>> registry,
                                         CallbackInfoReturnable<MapCodec<? extends SurfaceRules.RuleSource>> cir) {
             SurfaceRules.register(registry, "naturalphilosophy:noise_threshold_selector", NPRuleSources.NoiseThresholdSelectorRuleSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:random_threshold_selector", NPRuleSources.RandomThresholdSelectorRuleSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:height_threshold_selector", NPRuleSources.HeightThresholdSelectorRuleSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:stone_depth_threshold_selector", NPRuleSources.StoneDepthThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:bilayer_fill", NPRuleSources.BilayerFillRuleSource.CODEC);
         }
     }
 
     @Mixin(SurfaceRules.Context.class)
     protected static final class Context implements ContextExtension {
+        // Shadowed variables from Context
+        @Shadow long lastUpdateXZ;
+        @Shadow public int blockX;
+        @Shadow public int blockZ;
+        @Shadow @Final public ChunkAccess chunk;
+        @Shadow @Final public RandomState randomState;
+        // Variables for the cached conditions
         @Unique
-        SurfaceRules.Condition cliff, flat, cliffLip, flatLiquid;
+        @SuppressWarnings("all")
+        SurfaceRules.Condition cliff, flat, flatLiquid, aboveWater;
+        // Caches for heightmaps & the last update value for it
+        @Unique
+        @SuppressWarnings("all")
+        private int oceanHeightmapDepthCache = -Integer.MAX_VALUE;
+        @Unique
+        @SuppressWarnings("all")
+        private long lastUpdateHeightmapDepth;
 
         @Inject(method="<init>", at=@At("RETURN"))
         public void instantiateConditions(SurfaceSystem system,
@@ -67,20 +83,15 @@ public abstract class SurfaceRulesMixin {
                                           WorldGenerationContext context,
                                           CallbackInfo ci) {
             SurfaceRules.Context self = (SurfaceRules.Context) (Object) this;
-            cliff = new NPSurfaceConditions.CliffMaterialCondition(self);
-            cliffLip = new NPSurfaceConditions.CliffLipMaterialCondition(self);
-            flat = new NPSurfaceConditions.FlatMaterialCondition(self);
-            flatLiquid = new NPSurfaceConditions.FlatLiquidMaterialCondition(self);
+            cliff = new NPSurfaceConditions.CliffCondition(self);
+            flat = new NPSurfaceConditions.FlatCondition(self);
+            flatLiquid = new NPSurfaceConditions.FlatLiquidCondition(self);
+            aboveWater = new NPSurfaceConditions.LandTopLayerCondition(self);
         }
 
         @Override
         public SurfaceRules.Condition naturalphilosophy$getCliff() {
             return cliff;
-        }
-
-        @Override
-        public SurfaceRules.Condition naturalphilosophy$getCliffLip() {
-            return cliffLip;
         }
 
         @Override
@@ -91,6 +102,20 @@ public abstract class SurfaceRulesMixin {
         @Override
         public SurfaceRules.Condition naturalphilosophy$getFlatLiquid() {
             return flatLiquid;
+        }
+
+        @Override
+        public SurfaceRules.Condition naturalphilosophy$getLandTopLayer() {
+            return aboveWater;
+        }
+
+        @Override
+        public int naturalphilosophy$getOceanHeightmapDepth() {
+            if (lastUpdateXZ != lastUpdateHeightmapDepth) {
+                oceanHeightmapDepthCache = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, blockX, blockZ);
+                lastUpdateHeightmapDepth = lastUpdateXZ;
+            }
+            return oceanHeightmapDepthCache;
         }
     }
 }

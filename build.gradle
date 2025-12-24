@@ -125,7 +125,7 @@ dependencies {
     // implementation "blank:coolmod-${minecraft_version}:${coolmod_version}"
 
     // Example mod dependency using a file as dependency
-    implementation files("libs/lithostitched-neoforge-${minecraft_version}-${lithostitched_version}.jar")
+    implementation files("libs/lithostitched-${lithostitched_version}-neoforge-${minecraft_version}.jar")
 
 
     //runtimeOnly "curse.maven:farmersdelight-398521:6154807" // Farmer's Delight

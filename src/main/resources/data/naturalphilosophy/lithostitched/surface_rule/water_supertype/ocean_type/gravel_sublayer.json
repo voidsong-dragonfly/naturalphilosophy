@@ -1,0 +1,44 @@
+{
+  "type": "naturalphilosophy:noise_threshold_selector",
+  "noise": "minecraft:surface",
+  "default_rule": {
+    "type": "minecraft:block",
+    "result_state": {
+      "Name": "minecraft:gravel"
+    }
+  },
+  "lower_noise_thresholds": [
+    -0.4375,
+    -0.5
+  ],
+  "ruleset": [
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:stone"
+      }
+    },
+    {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:not",
+        "invert": {
+          "type": "minecraft:stone_depth",
+          "add_surface_depth": false,
+          "offset": 2,
+          "secondary_depth_range": 0,
+          "surface_type": "floor"
+        }
+      },
+      "then_run": {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:stone"
+        }
+      }
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:condition",
+  "if_true": {
+    "type": "minecraft:not",
+    "invert": {
+      "type": "minecraft:y_above",
+      "add_stone_depth": true,
+      "anchor": {
+        "absolute": 72
+      },
+      "surface_depth_multiplier": 1
+    }
+  },
+  "then_run": {
+    "type": "naturalphilosophy:noise_threshold_selector",
+    "noise": "minecraft:surface",
+    "default_rule": {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:mud"
+      }
+    },
+    "lower_noise_thresholds": [ 0.375 ],
+    "ruleset": [{
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:noise_threshold",
+        "max_threshold": 1E308,
+        "min_threshold": 0.375,
+        "noise": "minecraft:surface"
+      },
+      "then_run": {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:clay"
+        }
+      }
+    }]
+  }
+}
+
+
+
+

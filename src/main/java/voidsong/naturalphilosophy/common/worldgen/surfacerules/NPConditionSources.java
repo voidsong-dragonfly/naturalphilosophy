@@ -3,22 +3,23 @@ package voidsong.naturalphilosophy.common.worldgen.surfacerules;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 import javax.annotation.Nonnull;
 
 public class NPConditionSources {
 
-    public enum Cliff implements SurfaceRules.ConditionSource {
+    public enum CliffConditionSource implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<NPConditionSources.Cliff> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<CliffConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -32,27 +33,10 @@ public class NPConditionSources {
         }
     }
 
-    public enum CliffLip implements SurfaceRules.ConditionSource {
+    public enum FlatConditionSource implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<NPConditionSources.CliffLip> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
-
-        @Override
-        @Nonnull
-        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
-            return CODEC;
-        }
-
-        @SuppressWarnings("DataFlowIssue")
-        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return ((ContextExtension)(Object)pContext).naturalphilosophy$getCliffLip();
-        }
-    }
-
-    public enum Flat implements SurfaceRules.ConditionSource {
-        INSTANCE;
-
-        public static final KeyDispatchDataCodec<NPConditionSources.Flat> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<FlatConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -66,10 +50,10 @@ public class NPConditionSources {
         }
     }
 
-    public enum FlatLiquid implements SurfaceRules.ConditionSource {
+    public enum FlatLiquidConditionSource implements SurfaceRules.ConditionSource {
         INSTANCE;
 
-        public static final KeyDispatchDataCodec<NPConditionSources.FlatLiquid> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
+        public static final KeyDispatchDataCodec<FlatLiquidConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -83,30 +67,10 @@ public class NPConditionSources {
         }
     }
 
-    public record ClimateSampler(long tempMin,  long tempMax,
-                                 long humMin,   long humMax,
-                                 long contMin,  long contMax,
-                                 long eroMin,   long eroMax,
-                                 long weirdMin, long weirdMax,
-                                 long depthMin, long depthMax) implements SurfaceRules.ConditionSource {
-        public static final KeyDispatchDataCodec<NPConditionSources.ClimateSampler> CODEC = KeyDispatchDataCodec.of(
-            RecordCodecBuilder.mapCodec(
-                source -> source.group(
-                        Codec.FLOAT.optionalFieldOf("min_temperature", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::tempMin),
-                        Codec.FLOAT.optionalFieldOf("max_temperature", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::tempMax),
-                        Codec.FLOAT.optionalFieldOf("min_humidity", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::humMin),
-                        Codec.FLOAT.optionalFieldOf("max_humidity", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::humMax),
-                        Codec.FLOAT.optionalFieldOf("min_continentalness", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::contMin),
-                        Codec.FLOAT.optionalFieldOf("max_continentalness", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::contMax),
-                        Codec.FLOAT.optionalFieldOf("min_erosion", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::eroMin),
-                        Codec.FLOAT.optionalFieldOf("max_erosion", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::eroMax),
-                        Codec.FLOAT.optionalFieldOf("min_weirdness", -1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::weirdMin),
-                        Codec.FLOAT.optionalFieldOf("max_weirdness", 1.0f).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::weirdMax),
-                        Codec.FLOAT.optionalFieldOf("min_depth", -Float.MAX_VALUE).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::depthMin),
-                        Codec.FLOAT.optionalFieldOf("max_depth", Float.MAX_VALUE).xmap(Climate::quantizeCoord, Climate::unquantizeCoord).forGetter(NPConditionSources.ClimateSampler::depthMax)
-                    ).apply(source, NPConditionSources.ClimateSampler::new)
-            )
-        );
+    public enum LandTopLayerConditionSource implements SurfaceRules.ConditionSource {
+        INSTANCE;
+
+        public static final KeyDispatchDataCodec<LandTopLayerConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
 
         @Override
         @Nonnull
@@ -114,17 +78,18 @@ public class NPConditionSources {
             return CODEC;
         }
 
+        @SuppressWarnings("DataFlowIssue")
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return new NPSurfaceConditions.ClimateSamplerCondition(pContext, tempMin, tempMax, humMin, humMax, contMin, contMax, eroMin, eroMax, weirdMin, weirdMax, depthMin, depthMax);
+            return ((ContextExtension)(Object)pContext).naturalphilosophy$getLandTopLayer();
         }
     }
 
-    public record HeightmapDepthCheck(int depth) implements SurfaceRules.ConditionSource {
-        public static final KeyDispatchDataCodec<HeightmapDepthCheck> CODEC = KeyDispatchDataCodec.of(
+    public record UnderwaterConditionSource(boolean shallow) implements SurfaceRules.ConditionSource {
+        public static final KeyDispatchDataCodec<UnderwaterConditionSource> CODEC = KeyDispatchDataCodec.of(
             RecordCodecBuilder.mapCodec(
                 source -> source.group(
-                    Codec.INT.fieldOf("depth").forGetter(HeightmapDepthCheck::depth)
-                ).apply(source, HeightmapDepthCheck::new)
+                    Codec.BOOL.optionalFieldOf("shallow", false).forGetter(UnderwaterConditionSource::shallow)
+                ).apply(source, UnderwaterConditionSource::new)
             )
         );
 
@@ -135,13 +100,78 @@ public class NPConditionSources {
         }
 
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return new NPSurfaceConditions.HeightmapDepthCondition(pContext, depth);
+            class UnderwaterCondition implements SurfaceRules.Condition {
+                @Override
+                public boolean test() {
+                    // Exit early if we're above water
+                    if (pContext.waterHeight == Integer.MIN_VALUE) return false;
+                    // If we don't care about shallowness, return early, else check the Vanilla "shallow water" parameters
+                    return !shallow || ((pContext.blockY + pContext.stoneDepthAbove) >= (pContext.waterHeight - 6 - pContext.surfaceDepth));
+                }
+            }
+
+            return new UnderwaterCondition();
+        }
+    }
+
+    public record CaveDepthConditionSource(int depth) implements SurfaceRules.ConditionSource {
+        public static final KeyDispatchDataCodec<CaveDepthConditionSource> CODEC = KeyDispatchDataCodec.of(
+            RecordCodecBuilder.mapCodec(
+                source -> source.group(
+                    Codec.INT.fieldOf("depth").forGetter(CaveDepthConditionSource::depth)
+                ).apply(source, CaveDepthConditionSource::new)
+            )
+        );
+
+        @Override
+        @Nonnull
+        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
+            return CODEC;
+        }
+
+        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
+            class CaveDepthCondition implements SurfaceRules.Condition {
+                @Override
+                public boolean test() {
+                    int heightmapDepth = ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth();
+                    // Return early if this isn't a cave - ie, if the ground above is solid
+                    if (pContext.stoneDepthAbove >= (heightmapDepth-pContext.blockY+1)) return false;
+                    // Return early if we're above the necessary depth
+                    if (heightmapDepth - depth <= pContext.blockY) return false;
+                    // If we're shallower than twelve blocks, we do not need to check the air blocks above this block
+                    // We remove/add stoneDepthAbove to make sure we stay congruous with the top block of the cave
+                    int currentDepth = heightmapDepth - pContext.blockY + pContext.stoneDepthAbove;
+                    if (currentDepth < 12) return true;
+                    // Check to make sure we're not underneath a massive overhang by checking if greater than 2/3ths what's above is air
+                    MutableBlockPos pos = new MutableBlockPos(pContext.blockX, pContext.blockY + pContext.stoneDepthAbove, pContext.blockZ);
+                    for (int i = 1 + pContext.stoneDepthAbove; i < (currentDepth*3)/4; i++)
+                        if (!pContext.chunk.getBlockState(pos.setY(pContext.blockY + i)).canBeReplaced()) return true;
+                    // Variable store for future operations
+                    int i = pContext.blockX & 15;
+                    int j = pContext.blockZ & 15;
+                    // Movements within the chunk for close block checks
+                    int searchLevel = pContext.blockY + pContext.stoneDepthAbove- 2;
+                    int north = Math.max(j - 1, 0);
+                    int east  = Math.min(i + 1, 15);
+                    int south = Math.min(j + 1, 15);
+                    int west  = Math.max(i - 1, 0);
+                    // Now we check to make sure we're not on the side of a cliff in a windswept biome
+                    boolean lip = false;
+                    lip = lip || pContext.chunk.getBlockState(new BlockPos(pContext.blockX, searchLevel, pContext.blockZ-j+north)).isAir();
+                    lip = lip || pContext.chunk.getBlockState(new BlockPos(pContext.blockX-i+east, searchLevel, pContext.blockZ)).isAir();
+                    lip = lip || pContext.chunk.getBlockState(new BlockPos(pContext.blockX, searchLevel, pContext.blockZ-j+south)).isAir();
+                    lip = lip || pContext.chunk.getBlockState(new BlockPos(pContext.blockX-i+west, searchLevel, pContext.blockZ)).isAir();
+                    return lip;
+                }
+            }
+
+            return new CaveDepthCondition();
         }
     }
 
     public static class ExtendedBiomeConditionSource implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<ExtendedBiomeConditionSource> CODEC = KeyDispatchDataCodec.of(
-            RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biome_is").xmap(ExtendedBiomeConditionSource::makeBiomeConditionSource, biomeSource -> biomeSource.biomeSet)
+            RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biome_is").xmap(ExtendedBiomeConditionSource::new, biomeSource -> biomeSource.biomeSet)
         );
         public final HolderSet<Biome> biomeSet;
 
@@ -156,36 +186,14 @@ public class NPConditionSources {
         }
 
         public SurfaceRules.Condition apply(final SurfaceRules.Context pContext) {
-            class BiomeCondition extends SurfaceRules.LazyYCondition {
-                BiomeCondition() {
-                    super(pContext);
-                }
-
+            class BiomeCondition implements SurfaceRules.Condition {
                 @Override
-                protected boolean compute() {
-                    return biomeSet.contains(context.biome.get());
+                public boolean test() {
+                    return biomeSet.contains(pContext.biome.get());
                 }
             }
 
             return new BiomeCondition();
-        }
-
-        @Override
-        public boolean equals(Object other) {
-            if (this == other) {
-                return true;
-            } else {
-                return other instanceof ExtendedBiomeConditionSource source && this.biomeSet.equals(source.biomeSet);
-            }
-        }
-
-        @Override
-        public int hashCode() {
-            return this.biomeSet.hashCode();
-        }
-
-        private static ExtendedBiomeConditionSource makeBiomeConditionSource(HolderSet<Biome> biomes) {
-            return new ExtendedBiomeConditionSource(biomes);
         }
 
         @Override
