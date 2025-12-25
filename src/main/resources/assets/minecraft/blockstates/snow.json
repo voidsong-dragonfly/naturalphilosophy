@@ -1,60 +1,84 @@
 {
   "variants": {
-    "layers=1": [
+    "feathering=true,layers=1": [
       {
-        "model": "minecraft:block/snow_height2_1"
+        "model": "minecraft:block/feathered_snow/height2_1"
       },
       {
-        "model": "minecraft:block/snow_height2_2"
+        "model": "minecraft:block/feathered_snow/height2_2"
       },
       {
-        "model": "minecraft:block/snow_height2_3"
+        "model": "minecraft:block/feathered_snow/height2_3"
       },
       {
-        "model": "minecraft:block/snow_height2_4"
+        "model": "minecraft:block/feathered_snow/height2_4"
       }
     ],
-    "layers=2": [
+    "feathering=true,layers=2": [
       {
-        "model": "minecraft:block/snow_height4_1"
+        "model": "minecraft:block/feathered_snow/height4_1"
       },
       {
-        "model": "minecraft:block/snow_height4_2"
+        "model": "minecraft:block/feathered_snow/height4_2"
       },
       {
-        "model": "minecraft:block/snow_height4_3"
+        "model": "minecraft:block/feathered_snow/height4_3"
       },
       {
-        "model": "minecraft:block/snow_height4_4"
+        "model": "minecraft:block/feathered_snow/height4_4"
       }
     ],
-    "layers=3": [
+    "feathering=true,layers=3": [
       {
-        "model": "minecraft:block/snow_height6_1"
+        "model": "minecraft:block/feathered_snow/height6_1"
       },
       {
-        "model": "minecraft:block/snow_height6_2"
+        "model": "minecraft:block/feathered_snow/height6_2"
       },
       {
-        "model": "minecraft:block/snow_height6_3"
+        "model": "minecraft:block/feathered_snow/height6_3"
       },
       {
-        "model": "minecraft:block/snow_height6_4"
+        "model": "minecraft:block/feathered_snow/height6_4"
       }
     ],
-    "layers=4": {
-      "model": "minecraft:block/snow_height8"
+    "feathering=true,layers=4": {
+      "model": "minecraft:block/feathered_snow/height8"
     },
-    "layers=5": {
-      "model": "minecraft:block/snow_height10"
+    "feathering=true,layers=5": {
+      "model": "minecraft:block/feathered_snow/height10"
     },
-    "layers=6": {
+    "feathering=true,layers=6": {
       "model": "minecraft:block/snow_height12"
     },
-    "layers=7": {
+    "feathering=true,layers=7": {
       "model": "minecraft:block/snow_height14"
     },
-    "layers=8": {
+    "feathering=true,layers=8": {
+      "model": "minecraft:block/snow_block"
+    },
+    "feathering=false,layers=1": {
+      "model": "minecraft:block/snow_height2"
+    },
+    "feathering=false,layers=2": {
+      "model": "minecraft:block/snow_height4"
+    },
+    "feathering=false,layers=3": {
+      "model": "minecraft:block/snow_height6"
+    },
+    "feathering=false,layers=4": {
+      "model": "minecraft:block/snow_height8"
+    },
+    "feathering=false,layers=5": {
+      "model": "minecraft:block/snow_height10"
+    },
+    "feathering=false,layers=6": {
+      "model": "minecraft:block/snow_height12"
+    },
+    "feathering=false,layers=7": {
+      "model": "minecraft:block/snow_height14"
+    },
+    "feathering=false,layers=8": {
       "model": "minecraft:block/snow_block"
     }
   }

@@ -9,6 +9,7 @@
     "KelpPlantBlockMixin",
     "MushroomBlockMixin",
     "SculkVeinBlockMixin",
+    "SnowLayerMixin",
     "SnowyTreesMixin",
     "SurfaceRulesMixin",
     "SurfaceRulesMixin$ConditionSource",

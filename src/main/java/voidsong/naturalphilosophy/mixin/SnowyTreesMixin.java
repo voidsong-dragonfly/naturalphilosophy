@@ -26,11 +26,11 @@ public class SnowyTreesMixin {
         method = "place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z",
         at = @At(value= "INVOKE", target = "Lnet/minecraft/world/level/levelgen/structure/BoundingBox;encapsulatingPositions(Ljava/lang/Iterable;)Ljava/util/Optional;", shift = At.Shift.BEFORE)
     )
-    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, @Local WorldGenLevel level, @Local(ordinal = 2) Set<BlockPos> set2) {
+    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, @Local(name = "worldgenlevel") WorldGenLevel level, @Local(name = "set2") Set<BlockPos> set2) {
         for (BlockPos leaves : set2) {
             BlockPos top = leaves.above();
             if (level instanceof WorldGenRegion && level.isEmptyBlock(top) && !level.isEmptyBlock(leaves) && level.getBiome(top).value().shouldSnow(level, top)) {
-                level.setBlock(top, Blocks.SNOW.defaultBlockState(), 19);
+                level.setBlock(top, Blocks.SNOW.defaultBlockState(), 2);
             }
         }
     }
