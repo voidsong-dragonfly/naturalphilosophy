@@ -2,7 +2,6 @@ package voidsong.naturalphilosophy.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -11,6 +10,7 @@ import net.minecraft.world.level.levelgen.feature.SnowAndFreezeFeature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import voidsong.naturalphilosophy.common.NPTags;
 import voidsong.naturalphilosophy.common.blocks.NPProperties;
 
 @SuppressWarnings("unused")
@@ -27,7 +27,7 @@ public abstract class FreezeSurfaceMixin {
         if(!toPlace.hasProperty(NPProperties.FEATHERING))
             return toPlace;
         BlockState below = level.getBlockState(pos.below());
-        return toPlace.setValue(NPProperties.FEATHERING, !(below.is(BlockTags.SNOW) || below.hasProperty(GrassBlock.SNOWY)));
+        return toPlace.setValue(NPProperties.FEATHERING, !(below.is(NPTags.Blocks.SNOW_FEATHERING_BLACKLIST) || below.hasProperty(GrassBlock.SNOWY)));
     }
 }
 
