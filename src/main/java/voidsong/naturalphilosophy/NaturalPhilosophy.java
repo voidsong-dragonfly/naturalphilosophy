@@ -1,7 +1,11 @@
 package voidsong.naturalphilosophy;
 
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import voidsong.naturalphilosophy.common.config.NPClientConfig;
+import voidsong.naturalphilosophy.common.config.NPServerConfig;
 
 import static voidsong.naturalphilosophy.common.NPBlocks.BLOCKS;
 import static voidsong.naturalphilosophy.common.NPItems.CREATIVE_MODE_TABS;
@@ -16,7 +20,7 @@ public class NaturalPhilosophy {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "naturalphilosophy";
 
-    public NaturalPhilosophy(IEventBus modEventBus) {
+    public NaturalPhilosophy(ModContainer container, IEventBus modEventBus) {
         // Register mod content
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
@@ -25,5 +29,8 @@ public class NaturalPhilosophy {
         ROOT_PLACERS.register(modEventBus);
         FOLIAGE_PLACERS.register(modEventBus);
         PLACEMENT_MODIFIERS.register(modEventBus);
+        // Register config handling
+        container.registerConfig(ModConfig.Type.CLIENT, NPClientConfig.CONFIG_SPEC);
+        container.registerConfig(ModConfig.Type.SERVER, NPServerConfig.CONFIG_SPEC);
     }
 }
