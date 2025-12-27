@@ -4,6 +4,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.common.NeoForge;
+import voidsong.naturalphilosophy.common.NPEventHandler;
 import voidsong.naturalphilosophy.common.config.NPClientConfig;
 import voidsong.naturalphilosophy.common.config.NPServerConfig;
 
@@ -32,5 +34,7 @@ public class NaturalPhilosophy {
         // Register config handling
         container.registerConfig(ModConfig.Type.CLIENT, NPClientConfig.CONFIG_SPEC);
         container.registerConfig(ModConfig.Type.SERVER, NPServerConfig.CONFIG_SPEC);
+        // Register event handlers
+        NeoForge.EVENT_BUS.register(NPEventHandler.class);
     }
 }
