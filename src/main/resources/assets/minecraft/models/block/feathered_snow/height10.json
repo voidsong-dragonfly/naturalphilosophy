@@ -1,5 +1,5 @@
 {
-  "parent": "naturalphilosophy:block/snow_height10",
+  "parent": "minecraft:block/feathered_snow/snow_height10",
   "textures": {
     "particle": "block/snow",
     "snow": "block/snow",
