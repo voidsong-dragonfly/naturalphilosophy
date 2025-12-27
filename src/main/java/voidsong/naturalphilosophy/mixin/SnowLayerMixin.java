@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import voidsong.naturalphilosophy.common.NPTags;
 import voidsong.naturalphilosophy.common.blocks.NPProperties;
+import voidsong.naturalphilosophy.common.config.NPServerConfig;
 
 @Mixin(SnowLayerBlock.class)
 @SuppressWarnings("unused")
@@ -48,7 +49,7 @@ public class SnowLayerMixin {
     @ModifyReturnValue(method = "canSurvive", at = @At(value = "RETURN"))
     private boolean canSurvive(boolean original, @Local(name = "blockstate") BlockState below, @Local(name = "level") LevelReader levelReader, @Local(name = "pos") BlockPos pos) {
         if (original && below.is(NPTags.Blocks.SNOW_ICE_EQUIVALENT))
-            return (levelReader.getHeight(Heightmap.Types.WORLD_SURFACE, pos.getX(), pos.getZ()) - levelReader.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pos.getX(), pos.getZ())) < 8;
+            return (levelReader.getHeight(Heightmap.Types.WORLD_SURFACE, pos.getX(), pos.getZ()) - levelReader.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pos.getX(), pos.getZ())) < NPServerConfig.maxSnowIceWaterDepth.getAsInt();
         return original;
     }
 }
