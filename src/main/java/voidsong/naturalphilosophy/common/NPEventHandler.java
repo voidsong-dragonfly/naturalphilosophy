@@ -16,7 +16,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import voidsong.naturalphilosophy.common.config.NPClientConfig;
+import voidsong.naturalphilosophy.client.NPClientConfig;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;

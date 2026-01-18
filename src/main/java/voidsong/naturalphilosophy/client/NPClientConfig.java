@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.common.config;
+package voidsong.naturalphilosophy.client;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 

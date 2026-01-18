@@ -6,7 +6,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import voidsong.naturalphilosophy.common.NPEventHandler;
-import voidsong.naturalphilosophy.common.config.NPClientConfig;
+import voidsong.naturalphilosophy.client.NPClientConfig;
 import voidsong.naturalphilosophy.common.config.NPServerConfig;
 
 import static voidsong.naturalphilosophy.common.NPBlocks.BLOCKS;
