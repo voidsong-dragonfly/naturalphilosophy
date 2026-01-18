@@ -63,6 +63,8 @@
     New block to make rocks less likely to blend into the stone below them?
     Make rocky biomes have a layer of gravel and dirt on top, except for on cliffs, to make the rock less obvious?
     Cobblestone not being used in world generation due to its uniformity and lacking in the texture of normal cobble-gravel beds
+    rock block generator rather than boulder generator, except in specific glacial areas (?)
+    significant work on outcroppings and slopes would probably be good here
 8. Updates to existing features in biomes
     With the new update, fallen trees across multiple biomes
     Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
@@ -94,4 +96,25 @@
     Possibly split these out into other files & pull in via Lithostitched new rules. "Dirt patches", etc. Would need some work, but possible....
     Rather than feathering some block types with high contrast, instead give variant models that can show up to reduce overall contrast
     Overall simplification of things like forest floors is quite reasonable when there is more variety to the decoration of the forests
+12. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
+    Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
+    Biomes further from high humidity should have less moss - revamp taigas, etc
+    Figure out biome placement, possibly?
+13. talus slopes on the beneath part of the mountains?
+    rubble blocks for the surface to break up the flatness, rock slopes really need this to feel alive
+    lots of rocky beaches have this but are not flat, and "cobblestone in the ground" does not do it justice
+    a good place to use block mixes as it's a very similar-colored block mix
+    scree slopes on anything even vaguely glacial (?) => no glacial movement in the same way, but it could look cool as hell
+14. patterned ground is made by perfmafrost, the sort of on-again-off-again rocks. consider for tundra biomes?
+    tundra can have small patches of trees where plains might not have any
+    consider tundra as the slide between forest and prairie for cold biomes (?)
+15. do spread-between with plants rather than doing it with blocks on the ground. will probably look much better overall
+    consider how to do for oceans & whether we should even bother
+    silt vs sand rather than other changes? likely want to go with no mud on the ocean floor
+    this is a big important change, make sure to get done effectively. plant spread is important and will produce overall better border fade-in
+    decide whether we want to go with grass, for example "grass on top of clay" => likely yes
+    possibly want muddy grass as well? have not yet decided.
+
+
+
 
