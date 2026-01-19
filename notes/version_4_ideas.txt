@@ -46,6 +46,7 @@
     Going to need some way to ensure low-lying areas away from rivers are not taken over too badly by the block placement, as Vanilla terrain can be v. low
         => Likely will require reading PV (or mod. PV) and also continentalness/erosion to identify key areas
         => Reading of continentalness/erosion will also allow for tailoring river surface placement to rough heightvalue areas
+        => or just don't care, could be cool to make very low-lying areas into wetlands
 5. More plant variety in general
     Grass should have multiple models that it varies between to remove the monotone green of plains
         => Models should be bushier to more accurately display foliage thickness
@@ -54,6 +55,10 @@
         => Some lilypads should also be flowering
     Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
     Add new plants: At minimum goldenrod, possibly joe pye weed or something similar? Check out ferdinand's flowers, verdant vibes, habitat, etc
+    dune grass should be a better mix of 1.21.5 features and my current idea. Move away from tinted textures and onto other concerns
+        => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
+    redo cattails/rushes textures, more variety to them, make them less under-water-y except in that case specifically (green tune-ups?)
+    bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
 6. Go back over current biomes & make sure they're the best they can be
     Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
     Badlands biomes have more plants; possible grassy transitional badlands biome for blending into Savannas
@@ -114,7 +119,11 @@
     this is a big important change, make sure to get done effectively. plant spread is important and will produce overall better border fade-in
     decide whether we want to go with grass, for example "grass on top of clay" => likely yes
     possibly want muddy grass as well? have not yet decided.
-
+16. new blocks
+    mixed gravel, waterworn gravel, mixed cobbles, waterworn cobbles
+    worn stone/cracked stone, mossy/overgrown stone
+    variants for a lot of existing textures to make them look better
+    rubble (?) or freestanding rocks (?)
 
 
 
