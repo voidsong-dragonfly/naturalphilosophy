@@ -136,9 +136,13 @@ Current work items:
     tall ferns
     dead bushes (?)
     sunflower
-    lilac
-    rose bush
-    peony
+    hanging roots (both square & cross)
+    short grass - both square & cross, perhaps? consider.
+    small leaves on normal vines (?)
+    small flowers => tex variations or clusters? both?
+    small mushrooms => same as above?
+    bamboo
+    kelp ???
 
 grasses should be square
 other plants should be crosses

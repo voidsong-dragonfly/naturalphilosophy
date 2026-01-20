@@ -1,0 +1,39 @@
+{
+  "variants": {
+    "half=lower": [
+      {
+        "model": "naturalphilosophy:block/bush/rose_large"
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_large",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_large",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_large",
+        "y": 270
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_medium"
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_medium",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_medium",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/bush/rose_medium",
+        "y": 270
+      }
+    ],
+    "half=upper": {
+      "model": "naturalphilosophy:block/bush/empty"
+    }
+  }
+}

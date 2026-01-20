@@ -1,0 +1,122 @@
+{
+	"parent": "block/block",
+	"texture_size": [32, 32],
+	"render_type": "cutout",
+	"textures": {
+		"leaves_full": "naturalphilosophy:block/bush/base/central_leaves",
+		"leaves": "naturalphilosophy:block/bush/rose/central_leaves",
+		"flowers_top": "naturalphilosophy:block/bush/rose/top_flowers",
+		"flowers": "naturalphilosophy:block/bush/rose/central_flowers",
+		"bush_leaves": "naturalphilosophy:block/bush/rose/medium_leaves",
+		"bush_flowers": "naturalphilosophy:block/bush/rose/medium_flowers",
+		"stem": "naturalphilosophy:block/bush/base/stem",
+		"particle": "naturalphilosophy:block/bush/rose/medium_leaves"
+	},
+	"elements": [
+		{
+			"name": "leaf_cube_vert",
+			"from": [0, 5, 0],
+			"to": [16, 21, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 8, 8], "texture": "#leaves_full", "tintindex": 0},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#leaves_full", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaf_cube",
+			"from": [0, 5, 0],
+			"to": [16, 21, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#leaves", "tintindex": 0},
+				"east": {"uv": [0, 0, 8, 8], "texture": "#leaves", "tintindex": 0},
+				"south": {"uv": [0, 0, 8, 8], "texture": "#leaves", "tintindex": 0},
+				"west": {"uv": [0, 0, 8, 8], "texture": "#leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "flower_cube_vert",
+			"from": [0, 5, 0],
+			"to": [16, 21, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 8, 8], "texture": "#flowers_top"}
+			}
+		},
+		{
+			"name": "flower_cube",
+			"from": [0, 5, 0],
+			"to": [16, 21, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#flowers"},
+				"east": {"uv": [0, 0, 8, 8], "texture": "#flowers"},
+				"south": {"uv": [0, 0, 8, 8], "texture": "#flowers"},
+				"west": {"uv": [0, 0, 8, 8], "texture": "#flowers"}
+			}
+		},
+		{
+			"name": "leaves_1",
+			"from": [8, 0, 1.6],
+			"to": [8, 32, 30.4],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 8, 16], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#bush_leaves", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#bush_leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaves_2",
+			"from": [1.6, 0, 8],
+			"to": [30.4, 32, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [16, 8, 16], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#bush_leaves", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#bush_leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "flowers_1",
+			"from": [8, 0, 1.6],
+			"to": [8, 32, 30.4],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 8, 16], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#bush_flowers"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#bush_flowers"}
+			}
+		},
+		{
+			"name": "flowers_2",
+			"from": [1.6, 0, 8],
+			"to": [30.4, 32, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [16, 8, 16], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#bush_flowers"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#bush_flowers"}
+			}
+		},
+		{
+			"name": "stem_1",
+			"from": [8, 0, 1.6],
+			"to": [8, 32, 30.4],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 8, 16], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#stem"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stem_2",
+			"from": [1.6, 0, 8],
+			"to": [30.4, 32, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [16, 8, 16], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#stem"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#stem"}
+			}
+		}
+	]
+}

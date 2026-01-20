@@ -17,12 +17,13 @@ public class ColorHandler {
 
     @SubscribeEvent
     public static void handleGrassColors(RegisterColorHandlersEvent.Block event) {
+        // Gasworks blocks to register, such as Dune Grass
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
             NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get());
         // Vanilla blocks we add color to, such as bushes
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
-            Blocks.PEONY);
+            Blocks.PEONY, Blocks.ROSE_BUSH, Blocks.LILAC);
     }
 }
