@@ -1,0 +1,7 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "naturalphilosophy:block/bush/base/medium_leaves"
+  },
+  "elements": []
+}

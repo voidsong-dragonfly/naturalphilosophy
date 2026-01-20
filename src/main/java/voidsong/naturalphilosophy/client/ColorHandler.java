@@ -1,7 +1,9 @@
 package voidsong.naturalphilosophy.client;
 
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -18,5 +20,9 @@ public class ColorHandler {
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
             NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get());
+        // Vanilla blocks we add color to, such as bushes
+        event.register((state, world, pos, tintIndex) ->
+                world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
+            Blocks.PEONY);
     }
 }
