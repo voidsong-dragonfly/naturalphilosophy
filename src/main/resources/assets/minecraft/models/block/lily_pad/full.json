@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/lily_pad/pad_center",
+  "textures": {
+    "pad": "minecraft:block/lily_pad/full"
+  }
+}

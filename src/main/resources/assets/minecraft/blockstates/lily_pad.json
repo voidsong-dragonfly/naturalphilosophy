@@ -1,0 +1,111 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/lily_pad/full"
+      },
+      {
+        "model": "minecraft:block/lily_pad/full",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/full",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/full",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/lily_pad/small"
+      },
+      {
+        "model": "minecraft:block/lily_pad/small",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/small",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/small",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/lily_pad/small"
+      },
+      {
+        "model": "minecraft:block/lily_pad/small",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/small",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/small",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual"
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual_rotated"
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual_rotated",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual_rotated",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/dual_rotated",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny"
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny_rotated"
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny_rotated",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny_rotated",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/lily_pad/tiny_rotated",
+        "y": 270
+      }
+    ]
+  }
+}

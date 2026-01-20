@@ -1,10 +1,24 @@
 {
     "variants": {
-        "half=lower": {
-            "model": "naturalphilosophy:block/cattails_bottom"
+        "half=lower,waterlogged=false": {
+            "model": "naturalphilosophy:block/water_plant/dry_bottom"
         },
-        "half=upper": {
-            "model": "naturalphilosophy:block/cattails_top"
-        }
+        "half=lower,waterlogged=true": {
+            "model": "naturalphilosophy:block/water_plant/wet_bottom"
+        },
+        "half=upper": [
+            {
+                "model": "naturalphilosophy:block/water_plant/cattails_top_1"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/cattails_top_2"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/cattails_top_3"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/cattails_top_4"
+            }
+        ]
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "naturalphilosophy:block/rushes_top"
+        "layer0": "naturalphilosophy:block/water_plant/rush_1"
     }
 }

@@ -127,3 +127,21 @@
 
 
 
+
+
+Current work items:
+    grass
+    tall grass
+    ferns
+    tall ferns
+    dead bushes (?)
+    sunflower
+    lilac
+    rose bush
+    peony
+
+grasses should be square
+other plants should be crosses
+flowers on the ground should be a variety of numbers
+bamboo and sugarcane should be 3D
+bushes should all use the same bush model

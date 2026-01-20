@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/lily_pad/pads_positive",
+  "textures": {
+    "pad": "minecraft:block/lily_pad/dual"
+  }
+}
