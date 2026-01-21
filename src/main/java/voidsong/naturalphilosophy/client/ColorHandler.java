@@ -24,6 +24,6 @@ public class ColorHandler {
         // Vanilla blocks we add color to, such as bushes
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
-            Blocks.PEONY, Blocks.ROSE_BUSH, Blocks.LILAC);
+            Blocks.PEONY, Blocks.ROSE_BUSH, Blocks.LILAC, Blocks.SUNFLOWER);
     }
 }

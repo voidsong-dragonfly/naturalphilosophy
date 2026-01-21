@@ -132,7 +132,6 @@
 Current work items:
     ferns
     tall ferns
-    sunflower
     small leaves on normal vines (?)
     small flowers => tex variations or clusters? both?
     small mushrooms => same as above?
