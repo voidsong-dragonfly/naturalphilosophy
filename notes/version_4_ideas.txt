@@ -130,13 +130,10 @@
 
 
 Current work items:
-    grass
-    tall grass
     ferns
     tall ferns
     dead bushes (?)
     sunflower
-    short grass - both square & cross, perhaps? consider.
     small leaves on normal vines (?)
     small flowers => tex variations or clusters? both?
     small mushrooms => same as above?
