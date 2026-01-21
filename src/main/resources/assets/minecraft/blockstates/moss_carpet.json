@@ -2,16 +2,28 @@
   "variants": {
     "": [
       {
-        "model": "minecraft:block/moss_carpet_1"
+        "model": "minecraft:block/moss/carpet_1"
       },
       {
-        "model": "minecraft:block/moss_carpet_2"
+        "model": "minecraft:block/moss/carpet_2"
       },
       {
-        "model": "minecraft:block/moss_carpet_3"
+        "model": "minecraft:block/moss/carpet_3"
       },
       {
-        "model": "minecraft:block/moss_carpet_4"
+        "model": "minecraft:block/moss/carpet_4"
+      },
+      {
+        "model": "minecraft:block/moss/carpet_5"
+      },
+      {
+        "model": "minecraft:block/moss/carpet_6"
+      },
+      {
+        "model": "minecraft:block/moss/carpet_7"
+      },
+      {
+        "model": "minecraft:block/moss/carpet_8"
       }
     ]
   }

@@ -3,6 +3,6 @@
   "textures": {
     "particle": "block/moss_block",
     "moss": "block/moss_block",
-    "side": "block/moss_side_overlay_2"
+    "side": "block/moss/side_overlay_1"
   }
 }
