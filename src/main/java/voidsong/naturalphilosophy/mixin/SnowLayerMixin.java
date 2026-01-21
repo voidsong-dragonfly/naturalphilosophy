@@ -20,35 +20,42 @@ import voidsong.naturalphilosophy.common.blocks.NPProperties;
 import voidsong.naturalphilosophy.common.config.NPServerConfig;
 
 @Mixin(SnowLayerBlock.class)
-@SuppressWarnings("unused")
+@SuppressWarnings({"ConstantValue", "EqualsBetweenInconvertibleTypes"})
 public class SnowLayerMixin {
+    /*
+     * Class checks are used in all these methods to ensure we do not modify other mods' blocks
+     * This was implemented from the advice of embeddedt and ChiefArug for another of my projects, Gasworks
+     */
 
     @ModifyArg(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/SnowLayerBlock;registerDefaultState(Lnet/minecraft/world/level/block/state/BlockState;)V"), index = 0)
-    private static BlockState addFeatheringToConstructor(BlockState defaultState) {
-        return defaultState.setValue(NPProperties.FEATHERING, true);
+    private BlockState addFeatheringToConstructor(BlockState defaultState) {
+        return (this.getClass().equals(SnowLayerBlock.class)) ? defaultState.setValue(NPProperties.FEATHERING, true) : defaultState;
     }
 
     @Inject(method = "createBlockStateDefinition", at = @At(value = "RETURN"))
     private void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder, CallbackInfo ci) {
-        builder.add(NPProperties.FEATHERING);
+        if (this.getClass().equals(SnowLayerBlock.class))
+            builder.add(NPProperties.FEATHERING);
     }
 
     @ModifyReturnValue(method = "getStateForPlacement", at = @At(value = "RETURN"))
     private BlockState getStateForPlacement(BlockState original, @Local(argsOnly = true) BlockPlaceContext context) {
+        if (!(this.getClass().equals(SnowLayerBlock.class)))
+            return original;
         BlockState below = context.getLevel().getBlockState(context.getClickedPos().below());
         return original.setValue(NPProperties.FEATHERING, !(below.is(NPTags.Blocks.SNOW_FEATHERING_BLACKLIST) || below.hasProperty(GrassBlock.SNOWY)));
     }
 
     @ModifyReturnValue(method = "updateShape", at = @At(value = "RETURN"))
     private BlockState updateShape(BlockState original, @Local(argsOnly = true) Direction facing, @Local(ordinal = 1, argsOnly = true) BlockState facingState) {
-        if (original.hasProperty(NPProperties.FEATHERING) && facing.equals(Direction.DOWN))
+        if ((this.getClass().equals(SnowLayerBlock.class) && original.hasProperty(NPProperties.FEATHERING) && facing.equals(Direction.DOWN)))
             return original.setValue(NPProperties.FEATHERING, !(facingState.is(NPTags.Blocks.SNOW_FEATHERING_BLACKLIST) || facingState.hasProperty(GrassBlock.SNOWY)));
         return original;
     }
 
     @ModifyReturnValue(method = "canSurvive", at = @At(value = "RETURN"))
     private boolean canSurvive(boolean original, @Local(name = "blockstate") BlockState below, @Local(name = "level") LevelReader levelReader, @Local(name = "pos") BlockPos pos) {
-        if (original && below.is(NPTags.Blocks.SNOW_ICE_EQUIVALENT))
+        if ((this.getClass().equals(SnowLayerBlock.class) && original && below.is(NPTags.Blocks.SNOW_ICE_EQUIVALENT)))
             return (levelReader.getHeight(Heightmap.Types.WORLD_SURFACE, pos.getX(), pos.getZ()) - levelReader.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pos.getX(), pos.getZ())) < NPServerConfig.maxSnowIceWaterDepth.getAsInt();
         return original;
     }
