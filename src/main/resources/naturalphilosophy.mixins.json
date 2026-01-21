@@ -3,18 +3,18 @@
   "package": "voidsong.naturalphilosophy.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "DeadBushMixin",
     "FreezeSurfaceMixin",
-    "GlowLichenBlockMixin",
-    "KelpBlockMixin",
-    "KelpPlantBlockMixin",
-    "MushroomBlockMixin",
-    "SculkVeinBlockMixin",
     "SnowyTreesMixin",
     "SurfaceRulesMixin",
     "SurfaceRulesMixin$ConditionSource",
     "SurfaceRulesMixin$Context",
-    "SurfaceRulesMixin$RuleSource"
+    "SurfaceRulesMixin$RuleSource",
+    "blockmodifications.DeadBushMixin",
+    "blockmodifications.GlowLichenBlockMixin",
+    "blockmodifications.KelpBlockMixin",
+    "blockmodifications.KelpPlantBlockMixin",
+    "blockmodifications.MushroomBlockMixin",
+    "blockmodifications.SculkVeinBlockMixin"
   ],
   "client": [],
   "injectors": {

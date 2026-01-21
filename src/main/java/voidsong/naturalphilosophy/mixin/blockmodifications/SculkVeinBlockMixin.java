@@ -1,10 +1,10 @@
-package voidsong.naturalphilosophy.mixin;
+package voidsong.naturalphilosophy.mixin.blockmodifications;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.GlowLichenBlock;
+import net.minecraft.world.level.block.SculkVeinBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Fluid;
@@ -15,9 +15,9 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import javax.annotation.Nullable;
 
-@Mixin(GlowLichenBlock.class)
+@Mixin(SculkVeinBlock.class)
 @SuppressWarnings("unused")
-public class GlowLichenBlockMixin {
+public class SculkVeinBlockMixin {
     @SuppressWarnings("all")
     public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
         return fluid == Fluids.WATER || ((fluid == Fluids.LAVA || fluid == Fluids.FLOWING_LAVA) && !state.getValue(BlockStateProperties.WATERLOGGED));
