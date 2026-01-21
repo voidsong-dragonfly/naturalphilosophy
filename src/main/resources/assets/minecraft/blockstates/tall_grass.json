@@ -1,0 +1,84 @@
+{
+  "variants": {
+    "half=upper": [
+      {
+        "model": "minecraft:block/grass/tall_tiny_1"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_3"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_4"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_1"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_3"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_4"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_1"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_3"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_4"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_1"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_3"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_4"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_1"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_2"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_3"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_4"
+      }
+    ],
+    "half=lower": {
+      "model": "minecraft:block/grass/tall_bottom"
+    }
+  }
+}

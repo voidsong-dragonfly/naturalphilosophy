@@ -136,13 +136,14 @@ Current work items:
     tall ferns
     dead bushes (?)
     sunflower
-    hanging roots (both square & cross)
     short grass - both square & cross, perhaps? consider.
     small leaves on normal vines (?)
     small flowers => tex variations or clusters? both?
     small mushrooms => same as above?
     bamboo
-    kelp ???
+
+    seagrass => maybe make them slightly less bright? not a lot of changes needed though, and variants are painful
+    kelp ??? => possibly make the entire thing yellow-er and give some tips to it?
 
 grasses should be square
 other plants should be crosses
