@@ -3,6 +3,7 @@
   "package": "voidsong.naturalphilosophy.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "DeadBushMixin",
     "FreezeSurfaceMixin",
     "GlowLichenBlockMixin",
     "KelpBlockMixin",

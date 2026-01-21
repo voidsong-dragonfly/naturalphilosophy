@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/dead_bush/default"
+      },
+      {
+        "model": "minecraft:block/dead_bush/thin"
+      },
+      {
+        "model": "minecraft:block/dead_bush/top_flipped"
+      },
+      {
+        "model": "minecraft:block/dead_bush/wizened"
+      }
+    ]
+  }
+}
