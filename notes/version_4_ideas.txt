@@ -28,6 +28,12 @@
 4. Significant overhaul of rivers & low-lying areas
     Change the spawning requirements of rushes & cattails, allow them in low-lying areas & not just water
     Move rushes & cattails away from direct water contact and more towards low-lying ground in general
+        => this should actually just be the mud block in general
+        => remove seagrass from most biomes
+        => seagrass can still be in swamps, etc
+        => gravel: nothing.
+        => sand: seagrass meadows
+        => mud: rushes, cattails
     Filter trees out of low-lying areas across all biomes, make instead open "grassy" or "shrubby" or "rushy" areas at the edges of rivers/lakes
         => Rushes, grasses, bushes, trees should be the general progression from y63 to y71 or so
         => May or may not want to do this, Vanilla generation can be highly flat at times and y71 might be too high
@@ -43,10 +49,13 @@
         => Gravel/sand beaches for the first 1-2 blocks above water
         => Blend into the mixture of rushes/shrubbery/etc above that
         => Try to mimic pictures of shallow rivers if possible
+        => no mud on the bottom of rivers except in the shallow (single-block-deep) areas. deeper areas are gravel sand or clay
+        => no clay beaches! find some way to make clay banks.
     Going to need some way to ensure low-lying areas away from rivers are not taken over too badly by the block placement, as Vanilla terrain can be v. low
         => Likely will require reading PV (or mod. PV) and also continentalness/erosion to identify key areas
         => Reading of continentalness/erosion will also allow for tailoring river surface placement to rough heightvalue areas
         => or just don't care, could be cool to make very low-lying areas into wetlands
+        => this has issues of caves
 5. More plant variety in general
     Grass should have multiple models that it varies between to remove the monotone green of plains
         => Models should be bushier to more accurately display foliage thickness
@@ -59,6 +68,8 @@
         => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
     redo cattails/rushes textures, more variety to them, make them less under-water-y except in that case specifically (green tune-ups?)
     bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
+        => remove flowering azalea bushes from generation, use them to (partially) indicate lush caves. normal (unflowering) azaleas instead
+        => we have flowering bushes that are bigger now.
 6. Go back over current biomes & make sure they're the best they can be
     Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
     Badlands biomes have more plants; possible grassy transitional badlands biome for blending into Savannas
@@ -135,7 +146,6 @@ Current work items:
     small leaves on normal vines (?)
     small flowers => tex variations or clusters? both?
     small mushrooms => same as above?
-    bamboo
 
     seagrass => maybe make them slightly less bright? not a lot of changes needed though, and variants are painful
     kelp ??? => possibly make the entire thing yellow-er and give some tips to it?
@@ -143,5 +153,4 @@ Current work items:
 grasses should be square
 other plants should be crosses
 flowers on the ground should be a variety of numbers
-bamboo and sugarcane should be 3D
 bushes should all use the same bush model

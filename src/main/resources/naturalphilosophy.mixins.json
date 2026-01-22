@@ -9,6 +9,7 @@
     "SurfaceRulesMixin$ConditionSource",
     "SurfaceRulesMixin$Context",
     "SurfaceRulesMixin$RuleSource",
+    "blockmodifications.BambooMixin",
     "blockmodifications.BushFlowerMixin",
     "blockmodifications.DeadBushMixin",
     "blockmodifications.GlowLichenBlockMixin",
