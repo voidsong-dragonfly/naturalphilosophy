@@ -135,6 +135,7 @@
     worn stone/cracked stone, mossy/overgrown stone
     variants for a lot of existing textures to make them look better
     rubble (?) or freestanding rocks (?)
+    "giant bamboo" with leaves for bamboo jungles? make them able to be dark on the floor without constant cover?
 
 
 

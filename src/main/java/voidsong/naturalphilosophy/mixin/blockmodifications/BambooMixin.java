@@ -22,6 +22,6 @@ public class BambooMixin extends Block {
 
     @Override
     protected int getLightBlock(@Nonnull BlockState state, @Nonnull BlockGetter level, @Nonnull BlockPos pos) {
-        return state.hasProperty(BambooStalkBlock.LEAVES) && !state.getValue(BambooStalkBlock.LEAVES).equals(BambooLeaves.NONE) ? 1 : 0;
+        return state.hasProperty(BambooStalkBlock.LEAVES) && state.getValue(BambooStalkBlock.LEAVES).equals(BambooLeaves.LARGE) ? 1 : 0;
     }
 }
