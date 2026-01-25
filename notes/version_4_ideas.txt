@@ -72,6 +72,7 @@
     bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
         => remove flowering azalea bushes from generation, use them to (partially) indicate lush caves. normal (unflowering) azaleas instead
         => we have flowering bushes that are bigger now.
+        => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
     "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
 6. Go back over current biomes & make sure they're the best they can be
     Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
@@ -88,7 +89,7 @@
     With the new update, fallen trees across multiple biomes
     Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
     Dead trees in many biomes to go alongside the fallen trees
-    Make trees correspond to their saplings correctly & taller textures for stage 1 saplings to show off their partial growth
+    Make trees correspond to their saplings correctly
     Leaves have a curtain of snow draped around them when there is a snow layer on top => maybe all blocks do, and we just ignore certain blocks (snow, snowy grass, etc)
     Possibly add charred trees to some biomes? Lightning-struck tree features + charred logs
         => Make it a Gasworks integration if I add better fire spread to gasworks?
@@ -111,6 +112,7 @@
         => original placer but taller, old growth birch can be the spruce one
         => remove randomization of blocks in placer
         => possibly add branches?
+    remove draping leaves from plains oak
 11. Need to stop using as much feathering and move closer to noise patches
     Reduce complexity of overall borders and block swathes, instead move to a more patchy system with larger patches
         => Oceans should have very little feathering if any at all (?)
@@ -163,7 +165,11 @@
 17. texture variations for some blocks currently missing them? depends on how much it enhances the experience
     gravel & sand would be a good start. each have some obvious tells that they're rotated and could do with some breaking up
 18. more mob variants? mob variants for some mobs missing them? (fish, etc)
-19. increase mushrooms, decrease big bushes in old growth spruce taigas
+19. plant distribution changes for some biomes
+    increase mushrooms, decrease big bushes in old growth spruce taigas
+    Add plains flowers to flower forests and make bushes slightly less common (?)
+    remove flowering azaleas from all biomes, keep them only for lush caves indications
+
 
 
 
@@ -171,10 +177,8 @@
 
 
 Current work items:
-    make 3rd rushes texture actually be just grey tips
     ferns
     tall ferns
-    small leaves on normal vines (?)
     birch logs?
 
     seagrass => maybe make them slightly less bright? not a lot of changes needed though, and variants are painful
