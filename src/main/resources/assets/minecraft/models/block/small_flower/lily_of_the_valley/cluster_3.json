@@ -1,0 +1,22 @@
+{
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "minecraft:block/lily_of_the_valley"
+  },
+  "ambientocclusion": false,
+  "shade": false,
+  "children": {
+    "leaves": {
+      "parent": "minecraft:block/small_flower/tinted_cross_3",
+      "textures": {
+        "cross": "minecraft:block/small_flower/lily_of_the_valley_leaves"
+      }
+    },
+    "bloom": {
+      "parent": "minecraft:block/small_flower/cross_3",
+      "textures": {
+        "cross": "minecraft:block/small_flower/lily_of_the_valley_bloom"
+      }
+    }
+  }
+}

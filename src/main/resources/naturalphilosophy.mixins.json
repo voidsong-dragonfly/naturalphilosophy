@@ -12,6 +12,7 @@
     "blockmodifications.BambooMixin",
     "blockmodifications.BushFlowerMixin",
     "blockmodifications.DeadBushMixin",
+    "blockmodifications.FlowerBlockMixin",
     "blockmodifications.GlowLichenBlockMixin",
     "blockmodifications.KelpBlockMixin",
     "blockmodifications.KelpPlantBlockMixin",

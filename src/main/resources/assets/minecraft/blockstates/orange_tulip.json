@@ -1,0 +1,198 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_1"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_1"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_1"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_1"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_2"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_2"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_2"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_2"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_2",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_2",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_2",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_2",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_2",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_2",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_2",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_2",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_2",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_2",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_2",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_2",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_3"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_3"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_3"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_3"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_3",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_3",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_3",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_3",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_3",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_3",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_3",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_3",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_3",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_3",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_3",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_3",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_4"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_4"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_4"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_4"
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_4",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_4",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_4",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_4",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_4",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_4",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_4",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_4",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_1_4",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_2_4",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_3_4",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/tulip/orange/leaves_4_4",
+        "y": 270
+      }
+    ]
+  }
+}

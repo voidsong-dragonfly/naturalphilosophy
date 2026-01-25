@@ -1,0 +1,22 @@
+{
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "minecraft:block/pink_tulip"
+  },
+  "ambientocclusion": false,
+  "shade": false,
+  "children": {
+    "leaves": {
+      "parent": "minecraft:block/small_flower/tinted_cross_4",
+      "textures": {
+        "cross": "minecraft:block/small_flower/tulip_leaves_1"
+      }
+    },
+    "bloom": {
+      "parent": "minecraft:block/small_flower/cross_4",
+      "textures": {
+        "cross": "minecraft:block/small_flower/pink_tulip_bloom"
+      }
+    }
+  }
+}
