@@ -17,11 +17,15 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import voidsong.naturalphilosophy.common.NPTags;
 
 import javax.annotation.Nonnull;
 
 public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterloggedBlock {
+    protected static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
     public WaterPlantBlock(BlockBehaviour.Properties props) {
         super(props);
@@ -52,6 +56,13 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
 
     @Override
     @Nonnull
+    protected VoxelShape getShape(@Nonnull BlockState state, @Nonnull BlockGetter level, @Nonnull BlockPos pos, @Nonnull CollisionContext context) {
+        Vec3 vec3 = state.getOffset(level, pos);
+        return SHAPE.move(vec3.x, vec3.y, vec3.z);
+    }
+
+    @Override
+    @Nonnull
     public BlockState updateShape(BlockState state, @Nonnull Direction facing, @Nonnull BlockState facingState, @Nonnull LevelAccessor level, @Nonnull BlockPos pos, @Nonnull BlockPos facingPos) {
         if (state.getValue(BlockStateProperties.WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
@@ -68,7 +79,6 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
        return null;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     @Nonnull
     public FluidState getFluidState(BlockState state) {

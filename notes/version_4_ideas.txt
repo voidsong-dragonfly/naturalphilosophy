@@ -171,7 +171,6 @@
 
 
 Current work items:
-    shape rushes/cattails properly (sugarcane) and offset properly
     make 3rd rushes texture actually be just grey tips
     ferns
     tall ferns
