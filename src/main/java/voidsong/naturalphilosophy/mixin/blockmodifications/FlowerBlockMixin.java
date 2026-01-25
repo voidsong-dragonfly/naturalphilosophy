@@ -22,6 +22,6 @@ public class FlowerBlockMixin {
     @ModifyReturnValue(method = "getShape", at = @At(value = "RETURN"))
     public VoxelShape getShape(VoxelShape original, @Local(argsOnly = true) BlockState state, @Local(argsOnly = true) BlockGetter level, @Local(argsOnly = true) BlockPos pos) {
         Vec3 vec3 = state.getOffset(level, pos);
-        return  state.is(NPTags.Blocks.WIDE_FLOWERS) ? naturalphilosophy$SHAPE.move(vec3.x, vec3.y, vec3.z) : original;
+        return  state.is(NPTags.Blocks.WIDE_PLANTS) ? naturalphilosophy$SHAPE.move(vec3.x, vec3.y, vec3.z) : original;
     }
 }

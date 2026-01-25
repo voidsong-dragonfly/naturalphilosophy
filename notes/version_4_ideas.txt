@@ -163,6 +163,7 @@
 17. texture variations for some blocks currently missing them? depends on how much it enhances the experience
     gravel & sand would be a good start. each have some obvious tells that they're rotated and could do with some breaking up
 18. more mob variants? mob variants for some mobs missing them? (fish, etc)
+19. increase mushrooms, decrease big bushes in old growth spruce taigas
 
 
 
@@ -175,7 +176,6 @@ Current work items:
     ferns
     tall ferns
     small leaves on normal vines (?)
-    small mushrooms => same as above?
     birch logs?
 
     seagrass => maybe make them slightly less bright? not a lot of changes needed though, and variants are painful
