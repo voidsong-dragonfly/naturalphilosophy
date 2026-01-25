@@ -175,21 +175,6 @@ Current work items:
     ferns
     tall ferns
     small leaves on normal vines (?)
-    small flowers => tex variations or clusters? both?
-        => some need texture updates. alliums need ground leaves, azure bluets need to be blue
-        => some should just be clusters, some should be bushes
-            clusters: ✓ tulips, ✓ alliums, ✓ lily of the valley
-            single bush: azure bluets, poppies
-            both: dandelions, cornflowers, oxeye daisy (up to 3 in bush)
-            neither: wither rose
-        => don't do the split, instead mostly keep MC's original art direction ???
-        => lots of effort for possibly minimal gain, except for on dandelions? could do a mixture of open & non-open ones...
-        => only do for a small specific subset of flowers. blue orchids (to make sure they're inside a block for tree placement), azure bluets
-        => different split.
-            clusters: tulips, lily of the valley, dandelions, oxeye daisies
-            bushes: azure bluets, poppies, cornflowers, alliums, blue orchid
-        => third different split. bushes don't look all that great, only do as absolutely necessary.
-            bushes: blue orchid
     small mushrooms => same as above?
     birch logs?
 
