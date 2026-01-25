@@ -1,7 +1,7 @@
 {
   "loader": "neoforge:composite",
   "textures": {
-    "particle": "minecraft:block/poppy"
+    "particle": "minecraft:block/dandelion"
   },
   "ambientocclusion": false,
   "shade": false,
@@ -9,13 +9,13 @@
     "leaves": {
       "parent": "minecraft:block/small_flower/tinted_cross_2",
       "textures": {
-        "cross": "minecraft:block/small_flower/allium_leaves"
+        "cross": "minecraft:block/small_flower/dandelion_leaves"
       }
     },
     "bloom": {
       "parent": "minecraft:block/small_flower/cross_2",
       "textures": {
-        "cross": "minecraft:block/small_flower/allium_bloom"
+        "cross": "minecraft:block/small_flower/dandelion_bloom"
       }
     }
   }

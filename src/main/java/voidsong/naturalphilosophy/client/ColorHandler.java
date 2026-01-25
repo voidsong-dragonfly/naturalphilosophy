@@ -27,6 +27,7 @@ public class ColorHandler {
             Blocks.PEONY, Blocks.ROSE_BUSH, Blocks.LILAC, Blocks.SUNFLOWER);
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
-            Blocks.LILY_OF_THE_VALLEY, Blocks.ALLIUM, Blocks.RED_TULIP, Blocks.PINK_TULIP, Blocks.ORANGE_TULIP, Blocks.WHITE_TULIP);
+            Blocks.LILY_OF_THE_VALLEY, Blocks.ALLIUM, Blocks.RED_TULIP, Blocks.PINK_TULIP, Blocks.ORANGE_TULIP, Blocks.WHITE_TULIP,
+            Blocks.POPPY, Blocks.DANDELION, Blocks.CORNFLOWER, Blocks.OXEYE_DAISY, Blocks.BLUE_ORCHID, Blocks.AZURE_BLUET);
     }
 }

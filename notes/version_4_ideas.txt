@@ -63,13 +63,16 @@
         => Lilypad models should also have roots that hang down into the water
         => Some lilypads should also be flowering
     Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
-    Add new plants: At minimum goldenrod, possibly joe pye weed or something similar? Check out ferdinand's flowers, verdant vibes, habitat, etc
+    Add new plants: At minimum goldenrod, possibly joe pye weed or something similar? Check out ferdinand's flowers, verdant vibes, habitat, untamed wilds, windswept, etc
+        => want flowers that can be used across a mix of biomes, rather than ones specific to any given biome
+        => a few new cold flowers and a few new warm flowers would be good, I think. lots of forest and temperate flowers right now
     dune grass should be a better mix of 1.21.5 features and my current idea. Move away from tinted textures and onto other concerns
         => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
     redo cattails/rushes textures, more variety to them, make them less under-water-y except in that case specifically (green tune-ups?)
     bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
         => remove flowering azalea bushes from generation, use them to (partially) indicate lush caves. normal (unflowering) azaleas instead
         => we have flowering bushes that are bigger now.
+    "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
 6. Go back over current biomes & make sure they're the best they can be
     Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
     Badlands biomes have more plants; possible grassy transitional badlands biome for blending into Savannas
@@ -104,14 +107,32 @@
         => One type is a more branching tree
         => One type we want more branches down lower but not too many of them
         => Stop using cherry trunk placer as much (?)
+    birch tree overhaul to make tree shapes more consistent. move back to original foliage placer for "small" birch maybe?
+        => original placer but taller, old growth birch can be the spruce one
+        => remove randomization of blocks in placer
+        => possibly add branches?
 11. Need to stop using as much feathering and move closer to noise patches
     Reduce complexity of overall borders and block swathes, instead move to a more patchy system with larger patches
         => Oceans should have very little feathering if any at all (?)
         => Where feathering might be necessary, make feathering zones larger
     Use something closer to swamp noise for most "feathering" to make it instead obvious patches like IRL
+        => or we could do spread-between with plants rather than doing it with blocks on the ground. will probably look much better overall
     Possibly split these out into other files & pull in via Lithostitched new rules. "Dirt patches", etc. Would need some work, but possible....
     Rather than feathering some block types with high contrast, instead give variant models that can show up to reduce overall contrast
-    Overall simplification of things like forest floors is quite reasonable when there is more variety to the decoration of the forests
+    Overall simplification of biome floors is quite reasonable when there is more variety to the decoration of the biomes
+        => patches of dirt/coarse dirt/rooted dirt vs patches of podzol/humus
+        => plains-like just remove top layer entirely, make it all grass
+        => oceans use stark barriers & also new blocks
+    consider how to do for oceans & whether we should even bother
+        => silt vs sand rather than other changes? likely want to go with no mud on the ocean floor
+        => this is a big important change, make sure to get done effectively. plant spread is important and will produce overall better border fade-in
+        => decide whether we want to go with grass, for example "grass on top of clay" => likely yes
+        => possibly want muddy grass as well? have not yet decided.
+    use a hidden `trees` property for new humus block to do block filtering for the few areas that need it (temperate and tropical rainforests)
+    Consider using swamp noise for more water pools in swamps, to make them feel bigger and have less of a random-spurt area
+        => And/or make a mud-puddle block that counts as water but is a half-slab of mud? Determine.
+        => Could also try rare lush caves pools features & see how they behave?
+    Make sandy mycelium a not full cover block so we can "Feather" without needing to literally feather the ground
 12. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
     Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
     Biomes further from high humidity should have less moss - revamp taigas, etc
@@ -124,29 +145,53 @@
 14. patterned ground is made by perfmafrost, the sort of on-again-off-again rocks. consider for tundra biomes?
     tundra can have small patches of trees where plains might not have any
     consider tundra as the slide between forest and prairie for cold biomes (?)
-15. do spread-between with plants rather than doing it with blocks on the ground. will probably look much better overall
-    consider how to do for oceans & whether we should even bother
-    silt vs sand rather than other changes? likely want to go with no mud on the ocean floor
-    this is a big important change, make sure to get done effectively. plant spread is important and will produce overall better border fade-in
-    decide whether we want to go with grass, for example "grass on top of clay" => likely yes
-    possibly want muddy grass as well? have not yet decided.
-16. new blocks
+15. new blocks
     mixed gravel, waterworn gravel, mixed cobbles, waterworn cobbles
     worn stone/cracked stone, mossy/overgrown stone
     variants for a lot of existing textures to make them look better
     rubble (?) or freestanding rocks (?)
     "giant bamboo" with leaves for bamboo jungles? make them able to be dark on the floor without constant cover?
+    humus block to stop using podzol everywhere
+    Dry dirt block that can't support a grass property but can grow grass, for deserts and desert-like biomes? More sand-colored? (uses packed mud palette)
+16. revamp desert biomes entirely, even if they don't get split
+    Cactus can only be placed on "coarse dry dirt"
+    coarse dry dirt is in between coarse dirt and sand/red sand, possibly have variants so we can blend easier (blockstate?)
+    dune grass can be placed on coarse dry dirt as well. rename to "hardy grass" or maybe?
+    deserts are a mix of coarse dirt, coarse dry dirt, and sand. make dune deserts later and reduce sand percentage?
+    deserts have "lots" of "foliage" in the sense that they have sparse, specific foliages. would be perfect for bushes, esp. low-lying ones
+    desaturate sand??? big ask but also right now it's _so_ saturated and having it be less yellow might help
+17. texture variations for some blocks currently missing them? depends on how much it enhances the experience
+    gravel & sand would be a good start. each have some obvious tells that they're rotated and could do with some breaking up
+18. more mob variants? mob variants for some mobs missing them? (fish, etc)
+
 
 
 
 
 
 Current work items:
+    shape rushes/cattails properly (sugarcane) and offset properly
+    make 3rd rushes texture actually be just grey tips
     ferns
     tall ferns
     small leaves on normal vines (?)
     small flowers => tex variations or clusters? both?
+        => some need texture updates. alliums need ground leaves, azure bluets need to be blue
+        => some should just be clusters, some should be bushes
+            clusters: ✓ tulips, ✓ alliums, ✓ lily of the valley
+            single bush: azure bluets, poppies
+            both: dandelions, cornflowers, oxeye daisy (up to 3 in bush)
+            neither: wither rose
+        => don't do the split, instead mostly keep MC's original art direction ???
+        => lots of effort for possibly minimal gain, except for on dandelions? could do a mixture of open & non-open ones...
+        => only do for a small specific subset of flowers. blue orchids (to make sure they're inside a block for tree placement), azure bluets
+        => different split.
+            clusters: tulips, lily of the valley, dandelions, oxeye daisies
+            bushes: azure bluets, poppies, cornflowers, alliums, blue orchid
+        => third different split. bushes don't look all that great, only do as absolutely necessary.
+            bushes: blue orchid
     small mushrooms => same as above?
+    birch logs?
 
     seagrass => maybe make them slightly less bright? not a lot of changes needed though, and variants are painful
     kelp ??? => possibly make the entire thing yellow-er and give some tips to it?

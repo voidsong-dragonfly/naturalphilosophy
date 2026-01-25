@@ -7,15 +7,15 @@
   "shade": false,
   "children": {
     "leaves": {
-      "parent": "minecraft:block/small_flower/tinted_cross_2",
+      "parent": "minecraft:block/small_flower/tinted_cross_4",
       "textures": {
-        "cross": "minecraft:block/small_flower/allium_leaves"
+        "cross": "minecraft:block/small_flower/poppy_leaves"
       }
     },
     "bloom": {
-      "parent": "minecraft:block/small_flower/cross_2",
+      "parent": "minecraft:block/small_flower/cross_4",
       "textures": {
-        "cross": "minecraft:block/small_flower/allium_bloom"
+        "cross": "minecraft:block/small_flower/poppy_bloom"
       }
     }
   }

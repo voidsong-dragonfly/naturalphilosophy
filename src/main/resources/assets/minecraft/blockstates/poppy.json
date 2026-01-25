@@ -1,0 +1,54 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/small_flower/poppy/single"
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_2"
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_2",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_2",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_2",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_3"
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_3",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_3",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_3",
+        "y": 270
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_4"
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_4",
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_4",
+        "y": 180
+      },
+      {
+        "model": "minecraft:block/small_flower/poppy/cluster_4",
+        "y": 270
+      }
+    ]
+  }
+}

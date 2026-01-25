@@ -1,0 +1,22 @@
+{
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "minecraft:block/azure_bluet"
+  },
+  "ambientocclusion": false,
+  "shade": false,
+  "children": {
+    "leaves": {
+      "parent": "minecraft:block/tinted_cross",
+      "textures": {
+        "cross": "minecraft:block/small_flower/azure_bluet_leaves"
+      }
+    },
+    "bloom": {
+      "parent": "minecraft:block/cross",
+      "textures": {
+        "cross": "minecraft:block/small_flower/azure_bluet_bloom"
+      }
+    }
+  }
+}

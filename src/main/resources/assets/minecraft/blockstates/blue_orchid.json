@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/small_flower/blue_orchid/small"
+      },
+      {
+        "model": "minecraft:block/small_flower/blue_orchid/medium"
+      },
+      {
+        "model": "minecraft:block/small_flower/blue_orchid/medium"
+      },
+      {
+        "model": "minecraft:block/small_flower/blue_orchid/large"
+      }
+    ]
+  }
+}

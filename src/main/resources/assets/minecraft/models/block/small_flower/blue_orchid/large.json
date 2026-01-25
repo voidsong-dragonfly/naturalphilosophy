@@ -1,0 +1,22 @@
+{
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "minecraft:block/blue_orchid"
+  },
+  "ambientocclusion": false,
+  "shade": false,
+  "children": {
+    "leaves": {
+      "parent": "minecraft:block/tinted_cross",
+      "textures": {
+        "cross": "minecraft:block/small_flower/blue_orchid_leaves_large"
+      }
+    },
+    "bloom": {
+      "parent": "minecraft:block/cross",
+      "textures": {
+        "cross": "minecraft:block/small_flower/blue_orchid_bloom_large"
+      }
+    }
+  }
+}
