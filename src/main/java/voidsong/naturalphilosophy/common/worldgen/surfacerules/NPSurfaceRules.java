@@ -114,7 +114,8 @@ public class NPSurfaceRules {
         @Override
         public BlockState tryApply(int x, int y, int z) {
             // Get the rule we want at the specified depth and evaluate it for this position
-            BlockState result = pContext.stoneDepthAbove >= length ? null : ruleset.get(pContext.stoneDepthAbove - 1).tryApply(x, y, z);
+            BlockState result = pContext.stoneDepthAbove > length ? null : ruleset.get(pContext.stoneDepthAbove - 1).tryApply(x, y, z);
+            if(x == 5496 && z == -14064) System.out.println(y + " " + result);
             // Return the default rule if we're not in any depth bin or have a height bin that does not resolve
             return result == null ? defaultRule.tryApply(x, y, z) : result;
         }
