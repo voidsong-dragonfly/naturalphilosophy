@@ -1,22 +1,6 @@
 {
-  "loader": "neoforge:composite",
+  "parent": "minecraft:block/small_flower/cross_3",
   "textures": {
-    "particle": "minecraft:block/dandelion"
-  },
-  "ambientocclusion": false,
-  "shade": false,
-  "children": {
-    "leaves": {
-      "parent": "minecraft:block/small_flower/tinted_cross_3",
-      "textures": {
-        "cross": "minecraft:block/small_flower/dandelion_leaves"
-      }
-    },
-    "bloom": {
-      "parent": "minecraft:block/small_flower/cross_3",
-      "textures": {
-        "cross": "minecraft:block/small_flower/dandelion_bloom"
-      }
-    }
+    "cross": "minecraft:block/dandelion"
   }
 }

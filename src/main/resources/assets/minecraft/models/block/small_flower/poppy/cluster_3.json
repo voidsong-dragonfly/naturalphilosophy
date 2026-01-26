@@ -1,22 +1,6 @@
 {
-  "loader": "neoforge:composite",
+  "parent": "minecraft:block/small_flower/cross_3",
   "textures": {
-    "particle": "minecraft:block/poppy"
-  },
-  "ambientocclusion": false,
-  "shade": false,
-  "children": {
-    "leaves": {
-      "parent": "minecraft:block/small_flower/tinted_cross_3",
-      "textures": {
-        "cross": "minecraft:block/small_flower/poppy_leaves"
-      }
-    },
-    "bloom": {
-      "parent": "minecraft:block/small_flower/cross_3",
-      "textures": {
-        "cross": "minecraft:block/small_flower/poppy_bloom"
-      }
-    }
+    "cross": "minecraft:block/poppy"
   }
 }

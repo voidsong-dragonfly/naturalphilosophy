@@ -7,15 +7,15 @@
   "shade": false,
   "children": {
     "leaves": {
-      "parent": "minecraft:block/small_flower/tinted_cross_4",
+      "parent": "minecraft:block/small_flower/cross_4",
       "textures": {
-        "cross": "minecraft:block/small_flower/tulip_leaves_3"
+        "cross": "minecraft:block/tulip/leaves_3"
       }
     },
     "bloom": {
       "parent": "minecraft:block/small_flower/cross_4",
       "textures": {
-        "cross": "minecraft:block/small_flower/white_tulip_bloom"
+        "cross": "minecraft:block/tulip/white_bloom"
       }
     }
   }

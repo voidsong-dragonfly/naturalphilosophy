@@ -1,22 +1,6 @@
 {
-  "loader": "neoforge:composite",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "particle": "minecraft:block/oxeye_daisy"
-  },
-  "ambientocclusion": false,
-  "shade": false,
-  "children": {
-    "leaves": {
-      "parent": "minecraft:block/tinted_cross",
-      "textures": {
-        "cross": "minecraft:block/small_flower/oxeye_daisy_leaves"
-      }
-    },
-    "bloom": {
-      "parent": "minecraft:block/cross",
-      "textures": {
-        "cross": "minecraft:block/small_flower/oxeye_daisy_bloom"
-      }
-    }
+    "cross": "minecraft:block/oxeye_daisy"
   }
 }
