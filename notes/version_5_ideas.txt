@@ -1,0 +1,35 @@
+5.0.0 (The Biome Update)
+1. Add some custom biomes to the game?
+    Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
+    Cold desert => gravel desert biome, maybe?
+    Add some more new cave biomes to spice up the underground?
+        Surface rocks rather than plants for cave detection
+    Consider maybe an ocean trenches biome surrounding mushroom islands? Tubeworm blocks and smokers, etc?
+2. Improve caves and add cave biomes
+    Surface rocks rather than plants for cave detection, maybe? Or more obvious plants
+    Stalactites & stalagmites for normal stone (but not for andesite, diorite, or granite)
+        => Rockfall events, maybe? Dropping stalactites/stalagmites
+        => Figure out if I need Lithostitched sequential generators to make top/bottom pairs of speleothems
+    Boulders of fallen rocks in caves
+    Extra fossils in the Deep Dark, especially on the 'surface' of the caves
+    'Magmatic Depths' or 'Volcanic Depths' biome at depth > some limit
+    'Granitic Pluton' and 'Plagioclastic Laccolith' biomes, (Granite), and (Diorite inside, Andesite outside) for base stone types
+        => Placed above the deepslate layer, possibly with "veins" of material making webs down to the Bedrock from them
+    Might have to fix cave shape, if it's even possible to do effectively?
+        => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
+        => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
+        =>
+    Some sort of slime vegetation or slime residue to indicate slime chunks?
+3. patterned ground is made by perfmafrost, the sort of on-again-off-again rocks. consider for tundra biomes?
+    tundra can have small patches of trees where plains might not have any
+    consider tundra as the slide between forest and prairie for cold biomes (?)
+4. revamp desert biomes entirely, even if they don't get split
+    Cactus can only be placed on "coarse dry dirt"
+    coarse dry dirt is in between coarse dirt and sand/red sand, possibly have variants so we can blend easier (blockstate?)
+        => color of packed mud but the texture a mixture of coarse dirt and sand, perhaps?
+    dune grass can be placed on coarse dry dirt as well. rename to "hardy grass" or maybe?
+    deserts are a mix of coarse dirt, coarse dry dirt, and sand. make dune deserts later and reduce sand percentage?
+    deserts have "lots" of "foliage" in the sense that they have sparse, specific foliages. would be perfect for bushes, esp. low-lying ones
+    desaturate sand??? big ask but also right now it's _so_ saturated and having it be less yellow might help
+        => don't bother, too un-vanilla. blend the dirt better instead of trying to do this
+5. more mob variants? mob variants for some mobs missing them? (fish, etc)

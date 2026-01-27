@@ -10,6 +10,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.NPBlocks;
+import voidsong.naturalphilosophy.common.NPItems;
 
 @SuppressWarnings("unused")
 @EventBusSubscriber(modid = NaturalPhilosophy.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
@@ -25,5 +26,13 @@ public class ColorHandler {
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
             Blocks.PEONY, Blocks.ROSE_BUSH, Blocks.LILAC, Blocks.SUNFLOWER);
+    }
+
+    @SubscribeEvent
+    public static void handleGrassColors(RegisterColorHandlersEvent.Item event) {
+        // Gasworks blocks to register, such as Dune Grass
+        event.register((stack, tintIndex) ->
+            tintIndex == 0 ? GrassColor.get(0.5D, 1.0D) : 0xFFFFFFFF,
+            NPItems.DUNE_GRASS_ITEM.value());
     }
 }

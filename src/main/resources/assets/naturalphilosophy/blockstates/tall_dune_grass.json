@@ -1,16 +1,25 @@
 {
     "variants": {
-        "half=lower,red_sand=false": {
-            "model": "naturalphilosophy:block/tall_dune_grass_bottom_sand"
+        "half=lower": {
+            "model": "naturalphilosophy:block/dune_grass/tall_bottom"
         },
-        "half=upper,red_sand=false": {
-            "model": "naturalphilosophy:block/tall_dune_grass_top"
-        },
-        "half=lower,red_sand=true": {
-            "model": "naturalphilosophy:block/tall_dune_grass_bottom_red_sand"
-        },
-        "half=upper,red_sand=true": {
-            "model": "naturalphilosophy:block/tall_dune_grass_top"
-        }
+        "half=upper": [
+            {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_1"
+            },
+            {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_2"
+            },
+            {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_3"
+            },
+            {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_4"
+            },
+
+            {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_4"
+            }
+        ]
     }
 }

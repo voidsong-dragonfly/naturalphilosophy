@@ -1,7 +1,7 @@
 {
   "loader": "neoforge:composite",
   "textures": {
-    "particle": "minecraft:block/tall_grass_bottom"
+    "particle": "minecraft:block/short_grass"
   },
   "ambientocclusion": "false",
   "children": {
@@ -9,14 +9,14 @@
       "parent": "minecraft:block/tinted_cross",
       "render_type": "cutout",
       "textures": {
-        "cross": "naturalphilosophy:block/tall_dune_grass_top"
+        "cross": "naturalphilosophy:block/dune_grass/tall_bottom"
       }
     },
     "sand_overlay": {
       "parent": "minecraft:block/cross",
-      "render_type": "tripwire",
+      "render_type": "cutout",
       "textures": {
-        "cross": "naturalphilosophy:block/tall_dune_grass_overlay"
+        "cross": "naturalphilosophy:block/dune_grass/dry_overlay"
       }
     }
   }

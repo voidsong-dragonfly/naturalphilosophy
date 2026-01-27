@@ -1,6 +1,7 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "naturalphilosophy:item/dune_grass"
+        "layer1": "naturalphilosophy:block/dune_grass/dry_overlay",
+        "layer0": "naturalphilosophy:block/dune_grass/short"
     }
 }

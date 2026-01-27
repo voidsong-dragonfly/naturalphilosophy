@@ -6,14 +6,17 @@
   "ambientocclusion": "false",
   "children": {
     "cross_base": {
-      "parent": "minecraft:block/short_grass",
-      "render_type": "cutout"
+      "parent": "minecraft:block/tinted_cross",
+      "render_type": "cutout",
+      "textures": {
+        "cross": "naturalphilosophy:block/dune_grass/tall_top"
+      }
     },
     "sand_overlay": {
       "parent": "minecraft:block/cross",
-      "render_type": "tripwire",
+      "render_type": "cutout",
       "textures": {
-        "cross": "naturalphilosophy:block/short_red_sand_overlay"
+        "cross": "naturalphilosophy:block/dune_grass/tuft_overlay_2"
       }
     }
   }
