@@ -31,7 +31,7 @@ public class BranchedMegaPineFoliagePlacer extends MegaPineFoliagePlacer {
     @Override
     @Nonnull
     protected FoliagePlacerType<?> type() {
-        return NPFoliagePlacers.BRANCHED_MEGA_PINE_FOLIAGE_PLACER.get();
+        return NPFoliagePlacers.BRANCHED_MEGA_PINE.get();
     }
 
     @Override

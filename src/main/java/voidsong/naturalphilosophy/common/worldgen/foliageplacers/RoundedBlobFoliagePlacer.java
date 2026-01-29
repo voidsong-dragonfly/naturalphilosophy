@@ -1,0 +1,72 @@
+package voidsong.naturalphilosophy.common.worldgen.foliageplacers;
+
+
+import com.mojang.datafixers.Products.P3;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.mojang.serialization.codecs.RecordCodecBuilder.Instance;
+import com.mojang.serialization.codecs.RecordCodecBuilder.Mu;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers;
+
+import javax.annotation.Nonnull;
+
+public class RoundedBlobFoliagePlacer extends FoliagePlacer {
+    public static final MapCodec<RoundedBlobFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(codec -> blobParts(codec).apply(codec, RoundedBlobFoliagePlacer::new));
+    protected final int height;
+
+    protected static <P extends RoundedBlobFoliagePlacer> P3<Mu<P>, IntProvider, IntProvider, Integer> blobParts(Instance<P> instance) {
+        return foliagePlacerParts(instance).and(Codec.intRange(0, 16).fieldOf("height").forGetter(params -> params.height));
+    }
+
+    public RoundedBlobFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
+        super(radius, offset);
+        this.height = height;
+    }
+
+    @Override
+    @Nonnull
+    protected FoliagePlacerType<?> type() {
+        return NPFoliagePlacers.ROUNDED_BLOB.get();
+    }
+
+    @Override
+    protected void createFoliage(
+        @Nonnull LevelSimulatedReader level,
+        @Nonnull FoliagePlacer.FoliageSetter blockSetter,
+        @Nonnull RandomSource random,
+        @Nonnull TreeConfiguration config,
+        int maxFreeTreeHeight,
+        @Nonnull FoliagePlacer.FoliageAttachment attachment,
+        int foliageHeight,
+        int foliageRadius,
+        int offset
+    ) {
+        for (int i = offset; i >= offset - foliageHeight; i--) {
+            int j = Math.max(foliageRadius + attachment.radiusOffset() - 1 - i / 2, 0);
+            this.placeLeavesRow(level, blockSetter, random, config, attachment.pos(), j, i, attachment.doubleTrunk());
+        }
+        this.placeLeavesRow(level, blockSetter, random, config, attachment.pos(), 1, offset - foliageHeight - 1, attachment.doubleTrunk());
+    }
+
+    @Override
+    public int foliageHeight(@Nonnull RandomSource random, int height, @Nonnull TreeConfiguration config) {
+        return this.height;
+    }
+
+    /**
+     * Skips certain positions based on the provided shape, such as rounding corners randomly.
+     * The coordinates are passed in as absolute value, and should be within [0, {@code range}].
+     */
+    @Override
+    protected boolean shouldSkipLocation(@Nonnull RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
+        return localX == range && localZ == range && !((localY == -1 && range <= 1) || (localY == 0 && (random.nextInt(3) == 0)));
+    }
+}
+

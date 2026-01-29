@@ -32,7 +32,7 @@ public class BranchedMegaJungleFoliagePlacer extends MegaJungleFoliagePlacer {
     @Override
     @Nonnull
     protected FoliagePlacerType<?> type() {
-        return NPFoliagePlacers.BRANCHED_MEGA_JUNGLE_FOLIAGE_PLACER.get();
+        return NPFoliagePlacers.BRANCHED_MEGA_JUNGLE.get();
     }
 
     @Override
