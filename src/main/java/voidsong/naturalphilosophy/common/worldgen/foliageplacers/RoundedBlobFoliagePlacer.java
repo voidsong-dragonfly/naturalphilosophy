@@ -52,7 +52,11 @@ public class RoundedBlobFoliagePlacer extends FoliagePlacer {
             int j = Math.max(foliageRadius + attachment.radiusOffset() - 1 - i / 2, 0);
             this.placeLeavesRow(level, blockSetter, random, config, attachment.pos(), j, i, attachment.doubleTrunk());
         }
-        this.placeLeavesRow(level, blockSetter, random, config, attachment.pos(), 1, offset - foliageHeight - 1, attachment.doubleTrunk());
+        int depth = -1;
+        for (int k = Math.max(foliageRadius + attachment.radiusOffset() - 2 - (offset - foliageHeight) / 2, 0); k > 0; k--) {
+            this.placeLeavesRow(level, blockSetter, random, config, attachment.pos(), k, offset - foliageHeight + depth, attachment.doubleTrunk());
+            depth--;
+        }
     }
 
     @Override
@@ -66,7 +70,9 @@ public class RoundedBlobFoliagePlacer extends FoliagePlacer {
      */
     @Override
     protected boolean shouldSkipLocation(@Nonnull RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return localX == range && localZ == range && !((localY == -1 && range <= 1) || (localY == 0 && (random.nextInt(3) == 0)));
+        boolean notFirstStep = !((localY == -1 && range <= 1) || (localY == 0 && (random.nextInt(3) == 0)));
+        boolean corners = localX == range && localZ == range || (range >= 3 && (localX + localZ > (2*range - 2)));
+        return notFirstStep && corners;
     }
 }
 
