@@ -178,9 +178,5 @@ work items AFTER the update to 1.21.11 or 26.1
 
 
 Current work items:
-    tree decorator changes
-        ✓ plains oak
-        forest oak
-        birches
     fix feathering on most biomes without making large changes to their decoration
     add a second pass to forests to make vegetation cluster more around breaks in the canopy and less common under it

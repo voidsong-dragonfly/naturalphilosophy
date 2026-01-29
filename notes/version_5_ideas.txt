@@ -13,6 +13,8 @@
     Boulders of fallen rocks in caves
     Extra fossils in the Deep Dark, especially on the 'surface' of the caves
     'Magmatic Depths' or 'Volcanic Depths' biome at depth > some limit
+        => this can take over for my original idea of surrounding the lava pools in basalt, instead have the deeps be a
+           smooth basalt layer when in this biome (or at least when the top is)
     'Granitic Pluton' and 'Plagioclastic Laccolith' biomes, (Granite), and (Diorite inside, Andesite outside) for base stone types
         => Placed above the deepslate layer, possibly with "veins" of material making webs down to the Bedrock from them
     Might have to fix cave shape, if it's even possible to do effectively?

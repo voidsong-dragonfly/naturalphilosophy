@@ -94,11 +94,10 @@
 
 Unknown Timeline:
 1. Revisit tide pools with custom feature? => OR, leave to PVJ?
+    => relatively minor feature, disregard for now
 2. Some sort of lava-y decoration around lava pools (blackstone, basalt, etc)
+    => moved to a separate location
 3. Tree search a la Cliff Under a Tree or Terralith? Must be some good ideas in there I can work with
+    => disregard, we want a more Vanilla feel for many of the trees anyway
 4. Fix river biomes to be better changed based on depth & stuff (need Tectonic to update?)
 5. Plants covered in snow? => snowlogging might be complicated to get working. do I want to do stairs/slabs too, or just plants?
-
-
-
-Don't want to duplicate things PVJ does because they do them just fine. Work on things PVJ does NOT do instead
