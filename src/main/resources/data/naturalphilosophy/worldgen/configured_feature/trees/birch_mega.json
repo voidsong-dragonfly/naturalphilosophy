@@ -19,26 +19,15 @@
       }
     },
     "foliage_provider": {
-      "type": "minecraft:weighted_state_provider",
-      "entries": [
-        {
-          "weight": 7,
-          "data": {
-            "Name": "minecraft:birch_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false",
-              "waterlogged": "false"
-            }
-          }
-        },
-        {
-          "weight": 1,
-          "data": {
-            "Name": "minecraft:air"
-          }
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:birch_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
         }
-      ]
+      }
     },
     "force_dirt": true,
     "ignore_vines": true,
@@ -50,7 +39,7 @@
     },
     "trunk_placer": {
       "type": "minecraft:straight_trunk_placer",
-      "base_height": 10,
+      "base_height": 11,
       "height_rand_a": 2,
       "height_rand_b": 3
     },

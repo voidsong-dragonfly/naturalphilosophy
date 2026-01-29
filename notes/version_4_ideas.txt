@@ -17,6 +17,7 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         => we have flowering bushes that are bigger now.
         => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
     "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
+    shelf mushrooms for red/brown mushrooms
 7. Port over some of the interesting features of Immersive Weathering/supplementaries
     Mossy stone and other mossy blocks, to make mossiness not just a cobblestone thing
         => can this be done effectively with moss carpets and a lichen block? I think the answer is yes
@@ -30,19 +31,21 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         => might also need to change snowy grass texture as well, which could cause its own issues
         => or only generate permafrost under thick blankets of snow (full block)
     barnacles block similar to glow lichen? can only grow on blocks of above a certain hardness, not gravel/etc
-8. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
-    Do we actually need custom foliage types? Might just want to make a few trunk-placer changes to allow for better shaping
-    Could do limits on where branches can propagate to but otherwise use the fancy oak tree placer => similar to plains trees
-    Should have multiple types of trees in deciduous forests
-        => One type is straight trunk, ball-ish of leaves
-        => One type is a more branching tree
-        => One type we want more branches down lower but not too many of them
-        => Stop using cherry trunk placer as much (?)
-    birch tree overhaul to make tree shapes more consistent. move back to original foliage placer for "small" birch maybe?
-        => original placer but taller, old growth birch can be the spruce one
-        => remove randomization of blocks in placer
-        => possibly add branches?
-    remove draping leaves from plains oak
+✓ 8. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
+    ✓ Do we actually need custom foliage types? Might just want to make a few trunk-placer changes to allow for better shaping
+    ✓ Could do limits on where branches can propagate to but otherwise use the fancy oak tree placer => similar to plains trees
+    ✓ Should have multiple types of trees in deciduous forests
+        ✓ => One type is straight trunk, ball-ish of leaves
+        ✓ => One type is a more branching tree
+        ✓ => One type we want more branches down lower but not too many of them
+        ✓ => Stop using cherry trunk placer as much (?)
+        ✓ => Did not do, instead reverted to Vanilla "fancy" oak placers but modified for forests
+    ✓ birch tree overhaul to make tree shapes more consistent. move back to original foliage placer for "small" birch maybe?
+        ✓ => original placer but taller, old growth birch can be the spruce one
+        ✓ => remove randomization of blocks in placer
+        ✓ => used a modified blob instead
+    ✓ remove draping leaves from plains oak
+    ✓ move plains oak over to fancy placer
 5. Rocky biome changes to make them feel more rock-like and less like bare edifices of stone with nothing growing and no cracks
     New rock generator, either cubic with shifted corners or ore-vein based; make it follow IRL rock shapes more
     New block to make rocks less likely to blend into the stone below them?
@@ -103,6 +106,10 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         => can use anemonies for this, they place on rocks
     possibly some decor items like shells?
         => solitary clams or shellfish in or on seabed could work for barrens
+17. consider some "top block cruft" blocks that are easy to access and not awful to work with
+    pine cones and sticks are one good glass
+    bones might be another good class, to allow for peaceful bone acquisition w/o structures
+    consider seashell-embedded sand for beaches, or seashells for beaches; could also be prismarine shards
 
 --------------------------------------------------------------------------------------
 prefer an update, but not 100% necessary to accomplish: (mostly for bushes)
@@ -172,5 +179,8 @@ work items AFTER the update to 1.21.11 or 26.1
 
 Current work items:
     tree decorator changes
+        ✓ plains oak
+        forest oak
+        birches
     fix feathering on most biomes without making large changes to their decoration
     add a second pass to forests to make vegetation cluster more around breaks in the canopy and less common under it
