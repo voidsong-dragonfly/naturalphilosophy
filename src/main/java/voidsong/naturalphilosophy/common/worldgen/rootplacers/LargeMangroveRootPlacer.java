@@ -19,8 +19,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
 import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacement;
 import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacer;
+import net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacerType;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import org.apache.commons.lang3.tuple.Pair;
+import voidsong.naturalphilosophy.common.worldgen.NPRootPlacers;
+
+import javax.annotation.Nonnull;
 
 public class LargeMangroveRootPlacer extends MangroveRootPlacer {
 
@@ -36,9 +40,9 @@ public class LargeMangroveRootPlacer extends MangroveRootPlacer {
     );
 
     public static final MapCodec<LargeMangroveRootPlacer> CODEC = RecordCodecBuilder.mapCodec(
-        p_225856_ -> rootPlacerParts(p_225856_)
+        instance -> rootPlacerParts(instance)
             .and(MangroveRootPlacement.CODEC.fieldOf("mangrove_root_placement").forGetter(placer -> placer.mangroveRootPlacement))
-            .apply(p_225856_, LargeMangroveRootPlacer::new)
+            .apply(instance, LargeMangroveRootPlacer::new)
     );
 
     public LargeMangroveRootPlacer(IntProvider trunkOffset, BlockStateProvider rootProvider, Optional<AboveRootPlacement> aboveRootPlacement, MangroveRootPlacement mangroveRootPlacement) {
@@ -46,13 +50,25 @@ public class LargeMangroveRootPlacer extends MangroveRootPlacer {
     }
 
     @Override
+    @Nonnull
+    protected RootPlacerType<?> type() {
+        return NPRootPlacers.LARGE_MANGROVE_ROOT_PLACER.get();
+    }
+
+    @Override
+    @Nonnull
+    public BlockPos getTrunkOrigin(@Nonnull BlockPos pos, @Nonnull RandomSource random) {
+        return pos;
+    }
+
+    @Override
     public boolean placeRoots(
-        LevelSimulatedReader level,
-        BiConsumer<BlockPos, BlockState> blockSetter,
-        RandomSource random,
+        @Nonnull LevelSimulatedReader level,
+        @Nonnull BiConsumer<BlockPos, BlockState> blockSetter,
+        @Nonnull RandomSource random,
         BlockPos pos,
         BlockPos trunkOrigin,
-        TreeConfiguration treeConfig
+        @Nonnull TreeConfiguration treeConfig
     ) {
         List<BlockPos> list = Lists.newArrayList();
         BlockPos.MutableBlockPos blockpos$mutableblockpos = pos.mutable();
@@ -86,10 +102,5 @@ public class LargeMangroveRootPlacer extends MangroveRootPlacer {
         }
 
         return true;
-    }
-
-    @Override
-    public BlockPos getTrunkOrigin(BlockPos pos, RandomSource random) {
-        return pos;
     }
 }
