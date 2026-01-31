@@ -17,6 +17,7 @@ import static voidsong.naturalphilosophy.common.worldgen.NPRootPlacers.ROOT_PLAC
 import static voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers.FOLIAGE_PLACERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPTrunkPlacers.TRUNK_PLACERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPPlacementModifiers.PLACEMENT_MODIFIERS;
+import static voidsong.naturalphilosophy.common.worldgen.NPBlockPredicates.BLOCK_PREDICATES;
 
 @Mod(NaturalPhilosophy.MODID)
 public class NaturalPhilosophy {
@@ -33,6 +34,7 @@ public class NaturalPhilosophy {
         FOLIAGE_PLACERS.register(modEventBus);
         TRUNK_PLACERS.register(modEventBus);
         PLACEMENT_MODIFIERS.register(modEventBus);
+        BLOCK_PREDICATES.register(modEventBus);
         // Register config handling
         container.registerConfig(ModConfig.Type.CLIENT, NPClientConfig.CONFIG_SPEC);
         container.registerConfig(ModConfig.Type.SERVER, NPServerConfig.CONFIG_SPEC);
