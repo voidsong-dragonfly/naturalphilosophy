@@ -33,6 +33,26 @@
             "type": "minecraft:sequence",
             "sequence": [
               {
+                "_comment": "Biomes with all-grass top blocks. Will not have the same underneath blocks",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:cherry_grove",
+                    "minecraft:plains",
+                    "minecraft:sunflower_plains",
+                    "minecraft:savanna",
+                    "minecraft:savanna_plateau"
+                  ]
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:grass_block"
+                  }
+                }
+              },
+              {
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -193,21 +213,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:cherry_grove"
-                  ]
-                },
-                "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:grass_block"
-                  }
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
                     "minecraft:grove"
                   ]
                 },
@@ -227,34 +232,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:plains_supertype/cold_type/snowy_plains_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:plains",
-                    "minecraft:sunflower_plains"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/prairie_type/plains_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:savanna",
-                    "minecraft:savanna_plateau"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/savanna_type/savanna_surface"
                 }
               },
               {
@@ -289,6 +266,47 @@
           "sublayer": {
             "type": "minecraft:sequence",
             "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:cherry_grove"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:mountain_supertype/grove_type/cherry_grove_sublayer"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:plains",
+                    "minecraft:sunflower_plains"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:plains_supertype/prairie_type/plains_sublayer"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:savanna",
+                    "minecraft:savanna_plateau"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:plains_supertype/savanna_type/savanna_sublayer"
+                }
+              },
               {
                 "type": "minecraft:condition",
                 "if_true": {
@@ -457,19 +475,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:cherry_grove"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:mountain_supertype/grove_type/cherry_grove_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
                     "minecraft:grove"
                   ]
                 },
@@ -491,34 +496,6 @@
                   "result_state": {
                     "Name": "minecraft:dirt"
                   }
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:plains",
-                    "minecraft:sunflower_plains"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/prairie_type/plains_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:savanna",
-                    "minecraft:savanna_plateau"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/savanna_type/savanna_sublayer"
                 }
               },
               {

@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "minecraft:grass_block"
+  ],
+  "values": [
+    "#minecraft:dirt"
+  ]
+}

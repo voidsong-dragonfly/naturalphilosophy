@@ -7,44 +7,42 @@
           "chance": 0.25,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/lilacs",
-            "placement": [
-              {
-                "type": "minecraft:block_predicate_filter",
+            "placement": [{
+              "type": "minecraft:block_predicate_filter",
+              "predicate": {
+                "type": "minecraft:not",
                 "predicate": {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    -2,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:rooted_dirt"
-                  ]
+                  "type": "naturalphilosophy:any_in_range",
+                  "start_offset": [-1, -4, -1],
+                  "end_offset": [1, -2, 1],
+                  "predicate": {
+                    "type": "minecraft:matching_blocks",
+                    "blocks": [ "minecraft:coarse_dirt" ]
+                  }
                 }
               }
-            ]
+            }]
           }
         },
         {
           "chance": 0.25,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/peonies",
-            "placement": [
-              {
-                "type": "minecraft:block_predicate_filter",
+            "placement": [{
+              "type": "minecraft:block_predicate_filter",
+              "predicate": {
+                "type": "minecraft:not",
                 "predicate": {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    -2,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:rooted_dirt"
-                  ]
+                  "type": "naturalphilosophy:any_in_range",
+                  "start_offset": [-1, -4, -1],
+                  "end_offset": [1, -2, 1],
+                  "predicate": {
+                    "type": "minecraft:matching_blocks",
+                    "blocks": [ "minecraft:coarse_dirt" ]
+                  }
                 }
               }
-            ]
+            }]
           }
         }
       ],
@@ -57,7 +55,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 4
+      "chance": 6
     },
     {
       "type": "minecraft:in_square"

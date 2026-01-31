@@ -31,14 +31,18 @@ public class AnyInRangePredicate implements BlockPredicate {
         this.offsetEnd = offsetEnd;
     }
 
+    @Override
     public boolean test(WorldGenLevel level, BlockPos pos) {
         MutableBlockPos mutable = new MutableBlockPos();
-        for (int x = offsetStart.getX(); x <= offsetEnd.getX(); x++)
-            for (int y = offsetStart.getY(); y <= offsetEnd.getY(); y++)
-                for (int z = offsetStart.getZ(); z <= offsetEnd.getZ(); z++)
+        for (int x = offsetStart.getX(); x <= offsetEnd.getX(); x++) {
+            for (int y = offsetStart.getY(); y <= offsetEnd.getY(); y++) {
+                for (int z = offsetStart.getZ(); z <= offsetEnd.getZ(); z++) {
                     if (predicate.test(level, mutable.setWithOffset(pos, x, y, z))) {
                         return true;
                     }
+                }
+            }
+        }
 
         return false;
     }
