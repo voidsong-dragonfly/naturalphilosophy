@@ -5,10 +5,14 @@
       "features": [
         {
           "chance": 0.25,
-          "feature": "naturalphilosophy:checked_trees/birch_plains"
+          "feature": "naturalphilosophy:checked_trees/birch_forest"
+        },
+        {
+          "chance": 0.25,
+          "feature": "naturalphilosophy:checked_trees/oak_fancy"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_plains"
+      "default": "naturalphilosophy:checked_trees/oak_forest"
     }
   },
   "placement": [

@@ -4,17 +4,17 @@
     "config": {
       "features": [
         {
-          "chance": 0.0375,
+          "chance": 0.375,
           "feature": "naturalphilosophy:checked_trees/oak_fancy"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_plains"
+      "default": "naturalphilosophy:checked_trees/oak_shrub"
     }
   },
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 6
+      "count": 5
     },
     {
       "type": "minecraft:in_square"
@@ -33,30 +33,16 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:all_of",
-        "predicates": [
-          {
-            "type": "minecraft:not",
-            "predicate": {
-              "type": "minecraft:matching_blocks",
-              "offset": [
-                0,
-                -1,
-                0
-              ],
-              "blocks": "minecraft:grass_block"
-            }
-          },
-          {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "naturalphilosophy:any_in_range",
+          "start_offset": [-1, -4, -1],
+          "end_offset": [1, -2, 1],
+          "predicate": {
             "type": "minecraft:matching_blocks",
-            "offset": [
-              0,
-              -2,
-              0
-            ],
-            "blocks": "minecraft:rooted_dirt"
+            "blocks": [ "minecraft:coarse_dirt" ]
           }
-        ]
+        }
       }
     }
   ]

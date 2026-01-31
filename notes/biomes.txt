@@ -1,6 +1,6 @@
 Necessary Biomes & Placement:
 
-Prairie (cold plains locations)
+Prairie (cold plains locations) => specifically, move current plains to that location & replace current plains with "oak savanna"
 Add Savanna to a few more places
 Move Birch Forest to colder climes
 Warm Beach (warm beach locations)

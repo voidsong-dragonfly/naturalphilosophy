@@ -13,8 +13,8 @@
     }]
   },
   "lower_noise_thresholds": [
-    -0.25,
-    -0.3125
+    0.575,
+    0.55
   ],
   "ruleset": [
     {
@@ -29,7 +29,7 @@
       "default_state": {
         "Name": "minecraft:dirt"
       },
-      "lower_random_thresholds": [ 0.70 ],
+      "lower_random_thresholds": [ 0.8 ],
       "state_set": [{
         "Name": "minecraft:coarse_dirt"
       }]
