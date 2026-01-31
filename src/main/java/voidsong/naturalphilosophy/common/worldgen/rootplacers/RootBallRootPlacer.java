@@ -64,7 +64,7 @@ public class RootBallRootPlacer extends RootPlacer {
         int radius = placement.rootRadius;
         MutableBlockPos mutablePos = pos.mutable();
         // Place the roots up until the final block
-        for (int k = 2; k < placement.rootColumnMaxDepth; k++) {
+        for (int k = 2; k <= placement.rootColumnMaxDepth; k++) {
             // Move mutable position down
             mutablePos.setWithOffset(pos, 0, -k, 0);
             // Check if we have air here to place hanging roots
@@ -81,7 +81,7 @@ public class RootBallRootPlacer extends RootPlacer {
             }
         }
         // Place hanging roots below the final block if we have a cave
-        if (level.isStateAtPosition(mutablePos.setWithOffset(pos, 0, -placement.rootColumnMaxDepth, 0), IBlockStateExtension::isEmpty)) {
+        if (level.isStateAtPosition(mutablePos.setWithOffset(pos, 0, -(placement.rootColumnMaxDepth+1), 0), IBlockStateExtension::isEmpty)) {
             placeHangingRoots(level, blockSetter, random, mutablePos.immutable(), new MutableBlockPos());
         }
 
