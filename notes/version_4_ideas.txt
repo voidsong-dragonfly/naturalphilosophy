@@ -76,10 +76,6 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
     many biomes can make do with a single top block and some under-ground filtering
         => grass: plains*, savannas*, windswept forest, meadow,
         => humus: jungle, dark forest
-10. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
-    Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
-    Biomes further from high humidity should have less moss - revamp taigas, etc
-    Figure out biome placement, possibly?
 11. talus slopes on the beneath part of the mountains?
     rubble blocks for the surface to break up the flatness, rock slopes really need this to feel alive
     lots of rocky beaches have this but are not flat, and "cobblestone in the ground" does not do it justice
@@ -168,6 +164,10 @@ work items AFTER the update to 1.21.11 or 26.1
     Possibly add charred trees to some biomes? Lightning-struck tree features + charred logs
         => Make it a Gasworks integration if I add better fire spread to gasworks?
 15. sound additions. the sussurus of rushes and leaves in swamps and forests, etc
+10. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
+    Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
+    Biomes further from high humidity should have less moss - revamp taigas, etc
+    allow blue orchids to place on jungle logs specifically as well
 
 
 

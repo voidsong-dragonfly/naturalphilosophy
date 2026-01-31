@@ -22,6 +22,8 @@
         => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
         =>
     Some sort of slime vegetation or slime residue to indicate slime chunks?
+    "Glow Lichen Caves" underneath mushroom islands, to really expand on the mushroom theme? More lapis spawns there perhaps?
+        => possibly make it hostile? it depends. consider.
 3. patterned ground is made by perfmafrost, the sort of on-again-off-again rocks. consider for tundra biomes?
     tundra can have small patches of trees where plains might not have any
     consider tundra as the slide between forest and prairie for cold biomes (?)
