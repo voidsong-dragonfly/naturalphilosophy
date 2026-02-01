@@ -81,8 +81,7 @@
       "minecraft:spring_lava_frozen"
     ],
     [
-      "naturalphilosophy:mountain_supertype/grove_type/snowy_copses",
-      "naturalphilosophy:mountain_supertype/grove_type/snowy_undergrowth"
+      "naturalphilosophy:mountain_supertype/grove_type/snowy_grove"
     ],
     [
       "minecraft:freeze_top_layer"
