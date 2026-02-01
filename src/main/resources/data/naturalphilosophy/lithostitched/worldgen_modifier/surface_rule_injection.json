@@ -13,19 +13,15 @@
       "sequence": [
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:cave_entrances"
+          "rules": "naturalphilosophy:ubiquitous/cave_entrances"
         },
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:cliffs"
+          "rules": "naturalphilosophy:ubiquitous/cliffs"
         },
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:underwater_sediment"
-        },
-        {
-          "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:forest_tracks"
+          "rules": "naturalphilosophy:ubiquitous/underwater_sediment"
         },
         {
           "type": "naturalphilosophy:bilayer_fill",
@@ -33,7 +29,7 @@
             "type": "minecraft:sequence",
             "sequence": [
               {
-                "_comment": "Biomes with all-grass top blocks. Will not have the same underneath blocks",
+                "_comment": "Biomes with all-grass top blocks. Will not have the same sublayer.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -52,6 +48,52 @@
                   }
                 }
               },
+              {
+                "_comment": "Biomes with snowy permafrost. Will have similar sublayers.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:snowy_plains",
+                    "minecraft:snowy_taiga"
+                  ]
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:snow_block"
+                    }
+                  },
+                  "lower_noise_thresholds": [ -0.3125 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:grass_block"
+                    }
+                  }]
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:grove"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:mountain_supertype/grove_type/grove_surface"
+                }
+              },
+
+
+
+
+
               {
                 "type": "minecraft:condition",
                 "if_true": {
@@ -148,19 +190,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:snowy_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/snowy_taiga_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
                     "minecraft:taiga"
                   ]
                 },
@@ -213,32 +242,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:grove"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:mountain_supertype/grove_type/grove_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:snowy_plains"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/cold_type/snowy_plains_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
                     "minecraft:stony_shore"
                   ]
                 },
@@ -280,6 +283,7 @@
                 }
               },
               {
+                "_comment": "Open grassland biomes with rare copses, and a coarse sublayer.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -292,9 +296,42 @@
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/copses_sublayer"
+                  "rules": "naturalphilosophy:special/grassland_sublayer"
                 }
               },
+              {
+                "_comment": "Biomes with snowy permafrost that melts from place to place.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:snowy_plains",
+                    "minecraft:snowy_taiga"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:special/permafrost_sublayer"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:grove"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:mountain_supertype/grove_type/grove_sublayer"
+                }
+              },
+
+
+
+
+
               {
                 "type": "minecraft:condition",
                 "if_true": {
@@ -398,19 +435,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:snowy_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/snowy_taiga_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
                     "minecraft:taiga"
                   ]
                 },
@@ -456,19 +480,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:forest_supertype/jungle_type/sparse_jungle_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:grove"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:mountain_supertype/grove_type/grove_sublayer"
                 }
               },
               {
@@ -640,7 +651,7 @@
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:water_supertype/island_type/ocean_islands"
+            "rules": "naturalphilosophy:water_supertype/ocean_type/islands"
           }
         },
         {
@@ -653,7 +664,7 @@
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:water_supertype/island_type/mushroom_fields"
+            "rules": "naturalphilosophy:special/mushroom_fields"
           }
         },
         {
@@ -666,7 +677,7 @@
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:plains_supertype/cold_type/ice_spikes"
+            "rules": "naturalphilosophy:special/ice_spikes"
           }
         },
         {
