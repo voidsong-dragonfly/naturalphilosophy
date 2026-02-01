@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "naturalphilosophy:block/permafrost/frozen",
+    "side": "naturalphilosophy:block/permafrost/snowy",
+    "top": "minecraft:block/snow"
+  }
+}

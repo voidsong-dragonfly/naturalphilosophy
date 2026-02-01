@@ -19,6 +19,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.blocks.DuneGrass;
 import voidsong.naturalphilosophy.common.blocks.MycelialGrowthBlock;
+import voidsong.naturalphilosophy.common.blocks.PermafrostBlock;
 import voidsong.naturalphilosophy.common.blocks.RedAlgaeBlock;
 import voidsong.naturalphilosophy.common.blocks.SandyMyceliumBlock;
 import voidsong.naturalphilosophy.common.blocks.TallDuneGrass;
@@ -137,4 +138,10 @@ public class NPBlocks {
             .randomTicks()
             .strength(0.6F)
             .sound(SoundType.GRASS));
+    public static final DeferredBlock<Block> PERMAFROST = BLOCKS.registerBlock("permafrost", PermafrostBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.DIRT)
+            .randomTicks()
+            .strength(2.8F)
+            .sound(SoundType.STONE));
 }

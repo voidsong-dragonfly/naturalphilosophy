@@ -1,0 +1,55 @@
+{
+  "variants": {
+    "stage=melting": [
+      {
+        "model": "naturalphilosophy:block/permafrost_melting"
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_melting",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_melting",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_melting",
+        "y": 270
+      }
+    ],
+    "stage=frozen": [
+      {
+        "model": "naturalphilosophy:block/permafrost_frozen"
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_frozen",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_frozen",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_frozen",
+        "y": 270
+      }
+    ],
+    "stage=snowy": [
+      {
+        "model": "naturalphilosophy:block/permafrost_snowy"
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_snowy",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_snowy",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/permafrost_snowy",
+        "y": 270
+      }
+    ]
+  }
+}
