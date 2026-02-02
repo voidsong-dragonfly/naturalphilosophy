@@ -61,6 +61,7 @@ public class RootBallRootPlacer extends RootPlacer {
     ) {
         // Variables used repeatedly
         int radius = placement.rootRadius;
+        int offset = placement.megaOffset;
         MutableBlockPos mutablePos = pos.mutable();
         // Place the roots up until the final block
         for (int k = 2; k <= placement.rootColumnMaxDepth; k++) {
@@ -73,7 +74,7 @@ public class RootBallRootPlacer extends RootPlacer {
             // Place this lever's root set
             for (int j = 0; j < placement.rootPlacementAttempts; j++) {
                 // New root position & placement
-                mutablePos.setWithOffset(pos, random.nextInt(radius) - random.nextInt(radius), -k, random.nextInt(radius) - random.nextInt(radius));
+                mutablePos.setWithOffset(pos, random.nextInt(radius+offset) - random.nextInt(radius), -k, random.nextInt(radius+offset) - random.nextInt(radius));
                 if (level.isStateAtPosition(mutablePos, state -> state.is(placement.canGrowThrough()))) {
                     blockSetter.accept(mutablePos.immutable(), rootProvider.getState(random, mutablePos));
                 }
@@ -94,12 +95,13 @@ public class RootBallRootPlacer extends RootPlacer {
 
     private void placeHangingRoots(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, BlockPos basePos, MutableBlockPos mutablePos) {
         int radius = placement.rootRadius;
+        int offset = placement.megaOffset;
         for (int k = 0; k < placement.hangingRootPlacementAttempts; k++) {
             mutablePos.setWithOffset(
                 basePos,
-                random.nextInt(radius) - random.nextInt(radius),
+                random.nextInt(radius+offset) - random.nextInt(radius),
                 random.nextInt(2) - random.nextInt(2),
-                random.nextInt(radius) - random.nextInt(radius)
+                random.nextInt(radius+offset) - random.nextInt(radius)
             );
             if (level.isStateAtPosition(mutablePos, IBlockStateExtension::isEmpty)) {
                 BlockState state = placement.hangingRootStateProvider.getState(random, mutablePos);
@@ -117,7 +119,8 @@ public class RootBallRootPlacer extends RootPlacer {
         int rootPlacementAttempts,
         BlockStateProvider hangingRootStateProvider,
         HolderSet<Block> canHangRootsFrom,
-        int hangingRootPlacementAttempts) {
+        int hangingRootPlacementAttempts,
+        int megaOffset) {
 
         public static final Codec<RootBallPlacement> CODEC = RecordCodecBuilder.create(
             instance -> instance.group(
@@ -127,7 +130,8 @@ public class RootBallRootPlacer extends RootPlacer {
                     Codec.intRange(1, 256).fieldOf("root_placement_attempts").forGetter(placement -> placement.rootPlacementAttempts),
                     BlockStateProvider.CODEC.fieldOf("hanging_root_state_provider").forGetter(placement -> placement.hangingRootStateProvider),
                     RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("can_hang_roots_from").forGetter(placement -> placement.canHangRootsFrom),
-                    Codec.intRange(1, 256).fieldOf("hanging_root_placement_attempts").forGetter(placement -> placement.hangingRootPlacementAttempts)
+                    Codec.intRange(1, 256).fieldOf("hanging_root_placement_attempts").forGetter(placement -> placement.hangingRootPlacementAttempts),
+                    Codec.intRange(0, 2).optionalFieldOf("mega_offset", 0).forGetter(placement -> placement.megaOffset)
                 ).apply(instance, RootBallPlacement::new)
         );
 
