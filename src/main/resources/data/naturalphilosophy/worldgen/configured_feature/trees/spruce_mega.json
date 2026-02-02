@@ -16,7 +16,7 @@
       "root_ball_placement": {
         "root_radius": 4,
         "root_depth": 8,
-        "root_placement_attempts": 16,
+        "root_placement_attempts": 24,
         "can_grow_through": "#naturalphilosophy:dirt",
         "hanging_root_state_provider": {
           "type": "minecraft:simple_state_provider",
@@ -27,7 +27,7 @@
         "can_hang_roots_from": [
           "minecraft:rooted_dirt"
         ],
-        "hanging_root_placement_attempts": 36,
+        "hanging_root_placement_attempts": 64,
         "mega_offset": 1
       }
     },
