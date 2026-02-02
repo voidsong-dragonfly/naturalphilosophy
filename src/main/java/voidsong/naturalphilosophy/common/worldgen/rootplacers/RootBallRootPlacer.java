@@ -7,11 +7,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
@@ -28,13 +32,16 @@ import java.util.function.BiConsumer;
 public class RootBallRootPlacer extends RootPlacer {
     public static final MapCodec<RootBallRootPlacer> CODEC = RecordCodecBuilder.mapCodec(
         instance -> rootPlacerParts(instance)
+            .and(GroundAmendment.CODEC.optionalFieldOf("ground_amendment", new GroundAmendment(BlockTags.DIRT, BlockStateProvider.simple(Blocks.DIRT))).forGetter(placer -> placer.amendment))
             .and(RootBallPlacement.CODEC.fieldOf("root_ball_placement").forGetter(placer -> placer.placement))
             .apply(instance, RootBallRootPlacer::new)
     );
+    public final GroundAmendment amendment;
     public final RootBallPlacement placement;
 
-    public RootBallRootPlacer(IntProvider trunkOffset, BlockStateProvider rootProvider, Optional<AboveRootPlacement> aboveRootPlacement, RootBallPlacement rootPlacement) {
+    public RootBallRootPlacer(IntProvider trunkOffset, BlockStateProvider rootProvider, Optional<AboveRootPlacement> aboveRootPlacement, GroundAmendment amendment, RootBallPlacement rootPlacement) {
         super(trunkOffset, rootProvider, aboveRootPlacement);
+        this.amendment = amendment;
         this.placement = rootPlacement;
     }
 
@@ -76,7 +83,24 @@ public class RootBallRootPlacer extends RootPlacer {
                 // New root position & placement
                 mutablePos.setWithOffset(pos, random.nextInt(radius+offset) - random.nextInt(radius), -k, random.nextInt(radius+offset) - random.nextInt(radius));
                 if (level.isStateAtPosition(mutablePos, state -> state.is(placement.canGrowThrough()))) {
-                    blockSetter.accept(mutablePos.immutable(), rootProvider.getState(random, mutablePos));
+                    // We do not go through RootPlacer#placeRoot here because we don't want to process above-root placements for fully underground roots,
+                    // And I want to be able to use this in MegaRootPlacer, which does override to use a second block type
+                    // I don't care if this is slightly off-convention, it works just fine and this adapted from a Feature anyway
+                    blockSetter.accept(mutablePos.immutable(), getPotentiallyWaterloggedState(level, mutablePos, rootProvider.getState(random, mutablePos)));
+                }
+            }
+            // Check to see if we have any ground blocks that need amendment after roots
+            if (offset > 0 && k == 2) {
+                for (int x = 0; x <= offset; x++) {
+                    for (int z = 0; z <= offset; z++) {
+                        // Set position to check
+                        mutablePos.setWithOffset(pos, x, -k, z);
+                        // Check if we can place
+                        if (level.isStateAtPosition(mutablePos, state -> (state.canBeReplaced() || state.is(amendment.canReplace) && !state.equals(rootProvider.getState(random, mutablePos))))) {
+                            // See below comment (L93) on the reasoning behind this placement method
+                            blockSetter.accept(mutablePos.immutable(), getPotentiallyWaterloggedState(level, mutablePos, amendment.groundProvider.getState(random, mutablePos)));
+                        }
+                    }
                 }
             }
         }
@@ -90,7 +114,7 @@ public class RootBallRootPlacer extends RootPlacer {
 
     @Override
     protected boolean canPlaceRoot(@Nonnull LevelSimulatedReader level, @Nonnull BlockPos pos) {
-        return super.canPlaceRoot(level, pos) || level.isStateAtPosition(pos, state -> state.is(placement.canGrowThrough()));
+        return super.canPlaceRoot(level, pos) || level.isStateAtPosition(pos, state -> state.is(placement.canGrowThrough())) || level.isStateAtPosition(pos, state -> state.is(amendment.canReplace));
     }
 
     private void placeHangingRoots(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, BlockPos basePos, MutableBlockPos mutablePos) {
@@ -110,6 +134,17 @@ public class RootBallRootPlacer extends RootPlacer {
                 }
             }
         }
+    }
+
+    public record GroundAmendment(TagKey<Block> canReplace, BlockStateProvider groundProvider) {
+        // We use TagKey here rather than HomogeneousList so it's possible to default-case this to dirt
+        public static final Codec<GroundAmendment> CODEC = RecordCodecBuilder.create(
+            instance -> instance.group(
+                TagKey.codec(BuiltInRegistries.BLOCK.key()).fieldOf("can_replace").forGetter(placement -> placement.canReplace),
+                BlockStateProvider.CODEC.fieldOf("ground_provider").forGetter(placement -> placement.groundProvider)
+            ).apply(instance, GroundAmendment::new)
+        );
+
     }
 
     public record RootBallPlacement(
