@@ -82,10 +82,10 @@ public class RootBallRootPlacer extends RootPlacer {
             for (int j = 0; j < placement.rootPlacementAttempts; j++) {
                 // New root position & placement
                 mutablePos.setWithOffset(pos, random.nextInt(radius+offset) - random.nextInt(radius), -k, random.nextInt(radius+offset) - random.nextInt(radius));
+                // We do not go through RootPlacer#placeRoot here because we want an exact match and not to place above-root placements.
+                // This root placer is closer to a secondary feature than a root placer such as MegaRootPlacer or MangroveRootPlacer
+                // Going through RootPlacer#canPlaceRoot would also block it off from classes that extend this, such as MegaRootPlacer
                 if (level.isStateAtPosition(mutablePos, state -> state.is(placement.canGrowThrough()))) {
-                    // We do not go through RootPlacer#placeRoot here because we don't want to process above-root placements for fully underground roots,
-                    // And I want to be able to use this in MegaRootPlacer, which does override to use a second block type
-                    // I don't care if this is slightly off-convention, it works just fine and this adapted from a Feature anyway
                     blockSetter.accept(mutablePos.immutable(), getPotentiallyWaterloggedState(level, mutablePos, rootProvider.getState(random, mutablePos)));
                 }
             }
@@ -95,9 +95,8 @@ public class RootBallRootPlacer extends RootPlacer {
                     for (int z = 0; z <= offset; z++) {
                         // Set position to check
                         mutablePos.setWithOffset(pos, x, -k, z);
-                        // Check if we can place
+                        // Check if we can place;  See above comment (L85) on the reasoning behind this placement method
                         if (level.isStateAtPosition(mutablePos, state -> (state.canBeReplaced() || state.is(amendment.canReplace) && !state.equals(rootProvider.getState(random, mutablePos))))) {
-                            // See below comment (L93) on the reasoning behind this placement method
                             blockSetter.accept(mutablePos.immutable(), getPotentiallyWaterloggedState(level, mutablePos, amendment.groundProvider.getState(random, mutablePos)));
                         }
                     }
@@ -110,11 +109,6 @@ public class RootBallRootPlacer extends RootPlacer {
         }
 
         return true;
-    }
-
-    @Override
-    protected boolean canPlaceRoot(@Nonnull LevelSimulatedReader level, @Nonnull BlockPos pos) {
-        return super.canPlaceRoot(level, pos) || level.isStateAtPosition(pos, state -> state.is(placement.canGrowThrough())) || level.isStateAtPosition(pos, state -> state.is(amendment.canReplace));
     }
 
     private void placeHangingRoots(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, BlockPos basePos, MutableBlockPos mutablePos) {

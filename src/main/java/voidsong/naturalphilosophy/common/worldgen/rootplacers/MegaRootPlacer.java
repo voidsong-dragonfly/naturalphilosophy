@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
 import net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacerType;
@@ -93,6 +94,8 @@ public class MegaRootPlacer extends RootBallRootPlacer {
             mutable.move(Direction.UP);
         }
 
+        list.add(trunkOrigin.below());
+
         for (Pair<Vec3i, Direction> pair : rootLocations) {
             int offset = trunkOffsetY.sample(random);
             if(offset > 0) {
@@ -132,7 +135,7 @@ public class MegaRootPlacer extends RootBallRootPlacer {
 
     /**
      * This method is adapted from {@link net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacer}
-     * It is similar, but uses the surfaceRootProvider and checks the canGrowThrough of surface roots
+     * It is similar, but uses the surfaceRootProvider and checks canPlaceSurfaceRoot
      */
     @Override
     protected void placeRoot(
@@ -142,7 +145,7 @@ public class MegaRootPlacer extends RootBallRootPlacer {
         @Nonnull BlockPos pos,
         @Nonnull TreeConfiguration treeConfig
     ) {
-        if (level.isStateAtPosition(pos, state -> state.is(surfaceRootPlacement.canGrowThrough))) {
+        if (canPlaceRoot(level, pos)) {
             blockSetter.accept(pos, this.getPotentiallyWaterloggedState(level, pos, this.surfaceRootProvider.getState(random, pos)));
             if (this.aboveRootPlacement.isPresent()) {
                 AboveRootPlacement aboverootplacement = this.aboveRootPlacement.get();
