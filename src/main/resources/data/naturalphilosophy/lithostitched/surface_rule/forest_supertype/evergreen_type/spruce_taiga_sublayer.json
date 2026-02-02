@@ -8,22 +8,11 @@
     }
   },
   "lower_noise_thresholds": [
-     0.375,
-    -0.375,
+     0.125,
+    -0.175,
     -1E308
   ],
   "ruleset": [
-    {
-      "type": "naturalphilosophy:random_threshold_selector",
-      "random_name": "surface_randomness",
-      "default_state": {
-        "Name": "minecraft:dirt"
-      },
-      "lower_random_thresholds": [ 0.15 ],
-      "state_set": [{
-        "Name": "minecraft:rooted_dirt"
-      }]
-    },
     {
       "type": "minecraft:block",
       "result_state": {
@@ -36,10 +25,16 @@
       "default_state": {
         "Name": "minecraft:dirt"
       },
-      "lower_random_thresholds": [ 0.15 ],
+      "lower_random_thresholds": [ 0.70 ],
       "state_set": [{
-        "Name": "minecraft:rooted_dirt"
+        "Name": "minecraft:coarse_dirt"
       }]
+    },
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:dirt"
+      }
     }
   ]
 }
