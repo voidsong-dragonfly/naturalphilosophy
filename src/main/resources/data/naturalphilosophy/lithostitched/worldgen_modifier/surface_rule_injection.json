@@ -324,15 +324,8 @@
                   ]
                 },
                 "then_run": {
-                  "type": "naturalphilosophy:random_threshold_selector",
-                  "random_name": "surface_randomness",
-                  "default_state": {
-                    "Name": "minecraft:dirt"
-                  },
-                  "lower_random_thresholds": [ 0.15 ],
-                  "state_set": [{
-                    "Name": "minecraft:rooted_dirt"
-                  }]
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/pine_taiga_sublayer"
                 }
               },
               {

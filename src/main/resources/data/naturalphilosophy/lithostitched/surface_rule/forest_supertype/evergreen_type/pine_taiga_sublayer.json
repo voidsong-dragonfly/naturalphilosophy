@@ -4,7 +4,7 @@
   "default_rule": {
     "type": "minecraft:block",
     "result_state": {
-      "Name": "minecraft:podzol"
+      "Name": "minecraft:dirt"
     }
   },
   "lower_noise_thresholds": [
@@ -16,19 +16,24 @@
     {
       "type": "minecraft:block",
       "result_state": {
-        "Name": "minecraft:podzol"
+        "Name": "minecraft:dirt"
       }
     },
     {
-      "type": "minecraft:block",
-      "result_state": {
+      "type": "naturalphilosophy:random_threshold_selector",
+      "random_name": "surface_randomness",
+      "default_state": {
+        "Name": "minecraft:dirt"
+      },
+      "lower_random_thresholds": [ 0.30 ],
+      "state_set": [{
         "Name": "minecraft:coarse_dirt"
-      }
+      }]
     },
     {
       "type": "minecraft:block",
       "result_state": {
-        "Name": "minecraft:podzol"
+        "Name": "minecraft:dirt"
       }
     }
   ]
