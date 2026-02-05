@@ -1,0 +1,35 @@
+{
+  "type": "naturalphilosophy:noise_threshold_selector",
+  "noise": "minecraft:surface_secondary",
+  "default_rule": {
+    "type": "minecraft:block",
+    "result_state": {
+      "Name": "minecraft:grass_block"
+    }
+  },
+  "lower_noise_thresholds": [
+     0.3125,
+    -0.375,
+    -1E308
+  ],
+  "ruleset": [
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "naturalphilosophy:alfizol"
+      }
+    },
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:grass_block"
+      }
+    },
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "naturalphilosophy:alfizol"
+      }
+    }
+  ]
+}
