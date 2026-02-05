@@ -131,11 +131,6 @@
                   "rules": "naturalphilosophy:forest_supertype/deciduous_type/sparse_forest_surface"
                 }
               },
-
-
-
-
-
               {
                 "type": "minecraft:condition",
                 "if_true": {
@@ -148,6 +143,39 @@
                 }
               },
               {
+                "_comment": "Full cover non-rainforests. Small clearings dot the surface. Will have similar sublayers.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:forest",
+                    "minecraft:sparse_jungle"
+                  ]
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:grass_block"
+                    }
+                  },
+                  "lower_noise_thresholds": [ -0.375 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "naturalphilosophy:alfizol"
+                    }
+                  }]
+                }
+              },
+
+
+
+
+
+              {
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -158,19 +186,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:forest_supertype/deciduous_type/dark_forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/forest_surface"
                 }
               },
               {
@@ -197,19 +212,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:forest_supertype/jungle_type/jungle_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:sparse_jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/sparse_jungle_surface"
                 }
               },
               {
@@ -248,9 +250,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:cherry_grove"
-                  ]
+                  "biome_is": [ "minecraft:cherry_grove" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -293,9 +293,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:grove"
-                  ]
+                  "biome_is": [ "minecraft:grove" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -346,6 +344,50 @@
                   "rules": "naturalphilosophy:forest_supertype/deciduous_type/sparse_forest_sublayer"
                 }
               },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:old_growth_birch_forest" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_forest_sublayer"
+                }
+              },
+              {
+                "_comment": "Full cover non-rainforests. Coarse dirt under the sparse clearings.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:forest",
+                    "minecraft:sparse_jungle"
+                  ]
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "naturalphilosophy:random_threshold_selector",
+                    "random_name": "surface_randomness",
+                    "default_state": {
+                      "Name": "minecraft:dirt"
+                    },
+                    "lower_random_thresholds": [ 0.70 ],
+                    "state_set": [{
+                      "Name": "minecraft:coarse_dirt"
+                    }]
+                  },
+                  "lower_noise_thresholds": [ -0.375 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:dirt"
+                    }
+                  }]
+                }
+              },
 
 
 
@@ -362,32 +404,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:forest_supertype/deciduous_type/dark_forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_birch_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_forest_sublayer"
                 }
               },
               {
@@ -414,34 +430,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:forest_supertype/jungle_type/jungle_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:sparse_jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/sparse_jungle_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:snowy_plains"
-                  ]
-                },
-                "then_run":  {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:dirt"
-                  }
                 }
               },
               {

@@ -183,3 +183,4 @@ Current work items:
         => then swamps
         => then ocean biomes, possibly. may start with stony shore?
     add a second pass to forests to make vegetation cluster more around breaks in the canopy and less common under it
+    old growth birch forests need something for cliffs
