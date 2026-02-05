@@ -33,6 +33,7 @@ public class NPItems {
     public static final DeferredItem<BlockItem> BASALTIC_MINERAL_SAND_ITEM = ITEMS.registerSimpleBlockItem("basaltic_mineral_sand", NPBlocks.BASALTIC_MINERAL_SAND);
     public static final DeferredItem<BlockItem> SANDY_MYCELIUM_ITEM = ITEMS.registerSimpleBlockItem("sandy_mycelium", NPBlocks.SANDY_MYCELIUM);
     public static final DeferredItem<BlockItem> PERMAFROST_ITEM = ITEMS.registerSimpleBlockItem("permafrost", NPBlocks.PERMAFROST);
+    public static final DeferredItem<BlockItem> ALFIZOL_ITEM = ITEMS.registerSimpleBlockItem("alfizol", NPBlocks.ALFIZOL);
 
     // Creates a creative tab for the mod & adds all Natural Philosophy items to the tab
     @SuppressWarnings("unused")
@@ -52,5 +53,6 @@ public class NPItems {
             output.accept(BASALTIC_MINERAL_SAND_ITEM);
             output.accept(SANDY_MYCELIUM_ITEM);
             output.accept(PERMAFROST_ITEM);
+            output.accept(ALFIZOL_ITEM);
         }).build());
 }

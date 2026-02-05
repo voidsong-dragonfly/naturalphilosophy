@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.CoralFanBlock;
 import net.minecraft.world.level.block.CoralPlantBlock;
 import net.minecraft.world.level.block.CoralWallFanBlock;
+import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -144,4 +145,9 @@ public class NPBlocks {
             .randomTicks()
             .strength(2.8F)
             .sound(SoundType.STONE));
+    public static final DeferredBlock<Block> ALFIZOL = BLOCKS.registerBlock("alfizol", SnowyDirtBlock::new,
+        BlockBehaviour.Properties.of()
+            .randomTicks()
+            .strength(0.6F)
+            .sound(SoundType.GRASS));
 }
