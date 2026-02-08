@@ -188,6 +188,21 @@
                   }
                 }
               },
+              {
+                "_comment": "Swampy biomes with significant surface water coverage near sea level. Will have similar sublayers.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:swamp",
+                    "minecraft:mangrove_swamp"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/wetland_type/swamp_surface"
+                }
+              },
 
 
 
@@ -205,20 +220,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:water_supertype/shore_type/stony_shore_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:swamp",
-                    "minecraft:mangrove_swamp"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/wetland_type/swamp_surface"
                 }
               }
             ]
@@ -417,6 +418,21 @@
                   }]
                 }
               },
+              {
+                "_comment": "Swampy biomes with significant surface water coverage near sea level and large amounts of clay.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:swamp",
+                    "minecraft:mangrove_swamp"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/wetland_type/swamp_sublayer"
+                }
+              },
 
 
 
@@ -433,20 +449,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:water_supertype/shore_type/stony_shore_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:swamp",
-                    "minecraft:mangrove_swamp"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/wetland_type/swamp_sublayer"
                 }
               }
             ]

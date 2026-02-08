@@ -32,15 +32,10 @@
   ],
   "ruleset": [
     {
-      "type": "naturalphilosophy:random_threshold_selector",
-      "random_name": "surface_randomness",
-      "default_state": {
+      "type": "minecraft:block",
+      "result_state": {
         "Name": "minecraft:grass_block"
-      },
-      "lower_random_thresholds": [ 0.80 ],
-      "state_set": [{
-        "Name": "minecraft:mud"
-      }]
+      }
     },
     {
       "type": "naturalphilosophy:noise_threshold_selector",
@@ -97,14 +92,14 @@
           "default_rule": {
             "type": "minecraft:block",
             "result_state": {
-              "Name": "minecraft:grass_block"
+              "Name": "minecraft:mud"
             }
           },
           "lower_noise_thresholds": [ -0.25 ],
           "ruleset": [{
             "type": "minecraft:block",
             "result_state": {
-              "Name": "minecraft:mud"
+              "Name": "naturalphilosophy:grassy_clay_horizon"
               }
           }]
         },
@@ -117,37 +112,19 @@
               "Name": "minecraft:mud"
             }
           },
-          "lower_noise_thresholds": [
-             0.375,
-            -1.25,
-            -3.0
-          ],
-          "ruleset": [
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "naturalphilosophy:flat_liquid"
-              },
-              "then_run": {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:water"
-                }
-              }
+          "lower_noise_thresholds": [ 0.375 ],
+          "ruleset": [{
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "naturalphilosophy:flat_liquid"
             },
-            {
+            "then_run": {
               "type": "minecraft:block",
               "result_state": {
-                "Name": "minecraft:mud"
-              }
-            },
-            {
-              "type": "minecraft:block",
-              "result_state": {
-                "Name": "minecraft:grass_block"
+                "Name": "minecraft:water"
               }
             }
-          ]
+          }]
         },
         {
           "type": "naturalphilosophy:noise_threshold_selector",
