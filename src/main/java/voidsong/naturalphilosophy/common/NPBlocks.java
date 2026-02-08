@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.CoralFanBlock;
 import net.minecraft.world.level.block.CoralPlantBlock;
 import net.minecraft.world.level.block.CoralWallFanBlock;
+import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -151,6 +152,13 @@ public class NPBlocks {
             .sound(SoundType.STONE));
     public static final DeferredBlock<Block> ALFIZOL = BLOCKS.registerBlock("alfizol", SnowyDirtBlock::new,
         BlockBehaviour.Properties.of()
+            .mapColor(MapColor.DIRT)
+            .randomTicks()
+            .strength(0.6F)
+            .sound(SoundType.GRASS));
+    public static final DeferredBlock<Block> GRASSY_CLAY_HORIZON = BLOCKS.registerBlock("grassy_clay_horizon", GrassBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.GRASS)
             .randomTicks()
             .strength(0.6F)
             .sound(SoundType.GRASS));

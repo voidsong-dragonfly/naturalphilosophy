@@ -21,7 +21,7 @@ public class ColorHandler {
         // Gasworks blocks to register, such as Dune Grass
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
-            NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get());
+            NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get(), NPBlocks.GRASSY_CLAY_HORIZON.get());
         // Vanilla blocks we add color to, such as bushes
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
@@ -33,6 +33,6 @@ public class ColorHandler {
         // Gasworks blocks to register, such as Dune Grass
         event.register((stack, tintIndex) ->
             tintIndex == 0 ? GrassColor.get(0.5D, 1.0D) : 0xFFFFFFFF,
-            NPItems.DUNE_GRASS_ITEM.value());
+            NPItems.DUNE_GRASS_ITEM, NPItems.GRASS_CLAY_HORIZON_ITEM);
     }
 }
