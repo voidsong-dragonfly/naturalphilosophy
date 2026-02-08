@@ -1,50 +1,50 @@
 {
-	"ambientocclusion": false,
-	"textures": {
-		"cross": "minecraft:block/red_mushroom",
-		"cross_tall": "minecraft:block/red_mushroom_tall",
-		"particle": "#cross"
-	},
-	"elements": [
-		{
-			"from": [4.8, 0, 12],
-			"to": [19.2, 16, 12],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [12, 8, 12], "rescale": true},
-			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"}
-			}
-		},
-		{
-			"from": [12, 0, 4.8],
-			"to": [12, 16, 19.2],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [12, 8, 12], "rescale": true},
-			"faces": {
-				"east": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"}
-			}
-		},
-		{
-			"from": [4, 0, 2.8],
-			"to": [4, 16, 17.2],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [4, 8, 10], "rescale": true},
-			"faces": {
-				"east": {"uv": [0, 0, 16, 16], "texture": "#cross"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#cross"}
-			}
-		},
-		{
-			"from": [-3.2, 0, 10],
-			"to": [11.2, 16, 10],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [4, 8, 10], "rescale": true},
-			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#cross"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#cross"}
-			}
+  "ambientocclusion": false,
+  "textures": {
+    "cross": "minecraft:block/red_mushroom",
+    "cross_tall": "minecraft:block/red_mushroom_tall",
+    "particle": "#cross"
+  },
+  "elements": [
+    {
+      "from": [4.8, 0, 12],
+      "to": [19.2, 16, 12],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [12, 8, 12], "rescale": true},
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"}
+      }
+    },
+    {
+      "from": [12, 0, 4.8],
+      "to": [12, 16, 19.2],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [12, 8, 12], "rescale": true},
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#cross_tall"}
+      }
+    },
+    {
+      "from": [4, 0, 2.8],
+      "to": [4, 16, 17.2],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [4, 8, 10], "rescale": true},
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "#cross"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#cross"}
+      }
+    },
+    {
+      "from": [-3.2, 0, 10],
+      "to": [11.2, 16, 10],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [4, 8, 10], "rescale": true},
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#cross"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#cross"}
+    	}
 		},
 		{
 			"from": [11, 0, -3.2],
