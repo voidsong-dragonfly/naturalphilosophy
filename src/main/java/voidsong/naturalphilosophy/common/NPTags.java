@@ -14,6 +14,7 @@ public class NPTags {
         public static final TagKey<Block> WIDE_PLANTS = tag("wide_plants");
         public static final TagKey<Block> MELTS_PERMAFROST = tag("melts_permafrost");
         public static final TagKey<Block> FREEZES_PERMAFROST = tag("freezes_permafrost");
+        public static final TagKey<Block> GIANT_BAMBOO_PLANTABLE_ON = tag("giant_bamboo_plantable_on");
 
         private static TagKey<Block> tag(@Nonnull String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NaturalPhilosophy.MODID, name));

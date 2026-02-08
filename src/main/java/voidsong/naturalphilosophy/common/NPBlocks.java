@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.BaseCoralFanBlock;
 import net.minecraft.world.level.block.BaseCoralPlantBlock;
 import net.minecraft.world.level.block.BaseCoralWallFanBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.CoralFanBlock;
 import net.minecraft.world.level.block.CoralPlantBlock;
@@ -19,6 +20,9 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.blocks.DuneGrass;
+import voidsong.naturalphilosophy.common.blocks.GiantBambooLeavesBlock;
+import voidsong.naturalphilosophy.common.blocks.GiantBambooSaplingBlock;
+import voidsong.naturalphilosophy.common.blocks.GiantBambooStalkBlock;
 import voidsong.naturalphilosophy.common.blocks.MycelialGrowthBlock;
 import voidsong.naturalphilosophy.common.blocks.PermafrostBlock;
 import voidsong.naturalphilosophy.common.blocks.RedAlgaeBlock;
@@ -150,4 +154,41 @@ public class NPBlocks {
             .randomTicks()
             .strength(0.6F)
             .sound(SoundType.GRASS));
+    public static final DeferredBlock<Block> GIANT_BAMBOO_SAPLING = BLOCKS.registerBlock("giant_bamboo_sapling", GiantBambooSaplingBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .forceSolidOn()
+            .randomTicks()
+            .noCollission()
+            .strength(1.5F)
+            .sound(SoundType.BAMBOO_SAPLING)
+            .ignitedByLava()
+            .pushReaction(PushReaction.DESTROY)
+    );
+    public static final DeferredBlock<Block> GIANT_BAMBOO = BLOCKS.registerBlock("giant_bamboo", GiantBambooStalkBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .forceSolidOn()
+            .randomTicks()
+            .strength(1.5F)
+            .sound(SoundType.BAMBOO)
+            .noOcclusion()
+            .dynamicShape()
+            .ignitedByLava()
+            .pushReaction(PushReaction.DESTROY)
+            .isRedstoneConductor((a, b, c) -> false));
+    public static final DeferredBlock<Block> GIANT_BAMBOO_LEAVES = BLOCKS.registerBlock("giant_bamboo_leaves", GiantBambooLeavesBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .strength(0.2F)
+            .randomTicks()
+            .sound(SoundType.GRASS)
+            .noOcclusion()
+            .isValidSpawn(Blocks::ocelotOrParrot)
+            .isSuffocating((a, b, c) -> false)
+            .isViewBlocking((a, b, c) -> false)
+            .ignitedByLava()
+            .pushReaction(PushReaction.DESTROY)
+            .isRedstoneConductor((a, b, c) -> false)
+    );
 }

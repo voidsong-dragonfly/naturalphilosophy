@@ -1,0 +1,58 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thin_1"
+        },
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thin_2"
+        },
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thin_3"
+        },
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thin_4"
+        }
+      ],
+      "when": {
+        "age": "0"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thick_1"
+        },
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thick_2"
+        },
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thick_3"
+        },
+        {
+          "model": "naturalphilosophy:block/giant_bamboo/stalk_thick_4"
+        }
+      ],
+      "when": {
+        "age": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "naturalphilosophy:block/giant_bamboo/small_leaves"
+      },
+      "when": {
+        "leaves": "small"
+      }
+    },
+    {
+      "apply": {
+        "model": "naturalphilosophy:block/giant_bamboo/large_leaves"
+      },
+      "when": {
+        "leaves": "large"
+      }
+    }
+  ]
+}

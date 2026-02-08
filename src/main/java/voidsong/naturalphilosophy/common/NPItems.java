@@ -34,6 +34,9 @@ public class NPItems {
     public static final DeferredItem<BlockItem> SANDY_MYCELIUM_ITEM = ITEMS.registerSimpleBlockItem("sandy_mycelium", NPBlocks.SANDY_MYCELIUM);
     public static final DeferredItem<BlockItem> PERMAFROST_ITEM = ITEMS.registerSimpleBlockItem("permafrost", NPBlocks.PERMAFROST);
     public static final DeferredItem<BlockItem> ALFIZOL_ITEM = ITEMS.registerSimpleBlockItem("alfizol", NPBlocks.ALFIZOL);
+    public static final DeferredItem<BlockItem> GIANT_BAMBOO_SAPLING_ITEM = ITEMS.registerSimpleBlockItem("giant_bamboo_sapling", NPBlocks.GIANT_BAMBOO_SAPLING);
+    public static final DeferredItem<BlockItem> GIANT_BAMBOO_LEAVES_ITEM = ITEMS.registerSimpleBlockItem("giant_bamboo_leaves", NPBlocks.GIANT_BAMBOO_LEAVES);
+    public static final DeferredItem<Item> GIANT_BAMBOO = ITEMS.registerSimpleItem("giant_bamboo");
 
     // Creates a creative tab for the mod & adds all Natural Philosophy items to the tab
     @SuppressWarnings("unused")
@@ -54,5 +57,8 @@ public class NPItems {
             output.accept(SANDY_MYCELIUM_ITEM);
             output.accept(PERMAFROST_ITEM);
             output.accept(ALFIZOL_ITEM);
+            output.accept(GIANT_BAMBOO_SAPLING_ITEM);
+            output.accept(GIANT_BAMBOO_LEAVES_ITEM);
+            output.accept(GIANT_BAMBOO);
         }).build());
 }
