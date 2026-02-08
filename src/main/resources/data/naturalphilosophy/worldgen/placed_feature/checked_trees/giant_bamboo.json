@@ -1,0 +1,17 @@
+{
+  "feature": "naturalphilosophy:trees/giant_bamboo",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "naturalphilosophy:giant_bamboo_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

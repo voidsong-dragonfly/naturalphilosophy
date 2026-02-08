@@ -39,11 +39,7 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_fluids",
-          "offset": [
-            0,
-            2,
-            0
-          ],
+          "offset": [0, 2, 0],
           "fluids": "#minecraft:water"
         }
       }

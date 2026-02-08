@@ -33,12 +33,23 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_fluids",
-          "offset": [
-            0,
-            2,
-            0
-          ],
+          "offset": [0, 2, 0],
           "fluids": "#minecraft:water"
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "naturalphilosophy:any_in_range",
+          "start_offset": [-1, -4, -1],
+          "end_offset": [1, -2, 1],
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [ "minecraft:coarse_dirt" ]
+          }
         }
       }
     },

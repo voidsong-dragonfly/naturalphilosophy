@@ -39,11 +39,7 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_fluids",
-          "offset": [
-            0,
-            2,
-            0
-          ],
+          "offset": [0, 2, 0],
           "fluids": "#minecraft:water"
         }
       }
@@ -53,13 +49,13 @@
       "predicate": {
         "type": "minecraft:not",
         "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            -1,
-            0
-          ],
-          "blocks": "minecraft:grass_block"
+          "type": "naturalphilosophy:any_in_range",
+          "start_offset": [0, -4, 0],
+          "end_offset": [1, -2, 1],
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [ "minecraft:coarse_dirt" ]
+          }
         }
       }
     },

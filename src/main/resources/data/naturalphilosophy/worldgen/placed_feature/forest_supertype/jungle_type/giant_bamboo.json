@@ -1,0 +1,35 @@
+{
+  "feature": "naturalphilosophy:trees/giant_bamboo",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 64
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "naturalphilosophy:any_in_range",
+        "start_offset": [-1, -4, -1],
+        "end_offset": [1, -2, 1],
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": [ "minecraft:coarse_dirt" ]
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

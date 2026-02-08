@@ -170,50 +170,30 @@
                   }]
                 }
               },
-
-
-
-
-
               {
+                "_comment": "Rainforest with entirely alfizol surfaces. Will not have the same sublayer.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:dark_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/dark_forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
+                    "minecraft:dark_forest",
+                    "minecraft:jungle",
                     "minecraft:bamboo_jungle"
                   ]
                 },
                 "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/bamboo_jungle_surface"
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "naturalphilosophy:alfizol"
+                  }
                 }
               },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/jungle_surface"
-                }
-              },
+
+
+
+
+
+
               {
                 "type": "minecraft:condition",
                 "if_true": {
@@ -388,25 +368,25 @@
                   }]
                 }
               },
-
-
-
-
-
               {
+                "_comment": "Rainforest with entirely dirt sublayers.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:dark_forest"
+                    "minecraft:dark_forest",
+                    "minecraft:jungle"
                   ]
                 },
                 "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/dark_forest_sublayer"
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:dirt"
+                  }
                 }
               },
               {
+                "_comment": "Bamboo rainforests. Coarse dirt under the bamboo forests.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -415,23 +395,33 @@
                   ]
                 },
                 "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/bamboo_jungle_sublayer"
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "naturalphilosophy:random_threshold_selector",
+                    "random_name": "surface_randomness",
+                    "default_state": {
+                      "Name": "minecraft:dirt"
+                    },
+                    "lower_random_thresholds": [ 0.70 ],
+                    "state_set": [{
+                      "Name": "minecraft:coarse_dirt"
+                    }]
+                  },
+                  "lower_noise_thresholds": [ 0.0 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:dirt"
+                    }
+                  }]
                 }
               },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/jungle_sublayer"
-                }
-              },
+
+
+
+
+
               {
                 "type": "minecraft:condition",
                 "if_true": {
