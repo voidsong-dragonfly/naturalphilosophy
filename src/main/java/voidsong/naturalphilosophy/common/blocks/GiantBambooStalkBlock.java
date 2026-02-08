@@ -220,6 +220,7 @@ public class GiantBambooStalkBlock extends Block implements BonemealableBlock {
                 level.setBlockAndUpdate(bottom.relative(direction), NPBlocks.GIANT_BAMBOO_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1));
             }
             // Properly update the leaf sizing for the bamboo below
+            level.setBlock(pos.below(1), below.setValue(LEAVES, BambooLeaves.LARGE), 3);
             level.setBlock(pos.below(2), below.setValue(LEAVES, BambooLeaves.LARGE), 3);
             level.setBlock(pos.below(3), below.setValue(LEAVES, BambooLeaves.SMALL), 3);
         }
