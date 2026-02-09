@@ -1,12 +1,12 @@
 {
-  "feature": "naturalphilosophy:trees/oak_shrub",
+  "feature": "naturalphilosophy:trees/flowering_azalea",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "minecraft:oak_sapling",
+          "Name": "minecraft:azalea",
           "Properties": {
             "stage": "0"
           }

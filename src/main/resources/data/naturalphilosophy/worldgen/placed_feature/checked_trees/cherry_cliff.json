@@ -1,12 +1,12 @@
 {
-  "feature": "naturalphilosophy:trees/flowering_azalea_shrub_cliff",
+  "feature": "naturalphilosophy:trees/cherry_cliff",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "minecraft:azalea",
+          "Name": "minecraft:cherry_sapling",
           "Properties": {
             "stage": "0"
           }
