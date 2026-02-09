@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.CoralWallFanBlock;
 import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -198,5 +199,16 @@ public class NPBlocks {
             .ignitedByLava()
             .pushReaction(PushReaction.DESTROY)
             .isRedstoneConductor((a, b, c) -> false)
+    );
+    public static final DeferredBlock<Block> LARGE_BUSH = BLOCKS.registerBlock("large_bush", TallFlowerBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .noCollission()
+            .sound(SoundType.GRASS)
+            .offsetType(BlockBehaviour.OffsetType.XZ)
+            .ignitedByLava()
+            .speedFactor(0.01F)
+            .strength(0.3f)
+            .pushReaction(PushReaction.DESTROY)
     );
 }

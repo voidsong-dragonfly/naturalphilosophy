@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "half=lower": [
+      {
+        "model": "naturalphilosophy:block/bush/base_large"
+      },
+      {
+        "model": "naturalphilosophy:block/bush/base_medium"
+      }
+    ],
+    "half=upper": {
+      "model": "naturalphilosophy:block/bush/empty"
+    }
+  }
+}

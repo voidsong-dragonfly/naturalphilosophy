@@ -1,6 +1,7 @@
 package voidsong.naturalphilosophy.client;
 
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
@@ -18,10 +19,13 @@ public class ColorHandler {
 
     @SubscribeEvent
     public static void handleGrassColors(RegisterColorHandlersEvent.Block event) {
-        // Gasworks blocks to register, such as Dune Grass
+        // Natural Philosophy blocks to register, such as Dune Grass
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
             NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get(), NPBlocks.GRASSY_CLAY_HORIZON.get());
+        event.register((state, world, pos, tintIndex) ->
+                world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
+            NPBlocks.LARGE_BUSH.get());
         // Vanilla blocks we add color to, such as bushes
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
@@ -30,9 +34,16 @@ public class ColorHandler {
 
     @SubscribeEvent
     public static void handleGrassColors(RegisterColorHandlersEvent.Item event) {
-        // Gasworks blocks to register, such as Dune Grass
+        // Natural Philosophy blocks to register, such as Dune Grass
         event.register((stack, tintIndex) ->
             tintIndex == 0 ? GrassColor.get(0.5D, 1.0D) : 0xFFFFFFFF,
             NPItems.DUNE_GRASS_ITEM, NPItems.GRASS_CLAY_HORIZON_ITEM);
+        event.register((stack, tintIndex) ->
+                tintIndex == 1 ? FoliageColor.getDefaultColor() : 0xFFFFFFFF,
+            NPItems.LARGE_BUSH);
+        // Vanilla blocks we add color to, such as bushes
+        event.register((stack, tintIndex) ->
+                tintIndex == 1 ? FoliageColor.getDefaultColor() : 0xFFFFFFFF,
+            Items.PEONY, Items.ROSE_BUSH, Items.LILAC);
     }
 }

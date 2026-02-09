@@ -38,6 +38,7 @@ public class NPItems {
     public static final DeferredItem<BlockItem> GIANT_BAMBOO_SAPLING_ITEM = ITEMS.registerSimpleBlockItem("giant_bamboo_sapling", NPBlocks.GIANT_BAMBOO_SAPLING);
     public static final DeferredItem<BlockItem> GIANT_BAMBOO_LEAVES_ITEM = ITEMS.registerSimpleBlockItem("giant_bamboo_leaves", NPBlocks.GIANT_BAMBOO_LEAVES);
     public static final DeferredItem<Item> GIANT_BAMBOO = ITEMS.registerSimpleItem("giant_bamboo");
+    public static final DeferredItem<BlockItem> LARGE_BUSH = ITEMS.registerSimpleBlockItem("large_bush", NPBlocks.LARGE_BUSH);
 
     // Creates a creative tab for the mod & adds all Natural Philosophy items to the tab
     @SuppressWarnings("unused")
@@ -62,5 +63,6 @@ public class NPItems {
             output.accept(GIANT_BAMBOO_SAPLING_ITEM);
             output.accept(GIANT_BAMBOO_LEAVES_ITEM);
             output.accept(GIANT_BAMBOO);
+            output.accept(LARGE_BUSH);
         }).build());
 }
