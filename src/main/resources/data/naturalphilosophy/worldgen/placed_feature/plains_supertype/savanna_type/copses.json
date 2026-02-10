@@ -32,9 +32,6 @@
       "max_water_depth": 0
     },
     {
-      "type": "minecraft:biome"
-    },
-    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:not",
@@ -48,6 +45,9 @@
           }
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }
