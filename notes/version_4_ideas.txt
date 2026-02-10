@@ -12,18 +12,16 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         => a few new cold flowers and a few new warm flowers would be good, I think. lots of forest and temperate flowers right now
     ✓ dune grass should be a better mix of 1.21.5 features and my current idea. Move away from tinted textures and onto other concerns
     ✓     => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
-    bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
-        => remove flowering azalea bushes from generation, use them to (partially) indicate lush caves. normal (unflowering) azaleas instead
-        => we have flowering bushes that are bigger now.
-        => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
+    ✓ bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
+        ✓ => remove flowering azalea bushes from generation, use them to (partially) indicate lush caves. normal (unflowering) azaleas instead
+        ✓ => actually just going to restrict azaleas (flowering, etc) to a few areas (flower forests, cherry groves) and remove the rest
+        ✓ => we have flowering bushes that are bigger now.
+        ✓ => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
     "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
     shelf mushrooms for red/brown mushrooms
 7. Port over some of the interesting features of Immersive Weathering/supplementaries
     Mossy stone and other mossy blocks, to make mossiness not just a cobblestone thing
         => can this be done effectively with moss carpets and a lichen block? I think the answer is yes
-    Sandy bricks (?) sand piles (?) or other sand accoutrements, alongside desert precipitation changes
-        => Normal rain should be sandstorms/windstorms
-        => Thunderstorms should be rain
     Fulgurite/vitrified sand that happens from lightning strikes + some naturally generating fulgurite; also for red sand?
     ✓ New kinds of soil; consider permafrost for snowy biome dirt alongside some sort of leaf loam or leaf litter for non-coniferous forests
         ✓ => definite yes on leaf loam/humus/etc
@@ -31,6 +29,10 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         ✓ => might also need to change snowy grass texture as well, which could cause its own issues
         ✓ => or only generate permafrost under thick blankets of snow (full block)
     barnacles block similar to glow lichen? can only grow on blocks of above a certain hardness, not gravel/etc
+    ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else?
+    Moss outgrowths to place on other blocks? or just make mossy stone? unsure.
+    icicles, esp. for caves in snowy peaks, would do a lot for them
+    Desert precipitation changes to allow thunderstorms to rain in warmer areas, but thunderstorms only?
 ✓ 8. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
     ✓ Do we actually need custom foliage types? Might just want to make a few trunk-placer changes to allow for better shaping
     ✓ Could do limits on where branches can propagate to but otherwise use the fancy oak tree placer => similar to plains trees
@@ -60,40 +62,29 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
     most go-between can be done via vegetation and blokcs rather than feathering
         => grass plants will spread across forests from their meadows outwards, etc
         => would need some density changes but is quite possible
-    consider some patches inside of biomes rather than features, for now
-        => surface-tertiary noise or swamp noise, unsure. both could work well
-        => dirt patches in forests or other similar biomes, mostly coarse but some rooted?
-        => these could be separate rules as necessary
     oceans are waterworn gravel/mixed waterworn gravel/sand mix with different ocean biomes having different primacies
         => no mud on the ocean floor
         => possibly large patches of clay on the floors of deep oceans, and those have nothing? depends.
         => deep oceans in general often don't have terragenous sediment like coastal shelves do
-    Consider using swamp noise for more water pools in swamps, to make them feel bigger and have less of a random-spurt area
-        => And/or make a mud-puddle block that counts as water but is a half-slab of mud? Determine.
-        => Could also try rare lush caves pools features & see how they behave?
     ✓ Make sandy mycelium a not full cover block so we can "Feather" without needing to literally feather the ground
-    many biomes can make do with a single top block and some under-ground filtering
+    ✓ many biomes can make do with a single top block and some under-ground filtering
         ✓ => grass: plains*, savannas*, windswept forest, meadow,
-        => humus: jungle, dark forest
+        ✓ => humus: jungle, dark forest
 11. talus slopes on the beneath part of the mountains?
     rubble blocks for the surface to break up the flatness, rock slopes really need this to feel alive
     lots of rocky beaches have this but are not flat, and "cobblestone in the ground" does not do it justice
     a good place to use block mixes as it's a very similar-colored block mix
     scree slopes on anything even vaguely glacial (?) => no glacial movement in the same way, but it could look cool as hell
-13. texture variations for some blocks currently missing them? depends on how much it enhances the experience
-    gravel & sand would be a good start. each have some obvious tells that they're rotated and could do with some breaking up
 12. new blocks
     mixed gravel, waterworn gravel, mixed cobbles
     worn stone/cracked stone, mossy/overgrown stone
-    variants for a lot of existing textures to make them look better
-    rubble (?) or freestanding rocks (?)
-    "giant bamboo" with leaves for bamboo jungles? make them able to be dark on the floor without constant cover?
+    ✓ "giant bamboo" with leaves for bamboo jungles? make them able to be dark on the floor without constant cover?
     ✓ humus block to stop using podzol everywhere => now alfizol, named from alfisol, similar to spodosol (podzol). USDA soli class
     Dry dirt block that can't support a grass property but can grow grass, for deserts and desert-like biomes? More sand-colored? (uses packed mud palette)
-14. plant distribution changes for some biomes
-    increase mushrooms, decrease big bushes in old growth spruce taigas
-    Add plains flowers to flower forests and make bushes slightly less common (?)
-    remove flowering azaleas from all biomes, keep them only for lush caves indications
+✓ 14. plant distribution changes for some biomes
+    ✓ increase mushrooms, decrease big bushes in old growth spruce taigas
+    ✓ Add plains flowers to flower forests and make bushes slightly less common (?)
+    ✓ remove flowering azaleas from all biomes, keep them only for lush caves indications
 16. new decor blocks for oceans and water biomes, to add variety (?)
     some more plants so it's not just kelp/seagrass/red algae?
         => flower-like blocks?
@@ -105,7 +96,8 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
     pine cones and sticks are one good glass
     bones might be another good class, to allow for peaceful bone acquisition w/o structures
     consider seashell-embedded sand for beaches, or seashells for beaches; could also be prismarine shards
-18. move peonies, roses, and lilacs to full sun rather than shade or partial shade (ie, move 'em to clearings)
+✓ 18. move peonies, roses, and lilacs to full sun rather than shade or partial shade (ie, move 'em to clearings)
+✓ 19. fix jungle bushes/sparse jungle bushes
 
 --------------------------------------------------------------------------------------
 prefer an update, but not 100% necessary to accomplish: (mostly for bushes)
@@ -124,9 +116,9 @@ prefer an update, but not 100% necessary to accomplish: (mostly for bushes)
         => May or may not want to do this, Vanilla generation can be highly flat at times and y71 might be too high
         => Maybe only go up to y68 or so (so +5 blocks from bottom) and not y71
         => Either that or have different fades based on biome; plains biomes have one and forests another?
-    More variety to rushes and cattails
-        => More models, have the vary either over large spaces or over small spaces
-        => Maybe make the models square?
+    ✓ More variety to rushes and cattails
+        ✓ => More models, have the vary either over large spaces or over small spaces
+        ✓ => Maybe make the models square?
     New blocks for rivers/beaches: Water/river gravel, water/river sand, muddy rocks/river cobbles, possibly something else?
         => Less saturated, more uniform in tone than Vanilla sand/gravel/mud/etc
         => Should help make river biomes more cohesive
@@ -157,7 +149,7 @@ work items AFTER the update to 1.21.11 or 26.1
     Glow lichen in the Pale Garden, on the trees?
 6. Updates to existing features in biomes
     With the new update, fallen trees across multiple biomes
-    Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
+    ✓ Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
     Dead trees in many biomes to go alongside the fallen trees
     Make trees correspond to their saplings correctly
     Leaves have a curtain of snow draped around them when there is a snow layer on top => maybe all blocks do, and we just ignore certain blocks (snow, snowy grass, etc)
@@ -166,7 +158,7 @@ work items AFTER the update to 1.21.11 or 26.1
 15. sound additions. the sussurus of rushes and leaves in swamps and forests, etc
 10. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
     Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
-    Biomes further from high humidity should have less moss - revamp taigas, etc
+    ✓ Biomes further from high humidity should have less moss - revamp taigas, etc
     allow blue orchids to place on jungle logs specifically as well
 
 
@@ -179,8 +171,7 @@ work items AFTER the update to 1.21.11 or 26.1
 
 Current work items:
     fix feathering on most biomes without making large changes to their decoration
-        => next up is forest biomes
-        => then swamps
         => then ocean biomes, possibly. may start with stony shore?
     add a second pass to forests to make vegetation cluster more around breaks in the canopy and less common under it
+        => just go back over veg. in general. modernize it, better checks
     old growth birch forests need something for cliffs

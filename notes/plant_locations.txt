@@ -2,7 +2,7 @@ PUMPKIN: North America, not too cold (not snowy or windswept), not too wet (swam
 
 PEONY: Cold and temperate areas
 LILAC: Temperate areas
-ROSE BUSH: Cold and temperate areas
+ROSE BUSH: Cold and temperate areas, taigas.
 SUNFLOWER: Fertile, moist, well drained soils. Climate like texas plains/prairie
 
 DANDELION: Temperate regions
@@ -23,8 +23,8 @@ LILY OF THE VALLEY: Cool temperate, partial shade
 ✓ Plains flowers: Sunflower, Dandelion, Allium, Tulip, Oxeye Daisy, Cornflower
 ✓ Meadow Flowers: Dandelion, Oxeye Daisy, Azure Bluet, Red Tulip, Allium, White Tulip
 ✓ Forest Flowers: Peony, Lilac, Rose Bush, Allium, Azure Bluet, Lily of the Valley
-✓ Birch Forest: Peony, Rose Bush, Allium, Azure Bluet, Lily of the Valley
-✓ Taiga Flowers: Peony, Rose Bush, Azure Bluet, lily of the valley
+✓ Birch Forest: Peony, Rose Bush, Lilac, Allium, Azure Bluet, Lily of the Valley
+✓ Taiga Flowers: Rose Bush, Azure Bluet, lily of the valley
 ✓ Windswept Forest Flowers: Azure Bluet
 ✓ Cherry Grove Flowers: Peony, Lilac, Lily of the Valley
 
