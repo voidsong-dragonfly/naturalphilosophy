@@ -9,7 +9,7 @@
         },
         {
           "chance": 0.625,
-          "feature": "naturalphilosophy:checked_trees/oak_shrub"
+          "feature": "naturalphilosophy:checked_trees/oak_stunted"
         }
       ],
       "default": "naturalphilosophy:checked_trees/oak_bush_stunted"

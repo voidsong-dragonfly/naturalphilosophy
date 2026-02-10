@@ -9,10 +9,10 @@
         },
         {
           "chance": 0.4,
-          "feature": "naturalphilosophy:checked_trees/flowering_azalea_shrub_cliff"
+          "feature": "naturalphilosophy:checked_trees/flowering_azalea"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/cherry_shrub_cliff"
+      "default": "naturalphilosophy:checked_trees/cherry_cliff"
     }
   },
   "placement": [

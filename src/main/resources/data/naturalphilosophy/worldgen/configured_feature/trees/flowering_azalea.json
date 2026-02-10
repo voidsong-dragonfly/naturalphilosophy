@@ -11,7 +11,7 @@
     "foliage_placer": {
       "type": "minecraft:random_spread_foliage_placer",
       "foliage_height": 2,
-      "leaf_placement_attempts": 70,
+      "leaf_placement_attempts": 80,
       "offset": 0,
       "radius": 3
     },

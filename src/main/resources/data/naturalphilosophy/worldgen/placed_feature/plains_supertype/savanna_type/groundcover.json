@@ -4,15 +4,18 @@
     "config": {
       "features": [
         {
-          "chance": 0.05,
-          "feature": "naturalphilosophy:checked_trees/oak_shrub"
+          "chance": 0.3,
+          "feature": "naturalphilosophy:checked_trees/acacia_stunted"
         },
         {
           "chance": 0.2,
-          "feature": "naturalphilosophy:checked_trees/acacia_stunted"
+          "feature": "naturalphilosophy:checked_trees/acacia_bush_stunted"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/acacia_bush_stunted"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/large_bushes",
+        "placement": []
+      }
     }
   },
   "placement": [
