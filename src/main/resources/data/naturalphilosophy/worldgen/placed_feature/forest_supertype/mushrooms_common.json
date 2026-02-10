@@ -4,37 +4,30 @@
     "config": {
       "features": [
         {
-          "chance": 0.4,
+          "chance": 0.5,
           "feature": {
-            "feature": "minecraft:huge_red_mushroom",
-            "placement": []
+            "feature": "naturalphilosophy:plant_patches/red_mushrooms",
+            "placement": [ ]
           }
         }
       ],
       "default": {
-        "feature": "minecraft:huge_brown_mushroom",
+        "feature": "naturalphilosophy:plant_patches/brown_mushrooms",
         "placement": []
       }
     }
   },
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 8
+      "type": "minecraft:rarity_filter",
+      "chance": 2
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR"
-    },
-    {
-      "type": "minecraft:surface_water_depth_filter",
-      "max_water_depth": 0
-    },
-    {
-      "type": "minecraft:biome"
+      "heightmap": "WORLD_SURFACE_WG"
     },
     {
       "type": "minecraft:block_predicate_filter",
@@ -42,14 +35,13 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            -1,
-            0
-          ],
+          "offset": [0, -1, 0],
           "blocks": "minecraft:grass_block"
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }
