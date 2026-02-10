@@ -33,7 +33,7 @@
     "decorators": [
       {
         "type": "minecraft:beehive",
-        "probability": 0.025
+        "probability": 0.03125
       }
     ],
     "dirt_provider": {
