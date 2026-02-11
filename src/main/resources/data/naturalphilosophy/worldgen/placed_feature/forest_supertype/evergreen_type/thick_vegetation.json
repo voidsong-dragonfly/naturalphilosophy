@@ -3,24 +3,24 @@
     "type": "minecraft:random_selector",
     "config": {
       "features": [{
-        "chance": 0.5,
+        "chance": 0.75,
         "feature": {
-          "feature": "naturalphilosophy:plant_patches/ferns_tall",
+          "feature": "naturalphilosophy:plant_patches/ferns_mixed",
           "placement": []
         }
       }],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/ferns_mixed",
-        "placement": []
+        "feature": "naturalphilosophy:plant_patches/ferns",
+        "placement": [ ]
       }
     }
   },
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 12,
+      "noise_to_count_ratio": 16,
       "noise_factor": 5,
-      "noise_offset": 0.6
+      "noise_offset": 0.2
     },
     {
       "type": "minecraft:in_square"
@@ -32,9 +32,12 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [0, -1, 0],
-        "blocks": "naturalphilosophy:alfizol"
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "offset": [0, -1, 0],
+          "blocks": "minecraft:grass_block"
+        }
       }
     },
     {

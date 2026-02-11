@@ -2,26 +2,25 @@
   "feature": {
     "type": "minecraft:random_selector",
     "config": {
-      "features": [
-        {
-          "chance": 0.1,
-          "feature": "naturalphilosophy:checked_trees/oak_bush_stunted"
-        },
-        {
-          "chance": 0.1,
-          "feature": {
-            "feature": "naturalphilosophy:plant_patches/large_bushes",
-            "placement": []
-          }
+      "features": [{
+        "chance": 0.875,
+        "feature": {
+          "feature": "naturalphilosophy:plant_patches/ferns_mixed",
+          "placement": []
         }
-      ],
-      "default": "naturalphilosophy:checked_trees/oak_bush"
+      }],
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/ferns",
+        "placement": [ ]
+      }
     }
   },
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 48
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 16,
+      "noise_factor": 5,
+      "noise_offset": 0.2
     },
     {
       "type": "minecraft:in_square"
@@ -29,10 +28,6 @@
     {
       "type": "minecraft:heightmap",
       "heightmap": "WORLD_SURFACE_WG"
-    },
-    {
-      "type": "minecraft:surface_water_depth_filter",
-      "max_water_depth": 0
     },
     {
       "type": "minecraft:block_predicate_filter",
