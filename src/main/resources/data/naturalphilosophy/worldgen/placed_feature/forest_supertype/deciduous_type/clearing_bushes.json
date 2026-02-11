@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.175,
+          "chance": 0.375,
           "feature": "naturalphilosophy:checked_trees/oak_bush_stunted"
         }
       ],
@@ -17,7 +17,7 @@
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 20,
+      "noise_to_count_ratio": 12,
       "noise_factor": 0.5,
       "noise_offset": 0.1
     },
@@ -37,7 +37,7 @@
       "predicate": {
         "type": "minecraft:matching_blocks",
         "offset": [0, -1, 0],
-        "blocks": "naturalphilosophy:alfizol"
+        "blocks": "minecraft:grass_block"
       }
     },
     {
