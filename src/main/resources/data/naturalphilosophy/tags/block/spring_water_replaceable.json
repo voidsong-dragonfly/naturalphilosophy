@@ -1,12 +1,14 @@
 {
   "values": [
     "#minecraft:base_stone_overworld",
-    "minecraft:gravel",
-    "minecraft:dripstone_block",
-    "minecraft:calcite",
+    "minecraft:basalt",
     "minecraft:sandstone",
     "minecraft:red_sandstone",
+    "minecraft:dripstone_block",
+    "minecraft:calcite",
+    "minecraft:gravel",
     "minecraft:dirt",
-    "minecraft:basalt"
+    "minecraft:ice",
+    "minecraft:packed_ice"
   ]
 }
