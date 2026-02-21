@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(DeadBushBlock.class)
-public class DeadBushMixin {
+public class DeadBushBlockMixin {
     @Shadow
     @Final
     protected static VoxelShape SHAPE;

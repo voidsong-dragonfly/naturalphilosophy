@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import javax.annotation.Nonnull;
 
 @Mixin(BambooStalkBlock.class)
-public class BambooMixin extends Block {
+public class BambooStalkBlockMixin extends Block {
     @Unique
     private static final VoxelShape SMALL_SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 17.0, 12.0);
     @Unique
@@ -34,7 +34,7 @@ public class BambooMixin extends Block {
      * This constructor is the default & will be ignored, it exists so we can extend Block
      * @param properties ignored & should not be used!
      */
-    public BambooMixin(Properties properties) {
+    public BambooStalkBlockMixin(Properties properties) {
         super(properties);
     }
 

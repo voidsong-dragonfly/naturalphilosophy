@@ -9,15 +9,18 @@
     "SurfaceRulesMixin$ConditionSource",
     "SurfaceRulesMixin$Context",
     "SurfaceRulesMixin$RuleSource",
-    "blockmodifications.BambooMixin",
-    "blockmodifications.BushFlowerMixin",
-    "blockmodifications.DeadBushMixin",
+    "blockmodifications.BambooStalkBlockMixin",
+    "blockmodifications.BushFlowerMixin$BlocksMixin",
+    "blockmodifications.BushFlowerMixin$TallFlowerBlockMixin",
+    "blockmodifications.CactusBlockMixin",
+    "blockmodifications.DeadBushBlockMixin",
     "blockmodifications.FlowerBlockMixin",
     "blockmodifications.GlowLichenBlockMixin",
     "blockmodifications.KelpBlockMixin",
     "blockmodifications.KelpPlantBlockMixin",
     "blockmodifications.MushroomBlockMixin",
-    "blockmodifications.SculkVeinBlockMixin"
+    "blockmodifications.SculkVeinBlockMixin",
+    "blockmodifications.SweetBerryBushBlockMixin"
   ],
   "client": [],
   "injectors": {
