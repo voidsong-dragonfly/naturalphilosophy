@@ -11,7 +11,6 @@ import javax.annotation.Nonnull;
 public class NPTags {
     public static class Blocks {
         public static final TagKey<Block> WATER_PLANTS = tag("water_plant_survivable");
-        public static final TagKey<Block> WIDE_PLANTS = tag("wide_plants");
         public static final TagKey<Block> SLOW_BUSHES = tag("slow_bushes");
         public static final TagKey<Block> MELTS_PERMAFROST = tag("melts_permafrost");
         public static final TagKey<Block> FREEZES_PERMAFROST = tag("freezes_permafrost");

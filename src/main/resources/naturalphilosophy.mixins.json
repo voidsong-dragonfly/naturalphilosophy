@@ -14,7 +14,6 @@
     "blockmodifications.BushFlowerMixin$TallFlowerBlockMixin",
     "blockmodifications.CactusBlockMixin",
     "blockmodifications.DeadBushBlockMixin",
-    "blockmodifications.FlowerBlockMixin",
     "blockmodifications.GlowLichenBlockMixin",
     "blockmodifications.KelpBlockMixin",
     "blockmodifications.KelpPlantBlockMixin",
