@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.09375,
+          "chance": 0.0625,
           "feature": "naturalphilosophy:checked_trees/jungle_emergent"
         }
       ],
