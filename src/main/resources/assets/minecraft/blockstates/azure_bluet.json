@@ -2,10 +2,8 @@
   "variants": {
     "": [
       {
-        "model": "minecraft:block/small_flower/azure_bluet/medium"
-      },
-      {
-        "model": "minecraft:block/small_flower/azure_bluet/medium"
+        "model": "minecraft:block/small_flower/azure_bluet/medium",
+        "weight": 2
       },
       {
         "model": "minecraft:block/small_flower/azure_bluet/large"

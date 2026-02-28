@@ -2,19 +2,12 @@
   "variants": {
     "": [
       {
-        "model": "minecraft:block/brown_mushroom/flat_1"
+        "model": "minecraft:block/brown_mushroom/flat_1",
+        "weight": 48
       },
       {
-        "model": "minecraft:block/brown_mushroom/flat_1"
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/flat_1"
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/tall_1"
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/flat_2"
+        "model": "minecraft:block/brown_mushroom/flat_2",
+        "weight": 3
       },
       {
         "model": "minecraft:block/brown_mushroom/flat_2",
@@ -29,7 +22,8 @@
         "y": 270
       },
       {
-        "model": "minecraft:block/brown_mushroom/tall_2"
+        "model": "minecraft:block/brown_mushroom/tall_2",
+        "weight": 3
       },
       {
         "model": "minecraft:block/brown_mushroom/tall_2",
@@ -44,49 +38,28 @@
         "y": 270
       },
       {
-        "model": "minecraft:block/brown_mushroom/flat_3"
-      },
-      {
         "model": "minecraft:block/brown_mushroom/flat_3",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/flat_3",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/flat_3",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/tall_3"
+        "weight": 1
       },
       {
         "model": "minecraft:block/brown_mushroom/tall_3",
-        "y": 90
+        "weight": 2
       },
       {
         "model": "minecraft:block/brown_mushroom/double_3",
-        "y": 180
+        "weight": 1
       },
       {
-        "model": "minecraft:block/brown_mushroom/double_3",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/flat_4"
+        "model": "minecraft:block/brown_mushroom/flat_4",
+        "weight": 1
       },
       {
         "model": "minecraft:block/brown_mushroom/tall_4",
-        "y": 90
+        "weight": 2
       },
       {
         "model": "minecraft:block/brown_mushroom/double_4",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/brown_mushroom/double_4",
-        "y": 270
+        "weight": 1
       }
     ]
   }

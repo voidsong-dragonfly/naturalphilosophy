@@ -2,22 +2,27 @@
   "variants": {
     "": [
       {
-        "model": "minecraft:block/small_flower/dandelion/single"
-      },
-      {
-        "model": "minecraft:block/small_flower/dandelion/cluster_2"
-      },
-      {
-        "model": "minecraft:block/small_flower/dandelion/cluster_2",
-        "y": 90
+        "model": "minecraft:block/small_flower/dandelion/single",
+        "weight": 8
       },
       {
         "model": "minecraft:block/small_flower/dandelion/cluster_2",
-        "y": 180
+        "weight": 2
       },
       {
         "model": "minecraft:block/small_flower/dandelion/cluster_2",
-        "y": 270
+        "y": 90,
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/small_flower/dandelion/cluster_2",
+        "y": 180,
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/small_flower/dandelion/cluster_2",
+        "y": 270,
+        "weight": 2
       },
       {
         "model": "minecraft:block/small_flower/dandelion/cluster_3"
@@ -40,14 +45,6 @@
       {
         "model": "minecraft:block/small_flower/dandelion/cluster_4",
         "y": 90
-      },
-      {
-        "model": "minecraft:block/small_flower/dandelion/cluster_4",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/small_flower/dandelion/cluster_4",
-        "y": 270
       }
     ]
   }
