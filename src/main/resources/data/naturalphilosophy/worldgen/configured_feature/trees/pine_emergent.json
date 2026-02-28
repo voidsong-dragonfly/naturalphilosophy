@@ -55,12 +55,12 @@
       "type": "naturalphilosophy:branched_mega_pine_foliage_placer",
       "crown_height": {
         "type": "minecraft:uniform",
-        "min_inclusive": 16,
-        "max_inclusive": 20
+        "min_inclusive": 20,
+        "max_inclusive": 24
       },
       "offset": 2,
       "radius": {
-        "type": "minecraft:biased_to_bottom",
+        "type": "minecraft:uniform",
         "min_inclusive": 1,
         "max_inclusive": 2
       }
@@ -86,9 +86,9 @@
     },
     "trunk_placer": {
       "type": "minecraft:giant_trunk_placer",
-      "base_height": 24,
-      "height_rand_a": 2,
-      "height_rand_b": 5
+      "base_height": 32,
+      "height_rand_a": 7,
+      "height_rand_b": 9
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
