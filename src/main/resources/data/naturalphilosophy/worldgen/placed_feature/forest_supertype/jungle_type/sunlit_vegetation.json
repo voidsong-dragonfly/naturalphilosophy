@@ -3,9 +3,9 @@
     "type": "minecraft:random_selector",
     "config": {
       "features": [{
-        "chance": 0.5,
+        "chance": 0.75,
         "feature": {
-          "feature": "naturalphilosophy:plant_patches/ferns",
+          "feature": "naturalphilosophy:plant_patches/ferns_tall",
           "placement": []
         }
       }],
@@ -17,17 +17,15 @@
   },
   "placement": [
     {
-      "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 8,
-      "noise_factor": 5,
-      "noise_offset": 0.6
+      "type": "minecraft:count",
+      "count": 32
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "WORLD_SURFACE"
     },
     {
       "type": "minecraft:block_predicate_filter",
@@ -39,6 +37,10 @@
           "minecraft:rooted_dirt"
         ]
       }
+    },
+    {
+      "type": "minecraft:count",
+      "count": 4
     },
     {
       "type": "minecraft:biome"

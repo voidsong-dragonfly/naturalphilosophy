@@ -3,7 +3,7 @@
     "type": "minecraft:random_selector",
     "config": {
       "features": [{
-        "chance": 0.1875,
+        "chance": 0.125,
         "feature": {
           "feature": "naturalphilosophy:plant_patches/large_bushes",
           "placement": [ ]
