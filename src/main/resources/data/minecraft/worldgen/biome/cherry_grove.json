@@ -88,7 +88,8 @@
       "naturalphilosophy:mountain_supertype/grove_type/bamboo",
       "naturalphilosophy:mountain_supertype/grove_type/flowers",
       "naturalphilosophy:mountain_supertype/grove_type/petals",
-      "naturalphilosophy:mountain_supertype/grove_type/vegetation"
+      "naturalphilosophy:mountain_supertype/grove_type/cherry_vegetation",
+      "naturalphilosophy:mountain_supertype/grove_type/bamboo_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
