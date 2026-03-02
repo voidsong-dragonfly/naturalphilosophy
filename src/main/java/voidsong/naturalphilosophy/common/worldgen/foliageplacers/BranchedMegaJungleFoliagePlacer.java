@@ -18,7 +18,6 @@ import voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers;
 import javax.annotation.Nonnull;
 
 public class BranchedMegaJungleFoliagePlacer extends MegaJungleFoliagePlacer {
-
     public static final MapCodec<BranchedMegaJungleFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(
         instance -> foliagePlacerParts(instance)
             .and(Codec.intRange(0, 16).fieldOf("height").forGetter(placer -> placer.height))

@@ -1,12 +1,8 @@
 package voidsong.naturalphilosophy.common.worldgen.foliageplacers;
 
-
-import com.mojang.datafixers.Products.P3;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.mojang.serialization.codecs.RecordCodecBuilder.Instance;
-import com.mojang.serialization.codecs.RecordCodecBuilder.Mu;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
@@ -18,12 +14,12 @@ import voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers;
 import javax.annotation.Nonnull;
 
 public class RoundedBlobFoliagePlacer extends FoliagePlacer {
-    public static final MapCodec<RoundedBlobFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(codec -> blobParts(codec).apply(codec, RoundedBlobFoliagePlacer::new));
+    public static final MapCodec<RoundedBlobFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(
+            instance -> foliagePlacerParts(instance)
+                    .and(Codec.intRange(0, 16).fieldOf("height").forGetter(placer -> placer.height))
+                    .apply(instance, RoundedBlobFoliagePlacer::new)
+    );
     protected final int height;
-
-    protected static <P extends RoundedBlobFoliagePlacer> P3<Mu<P>, IntProvider, IntProvider, Integer> blobParts(Instance<P> instance) {
-        return foliagePlacerParts(instance).and(Codec.intRange(0, 16).fieldOf("height").forGetter(params -> params.height));
-    }
 
     public RoundedBlobFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
         super(radius, offset);
