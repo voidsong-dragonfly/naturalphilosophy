@@ -9,10 +9,10 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:blob_foliage_placer",
-      "offset": 0,
-      "radius": 1,
-      "height": 2
+      "type": "naturalphilosophy:red_mushroom_cap_foliage_placer",
+      "offset": 4,
+      "radius": 2,
+      "height": 0
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
@@ -32,10 +32,37 @@
       "upper_size": 2
     },
     "trunk_placer": {
-      "type": "minecraft:forking_trunk_placer",
-      "base_height": 7,
+      "type": "minecraft:cherry_trunk_placer",
+      "base_height": 5,
+      "branch_count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 1,
+            "weight": 2
+          },
+          {
+            "data": 2,
+            "weight": 1
+          }
+        ]
+      },
+      "branch_end_offset_from_top": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 2,
+        "min_inclusive": -1
+      },
+      "branch_horizontal_length": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 3,
+        "min_inclusive": 2
+      },
+      "branch_start_offset_from_top": {
+        "max_inclusive": -1,
+        "min_inclusive": -3
+      },
       "height_rand_a": 3,
-      "height_rand_b": 3
+      "height_rand_b": 1
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
