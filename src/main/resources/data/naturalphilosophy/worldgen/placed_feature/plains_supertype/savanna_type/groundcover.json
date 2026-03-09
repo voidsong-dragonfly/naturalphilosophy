@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.3,
+          "chance": 0.5,
           "feature": "naturalphilosophy:checked_trees/acacia_stunted"
         },
         {
