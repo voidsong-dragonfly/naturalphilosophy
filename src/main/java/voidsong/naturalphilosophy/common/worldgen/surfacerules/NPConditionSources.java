@@ -10,6 +10,7 @@ import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 import javax.annotation.Nonnull;
@@ -133,7 +134,7 @@ public class NPConditionSources {
             class CaveDepthCondition implements SurfaceRules.Condition {
                 @Override
                 public boolean test() {
-                    int heightmapDepth = ((ContextExtension)(Object)pContext).naturalphilosophy$getOceanHeightmapDepth();
+                    int heightmapDepth = pContext.chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pContext.blockX, pContext.blockZ);
                     // Return early if this isn't a cave - ie, if the ground above is solid
                     if (pContext.stoneDepthAbove >= (heightmapDepth-pContext.blockY+1)) return false;
                     // Return early if we're above the necessary depth

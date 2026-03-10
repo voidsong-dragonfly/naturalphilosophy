@@ -2,10 +2,13 @@ package voidsong.naturalphilosophy.mixin;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
 import net.minecraft.core.*;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.*;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -63,15 +66,24 @@ public abstract class SurfaceRulesMixin {
         @Shadow @Final public RandomState randomState;
         // Variables for the cached conditions
         @Unique
-        @SuppressWarnings("all")
-        SurfaceRules.Condition cliff, flat, flatLiquid, aboveWater;
-        // Caches for heightmaps & the last update value for it
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private SurfaceRules.Condition cliff;
         @Unique
-        @SuppressWarnings("all")
-        private int oceanHeightmapDepthCache = -Integer.MAX_VALUE;
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private SurfaceRules.Condition flat;
         @Unique
-        @SuppressWarnings("all")
-        private long lastUpdateHeightmapDepth;
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private SurfaceRules.Condition flatLiquid;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private SurfaceRules.Condition aboveWater;
+        // Caches for noise values & the last update value for it
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private long lastUpdateNoiseCache;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private final Object2DoubleArrayMap<ResourceKey<NormalNoise.NoiseParameters>> noiseCache = new Object2DoubleArrayMap<>();
 
         @Inject(method="<init>", at=@At("RETURN"))
         public void instantiateConditions(SurfaceSystem system,
@@ -110,12 +122,12 @@ public abstract class SurfaceRulesMixin {
         }
 
         @Override
-        public int naturalphilosophy$getOceanHeightmapDepth() {
-            if (lastUpdateXZ != lastUpdateHeightmapDepth) {
-                oceanHeightmapDepthCache = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, blockX, blockZ);
-                lastUpdateHeightmapDepth = lastUpdateXZ;
+        public double naturalphilosophy$getCachedNoiseValue(ResourceKey<NormalNoise.NoiseParameters> noise, int x, int z) {
+            if (lastUpdateXZ != lastUpdateNoiseCache) {
+                noiseCache.clear();
+                lastUpdateNoiseCache = lastUpdateXZ;
             }
-            return oceanHeightmapDepthCache;
+            return noiseCache.computeIfAbsent(noise, key -> randomState.getOrCreateNoise(noise).getValue(x, 0.0, z));
         }
     }
 }
