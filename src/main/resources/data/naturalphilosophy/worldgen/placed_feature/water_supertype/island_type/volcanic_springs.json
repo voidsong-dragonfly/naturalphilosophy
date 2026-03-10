@@ -1,371 +1,40 @@
 {
   "feature": {
-    "type": "minecraft:simple_block",
+    "type": "naturalphilosophy:carved_limited_pool",
     "config": {
-      "to_place": {
+      "depth": 6,
+      "sand_depth": {
+        "type": "minecraft:uniform",
+        "min_inclusive": 3,
+        "max_inclusive": 5
+      },
+      "pool_allowed": {
+        "type": "minecraft:matching_blocks",
+        "offset": [0, 0, 0],
+        "blocks": [
+          "minecraft:yellow_terracotta",
+          "minecraft:magma_block"
+        ]
+      },
+      "wall_allowed": {
+        "type": "minecraft:matching_blocks",
+        "offset": [0, 0, 0],
+        "blocks": [
+          "minecraft:yellow_terracotta",
+          "minecraft:magma_block"
+        ]
+      },
+      "sand": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "minecraft:water",
-          "Properties": {
-            "level": "0"
-          }
+          "Name": "minecraft:red_sand"
         }
       }
     }
   },
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 20
-    },
-    {
-      "type": "minecraft:count",
-      "count": 30
-    },
-    {
-      "type": "minecraft:in_square"
-    },
-    {
-      "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
-    },
-    {
       "type": "minecraft:biome"
-    },
-    {
-      "type": "count",
-      "count": {
-        "type": "minecraft:uniform",
-        "min_inclusive": 5,
-        "max_inclusive": 5
-      }
-    },
-    {
-      "type": "minecraft:random_offset",
-      "xz_spread": {
-        "type": "minecraft:uniform",
-        "min_inclusive": -4,
-        "max_inclusive": 4
-      },
-      "y_spread": 0
-    },
-    {
-      "type": "environment_scan",
-      "direction_of_search": "down",
-      "max_steps": 6,
-      "target_condition": {
-        "type": "minecraft:all_of",
-        "predicates": [
-          {
-            "type": "minecraft:not",
-            "predicate": {
-              "type": "minecraft:any_of",
-              "predicates": [
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    -1,
-                    0,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    1,
-                    0,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    0,
-                    -1
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    0,
-                    1
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    -1,
-                    0,
-                    -1
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    1,
-                    0,
-                    1
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    1,
-                    0,
-                    -1
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    -1,
-                    0,
-                    1
-                  ],
-                  "blocks": [
-                    "minecraft:smooth_basalt",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "minecraft:air",
-                    "minecraft:cave_air",
-                    "minecraft:void_air",
-                    "minecraft:lava"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [
-              0,
-              0,
-              0
-            ],
-            "blocks": [
-              "minecraft:yellow_terracotta",
-              "minecraft:magma_block"
-            ]
-          },
-          {
-            "type": "minecraft:not",
-            "predicate": {
-              "type": "minecraft:any_of",
-              "predicates": [
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    -1,
-                    1,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    1,
-                    1,
-                    0
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    1,
-                    -1
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    1,
-                    1
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    -1,
-                    1,
-                    -1
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    -1,
-                    1,
-                    1
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    1,
-                    1,
-                    -1
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    1,
-                    1,
-                    1
-                  ],
-                  "blocks": [
-                    "minecraft:yellow_terracotta",
-                    "minecraft:red_sand",
-                    "minecraft:blackstone",
-                    "naturalphilosophy:basaltic_mineral_sand",
-                    "naturalphilosophy:sandy_mycelium",
-                    "minecraft:mycelium",
-                    "minecraft:smooth_basalt",
-                    "minecraft:lava"
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      }
     }
   ]
 }
