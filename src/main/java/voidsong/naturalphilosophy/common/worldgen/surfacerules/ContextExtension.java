@@ -11,4 +11,7 @@ public interface ContextExtension {
     SurfaceRules.Condition naturalphilosophy$getFlatLiquid();
     // Value return functions for cached parameterized rules & conditions
     double naturalphilosophy$getCachedNoiseValue(ResourceKey<NormalNoise.NoiseParameters> noise, int x, int z);
+    // Getter functions for stored variables for cave depth condition
+    int naturalphilosophy$getLastYBeforeCurrentCavern();
+    boolean naturalphilosophy$getCachedCaveLipValue(int caveSurface);
 }

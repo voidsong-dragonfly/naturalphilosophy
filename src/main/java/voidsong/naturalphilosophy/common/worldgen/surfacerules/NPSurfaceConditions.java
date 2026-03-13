@@ -98,4 +98,35 @@ public class NPSurfaceConditions {
             return flat && bottom && nonChunkBorder;
         }
     }
+
+    public record UnderwaterCondition(SurfaceRules.Context context, boolean shallow) implements SurfaceRules.Condition {
+        @Override
+        public boolean test() {
+            // Exit early if we're above water
+            if (context.waterHeight == Integer.MIN_VALUE) return false;
+            // If we don't care about shallowness, return early, else check the Vanilla "shallow water" parameters
+            return !shallow || ((context.blockY + context.stoneDepthAbove) >= (context.waterHeight - 6 - context.surfaceDepth));
+        }
+    }
+
+    public record CaveDepthCondition(SurfaceRules.Context context, int depth) implements SurfaceRules.Condition {
+        @Override
+        public boolean test() {
+            int heightmapDepth = context.chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, context.blockX, context.blockZ);
+            // Return early if this isn't a cave - ie, if the ground above is solid
+            if (context.stoneDepthAbove >= (heightmapDepth-context.blockY+1)) return false;
+            // Return early if we're above the necessary depth
+            if (heightmapDepth - depth <= context.blockY) return false;
+            // If we're shallower than twelve blocks, we do not need to check the air blocks above this block
+            // We remove/add stoneDepthAbove to make sure we stay congruous with the top block of the cave
+            int currentDepth = heightmapDepth - context.blockY + context.stoneDepthAbove;
+            if (currentDepth < 12) return true;
+            // Check to make sure we're not underneath a massive overhang by checking if greater than 3/4ths what's above is air
+            ContextExtension eContext = ((ContextExtension)(Object)context);
+            if ((eContext.naturalphilosophy$getLastYBeforeCurrentCavern()-(context.blockY+context.stoneDepthAbove)) < (currentDepth*3)/4) return true;
+            // If we are under an overhang, but are on the side of a mini-cliff, this should also be a cave floor
+            int searchLevel = context.blockY + context.stoneDepthAbove- 2;
+            return eContext.naturalphilosophy$getCachedCaveLipValue(searchLevel);
+        }
+    }
 }

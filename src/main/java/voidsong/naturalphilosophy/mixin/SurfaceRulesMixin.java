@@ -80,6 +80,16 @@ public abstract class SurfaceRulesMixin {
         @Unique
         @SuppressWarnings("AddedMixinMembersNamePattern")
         private final Object2DoubleArrayMap<ResourceKey<NormalNoise.NoiseParameters>> noiseCache = new Object2DoubleArrayMap<>();
+        // Caches for cave depth condition variables
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private int lastYBeforeCurrentCavern = Integer.MAX_VALUE;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private int lastFoundCaveSurface = Integer.MAX_VALUE;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private boolean lastFoundCaveLipResult = false;
 
         @Inject(method="<init>", at=@At("RETURN"))
         public void instantiateConditions(SurfaceSystem system,
@@ -118,6 +128,44 @@ public abstract class SurfaceRulesMixin {
                 lastUpdateNoiseCache = lastUpdateXZ;
             }
             return noiseCache.computeIfAbsent(noise, key -> randomState.getOrCreateNoise(noise).getValue(x, 0.0, z));
+        }
+
+        @Inject(method = "updateXZ", at = @At(value= "HEAD"))
+        private void resetCounters(int blockX, int blockZ, CallbackInfo ci) {
+            lastYBeforeCurrentCavern = Integer.MAX_VALUE;
+            lastFoundCaveSurface = Integer.MAX_VALUE;
+        }
+
+        @Inject(method = "updateY", at = @At(value= "HEAD"))
+        private void updateCavernCounters(int stoneDepthAbove, int stoneDepthBelow, int waterHeight, int blockX, int blockY, int blockZ, CallbackInfo ci) {
+            if(stoneDepthBelow == 0) lastYBeforeCurrentCavern = blockY;
+        }
+
+        @Override
+        public int naturalphilosophy$getLastYBeforeCurrentCavern() {
+            return lastYBeforeCurrentCavern;
+        }
+
+        @Override
+        public boolean naturalphilosophy$getCachedCaveLipValue(int caveSurface) {
+            if (caveSurface != lastFoundCaveSurface) {
+                // Variable store for future operations
+                int i = blockX & 15;
+                int j = blockZ & 15;
+                // Movements within the chunk for close block checks
+                int north = Math.max(j - 1, 0);
+                int east  = Math.min(i + 1, 15);
+                int south = Math.min(j + 1, 15);
+                int west  = Math.max(i - 1, 0);
+                // Now we check to make sure we're not on the side of a cliff in a windswept biome
+                lastFoundCaveLipResult = chunk.getBlockState(new BlockPos(blockX, caveSurface, blockZ-j+north)).isAir();
+                lastFoundCaveLipResult = lastFoundCaveLipResult || chunk.getBlockState(new BlockPos(blockX-i+east, caveSurface, blockZ)).isAir();
+                lastFoundCaveLipResult = lastFoundCaveLipResult || chunk.getBlockState(new BlockPos(blockX, caveSurface, blockZ-j+south)).isAir();
+                lastFoundCaveLipResult = lastFoundCaveLipResult || chunk.getBlockState(new BlockPos(blockX-i+west, caveSurface, blockZ)).isAir();
+                // Set that we found the cave surface
+                lastFoundCaveSurface = caveSurface;
+            }
+            return lastFoundCaveLipResult;
         }
     }
 }
