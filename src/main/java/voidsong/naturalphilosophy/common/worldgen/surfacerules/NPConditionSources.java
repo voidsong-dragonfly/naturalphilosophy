@@ -68,23 +68,6 @@ public class NPConditionSources {
         }
     }
 
-    public enum LandTopLayerConditionSource implements SurfaceRules.ConditionSource {
-        INSTANCE;
-
-        public static final KeyDispatchDataCodec<LandTopLayerConditionSource> CODEC = KeyDispatchDataCodec.of(MapCodec.unit(INSTANCE));
-
-        @Override
-        @Nonnull
-        public KeyDispatchDataCodec<? extends SurfaceRules.ConditionSource> codec() {
-            return CODEC;
-        }
-
-        @SuppressWarnings("DataFlowIssue")
-        public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return ((ContextExtension)(Object)pContext).naturalphilosophy$getLandTopLayer();
-        }
-    }
-
     public record UnderwaterConditionSource(boolean shallow) implements SurfaceRules.ConditionSource {
         public static final KeyDispatchDataCodec<UnderwaterConditionSource> CODEC = KeyDispatchDataCodec.of(
             RecordCodecBuilder.mapCodec(
