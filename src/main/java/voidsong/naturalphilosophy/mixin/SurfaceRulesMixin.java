@@ -138,7 +138,7 @@ public abstract class SurfaceRulesMixin {
 
         @Inject(method = "updateY", at = @At(value= "HEAD"))
         private void updateCavernCounters(int stoneDepthAbove, int stoneDepthBelow, int waterHeight, int blockX, int blockY, int blockZ, CallbackInfo ci) {
-            if(stoneDepthBelow == 0) lastYBeforeCurrentCavern = blockY;
+            if(stoneDepthBelow == 1) lastYBeforeCurrentCavern = blockY;
         }
 
         @Override
