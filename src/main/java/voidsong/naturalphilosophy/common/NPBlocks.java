@@ -10,8 +10,6 @@ import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.CoralFanBlock;
 import net.minecraft.world.level.block.CoralPlantBlock;
 import net.minecraft.world.level.block.CoralWallFanBlock;
-import net.minecraft.world.level.block.GrassBlock;
-import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,10 +19,12 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
+import voidsong.naturalphilosophy.common.blocks.AlfizolBlock;
 import voidsong.naturalphilosophy.common.blocks.DuneGrass;
 import voidsong.naturalphilosophy.common.blocks.GiantBambooLeavesBlock;
 import voidsong.naturalphilosophy.common.blocks.GiantBambooSaplingBlock;
 import voidsong.naturalphilosophy.common.blocks.GiantBambooStalkBlock;
+import voidsong.naturalphilosophy.common.blocks.GrassyClayHorizonBlock;
 import voidsong.naturalphilosophy.common.blocks.MycelialGrowthBlock;
 import voidsong.naturalphilosophy.common.blocks.PermafrostBlock;
 import voidsong.naturalphilosophy.common.blocks.RedAlgaeBlock;
@@ -151,13 +151,13 @@ public class NPBlocks {
             .randomTicks()
             .strength(2.8F)
             .sound(SoundType.STONE));
-    public static final DeferredBlock<Block> ALFIZOL = BLOCKS.registerBlock("alfizol", SnowyDirtBlock::new,
+    public static final DeferredBlock<Block> ALFIZOL = BLOCKS.registerBlock("alfizol", AlfizolBlock::new,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.DIRT)
             .randomTicks()
             .strength(0.6F)
             .sound(SoundType.GRASS));
-    public static final DeferredBlock<Block> GRASSY_CLAY_HORIZON = BLOCKS.registerBlock("grassy_clay_horizon", GrassBlock::new,
+    public static final DeferredBlock<Block> GRASSY_CLAY_HORIZON = BLOCKS.registerBlock("grassy_clay_horizon", GrassyClayHorizonBlock::new,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.GRASS)
             .randomTicks()
