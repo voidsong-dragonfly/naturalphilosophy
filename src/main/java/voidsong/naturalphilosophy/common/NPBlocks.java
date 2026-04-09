@@ -205,7 +205,6 @@ public class NPBlocks {
             .mapColor(MapColor.PLANT)
             .noCollission()
             .sound(SoundType.GRASS)
-            .offsetType(BlockBehaviour.OffsetType.XZ)
             .ignitedByLava()
             .speedFactor(0.01F)
             .strength(0.3f)

@@ -8,7 +8,7 @@
           "feature": "naturalphilosophy:checked_trees/oak_bush"
         },
         {
-          "chance": 0.55,
+          "chance": 0.625,
           "feature": "naturalphilosophy:checked_trees/oak_bush_stunted"
         }
       ],
