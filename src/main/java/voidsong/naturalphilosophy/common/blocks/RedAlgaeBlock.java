@@ -4,7 +4,6 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -66,8 +65,7 @@ public class RedAlgaeBlock extends BushBlock implements BonemealableBlock, Liqui
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        FluidState state = context.getLevel().getFluidState(context.getClickedPos());
-        return state.is(FluidTags.WATER) && state.getAmount() == 8 ? super.getStateForPlacement(context) : null;
+        return context.getLevel().getFluidState(context.getClickedPos()).isSourceOfType(Fluids.WATER) ? super.getStateForPlacement(context) : null;
     }
 
     @Override
@@ -81,12 +79,12 @@ public class RedAlgaeBlock extends BushBlock implements BonemealableBlock, Liqui
 
     @Override
     public boolean isValidBonemealTarget(@Nonnull LevelReader level, @Nonnull BlockPos pos, @Nonnull BlockState state) {
-        return !state.getValue(LARGE);
+        return true;
     }
 
     @Override
     public boolean isBonemealSuccess(@Nonnull Level level, @Nonnull RandomSource random, @Nonnull BlockPos pos, @Nonnull BlockState state) {
-        return !state.getValue(LARGE);
+        return true;
     }
 
     @Override
@@ -96,8 +94,16 @@ public class RedAlgaeBlock extends BushBlock implements BonemealableBlock, Liqui
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, @Nonnull RandomSource random, @Nonnull BlockPos pos, @Nonnull BlockState state) {
-        level.setBlockAndUpdate(pos, state.setValue(LARGE, true));
+    public void performBonemeal(@Nonnull ServerLevel level, @Nonnull RandomSource random, @Nonnull BlockPos pos, @Nonnull BlockState state) {
+        if (!state.getValue(LARGE)) {
+            level.setBlockAndUpdate(pos, state.setValue(LARGE, true));
+        } else {
+            for (BlockPos search : BlockPos.betweenClosed(pos.offset(-2, -1, -2), pos.offset(2, 1, 2))) {
+                if (canSurvive(defaultBlockState(), level, search) && level.getFluidState(search).isSourceOfType(Fluids.WATER) && random.nextInt(3) == 0) {
+                    level.setBlockAndUpdate(search, defaultBlockState().setValue(LARGE, random.nextInt(5) == 0));
+                }
+            }
+        }
     }
 
     @Override
