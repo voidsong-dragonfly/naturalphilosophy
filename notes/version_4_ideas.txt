@@ -172,4 +172,3 @@ work items AFTER the update to 1.21.11 or 26.1
 Current work items:
     fix feathering on most biomes without making large changes to their decoration
         => then ocean biomes, possibly. may start with stony shore?
-    old growth birch forests need something for cliffs
