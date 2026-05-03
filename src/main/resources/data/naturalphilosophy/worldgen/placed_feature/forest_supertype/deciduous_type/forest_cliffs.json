@@ -34,6 +34,11 @@
         "type": "minecraft:all_of",
         "predicates": [
           {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -1, 0],
+            "blocks": "naturalphilosophy:alfizol"
+          },
+          {
             "type": "minecraft:any_of",
             "predicates": [
               {
@@ -57,11 +62,6 @@
                 "tag": "minecraft:dirt"
               }
             ]
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [0, -1, 0],
-            "blocks": "naturalphilosophy:alfizol"
           }
         ]
       }
