@@ -6,6 +6,7 @@ import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 
 @SuppressWarnings("unused")
 public class NPGrassColorModifiers {
+    @SuppressWarnings("ExtractMethodRecommender")
     public static final EnumProxy<BiomeSpecialEffects.GrassColorModifier> LUSH_SWAMP = new EnumProxy<>(
         BiomeSpecialEffects.GrassColorModifier.class, "naturalphilosophy:lush_swamp", (BiomeSpecialEffects.GrassColorModifier.ColorModifier)
             (double x, double z, int color) -> {
