@@ -1,6 +1,7 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "naturalphilosophy:block/water_plant/rush_1"
+        "layer0": "naturalphilosophy:block/water_plant/rush/base",
+        "layer1": "naturalphilosophy:block/water_plant/rush/base_overlay"
     }
 }

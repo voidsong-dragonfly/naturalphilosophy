@@ -1,6 +1,7 @@
 {
-  "parent": "naturalphilosophy:block/cross_cutout",
+  "parent": "naturalphilosophy:block/dual_square_cutout",
   "textures": {
-    "cross": "naturalphilosophy:block/water_plant/wet_bottom"
+    "untinted": "naturalphilosophy:block/water_plant/wet_bottom_overlay",
+    "tinted": "naturalphilosophy:block/water_plant/wet_bottom"
   }
 }

@@ -1,6 +1,0 @@
-{
-  "parent": "naturalphilosophy:block/cross_cutout",
-  "textures": {
-    "cross": "naturalphilosophy:block/water_plant/rush_3"
-  }
-}

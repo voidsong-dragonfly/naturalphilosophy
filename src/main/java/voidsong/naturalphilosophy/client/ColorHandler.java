@@ -22,7 +22,8 @@ public class ColorHandler {
         // Natural Philosophy blocks to register, such as Dune Grass
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
-            NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get(), NPBlocks.GRASSY_CLAY_HORIZON.get());
+            NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get(), NPBlocks.GRASSY_CLAY_HORIZON.get(),
+            NPBlocks.CATTAILS.get(), NPBlocks.RUSHES.get());
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
             NPBlocks.LARGE_BUSH.get());
@@ -37,7 +38,8 @@ public class ColorHandler {
         // Natural Philosophy blocks to register, such as Dune Grass
         event.register((stack, tintIndex) ->
             tintIndex == 0 ? GrassColor.get(0.5D, 1.0D) : 0xFFFFFFFF,
-            NPItems.DUNE_GRASS_ITEM, NPItems.GRASS_CLAY_HORIZON_ITEM);
+            NPItems.DUNE_GRASS_ITEM, NPItems.GRASS_CLAY_HORIZON_ITEM,
+            NPItems.RUSHES_ITEM, NPItems.CATTAILS_ITEM);
         event.register((stack, tintIndex) ->
                 tintIndex == 1 ? FoliageColor.getDefaultColor() : 0xFFFFFFFF,
             NPItems.LARGE_BUSH);
