@@ -4,6 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -79,12 +81,6 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
     }
 
     @Override
-    public void setPlacedBy(Level level, BlockPos pos, @Nonnull BlockState state, @Nonnull LivingEntity placer, @Nonnull ItemStack stack) {
-        BlockPos blockpos = pos.above();
-        level.setBlock(blockpos, copyWaterloggedFrom(level, blockpos, this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER)).setValue(WET, state.getValue(WET)), 3);
-    }
-
-    @Override
     @Nonnull
     public FluidState getFluidState(BlockState state) {
         return state.getValue(BlockStateProperties.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
@@ -108,8 +104,8 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
             boolean bottomValid = this.canSurvive(this.defaultBlockState(), level, search) && (level.getBlockState(search).isAir() || water);
             boolean topValid = level.getBlockState(search.above()).isAir();
             if (bottomValid && topValid && random.nextInt(5) == 0) {
-                level.setBlockAndUpdate(search, defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, water));
-                level.setBlockAndUpdate(search.above(), defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER));
+                level.setBlockAndUpdate(search, defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, water).setValue(WET, water));
+                level.setBlockAndUpdate(search.above(), defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(WET, water));
             }
         }
     }

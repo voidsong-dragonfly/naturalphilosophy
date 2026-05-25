@@ -19,6 +19,9 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         ✓ => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
     "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
     shelf mushrooms for red/brown mushrooms
+    take another look at flower distributions, push them closer to Vanilla while making sure they make sense
+        => want to keep temperature-based flower distributions, but update to more searching of range
+        => remove meadow flower replacement entirely and just use Vanilla, as some mods add to it
 7. Port over some of the interesting features of Immersive Weathering/supplementaries
     Mossy stone and other mossy blocks, to make mossiness not just a cobblestone thing
         => can this be done effectively with moss carpets and a lichen block? I think the answer is yes
