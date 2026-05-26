@@ -38,7 +38,6 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(registry, "naturalphilosophy:flat_liquid", NPConditionSources.FlatLiquidConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:underwater", NPConditionSources.UnderwaterConditionSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:cave_depth", NPConditionSources.CaveDepthConditionSource.CODEC);
-            SurfaceRules.register(registry, "naturalphilosophy:biome", NPConditionSources.ExtendedBiomeConditionSource.CODEC);
         }
     }
 

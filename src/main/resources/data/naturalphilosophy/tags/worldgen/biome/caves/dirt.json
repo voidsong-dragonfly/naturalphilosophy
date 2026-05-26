@@ -8,7 +8,7 @@
     "minecraft:mushroom_fields",
     "minecraft:swamp",
     "minecraft:mangrove_swamp",
-    "#naturalphilosophy:snowy_caves"
+    "#naturalphilosophy:caves/snow"
   ],
   "values": [
     "#minecraft:is_overworld"

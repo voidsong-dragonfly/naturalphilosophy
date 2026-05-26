@@ -10,8 +10,8 @@
       {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "naturalphilosophy:biome",
-          "biome_is": "#naturalphilosophy:dirt_caves"
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:caves/dirt"
         },
         "then_run": {
           "type": "naturalphilosophy:bilayer_fill",
@@ -100,8 +100,8 @@
       {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "naturalphilosophy:biome",
-          "biome_is": "#naturalphilosophy:snowy_caves"
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:caves/snow"
         },
         "then_run": {
           "type": "naturalphilosophy:bilayer_fill",
