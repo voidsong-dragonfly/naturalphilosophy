@@ -1,6 +1,11 @@
 {
   "parent": "block/carpet",
   "render_type": "cutout",
+  "textures": {
+    "particle": "block/snow",
+    "snow": "block/snow",
+    "side": "naturalphilosophy:block/draped_snow"
+  },
   "elements": [
     {
       "from": [0, 0, 0],
@@ -15,8 +20,8 @@
       }
     },
     {
-      "from": [-0.1, -15.0, -0.1],
-      "to": [16.1, 1.0, 16.1],
+      "from": [-0.05, -15.0, -0.05],
+      "to": [16.05, 1.0, 16.05],
       "faces": {
         "north": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "north"},
         "east": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "east"},
@@ -25,8 +30,8 @@
       }
     },
     {
-      "from": [16.1, -15.0, -0.1],
-      "to": [-0.1, 1.0, 16.1],
+      "from": [16.05, -15.0, -0.05],
+      "to": [-0.05, 1.0, 16.05],
       "faces": {
         "north": {"uv": [16, 0, 0, 16], "texture": "#side", "cullface": "down"},
         "east": {"uv": [16, 0, 0, 16], "texture": "#side", "cullface": "down"},

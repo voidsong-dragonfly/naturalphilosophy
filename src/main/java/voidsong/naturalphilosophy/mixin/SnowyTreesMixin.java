@@ -4,7 +4,6 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -12,6 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import voidsong.naturalphilosophy.common.NPBlocks;
 
 import java.util.Set;
 
@@ -30,7 +30,7 @@ public class SnowyTreesMixin {
         for (BlockPos leaves : set2) {
             BlockPos top = leaves.above();
             if (level instanceof WorldGenRegion && level.isEmptyBlock(top) && !level.isEmptyBlock(leaves) && level.getBiome(top).value().shouldSnow(level, top)) {
-                level.setBlock(top, Blocks.SNOW.defaultBlockState(), 2);
+                level.setBlock(top, NPBlocks.DRAPED_SNOW.get().defaultBlockState(), 2);
             }
         }
     }

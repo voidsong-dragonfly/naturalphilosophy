@@ -11,6 +11,7 @@
     "SculkVeinBlockMixin",
     "SnowLayerMixin",
     "SnowyTreesMixin",
+    "SpreadingSnowyDirtBlockMixin",
     "SurfaceRulesMixin",
     "SurfaceRulesMixin$ConditionSource",
     "SurfaceRulesMixin$Context",

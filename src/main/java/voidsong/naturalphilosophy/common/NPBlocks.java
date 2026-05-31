@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.CoralFanBlock;
 import net.minecraft.world.level.block.CoralPlantBlock;
 import net.minecraft.world.level.block.CoralWallFanBlock;
+import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -137,4 +138,16 @@ public class NPBlocks {
             .randomTicks()
             .strength(0.6F)
             .sound(SoundType.GRASS));
+    // Pseudo-technical block to reduce the issues of snow layer modification via side-stepping 'em
+    public static final DeferredBlock<Block> DRAPED_SNOW = BLOCKS.registerBlock("draped_snow", SnowLayerBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.SNOW)
+            .replaceable()
+            .forceSolidOff()
+            .randomTicks()
+            .strength(0.1F)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.SNOW)
+            .isViewBlocking((state, getter, pos) -> state.getValue(SnowLayerBlock.LAYERS) >= 8)
+            .pushReaction(PushReaction.DESTROY));
 }
