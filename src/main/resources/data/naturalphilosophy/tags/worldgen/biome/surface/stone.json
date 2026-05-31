@@ -1,0 +1,13 @@
+{
+  "remove": [
+    "#naturalphilosophy:surface/badlands",
+    "#naturalphilosophy:surface/basalt",
+    "#naturalphilosophy:surface/sandstone",
+    "#c:is_mountain/peak",
+    "minecraft:snowy_slopes",
+    "minecraft:grove"
+  ],
+  "values": [
+    "#minecraft:is_overworld"
+  ]
+}

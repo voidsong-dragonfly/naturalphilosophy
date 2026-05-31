@@ -1,0 +1,9 @@
+{
+  "remove": [ ],
+  "values": [
+    "minecraft:stony_shore",
+    "minecraft:frozen_ocean",
+    "minecraft:deep_frozen_ocean",
+    "minecraft:ice_spikes"
+  ]
+}
