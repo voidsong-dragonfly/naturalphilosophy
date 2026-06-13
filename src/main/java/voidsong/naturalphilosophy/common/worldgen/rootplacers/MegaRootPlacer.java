@@ -24,7 +24,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
 import net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacerType;
@@ -52,6 +51,7 @@ public class MegaRootPlacer extends RootBallRootPlacer {
             .and(BlockStateProvider.CODEC.fieldOf("surface_root_provider").forGetter(placer -> placer.rootProvider))
             .and(SurfaceRootPlacement.CODEC.fieldOf("surface_root_placement").forGetter(placer -> placer.surfaceRootPlacement))
             .and(GroundAmendment.CODEC.optionalFieldOf("ground_amendment", new GroundAmendment(BlockTags.DIRT, BlockStateProvider.simple(Blocks.DIRT))).forGetter(placer -> placer.amendment))
+            .and(BlockStateProvider.CODEC.fieldOf("muddy_root_provider").forGetter(placer -> placer.muddyRootProvider))
             .and(RootBallPlacement.CODEC.fieldOf("root_ball_placement").forGetter(placer -> placer.placement))
             .apply(instance, MegaRootPlacer::new)
     );
@@ -64,8 +64,9 @@ public class MegaRootPlacer extends RootBallRootPlacer {
                           BlockStateProvider surfaceRootProvider,
                           SurfaceRootPlacement largePlacement,
                           GroundAmendment amendment,
+                          BlockStateProvider muddyRootProvider,
                           RootBallPlacement ballPlacement) {
-        super(trunkOffset, rootProvider, aboveRootPlacement, amendment, ballPlacement);
+        super(trunkOffset, rootProvider, aboveRootPlacement, amendment, muddyRootProvider, ballPlacement);
         this.surfaceRootProvider = surfaceRootProvider;
         this.surfaceRootPlacement = largePlacement;
     }

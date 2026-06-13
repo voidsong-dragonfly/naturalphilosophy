@@ -1,18 +1,11 @@
 package voidsong.naturalphilosophy.common;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.ColorRGBA;
-import net.minecraft.world.level.block.BaseCoralFanBlock;
-import net.minecraft.world.level.block.BaseCoralPlantBlock;
-import net.minecraft.world.level.block.BaseCoralWallFanBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ColoredFallingBlock;
-import net.minecraft.world.level.block.CoralFanBlock;
-import net.minecraft.world.level.block.CoralPlantBlock;
-import net.minecraft.world.level.block.CoralWallFanBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.TallFlowerBlock;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -185,7 +178,7 @@ public class NPBlocks {
             .dynamicShape()
             .ignitedByLava()
             .pushReaction(PushReaction.DESTROY)
-            .isRedstoneConductor((a, b, c) -> false));
+            .isRedstoneConductor(NPBlocks::never));
     public static final DeferredBlock<Block> GIANT_BAMBOO_LEAVES = BLOCKS.registerBlock("giant_bamboo_leaves", GiantBambooLeavesBlock::new,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.PLANT)
@@ -194,11 +187,11 @@ public class NPBlocks {
             .sound(SoundType.GRASS)
             .noOcclusion()
             .isValidSpawn(Blocks::ocelotOrParrot)
-            .isSuffocating((a, b, c) -> false)
-            .isViewBlocking((a, b, c) -> false)
+            .isSuffocating(NPBlocks::never)
+            .isViewBlocking(NPBlocks::never)
             .ignitedByLava()
             .pushReaction(PushReaction.DESTROY)
-            .isRedstoneConductor((a, b, c) -> false)
+            .isRedstoneConductor(NPBlocks::never)
     );
     public static final DeferredBlock<Block> LARGE_BUSH = BLOCKS.registerBlock("large_bush", TallFlowerBlock::new,
         BlockBehaviour.Properties.of()
@@ -210,4 +203,22 @@ public class NPBlocks {
             .strength(0.3f)
             .pushReaction(PushReaction.DESTROY)
     );
+    public static final DeferredBlock<Block> ROOTED_MUD = BLOCKS.registerBlock("rooted_mud", MudBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_CYAN)
+            .isValidSpawn(Blocks::always)
+            .isRedstoneConductor(NPBlocks::always)
+            .isViewBlocking(NPBlocks::always)
+            .isSuffocating(NPBlocks::always)
+            .sound(SoundType.MUD)
+            .strength(0.5f)
+    );
+
+    private static boolean always(BlockState state, BlockGetter blockGetter, BlockPos pos) {
+        return true;
+    }
+    
+    private static boolean never(BlockState state, BlockGetter blockGetter, BlockPos pos) {
+        return false;
+    }
 }

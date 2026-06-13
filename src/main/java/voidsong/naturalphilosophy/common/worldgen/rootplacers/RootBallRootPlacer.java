@@ -23,6 +23,7 @@ import net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacer;
 import net.minecraft.world.level.levelgen.feature.rootplacers.RootPlacerType;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.neoforged.neoforge.common.extensions.IBlockStateExtension;
+import voidsong.naturalphilosophy.common.NPTags;
 import voidsong.naturalphilosophy.common.worldgen.NPRootPlacers;
 
 import javax.annotation.Nonnull;
@@ -33,15 +34,18 @@ public class RootBallRootPlacer extends RootPlacer {
     public static final MapCodec<RootBallRootPlacer> CODEC = RecordCodecBuilder.mapCodec(
         instance -> rootPlacerParts(instance)
             .and(GroundAmendment.CODEC.optionalFieldOf("ground_amendment", new GroundAmendment(BlockTags.DIRT, BlockStateProvider.simple(Blocks.DIRT))).forGetter(placer -> placer.amendment))
+            .and(BlockStateProvider.CODEC.fieldOf("muddy_root_provider").forGetter(placer -> placer.rootProvider))
             .and(RootBallPlacement.CODEC.fieldOf("root_ball_placement").forGetter(placer -> placer.placement))
             .apply(instance, RootBallRootPlacer::new)
     );
     public final GroundAmendment amendment;
+    protected final BlockStateProvider muddyRootProvider;
     public final RootBallPlacement placement;
 
-    public RootBallRootPlacer(IntProvider trunkOffset, BlockStateProvider rootProvider, Optional<AboveRootPlacement> aboveRootPlacement, GroundAmendment amendment, RootBallPlacement rootPlacement) {
+    public RootBallRootPlacer(IntProvider trunkOffset, BlockStateProvider rootProvider, Optional<AboveRootPlacement> aboveRootPlacement, GroundAmendment amendment, BlockStateProvider muddyRootProvider, RootBallPlacement rootPlacement) {
         super(trunkOffset, rootProvider, aboveRootPlacement);
         this.amendment = amendment;
+        this.muddyRootProvider = muddyRootProvider;
         this.placement = rootPlacement;
     }
 
@@ -86,7 +90,8 @@ public class RootBallRootPlacer extends RootPlacer {
                 // This root placer is closer to a secondary feature than a root placer such as MegaRootPlacer or MangroveRootPlacer
                 // Going through RootPlacer#canPlaceRoot would also block it off from classes that extend this, such as MegaRootPlacer
                 if (level.isStateAtPosition(mutablePos, state -> state.is(placement.canGrowThrough()))) {
-                    blockSetter.accept(mutablePos.immutable(), getPotentiallyWaterloggedState(level, mutablePos, rootProvider.getState(random, mutablePos)));
+                    BlockStateProvider place = level.isStateAtPosition(mutablePos, state -> state.is(NPTags.Blocks.MUDDY_ROOTS_REPLACEABLE)) ? muddyRootProvider : rootProvider;
+                    blockSetter.accept(mutablePos.immutable(), getPotentiallyWaterloggedState(level, mutablePos, place.getState(random, mutablePos)));
                 }
             }
             // Check to see if we have any ground blocks that need amendment after roots

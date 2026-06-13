@@ -25,6 +25,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import voidsong.naturalphilosophy.common.NPBlocks;
 
 import javax.annotation.Nonnull;
 
@@ -48,7 +49,7 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
         if (state.getValue(HALF) == DoubleBlockHalf.UPPER && state.getValue(BlockStateProperties.WATERLOGGED))
             return false;
         if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
-            return level.getBlockState(pos.below()).is(Blocks.MUD) && (level.getBlockState(pos.above()).isAir() || level.getBlockState(pos.above()).is(state.getBlock()));
+            return (level.getBlockState(pos.below()).is(Blocks.MUD) || level.getBlockState(pos.below()).is(NPBlocks.ROOTED_MUD)) && (level.getBlockState(pos.above()).isAir() || level.getBlockState(pos.above()).is(state.getBlock()));
         } else {
             return super.canSurvive(state, level, pos);
         }
