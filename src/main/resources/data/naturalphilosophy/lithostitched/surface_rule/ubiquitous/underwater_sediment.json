@@ -109,8 +109,14 @@
         {
           "type": "minecraft:condition",
           "if_true": {
-            "type": "lithostitched:biome",
-            "biomes": "#naturalphilosophy:surface/muddy"
+            "type": "minecraft:biome",
+            "biome_is": [
+              "minecraft:swamp",
+              "minecraft:mangrove_swamp",
+              "minecraft:sparse_jungle",
+              "minecraft:jungle",
+              "minecraft:bamboo_jungle"
+            ]
           },
           "then_run": {
             "type": "minecraft:block",
