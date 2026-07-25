@@ -3,6 +3,7 @@ package voidsong.naturalphilosophy.common.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -21,7 +22,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import voidsong.naturalphilosophy.common.NPBlocks;
+import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nonnull;
 
@@ -45,7 +46,12 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
         if (state.getValue(HALF) == DoubleBlockHalf.UPPER && state.getValue(BlockStateProperties.WATERLOGGED))
             return false;
         if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
-            return (level.getBlockState(pos.below()).is(Blocks.MUD) || level.getBlockState(pos.below()).is(NPBlocks.ROOTED_MUD)) && (level.getBlockState(pos.above()).isAir() || level.getBlockState(pos.above()).is(state.getBlock()));
+            BlockState below = level.getBlockState(pos.below());
+            boolean fluid = level.getFluidState(pos).is(Fluids.WATER);
+            if(level.getFluidState(pos).isEmpty())
+                for(BlockPos search : BlockPos.betweenClosed(pos.offset(-3, -1, -3), pos.offset(3, -1, 3)))
+                    fluid = fluid || level.getFluidState(search).is(Fluids.WATER);
+            return ((below.is(BlockTags.DIRT) && !below.is(Blocks.MYCELIUM)) || below.is(Tags.Blocks.SANDS) || below.is(Blocks.CLAY)) && fluid;
         } else {
             return super.canSurvive(state, level, pos);
         }
