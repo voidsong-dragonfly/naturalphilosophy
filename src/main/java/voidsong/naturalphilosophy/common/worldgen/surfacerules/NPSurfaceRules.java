@@ -7,13 +7,15 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.PositionalRandomFactory;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.SurfaceRules.SurfaceRule;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import voidsong.naturalphilosophy.common.worldgen.surfacerules.NPRuleSources.AlluvialSedimentsRuleSource.ZonalBoundaries;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 public class NPSurfaceRules {
-    record NoiseThresholdSelectorRule(SurfaceRules.Context pContext, ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Double> lowerThresholds, boolean cascade) implements SurfaceRules.SurfaceRule {
+    record NoiseThresholdSelectorRule(SurfaceRules.Context pContext, ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRule defaultRule, ImmutableList<SurfaceRule> ruleset, List<Double> lowerThresholds, boolean cascade) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -33,7 +35,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record NoiseThresholdRule(SurfaceRules.Context pContext, ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRules.SurfaceRule defaultRule, SurfaceRules.SurfaceRule rule, Double lowerThreshold) implements SurfaceRules.SurfaceRule {
+    record NoiseThresholdRule(SurfaceRules.Context pContext, ResourceKey<NormalNoise.NoiseParameters> noise, SurfaceRule defaultRule, SurfaceRule rule, Double lowerThreshold) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -46,7 +48,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record RandomThresholdSelectorRule(SurfaceRules.Context pContext, PositionalRandomFactory positionalRandomFactory, BlockState defaultState, List<BlockState> stateSet, List<Double> lowerThresholds) implements SurfaceRules.SurfaceRule {
+    record RandomThresholdSelectorRule(SurfaceRules.Context pContext, PositionalRandomFactory positionalRandomFactory, BlockState defaultState, List<BlockState> stateSet, List<Double> lowerThresholds) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -62,7 +64,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record RandomThresholdRule(SurfaceRules.Context pContext, PositionalRandomFactory positionalRandomFactory, BlockState defaultState, BlockState state, Double lowerThreshold) implements SurfaceRules.SurfaceRule {
+    record RandomThresholdRule(SurfaceRules.Context pContext, PositionalRandomFactory positionalRandomFactory, BlockState defaultState, BlockState state, Double lowerThreshold) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -75,7 +77,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record HeightThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth, boolean cascade) implements SurfaceRules.SurfaceRule {
+    record HeightThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRule defaultRule, ImmutableList<SurfaceRule> ruleset, List<Integer> lowerThresholds, int surfaceDepthMultiplier, boolean addStoneDepth, boolean cascade) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -95,7 +97,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record HeightThresholdRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, SurfaceRules.SurfaceRule rule, int lowerThreshold, int surfaceDepthMultiplier, boolean addStoneDepth) implements SurfaceRules.SurfaceRule {
+    record HeightThresholdRule(SurfaceRules.Context pContext, SurfaceRule defaultRule, SurfaceRule rule, int lowerThreshold, int surfaceDepthMultiplier, boolean addStoneDepth) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -109,7 +111,7 @@ public class NPSurfaceRules {
     }
 
 
-    record StoneDepthThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRules.SurfaceRule defaultRule, ImmutableList<SurfaceRules.SurfaceRule> ruleset, int length) implements SurfaceRules.SurfaceRule {
+    record StoneDepthThresholdSelectorRule(SurfaceRules.Context pContext, SurfaceRule defaultRule, ImmutableList<SurfaceRule> ruleset, int length) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -121,7 +123,7 @@ public class NPSurfaceRules {
         }
     }
 
-    record BilayerFillRule(SurfaceRules.Context pContext, boolean land, int surfaceOffset, int secondaryDepthRange, SurfaceRules.SurfaceRule topRule, SurfaceRules.SurfaceRule defaultRule) implements SurfaceRules.SurfaceRule {
+    record BilayerFillRule(SurfaceRules.Context pContext, boolean land, int surfaceOffset, int secondaryDepthRange, SurfaceRule topRule, SurfaceRule defaultRule) implements SurfaceRule {
         @Nullable
         @Override
         public BlockState tryApply(int x, int y, int z) {
@@ -135,8 +137,35 @@ public class NPSurfaceRules {
             // Second bin necessitates more checks to form the 'bottom' effectively
             if(pContext.stoneDepthAbove <= 1 + surfaceOffset + pContext.surfaceDepth + secondary)
                 return defaultRule.tryApply(x, y, z);
-                // Return a null BlockState in if we fail to be in either bin
+            // Return a null BlockState in if we fail to be in either bin
             else return null;
+        }
+    }
+
+    record AlluvialSedimentsRule(SurfaceRules.Context pContext, ZonalBoundaries zonalBoundaries, SurfaceRule riparianRule, SurfaceRule farRiparianRule, SurfaceRule estuaryRule, SurfaceRule coastlineRule) implements SurfaceRule {
+        @Nullable
+        @Override
+        public BlockState tryApply(int x, int y, int z) {
+            // Get biome builder parameters
+            double continentalness = ((ContextExtension)(Object)pContext).naturalphilosophy$getCachedContinentalnessValue(x, z);
+            double peaksValleys = ((ContextExtension)(Object)pContext).naturalphilosophy$getCachedPVValue(x, z);
+            // Calculate estuary outer & inner boundaries, to allow rivers to taper into estuaries & estuaries to widen
+            // Peaks & Valleys is highest at the center of rivers and decreases relatively quickly outwards from there
+            double estuaryOuterBoundary = Math.max(zonalBoundaries.farRiparianBoundary(), -0.4f*continentalness + (0.4f*zonalBoundaries.estuaryBoundary() + zonalBoundaries.farRiparianBoundary()));
+            double estuaryInnerBoundary = Math.max(-1, -1 + (10*continentalness - 10*zonalBoundaries.estuaryBoundary()));
+            // Calculate where estuaries are: within the inner & outer boundaries, not out at sea, and not where the inner boundary is wider than the riparian boundary
+            if (continentalness >= zonalBoundaries.oceanBoundary() && peaksValleys >= estuaryInnerBoundary && peaksValleys <= estuaryOuterBoundary && estuaryInnerBoundary < zonalBoundaries.riparianBoundary()) {
+                return estuaryRule.tryApply(x, y, z);
+            // If we're in a coastline, it takes precedence over rivers
+            } else if (continentalness <= zonalBoundaries.coastlineBoundary()) {
+                return coastlineRule.tryApply(x, y, z);
+            // Otherwise, we're in a riparian ecosystem and should use the riparian rule
+            } else if (peaksValleys <= zonalBoundaries.riparianBoundary()) {
+                return riparianRule.tryApply(x, y, z);
+            // Unless we're so far away that the area will be dryer, in which case we use the far rule
+            } else if (peaksValleys <= zonalBoundaries.farRiparianBoundary()) {
+                return farRiparianRule.tryApply(x, y, z);
+            } else return null;
         }
     }
 }

@@ -51,6 +51,7 @@ public abstract class SurfaceRulesMixin {
             SurfaceRules.register(registry, "naturalphilosophy:height_threshold_selector", NPRuleSources.HeightThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:stone_depth_threshold_selector", NPRuleSources.StoneDepthThresholdSelectorRuleSource.CODEC);
             SurfaceRules.register(registry, "naturalphilosophy:bilayer_fill", NPRuleSources.BilayerFillRuleSource.CODEC);
+            SurfaceRules.register(registry, "naturalphilosophy:alluvial_sediment", NPRuleSources.AlluvialSedimentsRuleSource.CODEC);
         }
     }
 
@@ -79,6 +80,18 @@ public abstract class SurfaceRulesMixin {
         @Unique
         @SuppressWarnings("AddedMixinMembersNamePattern")
         private final Object2DoubleArrayMap<ResourceKey<NormalNoise.NoiseParameters>> noiseCache = new Object2DoubleArrayMap<>();
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private long lastUpdatePVCache;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private double pvCache;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private long lastUpdateContinentalnessCache;
+        @Unique
+        @SuppressWarnings("AddedMixinMembersNamePattern")
+        private double continentalnessCache;
         // Caches for cave depth condition variables
         @Unique
         @SuppressWarnings("AddedMixinMembersNamePattern")
@@ -127,6 +140,55 @@ public abstract class SurfaceRulesMixin {
                 lastUpdateNoiseCache = lastUpdateXZ;
             }
             return noiseCache.computeIfAbsent(noise, key -> randomState.getOrCreateNoise(noise).getValue(x, 0.0, z));
+        }
+
+        @Override
+        public double naturalphilosophy$getCachedPVValue(int x, int z) {
+            if (lastUpdateXZ != lastUpdatePVCache) {
+                double weirdness = randomState.router().ridges().compute(new DensityFunction.FunctionContext() {
+                    @Override
+                    public int blockX() {
+                        return x;
+                    }
+
+                    @Override
+                    public int blockY() {
+                        return 0;
+                    }
+
+                    @Override
+                    public int blockZ() {
+                        return z;
+                    }
+                });
+                pvCache = 1 - Math.abs((3*Math.abs(weirdness)) - 2);
+                lastUpdateNoiseCache = lastUpdateXZ;
+            }
+            return pvCache;
+        }
+
+        @Override
+        public double naturalphilosophy$getCachedContinentalnessValue(int x, int z) {
+            if (lastUpdateXZ != lastUpdateContinentalnessCache) {
+                continentalnessCache = randomState.router().continents().compute(new DensityFunction.FunctionContext() {
+                    @Override
+                    public int blockX() {
+                        return x;
+                    }
+
+                    @Override
+                    public int blockY() {
+                        return 0;
+                    }
+
+                    @Override
+                    public int blockZ() {
+                        return z;
+                    }
+                });
+                lastUpdateContinentalnessCache = lastUpdateXZ;
+            }
+            return continentalnessCache;
         }
 
         @Inject(method = "updateXZ", at = @At(value= "HEAD"))
