@@ -202,6 +202,7 @@ public class NPBlocks {
             .speedFactor(0.01F)
             .strength(0.3f)
             .pushReaction(PushReaction.DESTROY)
+            .offsetType(BlockBehaviour.OffsetType.XYZ)
     );
     public static final DeferredBlock<Block> ROOTED_MUD = BLOCKS.registerBlock("rooted_mud", MudBlock::new,
         BlockBehaviour.Properties.of()
@@ -217,7 +218,7 @@ public class NPBlocks {
     private static boolean always(BlockState state, BlockGetter blockGetter, BlockPos pos) {
         return true;
     }
-    
+
     private static boolean never(BlockState state, BlockGetter blockGetter, BlockPos pos) {
         return false;
     }

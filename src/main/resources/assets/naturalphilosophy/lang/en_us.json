@@ -1,5 +1,6 @@
 {
     "itemGroup.naturalphilosophy": "Natural Philosophy",
+    "_comment": "NP Blocks",
     "block.naturalphilosophy.dune_grass": "Dune Grass",
     "block.naturalphilosophy.tall_dune_grass": "Tall Dune Grass",
     "block.naturalphilosophy.rushes": "Rushes",
@@ -22,5 +23,8 @@
     "block.naturalphilosophy.giant_bamboo_leaves": "Giant Bamboo Leaves",
     "item.naturalphilosophy.giant_bamboo": "Giant Bamboo",
     "block.naturalphilosophy.large_bush": "Large Bush",
-    "block.naturalphilosophy.rooted_mud": "Rooted Mud"
+    "block.naturalphilosophy.rooted_mud": "Rooted Mud",
+    "_comment": "Rename Minecraft large flower bushes to include 'bush', this is not essential so it does not matter if it is overwritten",
+    "block.minecraft.lilac": "Lilac Bush",
+    "block.minecraft.peony": "Peony Bush"
 }

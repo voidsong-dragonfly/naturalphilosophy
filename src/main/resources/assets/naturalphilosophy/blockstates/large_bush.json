@@ -2,10 +2,7 @@
   "variants": {
     "half=lower": [
       {
-        "model": "naturalphilosophy:block/bush/base_large"
-      },
-      {
-        "model": "naturalphilosophy:block/bush/base_medium"
+        "model": "naturalphilosophy:block/bush/base"
       }
     ],
     "half=upper": {

@@ -1,7 +1,7 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "naturalphilosophy:block/bush/base/medium_leaves"
+    "particle": "minecraft:block/oak_leaves"
   },
   "elements": []
 }

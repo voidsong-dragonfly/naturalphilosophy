@@ -1,0 +1,6 @@
+{
+  "parent": "naturalphilosophy:block/bush/flowering",
+  "textures": {
+    "flowers": "naturalphilosophy:block/bush/lilac_flowers"
+  }
+}
