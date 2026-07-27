@@ -2,22 +2,22 @@
   "variants": {
     "": [
       {
-        "model": "minecraft:block/grass/short_1"
+        "model": "minecraft:block/grass/short_untinted"
       },
       {
-        "model": "minecraft:block/grass/short_1"
+        "model": "minecraft:block/grass/short_untinted"
       },
       {
-        "model": "minecraft:block/grass/short_2"
+        "model": "minecraft:block/grass/short_untinted"
       },
       {
-        "model": "minecraft:block/grass/short_3"
+        "model": "minecraft:block/grass/short_green"
       },
       {
-        "model": "minecraft:block/grass/short_3"
+        "model": "minecraft:block/grass/short_green"
       },
       {
-        "model": "minecraft:block/grass/short_4"
+        "model": "minecraft:block/grass/short_yellow"
       }
     ]
   }

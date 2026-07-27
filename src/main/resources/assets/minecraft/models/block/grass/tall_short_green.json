@@ -1,6 +1,6 @@
 {
   "parent": "naturalphilosophy:block/tinted_square_cutout",
   "textures": {
-    "texture": "minecraft:block/grass/tall_default_3"
+    "texture": "minecraft:block/grass/tall_short_green"
   }
 }
