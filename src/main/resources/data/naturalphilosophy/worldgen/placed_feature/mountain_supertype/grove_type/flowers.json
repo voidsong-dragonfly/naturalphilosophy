@@ -6,7 +6,7 @@
         {
           "chance": 0.25,
           "feature": {
-            "feature": "naturalphilosophy:plant_patches/lilacs",
+            "feature": "naturalphilosophy:plant_patches/lilac_bushes",
             "placement": [{
               "type": "minecraft:block_predicate_filter",
               "predicate": {
@@ -27,7 +27,7 @@
         {
           "chance": 0.25,
           "feature": {
-            "feature": "naturalphilosophy:plant_patches/peonies",
+            "feature": "naturalphilosophy:plant_patches/peony_bushes",
             "placement": [{
               "type": "minecraft:block_predicate_filter",
               "predicate": {
