@@ -1,6 +1,6 @@
 {
   "parent": "naturalphilosophy:block/bush/flowering",
   "textures": {
-    "flowers": "naturalphilosophy:block/bush/rose_flowers"
+    "flowers": "naturalphilosophy:block/bush/peony_flowers"
   }
 }
