@@ -49,8 +49,8 @@ public class NPBlocks {
 
     public static final DeferredBlock<Block> DUNE_GRASS = BLOCKS.registerBlock("dune_grass", DuneGrass::new, GRASS_PROPERTIES);
     public static final DeferredBlock<Block> TALL_DUNE_GRASS = BLOCKS.registerBlock("tall_dune_grass", TallDuneGrass::new, TALL_GRASS_PROPERTIES);
-    public static final DeferredBlock<Block> RUSHES = BLOCKS.registerBlock("rushes", WaterPlantBlock::new, GRASS_PROPERTIES);
-    public static final DeferredBlock<Block> CATTAILS = BLOCKS.registerBlock("cattails", WaterPlantBlock::new, GRASS_PROPERTIES);
+    public static final DeferredBlock<Block> RUSHES = BLOCKS.registerBlock("rushes", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
+    public static final DeferredBlock<Block> CATTAILS = BLOCKS.registerBlock("cattails", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
     public static final DeferredBlock<Block> MYCELIAL_GROWTH = BLOCKS.registerBlock("mycelial_growth", MycelialGrowthBlock::new,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_PURPLE)

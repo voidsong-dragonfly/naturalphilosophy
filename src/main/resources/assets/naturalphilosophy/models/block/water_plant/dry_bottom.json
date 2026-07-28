@@ -2,6 +2,6 @@
   "parent": "naturalphilosophy:block/dual_square_cutout",
   "textures": {
     "untinted": "naturalphilosophy:block/water_plant/dry_bottom_overlay",
-    "tinted": "naturalphilosophy:block/water_plant/dry_bottom"
+    "tinted": "naturalphilosophy:block/water_plant/bottom_tinted"
   }
 }
