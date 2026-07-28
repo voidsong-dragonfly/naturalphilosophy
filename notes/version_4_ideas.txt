@@ -1,9 +1,10 @@
-4.0.0 (The Feature Update)
---------------------------------------------------------------------------------------
-possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
---------------------------------------------------------------------------------------
-3. More plant variety in general
+4.0.0 (Re-Vanillaization Update)
+
+1. More plant variety in general
     ✓ Grass should have multiple models that it varies between to remove the monotone green of plains
+        => Maybe actually want to add another grass block, call it "seeded grass" for the brown tops
+        ✓ => Would remove some of the changes of Vanilla models/textures that aren't my best work
+        ✓ => Removed red topped (brown) grass, made default colors more common, removed AO to match vanilla for a more subtle vanilla-like variation
     ✓ Lilypads should have multiple models of varying sizes, roots, and possibly flowers
     ✓ redo cattails/rushes textures, more variety to them, make them less under-water-y except in that case specifically (green tune-ups?)
     Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
@@ -11,32 +12,24 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         => want flowers that can be used across a mix of biomes, rather than ones specific to any given biome
         => a few new cold flowers and a few new warm flowers would be good, I think. lots of forest and temperate flowers right now
     ✓ dune grass should be a better mix of 1.21.5 features and my current idea. Move away from tinted textures and onto other concerns
-    ✓     => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
+        ✓ => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
+        ✓ => need to make the dune grass tops not as tall and more of a sensible height, possibly check out reed top size or scale down further?
     ✓ bushes should have the skeleton of a dead bush, plus leaves surrounding that, plus fluff on the outside to make them bigger
         ✓ => remove flowering azalea bushes from generation, use them to (partially) indicate lush caves. normal (unflowering) azaleas instead
         ✓ => actually just going to restrict azaleas (flowering, etc) to a few areas (flower forests, cherry groves) and remove the rest
         ✓ => we have flowering bushes that are bigger now.
         ✓ => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
     "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
-    shelf mushrooms for red/brown mushrooms
     take another look at flower distributions, push them closer to Vanilla while making sure they make sense
         => want to keep temperature-based flower distributions, but update to more searching of range
         => remove meadow flower replacement entirely and just use Vanilla, as some mods add to it
-7. Port over some of the interesting features of Immersive Weathering/supplementaries
-    Mossy stone and other mossy blocks, to make mossiness not just a cobblestone thing
-        => can this be done effectively with moss carpets and a lichen block? I think the answer is yes
-    Fulgurite/vitrified sand that happens from lightning strikes + some naturally generating fulgurite; also for red sand?
+✓ 2. Better soil-top block selection
     ✓ New kinds of soil; consider permafrost for snowy biome dirt alongside some sort of leaf loam or leaf litter for non-coniferous forests
         ✓ => definite yes on leaf loam/humus/etc
         ✓ => consider whether we need permafrost at all. purpose maybe to make snowy, thick hillsides look less silly?
         ✓ => might also need to change snowy grass texture as well, which could cause its own issues
         ✓ => or only generate permafrost under thick blankets of snow (full block)
-    barnacles block similar to glow lichen? can only grow on blocks of above a certain hardness, not gravel/etc
-    ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else?
-    Moss outgrowths to place on other blocks? or just make mossy stone? unsure.
-    icicles, esp. for caves in snowy peaks, would do a lot for them
-    Desert precipitation changes to allow thunderstorms to rain in warmer areas, but thunderstorms only?
-✓ 8. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
+✓ 3. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
     ✓ Do we actually need custom foliage types? Might just want to make a few trunk-placer changes to allow for better shaping
     ✓ Could do limits on where branches can propagate to but otherwise use the fancy oak tree placer => similar to plains trees
     ✓ Should have multiple types of trees in deciduous forests
@@ -51,14 +44,7 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
         ✓ => used a modified blob instead
     ✓ remove draping leaves from plains oak
     ✓ move plains oak over to fancy placer
-5. Rocky biome changes to make them feel more rock-like and less like bare edifices of stone with nothing growing and no cracks
-    New rock generator, either cubic with shifted corners or ore-vein based; make it follow IRL rock shapes more
-    New block to make rocks less likely to blend into the stone below them?
-    Make rocky biomes have a layer of gravel and dirt on top, except for on cliffs, to make the rock less obvious?
-    Cobblestone not being used in world generation due to its uniformity and lacking in the texture of normal cobble-gravel beds
-    rock block generator rather than boulder generator, except in specific glacial areas (?)
-    significant work on outcroppings and slopes would probably be good here
-9. Need to stop using as much feathering and move closer to noise patches
+4. Need to stop using as much feathering and move closer to noise patches
     Remove feathering, as Vanilla does not have it and I want to move back towards Vanilla
         => most biomes don't need feathering or block splits, we can do variety via other properties
         => if we really need feathering (mushroom islands), do it with either tendrils or an in-between block
@@ -73,96 +59,15 @@ possible work items BEFORE an update to 1.21.11 or 26.1 (whichever comes first)
     ✓ many biomes can make do with a single top block and some under-ground filtering
         ✓ => grass: plains*, savannas*, windswept forest, meadow,
         ✓ => humus: jungle, dark forest
-11. talus slopes on the beneath part of the mountains?
-    rubble blocks for the surface to break up the flatness, rock slopes really need this to feel alive
-    lots of rocky beaches have this but are not flat, and "cobblestone in the ground" does not do it justice
-    a good place to use block mixes as it's a very similar-colored block mix
-    scree slopes on anything even vaguely glacial (?) => no glacial movement in the same way, but it could look cool as hell
-12. new blocks
-    mixed gravel, waterworn gravel, mixed cobbles
-    worn stone/cracked stone, mossy/overgrown stone
+✓ 5.  new blocks
     ✓ "giant bamboo" with leaves for bamboo jungles? make them able to be dark on the floor without constant cover?
     ✓ humus block to stop using podzol everywhere => now alfizol, named from alfisol, similar to spodosol (podzol). USDA soli class
-    Dry dirt block that can't support a grass property but can grow grass, for deserts and desert-like biomes? More sand-colored? (uses packed mud palette)
-✓ 14. plant distribution changes for some biomes
+✓ 6.  plant distribution changes for some biomes
     ✓ increase mushrooms, decrease big bushes in old growth spruce taigas
     ✓ Add plains flowers to flower forests and make bushes slightly less common (?)
     ✓ remove flowering azaleas from all biomes, keep them only for lush caves indications
-16. new decor blocks for oceans and water biomes, to add variety (?)
-    some more plants so it's not just kelp/seagrass/red algae?
-        => flower-like blocks?
-        => immature sponges?
-        => can use anemonies for this, they place on rocks
-    possibly some decor items like shells?
-        => solitary clams or shellfish in or on seabed could work for barrens
-17. consider some "top block cruft" blocks that are easy to access and not awful to work with
-    pine cones and sticks are one good glass
-    bones might be another good class, to allow for peaceful bone acquisition w/o structures
-    consider seashell-embedded sand for beaches, or seashells for beaches; could also be prismarine shards
-✓ 18. move peonies, roses, and lilacs to full sun rather than shade or partial shade (ie, move 'em to clearings)
-✓ 19. fix jungle bushes/sparse jungle bushes
-
---------------------------------------------------------------------------------------
-prefer an update, but not 100% necessary to accomplish: (mostly for bushes)
---------------------------------------------------------------------------------------
-2. Significant overhaul of rivers & low-lying areas
-    Change the spawning requirements of rushes & cattails, allow them in low-lying areas & not just water
-    Move rushes & cattails away from direct water contact and more towards low-lying ground in general
-        => this should actually just be the mud block in general
-        => remove seagrass from most biomes
-        => seagrass can still be in swamps, etc
-        => gravel: nothing.
-        => sand: seagrass meadows
-        => mud: rushes, cattails
-    Filter trees out of low-lying areas across all biomes, make instead open "grassy" or "shrubby" or "rushy" areas at the edges of rivers/lakes
-        => Rushes, grasses, bushes, trees should be the general progression from y63 to y71 or so
-        => May or may not want to do this, Vanilla generation can be highly flat at times and y71 might be too high
-        => Maybe only go up to y68 or so (so +5 blocks from bottom) and not y71
-        => Either that or have different fades based on biome; plains biomes have one and forests another?
-    ✓ More variety to rushes and cattails
-        ✓ => More models, have the vary either over large spaces or over small spaces
-        ✓ => Maybe make the models square?
-    New blocks for rivers/beaches: Water/river gravel, water/river sand, muddy rocks/river cobbles, possibly something else?
-        => Less saturated, more uniform in tone than Vanilla sand/gravel/mud/etc
-        => Should help make river biomes more cohesive
-    Gravel, sand, clay mixture for the bottom of rivers; less mud in rivers and more in other biomes
-        => Gravel/sand beaches for the first 1-2 blocks above water
-        => Blend into the mixture of rushes/shrubbery/etc above that
-        => Try to mimic pictures of shallow rivers if possible
-        => no mud on the bottom of rivers except in the shallow (single-block-deep) areas. deeper areas are gravel sand or clay
-        => no clay beaches! find some way to make clay banks.
-    Going to need some way to ensure low-lying areas away from rivers are not taken over too badly by the block placement, as Vanilla terrain can be v. low
-        => Likely will require reading PV (or mod. PV) and also continentalness/erosion to identify key areas
-        => Reading of continentalness/erosion will also allow for tailoring river surface placement to rough heightvalue areas
-        => or just don't care, could be cool to make very low-lying areas into wetlands
-        => this has issues of caves
-4. Go back over current biomes & make sure they're the best they can be
-    Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
-    Badlands biomes have more plants; possible grassy transitional badlands biome for blending into Savannas
-    Desert biomes get an overhaul and split into two: Dunes & xeric shrublands, where dunes are just sand and shrublands have some few plants
-
-
---------------------------------------------------------------------------------------
-work items AFTER the update to 1.21.11 or 26.1
---------------------------------------------------------------------------------------
-1. Pale Garden up to Natural Philosophy standards
-    Pale garden is already pretty good, add more moss and more grass?
-    Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
-    Add some ground vegetation maybe?
-    Glow lichen in the Pale Garden, on the trees?
-6. Updates to existing features in biomes
-    With the new update, fallen trees across multiple biomes
-    ✓ Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
-    Dead trees in many biomes to go alongside the fallen trees
-    Make trees correspond to their saplings correctly
-    Leaves have a curtain of snow draped around them when there is a snow layer on top => maybe all blocks do, and we just ignore certain blocks (snow, snowy grass, etc)
-    Possibly add charred trees to some biomes? Lightning-struck tree features + charred logs
-        => Make it a Gasworks integration if I add better fire spread to gasworks?
-15. sound additions. the sussurus of rushes and leaves in swamps and forests, etc
-10. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
-    Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
-    ✓ Biomes further from high humidity should have less moss - revamp taigas, etc
-    allow blue orchids to place on jungle logs specifically as well?
+✓ 7.  move peonies, roses, and lilacs to full sun rather than shade or partial shade (ie, move 'em to clearings)
+✓ 8.  fix jungle bushes/sparse jungle bushes
 
 
 

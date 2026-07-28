@@ -16,7 +16,7 @@
       "parent": "minecraft:block/cross",
       "render_type": "cutout",
       "textures": {
-        "cross": "naturalphilosophy:block/dune_grass/dry_overlay"
+        "cross": "naturalphilosophy:block/dune_grass/dry_overlay_tall"
       }
     }
   }

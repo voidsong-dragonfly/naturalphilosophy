@@ -8,15 +8,17 @@
                 "model": "naturalphilosophy:block/dune_grass/tall_top_1"
             },
             {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_1"
+            },
+            {
+                "model": "naturalphilosophy:block/dune_grass/tall_top_2"
+            },
+            {
                 "model": "naturalphilosophy:block/dune_grass/tall_top_2"
             },
             {
                 "model": "naturalphilosophy:block/dune_grass/tall_top_3"
             },
-            {
-                "model": "naturalphilosophy:block/dune_grass/tall_top_4"
-            },
-
             {
                 "model": "naturalphilosophy:block/dune_grass/tall_top_4"
             }
