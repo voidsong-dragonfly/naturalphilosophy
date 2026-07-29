@@ -13,7 +13,7 @@
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/large_bushes",
+        "feature": "naturalphilosophy:plant_patches/large_bushes_shaded",
         "placement": []
       }
     }
