@@ -6,14 +6,14 @@
         {
           "chance": 0.375,
           "feature": {
-            "feature": "naturalphilosophy:plant_patches/peonies",
+            "feature": "naturalphilosophy:plant_patches/peony_bushes",
             "placement": []
           }
         },
         {
           "chance": 0.375,
           "feature": {
-            "feature": "naturalphilosophy:plant_patches/lilacs",
+            "feature": "naturalphilosophy:plant_patches/lilac_bushes",
             "placement": []
           }
         }
@@ -27,7 +27,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 8
+      "chance": 2
     },
     {
       "type": "minecraft:in_square"
