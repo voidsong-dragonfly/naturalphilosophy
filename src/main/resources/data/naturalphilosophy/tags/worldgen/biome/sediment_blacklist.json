@@ -1,0 +1,8 @@
+{
+  "remove": [ ],
+  "values": [
+    "#c:is_beach",
+    "#c:is_stony_shores",
+    "minecraft:mushroom_fields"
+  ]
+}

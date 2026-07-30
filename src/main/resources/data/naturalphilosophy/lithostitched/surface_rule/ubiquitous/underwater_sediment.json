@@ -14,139 +14,107 @@
       "surface_type": "floor"
     },
     "then_run": {
-      "type": "minecraft:sequence",
-      "sequence": [
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:beach"
-            ]
-          },
-          "then_run": {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:sand"
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:not",
+        "invert": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:sediment_blacklist"
+        }
+      },
+      "then_run": {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "max_threshold": 1E308,
+              "min_threshold": 0.375,
+              "noise": "minecraft:surface"
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:clay"
+              }
             }
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-            ]
           },
-          "then_run": {
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "max_threshold": 1E308,
+              "min_threshold": 0.25,
+              "noise": "naturalphilosophy:surface"
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "lithostitched:biome",
+                    "biomes": "#c:is_badlands"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:red_sand"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:sand"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "minecraft:swamp",
+                "minecraft:mangrove_swamp",
+                "minecraft:sparse_jungle",
+                "minecraft:jungle",
+                "minecraft:bamboo_jungle"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:mud"
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:water",
+              "offset": -1,
+              "surface_depth_multiplier": 0,
+              "add_stone_depth": true
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:mud"
+              }
+            }
+          },
+          {
             "type": "minecraft:block",
             "result_state": {
               "Name": "minecraft:gravel"
             }
           }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:noise_threshold",
-            "max_threshold": 1E308,
-            "min_threshold": 0.375,
-            "noise": "minecraft:surface"
-          },
-          "then_run": {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:clay"
-            }
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:noise_threshold",
-            "max_threshold": 1E308,
-            "min_threshold": 0.25,
-            "noise": "naturalphilosophy:surface"
-          },
-          "then_run": {
-            "type": "minecraft:sequence",
-            "sequence": [
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "lithostitched:biome",
-                  "biomes": "#naturalphilosophy:surface/badlands"
-                },
-                "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:red_sand"
-                  }
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "lithostitched:biome",
-                  "biomes": "#naturalphilosophy:surface/basalt"
-                },
-                "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "naturalphilosophy:basaltic_mineral_sand"
-                  }
-                }
-              },
-              {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:sand"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:swamp",
-              "minecraft:mangrove_swamp",
-              "minecraft:sparse_jungle",
-              "minecraft:jungle",
-              "minecraft:bamboo_jungle"
-            ]
-          },
-          "then_run": {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:mud"
-            }
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:water",
-            "offset": -1,
-            "surface_depth_multiplier": 0,
-            "add_stone_depth": true
-          },
-          "then_run": {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:mud"
-            }
-          }
-        },
-        {
-          "type": "minecraft:block",
-          "result_state": {
-            "Name": "minecraft:gravel"
-          }
-        }
-      ]
+        ]
+      }
     }
   }
 }
