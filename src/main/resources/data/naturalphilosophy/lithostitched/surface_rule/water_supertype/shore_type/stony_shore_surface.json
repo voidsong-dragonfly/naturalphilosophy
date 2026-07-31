@@ -38,7 +38,7 @@
   "ruleset": [
     {
       "type": "naturalphilosophy:noise_threshold_selector",
-      "noise": "naturalphilosophy:surface_small_secondary",
+      "noise": "naturalphilosophy:surface_small",
       "cascade": true,
       "lower_noise_thresholds": [
          0.0,
@@ -97,7 +97,7 @@
     },
     {
       "type": "naturalphilosophy:noise_threshold_selector",
-      "noise": "naturalphilosophy:surface_small_secondary",
+      "noise": "naturalphilosophy:surface_small",
       "cascade": true,
       "lower_noise_thresholds": [
         0.25,
