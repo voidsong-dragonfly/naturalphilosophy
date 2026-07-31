@@ -32,7 +32,7 @@
         ✓ => consider whether we need permafrost at all. purpose maybe to make snowy, thick hillsides look less silly?
         ✓ => might also need to change snowy grass texture as well, which could cause its own issues
         ✓ => or only generate permafrost under thick blankets of snow (full block)
-✓ 3. Custom tree (trunk?) foliage for forest-like trees so we're not relying on balls of tree at the top
+✓ 3. Custom tree placers for forest-like trees so we're not relying on inadequate Vanilla placers
     ✓ Do we actually need custom foliage types? Might just want to make a few trunk-placer changes to allow for better shaping
     ✓ Could do limits on where branches can propagate to but otherwise use the fancy oak tree placer => similar to plains trees
     ✓ Should have multiple types of trees in deciduous forests
@@ -47,6 +47,10 @@
         ✓ => used a modified blob instead
     ✓ remove draping leaves from plains oak
     ✓ move plains oak over to fancy placer
+    ✓ root balls for most trees to integrate them better into the soil
+        ✓ => added one root placer and adjusted the giant root placer to include a root ball
+        ✓ => added rooted mud to stop mud from being replaced with rooted dirt
+        ✓ => will replace biome top block in many cases, allowing patches of dirt to show
 4. Need to stop using as much feathering and move closer to noise patches
     Remove feathering, as Vanilla does not have it and I want to move back towards Vanilla
         => most biomes don't need feathering or block splits, we can do variety via other properties
@@ -62,15 +66,21 @@
     ✓ many biomes can make do with a single top block and some under-ground filtering
         ✓ => grass: plains*, savannas*, windswept forest, meadow,
         ✓ => humus: jungle, dark forest
+    ✓ Look at Badlands biomes and move them closer, possibly keep sand channels for now? Definitely want some changes
+    ✓ Move Stony Shore back towards Vanilla as well, though perhaps with larger amplitudes on the stone/gravel transition
+    ✓ Fix all of the issues with Ice Spikes rules, bring them closer to a glacier and also to Vanilla, lower height of gravel/etc
 ✓ 5.  new blocks
     ✓ "giant bamboo" with leaves for bamboo jungles? make them able to be dark on the floor without constant cover?
     ✓ humus block to stop using podzol everywhere => now alfizol, named from alfisol, similar to spodosol (podzol). USDA soli class
+    ✓ Grassy Clay Horizon, used to make clay-dirt transitions less harsh
 ✓ 6.  plant distribution changes for some biomes
     ✓ increase mushrooms, decrease big bushes in old growth spruce taigas
     ✓ Add plains flowers to flower forests and make bushes slightly less common (?)
     ✓ remove flowering azaleas from all biomes, keep them only for lush caves indications
 ✓ 7.  move peonies, roses, and lilacs to full sun rather than shade or partial shade (ie, move 'em to clearings)
 ✓ 8.  fix jungle bushes/sparse jungle bushes
+✓ 9. Make Cherry Grove a bit more Vanilla, move off from podzol/alfizol and entirely to grass/tall grass/no ferns
+10. Look at Mushroom Fields to make it a bit more Vanilla, while still keeping the NP charm?
 
 
 
