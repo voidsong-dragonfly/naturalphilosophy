@@ -505,13 +505,12 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:lukewarm_ocean",
-                    "minecraft:deep_lukewarm_ocean"
+                    "minecraft:warm_ocean"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:blocks/sand"
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
                 }
               },
               {
@@ -519,12 +518,14 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
+                    "minecraft:lukewarm_ocean",
+                    "minecraft:deep_lukewarm_ocean",
                     "minecraft:warm_ocean"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef_surface"
+                  "rules": "naturalphilosophy:blocks/sand"
                 }
               }
             ]
@@ -555,13 +556,12 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:lukewarm_ocean",
-                    "minecraft:deep_lukewarm_ocean"
+                    "minecraft:warm_ocean"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/sand_sublayer"
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
                 }
               },
               {
@@ -569,12 +569,14 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
+                    "minecraft:lukewarm_ocean",
+                    "minecraft:deep_lukewarm_ocean",
                     "minecraft:warm_ocean"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef_sublayer"
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/sand_sublayer"
                 }
               }
             ]
