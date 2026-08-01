@@ -58,17 +58,13 @@
                     "biomes": "#c:is_badlands"
                   },
                   "then_run": {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:red_sand"
-                    }
+                    "type": "lithostitched:reference",
+                    "rules": "naturalphilosophy:blocks/red_sand"
                   }
                 },
                 {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:sand"
-                  }
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:blocks/sand"
                 }
               ]
             }
@@ -108,10 +104,8 @@
             }
           },
           {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:gravel"
-            }
+            "type": "lithostitched:reference",
+            "rules": "naturalphilosophy:blocks/gravel"
           }
         ]
       }

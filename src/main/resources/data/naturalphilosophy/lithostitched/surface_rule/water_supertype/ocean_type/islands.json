@@ -58,10 +58,8 @@
                   "noise": "naturalphilosophy:surface"
                 },
                 "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:sand"
-                  }
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:blocks/sand"
                 }
               },
               {
@@ -113,10 +111,8 @@
                   "noise": "naturalphilosophy:surface"
                 },
                 "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:sand"
-                  }
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:blocks/sand"
                 }
               }
             ]
