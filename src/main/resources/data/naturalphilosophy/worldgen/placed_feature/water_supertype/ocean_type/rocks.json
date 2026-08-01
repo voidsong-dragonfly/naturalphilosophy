@@ -1,21 +1,28 @@
 {
-  "feature": "naturalphilosophy:plant_patches/red_algae",
+  "feature": "naturalphilosophy:rocks/stone",
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_factor": 40,
-      "noise_offset": 0.25,
-      "noise_to_count_ratio": 4
+      "noise_to_count_ratio": 12,
+      "noise_factor": 0.125,
+      "noise_offset": 0.125
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR_WG"
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:water"
+      }
     },
     {
       "type": "minecraft:block_predicate_filter",
@@ -24,21 +31,16 @@
         "predicates": [
           {
             "type": "minecraft:matching_blocks",
-            "offset": [0, -3, 0],
+            "offset": [0, -2, 0],
             "blocks": "#minecraft:base_stone_overworld"
           },
           {
             "type": "minecraft:matching_blocks",
-            "offset": [0, -3, 0],
+            "offset": [0, -2, 0],
             "blocks": "minecraft:sandstone"
           }
         ]
       }
-    },
-    {
-      "type": "naturalphilosophy:depth_filter",
-      "taper_start": 40,
-      "taper_end": 25
     }
   ]
 }

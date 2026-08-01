@@ -4,15 +4,15 @@
     "config": {
       "features": [
         {
-          "chance": 0.25,
+          "chance": 0.75,
           "feature": {
-            "feature": "naturalphilosophy:plant_patches/seagrass_tall",
+            "feature": "naturalphilosophy:plant_patches/bone_coral",
             "placement": []
           }
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/seagrass_mixed",
+        "feature": "naturalphilosophy:plant_patches/red_algae",
         "placement": []
       }
     }
@@ -20,7 +20,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 72
+      "count": 64
     },
     {
       "type": "minecraft:in_square"
@@ -36,14 +36,14 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
-        "offset": [0, -3, 0],
-        "blocks": "minecraft:sandstone"
+        "offset": [0, -1, 0],
+        "blocks": "#minecraft:base_stone_overworld"
       }
     },
     {
       "type": "naturalphilosophy:depth_filter",
-      "taper_start": 40,
-      "taper_end": 25
+      "taper_end": 35,
+      "taper_start": 20
     }
   ]
 }

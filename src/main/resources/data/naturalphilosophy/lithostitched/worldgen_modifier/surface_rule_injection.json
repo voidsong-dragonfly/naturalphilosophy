@@ -487,7 +487,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:stony_shore",
                     "minecraft:ocean",
                     "minecraft:deep_ocean",
                     "minecraft:cold_ocean",
@@ -498,7 +497,7 @@
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/gravel_surface"
+                  "rules": "naturalphilosophy:blocks/gravel"
                 }
               },
               {
@@ -512,7 +511,7 @@
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/sand_surface"
+                  "rules": "naturalphilosophy:blocks/sand"
                 }
               },
               {
@@ -538,7 +537,6 @@
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:stony_shore",
                     "minecraft:ocean",
                     "minecraft:deep_ocean",
                     "minecraft:cold_ocean",

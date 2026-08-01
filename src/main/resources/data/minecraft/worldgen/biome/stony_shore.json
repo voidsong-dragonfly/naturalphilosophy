@@ -77,8 +77,7 @@
       "naturalphilosophy:water_supertype/shore_type/kelp",
       "naturalphilosophy:water_supertype/shore_type/seagrass",
       "naturalphilosophy:water_supertype/shore_type/red_algae",
-      "naturalphilosophy:water_supertype/ocean_type/bone_coral_cobblestone",
-      "naturalphilosophy:water_supertype/ocean_type/bone_coral_gravel_sparse"
+      "naturalphilosophy:water_supertype/ocean_type/deep_reefs"
     ],
     [
       "minecraft:freeze_top_layer"
