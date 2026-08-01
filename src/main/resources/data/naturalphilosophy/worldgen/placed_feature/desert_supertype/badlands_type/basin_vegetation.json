@@ -20,13 +20,13 @@
         {
           "chance": 0.05,
           "feature": {
-            "feature": "naturalphilosophy:plant_patches/red_dune_grass_mixed",
+            "feature": "naturalphilosophy:plant_patches/dune_grass_mixed",
             "placement": []
           }
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/red_dune_grass",
+        "feature": "naturalphilosophy:plant_patches/dune_grass",
         "placement": []
       }
     }
