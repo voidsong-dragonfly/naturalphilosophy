@@ -26,6 +26,7 @@
             ✓ => added dandelions to most forest clearings to alleviate lacks of yellow dye, which was the main difference
             ✓ => poppies not being more common is replaced by beetroot and an abundance of rose bushes into colder climates; while this isn't entirely accurate I like the distribution cutoff
         ✓ => remove meadow flower replacement entirely and just use Vanilla, as some mods add to it
+    ✓ Bamboo leaves should be block-like and not dinky little fronds on the sides
 ✓ 2. Better soil-top block selection
     ✓ New kinds of soil; consider permafrost for snowy biome dirt alongside some sort of leaf loam or leaf litter for non-coniferous forests
         ✓ => definite yes on leaf loam/humus/etc
@@ -52,16 +53,16 @@
         ✓ => added rooted mud to stop mud from being replaced with rooted dirt
         ✓ => will replace biome top block in many cases, allowing patches of dirt to show
 4. Need to stop using as much feathering and move closer to noise patches
-    Remove feathering, as Vanilla does not have it and I want to move back towards Vanilla
-        => most biomes don't need feathering or block splits, we can do variety via other properties
-        => if we really need feathering (mushroom islands), do it with either tendrils or an in-between block
+    ✓ Remove feathering, as Vanilla does not have it and I want to move back towards Vanilla
+        ✓ => most biomes don't need feathering or block splits, we can do variety via other properties
+        ✓ => if we really need feathering (mushroom islands), do it with either tendrils or an in-between block
     ✓ most go-between can be done via vegetation and blokcs rather than feathering
         ✓ => grass plants will spread across forests from their meadows outwards, etc
         ✓ => would need some density changes but is quite possible
-    oceans are waterworn gravel/mixed waterworn gravel/sand mix with different ocean biomes having different primacies
-        => no mud on the ocean floor
-        => possibly large patches of clay on the floors of deep oceans, and those have nothing? depends.
-        => deep oceans in general often don't have terragenous sediment like coastal shelves do
+    ✓ oceans are waterworn gravel/mixed waterworn gravel/sand mix with different ocean biomes having different primacies
+        ✓ => no mud on the ocean floor
+        ✓ => possibly large patches of clay on the floors of deep oceans, and those have nothing? depends => instead all is clay below y8+ surface
+        ✓ => deep oceans in general often don't have terragenous sediment like coastal shelves do
     ✓ Make sandy mycelium a not full cover block so we can "Feather" without needing to literally feather the ground
     ✓ many biomes can make do with a single top block and some under-ground filtering
         ✓ => grass: plains*, savannas*, windswept forest, meadow,

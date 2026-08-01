@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.75,
+          "chance": 0.875,
           "feature": {
             "feature": "naturalphilosophy:plant_patches/bone_coral",
             "placement": []
@@ -12,7 +12,7 @@
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/red_algae",
+        "feature": "naturalphilosophy:plant_patches/red_algae_deep",
         "placement": []
       }
     }

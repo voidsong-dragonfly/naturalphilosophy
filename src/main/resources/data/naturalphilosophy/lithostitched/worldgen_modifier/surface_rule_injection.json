@@ -92,9 +92,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_pine_taiga"
-                  ]
+                  "biome_is": [ "minecraft:old_growth_pine_taiga" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -207,9 +205,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:stony_shore"
-                  ]
+                  "biome_is": [ "minecraft:stony_shore" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -221,9 +217,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:wooded_badlands"
-                  ]
+                  "biome_is": [ "minecraft:wooded_badlands" ]
                 },
                 "then_run": {
                   "type": "minecraft:condition",
@@ -313,9 +307,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_pine_taiga"
-                  ]
+                  "biome_is": [ "minecraft:old_growth_pine_taiga" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -418,9 +410,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:bamboo_jungle"
-                  ]
+                  "biome_is": [ "minecraft:bamboo_jungle" ]
                 },
                 "then_run": {
                   "type": "naturalphilosophy:noise_threshold_selector",
@@ -464,9 +454,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:stony_shore"
-                  ]
+                  "biome_is": [ "minecraft:stony_shore" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -485,6 +473,28 @@
               {
                 "type": "minecraft:condition",
                 "if_true": {
+                  "type": "lithostitched:biome",
+                  "biomes": "#c:is_ocean"
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/claybeds"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:warm_ocean" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
                     "minecraft:ocean",
@@ -498,19 +508,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:blocks/gravel"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:warm_ocean"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
                 }
               },
               {
@@ -536,6 +533,28 @@
               {
                 "type": "minecraft:condition",
                 "if_true": {
+                  "type": "lithostitched:biome",
+                  "biomes": "#c:is_ocean"
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/claybeds"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:warm_ocean" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
                     "minecraft:ocean",
@@ -549,19 +568,6 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:water_supertype/ocean_type/gravel_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:warm_ocean"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
                 }
               },
               {
@@ -607,9 +613,7 @@
           "type": "minecraft:condition",
           "if_true": {
             "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:mushroom_fields"
-            ]
+            "biome_is": [ "minecraft:mushroom_fields" ]
           },
           "then_run": {
             "type": "lithostitched:reference",
@@ -620,9 +624,7 @@
           "type": "minecraft:condition",
           "if_true": {
             "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:ice_spikes"
-            ]
+            "biome_is": [ "minecraft:ice_spikes" ]
           },
           "then_run": {
             "type": "lithostitched:reference",
