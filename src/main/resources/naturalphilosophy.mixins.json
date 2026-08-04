@@ -15,16 +15,18 @@
     "blockmodifications.CactusBlockMixin",
     "blockmodifications.DeadBushBlockMixin",
     "blockmodifications.DoublePlantBlockMixin",
-    "blockmodifications.GlowLichenBlockMixin",
     "blockmodifications.KelpBlockMixin",
     "blockmodifications.KelpPlantBlockMixin",
     "blockmodifications.MushroomBlockMixin",
-    "blockmodifications.SculkVeinBlockMixin",
-    "blockmodifications.SweetBerryBushBlockMixin"
+    "blockmodifications.SweetBerryBushBlockMixin",
+    "waterlogging.FlowingFluidInjections",
+    "waterlogging.GlowLichenBlockMixin",
+    "waterlogging.SculkVeinBlockMixin"
   ],
   "client": [],
   "injectors": {
     "defaultRequire": 1
   },
+  "mixinextras": {"minVersion": "0.5.0"},
   "minVersion": "0.8"
 }
