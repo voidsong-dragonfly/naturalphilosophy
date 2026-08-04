@@ -38,8 +38,8 @@ public class ColorHandler {
         // Natural Philosophy blocks to register, such as Dune Grass
         event.register((stack, tintIndex) ->
             tintIndex == 0 ? GrassColor.get(0.5D, 1.0D) : 0xFFFFFFFF,
-            NPItems.DUNE_GRASS_ITEM, NPItems.GRASS_CLAY_HORIZON_ITEM,
-            NPItems.RUSHES_ITEM, NPItems.CATTAILS_ITEM);
+            NPItems.DUNE_GRASS, NPItems.GRASS_CLAY_HORIZON,
+            NPItems.RUSHES, NPItems.CATTAILS);
         event.register((stack, tintIndex) ->
                 tintIndex == 1 ? FoliageColor.getDefaultColor() : 0xFFFFFFFF,
             NPItems.LARGE_BUSH);
