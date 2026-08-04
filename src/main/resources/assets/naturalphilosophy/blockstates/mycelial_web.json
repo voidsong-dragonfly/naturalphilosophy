@@ -1,0 +1,156 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/mycelial_web"
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "z": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "z": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "z": 270
+        }
+      ],
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 90,
+          "z": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 90,
+          "z": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 90,
+          "z": 270
+        }
+      ],
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "z": 90,
+          "y": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "z": 180,
+          "y": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "z": 270,
+          "y": 180
+        }
+      ],
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 270
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 270,
+          "z": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 270,
+          "z": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "y": 270,
+          "z": 270
+        }
+      ],
+      "when": {
+        "west": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 270
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 270,
+          "y": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 270,
+          "y": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 270,
+          "y": 270
+        }
+      ],
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 90,
+          "y": 180
+        },
+        {
+          "model": "naturalphilosophy:block/mycelial_web",
+          "x": 90,
+          "y": 270
+        }
+      ],
+      "when": {
+        "down": "true"
+      }
+    }
+  ]
+}

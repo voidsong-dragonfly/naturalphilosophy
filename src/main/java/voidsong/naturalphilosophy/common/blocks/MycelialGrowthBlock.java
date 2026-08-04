@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RootsBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import voidsong.naturalphilosophy.common.NPBlocks;
 
 import javax.annotation.Nonnull;
 
@@ -17,6 +16,6 @@ public class MycelialGrowthBlock extends RootsBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, @Nonnull BlockGetter level, @Nonnull BlockPos pos) {
-        return state.is(Blocks.MYCELIUM) || state.is(NPBlocks.SANDY_MYCELIUM) || super.mayPlaceOn(state, level, pos);
+        return state.is(Blocks.MYCELIUM) || super.mayPlaceOn(state, level, pos);
     }
 }

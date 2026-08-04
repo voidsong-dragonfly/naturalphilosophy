@@ -25,7 +25,7 @@ public class NPItems {
     public static final DeferredItem<BlockItem> GIANT_BAMBOO_LEAVES = ITEMS.registerSimpleBlockItem("giant_bamboo_leaves", NPBlocks.GIANT_BAMBOO_LEAVES);
     public static final DeferredItem<Item> GIANT_BAMBOO = ITEMS.registerSimpleItem("giant_bamboo");
     public static final DeferredItem<BlockItem> MYCELIAL_GROWTH = ITEMS.registerSimpleBlockItem("mycelial_growth", NPBlocks.MYCELIAL_GROWTH);
-    public static final DeferredItem<BlockItem> SANDY_MYCELIUM = ITEMS.registerSimpleBlockItem("sandy_mycelium", NPBlocks.SANDY_MYCELIUM);
+    public static final DeferredItem<BlockItem> MYCELIAL_WEB = ITEMS.registerSimpleBlockItem("mycelial_web", NPBlocks.MYCELIAL_WEB);
     public static final DeferredItem<BlockItem> BASALTIC_MINERAL_SAND = ITEMS.registerSimpleBlockItem("basaltic_mineral_sand", NPBlocks.BASALTIC_MINERAL_SAND);
     public static final DeferredItem<BlockItem> PERMAFROST = ITEMS.registerSimpleBlockItem("permafrost", NPBlocks.PERMAFROST);
     public static final DeferredItem<BlockItem> ALFIZOL = ITEMS.registerSimpleBlockItem("alfizol", NPBlocks.ALFIZOL);
@@ -55,7 +55,7 @@ public class NPItems {
             output.accept(GIANT_BAMBOO_LEAVES);
             output.accept(GIANT_BAMBOO);
             output.accept(MYCELIAL_GROWTH);
-            output.accept(SANDY_MYCELIUM);
+            output.accept(MYCELIAL_WEB);
             output.accept(BASALTIC_MINERAL_SAND);
             output.accept(PERMAFROST);
             output.accept(ALFIZOL);

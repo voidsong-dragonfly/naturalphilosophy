@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "naturalphilosophy:block/basaltic_mineral_sand",
-    "side": "naturalphilosophy:block/sandy_mycelium/side_2",
-    "top": "naturalphilosophy:block/sandy_mycelium/top_2"
-  }
-}

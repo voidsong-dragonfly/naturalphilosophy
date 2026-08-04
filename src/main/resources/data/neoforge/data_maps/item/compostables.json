@@ -35,6 +35,9 @@
     },
     "naturalphilosophy:large_bush": {
       "chance": 0.85
+    },
+    "naturalphilosophy:mycelial_web": {
+      "chance": 0.50
     }
   }
 }

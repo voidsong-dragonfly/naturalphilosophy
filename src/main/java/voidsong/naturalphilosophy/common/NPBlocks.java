@@ -19,9 +19,9 @@ import voidsong.naturalphilosophy.common.blocks.GiantBambooSaplingBlock;
 import voidsong.naturalphilosophy.common.blocks.GiantBambooStalkBlock;
 import voidsong.naturalphilosophy.common.blocks.GrassyClayHorizonBlock;
 import voidsong.naturalphilosophy.common.blocks.MycelialGrowthBlock;
+import voidsong.naturalphilosophy.common.blocks.MycelialWebBlock;
 import voidsong.naturalphilosophy.common.blocks.PermafrostBlock;
 import voidsong.naturalphilosophy.common.blocks.RedAlgaeBlock;
-import voidsong.naturalphilosophy.common.blocks.SandyMyceliumBlock;
 import voidsong.naturalphilosophy.common.blocks.TallDuneGrass;
 import voidsong.naturalphilosophy.common.blocks.WaterPlantBlock;
 
@@ -109,12 +109,15 @@ public class NPBlocks {
             .offsetType(BlockBehaviour.OffsetType.XZ)
             .ignitedByLava()
             .pushReaction(PushReaction.DESTROY));
-    public static final DeferredBlock<Block> SANDY_MYCELIUM = BLOCKS.registerBlock("sandy_mycelium", SandyMyceliumBlock::new,
+    public static final DeferredBlock<Block> MYCELIAL_WEB = BLOCKS.registerBlock("mycelial_web", MycelialWebBlock::new,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_PURPLE)
-            .randomTicks()
-            .strength(0.6F)
-            .sound(SoundType.GRASS));
+            .replaceable()
+            .noCollission()
+            .strength(0.2F)
+            .sound(SoundType.GLOW_LICHEN)
+            .ignitedByLava()
+            .pushReaction(PushReaction.DESTROY));
     public static final DeferredBlock<Block> BASALTIC_MINERAL_SAND = BLOCKS.registerBlock("basaltic_mineral_sand", props -> new ColoredFallingBlock(new ColorRGBA(-8356741),
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLACK)
