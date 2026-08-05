@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.mixin.blockmodifications;
+package voidsong.naturalphilosophy.mixin.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.mixin.blockmodifications;
+package voidsong.naturalphilosophy.mixin.damage;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.ItemTags;

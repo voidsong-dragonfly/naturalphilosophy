@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.mixin;
+package voidsong.naturalphilosophy.mixin.worldgen;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.SnowAndFreezeFeature;

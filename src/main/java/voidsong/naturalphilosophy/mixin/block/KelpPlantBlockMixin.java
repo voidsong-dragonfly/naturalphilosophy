@@ -1,9 +1,9 @@
-package voidsong.naturalphilosophy.mixin.blockmodifications;
+package voidsong.naturalphilosophy.mixin.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.KelpBlock;
+import net.minecraft.world.level.block.KelpPlantBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -14,12 +14,12 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-@Mixin(KelpBlock.class)
-public class KelpBlockMixin {
+@Mixin(KelpPlantBlock.class)
+public class KelpPlantBlockMixin {
     @Unique
-    private static final VoxelShape naturalphilosophy$SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 9.0, 13.0);
+    private static final VoxelShape naturalphilosophy$SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
 
-    @ModifyArg(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/GrowingPlantHeadBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/core/Direction;Lnet/minecraft/world/phys/shapes/VoxelShape;ZD)V"), index = 0)
+    @ModifyArg(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/GrowingPlantBodyBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/core/Direction;Lnet/minecraft/world/phys/shapes/VoxelShape;Z)V"), index = 0)
     private static BlockBehaviour.Properties addOffset(BlockBehaviour.Properties props) {
         return props.offsetType(BlockBehaviour.OffsetType.XZ);
     }

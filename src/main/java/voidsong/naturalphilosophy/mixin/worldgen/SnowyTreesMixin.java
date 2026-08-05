@@ -1,4 +1,4 @@
-package voidsong.naturalphilosophy.mixin;
+package voidsong.naturalphilosophy.mixin.worldgen;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
