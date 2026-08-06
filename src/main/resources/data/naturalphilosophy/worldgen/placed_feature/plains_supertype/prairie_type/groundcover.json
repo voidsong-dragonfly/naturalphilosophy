@@ -4,11 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.075,
-          "feature": "naturalphilosophy:checked_trees/oak_bush"
-        },
-        {
-          "chance": 0.625,
+          "chance": 0.375,
           "feature": "naturalphilosophy:checked_trees/oak_bush_stunted"
         }
       ],
@@ -21,9 +17,9 @@
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 6,
+      "noise_to_count_ratio": 8,
       "noise_factor": 0.375,
-      "noise_offset": -0.0625
+      "noise_offset": -0.25
     },
     {
       "type": "minecraft:in_square"

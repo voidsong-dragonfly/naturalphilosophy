@@ -5,10 +5,10 @@
       "features": [
         {
           "chance": 0.125,
-          "feature": "naturalphilosophy:checked_trees/oak_fancy"
+          "feature": "naturalphilosophy:checked_trees/oak_bush"
         },
         {
-          "chance": 0.625,
+          "chance": 0.5,
           "feature": "naturalphilosophy:checked_trees/oak_stunted"
         }
       ],
@@ -41,10 +41,21 @@
         "start_offset": [-1, -4, -1],
         "end_offset": [1, -2, 1],
         "min_count": 1,
-        "max_count": 6,
+        "max_count": 5,
         "predicate": {
           "type": "minecraft:matching_blocks",
           "blocks": [ "minecraft:coarse_dirt" ]
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "offset": [0, -3, 0],
+          "blocks": "#minecraft:base_stone_overworld"
         }
       }
     }
