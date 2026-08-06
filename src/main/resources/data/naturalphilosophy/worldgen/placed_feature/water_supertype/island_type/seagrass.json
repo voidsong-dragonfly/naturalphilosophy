@@ -19,16 +19,8 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
-        "blocks": [
-          "naturalphilosophy:basaltic_mineral_sand",
-          "minecraft:mud",
-          "minecraft:clay"
-        ]
+        "offset": [0, -1, 0],
+        "blocks": "naturalphilosophy:basaltic_mineral_sand"
       }
     }
   ]

@@ -18,21 +18,6 @@
       "type": "minecraft:biome"
     },
     {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:not",
-        "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            -1,
-            0
-          ],
-          "blocks": "minecraft:sand"
-        }
-      }
-    },
-    {
       "type": "naturalphilosophy:depth_filter",
       "taper_end": 60,
       "taper_start": 55
