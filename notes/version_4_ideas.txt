@@ -81,19 +81,19 @@
          ✓ => Web spawns from patches on the mycelium/basaltic mineral sand border
      ✓ Simplified surface rules considerably now that dithering from sandy mycelium is gone
 ✓ 11. Add grass back to river biomes to keep them from being short-cropped
-12. Possibly put more thought into water colors than previously?
-    Sulfur Colors: Mushroom Islands
-    Dark colors: Deep Dark
-    Swamp colors: Mangrove Swamp, Swamp
-    Glacier colors: Frozen Peaks, Jagged Peaks, Snowy Slopes, Grove, Cherry Grove, Meadow, Stony Peaks
-    Frozen Ocean colors: Snowy Beach, Frozen River, Snowy Plains, Snowy Taiga, Ice Spikes
-    Cold Ocean colors: Taiga, Old Growth Pine Taiga, Old Growth Spruce Taiga, Windswept Forest, Windswept Gravelly Hills, Windswept Hills
-    Ocean Colors: Plains, Forest, Dark Forest, Flower Forest, Sunflower Plains
-    Lukewarm ocean colors: Jungle, Bamboo Jungle, Sparse Jungle, Savanna, Savanna Plateau, Windswept Savanna Plateau
-    Warm Ocean colors: Badlands, Wooded Badlands, Eroded Badlands, Desert
+✓ 12. Possibly put more thought into water colors than previously?
+    ✓ Sulfur Colors: Mushroom Islands
+    ✓ Dark colors: Deep Dark
+    ✓ Swamp colors: Mangrove Swamp, Swamp
+    ✓ Glacier colors: Frozen Peaks, Jagged Peaks, Snowy Slopes, Grove, Cherry Grove, Meadow, Stony Peaks
+    ✓ Frozen Ocean colors: Snowy Beach, Frozen River, Snowy Plains, Snowy Taiga, Ice Spikes
+    ✓ Cold Ocean colors: Taiga, Old Growth Pine Taiga, Old Growth Spruce Taiga, Windswept Forest, Windswept Gravelly Hills, Windswept Hills
+    ✓ Ocean Colors: Plains, Forest, Dark Forest, Flower Forest, Sunflower Plains
+    ✓ Lukewarm ocean colors: Jungle, Bamboo Jungle, Sparse Jungle, Savanna, Savanna Plateau, Windswept Savanna Plateau
+    ✓ Warm Ocean colors: Badlands, Wooded Badlands, Eroded Badlands, Desert
 
-    Undifferentiated biomes: River, Stony Shore, Beach, Birch Forest, Old Growth Birch Forest
-    Cave Biomes: Lush Caves, Dripstone Caves
+    ✓ Undifferentiated biomes: River, Stony Shore, Beach, Birch Forest, Old Growth Birch Forest
+    ✓ Cave Biomes: Lush Caves, Dripstone Caves
 
 
 
