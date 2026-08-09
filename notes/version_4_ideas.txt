@@ -1,16 +1,12 @@
 4.0.0 (Re-Vanillaization Update)
 
-1. More plant variety in general
+✓ 1. Greater variety to exising plants
     ✓ Grass should have multiple models that it varies between to remove the monotone green of plains
         => Maybe actually want to add another grass block, call it "seeded grass" for the brown tops
         ✓ => Would remove some of the changes of Vanilla models/textures that aren't my best work
         ✓ => Removed red topped (brown) grass, made default colors more common, removed AO to match vanilla for a more subtle vanilla-like variation
     ✓ Lilypads should have multiple models of varying sizes, roots, and possibly flowers
     ✓ redo cattails/rushes textures, more variety to them, make them less under-water-y except in that case specifically (green tune-ups?)
-    Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
-    Add new plants: At minimum goldenrod, possibly joe pye weed or something similar? Check out ferdinand's flowers, verdant vibes, habitat, untamed wilds, windswept, etc
-        => want flowers that can be used across a mix of biomes, rather than ones specific to any given biome
-        => a few new cold flowers and a few new warm flowers would be good, I think. lots of forest and temperate flowers right now
     ✓ dune grass should be a better mix of 1.21.5 features and my current idea. Move away from tinted textures and onto other concerns
         ✓ => specifically, should be bunchy on the bottom. very similar to new dry grass but only dry at the base. perhaps some short vers as well?
         ✓ => need to make the dune grass tops not as tall and more of a sensible height, possibly check out reed top size or scale down further?
@@ -20,7 +16,6 @@
         ✓ => we have flowering bushes that are bigger now.
         ✓ => Vanilla bushes stay block-sized or lower, for use in alpine areas or lush deserts. "large bushes" are bigger, see peonies/etc
         ✓ => bushes need to come in smaller clusters in most places. flower bushes should be mingled with normal bushes
-    "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
     ✓ take another look at flower distributions, push them closer to Vanilla while making sure they make sense
         ✓ => want to keep temperature-based flower distributions, but update to more searching of range
             ✓ => added dandelions to most forest clearings to alleviate lacks of yellow dye, which was the main difference
@@ -52,7 +47,7 @@
         ✓ => added one root placer and adjusted the giant root placer to include a root ball
         ✓ => added rooted mud to stop mud from being replaced with rooted dirt
         ✓ => will replace biome top block in many cases, allowing patches of dirt to show
-4. Need to stop using as much feathering and move closer to noise patches
+✓ 4. Need to stop using as much feathering and move closer to noise patches
     ✓ Remove feathering, as Vanilla does not have it and I want to move back towards Vanilla
         ✓ => most biomes don't need feathering or block splits, we can do variety via other properties
         ✓ => if we really need feathering (mushroom islands), do it with either tendrils or an in-between block
@@ -81,16 +76,59 @@
 ✓ 7.  move peonies, roses, and lilacs to full sun rather than shade or partial shade (ie, move 'em to clearings)
 ✓ 8.  fix jungle bushes/sparse jungle bushes
 ✓ 9. Make Cherry Grove a bit more Vanilla, move off from podzol/alfizol and entirely to grass/tall grass/no ferns
-10. Look at Mushroom Fields to make it a bit more Vanilla, while still keeping the NP charm?
+✓ 10. Look at Mushroom Fields to make it a bit more Vanilla, while still keeping the NP charm?
+     ✓ Removed Sandy Mycelium for the implementation of a new block, the Mycelial Web
+         ✓ => Web spawns from patches on the mycelium/basaltic mineral sand border
+     ✓ Simplified surface rules considerably now that dithering from sandy mycelium is gone
+✓ 11. Add grass back to river biomes to keep them from being short-cropped
+12. Possibly put more thought into water colors than previously?
+    Sulfur Colors: Mushroom Islands
+    Dark colors: Deep Dark
+    Swamp colors: Mangrove Swamp, Swamp
+    Glacier colors: Frozen Peaks, Jagged Peaks, Snowy Slopes, Grove, Cherry Grove, Meadow, Stony Peaks
+    Frozen Ocean colors: Snowy Beach, Frozen River, Snowy Plains, Snowy Taiga, Ice Spikes
+    Cold Ocean colors: Taiga, Old Growth Pine Taiga, Old Growth Spruce Taiga, Windswept Forest, Windswept Gravelly Hills, Windswept Hills
+    Ocean Colors: Plains, Forest, Dark Forest, Flower Forest, Sunflower Plains
+    Lukewarm ocean colors: Jungle, Bamboo Jungle, Sparse Jungle, Savanna, Savanna Plateau, Windswept Savanna Plateau
+    Warm Ocean colors: Badlands, Wooded Badlands, Eroded Badlands, Desert
+
+    Undifferentiated biomes: River, Stony Shore, Beach, Birch Forest, Old Growth Birch Forest
+    Cave Biomes: Lush Caves, Dripstone Caves
 
 
 
+4.1.0 (Small features & new blocks)
 
+1.  Several new plants to add variety to biome decor in some areas that can be samey
+    Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
+        => this needs to have more purpose than lilypads do right now
+        => could also split lilypads better, into one for small lilypads and one for big lilypads
+        => could also add a pad variant for water lilies
+        => possibly even have small lilypads come with algae around them when there's enough of them in an area
+    Plant ideas inspired by Immersive Weathering
+        => ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else?
+        => Moss outgrowths to place on other blocks? or make mossy stone? unsure.
+            => If used, should make custom rock decorator able to place moss outgrowths like lichen rather than using mossy cobble
+            => May just want to make them "lichen" blocks rather than moss outgrowths?
+        => worn stone/cracked stone, mossy/overgrown stone
+    deal with epiphytes and fixing decoration to make better sense with rain/humidity values
+        => Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
+        => allow blue orchids to place on jungle logs specifically as well?
+    Add epiphytic orchids to Jungles instead of blue orchids, keep blue orchids as swamp flowers
+        => Add a few colors for variety? Purple, magenta, yellow, white, pink, orange? pick between these for 3 or 4 like tulips
+2.  new decor blocks for oceans and water biomes, to add variety (?)
+    some more plants so it's not just kelp/seagrass/red algae?
+        => flower-like blocks?
+        => immature sponges?
+        => can use anemonies for this, they place on rocks
+        => could consider a second kelp type instead, such as red/brown ("rose"? definitely a darker brown than red algae) kelp for frozen oceans
+    possibly some decor items like shells?
+        => solitary clams or shellfish in or on seabed could work for barrens
+    more variety to deep ocean corals and their placement instead, perhaps?
+        => vary where they're placed, what chunks, etc
+        => check cliffs vs cave bottoms maybe? always in cave bottoms, not always on cliffs? often on rocks?
+        => checking cliffs specifically to filter allows for less spammed placement in the places they are most common
+    barnacles block similar to glow lichen?
+        => can only grow on blocks of `#minecraft:base_overworld_stone` plus some extras, maybe?
+        => use to differentiate beach & stony shore cliffs near the waterline (and possibly somewhat above it too)
 
-
-
-
-
-Current work items:
-    fix feathering on most biomes without making large changes to their decoration
-        => then ocean biomes, possibly. may start with stony shore?

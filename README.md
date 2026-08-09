@@ -1,93 +1,28 @@
 # Natural Philosophy
 
-Natural Philosophy is a mod that aims to transform and rejuvenate how Minecraft biomes are decorated. It takes new blocks only used in a few biomes and new concepts in generation since old biomes such as forests were designed and applies them to all biomes in the game, putting variety and life into Minecraft's biomes.
+Natural Philosophy replaces and overhauls Minecraft biome decoration, integrating newer blocks and features into older biomes while keeping some of the essence of Minecraft biome decoration. It extends upon Minecraft's ideas without entirely supplanting or replacing them, while integrating new content and new biome features into a holistic Overworld biome overhaul. 
 
-Natural Philosophy is designed with the goal of not using modded features (added blocks, new biomes) to paper over the issues of the Vanilla biomes and the Vanilla generation paradigm, while also not shying away from using modded features while appropriate. Natural Philosoph tries to avoid both Biomes o' Plenty and its several kinds of very similar, differently-colored plains biomes and Terralith, with its hidden campfires to produce smoke in its generation paradigms.
+Built around the concept that most Minecraft biome decoration is sparse, empty, and lacking in sub-biome variation, Natural Philosophy aims to accurately represent ecosystems that _could_ have developed in each biome. Rather than following the Minecraft biome philosophy and producing new variations on its lackluster style or integrating excess hand-built detail, Natural Philosophy aims to thread the needle and provide environments full of subtle detail.
 
-## Important Notes
-
-Natural Philosophy does not change modded biomes and has no plans to change modded biomes at this time. This is in part due to the amount of work and customization that needs to go into a singular biome, and how most mods do not add enough decorations to sufficiently differentiate their biomes from Minecraft biomes.
-
-Natural Philosophy also replaces many Vanilla generation objects with its own, more organized counterparts. Mods that modify things such as Vanilla's `minecraft:patch_taiga_grass` or similar may not be supported.
-
-Mods which do minimal overhauls of Vanilla biomes are considered to be 'extraneous' or 'actively detrimental' and are listed below, after the suggested mods heading. These are _not_ suggested for use with Natural Philosophy.
-
-## Suggested Mods
-
-[Tectonic](https://modrinth.com/datapack/tectonic) is one of the most gorgeous terrain generators for current versions.  
-[Better Biome Reblend](https://modrinth.com/mod/bbrb) smooths out the sharp biome & water color transitions Vanilla has.    
-[Project: Vibrant Journeys](https://modrinth.com/mod/project-vibrant-journeys) adds decorations out of scope for Natural Philosophy.
-
-### Important Information for Project: Vibrant Journeys
-
-Natural Philosophy has many features which overlap heavily with that of Project: Vibrant Journeys. It is suggested to disable the following P:VJ features for best compatibility between the two mods.
-
- - Sea Oats, `enableSeaOats`
- - Cattails `enableCattails`
- - Beach Grass `enableBeachGrass`
- - Reeds `enableReeds`
- - Extra Seagrass `enableExtraSeagrass`
- - Tide Pools `enableTidePools`
- - Cherry Grove Bamboo `enableCherryGroveBamboo`
- - Plains Buses `enableBushes`
+Terrain profile is unchanged from the Minecraft default; Natural Philosophy focuses on adapting biome decoration rather than terrain. For a more natural look, a combination of [Deeper Oceans](https://modrinth.com/datapack/deeper-oceans) and [Continents](https://modrinth.com/datapack/continents) is suggested to increase ocean depth and make oceans more distinct from standard biomes.
  
-## Supplanted Mods
+## Compatibility Notes
 
-#### Natural Philosophy Implements These Mods
+It is not recommended to use Natural Philosophy alongside other mods that add features to or overhaul single or multiple Minecraft biomes, such as Project: Vibrant Journeys, Geophilic, or Biome Makeover. Overlapping content, incompatible replacements, or other issues are likely.
 
- - Simple Snowy Fix
- - Snow Under Trees
- - Stony Cliffs Are Cool
- - CliffFace
- - Cliffs
+Natural Philosophy does not change biomes from other mods; those mods which are installed alongside it that use Terrablender, Lithostitched, or Biolith will not see their biomes modified, **except** for several widely-applicable changes to riparian sediment and cliffs. How modded biomes are sorted inside of these features can be controlled via tags in the `naturalphilosophy:worldgen/biome/cliffs/` and `naturalphilosophy:worldgen/biome/sediment/` folders.
 
-#### Natural Philosophy Supplants These Mods
+Compatibility with datapacks that modify Minecraft biomes is not guaranteed, and not supported. Datapacks that add new biomes or change terrain should be compatible directly upon install; those that change terrain profile such as Tectonic or Larion are not incompatible but may cause some features to not generate.
 
- - Biome Makeover
- - Swampier Swamps
- - BetterDefaultBiomes
- - Unnamed Desert
- - Scorched
- - Geophilic & Geophilic Reforged
- - Arboria
- - Better Trees
- - Wilder Wild
-
-## Elaboration, Developer Perspective, & Inspiration
-
-### On Biome Generation in Minecraft
-
-Terrain generation in Minecraft has gone through so many states of change that trying to categorize all of them into neat boxes is a futile endeavour. Many updates have made sweeping changes to generation (1.7, 1.13, 1.18 among recent examples) but one thing that _can_ be concretely said is that the feel of the game between older versions, especially Alpha, and modern versions has changed drastically. 
-
-Alpha has a certain charm to its worldgen that is lacking in modern versions - the bright green grass and trees and limited worldgen palette combined with soaring cliffs and strange formations is not only iconic, but has continued to inspire a lot of worldgen in later versions. Modern versions have added much, much more complexity on top of the slowly-eroding seed that Alpha worldgen provided, but despite over a decade of development, have not managed to unlock the potential that the expansions could have provided.
-
-To put it simply: _Minecraft's biomes do not feel finished_. The oldest have almost the same amount of content they did in 1.0.0 in terms of decorations and style. What was once charming has, with new content but none of it in old biomes, become boring and uninspired. At any time in the last decade, more work could have been put in to bring old biomes into a cohesive set of content - and 1.19 was supposed to do just that, but did not.
-
-Instead, a few new biomes have been added that _do_ spice up the world, some desperately needed (oceanic biomes) and some less so; and forests' largest change was the introduction of bees. Moss is only found in Lush Caves, despite being vegetation that survives in forests, taigas, and even on oceanic rocks.
-
-### The Point of It All
-
-Natural Philosophy aims to fix the lack of attention given to Minecraft's biomes. Take old biomes, some new ideas and gripes about how Minecraft biomes don't make sense within limited evolutionary constraints, and make something new out of them. Take all of these inspirations and transform old biomes into not necessarily new experiences, but at least visual delights. 
-
-Jungle biomes are transformed into a bi-layered tropical rainforest, with noise-distributed bush clusters on the coarse dirt and podzol ground. Above you soars a canopy over 24 meters tall, with an understory just a few meters over your head. Sometimes you hack your way through with a trusty machete, and sometimes you can gaze through small gaps in the foliage to see the sun.
-
-Sparse jungles and swamps are no longer expanses of mown grass, and instead vibrant mixtures of foliage: in sparse jungles, a mix of understory jungle trees and bamboo, in swamps a mixture of copses of water-tolerant swamp oaks among rushbeds and sheafs of wet, muddy grasses.
-
-Atop windswept hills short, hardy grasses cling to the sides of slopes as stunted fir and pine trees huddle, the wind making sure that the flourishing vegetation down below cannot reach into this last holdout. Above, denuded mountains still see boulders wedged into their sides from glaciers, sentinels among cliffs of rock.
-
-Rivers see clay, gravel, mud, and sand in great abundance. No longer do scattered patches gird their shores like the drops from a painter's brush, instead wide swaths of the river have had sediment deposited over aeons such that a clay pit can be dug from beneath their slow-moving curves.
-
-Deserts and badlands are no longer flat expanses of sand with randomly-spread cacti, but have patches of hardy grasses growing admist other vegetation. Wooded badlands are full of short, hardy bushes preserving moisture against the dry desert heat and slowly transforming the canyon tops from terracotta to coarse dirt.
-
-Natural Philosophy specifically takes biomes that have been underdeveloped by the game and makes them slightly more realistic, while moving away from a paradigm of flat, mown grass with the occasional higher tuft. Features before confined to one biome can be seen in many, and some blocks seldom-useful have been expanded to provide better scenery, such as azalea bushes across the understory of most forests.
+Datapacks that modify existing features such as `minecraft:flower_plain` or `minecraft:oak_bees_005` are likely incompatible. Natural Philosophy replaces the vegetation features of most biomes, and only certain features that are commonly modified (`minecraft:flower_meadow`) are generated unmodified.
 
 ## Inspirations
 
-[Geophilic](https://modrinth.com/datapack/geophilic) is similar to Natural Philosophy but sticks to a Vanilla decoration style.    
+[Geophilic](https://modrinth.com/datapack/geophilic) is similar to Natural Philosophy but hews more closely to the Minecraft decoration style.    
 [Project Vibrant Journeys](https://modrinth.com/mod/project-vibrant-journeys) is focused on adding block-based decoration features.    
 [Stony Cliffs Are Cool](https://modrinth.com/datapack/stony-cliffs-are-cool) adds stone cliffs to steep surfaces on generation.    
 [Simple Snowy Fix](https://modrinth.com/mod/simple-snowy-fix) adds snow spawning and ice spawning underneath trees.
 
-Other inspirations come from too many biome mods to count, here and there. A selected list for a few features of note can be found in `ideas.txt` in the main directory.
+Other inspirations come from too many biome mods to count. A selected list for some features of note can be found in the `notes` directory, alongside previous and future plans for the mod.
 
 Simple Snowy Fix and Stony Cliffs are Cool are integrated into Natural Philosophy and need not be included alongside.

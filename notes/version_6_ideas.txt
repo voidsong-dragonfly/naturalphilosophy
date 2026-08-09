@@ -27,13 +27,17 @@
 3. patterned ground is made by perfmafrost, the sort of on-again-off-again rocks. consider for tundra biomes?
     tundra can have small patches of trees where plains might not have any
     consider tundra as the slide between forest and prairie for cold biomes (?)
-4. revamp desert biomes entirely, even if they don't get split
-    Cactus can only be placed on "coarse dry dirt"
-    coarse dry dirt is in between coarse dirt and sand/red sand, possibly have variants so we can blend easier (blockstate?)
-        => color of packed mud but the texture a mixture of coarse dirt and sand, perhaps?
-    dune grass can be placed on coarse dry dirt as well. rename to "hardy grass" or maybe?
-    deserts are a mix of coarse dirt, coarse dry dirt, and sand. make dune deserts later and reduce sand percentage?
-    deserts have "lots" of "foliage" in the sense that they have sparse, specific foliages. would be perfect for bushes, esp. low-lying ones
-    desaturate sand??? big ask but also right now it's _so_ saturated and having it be less yellow might help
-        => don't bother, too un-vanilla. blend the dirt better instead of trying to do this
+4. Split desert biomes into two and then revamp them; reorganize Badlands biomes around the same vein
+    Rather than going "desert" and "lush desert", use current desert, and then add "dune desert" devoid of foliage
+    Eroded badlands should be entirely devoid of foliage; Badlands should have foliage on the basin floor only; wooded badlands has a lot of foliage
+    Dune grass can be placed on many blocks; gravel/coarse dirt/etc (add in cracked blocks as well, perhaps? but doesn't grow into tall grass there?)
+    Scrub Desert should possibly be gravel/coarse dirt? It might look good but it would go against the decor of Desert Villages
+        => Could consider a sandy soil block instead, specifically for scrub deserts
+        => Would need a new palette to keep it from being extremely obviously different from sand
+        => Some blocks could place on both sand and sandy soil, some could only place on sandy soil
+    Try to keep this as Vanilla as possible, even though the biome layout is being altered to fit these in
+    Try to make normal desert "OK" to be right up against jungles by adding bunches of foliage
+        => Don't want to modify the biomes and their layout that much to avoid issues with other mods
+        => May need to shuffle things around a bit to get them to fit well
 5. more mob variants? mob variants for some mobs missing them? (fish, etc)
+6. [Temperature] Mushroom Shores biome with ocean-matching water color, to prevent water color disconnects

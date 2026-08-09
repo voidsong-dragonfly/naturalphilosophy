@@ -1,39 +1,23 @@
 
 
-1. Port over some of the interesting features of Immersive Weathering/supplementaries
-    Mossy stone and other mossy blocks, to make mossiness not just a cobblestone thing
-        => can this be done effectively with moss carpets and a lichen block? I think the answer is yes
-        => worn stone/cracked stone, mossy/overgrown stone
+1.  Port over some of the interesting more complex features of Immersive Weathering
     Fulgurite/vitrified sand that happens from lightning strikes + some naturally generating fulgurite; also for red sand?
-    barnacles block similar to glow lichen? can only grow on blocks of above a certain hardness, not gravel/etc
-    ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else?
-    Moss outgrowths to place on other blocks? or just make mossy stone? unsure.
+    "Frozen grass" for snowy plains & tundras perhaps? could also go in grove. Allow snowlogging of regular grass to turn into frozen grass. Blue texture.
     icicles, esp. for caves in snowy peaks, would do a lot for them
     Desert precipitation changes to allow thunderstorms to rain in warmer areas, but thunderstorms only?
-2. Rocky biome changes to make them feel more rock-like and less like bare edifices of stone with nothing growing and no cracks
+    Use sandy dirt color palette from IW to make my coarse sandy dirt block?
+2.  Rocky biome changes to make them feel more rock-like and less like bare edifices of stone with nothing growing and no cracks
+    rock block generator rather than boulder generator, except in specific glacial areas (?)
     New rock generator, either cubic with shifted corners or ore-vein based; make it follow IRL rock shapes more
     New block to make rocks less likely to blend into the stone below them?
-    Make rocky biomes have a layer of gravel and dirt on top, except for on cliffs, to make the rock less obvious?
-    Cobblestone not being used in world generation due to its uniformity and lacking in the texture of normal cobble-gravel beds
-    rock block generator rather than boulder generator, except in specific glacial areas (?)
+    Cobblestone should be removed from world generation due to its uniformity and lacking in the texture of normal cobble-gravel beds
     significant work on outcroppings and slopes would probably be good here
-3.  talus slopes on the beneath part of the mountains?
-    rubble blocks for the surface to break up the flatness, rock slopes really need this to feel alive
-    lots of rocky beaches have this but are not flat, and "cobblestone in the ground" does not do it justice
-    a good place to use block mixes as it's a very similar-colored block mix
-    scree slopes on anything even vaguely glacial (?) => no glacial movement in the same way, but it could look cool as hell
-4.  new decor blocks for oceans and water biomes, to add variety (?)
-    some more plants so it's not just kelp/seagrass/red algae?
-        => flower-like blocks?
-        => immature sponges?
-        => can use anemonies for this, they place on rocks
-    possibly some decor items like shells?
-        => solitary clams or shellfish in or on seabed could work for barrens
-5.  consider some "top block cruft" blocks that are easy to access and not awful to work with
+    add scree slopes on stony peaks (?) => no glacial movement in the same way, but it could look cool as hell
+3.  consider some "top block cruft" blocks that are easy to access and not awful to work with
     pine cones and sticks are one good glass
     bones might be another good class, to allow for peaceful bone acquisition w/o structures
     consider seashell-embedded sand for beaches, or seashells for beaches; could also be prismarine shards
-6.  Significant overhaul of rivers & low-lying areas
+4.  Significant overhaul of rivers & low-lying areas
     Change the spawning requirements of rushes & cattails, allow them in low-lying areas & not just water
     Move rushes & cattails away from direct water contact and more towards low-lying ground in general
         => this should actually just be the mud block in general
@@ -47,9 +31,6 @@
         => May or may not want to do this, Vanilla generation can be highly flat at times and y71 might be too high
         => Maybe only go up to y68 or so (so +5 blocks from bottom) and not y71
         => Either that or have different fades based on biome; plains biomes have one and forests another?
-    ✓ More variety to rushes and cattails
-        ✓ => More models, have the vary either over large spaces or over small spaces
-        ✓ => Maybe make the models square?
     New blocks for rivers/beaches: Water/river gravel, water/river sand, muddy rocks/river cobbles, possibly something else?
         => Less saturated, more uniform in tone than Vanilla sand/gravel/mud/etc
         => Should help make river biomes more cohesive
@@ -64,26 +45,19 @@
         => Reading of continentalness/erosion will also allow for tailoring river surface placement to rough heightvalue areas
         => or just don't care, could be cool to make very low-lying areas into wetlands
         => this has issues of caves
-7.  Go back over current biomes & make sure they're the best they can be
-    Savanna biomes should maybe become partial badlands biomes? See biomes out West for examples. Badlands grasslands, etc
-    Badlands biomes have more plants; possible grassy transitional badlands biome for blending into Savannas
-    Desert biomes get an overhaul and split into two: Dunes & xeric shrublands, where dunes are just sand and shrublands have some few plants
-8.  Pale Garden up to Natural Philosophy standards
+5.  Pale Garden & Sulfur Caves up to Natural Philosophy standards
     Pale garden is already pretty good, add more moss and more grass?
     Don't want to make the trees too tall, or else breaking creaking hearts might become much harder
     Add some ground vegetation maybe?
     Glow lichen in the Pale Garden, on the trees?
-9.  Updates to existing features in biomes
+    Sulfur caves might need either an extra block or a blending block?
+    Sulfur caves update water fog color to match Bedrock Edition (6013715)
+6.  Updates to existing features in biomes
     With the new update, fallen trees across multiple biomes
-    ✓ Larger bush blocks, perhaps? The current bushes are small and scraggly when they should be bigger
     Dead trees in many biomes to go alongside the fallen trees
     Make trees correspond to their saplings correctly
     Leaves have a curtain of snow draped around them when there is a snow layer on top => maybe all blocks do, and we just ignore certain blocks (snow, snowy grass, etc)
     Possibly add charred trees to some biomes? Lightning-struck tree features + charred logs
         => Make it a Gasworks integration if I add better fire spread to gasworks?
-10. sound additions. the sussurus of rushes and leaves in swamps and forests, etc
-11. deal with epiphytes and fixing decoration to make better sense with rain/humidity values
-    Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
-    ✓ Biomes further from high humidity should have less moss - revamp taigas, etc
-    allow blue orchids to place on jungle logs specifically as well?
-12. rules-based block placers place muddy roots and not always rooted dirt
+7.  sound additions. the sussurus of rushes and leaves in swamps and forests, etc
+8.  rules-based block placers place muddy roots and not always rooted dirt
