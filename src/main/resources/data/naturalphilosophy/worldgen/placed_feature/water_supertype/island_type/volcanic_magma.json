@@ -24,6 +24,34 @@
       "heightmap": "OCEAN_FLOOR"
     },
     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:any_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_fluids",
+            "offset": [0, 2, 0],
+            "fluids": "minecraft:water"
+          },
+          {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [0, -1, 0],
+                "blocks": "minecraft:yellow_terracotta"
+              },
+              {
+                "type": "minecraft:matching_fluids",
+                "offset": [0, 1, 0],
+                "fluids": "minecraft:water"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "type": "minecraft:biome"
     }
   ]
