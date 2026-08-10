@@ -41,3 +41,5 @@
         => May need to shuffle things around a bit to get them to fit well
 5. more mob variants? mob variants for some mobs missing them? (fish, etc)
 6. [Temperature] Mushroom Shores biome with ocean-matching water color, to prevent water color disconnects
+7. Move some biomes around and add some more. Pine taiga, move Birch Forest to "cold" climate & adjust water color, etc
+8. Differentiate River, Stony Shore, and Beach biomes fully to make water color transitions not jagged across different biomes
