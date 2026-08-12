@@ -3,25 +3,10 @@
   "add_stone_depth": true,
   "surface_depth_multiplier": 1,
   "default_rule": {
-    "type": "naturalphilosophy:random_threshold_selector",
-    "random_name": "surface_randomness",
-    "default_state": {
-      "Name": "minecraft:gravel"
-    },
-    "lower_random_thresholds": [
-      0.90,
-      0.70
-    ],
-    "state_set": [
-      {
-        "Name": "minecraft:stone"
-      },
-      {
-        "Name": "minecraft:cobblestone"
-      }
-    ]
+    "type": "lithostitched:reference",
+    "rules": "naturalphilosophy:blocks/gravel"
   },
-  "lower_height_thresholds": [ 72 ],
+  "lower_height_thresholds": [ 62 ],
   "ruleset": [{
     "type": "minecraft:block",
     "result_state": {

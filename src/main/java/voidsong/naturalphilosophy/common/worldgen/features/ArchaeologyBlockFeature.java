@@ -13,8 +13,9 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import voidsong.naturalphilosophy.common.worldgen.features.ArchaeologyBlockFeature.ArchaeologyBlockConfiguration;
 
-public class ArchaeologyBlockFeature extends Feature<ArchaeologyBlockFeature.ArchaeologyBlockConfiguration> {
+public class ArchaeologyBlockFeature extends Feature<ArchaeologyBlockConfiguration> {
     public ArchaeologyBlockFeature(Codec<ArchaeologyBlockConfiguration> codec) {
         super(codec);
     }

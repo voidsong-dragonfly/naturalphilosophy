@@ -40,8 +40,14 @@
   },
   "placement": [
     {
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 4,
+      "below_noise": 16,
+      "noise_level": -0.8
+    },
+    {
       "type": "minecraft:rarity_filter",
-      "chance": 5
+      "chance": 16
     },
     {
       "type": "minecraft:in_square"
@@ -52,18 +58,6 @@
     },
     {
       "type": "minecraft:biome"
-    },
-    {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
-        "blocks": "minecraft:grass_block"
-      }
     }
   ]
 }

@@ -1,10 +1,34 @@
 {
     "variants": {
-        "half=lower": {
-            "model": "naturalphilosophy:block/rushes_bottom"
+        "half=lower,wet=false": {
+            "model": "naturalphilosophy:block/water_plant/dry_bottom"
         },
-        "half=upper": {
-            "model": "naturalphilosophy:block/rushes_top"
-        }
+        "half=lower,wet=true": {
+            "model": "naturalphilosophy:block/water_plant/wet_bottom"
+        },
+        "half=upper,wet=false": [
+            {
+                "model": "naturalphilosophy:block/water_plant/rushes_dry_1"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/rushes_dry_2"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/rushes_base",
+                "weight": 6
+            }
+        ],
+        "half=upper,wet=true": [
+            {
+                "model": "naturalphilosophy:block/water_plant/rushes_wet_1"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/rushes_wet_2"
+            },
+            {
+                "model": "naturalphilosophy:block/water_plant/rushes_base",
+                "weight": 6
+            }
+        ]
     }
 }

@@ -8,42 +8,16 @@
     }
   },
   "lower_noise_thresholds": [
-     0.25,
      0.125,
     -0.225,
-    -0.25,
     -1E308
   ],
   "ruleset": [
     {
-      "type": "naturalphilosophy:random_threshold_selector",
-      "random_name": "surface_randomness",
-      "default_state": {
-        "Name": "minecraft:grass_block"
-      },
-      "lower_random_thresholds": [
-        0.90,
-        0.25
-      ],
-      "state_set": [
-        {
-          "Name": "minecraft:rooted_dirt"
-        },
-        {
-          "Name": "minecraft:podzol"
-        }
-      ]
-    },
-    {
-      "type": "naturalphilosophy:random_threshold_selector",
-      "random_name": "surface_randomness",
-      "default_state": {
-        "Name": "minecraft:grass_block"
-      },
-      "lower_random_thresholds": [ 0.625 ],
-      "state_set": [{
-        "Name": "minecraft:podzol"
-      }]
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "naturalphilosophy:alfizol"
+      }
     },
     {
       "type": "minecraft:block",
@@ -52,34 +26,10 @@
       }
     },
     {
-      "type": "naturalphilosophy:random_threshold_selector",
-      "random_name": "surface_randomness",
-      "default_state": {
-        "Name": "minecraft:grass_block"
-      },
-      "lower_random_thresholds": [ 0.625 ],
-      "state_set": [{
-        "Name": "minecraft:podzol"
-      }]
-    },
-    {
-      "type": "naturalphilosophy:random_threshold_selector",
-      "random_name": "surface_randomness",
-      "default_state": {
-        "Name": "minecraft:grass_block"
-      },
-      "lower_random_thresholds": [
-        0.90,
-        0.25
-      ],
-      "state_set": [
-        {
-          "Name": "minecraft:rooted_dirt"
-        },
-        {
-          "Name": "minecraft:podzol"
-        }
-      ]
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "naturalphilosophy:alfizol"
+      }
     }
   ]
 }

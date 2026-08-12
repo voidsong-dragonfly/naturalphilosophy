@@ -1,29 +1,18 @@
 package voidsong.naturalphilosophy.common.blocks;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-
-import javax.annotation.Nonnull;
+import net.neoforged.neoforge.common.Tags;
 
 public class TallDuneGrass extends DoublePlantBlock {
 
     public TallDuneGrass(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(NPProperties.RED_SAND, false).setValue(HALF, DoubleBlockHalf.LOWER));
-    }
-
-    @Override
-    protected void createBlockStateDefinition(@Nonnull StateDefinition.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(NPProperties.RED_SAND);
+        this.registerDefaultState(this.stateDefinition.any().setValue(HALF, DoubleBlockHalf.LOWER));
     }
 
     @Override
@@ -31,15 +20,9 @@ public class TallDuneGrass extends DoublePlantBlock {
         BlockState below = level.getBlockState(pos.below());
         if (state.getBlock() != this) return super.canSurvive(state, level, pos);
         if (state.getValue(HALF) != DoubleBlockHalf.UPPER) {
-            return state.getValue(NPProperties.RED_SAND) ? below.is(Blocks.RED_SAND) : below.is(Blocks.SAND);
+            return below.is(Tags.Blocks.SANDS) || below.is(Tags.Blocks.GRAVELS);
         } else {
             return below.getBlock() == this && below.getValue(HALF) == DoubleBlockHalf.LOWER;
         }
-    }
-
-    @Override
-    public BlockState getStateForPlacement(@Nonnull BlockPlaceContext context) {
-        BlockState state = super.getStateForPlacement(context);
-        return context.getLevel().getBlockState(context.getClickedPos().below()).is(Blocks.RED_SAND) ? state.setValue(NPProperties.RED_SAND, true) : state;
     }
 }

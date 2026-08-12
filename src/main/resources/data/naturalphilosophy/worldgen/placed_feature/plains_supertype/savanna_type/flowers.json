@@ -2,8 +2,14 @@
   "feature": "naturalphilosophy:plant_patches/poppies",
   "placement": [
     {
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 4,
+      "below_noise": 16,
+      "noise_level": -0.8
+    },
+    {
       "type": "minecraft:rarity_filter",
-      "chance": 8
+      "chance": 32
     },
     {
       "type": "minecraft:in_square"

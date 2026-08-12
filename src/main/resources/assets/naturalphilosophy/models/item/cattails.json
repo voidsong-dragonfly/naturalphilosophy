@@ -1,6 +1,7 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "naturalphilosophy:block/cattails_top"
+        "layer0": "naturalphilosophy:block/water_plant/cattail/dry_1",
+        "layer1": "naturalphilosophy:block/water_plant/cattail/dry_overlay_1"
     }
 }

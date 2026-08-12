@@ -16,44 +16,80 @@ NETHER WASTES
  - Should there be plants? Maybe have some sort of netherrack sand instead, make it more desertlike?
 NYLIUM FORESTS
  - Soul sand patches among the nylium for Warped forests (?)
- - Warped forests are endermen black-purple
+ - Warped forests are endermen black-purple => possibly not, the nether already has a lot of "soul blue" going on
  - Gravel patches among the nylium for Crimson Forests
  - Veins of quartz and gold ore
  - Vines hanging from ceilings & maybe some new plant variety
+
+possible new biome to pair with the Basalt Deltas, the Erupting Deltas.
+ - ash on the ground like Suppl basalt deltas
+ - ash smokers common on the basalt columns that exist
+ - balance of lava lakes and lava in general compared to columns is tweaked
+ - magma veins have a lot more lava and magma, less obsidian and blackstone
+ - spawns at the center of basalt deltas, maybe?
 
 Do we want veins at all? Ores do have their own issues, but veins might be too large of a change. Consider thoroughly
  - Definitely want to keep magma veins
  - May not want to keep gold/quartz veins
  - Look up how geodes form and consider closely
 
+nettles similar to PVJ? they could be a bush type plant, or something else entirely
+glowcap mushrooms
+cindercane alongside blaze bamboo? both at once?
+
 Blaze Bamboo either as its own biome or as stands other places
 Some sort of sugarcane-equivalent? Not sure what it would do...
 
 Gunpowder from quenched bamboo or directly from sugarcane, maybe?
+ => could actually make it be flint instead, "sparking bamboo" and "blazing bamboo" depending if it's within a fortress
 Somehow activate blaze bamboo with a fortress for blaze powder?
  => Smelting only, but if grown inside a nether fortress becomes "activated" blaze bamboo and can be used for rods?
  => Grown both near a blaze spawner & within a nether fortress structure produced 'activated', otherwise the bamboo is 'quenched' bamboo
  => Maybe the powder can't be used for eyes of ender but can be used for potions?
+ => need to throw blaze bamboo on top of a blaze spawner that's on fire for it to turn into blaze rods? Hard to do when
+    there's blazes around, which means it's fit only for Peaceful or a particularly dedicated player. Needs to be in Nether
 
 Some other sorts of vegetation, several types? make some sort of quartz desert?
 
 An obsidian sand desert + obsidian sandstone could be cool => maybe obsidian glass, actually? make it like a giant slagged heap?
+ => probably choose this or ironsand, don't do both. too similar.
+ => obsidian spikes in ironsand? a mix of crushed obsidian beaches and obsidian spikes?
 
 Lava rivers? Dual-level lava rivers with lava falls?
+ => sort of clashes with the ideas i had for relatively open and plateau'd caverns. may not work well anyway
+ => consider floor lava rivers to walk Striders around on, though.
+ => instead floor lava rivers with steep fissures that taper off, like Larion
 
 glowstone-and-quartz "crystalline caverns?"
+ => will need to figure out how to do effectively
+ => lots of the existing ones have been tried & I don't like them
+ => might need to combine with the quartz desert idea?
 
 Nether dripstone spikes
 Magma patches on top of lava
 Blackened/charred nylium + purple-red-orange-yellow flamelike fade goes very well
+ => consider something like RU's "ashen forest" but for nylium? doesn't make too much sense as they're fire-resistant,
+    but it could be a cool vibe overall? ash blocks, charred trees, dead and burnt grass, smokers...
 
 Nether biomes?
     Nether dirt around lava lakes? Sinuous Weed? Other things from Primal Core?
     Other Nether plants? Unsure. Revamp normal Nether Wastes biome to be a bit less wasteland?
     Possibly add soul sandstone? or at least when Quark is there, do that?
+     => Quark has feature auto-disable, we can add it without worries and let Quark disable theirs.
 
 Lava marshes biome at the bottom near lava lakes, with thorny plants. Sort of a combination of the BoP soul sand vines valley with a lava swamp idea
  => Magma thorns perhaps, which feed off of lava and burn the player rather than prick them?
  => Only have them burn the player if their "source" is near lava or magma blocks
 
 "Soulfire Brazier" and "Dread Lantern" maybe?
+
+possibly use a black-brown "ironsand" for the marshes? could also replace gravel with it if we're feeling fancy. Check out Scorch.
+make new blocks only spawn on ironsand? perhaps make Blaze Bamboo something similar to sugarcane but for the lower-level lava?
+ => new biome, Blazing Marsh, which has blazing bamboo and possibly a rushes equivalent?
+ => this would require a new bottom biome, so maybe don't. instead just make it a feature of all biomes?
+
+full block placements via surface rule may be an issue, consider
+ => optimize block place via surface rule by making a few assumptions about height
+ => check biome once @ the top of the world, rather than multiple times. could check height each time air flips, but that
+    feels rather unnecessary. would clash with mods that add height-variated biomes, but I disagree with those on principle
+    anyway, and they wouldn't fit well with my changes, so who cares?

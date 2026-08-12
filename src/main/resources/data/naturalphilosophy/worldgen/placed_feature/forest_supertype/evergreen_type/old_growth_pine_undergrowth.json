@@ -33,81 +33,57 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [0, 1, 0],
+        "blocks": "#minecraft:air"
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:any_of",
           "predicates": [
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                1,
-                2,
-                0
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [1, 2, 0],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                0,
-                2,
-                1
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [0, 2, 1],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                -1,
-                2,
-                0
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [-1, 2, 0],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                0,
-                2,
-                -1
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [0, 2, -1],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                1,
-                2,
-                1
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [1, 2, 1],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                -1,
-                2,
-                1
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [-1, 2, 1],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                -1,
-                2,
-                1
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [-1, 2, 1],
+              "blocks": "#minecraft:spruce_logs"
             },
             {
               "type": "minecraft:matching_blocks",
-              "offset": [
-                -1,
-                2,
-                -1
-              ],
-              "blocks": "minecraft:spruce_log"
+              "offset": [-1, 2, -1],
+              "blocks": "#minecraft:spruce_logs"
             }
           ]
         }

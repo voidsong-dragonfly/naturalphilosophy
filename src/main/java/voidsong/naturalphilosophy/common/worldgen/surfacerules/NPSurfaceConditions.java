@@ -26,18 +26,29 @@ public class NPSurfaceConditions {
             int eastHeight  = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, east, j);
             int southHeight = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, south);
             int westHeight  = chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, west, j);
-            // Get the height difference we need to check to ensure this is a cliff
-            int difference = (Math.max(northHeight, Math.max(eastHeight, Math.max(southHeight, westHeight))) - Math.min(northHeight, Math.min(eastHeight, Math.min(southHeight, westHeight))));
-            // Exit early, to ensure we don't make the more intensive checks.
-            if (difference < 3) return false;
-            // Check that we're not on a cliff top-lip. Since the scan is top-down, this catches tops first despite being LazyXZ TODO: possibly not make this apply to big cliff-sides
-            boolean lip = this.context.stoneDepthBelow <= 2;
-            // Check that we're not at the bottom of a hanging-over cave entrance. These air checks function because, and so this catches the top despite being LazyXZ
-            lip = lip || chunk.getBlockState(new BlockPos(this.context.blockX, this.context.blockY+2, this.context.blockZ-j+north)).isAir() && this.context.blockY+2 < northHeight;
-            lip = lip || chunk.getBlockState(new BlockPos(this.context.blockX-i+east, this.context.blockY+2, this.context.blockZ)).isAir() && this.context.blockY+2 < eastHeight;
-            lip = lip || chunk.getBlockState(new BlockPos(this.context.blockX, this.context.blockY+2, this.context.blockZ-j+south)).isAir() && this.context.blockY+2 < southHeight;
-            lip = lip || chunk.getBlockState(new BlockPos(this.context.blockX-i+west, this.context.blockY+2, this.context.blockZ)).isAir() && this.context.blockY+2 < westHeight;
-            return !lip;
+            // Get adjacent heightmap min & max heights. We include this block in max but not min to keep spires but not pits as stone
+            int min = Math.min(northHeight, Math.min(eastHeight, Math.min(southHeight, westHeight)));
+            int maxAdjacent = min;
+            if (j != north) maxAdjacent = northHeight;
+            if (i != east)  maxAdjacent = Math.max(maxAdjacent, eastHeight);
+            if (j != south) maxAdjacent = Math.max(maxAdjacent, southHeight);
+            if (i != west)  maxAdjacent = Math.max(maxAdjacent, westHeight);
+            int y = context.blockY + context.stoneDepthAbove - 1;
+            int max = Math.max(y, maxAdjacent);
+            // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
+            if ((max - min) < 3 && !(max > maxAdjacent && (max - min) == 2)) return false;
+            // Return if we're on a cliff lip (low depth, flat height profile) based on the top of this block column if run at the surface
+            // Note: this check will cause strange behavior if it is not run in the top "section" first to allow LazyXZ to cache it for the entire column
+            if (this.context.stoneDepthBelow <= 3 && (max - y < 2))  return false;
+            // Return if we're at in the middle of a large cliff, regardless of depth, to prevent 3D cliffs from having grass streaks due to lip-like behavior
+            if ((max - y) > 11 && (y - min) > 1) return true;
+            // Check that we're not at the bottom of a hanging-over cave entrance by checking if there's air pockets beneath ground height on the sides
+            // Note: this has the same strange behavior & cause as the previous lip check does, it should be run in the top "section" first and allowed to cache itself
+            boolean floor =  chunk.getBlockState(new BlockPos(this.context.blockX, y+2, this.context.blockZ-j+north)).isAir() && y+2 < northHeight;
+            floor = floor || chunk.getBlockState(new BlockPos(this.context.blockX-i+east, y+2, this.context.blockZ)).isAir() && y+2 < eastHeight;
+            floor = floor || chunk.getBlockState(new BlockPos(this.context.blockX, y+2, this.context.blockZ-j+south)).isAir() && y+2 < southHeight;
+            floor = floor || chunk.getBlockState(new BlockPos(this.context.blockX-i+west, y+2, this.context.blockZ)).isAir() && y+2 < westHeight;
+            return !floor;
         }
     }
 
@@ -99,10 +110,34 @@ public class NPSurfaceConditions {
         }
     }
 
-    public record LandTopLayerCondition(SurfaceRules.Context context) implements SurfaceRules.Condition {
+    public record UnderwaterCondition(SurfaceRules.Context context, boolean shallow) implements SurfaceRules.Condition {
         @Override
         public boolean test() {
-            return context.waterHeight == Integer.MIN_VALUE && context.stoneDepthAbove <= 1;
+            // Exit early if we're above water
+            if (context.waterHeight == Integer.MIN_VALUE) return false;
+            // If we don't care about shallowness, return early, else check the Vanilla "shallow water" parameters
+            return !shallow || ((context.blockY + context.stoneDepthAbove) >= (context.waterHeight - 6 - context.surfaceDepth));
+        }
+    }
+
+    public record CaveDepthCondition(SurfaceRules.Context context, int depth) implements SurfaceRules.Condition {
+        @Override
+        public boolean test() {
+            int heightmapDepth = context.chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, context.blockX, context.blockZ);
+            // Return early if this isn't a cave - ie, if the ground above is solid
+            if (context.stoneDepthAbove >= (heightmapDepth-context.blockY+1)) return false;
+            // Return early if we're above the necessary depth
+            if (heightmapDepth - depth <= context.blockY) return false;
+            // If we're shallower than twelve blocks, we do not need to check the air blocks above this block
+            // We remove/add stoneDepthAbove to make sure we stay congruous with the top block of the cave
+            int currentDepth = heightmapDepth - context.blockY + context.stoneDepthAbove;
+            if (currentDepth < 12) return true;
+            // Check to make sure we're not underneath a massive overhang by checking if greater than 3/4ths what's above is air
+            ContextExtension eContext = ((ContextExtension)(Object)context);
+            if ((eContext.naturalphilosophy$getLastYBeforeCurrentCavern()-(context.blockY+context.stoneDepthAbove)) < (currentDepth*3)/4) return true;
+            // If we are under an overhang, but are on the side of a mini-cliff, this should also be a cave floor
+            int searchLevel = context.blockY + context.stoneDepthAbove- 2;
+            return eContext.naturalphilosophy$getCachedCaveLipValue(searchLevel);
         }
     }
 }

@@ -40,13 +40,19 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
-        "blocks": "minecraft:sand"
+        "type": "minecraft:any_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -1, 0],
+            "blocks": "#minecraft:coral_blocks"
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -3, 0],
+            "blocks": "minecraft:sandstone"
+          }
+        ]
       }
     },
     {

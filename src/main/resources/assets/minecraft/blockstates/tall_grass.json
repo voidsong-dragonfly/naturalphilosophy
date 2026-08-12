@@ -1,0 +1,69 @@
+{
+  "variants": {
+    "half=upper": [
+      {
+        "model": "minecraft:block/grass/tall_tiny_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_green"
+      },
+      {
+        "model": "minecraft:block/grass/tall_tiny_yellow"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_green"
+      },
+      {
+        "model": "minecraft:block/grass/tall_short_yellow"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_green"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_yellow"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_green"
+      },
+      {
+        "model": "minecraft:block/grass/tall_default_yellow"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_untinted"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_green"
+      },
+      {
+        "model": "minecraft:block/grass/tall_thick_yellow"
+      }
+    ],
+    "half=lower": {
+      "model": "minecraft:block/grass/tall_bottom"
+    }
+  }
+}

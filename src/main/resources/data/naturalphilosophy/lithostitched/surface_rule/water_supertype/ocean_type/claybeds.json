@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:condition",
+  "if_true": {
+    "type": "minecraft:not",
+    "invert": {
+      "type": "minecraft:y_above",
+      "add_stone_depth": true,
+      "anchor": {
+        "absolute": 8
+      },
+      "surface_depth_multiplier": 1
+    }
+  },
+  "then_run": {
+    "type": "minecraft:block",
+    "result_state": {
+      "Name": "minecraft:clay"
+    }
+  }
+}

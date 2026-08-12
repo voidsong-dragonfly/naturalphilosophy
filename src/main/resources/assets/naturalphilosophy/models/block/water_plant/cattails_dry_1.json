@@ -1,0 +1,7 @@
+{
+  "parent": "naturalphilosophy:block/dual_square_cutout",
+  "textures": {
+    "untinted": "naturalphilosophy:block/water_plant/cattail/dry_overlay_1",
+    "tinted": "naturalphilosophy:block/water_plant/cattail/dry_1"
+  }
+}

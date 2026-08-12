@@ -20,17 +20,25 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:not",
-        "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            -1,
-            0
-          ],
-          "blocks": "minecraft:sand"
-        }
+        "type": "minecraft:any_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -3, 0],
+            "blocks": "#minecraft:base_stone_overworld"
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -3, 0],
+            "blocks": "minecraft:sandstone"
+          }
+        ]
       }
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_start": 40,
+      "taper_end": 25
     }
   ]
 }

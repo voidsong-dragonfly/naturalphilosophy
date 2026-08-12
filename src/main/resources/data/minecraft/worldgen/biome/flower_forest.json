@@ -23,7 +23,7 @@
     },
     "sky_color": 7972607,
     "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_fog_color": 2906301
   },
   "features": [
     [],
@@ -78,12 +78,12 @@
     ],
     [
       "naturalphilosophy:forest_supertype/deciduous_type/flower_forest_copses",
-      "naturalphilosophy:forest_supertype/deciduous_type/undergrowth",
+      "naturalphilosophy:forest_supertype/deciduous_type/flower_forest_undergrowth",
+      "naturalphilosophy:forest_supertype/deciduous_type/clearing_trees",
       "naturalphilosophy:forest_supertype/pumpkin_patch",
       "naturalphilosophy:forest_supertype/mushrooms",
       "naturalphilosophy:forest_supertype/moss",
-      "naturalphilosophy:forest_supertype/deciduous_type/clearing_flowers",
-      "naturalphilosophy:forest_supertype/deciduous_type/temperate_flowers",
+      "naturalphilosophy:forest_supertype/deciduous_type/flower_bushes_common",
       "naturalphilosophy:forest_supertype/deciduous_type/flower_forest_flowers",
       "naturalphilosophy:forest_supertype/deciduous_type/clearing_vegetation",
       "naturalphilosophy:forest_supertype/deciduous_type/vegetation"

@@ -1,0 +1,69 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "naturalphilosophy:block/alfizol_1"
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_1",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_1",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_1",
+        "y": 270
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_2"
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_2",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_2",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_2",
+        "y": 270
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_3"
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_3",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_3",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_3",
+        "y": 270
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_4"
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_4",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_4",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/alfizol_4",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "minecraft:block/grass_block_snow"
+    }
+  }
+}

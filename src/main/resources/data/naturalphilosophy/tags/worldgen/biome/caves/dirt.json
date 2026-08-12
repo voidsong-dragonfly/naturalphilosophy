@@ -1,0 +1,16 @@
+{
+  "remove": [
+    "#c:is_river",
+    "#c:is_beach",
+    "#c:is_stony_shores",
+    "#c:is_sandy",
+    "#c:is_mountain/peak",
+    "minecraft:mushroom_fields",
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp",
+    "#naturalphilosophy:caves/snow"
+  ],
+  "values": [
+    "#minecraft:is_overworld"
+  ]
+}

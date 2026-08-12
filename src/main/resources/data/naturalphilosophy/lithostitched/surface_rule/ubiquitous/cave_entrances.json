@@ -1,0 +1,189 @@
+{
+  "type": "minecraft:condition",
+  "if_true": {
+    "type": "naturalphilosophy:cave_depth",
+    "depth": 6
+  },
+  "then_run": {
+    "type": "minecraft:sequence",
+    "sequence": [
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:caves/dirt"
+        },
+        "then_run": {
+          "type": "naturalphilosophy:bilayer_fill",
+          "top_layer": {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "naturalphilosophy:cave_depth",
+                  "depth": 12
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:stone"
+                  }
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "naturalphilosophy:cave_depth",
+                  "depth": 9
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:random_threshold_selector",
+                  "random_name": "cave_randomness",
+                  "default_state": {
+                    "Name": "minecraft:stone"
+                  },
+                  "lower_random_thresholds": [
+                    0.85,
+                    0.65,
+                    0.55
+                  ],
+                  "state_set": [
+                    {
+                      "Name": "minecraft:rooted_dirt"
+                    },
+                    {
+                      "Name": "minecraft:coarse_dirt"
+                    },
+                    {
+                      "Name": "minecraft:gravel"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "naturalphilosophy:cave_depth",
+                  "depth": 6
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:random_threshold_selector",
+                  "random_name": "cave_randomness",
+                  "default_state": {
+                    "Name": "minecraft:gravel"
+                  },
+                  "lower_random_thresholds": [
+                    0.75,
+                    0.15
+                  ],
+                  "state_set": [
+                    {
+                      "Name": "minecraft:rooted_dirt"
+                    },
+                    {
+                      "Name": "minecraft:coarse_dirt"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "sublayer": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:stone"
+            }
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:caves/snow"
+        },
+        "then_run": {
+          "type": "naturalphilosophy:bilayer_fill",
+          "top_layer": {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "naturalphilosophy:cave_depth",
+                  "depth": 16
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:stone"
+                  }
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "naturalphilosophy:cave_depth",
+                  "depth": 12
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:random_threshold_selector",
+                  "random_name": "cave_randomness",
+                  "default_state": {
+                    "Name": "minecraft:snow_block"
+                  },
+                  "lower_random_thresholds": [
+                    0.25,
+                    0.20
+                  ],
+                  "state_set": [
+                    {
+                      "Name": "minecraft:stone"
+                    },
+                    {
+                      "Name": "minecraft:gravel"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "naturalphilosophy:cave_depth",
+                  "depth": 6
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:random_threshold_selector",
+                  "random_name": "cave_randomness",
+                  "default_state": {
+                    "Name": "minecraft:snow_block"
+                  },
+                  "lower_random_thresholds": [
+                    0.5,
+                    0.45
+                  ],
+                  "state_set": [
+                    {
+                      "Name": "minecraft:stone"
+                    },
+                    {
+                      "Name": "minecraft:gravel"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "sublayer": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:stone"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+

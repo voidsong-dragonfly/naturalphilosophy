@@ -1,5 +1,5 @@
 {
-  "feature": "naturalphilosophy:plant_patches/grass",
+  "feature": "naturalphilosophy:plant_patches/grass_mixed",
   "placement": [
     {
       "type": "minecraft:count",
@@ -13,21 +13,19 @@
       "heightmap": "WORLD_SURFACE_WG"
     },
     {
-      "type": "minecraft:biome"
-    },
-    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -2,
-          0
-        ],
-        "blocks": [
-          "minecraft:coarse_dirt"
-        ]
+        "type": "naturalphilosophy:any_in_range",
+        "start_offset": [-2, -4, -2],
+        "end_offset": [3, -2, 3],
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": [ "minecraft:coarse_dirt" ]
+        }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

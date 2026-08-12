@@ -31,9 +31,9 @@
         }
       ]
     },
-    "replaceable": "#minecraft:dirt",
+    "replaceable": "#naturalphilosophy:dirt",
     "surface": "ceiling",
-    "vegetation_chance": 0.3125,
+    "vegetation_chance": 0.25,
     "vegetation_feature": {
       "feature": {
         "type": "minecraft:simple_block",

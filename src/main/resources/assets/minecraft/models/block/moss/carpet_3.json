@@ -1,0 +1,8 @@
+{
+  "parent": "naturalphilosophy:block/thin_hanging_block",
+  "textures": {
+    "particle": "block/moss_block",
+    "moss": "block/moss_block",
+    "side": "block/moss/side_overlay_3"
+  }
+}

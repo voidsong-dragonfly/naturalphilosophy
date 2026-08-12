@@ -24,17 +24,8 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
-        "blocks": [
-          "minecraft:gravel",
-          "minecraft:cobblestone",
-          "minecraft:mossy_cobblestone",
-          "minecraft:stone"
-        ]
+        "offset": [0, -2, 0],
+        "blocks": "#minecraft:base_stone_overworld"
       }
     },
     {

@@ -18,7 +18,7 @@ public class NPSurfaceRules {
         @Override
         public BlockState tryApply(int x, int y, int z) {
             // Check the noise we're using for values, and grab our double value
-            double d0 = pContext.randomState.getOrCreateNoise(noise).getValue(x, 0.0, z);
+            double d0 = ((ContextExtension)(Object)pContext).naturalphilosophy$getCachedNoiseValue(noise, x, z);
             // Iterate through the rules to figure out which rule to provide, and return the rule for the noise bin we're in
             BlockState result = null;
             for(int i = 0; i < Math.min(lowerThresholds.size(), ruleset().size()); i++) {
@@ -38,7 +38,7 @@ public class NPSurfaceRules {
         @Override
         public BlockState tryApply(int x, int y, int z) {
             // Check the noise we're using for values, and grab our double value
-            double d0 = pContext.randomState.getOrCreateNoise(noise).getValue(x, 0.0, z);
+            double d0 = ((ContextExtension)(Object)pContext).naturalphilosophy$getCachedNoiseValue(noise, x, z);
             // Apply the rule and store the result, with null if we are not within the noise bin
             BlockState result = d0 > lowerThreshold ? rule.tryApply(x, y, z) : null;
             // Return the default rule if we're not in the noise bin or have a noise bin that does not resolve
@@ -53,7 +53,7 @@ public class NPSurfaceRules {
             // Check the random we're using for values, and grab our double value
             RandomSource randomSource = positionalRandomFactory.at(pContext.blockX, pContext.blockY, pContext.blockZ);
             double d0 = randomSource.nextDouble();
-            // Iterate through the rules to figure out which rule to provide, and return the rule for the noise bin we're in
+            // Iterate through the rules to figure out which rule to provide, and return the rule for the random bin we're in
             for(int i = 0; i < Math.min(lowerThresholds.size(), stateSet().size()); i++) {
                 if(d0 > lowerThresholds.get(i)) return stateSet.get(i);
             }
@@ -114,7 +114,8 @@ public class NPSurfaceRules {
         @Override
         public BlockState tryApply(int x, int y, int z) {
             // Get the rule we want at the specified depth and evaluate it for this position
-            BlockState result = pContext.stoneDepthAbove >= length ? null : ruleset.get(pContext.stoneDepthAbove - 1).tryApply(x, y, z);
+            BlockState result = pContext.stoneDepthAbove > length ? null : ruleset.get(pContext.stoneDepthAbove - 1).tryApply(x, y, z);
+            if(x == 5496 && z == -14064) System.out.println(y + " " + result);
             // Return the default rule if we're not in any depth bin or have a height bin that does not resolve
             return result == null ? defaultRule.tryApply(x, y, z) : result;
         }

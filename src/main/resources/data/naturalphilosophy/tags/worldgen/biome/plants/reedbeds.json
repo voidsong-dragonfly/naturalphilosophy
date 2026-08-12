@@ -1,0 +1,12 @@
+{
+  "remove": [
+    "#c:is_beach",
+    "#c:is_ocean",
+    "#c:is_snowy",
+    "minecraft:mushroom_fields",
+    "minecraft:frozen_river"
+  ],
+  "values": [
+    "#minecraft:is_overworld"
+  ]
+}

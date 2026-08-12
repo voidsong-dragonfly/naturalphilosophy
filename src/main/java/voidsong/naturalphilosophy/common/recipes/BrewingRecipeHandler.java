@@ -14,6 +14,6 @@ public class BrewingRecipeHandler {
     public static void registerBrewingRecipes(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
 
-        builder.addMix(Potions.AWKWARD, NPItems.RED_ALGAE_ITEM.get(), Potions.WATER_BREATHING);
+        builder.addMix(Potions.AWKWARD, NPItems.RED_ALGAE.get(), Potions.WATER_BREATHING);
     }
 }

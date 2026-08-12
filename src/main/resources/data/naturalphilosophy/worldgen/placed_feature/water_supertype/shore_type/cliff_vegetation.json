@@ -17,18 +17,14 @@
     },
     {
       "type": "naturalphilosophy:depth_filter",
-      "taper_start": 84,
-      "taper_end": 72
+      "taper_start": 80,
+      "taper_end": 64
     },
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
+        "offset": [0, -1, 0],
         "blocks": "minecraft:grass_block"
       }
     }

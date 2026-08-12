@@ -25,18 +25,14 @@
           "type": "minecraft:block_predicate_filter",
           "predicate": {
             "type": "minecraft:has_sturdy_face",
-            "offset": [
-              0,
-              -1,
-              0
-            ],
+            "offset": [0, -1, 0],
             "direction": "up"
           }
         }
       ]
     },
-    "tries": 48,
-    "xz_spread": 7,
-    "y_spread": 3
+    "tries": 72,
+    "xz_spread": 6,
+    "y_spread": 2
   }
 }

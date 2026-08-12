@@ -1,0 +1,45 @@
+6.0.0 (The Biome Update)
+1. Add some custom biomes to the game?
+    Fill out existing missing portions of the biome spread (cold plains, move a few biomes further apart, etc)
+    Cold desert => gravel desert biome, maybe?
+    Add some more new cave biomes to spice up the underground?
+        Surface rocks rather than plants for cave detection
+    Consider maybe an ocean trenches biome surrounding mushroom islands? Tubeworm blocks and smokers, etc?
+2. Improve caves and add cave biomes
+    Surface rocks rather than plants for cave detection, maybe? Or more obvious plants
+    Stalactites & stalagmites for normal stone (but not for andesite, diorite, or granite)
+        => Rockfall events, maybe? Dropping stalactites/stalagmites
+        => Figure out if I need Lithostitched sequential generators to make top/bottom pairs of speleothems
+    Boulders of fallen rocks in caves
+    Extra fossils in the Deep Dark, especially on the 'surface' of the caves
+    'Magmatic Depths' or 'Volcanic Depths' biome at depth > some limit
+        => this can take over for my original idea of surrounding the lava pools in basalt, instead have the deeps be a
+           smooth basalt layer when in this biome (or at least when the top is)
+    'Granitic Pluton' and 'Plagioclastic Laccolith' biomes, (Granite), and (Diorite inside, Andesite outside) for base stone types
+        => Placed above the deepslate layer, possibly with "veins" of material making webs down to the Bedrock from them
+    Might have to fix cave shape, if it's even possible to do effectively?
+        => Flatter, wider caverns for the deep dark, maybe? Those combined with some deep pits down near bedrock?
+        => Lava rivers down near bedrock? Or have Tectonic do those, or do this as an addon to Tectonic
+        =>
+    Some sort of slime vegetation or slime residue to indicate slime chunks?
+    "Glow Lichen Caves" underneath mushroom islands, to really expand on the mushroom theme? More lapis spawns there perhaps?
+        => possibly make it hostile? it depends. consider.
+3. patterned ground is made by perfmafrost, the sort of on-again-off-again rocks. consider for tundra biomes?
+    tundra can have small patches of trees where plains might not have any
+    consider tundra as the slide between forest and prairie for cold biomes (?)
+4. Split desert biomes into two and then revamp them; reorganize Badlands biomes around the same vein
+    Rather than going "desert" and "lush desert", use current desert, and then add "dune desert" devoid of foliage
+    Eroded badlands should be entirely devoid of foliage; Badlands should have foliage on the basin floor only; wooded badlands has a lot of foliage
+    Dune grass can be placed on many blocks; gravel/coarse dirt/etc (add in cracked blocks as well, perhaps? but doesn't grow into tall grass there?)
+    Scrub Desert should possibly be gravel/coarse dirt? It might look good but it would go against the decor of Desert Villages
+        => Could consider a sandy soil block instead, specifically for scrub deserts
+        => Would need a new palette to keep it from being extremely obviously different from sand
+        => Some blocks could place on both sand and sandy soil, some could only place on sandy soil
+    Try to keep this as Vanilla as possible, even though the biome layout is being altered to fit these in
+    Try to make normal desert "OK" to be right up against jungles by adding bunches of foliage
+        => Don't want to modify the biomes and their layout that much to avoid issues with other mods
+        => May need to shuffle things around a bit to get them to fit well
+5. more mob variants? mob variants for some mobs missing them? (fish, etc)
+6. [Temperature] Mushroom Shores biome with ocean-matching water color, to prevent water color disconnects
+7. Move some biomes around and add some more. Pine taiga, move Birch Forest to "cold" climate & adjust water color, etc
+8. Differentiate River, Stony Shore, and Beach biomes fully to make water color transitions not jagged across different biomes

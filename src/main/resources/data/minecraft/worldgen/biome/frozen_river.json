@@ -17,7 +17,7 @@
     },
     "sky_color": 8364543,
     "water_color": 3750089,
-    "water_fog_color": 329011,
+    "water_fog_color": 2303123,
     "grass_color": 16770728
   },
   "features": [
@@ -72,7 +72,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "naturalphilosophy:water_supertype/river_type/vegetation_scattered"
+      "naturalphilosophy:water_supertype/river_type/vegetation_frozen"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -1,0 +1,63 @@
+{
+  "render_type": "cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "all": "block/bamboo_large_leaves",
+    "particle": "block/bamboo_large_leaves"
+  },
+  "elements": [
+    {
+      "name": "center",
+      "from": [0, 1, 0],
+      "to":   [16, 17, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "all"},
+        "east":  {"uv": [0, 0, 16, 16], "texture": "all"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "all"},
+        "west":  {"uv": [0, 0, 16, 16], "texture": "all"},
+        "up":    {"uv": [0, 2, 16, 14], "texture": "all"},
+        "down":  {"uv": [0, 2, 16, 14], "texture": "all"}
+      }
+    },
+    {
+      "name": "leaves_1",
+      "from": [6,  1, -4.4],
+      "to":   [6, 17,   10],
+      "rotation": {"angle": -45, "axis": "y", "origin": [6, 1, 10], "rescale": true},
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "all", "tintindex": 0},
+        "west": {"uv": [16, 0, 0, 16], "texture": "all", "tintindex": 0}
+      }
+    },
+    {
+      "name": "leaves_2",
+      "from": [   6,  1, 6],
+      "to":   [20.4, 17, 6],
+      "rotation": {"angle": -45, "axis": "y", "origin": [6, 1, 6], "rescale": true},
+      "faces": {
+        "north": {"uv": [16, 0, 0, 16], "texture": "all", "tintindex": 0},
+        "south": {"uv": [0, 0, 16, 16], "texture": "all", "tintindex": 0}
+      }
+    },
+    {
+      "name": "leaves_3",
+      "from": [10,  1,    6],
+      "to":   [10, 17, 20.4],
+      "rotation": {"angle": -45, "axis": "y", "origin": [10, 1, 6], "rescale": true},
+      "faces": {
+        "east": {"uv": [16, 0, 0, 16], "texture": "all", "tintindex": 0},
+        "west": {"uv": [0, 0, 16, 16], "texture": "all", "tintindex": 0}
+      }
+    },
+    {
+      "name": "leaves_4",
+      "from": [-4.4,  1, 10],
+      "to":   [  10, 17, 10],
+      "rotation": {"angle": -45, "axis": "y", "origin": [10, 1, 10], "rescale": true},
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "all", "tintindex": 0},
+        "south": {"uv": [16, 0, 0, 16], "texture": "all", "tintindex": 0}
+      }
+    }
+  ]
+}

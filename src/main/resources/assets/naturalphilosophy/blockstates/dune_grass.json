@@ -1,10 +1,7 @@
 {
   "variants": {
-    "red_sand=false": {
-      "model": "naturalphilosophy:block/dune_grass_sand"
-    },
-    "red_sand=true": {
-      "model": "naturalphilosophy:block/dune_grass_red_sand"
+    "": {
+      "model": "naturalphilosophy:block/dune_grass/short"
     }
   }
 }

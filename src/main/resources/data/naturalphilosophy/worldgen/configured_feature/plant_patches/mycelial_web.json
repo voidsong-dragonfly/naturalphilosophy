@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 128,
+    "xz_spread": 3,
+    "y_spread": 3,
+    "feature": {
+      "feature": {
+        "type": "minecraft:multiface_growth",
+        "config": {
+          "block": "naturalphilosophy:mycelial_web",
+          "can_be_placed_on": [
+            "minecraft:basalt",
+            "minecraft:smooth_basalt",
+            "naturalphilosophy:basaltic_mineral_sand"
+          ],
+          "can_place_on_ceiling": true,
+          "can_place_on_floor": true,
+          "can_place_on_wall": true,
+          "chance_of_spreading": 0.75,
+          "search_range": 0
+        }
+      },
+      "placement": []
+    }
+  }
+}

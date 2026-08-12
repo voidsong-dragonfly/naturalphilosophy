@@ -15,7 +15,11 @@ import static voidsong.naturalphilosophy.common.NPItems.ITEMS;
 import static voidsong.naturalphilosophy.common.worldgen.NPFeatures.FEATURES;
 import static voidsong.naturalphilosophy.common.worldgen.NPRootPlacers.ROOT_PLACERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers.FOLIAGE_PLACERS;
+import static voidsong.naturalphilosophy.common.worldgen.NPTrunkPlacers.TRUNK_PLACERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPPlacementModifiers.PLACEMENT_MODIFIERS;
+import static voidsong.naturalphilosophy.common.worldgen.NPBlockPredicates.BLOCK_PREDICATES;
+import static voidsong.naturalphilosophy.common.worldgen.NPMaterialRules.MATERIAL_RULES;
+import static voidsong.naturalphilosophy.common.worldgen.NPMaterialRules.MATERIAL_CONDITIONS;
 
 @Mod(NaturalPhilosophy.MODID)
 public class NaturalPhilosophy {
@@ -30,7 +34,11 @@ public class NaturalPhilosophy {
         FEATURES.register(modEventBus);
         ROOT_PLACERS.register(modEventBus);
         FOLIAGE_PLACERS.register(modEventBus);
+        TRUNK_PLACERS.register(modEventBus);
         PLACEMENT_MODIFIERS.register(modEventBus);
+        BLOCK_PREDICATES.register(modEventBus);
+        MATERIAL_RULES.register(modEventBus);
+        MATERIAL_CONDITIONS.register(modEventBus);
         // Register config handling
         container.registerConfig(ModConfig.Type.CLIENT, NPClientConfig.CONFIG_SPEC);
         container.registerConfig(ModConfig.Type.SERVER, NPServerConfig.CONFIG_SPEC);

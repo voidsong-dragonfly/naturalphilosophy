@@ -28,8 +28,7 @@
           "minecraft:coarse_dirt",
           "minecraft:dirt",
           "minecraft:rooted_dirt",
-          "minecraft:grass_block",
-          "minecraft:podzol"
+          "minecraft:grass_block"
         ]
       },
       "direction_of_search": "down",

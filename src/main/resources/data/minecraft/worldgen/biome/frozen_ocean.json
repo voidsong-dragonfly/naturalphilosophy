@@ -17,7 +17,7 @@
     },
     "sky_color": 8364543,
     "water_color": 3750089,
-    "water_fog_color": 329011,
+    "water_fog_color": 2303123,
     "grass_color": 16770728
   },
   "features": [
@@ -30,8 +30,7 @@
       "minecraft:iceberg_packed",
       "minecraft:iceberg_blue",
       "minecraft:amethyst_geode",
-      "naturalphilosophy:water_supertype/ocean_type/cobblestone_rocks",
-      "naturalphilosophy:water_supertype/ocean_type/gravel_rocks"
+      "naturalphilosophy:water_supertype/ocean_type/rocks"
     ],
     [
       "minecraft:monster_room",
@@ -81,7 +80,7 @@
       "naturalphilosophy:water_supertype/ocean_type/kelp_frozen",
       "naturalphilosophy:water_supertype/ocean_type/seagrass_frozen",
       "naturalphilosophy:water_supertype/ocean_type/red_algae",
-      "naturalphilosophy:water_supertype/ocean_type/bone_coral_gravel_sparse"
+      "naturalphilosophy:water_supertype/ocean_type/deep_reefs"
     ],
     [
       "minecraft:freeze_top_layer"

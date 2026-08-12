@@ -17,7 +17,7 @@
     },
     "sky_color": 8233983,
     "water_color": 4020182,
-    "water_fog_color": 329011
+    "water_fog_color": 2374053
   },
   "features": [
     [],
@@ -71,15 +71,14 @@
       "minecraft:spring_lava"
     ],
     [
-      "naturalphilosophy:forest_supertype/evergreen_type/taiga_pine",
       "naturalphilosophy:forest_supertype/evergreen_type/taiga_spruce",
       "naturalphilosophy:forest_supertype/evergreen_type/taiga_undergrowth",
       "naturalphilosophy:forest_supertype/evergreen_type/taiga_cliffs",
       "naturalphilosophy:forest_supertype/sweet_berries",
       "naturalphilosophy:forest_supertype/mushrooms",
-      "naturalphilosophy:forest_supertype/moss_common",
       "naturalphilosophy:forest_supertype/moss",
-      "naturalphilosophy:forest_supertype/evergreen_type/clearing_flowers",
+      "naturalphilosophy:forest_supertype/clearing_flowers",
+      "naturalphilosophy:forest_supertype/evergreen_type/flower_bushes",
       "naturalphilosophy:forest_supertype/evergreen_type/flowers",
       "naturalphilosophy:forest_supertype/evergreen_type/clearing_vegetation",
       "naturalphilosophy:forest_supertype/evergreen_type/vegetation"

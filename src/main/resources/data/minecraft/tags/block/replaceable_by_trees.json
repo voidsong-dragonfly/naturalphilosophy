@@ -1,10 +1,13 @@
 {
   "replace": false,
   "values": [
+    "minecraft:moss_carpet",
     "naturalphilosophy:dune_grass",
     "naturalphilosophy:rushes",
     "naturalphilosophy:cattails",
     "naturalphilosophy:mycelial_growth",
-    "naturalphilosophy:red_algae"
+    "naturalphilosophy:mycelial_web",
+    "naturalphilosophy:red_algae",
+    "naturalphilosophy:large_bush"
   ]
 }

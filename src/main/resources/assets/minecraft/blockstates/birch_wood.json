@@ -1,0 +1,82 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "minecraft:block/birch/wood_1",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_3",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_4",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_5",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_6",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "minecraft:block/birch/wood_1"
+      },
+      {
+        "model": "minecraft:block/birch/wood_2"
+      },
+      {
+        "model": "minecraft:block/birch/wood_3"
+      },
+      {
+        "model": "minecraft:block/birch/wood_4"
+      },
+      {
+        "model": "minecraft:block/birch/wood_5"
+      },
+      {
+        "model": "minecraft:block/birch/wood_6"
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "minecraft:block/birch/wood_1",
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_2",
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_3",
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_4",
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_5",
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/birch/wood_6",
+        "x": 90
+      }
+    ]
+  }
+}

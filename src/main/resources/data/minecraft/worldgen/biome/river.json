@@ -17,7 +17,7 @@
     },
     "sky_color": 8103167,
     "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_fog_color": 2906301
   },
   "features": [
     [],
@@ -72,6 +72,7 @@
     ],
     [
       "naturalphilosophy:water_supertype/sugar_cane",
+      "naturalphilosophy:water_supertype/river_type/vegetation",
       "naturalphilosophy:water_supertype/river_type/vegetation_scattered"
     ],
     [

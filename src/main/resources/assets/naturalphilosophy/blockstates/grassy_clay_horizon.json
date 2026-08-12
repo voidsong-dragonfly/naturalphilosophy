@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "naturalphilosophy:block/grassy_clay_horizon"
+      },
+      {
+        "model": "naturalphilosophy:block/grassy_clay_horizon",
+        "y": 90
+      },
+      {
+        "model": "naturalphilosophy:block/grassy_clay_horizon",
+        "y": 180
+      },
+      {
+        "model": "naturalphilosophy:block/grassy_clay_horizon",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "naturalphilosophy:block/snowy_clay_horizon"
+    }
+  }
+}

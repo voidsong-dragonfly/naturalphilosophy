@@ -5,10 +5,14 @@
       "features": [
         {
           "chance": 0.25,
-          "feature": "naturalphilosophy:checked_trees/birch_plains"
+          "feature": "naturalphilosophy:checked_trees/birch_forest"
+        },
+        {
+          "chance": 0.25,
+          "feature": "naturalphilosophy:checked_trees/oak_fancy"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_plains"
+      "default": "naturalphilosophy:checked_trees/oak_flower_forest"
     }
   },
   "placement": [
@@ -28,22 +32,15 @@
       "heightmap": "OCEAN_FLOOR"
     },
     {
-      "type": "minecraft:biome"
-    },
-    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:not",
-        "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            -1,
-            0
-          ],
-          "blocks": "minecraft:grass_block"
-        }
+        "type": "minecraft:matching_blocks",
+        "offset": [0, -1, 0],
+        "blocks": "naturalphilosophy:alfizol"
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

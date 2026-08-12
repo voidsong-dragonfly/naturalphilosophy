@@ -3,21 +3,27 @@
   "package": "voidsong.naturalphilosophy.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "FreezeSurfaceMixin",
-    "GlowLichenBlockMixin",
-    "KelpBlockMixin",
-    "KelpPlantBlockMixin",
-    "MushroomBlockMixin",
-    "SculkVeinBlockMixin",
-    "SnowyTreesMixin",
-    "SurfaceRulesMixin",
-    "SurfaceRulesMixin$ConditionSource",
-    "SurfaceRulesMixin$Context",
-    "SurfaceRulesMixin$RuleSource"
+    "block.BambooStalkBlockMixin",
+    "block.BushFlowerMixin$BlocksMixin",
+    "block.BushFlowerMixin$TallFlowerBlockMixin",
+    "block.DeadBushBlockMixin",
+    "block.DoublePlantBlockMixin",
+    "block.KelpBlockMixin",
+    "block.KelpPlantBlockMixin",
+    "block.MushroomBlockMixin",
+    "damage.CactusBlockMixin",
+    "damage.SweetBerryBushBlockMixin",
+    "waterlogging.FlowingFluidInjections",
+    "waterlogging.GlowLichenBlockMixin",
+    "waterlogging.SculkVeinBlockMixin",
+    "worldgen.FreezeSurfaceMixin",
+    "worldgen.SnowyTreesMixin",
+    "worldgen.ContextMixin"
   ],
   "client": [],
   "injectors": {
     "defaultRequire": 1
   },
+  "mixinextras": {"minVersion": "0.5.0"},
   "minVersion": "0.8"
 }

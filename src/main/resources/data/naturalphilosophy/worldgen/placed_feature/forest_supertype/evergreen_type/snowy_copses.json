@@ -38,12 +38,8 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -2,
-          0
-        ],
-        "blocks": "minecraft:rooted_dirt"
+        "offset": [0, -2, 0],
+        "blocks": "minecraft:coarse_dirt"
       }
     }
   ]

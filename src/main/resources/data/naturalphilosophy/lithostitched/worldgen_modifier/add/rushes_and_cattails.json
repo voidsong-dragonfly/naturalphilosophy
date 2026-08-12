@@ -1,6 +1,6 @@
 {
   "type": "lithostitched:add_features",
-  "biomes": "#naturalphilosophy:waterplants",
+  "biomes": "#naturalphilosophy:plants/reedbeds",
   "features": "naturalphilosophy:rushes_and_cattails",
   "step": "vegetal_decoration"
 }

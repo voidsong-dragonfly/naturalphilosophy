@@ -2,11 +2,17 @@
   "type": "minecraft:tree",
   "config": {
     "root_placer": {
-      "type": "naturalphilosophy:large_mangrove_root_placer",
+      "type": "naturalphilosophy:mega_root_placer",
       "root_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "minecraft:jungle_wood"
+          "Name": "minecraft:rooted_dirt"
+        }
+      },
+      "muddy_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "naturalphilosophy:rooted_mud"
         }
       },
       "trunk_offset_y": {
@@ -14,24 +20,34 @@
         "min_inclusive": 1,
         "max_inclusive": 5
       },
-      "mangrove_root_placement": {
+      "surface_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:jungle_wood"
+        }
+      },
+      "surface_root_placement": {
         "max_root_width": 1,
         "max_root_length": 7,
         "random_skew_chance": 0.875,
-        "can_grow_through": [
-          "minecraft:grass_block",
-          "minecraft:podzol",
-          "minecraft:coarse_dirt",
-          "minecraft:rooted_dirt",
-          "minecraft:mud"
-        ],
-        "muddy_roots_in": [],
-        "muddy_roots_provider": {
+        "can_grow_through": "#minecraft:dirt"
+      },
+      "root_ball_placement": {
+        "root_radius": 5,
+        "root_depth": 8,
+        "root_placement_attempts": 48,
+        "can_grow_through": "#minecraft:dirt",
+        "hanging_root_state_provider": {
           "type": "minecraft:simple_state_provider",
           "state": {
-            "Name": "minecraft:jungle_wood"
+            "Name": "minecraft:hanging_roots"
           }
-        }
+        },
+        "can_hang_roots_from": [
+          "minecraft:rooted_dirt"
+        ],
+        "hanging_root_placement_attempts": 96,
+        "mega_offset": 1
       }
     },
     "decorators": [
@@ -81,8 +97,8 @@
     "trunk_placer": {
       "type": "minecraft:mega_jungle_trunk_placer",
       "base_height": 32,
-      "height_rand_a": 3,
-      "height_rand_b": 4
+      "height_rand_a": 5,
+      "height_rand_b": 7
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",

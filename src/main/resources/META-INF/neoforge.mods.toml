@@ -54,6 +54,10 @@ authors="${mod_authors}" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''${mod_description}'''
 
+## The file is relative to the output directory of the resources, or the root path inside the jar when compiled
+## The 'resources' directory represents the root output directory of the resources
+enumExtensions="META-INF/enumextensions.json"
+
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]
 config="${mod_id}.mixins.json"
@@ -80,7 +84,7 @@ file="META-INF/accesstransformer.cfg"
     # An ordering relationship for the dependency.
     # BEFORE - This mod is loaded BEFORE the dependency
     # AFTER - This mod is loaded AFTER the dependency
-    ordering="NONE"
+    ordering="AFTER"
     # Side this dependency is applied on - BOTH, CLIENT, or SERVER
     side="BOTH"
 

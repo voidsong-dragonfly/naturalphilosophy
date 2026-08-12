@@ -22,8 +22,8 @@
       "sound": "minecraft:music.overworld.jungle"
     },
     "sky_color": 7842047,
-    "water_color": 1352389,
-    "water_fog_color": 267827
+    "water_color": 4566514,
+    "water_fog_color": 3311064
   },
   "features": [
     [],
@@ -79,14 +79,14 @@
     [
       "naturalphilosophy:forest_supertype/jungle_type/overstory",
       "naturalphilosophy:forest_supertype/jungle_type/sparse_overstory",
-      "naturalphilosophy:forest_supertype/jungle_type/substory",
       "naturalphilosophy:forest_supertype/jungle_type/understory",
-      "naturalphilosophy:forest_supertype/jungle_type/undergrowth",
+      "naturalphilosophy:forest_supertype/jungle_type/bamboo_alfizol",
+      "naturalphilosophy:forest_supertype/jungle_type/canopy_undergrowth",
       "naturalphilosophy:forest_supertype/jungle_type/melon_patch",
-      "naturalphilosophy:forest_supertype/mushrooms",
+      "naturalphilosophy:forest_supertype/mushrooms_common",
       "naturalphilosophy:forest_supertype/moss_common",
-      "naturalphilosophy:forest_supertype/moss",
       "naturalphilosophy:forest_supertype/jungle_type/flowers",
+      "naturalphilosophy:forest_supertype/jungle_type/sunlit_vegetation",
       "naturalphilosophy:forest_supertype/jungle_type/vegetation"
     ],
     [

@@ -1,0 +1,125 @@
+{
+  "type": "naturalphilosophy:noise_threshold_selector",
+  "noise": "minecraft:surface",
+  "default_rule": {
+    "type": "minecraft:sequence",
+    "sequence": [
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:stone_depth",
+          "add_surface_depth": false,
+          "offset": 1,
+          "secondary_depth_range": 0,
+          "surface_type": "floor"
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "naturalphilosophy:permafrost",
+            "Properties": {
+              "stage": "snowy"
+            }
+          }
+        }
+      },
+      {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "naturalphilosophy:permafrost",
+          "Properties": {
+            "stage": "frozen"
+          }
+        }
+      }
+    ]
+  },
+  "lower_noise_thresholds": [
+     0.3125,
+    -0.3125
+  ],
+  "ruleset": [
+    {
+      "type": "minecraft:sequence",
+      "sequence": [
+        {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:stone_depth",
+            "add_surface_depth": false,
+            "offset": 1,
+            "secondary_depth_range": 0,
+            "surface_type": "floor"
+          },
+          "then_run": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:coarse_dirt"
+            }
+          }
+        },
+        {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:stone_depth",
+            "add_surface_depth": false,
+            "offset": 2,
+            "secondary_depth_range": 0,
+            "surface_type": "floor"
+          },
+          "then_run": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "naturalphilosophy:permafrost",
+              "Properties": {
+                "stage": "melting"
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "naturalphilosophy:permafrost",
+            "Properties": {
+              "stage": "frozen"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:sequence",
+      "sequence": [
+        {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:stone_depth",
+            "add_surface_depth": false,
+            "offset": 1,
+            "secondary_depth_range": 0,
+            "surface_type": "floor"
+          },
+          "then_run": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "naturalphilosophy:permafrost",
+              "Properties": {
+                "stage": "melting"
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "naturalphilosophy:permafrost",
+            "Properties": {
+              "stage": "frozen"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

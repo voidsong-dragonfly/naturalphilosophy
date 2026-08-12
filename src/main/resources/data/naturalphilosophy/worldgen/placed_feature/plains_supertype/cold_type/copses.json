@@ -5,16 +5,10 @@
       "features": [
         {
           "chance": 0.0625,
-          "feature": {
-            "feature": "naturalphilosophy:trees/spruce",
-            "placement": []
-          }
+          "feature": "naturalphilosophy:checked_trees/spruce"
         }
       ],
-      "default": {
-        "feature": "naturalphilosophy:trees/spruce_stunted",
-        "placement": []
-      }
+      "default": "naturalphilosophy:checked_trees/spruce_stunted"
     }
   },
   "placement": [

@@ -33,10 +33,10 @@
             ],
             "high_states": [
               {
-                "Name": "minecraft:pink_tulip"
+                "Name": "minecraft:white_tulip"
               },
               {
-                "Name": "minecraft:red_tulip"
+                "Name": "minecraft:pink_tulip"
               }
             ]
           }

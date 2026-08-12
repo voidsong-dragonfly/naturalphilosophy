@@ -43,11 +43,29 @@
               "Name": "naturalphilosophy:bone_coral"
             }
           }
+        },
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:any_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [0, -1, 0],
+                "blocks": "#minecraft:base_stone_overworld"
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [0, -1, 0],
+                "blocks": "minecraft:sandstone"
+              }
+            ]
+          }
         }
       ]
     },
-    "tries": 24,
-    "xz_spread": 5,
+    "tries": 32,
+    "xz_spread": 2,
     "y_spread": 3
   }
 }

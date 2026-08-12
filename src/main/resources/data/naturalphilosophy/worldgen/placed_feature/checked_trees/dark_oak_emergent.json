@@ -19,11 +19,7 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_blocks",
-          "offset": [
-            1,
-            -2,
-            1
-          ],
+          "offset": [1, -2, 1],
           "blocks": "#minecraft:air"
         }
       }

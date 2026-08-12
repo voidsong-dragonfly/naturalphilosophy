@@ -18,12 +18,12 @@ import voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers;
 import javax.annotation.Nonnull;
 
 public class BranchedMegaPineFoliagePlacer extends MegaPineFoliagePlacer {
-
     public static final MapCodec<BranchedMegaPineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(
         instance -> foliagePlacerParts(instance)
             .and(IntProvider.codec(0, 24).fieldOf("crown_height").forGetter(placer -> placer.crownHeight))
             .apply(instance, BranchedMegaPineFoliagePlacer::new)
     );
+
     public BranchedMegaPineFoliagePlacer(IntProvider radius, IntProvider offset, IntProvider crownHeight) {
         super(radius, offset, crownHeight);
     }
@@ -31,7 +31,7 @@ public class BranchedMegaPineFoliagePlacer extends MegaPineFoliagePlacer {
     @Override
     @Nonnull
     protected FoliagePlacerType<?> type() {
-        return NPFoliagePlacers.BRANCHED_MEGA_PINE_FOLIAGE_PLACER.get();
+        return NPFoliagePlacers.BRANCHED_MEGA_PINE.get();
     }
 
     @Override

@@ -13,19 +13,15 @@
       "sequence": [
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:cave_entrances"
+          "rules": "naturalphilosophy:ubiquitous/cave_entrances"
         },
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:cliffs"
+          "rules": "naturalphilosophy:ubiquitous/cliffs"
         },
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:underwater_sediment"
-        },
-        {
-          "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:forest_tracks"
+          "rules": "naturalphilosophy:ubiquitous/underwater_sediment"
         },
         {
           "type": "naturalphilosophy:bilayer_fill",
@@ -33,167 +29,16 @@
             "type": "minecraft:sequence",
             "sequence": [
               {
+                "_comment": "Biomes with all-grass top blocks. Will not have the same sublayer.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:birch_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/birch_forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:dark_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/dark_forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:flower_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/flower_forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_birch_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_forest_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_pine_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/old_growth_pine_taiga_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_spruce_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/old_growth_spruce_taiga_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:snowy_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/snowy_taiga_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/taiga_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:bamboo_jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/bamboo_jungle_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/jungle_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:sparse_jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/sparse_jungle_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:cherry_grove"
+                    "minecraft:cherry_grove",
+                    "minecraft:plains",
+                    "minecraft:sunflower_plains",
+                    "minecraft:savanna",
+                    "minecraft:savanna_plateau"
                   ]
                 },
                 "then_run": {
@@ -204,12 +49,38 @@
                 }
               },
               {
+                "_comment": "Biomes with snowy permafrost. Will have similar sublayers.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:grove"
+                    "minecraft:snowy_plains",
+                    "minecraft:snowy_taiga"
                   ]
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:snow_block"
+                    }
+                  },
+                  "lower_noise_thresholds": [ -0.3125 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:grass_block"
+                    }
+                  }]
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:grove" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -217,60 +88,106 @@
                 }
               },
               {
+                "_comment": "Pine (closed) taigas. Will have similar sublayers",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:old_growth_pine_taiga" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/pine_taiga_surface"
+                }
+              },
+              {
+                "_comment": "Spruce (open) taigas. Will have similar sublayers",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:snowy_plains"
+                    "minecraft:taiga",
+                    "minecraft:old_growth_spruce_taiga"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/cold_type/snowy_plains_surface"
+                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/spruce_taiga_surface"
+                }
+              },
+              {
+                "_comment": "Sparse, highly open forests. Will have similar sublayers",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:flower_forest",
+                    "minecraft:birch_forest"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/sparse_forest_surface"
                 }
               },
               {
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:plains",
-                    "minecraft:sunflower_plains"
-                  ]
+                  "biome_is": [ "minecraft:old_growth_birch_forest" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/prairie_type/plains_surface"
+                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_forest_surface"
                 }
               },
               {
+                "_comment": "Full cover non-rainforests. Small clearings dot the surface. Will have similar sublayers.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:savanna",
-                    "minecraft:savanna_plateau"
+                    "minecraft:forest",
+                    "minecraft:sparse_jungle"
                   ]
                 },
                 "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/savanna_type/savanna_surface"
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:grass_block"
+                    }
+                  },
+                  "lower_noise_thresholds": [ -0.375 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "naturalphilosophy:alfizol"
+                    }
+                  }]
                 }
               },
               {
+                "_comment": "Rainforest with entirely alfizol surfaces. Will not have the same sublayer.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:stony_shore"
+                    "minecraft:dark_forest",
+                    "minecraft:jungle",
+                    "minecraft:bamboo_jungle"
                   ]
                 },
                 "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/shore_type/stony_shore_surface"
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "naturalphilosophy:alfizol"
+                  }
                 }
               },
               {
+                "_comment": "Swampy biomes with significant surface water coverage near sea level. Will have similar sublayers.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -283,6 +200,48 @@
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:water_supertype/wetland_type/swamp_surface"
                 }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:stony_shore" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/shore_type/stony_shore_surface"
+                }
+              },
+              {
+                "_comment": "Wooded Badlands surface rules are fine as is, this adds terracotta channels to their tops",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:wooded_badlands" ]
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:y_above",
+                    "add_stone_depth": true,
+                    "anchor": {
+                      "absolute": 97
+                    },
+                    "surface_depth_multiplier": 2
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "max_threshold":  0.125,
+                      "min_threshold": -0.125,
+                      "noise": "naturalphilosophy:surface"
+                    },
+                    "then_run": {
+                      "type": "minecraft:bandlands"
+                    }
+                  }
+                }
               }
             ]
           },
@@ -293,172 +252,7 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:birch_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/birch_forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:dark_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/dark_forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:flower_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/flower_forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_birch_forest"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_forest_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_pine_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "naturalphilosophy:random_threshold_selector",
-                  "random_name": "surface_randomness",
-                  "default_state": {
-                    "Name": "minecraft:dirt"
-                  },
-                  "lower_random_thresholds": [ 0.15 ],
-                  "state_set": [{
-                    "Name": "minecraft:rooted_dirt"
-                  }]
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:old_growth_spruce_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/old_growth_spruce_taiga_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:snowy_taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/snowy_taiga_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:taiga"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/taiga_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:bamboo_jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/bamboo_jungle_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/jungle_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:sparse_jungle"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:forest_supertype/jungle_type/sparse_jungle_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:cherry_grove"
-                  ]
+                  "biome_is": [ "minecraft:cherry_grove" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -466,12 +260,42 @@
                 }
               },
               {
+                "_comment": "Open grassland biomes with rare copses, and a coarse sublayer.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:grove"
+                    "minecraft:plains",
+                    "minecraft:sunflower_plains",
+                    "minecraft:savanna",
+                    "minecraft:savanna_plateau"
                   ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:special/grassland_sublayer"
+                }
+              },
+              {
+                "_comment": "Biomes with snowy permafrost that melts from place to place.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:snowy_plains",
+                    "minecraft:snowy_taiga"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:special/permafrost_sublayer"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:grove" ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
@@ -479,14 +303,102 @@
                 }
               },
               {
+                "_comment": "Pine (closed) taigas. A mixture of coarse dirt and podzol, no meadows.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:old_growth_pine_taiga" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/pine_taiga_sublayer"
+                }
+              },
+              {
+                "_comment": "Spruce (open) taigas. A mixture of coarse dirt meadows and podzol forest.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:snowy_plains"
+                    "minecraft:taiga",
+                    "minecraft:old_growth_spruce_taiga"
                   ]
                 },
-                "then_run":  {
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/evergreen_type/spruce_taiga_sublayer"
+                }
+              },
+              {
+                "_comment": "Sparse, highly open forests. Coarse dirt under the wide clearings.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:flower_forest",
+                    "minecraft:birch_forest"
+                  ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/sparse_forest_sublayer"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:old_growth_birch_forest" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:forest_supertype/deciduous_type/old_growth_birch_forest_sublayer"
+                }
+              },
+              {
+                "_comment": "Full cover non-rainforests. Coarse dirt under the sparse clearings.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:forest",
+                    "minecraft:sparse_jungle"
+                  ]
+                },
+                "then_run": {
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "naturalphilosophy:random_threshold_selector",
+                    "random_name": "surface_randomness",
+                    "default_state": {
+                      "Name": "minecraft:dirt"
+                    },
+                    "lower_random_thresholds": [ 0.70 ],
+                    "state_set": [{
+                      "Name": "minecraft:coarse_dirt"
+                    }]
+                  },
+                  "lower_noise_thresholds": [ -0.375 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:dirt"
+                    }
+                  }]
+                }
+              },
+              {
+                "_comment": "Rainforest with entirely dirt sublayers.",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:dark_forest",
+                    "minecraft:jungle"
+                  ]
+                },
+                "then_run": {
                   "type": "minecraft:block",
                   "result_state": {
                     "Name": "minecraft:dirt"
@@ -494,47 +406,37 @@
                 }
               },
               {
+                "_comment": "Bamboo rainforests. Coarse dirt under the bamboo forests.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:plains",
-                    "minecraft:sunflower_plains"
-                  ]
+                  "biome_is": [ "minecraft:bamboo_jungle" ]
                 },
                 "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/prairie_type/plains_sublayer"
+                  "type": "naturalphilosophy:noise_threshold_selector",
+                  "noise": "minecraft:surface",
+                  "default_rule": {
+                    "type": "naturalphilosophy:random_threshold_selector",
+                    "random_name": "surface_randomness",
+                    "default_state": {
+                      "Name": "minecraft:dirt"
+                    },
+                    "lower_random_thresholds": [ 0.70 ],
+                    "state_set": [{
+                      "Name": "minecraft:coarse_dirt"
+                    }]
+                  },
+                  "lower_noise_thresholds": [ 0.0 ],
+                  "ruleset": [{
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:dirt"
+                    }
+                  }]
                 }
               },
               {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:savanna",
-                    "minecraft:savanna_plateau"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:plains_supertype/savanna_type/savanna_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "minecraft:stony_shore"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/shore_type/stony_shore_sublayer"
-                }
-              },
-              {
+                "_comment": "Swampy biomes with significant surface water coverage near sea level and large amounts of clay.",
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:biome",
@@ -546,6 +448,17 @@
                 "then_run": {
                   "type": "lithostitched:reference",
                   "rules": "naturalphilosophy:water_supertype/wetland_type/swamp_sublayer"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:stony_shore" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/shore_type/stony_shore_sublayer"
                 }
               }
             ]
@@ -560,9 +473,30 @@
               {
                 "type": "minecraft:condition",
                 "if_true": {
+                  "type": "lithostitched:biome",
+                  "biomes": "#c:is_ocean"
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/claybeds"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:warm_ocean" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:stony_shore",
                     "minecraft:ocean",
                     "minecraft:deep_ocean",
                     "minecraft:cold_ocean",
@@ -573,7 +507,7 @@
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/gravel_surface"
+                  "rules": "naturalphilosophy:blocks/gravel"
                 }
               },
               {
@@ -582,25 +516,13 @@
                   "type": "minecraft:biome",
                   "biome_is": [
                     "minecraft:lukewarm_ocean",
-                    "minecraft:deep_lukewarm_ocean"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/sand_surface"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
+                    "minecraft:deep_lukewarm_ocean",
                     "minecraft:warm_ocean"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef_surface"
+                  "rules": "naturalphilosophy:blocks/sand"
                 }
               }
             ]
@@ -611,9 +533,30 @@
               {
                 "type": "minecraft:condition",
                 "if_true": {
+                  "type": "lithostitched:biome",
+                  "biomes": "#c:is_ocean"
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/claybeds"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [ "minecraft:warm_ocean" ]
+                },
+                "then_run": {
+                  "type": "lithostitched:reference",
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef"
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
                   "type": "minecraft:biome",
                   "biome_is": [
-                    "minecraft:stony_shore",
                     "minecraft:ocean",
                     "minecraft:deep_ocean",
                     "minecraft:cold_ocean",
@@ -633,25 +576,13 @@
                   "type": "minecraft:biome",
                   "biome_is": [
                     "minecraft:lukewarm_ocean",
-                    "minecraft:deep_lukewarm_ocean"
-                  ]
-                },
-                "then_run": {
-                  "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/sand_sublayer"
-                }
-              },
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
+                    "minecraft:deep_lukewarm_ocean",
                     "minecraft:warm_ocean"
                   ]
                 },
                 "then_run": {
                   "type": "lithostitched:reference",
-                  "rules": "naturalphilosophy:water_supertype/ocean_type/reef_sublayer"
+                  "rules": "naturalphilosophy:water_supertype/ocean_type/sand_sublayer"
                 }
               }
             ]
@@ -675,33 +606,29 @@
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:water_supertype/island_type/ocean_islands"
+            "rules": "naturalphilosophy:water_supertype/ocean_type/islands"
           }
         },
         {
           "type": "minecraft:condition",
           "if_true": {
             "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:mushroom_fields"
-            ]
+            "biome_is": [ "minecraft:mushroom_fields" ]
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:water_supertype/island_type/mushroom_fields"
+            "rules": "naturalphilosophy:special/mushroom_fields"
           }
         },
         {
           "type": "minecraft:condition",
           "if_true": {
             "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:ice_spikes"
-            ]
+            "biome_is": [ "minecraft:ice_spikes" ]
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:plains_supertype/cold_type/ice_spikes"
+            "rules": "naturalphilosophy:special/ice_spikes"
           }
         },
         {
@@ -730,49 +657,7 @@
           },
           "then_run": {
             "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:desert_supertype/badlands_type/sand_channels"
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:eroded_badlands",
-              "minecraft:wooded_badlands"
-            ]
-          },
-          "then_run": {
-            "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:desert_supertype/badlands_type/terracotta_channels"
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:badlands",
-              "minecraft:eroded_badlands",
-              "minecraft:wooded_badlands"
-            ]
-          },
-          "then_run": {
-            "type": "lithostitched:reference",
             "rules": "naturalphilosophy:desert_supertype/badlands_type/basin_floor"
-          }
-        },
-        {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:wooded_badlands"
-            ]
-          },
-          "then_run": {
-            "type": "lithostitched:reference",
-            "rules": "naturalphilosophy:desert_supertype/badlands_type/wooded_badlands"
           }
         }
       ]

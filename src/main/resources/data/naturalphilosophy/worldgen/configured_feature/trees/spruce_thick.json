@@ -1,6 +1,41 @@
 {
   "type": "minecraft:tree",
   "config": {
+    "root_placer": {
+      "type": "naturalphilosophy:root_ball_root_placer",
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:rooted_dirt"
+        }
+      },
+      "muddy_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "naturalphilosophy:rooted_mud"
+        }
+      },
+      "trunk_offset_y": {
+        "type": "minecraft:constant",
+        "value": 0
+      },
+      "root_ball_placement": {
+        "root_radius": 3,
+        "root_depth": 6,
+        "root_placement_attempts": 8,
+        "can_grow_through": "#naturalphilosophy:dirt",
+        "hanging_root_state_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:hanging_roots"
+          }
+        },
+        "can_hang_roots_from": [
+          "minecraft:rooted_dirt"
+        ],
+        "hanging_root_placement_attempts": 24
+      }
+    },
     "decorators": [],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",

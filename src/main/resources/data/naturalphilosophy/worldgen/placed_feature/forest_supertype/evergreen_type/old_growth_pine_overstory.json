@@ -4,6 +4,10 @@
     "config": {
       "features": [
         {
+          "chance": 0.0625,
+          "feature": "naturalphilosophy:checked_trees/pine_emergent"
+        },
+        {
           "chance": 0.03125,
           "feature": "naturalphilosophy:checked_trees/pine_thick"
         }
@@ -14,7 +18,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 16
+      "count": 20
     },
     {
       "type": "minecraft:in_square"

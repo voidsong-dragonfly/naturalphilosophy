@@ -9,8 +9,8 @@
   "downfall": 0.9,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 6975545,
-    "grass_color_modifier": "swamp",
+    "foliage_color": 6592039,
+    "grass_color_modifier": "naturalphilosophy:lush_swamp",
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -210,5 +210,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.8
+  "temperature": 0.7
 }

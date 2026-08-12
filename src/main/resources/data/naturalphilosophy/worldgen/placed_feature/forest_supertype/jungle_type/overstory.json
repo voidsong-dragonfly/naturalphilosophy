@@ -4,7 +4,7 @@
     "config": {
       "features": [
         {
-          "chance": 0.09375,
+          "chance": 0.0625,
           "feature": "naturalphilosophy:checked_trees/jungle_emergent"
         }
       ],
@@ -14,10 +14,27 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 32
+      "count": 8
     },
     {
       "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:count",
+      "count": 4
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": {
+        "type": "minecraft:uniform",
+        "min_inclusive": -2,
+        "max_inclusive": 2
+      },
+      "y_spread": 0
     },
     {
       "type": "minecraft:heightmap",
@@ -33,12 +50,23 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_fluids",
-          "offset": [
-            0,
-            3,
-            0
-          ],
+          "offset": [0, 3, 0],
           "fluids": "#minecraft:water"
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "naturalphilosophy:any_in_range",
+          "start_offset": [-2, -4, -2],
+          "end_offset": [3, -2, 3],
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [ "minecraft:coarse_dirt" ]
+          }
         }
       }
     },

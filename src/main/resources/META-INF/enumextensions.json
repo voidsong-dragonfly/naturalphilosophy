@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/level/biome/BiomeSpecialEffects$GrassColorModifier",
+      "name": "NATURALPHILOSOPHY_LUSHSWAMP",
+      "constructor": "(Ljava/lang/String;Lnet/minecraft/world/level/biome/BiomeSpecialEffects$GrassColorModifier$ColorModifier;)V",
+      "parameters": {
+        "class": "voidsong/naturalphilosophy/common/worldgen/NPGrassColorModifiers",
+        "field": "LUSH_SWAMP"
+      }
+    }
+  ]
+}

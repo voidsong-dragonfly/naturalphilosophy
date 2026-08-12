@@ -1,0 +1,35 @@
+{
+  "type": "naturalphilosophy:noise_threshold_selector",
+  "noise": "minecraft:surface_secondary",
+  "default_rule": {
+    "type": "minecraft:block",
+    "result_state": {
+      "Name": "minecraft:podzol"
+    }
+  },
+  "lower_noise_thresholds": [
+     0.125,
+    -0.175,
+    -1E308
+  ],
+  "ruleset": [
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:podzol"
+      }
+    },
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:coarse_dirt"
+      }
+    },
+    {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:podzol"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "type": "minecraft:condition",
+  "if_true": {
+    "type": "minecraft:not",
+    "invert": {
+      "type": "naturalphilosophy:underwater"
+    }
+  },
+  "then_run": {
+    "type": "naturalphilosophy:stone_depth_threshold_selector",
+    "default_rule": {
+      "type": "minecraft:block",
+      "result_state": {
+        "Name": "minecraft:stone"
+      }
+    },
+    "ruleset": [
+      {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:snow_block"
+        }
+      },
+      {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:snow_block"
+        }
+      },
+      {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "max_threshold": 1E308,
+              "min_threshold": 0.0,
+              "noise": "minecraft:surface_swamp"
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:snow_block"
+              }
+            }
+          },
+          {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:packed_ice"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:packed_ice"
+        }
+      },
+      {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:packed_ice"
+        }
+      },
+      {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "max_threshold": 1E308,
+              "min_threshold": -0.125,
+              "noise": "minecraft:surface_swamp"
+            },
+            "then_run": {
+              "type": "lithostitched:reference",
+              "rules": "naturalphilosophy:blocks/gravel"
+            }
+          },
+          {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:stone"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "max_threshold": 1E308,
+              "min_threshold": 0.25,
+              "noise": "minecraft:surface_swamp"
+            },
+            "then_run":{
+              "type": "lithostitched:reference",
+              "rules": "naturalphilosophy:blocks/gravel"
+            }
+          },
+          {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:stone"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

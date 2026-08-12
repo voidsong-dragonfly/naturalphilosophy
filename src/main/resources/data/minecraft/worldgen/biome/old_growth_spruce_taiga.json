@@ -22,8 +22,8 @@
       "sound": "minecraft:music.overworld.old_growth_taiga"
     },
     "sky_color": 8233983,
-    "water_color": 2977143,
-    "water_fog_color": 329011
+    "water_color": 4020182,
+    "water_fog_color": 2374053
   },
   "features": [
     [],
@@ -83,9 +83,9 @@
       "naturalphilosophy:forest_supertype/evergreen_type/taiga_cliffs",
       "naturalphilosophy:forest_supertype/sweet_berries",
       "naturalphilosophy:forest_supertype/mushrooms",
-      "naturalphilosophy:forest_supertype/moss_common",
       "naturalphilosophy:forest_supertype/moss",
-      "naturalphilosophy:forest_supertype/evergreen_type/clearing_flowers",
+      "naturalphilosophy:forest_supertype/clearing_flowers",
+      "naturalphilosophy:forest_supertype/evergreen_type/flower_bushes",
       "naturalphilosophy:forest_supertype/evergreen_type/flowers",
       "naturalphilosophy:forest_supertype/evergreen_type/clearing_vegetation",
       "naturalphilosophy:forest_supertype/evergreen_type/vegetation"

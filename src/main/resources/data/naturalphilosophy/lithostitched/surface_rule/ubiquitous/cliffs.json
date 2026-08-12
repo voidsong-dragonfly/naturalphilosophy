@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:condition",
+  "if_true": {
+    "type": "naturalphilosophy:cliff"
+  },
+  "then_run": {
+    "type": "minecraft:sequence",
+    "sequence": [
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:cliffs/badlands"
+        },
+        "then_run": {
+          "type": "minecraft:bandlands"
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:cliffs/sandstone"
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:sandstone"
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:cliffs/basalt"
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:basalt"
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:biome",
+          "biome_is": [
+            "minecraft:grove"
+          ]
+        },
+        "then_run": {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:not",
+            "invert": {
+              "type": "minecraft:noise_threshold",
+              "max_threshold": 0.61,
+              "min_threshold": 0.42,
+              "noise": "minecraft:powder_snow"
+            }
+          },
+          "then_run": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:stone"
+            }
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "lithostitched:biome",
+          "biomes": "#naturalphilosophy:cliffs/stone"
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:stone"
+          }
+        }
+      }
+    ]
+  }
+}
+
+

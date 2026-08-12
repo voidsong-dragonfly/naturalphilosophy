@@ -4,15 +4,14 @@
     "config": {
       "features": [
         {
-          "chance": 0.3,
-          "feature": "naturalphilosophy:checked_trees/flowering_azalea_shrub"
-        },
-        {
-          "chance": 0.5,
-          "feature": "naturalphilosophy:checked_trees/azalea_shrub"
+          "chance": 0.175,
+          "feature": "naturalphilosophy:checked_trees/oak_bush_stunted"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_shrub"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/large_bushes_shaded",
+        "placement": []
+      }
     }
   },
   "placement": [
@@ -27,11 +26,19 @@
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR_WG"
+      "heightmap": "WORLD_SURFACE"
     },
     {
       "type": "minecraft:surface_water_depth_filter",
       "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [0, -1, 0],
+        "blocks": "naturalphilosophy:alfizol"
+      }
     },
     {
       "type": "minecraft:biome"

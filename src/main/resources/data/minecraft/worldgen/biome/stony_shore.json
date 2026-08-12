@@ -17,7 +17,7 @@
     },
     "sky_color": 8233727,
     "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_fog_color": 2906301
   },
   "features": [
     [],
@@ -75,10 +75,8 @@
     [
       "naturalphilosophy:water_supertype/shore_type/cliff_vegetation",
       "naturalphilosophy:water_supertype/shore_type/kelp",
-      "naturalphilosophy:water_supertype/shore_type/seagrass",
       "naturalphilosophy:water_supertype/shore_type/red_algae",
-      "naturalphilosophy:water_supertype/ocean_type/bone_coral_cobblestone",
-      "naturalphilosophy:water_supertype/ocean_type/bone_coral_gravel_sparse"
+      "naturalphilosophy:water_supertype/ocean_type/deep_reefs"
     ],
     [
       "minecraft:freeze_top_layer"
