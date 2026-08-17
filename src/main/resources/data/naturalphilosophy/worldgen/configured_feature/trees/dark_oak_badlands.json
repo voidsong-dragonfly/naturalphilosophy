@@ -20,9 +20,9 @@
         "value": 0
       },
       "root_ball_placement": {
-        "root_radius": 2,
-        "root_depth": 3,
-        "root_placement_attempts": 4,
+        "root_radius": 3,
+        "root_depth": 7,
+        "root_placement_attempts": 16,
         "can_grow_through": "#naturalphilosophy:dirt",
         "hanging_root_state_provider": {
           "type": "minecraft:simple_state_provider",
@@ -33,7 +33,8 @@
         "can_hang_roots_from": [
           "minecraft:rooted_dirt"
         ],
-        "hanging_root_placement_attempts": 12
+        "hanging_root_placement_attempts": 32,
+        "mega_offset": 1
       }
     },
     "decorators": [],
@@ -44,22 +45,9 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:spruce_foliage_placer",
-      "offset": {
-        "type": "minecraft:biased_to_bottom",
-        "min_inclusive": 0,
-        "max_inclusive": 2
-      },
-      "radius": {
-        "type": "minecraft:biased_to_bottom",
-        "max_inclusive": 3,
-        "min_inclusive": 2
-      },
-      "trunk_height": {
-        "type": "minecraft:uniform",
-        "max_inclusive": 2,
-        "min_inclusive": 1
-      }
+      "type": "minecraft:dark_oak_foliage_placer",
+      "offset": 1,
+      "radius": 0
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
@@ -75,16 +63,18 @@
     "force_dirt": true,
     "ignore_vines": true,
     "minimum_size": {
-      "type": "minecraft:two_layers_feature_size",
+      "type": "minecraft:three_layers_feature_size",
       "limit": 1,
       "lower_size": 0,
-      "upper_size": 1
+      "middle_size": 1,
+      "upper_limit": 2,
+      "upper_size": 2
     },
     "trunk_placer": {
-      "type": "minecraft:straight_trunk_placer",
+      "type": "minecraft:dark_oak_trunk_placer",
       "base_height": 3,
-      "height_rand_a": 2,
-      "height_rand_b": 2
+      "height_rand_a": 1,
+      "height_rand_b": 1
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",

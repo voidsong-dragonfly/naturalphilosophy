@@ -12,6 +12,17 @@
           }
         }
       }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "offset": [1, -2, 1],
+          "blocks": "#minecraft:air"
+        }
+      }
     }
   ]
 }

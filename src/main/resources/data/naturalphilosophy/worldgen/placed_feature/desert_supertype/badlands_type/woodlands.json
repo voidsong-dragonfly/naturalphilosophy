@@ -2,12 +2,10 @@
   "feature": {
     "type": "minecraft:random_selector",
     "config": {
-      "features": [
-        {
-          "chance": 0.9,
-          "feature": "naturalphilosophy:checked_trees/dark_oak_badlands"
-        }
-      ],
+      "features": [{
+        "chance": 0.3,
+        "feature": "naturalphilosophy:checked_trees/dark_oak_badlands"
+      }],
       "default": "naturalphilosophy:checked_trees/dark_oak_stunted"
     }
   },
