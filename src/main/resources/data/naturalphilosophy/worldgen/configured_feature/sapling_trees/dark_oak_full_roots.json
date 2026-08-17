@@ -1,0 +1,102 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "root_placer": {
+      "type": "naturalphilosophy:mega_root_placer",
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:rooted_dirt"
+        }
+      },
+      "muddy_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "naturalphilosophy:rooted_mud"
+        }
+      },
+      "trunk_offset_y": {
+        "type": "minecraft:biased_to_bottom",
+        "min_inclusive": 0,
+        "max_inclusive": 3
+      },
+      "surface_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dark_oak_wood"
+        }
+      },
+      "surface_root_placement": {
+        "max_root_width": 1,
+        "max_root_length": 7,
+        "random_skew_chance": 0.75,
+        "can_grow_through": "#minecraft:dirt"
+      },
+      "root_ball_placement": {
+        "root_radius": 3,
+        "root_depth": 7,
+        "root_placement_attempts": 16,
+        "can_grow_through": "#minecraft:dirt",
+        "hanging_root_state_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:hanging_roots"
+          }
+        },
+        "can_hang_roots_from": [
+          "minecraft:rooted_dirt"
+        ],
+        "hanging_root_placement_attempts": 32,
+        "mega_offset": 1
+      }
+    },
+    "decorators": [],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:rooted_dirt"
+      }
+    },
+    "foliage_placer": {
+      "type": "minecraft:dark_oak_foliage_placer",
+      "offset": 1,
+      "radius": 1
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dark_oak_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": true,
+    "ignore_vines": true,
+    "minimum_size": {
+      "type": "minecraft:three_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "middle_size": 1,
+      "upper_limit": 1,
+      "upper_size": 2
+    },
+    "trunk_placer": {
+      "type": "minecraft:dark_oak_trunk_placer",
+      "base_height": 9,
+      "height_rand_a": 2,
+      "height_rand_b": 1
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dark_oak_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

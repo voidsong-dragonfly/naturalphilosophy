@@ -1,0 +1,101 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "root_placer": {
+      "type": "naturalphilosophy:mega_root_placer",
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:rooted_dirt"
+        }
+      },
+      "muddy_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "naturalphilosophy:rooted_mud"
+        }
+      },
+      "trunk_offset_y": {
+        "type": "minecraft:biased_to_bottom",
+        "min_inclusive": 0,
+        "max_inclusive": 3
+      },
+      "surface_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:jungle_wood"
+        }
+      },
+      "surface_root_placement": {
+        "max_root_width": 1,
+        "max_root_length": 7,
+        "random_skew_chance": 0.75,
+        "can_grow_through": "#minecraft:dirt"
+      },
+      "root_ball_placement": {
+        "root_radius": 4,
+        "root_depth": 8,
+        "root_placement_attempts": 24,
+        "can_grow_through": "#minecraft:dirt",
+        "hanging_root_state_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:hanging_roots"
+          }
+        },
+        "can_hang_roots_from": [
+          "minecraft:rooted_dirt"
+        ],
+        "hanging_root_placement_attempts": 64,
+        "mega_offset": 1
+      }
+    },
+    "decorators": [ ],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:rooted_dirt"
+      }
+    },
+    "foliage_placer": {
+      "type": "naturalphilosophy:branched_jungle_foliage_placer",
+      "height": 2,
+      "offset": 0,
+      "radius": 2
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:jungle_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": true,
+    "ignore_vines": false,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 2
+    },
+    "trunk_placer": {
+      "type": "minecraft:mega_jungle_trunk_placer",
+      "base_height": 16,
+      "height_rand_a": 4,
+      "height_rand_b": 3
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:jungle_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

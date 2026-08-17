@@ -1,0 +1,101 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "root_placer": {
+      "type": "naturalphilosophy:root_ball_root_placer",
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:rooted_dirt"
+        }
+      },
+      "muddy_root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "naturalphilosophy:rooted_mud"
+        }
+      },
+      "trunk_offset_y": {
+        "type": "minecraft:constant",
+        "value": 0
+      },
+      "root_ball_placement": {
+        "root_radius": 3,
+        "root_depth": 5,
+        "root_placement_attempts": 8,
+        "can_grow_through": "#naturalphilosophy:dirt",
+        "hanging_root_state_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:hanging_roots"
+          }
+        },
+        "can_hang_roots_from": [
+          "minecraft:rooted_dirt"
+        ],
+        "hanging_root_placement_attempts": 24
+      }
+    },
+    "decorators": [],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:rooted_dirt"
+      }
+    },
+    "foliage_placer": {
+      "type": "minecraft:spruce_foliage_placer",
+      "offset": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 2,
+        "min_inclusive": 0
+      },
+      "radius": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 4,
+        "min_inclusive": 3
+      },
+      "trunk_height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 7,
+        "min_inclusive": 5
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:spruce_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": true,
+    "ignore_vines": true,
+    "minimum_size": {
+      "type": "minecraft:three_layers_feature_size",
+      "limit": 2,
+      "upper_limit": 6,
+      "lower_size": 0,
+      "middle_size" : 1,
+      "upper_size": 2
+    },
+    "trunk_placer": {
+      "type": "minecraft:straight_trunk_placer",
+      "base_height": 10,
+      "height_rand_a": 2,
+      "height_rand_b": 3
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:spruce_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

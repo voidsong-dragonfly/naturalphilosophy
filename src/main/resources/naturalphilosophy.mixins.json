@@ -11,19 +11,22 @@
     "block.KelpBlockMixin",
     "block.KelpPlantBlockMixin",
     "block.MushroomBlockMixin",
+    "block.SaplingsMixin",
     "damage.CactusBlockMixin",
     "damage.SweetBerryBushBlockMixin",
     "waterlogging.FlowingFluidInjections",
     "waterlogging.GlowLichenBlockMixin",
     "waterlogging.SculkVeinBlockMixin",
+    "worldgen.ContextMixin",
     "worldgen.FreezeSurfaceMixin",
-    "worldgen.SnowyTreesMixin",
-    "worldgen.ContextMixin"
+    "worldgen.SnowyTreesMixin"
   ],
   "client": [],
   "injectors": {
     "defaultRequire": 1
   },
-  "mixinextras": {"minVersion": "0.5.0"},
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "minVersion": "0.8"
 }
