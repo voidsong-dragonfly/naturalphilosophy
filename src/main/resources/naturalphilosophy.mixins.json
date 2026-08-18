@@ -14,6 +14,7 @@
     "block.SaplingsMixin",
     "damage.CactusBlockMixin",
     "damage.SweetBerryBushBlockMixin",
+    "spawning.OcelotMixin",
     "waterlogging.FlowingFluidInjections",
     "waterlogging.GlowLichenBlockMixin",
     "waterlogging.SculkVeinBlockMixin",
