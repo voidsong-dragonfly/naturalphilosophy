@@ -22,7 +22,7 @@ import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
@@ -150,13 +150,9 @@ public class MegaRootPlacer extends RootBallRootPlacer {
             blockSetter.accept(pos, this.getPotentiallyWaterloggedState(level, pos, this.surfaceRootProvider.getState(random, pos)));
             if (this.aboveRootPlacement.isPresent()) {
                 AboveRootPlacement aboverootplacement = this.aboveRootPlacement.get();
-                BlockPos blockpos = pos.above();
-                if (random.nextFloat() < aboverootplacement.aboveRootPlacementChance()
-                    && level.isStateAtPosition(blockpos, BlockBehaviour.BlockStateBase::isAir)) {
-                    blockSetter.accept(
-                        blockpos,
-                        this.getPotentiallyWaterloggedState(level, blockpos, aboverootplacement.aboveRootProvider().getState(random, blockpos))
-                    );
+                BlockPos top = pos.above();
+                if (random.nextFloat() < aboverootplacement.aboveRootPlacementChance() && level.isStateAtPosition(top, BlockStateBase::isAir)) {
+                    blockSetter.accept(top, this.getPotentiallyWaterloggedState(level, top, aboverootplacement.aboveRootProvider().getState(random, top)));
                 }
             }
         }
