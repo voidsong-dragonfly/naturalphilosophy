@@ -43,6 +43,7 @@ public class BushFlowerMixin {
         private static BlockBehaviour.Properties changeRoseSpeedFactor(BlockBehaviour.Properties properties) {
             return properties.strength(0.3f).offsetType(BlockBehaviour.OffsetType.XYZ);
         }
+
         @ModifyArg(method = "<clinit>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/TallFlowerBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V", ordinal = 0),
                 slice = @Slice(from = @At(value = "CONSTANT", args = "stringValue=peony", ordinal = 0),
                         to = @At(value = "CONSTANT", args = "stringValue=tall_grass", ordinal = 0)))
