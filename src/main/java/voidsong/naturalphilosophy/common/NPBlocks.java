@@ -1,7 +1,9 @@
 package voidsong.naturalphilosophy.common;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ColorRGBA;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -9,21 +11,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
-import voidsong.naturalphilosophy.common.blocks.AlfizolBlock;
-import voidsong.naturalphilosophy.common.blocks.DuneGrass;
-import voidsong.naturalphilosophy.common.blocks.GiantBambooLeavesBlock;
-import voidsong.naturalphilosophy.common.blocks.GiantBambooSaplingBlock;
-import voidsong.naturalphilosophy.common.blocks.GiantBambooStalkBlock;
-import voidsong.naturalphilosophy.common.blocks.GrassyClayHorizonBlock;
-import voidsong.naturalphilosophy.common.blocks.MycelialGrowthBlock;
-import voidsong.naturalphilosophy.common.blocks.MycelialWebBlock;
-import voidsong.naturalphilosophy.common.blocks.PermafrostBlock;
-import voidsong.naturalphilosophy.common.blocks.RedAlgaeBlock;
-import voidsong.naturalphilosophy.common.blocks.TallDuneGrass;
-import voidsong.naturalphilosophy.common.blocks.WaterPlantBlock;
+import voidsong.naturalphilosophy.common.blocks.*;
 
 public class NPBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NaturalPhilosophy.MODID);
@@ -61,6 +53,21 @@ public class NPBlocks {
             .strength(0.3f)
             .pushReaction(PushReaction.DESTROY)
             .offsetType(BlockBehaviour.OffsetType.XYZ)
+    );
+    public static final DeferredBlock<Block> FLAMING_BROMELIAD = BLOCKS.registerBlock("flaming_bromeliad", props -> new EpiphyteFlowerBlock(
+        MobEffects.GLOWING, 5.0f,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.GRASS)
+            .offsetType(BlockBehaviour.OffsetType.XZ)
+            .pushReaction(PushReaction.DESTROY)
+            .lightLevel(state -> 9))
+    );
+    public static final DeferredBlock<Block> POTTED_FLAMING_BROMELIAD = BLOCKS.registerBlock("potted_flaming_bromeliad", props -> new FlowerPotBlock(
+            () -> (FlowerPotBlock)Blocks.FLOWER_POT, FLAMING_BROMELIAD,
+            BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY).lightLevel(state -> 9))
     );
     public static final DeferredBlock<Block> GIANT_BAMBOO_SAPLING = BLOCKS.registerBlock("giant_bamboo_sapling", GiantBambooSaplingBlock::new,
         BlockBehaviour.Properties.of()
@@ -225,5 +232,10 @@ public class NPBlocks {
 
     private static boolean never(BlockState state, BlockGetter blockGetter, BlockPos pos) {
         return false;
+    }
+
+    public static void registerFlowerPots(FMLCommonSetupEvent event) {
+        final FlowerPotBlock FLOWER_POT = ((FlowerPotBlock)Blocks.FLOWER_POT);
+        FLOWER_POT.addPlant(ResourceLocation.fromNamespaceAndPath(NaturalPhilosophy.MODID, "flaming_bromeliad"), POTTED_FLAMING_BROMELIAD);
     }
 }

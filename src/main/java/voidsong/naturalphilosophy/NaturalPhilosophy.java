@@ -5,6 +5,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
+import voidsong.naturalphilosophy.common.NPBlocks;
 import voidsong.naturalphilosophy.common.NPEventHandler;
 import voidsong.naturalphilosophy.client.NPClientConfig;
 import voidsong.naturalphilosophy.common.config.NPServerConfig;
@@ -29,6 +30,7 @@ public class NaturalPhilosophy {
     public NaturalPhilosophy(ModContainer container, IEventBus modEventBus) {
         // Register mod content
         BLOCKS.register(modEventBus);
+        modEventBus.addListener(NPBlocks::registerFlowerPots);
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         FEATURES.register(modEventBus);

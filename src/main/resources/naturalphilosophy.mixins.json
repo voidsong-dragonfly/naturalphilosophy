@@ -12,6 +12,8 @@
     "block.KelpPlantBlockMixin",
     "block.MushroomBlockMixin",
     "block.SaplingsMixin",
+    "block.TorchFlowerMixin$BlocksMixin",
+    "block.TorchFlowerMixin$FlowerPotBlockMixin",
     "damage.CactusBlockMixin",
     "damage.SweetBerryBushBlockMixin",
     "spawning.OcelotMixin",
