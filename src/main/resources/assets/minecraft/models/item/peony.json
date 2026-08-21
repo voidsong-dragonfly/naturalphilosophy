@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/flower_bush_stem",
-    "layer1": "minecraft:item/flower_bush_leaves",
-    "layer2": "minecraft:item/peonies"
-  }
-}

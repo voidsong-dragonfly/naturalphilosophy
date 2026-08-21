@@ -12,32 +12,11 @@
     "naturalphilosophy:mycelial_growth": {
       "chance": 0.65
     },
-    "minecraft:lilac": {
-      "replace": true,
-      "value": {
-        "chance": 0.85,
-        "can_villager_compost": false
-      }
-    },
-    "minecraft:rose_bush": {
-      "replace": true,
-      "value": {
-        "chance": 0.85,
-        "can_villager_compost": false
-      }
-    },
-    "minecraft:peony": {
-      "replace": true,
-      "value": {
-        "chance": 0.85,
-        "can_villager_compost": false
-      }
-    },
-    "naturalphilosophy:large_bush": {
-      "chance": 0.85
-    },
     "naturalphilosophy:mycelial_web": {
       "chance": 0.50
+    },
+    "naturalphilosophy:flaming_bromeliad": {
+      "chance": 0.85
     }
   }
 }
