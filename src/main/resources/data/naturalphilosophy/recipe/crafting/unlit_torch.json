@@ -9,11 +9,23 @@
   "category": "misc",
   "ingredients": [
     {
+      "item": "minecraft:honeycomb"
+    },
+    {
+      "item": "naturalphilosophy:rushes"
+    },
+    {
+      "item": "naturalphilosophy:rushes"
+    },
+    {
+      "item": "naturalphilosophy:rushes"
+    },
+    {
       "item": "naturalphilosophy:rushes"
     }
   ],
   "result": {
-    "count": 2,
+    "count": 16,
     "id": "gasworks:unlit_torch"
   }
 }
