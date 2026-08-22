@@ -17,19 +17,22 @@ public class CanopyGapFilter extends PlacementFilter {
     public static final MapCodec<CanopyGapFilter> CODEC = RecordCodecBuilder.mapCodec(
         builder -> builder.group(
                 Codec.INT.fieldOf("radius").forGetter(r -> r.radius),
-                Codec.BOOL.optionalFieldOf("square", false).forGetter(r -> r.square)
+                Codec.BOOL.optionalFieldOf("square", false).forGetter(r -> r.square),
+                Codec.BOOL.optionalFieldOf("invert", false).forGetter(r -> r.invert)
         ).apply(builder, CanopyGapFilter::new)
     );
     private final int radius;
     private final boolean square;
+    private final boolean invert;
 
-    private CanopyGapFilter(int radius, boolean square) {
+    private CanopyGapFilter(int radius, boolean square, boolean invert) {
         this.radius = radius;
         this.square = square;
+        this.invert = invert;
     }
 
-    public static CanopyGapFilter of(int radius, boolean square) {
-        return new CanopyGapFilter(radius, square);
+    public static CanopyGapFilter of(int radius, boolean square, boolean invert) {
+        return new CanopyGapFilter(radius, square, invert);
     }
 
     @Override
@@ -41,7 +44,7 @@ public class CanopyGapFilter extends PlacementFilter {
                 // Check leaf height vs surface height at this position
                 int treetop = context.getHeight(Heightmap.Types.MOTION_BLOCKING, pos.getX() + x_offset, pos.getZ() + z_offset);
                 int surface = context.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, pos.getX() + x_offset, pos.getZ() + z_offset);
-                if (treetop > surface) return false;
+                if (invert ? surface == treetop : treetop > surface) return false;
             }
         }
         return true;

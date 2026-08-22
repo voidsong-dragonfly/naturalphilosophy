@@ -17,6 +17,7 @@ import static voidsong.naturalphilosophy.common.worldgen.NPFeatures.FEATURES;
 import static voidsong.naturalphilosophy.common.worldgen.NPRootPlacers.ROOT_PLACERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPFoliagePlacers.FOLIAGE_PLACERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPTrunkPlacers.TRUNK_PLACERS;
+import static voidsong.naturalphilosophy.common.worldgen.NPTreeDecorators.TREE_DECORATORS;
 import static voidsong.naturalphilosophy.common.worldgen.NPPlacementModifiers.PLACEMENT_MODIFIERS;
 import static voidsong.naturalphilosophy.common.worldgen.NPBlockPredicates.BLOCK_PREDICATES;
 import static voidsong.naturalphilosophy.common.worldgen.NPMaterialRules.MATERIAL_RULES;
@@ -37,6 +38,7 @@ public class NaturalPhilosophy {
         ROOT_PLACERS.register(modEventBus);
         FOLIAGE_PLACERS.register(modEventBus);
         TRUNK_PLACERS.register(modEventBus);
+        TREE_DECORATORS.register(modEventBus);
         PLACEMENT_MODIFIERS.register(modEventBus);
         BLOCK_PREDICATES.register(modEventBus);
         MATERIAL_RULES.register(modEventBus);
