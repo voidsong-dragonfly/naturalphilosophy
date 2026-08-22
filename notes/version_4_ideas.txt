@@ -148,5 +148,5 @@ Decor blocks:
 3. Barnacles
 
 Tweaks:
-1. Reduce bamboo density in Cherry Groves
+✓ 1. Reduce bamboo density in Cherry Groves
 2. Change bamboo generation in Jungles to be more "check the heightmap in a 3x3 at least area, then place a stand of bamboo"
