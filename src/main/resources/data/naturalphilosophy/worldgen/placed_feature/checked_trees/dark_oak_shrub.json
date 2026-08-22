@@ -1,5 +1,5 @@
 {
-  "feature": "naturalphilosophy:trees/dark_oak_bush_stunted",
+  "feature": "naturalphilosophy:trees/dark_oak_shrub",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",

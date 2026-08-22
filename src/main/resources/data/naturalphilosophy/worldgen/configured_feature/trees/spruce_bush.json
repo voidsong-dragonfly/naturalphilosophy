@@ -12,16 +12,13 @@
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:oak_log",
-        "Properties": {
-          "axis": "y"
-        }
+        "Name": "minecraft:rooted_dirt"
       }
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:oak_log",
+        "Name": "minecraft:spruce_log",
         "Properties": {
           "axis": "y"
         }
@@ -30,7 +27,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:oak_leaves",
+        "Name": "minecraft:spruce_leaves",
         "Properties": {
           "distance": "4",
           "persistent": "false",
@@ -40,8 +37,8 @@
     },
     "trunk_placer": {
       "type": "minecraft:straight_trunk_placer",
-      "base_height": 0,
-      "height_rand_a": 1,
+      "base_height": 1,
+      "height_rand_a": 0,
       "height_rand_b": 0
     },
     "foliage_placer": {

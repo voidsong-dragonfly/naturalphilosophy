@@ -22,10 +22,6 @@
     "block.naturalphilosophy.giant_bamboo": "Giant Bamboo",
     "block.naturalphilosophy.giant_bamboo_leaves": "Giant Bamboo Leaves",
     "item.naturalphilosophy.giant_bamboo": "Giant Bamboo",
-    "block.naturalphilosophy.large_bush": "Large Bush",
     "block.naturalphilosophy.rooted_mud": "Rooted Mud",
-    "block.naturalphilosophy.flaming_bromeliad": "Flaming Bromeliad",
-    "_comment": "Rename Minecraft large flower bushes to include 'bush', this is not essential so it does not matter if it is overwritten",
-    "block.minecraft.lilac": "Lilac Bush",
-    "block.minecraft.peony": "Peony Bush"
+    "block.naturalphilosophy.flaming_bromeliad": "Flaming Bromeliad"
 }

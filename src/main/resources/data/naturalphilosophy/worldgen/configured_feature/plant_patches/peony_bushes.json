@@ -1,7 +1,7 @@
 {
   "type": "minecraft:flower",
   "config": {
-    "tries": 24,
+    "tries": 32,
     "xz_spread": 3,
     "y_spread": 1,
     "feature": {
@@ -9,27 +9,13 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:weighted_state_provider",
-            "entries": [
-              {
-                "weight": 5,
-                "data": {
-                  "Name": "minecraft:peony",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                }
-              },
-              {
-                "weight": 3,
-                "data": {
-                  "Name": "naturalphilosophy:large_bush",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                }
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:peony",
+              "Properties": {
+                "half": "lower"
               }
-            ]
+            }
           }
         }
       },

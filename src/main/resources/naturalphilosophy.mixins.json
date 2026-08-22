@@ -4,8 +4,6 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "block.BambooStalkBlockMixin",
-    "block.BushFlowerMixin$BlocksMixin",
-    "block.BushFlowerMixin$TallFlowerBlockMixin",
     "block.DeadBushBlockMixin",
     "block.DoublePlantBlockMixin",
     "block.KelpBlockMixin",

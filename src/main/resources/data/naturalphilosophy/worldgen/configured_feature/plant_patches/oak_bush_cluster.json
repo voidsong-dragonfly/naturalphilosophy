@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:no_bonemeal_flower",
+  "config": {
+    "tries": 4,
+    "xz_spread": 2,
+    "y_spread": 1,
+    "feature": "naturalphilosophy:checked_trees/oak_bush"
+  }
+}

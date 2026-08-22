@@ -1,12 +1,12 @@
 {
-  "feature": "naturalphilosophy:trees/spruce_bush_stunted",
+  "feature": "naturalphilosophy:trees/oak_shrub",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "minecraft:spruce_sapling",
+          "Name": "minecraft:oak_sapling",
           "Properties": {
             "stage": "0"
           }

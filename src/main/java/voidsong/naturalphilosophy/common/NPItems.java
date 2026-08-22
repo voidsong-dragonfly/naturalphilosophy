@@ -20,7 +20,6 @@ public class NPItems {
     public static final DeferredItem<BlockItem> DUNE_GRASS = ITEMS.registerSimpleBlockItem("dune_grass", NPBlocks.DUNE_GRASS);
     public static final DeferredItem<BlockItem> RUSHES = ITEMS.registerSimpleBlockItem("rushes", NPBlocks.RUSHES);
     public static final DeferredItem<BlockItem> CATTAILS = ITEMS.registerSimpleBlockItem("cattails", NPBlocks.CATTAILS);
-    public static final DeferredItem<BlockItem> LARGE_BUSH = ITEMS.registerSimpleBlockItem("large_bush", NPBlocks.LARGE_BUSH);
     public static final DeferredItem<BlockItem> FLAMING_BROMELIAD = ITEMS.registerSimpleBlockItem("flaming_bromeliad", NPBlocks.FLAMING_BROMELIAD);
     public static final DeferredItem<BlockItem> GIANT_BAMBOO_SAPLING = ITEMS.registerSimpleBlockItem("giant_bamboo_sapling", NPBlocks.GIANT_BAMBOO_SAPLING);
     public static final DeferredItem<BlockItem> GIANT_BAMBOO_LEAVES = ITEMS.registerSimpleBlockItem("giant_bamboo_leaves", NPBlocks.GIANT_BAMBOO_LEAVES);
@@ -51,7 +50,6 @@ public class NPItems {
             output.accept(DUNE_GRASS);
             output.accept(RUSHES);
             output.accept(CATTAILS);
-            output.accept(LARGE_BUSH);
             output.accept(FLAMING_BROMELIAD);
             output.accept(GIANT_BAMBOO_SAPLING);
             output.accept(GIANT_BAMBOO_LEAVES);
