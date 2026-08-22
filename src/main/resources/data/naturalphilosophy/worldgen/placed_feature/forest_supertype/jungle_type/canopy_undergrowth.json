@@ -5,15 +5,18 @@
       "features": [
         {
           "chance": 0.1,
-          "feature": "naturalphilosophy:checked_trees/oak_bush"
+          "feature": "naturalphilosophy:checked_trees/oak_shrub"
         },
         {
           "chance": 0.2,
-          "feature": "naturalphilosophy:checked_trees/oak_bush_stunted"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/oak_bush_cluster",
+            "placement": [ ]
+          }
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/large_bushes_shaded",
+        "feature": "naturalphilosophy:plant_patches/oak_bushes",
         "placement": []
       }
     }

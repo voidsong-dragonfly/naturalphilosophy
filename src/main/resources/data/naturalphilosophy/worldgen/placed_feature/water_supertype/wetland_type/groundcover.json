@@ -6,7 +6,10 @@
         "chance": 0.5,
         "feature": "naturalphilosophy:checked_trees/oak_swamp"
       }],
-      "default": "naturalphilosophy:checked_trees/oak_bush_stunted"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/oak_bush_cluster",
+        "placement": [ ]
+      }
     }
   },
   "placement": [

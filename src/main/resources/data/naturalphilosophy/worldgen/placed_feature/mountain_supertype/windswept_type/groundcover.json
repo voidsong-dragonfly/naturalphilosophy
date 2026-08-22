@@ -4,15 +4,18 @@
     "config": {
       "features": [
         {
-          "chance": 0.0625,
-          "feature": "naturalphilosophy:checked_trees/oak_bush"
+          "chance": 0.125,
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/spruce_bush_cluster",
+            "placement": [ ]
+          }
         },
         {
-          "chance": 0.35,
-          "feature": "naturalphilosophy:checked_trees/spruce_bush_stunted"
+          "chance": 0.375,
+          "feature": "naturalphilosophy:checked_trees/spruce_bush"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_bush_stunted"
+      "default": "naturalphilosophy:checked_trees/oak_bush"
     }
   },
   "placement": [
