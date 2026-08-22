@@ -3,10 +3,13 @@
     "type": "minecraft:random_selector",
     "config": {
       "features": [{
-        "chance": 0.75,
-        "feature": "naturalphilosophy:checked_trees/dark_oak_bush"
+        "chance": 0.625,
+        "feature": "naturalphilosophy:checked_trees/dark_oak_shrub"
       }],
-      "default": "naturalphilosophy:checked_trees/dark_oak_bush_stunted"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/dark_oak_bush_cluster",
+        "placement": [ ]
+      }
     }
   },
   "placement": [

@@ -4,11 +4,11 @@
     "config": {
       "features": [
         {
-          "chance": 0.1,
+          "chance": 0.125,
           "feature": "naturalphilosophy:checked_trees/oak_stunted"
         },
         {
-          "chance": 0.25,
+          "chance": 0.125,
           "feature": "naturalphilosophy:checked_trees/acacia_stunted"
         }
       ],
@@ -18,7 +18,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 7
+      "count": 8
     },
     {
       "type": "minecraft:in_square"

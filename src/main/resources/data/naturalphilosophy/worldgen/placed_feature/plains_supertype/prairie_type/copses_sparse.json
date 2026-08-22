@@ -5,14 +5,17 @@
       "features": [
         {
           "chance": 0.125,
-          "feature": "naturalphilosophy:checked_trees/oak_bush"
+          "feature": "naturalphilosophy:checked_trees/oak_shrub"
         },
         {
           "chance": 0.5,
           "feature": "naturalphilosophy:checked_trees/oak_stunted"
         }
       ],
-      "default": "naturalphilosophy:checked_trees/oak_bush_stunted"
+      "default": {
+        "feature": "naturalphilosophy:plant_patches/oak_bush_cluster",
+        "placement": [ ]
+      }
     }
   },
   "placement": [
@@ -58,6 +61,23 @@
           "blocks": "#minecraft:base_stone_overworld"
         }
       }
+    },
+    {
+      "type": "minecraft:count",
+      "count": 3
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": {
+        "type": "minecraft:uniform",
+        "min_inclusive": -4,
+        "max_inclusive": 4
+      },
+      "y_spread": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
     }
   ]
 }

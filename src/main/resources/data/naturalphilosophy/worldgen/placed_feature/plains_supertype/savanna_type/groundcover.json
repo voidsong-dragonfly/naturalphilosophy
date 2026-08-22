@@ -9,11 +9,14 @@
         },
         {
           "chance": 0.2,
-          "feature": "naturalphilosophy:checked_trees/acacia_bush_stunted"
+          "feature": {
+            "feature": "naturalphilosophy:plant_patches/acacia_bush_cluster",
+            "placement": [ ]
+          }
         }
       ],
       "default": {
-        "feature": "naturalphilosophy:plant_patches/large_bushes_sunlit",
+        "feature": "naturalphilosophy:plant_patches/oak_bush_cluster",
         "placement": []
       }
     }
@@ -21,7 +24,7 @@
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 6, 
+      "noise_to_count_ratio": 6,
       "noise_factor": 0.375,
       "noise_offset": -0.0625
     },
