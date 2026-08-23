@@ -16,9 +16,9 @@
         }
       },
       "trunk_offset_y": {
-        "type": "minecraft:biased_to_bottom",
-        "min_inclusive": 0,
-        "max_inclusive": 4
+        "type": "minecraft:uniform",
+        "min_inclusive": 1,
+        "max_inclusive": 5
       },
       "surface_root_provider": {
         "type": "minecraft:simple_state_provider",
@@ -48,6 +48,15 @@
         ],
         "hanging_root_placement_attempts": 96,
         "mega_offset": 1
+      },
+      "above_root_placement": {
+        "above_root_placement_chance": 0.625,
+        "above_root_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:moss_carpet"
+          }
+        }
       }
     },
     "decorators": [ ],

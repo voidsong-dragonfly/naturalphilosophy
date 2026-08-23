@@ -32,6 +32,10 @@
       "max_water_depth": 0
     },
     {
+      "type": "naturalphilosophy:canopy_gap_filter",
+      "radius": 2
+    },
+    {
       "type": "minecraft:biome"
     }
   ]

@@ -87,7 +87,7 @@ public class MegaRootPlacer extends RootBallRootPlacer {
     ) {
         List<BlockPos> list = Lists.newArrayList();
 
-        list.add(trunkOrigin.below());
+        if (surfaceRootPlacement.taproot) list.add(trunkOrigin.below());
 
         for (Pair<Vec3i, Direction> pair : rootLocations) {
             int offset = trunkOffsetY.sample(random);
@@ -115,13 +115,14 @@ public class MegaRootPlacer extends RootBallRootPlacer {
         return super.canPlaceRoot(level, pos) || level.isStateAtPosition(pos, state -> state.is(surfaceRootPlacement.canGrowThrough));
     }
 
-    public record SurfaceRootPlacement(HolderSet<Block> canGrowThrough, int maxRootWidth, int maxRootLength, float randomSkewChance) {
+    public record SurfaceRootPlacement(HolderSet<Block> canGrowThrough, int maxRootWidth, int maxRootLength, float randomSkewChance, boolean taproot) {
         public static final Codec<SurfaceRootPlacement> CODEC = RecordCodecBuilder.create(
             instance -> instance.group(
                     RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("can_grow_through").forGetter(placement -> placement.canGrowThrough),
                     Codec.intRange(1, 12).fieldOf("max_root_width").forGetter(placement -> placement.maxRootWidth),
                     Codec.intRange(1, 64).fieldOf("max_root_length").forGetter(placement -> placement.maxRootLength),
-                    Codec.floatRange(0.0F, 1.0F).fieldOf("random_skew_chance").forGetter(placement -> placement.randomSkewChance)
+                    Codec.floatRange(0.0F, 1.0F).fieldOf("random_skew_chance").forGetter(placement -> placement.randomSkewChance),
+                    Codec.BOOL.optionalFieldOf("taproot", true).forGetter(placement -> placement.taproot)
                 ).apply(instance, SurfaceRootPlacement::new)
         );
     }
