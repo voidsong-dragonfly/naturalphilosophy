@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "naturalphilosophy:block/flaming_bromeliad"
+    "layer0": "naturalphilosophy:block/flaming_bromeliad_open"
   }
 }

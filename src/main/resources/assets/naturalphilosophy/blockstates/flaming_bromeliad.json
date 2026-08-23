@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "naturalphilosophy:block/flaming_bromeliad"
+    "open=false": {
+      "model": "naturalphilosophy:block/flaming_bromeliad_closed"
+    },
+    "open=true": {
+      "model": "naturalphilosophy:block/flaming_bromeliad_open"
     }
   }
 }

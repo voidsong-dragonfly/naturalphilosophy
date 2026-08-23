@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "cutout",
   "textures": {
-    "cross": "naturalphilosophy:block/flaming_bromeliad"
+    "cross": "naturalphilosophy:block/flaming_bromeliad_closed"
   }
 }

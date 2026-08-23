@@ -42,7 +42,7 @@ public class NPBlocks {
     public static final DeferredBlock<Block> TALL_DUNE_GRASS = BLOCKS.registerBlock("tall_dune_grass", TallDuneGrass::new, TALL_GRASS_PROPERTIES);
     public static final DeferredBlock<Block> RUSHES = BLOCKS.registerBlock("rushes", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
     public static final DeferredBlock<Block> CATTAILS = BLOCKS.registerBlock("cattails", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
-    public static final DeferredBlock<Block> FLAMING_BROMELIAD = BLOCKS.registerBlock("flaming_bromeliad", props -> new EpiphyteFlowerBlock(
+    public static final DeferredBlock<Block> FLAMING_BROMELIAD = BLOCKS.registerBlock("flaming_bromeliad", props -> new FlamingBromeliadBlock(
         MobEffects.GLOWING, 5.0f,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.PLANT)
@@ -51,7 +51,8 @@ public class NPBlocks {
             .sound(SoundType.GRASS)
             .offsetType(BlockBehaviour.OffsetType.XZ)
             .pushReaction(PushReaction.DESTROY)
-            .lightLevel(state -> 9))
+            .randomTicks()
+            .lightLevel(state -> state.getValue(FlamingBromeliadBlock.OPEN) ? 9 : 2))
     );
     public static final DeferredBlock<Block> POTTED_FLAMING_BROMELIAD = BLOCKS.registerBlock("potted_flaming_bromeliad", props -> new FlowerPotBlock(
             () -> (FlowerPotBlock)Blocks.FLOWER_POT, FLAMING_BROMELIAD,
