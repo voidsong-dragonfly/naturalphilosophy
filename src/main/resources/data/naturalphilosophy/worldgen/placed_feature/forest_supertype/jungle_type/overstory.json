@@ -45,6 +45,10 @@
       "max_water_depth": 3
     },
     {
+      "type": "naturalphilosophy:canopy_gap_filter",
+      "radius": 3
+    },
+    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:not",

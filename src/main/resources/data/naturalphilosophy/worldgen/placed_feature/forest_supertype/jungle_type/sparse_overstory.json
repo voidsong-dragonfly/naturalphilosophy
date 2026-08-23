@@ -18,7 +18,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 24
+      "count": 20
     },
     {
       "type": "minecraft:in_square"
@@ -53,6 +53,21 @@
           "predicate": {
             "type": "minecraft:matching_blocks",
             "blocks": [ "minecraft:coarse_dirt" ]
+          }
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "naturalphilosophy:any_in_range",
+          "start_offset": [-1, 0, -1],
+          "end_offset": [1, 0, 1],
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [ "minecraft:bamboo" ]
           }
         }
       }

@@ -37,7 +37,7 @@
     },
     {
       "type": "minecraft:surface_water_depth_filter",
-      "max_water_depth": 2
+      "max_water_depth": 1
     },
     {
       "type": "minecraft:block_predicate_filter",
@@ -45,7 +45,7 @@
         "type": "minecraft:not",
         "predicate": {
           "type": "minecraft:matching_fluids",
-          "offset": [0, 2, 0],
+          "offset": [0, 1, 0],
           "fluids": "#minecraft:water"
         }
       }

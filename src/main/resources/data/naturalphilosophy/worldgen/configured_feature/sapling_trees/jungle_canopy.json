@@ -17,7 +17,7 @@
       },
       "trunk_offset_y": {
         "type": "minecraft:biased_to_bottom",
-        "min_inclusive": 0,
+        "min_inclusive": 1,
         "max_inclusive": 4
       },
       "surface_root_provider": {

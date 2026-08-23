@@ -8,6 +8,7 @@
     "block.DoublePlantBlockMixin",
     "block.KelpBlockMixin",
     "block.KelpPlantBlockMixin",
+    "block.LeavesBlockMixin",
     "block.MushroomBlockMixin",
     "block.SaplingsMixin",
     "block.TorchFlowerMixin$BlocksMixin",
@@ -19,6 +20,7 @@
     "waterlogging.GlowLichenBlockMixin",
     "waterlogging.SculkVeinBlockMixin",
     "worldgen.ContextMixin",
+    "worldgen.DarkOakTrunkPlacerMixin",
     "worldgen.FreezeSurfaceMixin",
     "worldgen.SnowyTreesMixin"
   ],

@@ -52,7 +52,7 @@ public class NPBlocks {
             .offsetType(BlockBehaviour.OffsetType.XZ)
             .pushReaction(PushReaction.DESTROY)
             .randomTicks()
-            .lightLevel(state -> state.getValue(FlamingBromeliadBlock.OPEN) ? 9 : 3))
+            .lightLevel(state -> state.getValue(FlamingBromeliadBlock.OPEN) ? 6 : 3))
     );
     public static final DeferredBlock<Block> POTTED_FLAMING_BROMELIAD = BLOCKS.registerBlock("potted_flaming_bromeliad", props -> new FlowerPotBlock(
             () -> (FlowerPotBlock)Blocks.FLOWER_POT, FLAMING_BROMELIAD,
