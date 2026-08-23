@@ -10,7 +10,6 @@ import java.util.Optional;
 import java.util.function.BiConsumer;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
@@ -87,13 +86,6 @@ public class MegaRootPlacer extends RootBallRootPlacer {
         @Nonnull TreeConfiguration treeConfig
     ) {
         List<BlockPos> list = Lists.newArrayList();
-        MutableBlockPos mutable = pos.mutable();
-
-        while (mutable.getY() < trunkOrigin.getY()) {
-            if (!this.canPlaceRoot(level, mutable))
-                return false;
-            mutable.move(Direction.UP);
-        }
 
         list.add(trunkOrigin.below());
 
@@ -103,7 +95,7 @@ public class MegaRootPlacer extends RootBallRootPlacer {
                 BlockPos blockpos = trunkOrigin.offset(pair.getKey()).above(offset-1);
                 List<BlockPos> simulate = Lists.newArrayList();
                 if (!this.simulateRoots(level, random, blockpos, pair.getValue(), trunkOrigin, simulate, 0)) {
-                    return false;
+                    continue;
                 }
 
                 list.addAll(simulate);
