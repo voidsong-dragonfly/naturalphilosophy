@@ -15,7 +15,7 @@ public class DarkOakTrunkPlacerMixin {
         method = "placeTrunk",
         at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/feature/TreeFeature;isAirOrLeaves(Lnet/minecraft/world/level/LevelSimulatedReader;Lnet/minecraft/core/BlockPos;)Z")
     )
-    private boolean darkOakCanReplaceTaggedBlocks(boolean original, @Local(argsOnly = true)LevelSimulatedReader level, @Local(name = "blockpos1") BlockPos pos) {
+    private boolean darkOakCanReplaceTaggedBlocks(boolean original, @Local(argsOnly = true)LevelSimulatedReader level, @Local(ordinal = 2, name = "blockpos1") BlockPos pos) {
         return original || level.isStateAtPosition(pos, state -> state.is(BlockTags.REPLACEABLE_BY_TREES));
     }
 }
