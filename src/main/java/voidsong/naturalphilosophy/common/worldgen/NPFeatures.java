@@ -23,4 +23,5 @@ public class NPFeatures {
     public static final DeferredHolder<Feature<?>, Feature<ProbabilityFeatureConfiguration>> SEAGRASS = FEATURES.register("seagrass", () -> new NonRandomSeagrassFeature(ProbabilityFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<BlockStateConfiguration>> ROCK = FEATURES.register("rock", () -> new NonLimitedRockFeature(BlockStateConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<CarvedLimitedPoolFeatureConfiguration>> CARVED_LIMITED_POOL = FEATURES.register("carved_limited_pool", () -> new CarvedLimitedPoolFeature(CarvedLimitedPoolFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<MossPatchFeature.MossPatchConfiguration>> MOSS_PATCH = FEATURES.register("moss_patch", () -> new MossPatchFeature(MossPatchFeature.MossPatchConfiguration.CODEC));
 }
