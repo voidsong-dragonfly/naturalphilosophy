@@ -15,11 +15,13 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [0, -1, 0],
-        "blocks": [
-          "naturalphilosophy:alfizol"
-        ]
+        "type": "naturalphilosophy:any_in_range",
+        "start_offset": [-1, -4, -1],
+        "end_offset": [1, -2, 1],
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": [ "minecraft:coarse_dirt" ]
+        }
       }
     },
     {

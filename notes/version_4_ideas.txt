@@ -141,7 +141,7 @@ Plants:
 3. ivy
 4. brown/orange kelp
 5. moss growth
-6. Epiphytic Orchid
+✓ 6. Epiphytic Orchid
 Decor blocks:
 1. Loose Branch (per wood type)
 2. Loose Shells
@@ -149,4 +149,4 @@ Decor blocks:
 
 Tweaks:
 ✓ 1. Reduce bamboo density in Cherry Groves
-2. Change bamboo generation in Jungles to be more "check the heightmap in a 3x3 at least area, then place a stand of bamboo"
+✓ 2. Change bamboo generation in Jungles to be more "check the heightmap in a 3x3 at least area, then place a stand of bamboo"

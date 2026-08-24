@@ -78,8 +78,8 @@
     ],
     [
       "naturalphilosophy:forest_supertype/jungle_type/sparse_overstory",
-      "naturalphilosophy:forest_supertype/jungle_type/bamboo_sparse",
       "naturalphilosophy:forest_supertype/jungle_type/sparse_undergrowth",
+      "naturalphilosophy:forest_supertype/jungle_type/bamboo_sparse",
       "naturalphilosophy:forest_supertype/jungle_type/clearing_trees",
       "naturalphilosophy:forest_supertype/jungle_type/melon_patch",
       "naturalphilosophy:forest_supertype/mushrooms",
