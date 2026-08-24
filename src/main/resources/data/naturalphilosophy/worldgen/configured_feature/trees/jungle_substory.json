@@ -50,12 +50,23 @@
         "mega_offset": 1
       },
       "above_root_placement": {
-        "above_root_placement_chance": 0.1875,
+        "above_root_placement_chance": 0.375,
         "above_root_provider": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "naturalphilosophy:flaming_bromeliad"
-          }
+          "type": "minecraft:weighted_state_provider",
+          "entries": [
+            {
+              "weight": 1,
+              "data": {
+                "Name": "minecraft:moss_carpet"
+              }
+            },
+            {
+              "weight": 1,
+              "data": {
+                "Name": "naturalphilosophy:flaming_bromeliad"
+              }
+            }
+          ]
         }
       }
     },
