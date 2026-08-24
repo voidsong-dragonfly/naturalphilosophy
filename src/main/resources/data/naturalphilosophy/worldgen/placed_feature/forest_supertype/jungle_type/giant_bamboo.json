@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 56
+      "count": 64
     },
     {
       "type": "minecraft:in_square"
@@ -27,6 +27,10 @@
           "blocks": [ "minecraft:coarse_dirt" ]
         }
       }
+    },
+    {
+      "type": "naturalphilosophy:canopy_gap_filter",
+      "radius": 1
     },
     {
       "type": "minecraft:biome"
