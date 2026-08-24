@@ -36,7 +36,19 @@
         "hanging_root_placement_attempts": 24
       }
     },
-    "decorators": [ ],
+    "decorators": [
+      {
+        "type": "minecraft:cocoa",
+        "probability": 0.2
+      },
+      {
+        "type": "minecraft:trunk_vine"
+      },
+      {
+        "type": "minecraft:leave_vine",
+        "probability": 0.25
+      }
+    ],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
