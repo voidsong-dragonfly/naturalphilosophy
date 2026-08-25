@@ -136,11 +136,11 @@
 
 
 Plants:
-1. split lilypads
-2. wall fern
+✓ 1. split lilypads
+2. wall fern => may not be necessary. will need to consider placement & if it would add much
 3. ivy
 4. brown/orange kelp
-5. moss growth
+5. moss growth => may not be necessary, moss carpet on top of rock features may be good enough, same with mossy stone
 ✓ 6. Epiphytic Orchid
 Decor blocks:
 1. Loose Branch (per wood type)

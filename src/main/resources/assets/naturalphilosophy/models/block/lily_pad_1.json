@@ -1,0 +1,39 @@
+{
+  "ambientocclusion": false,
+  "render_type": "cutout",
+  "textures": {
+    "roots": "naturalphilosophy:block/small_lily_pad_roots",
+    "particle": "naturalphilosophy:block/small_lily_pads",
+    "pad": "naturalphilosophy:block/small_lily_pads"
+  },
+  "elements": [
+    {
+      "from": [0, -1, 6],
+      "to": [9, -1, 16],
+      "faces": {
+        "up": {"uv": [0, 6, 9, 16], "texture": "#pad", "tintindex": 0},
+        "down": {"uv": [0, 16, 9, 6], "texture": "#pad", "tintindex": 0}
+      }
+    },
+    {
+      "from": [5, -16, 7.4],
+      "to": [5, -1, 14.6],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [5, 8, 11.5], "rescale": true},
+      "faces": {
+        "east": {"uv": [4, 0, 12, 15], "texture": "#roots"},
+        "west": {"uv": [4, 0, 12, 15], "texture": "#roots"}
+      }
+    },
+    {
+      "from": [1.4, -16, 11],
+      "to": [8.6, -1, 11],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [5, 8, 11.5], "rescale": true},
+      "faces": {
+        "north": {"uv": [4, 0, 12, 15], "texture": "#roots"},
+        "south": {"uv": [4, 0, 12, 15], "texture": "#roots"}
+      }
+    }
+  ]
+}

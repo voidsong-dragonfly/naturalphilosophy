@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/lily_pad/pads_negative",
-  "textures": {
-    "pad": "minecraft:block/lily_pad/tiny"
-  }
-}

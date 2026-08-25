@@ -1,7 +1,7 @@
 package voidsong.naturalphilosophy.client;
 
 import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
@@ -24,10 +24,13 @@ public class ColorHandler {
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
             NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get(), NPBlocks.GRASSY_CLAY_HORIZON.get(),
             NPBlocks.CATTAILS.get(), NPBlocks.RUSHES.get());
+        event.register((state, world, pos, tintIndex) ->
+                world != null && pos != null ? -14647248 : -9321636, NPBlocks.SMALL_LILY_PADS.get());
         // Vanilla blocks we add color to, such as bushes
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
-            Blocks.PEONY, Blocks.ROSE_BUSH, Blocks.LILAC, Blocks.SUNFLOWER);
+            Blocks.SUNFLOWER);
+
     }
 
     @SubscribeEvent
@@ -35,11 +38,10 @@ public class ColorHandler {
         // Natural Philosophy blocks to register, such as Dune Grass
         event.register((stack, tintIndex) ->
             tintIndex == 0 ? GrassColor.get(0.5D, 1.0D) : 0xFFFFFFFF,
-            NPItems.DUNE_GRASS, NPItems.GRASS_CLAY_HORIZON,
-            NPItems.RUSHES, NPItems.CATTAILS);
-        // Vanilla blocks we add color to, such as bushes
+            NPItems.DUNE_GRASS, NPItems.GRASS_CLAY_HORIZON, NPItems.RUSHES, NPItems.CATTAILS);
         event.register((stack, tintIndex) ->
-                tintIndex == 1 ? FoliageColor.getDefaultColor() : 0xFFFFFFFF,
-            Items.PEONY, Items.ROSE_BUSH, Items.LILAC);
+                event.getBlockColors().getColor(((BlockItem)stack.getItem()).getBlock().defaultBlockState(), null, null, tintIndex),
+                NPItems.SMALL_LILY_PADS.get()
+        );
     }
 }

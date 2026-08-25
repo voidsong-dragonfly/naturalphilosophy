@@ -42,6 +42,14 @@ public class NPBlocks {
     public static final DeferredBlock<Block> TALL_DUNE_GRASS = BLOCKS.registerBlock("tall_dune_grass", TallDuneGrass::new, TALL_GRASS_PROPERTIES);
     public static final DeferredBlock<Block> RUSHES = BLOCKS.registerBlock("rushes", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
     public static final DeferredBlock<Block> CATTAILS = BLOCKS.registerBlock("cattails", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
+    public static final DeferredBlock<Block> SMALL_LILY_PADS = BLOCKS.registerBlock("small_lily_pads", QuarteredWaterLilyBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .instabreak()
+            .sound(SoundType.LILY_PAD)
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    );
     public static final DeferredBlock<Block> FLAMING_BROMELIAD = BLOCKS.registerBlock("flaming_bromeliad", props -> new FlamingBromeliadBlock(
         MobEffects.GLOWING, 5.0f,
         BlockBehaviour.Properties.of()
