@@ -2,9 +2,7 @@ package voidsong.naturalphilosophy.client;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -26,11 +24,6 @@ public class ColorHandler {
             NPBlocks.CATTAILS.get(), NPBlocks.RUSHES.get());
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? -14647248 : -9321636, NPBlocks.SMALL_LILY_PADS.get());
-        // Vanilla blocks we add color to, such as bushes
-        event.register((state, world, pos, tintIndex) ->
-                world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
-            Blocks.SUNFLOWER);
-
     }
 
     @SubscribeEvent
