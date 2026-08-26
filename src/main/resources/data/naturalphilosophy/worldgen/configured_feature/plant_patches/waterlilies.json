@@ -6,10 +6,179 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "minecraft:lily_pad"
-            }
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "north",
+                    "flower_amount": "1"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "east",
+                    "flower_amount": "1"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "south",
+                    "flower_amount": "1"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "west",
+                    "flower_amount": "1"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "north",
+                    "flower_amount": "2"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "east",
+                    "flower_amount": "2"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "south",
+                    "flower_amount": "2"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "west",
+                    "flower_amount": "2"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "north",
+                    "flower_amount": "3"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "east",
+                    "flower_amount": "3"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "south",
+                    "flower_amount": "3"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "west",
+                    "flower_amount": "3"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "north",
+                    "flower_amount": "4"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "east",
+                    "flower_amount": "4"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "south",
+                    "flower_amount": "4"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "naturalphilosophy:small_lily_pads",
+                  "Properties": {
+                    "facing": "west",
+                    "flower_amount": "4"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "minecraft:lily_pad",
+                  "Properties": {
+                    "facing": "west",
+                    "flower_amount": "4"
+                  }
+                },
+                "weight": 3
+              }
+            ]
           }
         }
       },
@@ -27,8 +196,8 @@
         }
       ]
     },
-    "tries": 16,
-    "xz_spread": 7,
-    "y_spread": 3
+    "tries": 192,
+    "xz_spread": 5,
+    "y_spread": 1
   }
 }
