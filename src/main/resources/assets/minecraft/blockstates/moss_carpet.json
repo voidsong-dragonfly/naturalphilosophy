@@ -2,123 +2,18 @@
   "variants": {
     "": [
       {
-        "model": "minecraft:block/moss/carpet_1"
+        "model": "minecraft:block/moss_carpet"
       },
       {
-        "model": "minecraft:block/moss/carpet_1",
+        "model": "minecraft:block/moss_carpet",
         "y": 90
       },
       {
-        "model": "minecraft:block/moss/carpet_1",
+        "model": "minecraft:block/moss_carpet",
         "y": 180
       },
       {
-        "model": "minecraft:block/moss/carpet_1",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_2"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_2",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_2",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_2",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_3"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_3",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_3",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_3",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_4"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_4",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_4",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_4",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_5"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_5",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_5",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_5",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_6"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_6",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_6",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_6",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_7"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_7",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_7",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_7",
-        "y": 270
-      },
-      {
-        "model": "minecraft:block/moss/carpet_8"
-      },
-      {
-        "model": "minecraft:block/moss/carpet_8",
-        "y": 90
-      },
-      {
-        "model": "minecraft:block/moss/carpet_8",
-        "y": 180
-      },
-      {
-        "model": "minecraft:block/moss/carpet_8",
+        "model": "minecraft:block/moss_carpet",
         "y": 270
       }
     ]

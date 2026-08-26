@@ -1,6 +1,11 @@
 {
-  "parent": "block/carpet",
+  "parent": "naturalphilosophy:block/thin_hanging_block",
   "render_type": "cutout",
+  "textures": {
+    "particle": "block/moss_block",
+    "moss": "block/moss_block",
+    "side": "block/moss_side"
+  },
   "elements": [
     {
       "from": [0, 0, 0],
@@ -34,31 +39,5 @@
         "west": {"uv": [16, 0, 0, 16], "texture": "#side", "cullface": "down"}
       }
     }
-  ],
-  "display": {
-    "thirdperson_righthand": {
-      "rotation": [75, 45, 0],
-      "translation": [0, 2.5, 2],
-      "scale": [0.375, 0.375, 0.375]
-    },
-    "firstperson_righthand": {
-      "rotation": [0, 45, 0],
-      "translation": [0, 4.2, 0],
-      "scale": [0.4, 0.4, 0.4]
-    },
-    "firstperson_lefthand": {
-      "rotation": [0, 225, 0],
-      "translation": [0, 4.2, 0],
-      "scale": [0.4, 0.4, 0.4]
-    },
-    "gui": {
-      "rotation": [30, 225, 0],
-      "translation": [0, 8.125, 0],
-      "scale": [0.625, 0.625, 0.625]
-    },
-    "head": {
-      "translation": [0, 13.55, 0],
-      "scale": [0.9, 0.9, 0.9]
-    }
-  }
+  ]
 }
