@@ -11,6 +11,7 @@
     "block.LeavesBlockMixin",
     "block.MushroomBlockMixin",
     "block.SaplingsMixin",
+    "block.TallFlowerBlockMixin",
     "block.TorchFlowerMixin$BlocksMixin",
     "block.TorchFlowerMixin$FlowerPotBlockMixin",
     "damage.CactusBlockMixin",
