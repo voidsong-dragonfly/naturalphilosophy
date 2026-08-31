@@ -3,7 +3,6 @@ package voidsong.naturalphilosophy.common.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -14,6 +13,7 @@ import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import voidsong.naturalphilosophy.common.NPTags;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,7 +35,7 @@ public class FlamingBromeliadBlock extends FlowerBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, @Nonnull BlockGetter level, @Nonnull BlockPos pos) {
-        return state.is(BlockTags.LOGS) || state.getBlock() instanceof net.minecraft.world.level.block.FarmBlock;
+        return state.is(NPTags.Blocks.SUPPORTS_FLAMING_BROMELIAD) || state.getBlock() instanceof net.minecraft.world.level.block.FarmBlock;
     }
 
     @Nullable

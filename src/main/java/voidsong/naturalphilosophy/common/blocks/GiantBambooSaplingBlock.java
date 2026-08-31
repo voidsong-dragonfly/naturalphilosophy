@@ -46,7 +46,7 @@ public class GiantBambooSaplingBlock extends Block implements BonemealableBlock 
 
     @Override
     protected boolean canSurvive(@Nonnull BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).is(NPTags.Blocks.GIANT_BAMBOO_PLANTABLE_ON);
+        return level.getBlockState(pos.below()).is(NPTags.Blocks.SUPPORTS_GIANT_BAMBOO);
     }
 
     @Override

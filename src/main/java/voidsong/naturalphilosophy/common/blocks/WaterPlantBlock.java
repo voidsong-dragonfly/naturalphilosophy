@@ -3,7 +3,6 @@ package voidsong.naturalphilosophy.common.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -22,7 +21,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.common.Tags;
+import voidsong.naturalphilosophy.common.NPTags;
 
 import javax.annotation.Nonnull;
 
@@ -51,7 +50,7 @@ public class WaterPlantBlock extends DoublePlantBlock implements SimpleWaterlogg
             if(level.getFluidState(pos).isEmpty())
                 for(BlockPos search : BlockPos.betweenClosed(pos.offset(-3, -1, -3), pos.offset(3, -1, 3)))
                     fluid = fluid || level.getFluidState(search).is(Fluids.WATER);
-            return ((below.is(BlockTags.DIRT) && !below.is(Blocks.MYCELIUM)) || below.is(Tags.Blocks.SANDS) || below.is(Blocks.CLAY)) && fluid;
+            return below.is(NPTags.Blocks.SUPPORTS_MUDDY_PLANT) && fluid;
         } else {
             return super.canSurvive(state, level, pos);
         }

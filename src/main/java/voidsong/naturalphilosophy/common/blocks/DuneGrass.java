@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.neoforged.neoforge.common.Tags;
 import voidsong.naturalphilosophy.common.NPBlocks;
+import voidsong.naturalphilosophy.common.NPTags;
 
 import javax.annotation.Nonnull;
 
@@ -27,10 +27,9 @@ public class DuneGrass extends TallGrassBlock {
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(@Nonnull BlockState state, LevelReader level, BlockPos pos) {
         BlockState below = level.getBlockState(pos.below());
-        if (state.getBlock() != this) return super.canSurvive(state, level, pos);
-        return below.is(Tags.Blocks.SANDS) || below.is(Tags.Blocks.GRAVELS);
+        return below.is(NPTags.Blocks.SUPPORTS_DUNE_GRASS);
     }
 
     @Override

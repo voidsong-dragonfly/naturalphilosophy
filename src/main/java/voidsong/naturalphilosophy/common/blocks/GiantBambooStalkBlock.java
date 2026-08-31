@@ -89,7 +89,7 @@ public class GiantBambooStalkBlock extends Block implements BonemealableBlock {
             return null;
         } else {
             BlockState below = context.getLevel().getBlockState(context.getClickedPos().below());
-            if ( below.is(NPTags.Blocks.GIANT_BAMBOO_PLANTABLE_ON)) {
+            if ( below.is(NPTags.Blocks.SUPPORTS_GIANT_BAMBOO)) {
                 if (below.is(NPBlocks.GIANT_BAMBOO_SAPLING)) {
                     return this.defaultBlockState().setValue(AGE, 0);
                 } else if (below.is(NPBlocks.GIANT_BAMBOO)) {
@@ -132,7 +132,7 @@ public class GiantBambooStalkBlock extends Block implements BonemealableBlock {
 
     @Override
     protected boolean canSurvive(@Nonnull BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).is(NPTags.Blocks.GIANT_BAMBOO_PLANTABLE_ON);
+        return level.getBlockState(pos.below()).is(NPTags.Blocks.SUPPORTS_GIANT_BAMBOO);
     }
 
     @Override
