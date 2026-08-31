@@ -61,6 +61,11 @@
     },
     "decorators": [
       {
+        "type": "naturalphilosophy:wall_fern",
+        "trunk_probability": 0.125,
+        "roots_probability": 0.0625
+      },
+      {
         "type": "minecraft:leave_vine",
         "probability": 0.125
       }

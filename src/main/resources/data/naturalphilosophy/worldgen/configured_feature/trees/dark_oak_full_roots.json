@@ -59,7 +59,13 @@
         }
       }
     },
-    "decorators": [],
+    "decorators": [
+      {
+        "type": "naturalphilosophy:wall_fern",
+        "trunk_probability": 0.09375,
+        "roots_probability": 0.0625
+      }
+    ],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {

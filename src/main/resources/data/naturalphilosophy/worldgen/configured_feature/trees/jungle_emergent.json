@@ -80,6 +80,11 @@
         "probability": 0.375
       },
       {
+        "type": "naturalphilosophy:wall_fern",
+        "trunk_probability": 0.0625,
+        "roots_probability": 0.1875
+      },
+      {
         "type": "minecraft:trunk_vine"
       },
       {
