@@ -21,7 +21,7 @@ public class ColorHandler {
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D),
             NPBlocks.DUNE_GRASS.get(), NPBlocks.TALL_DUNE_GRASS.get(), NPBlocks.GRASSY_CLAY_HORIZON.get(),
-            NPBlocks.CATTAILS.get(), NPBlocks.RUSHES.get());
+            NPBlocks.CATTAILS.get(), NPBlocks.RUSHES.get(), NPBlocks.WALL_FERN.get());
         event.register((state, world, pos, tintIndex) ->
                 world != null && pos != null ? -14647248 : -9321636, NPBlocks.SMALL_LILY_PADS.get());
     }

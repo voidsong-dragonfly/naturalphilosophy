@@ -18,6 +18,7 @@ public class NPTags {
         public static final TagKey<Block> SUPPORTS_DUNE_GRASS = tag("supports_dune_grass");
         public static final TagKey<Block> SUPPORTS_FLAMING_BROMELIAD = tag("supports_flaming_bromeliad");
         public static final TagKey<Block> SUPPORTS_MUDDY_PLANT = tag("supports_muddy_plant");
+        public static final TagKey<Block> SUPPORTS_WALL_FERN = tag("supports_wall_fern");
 
         private static TagKey<Block> tag(@Nonnull String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NaturalPhilosophy.MODID, name));

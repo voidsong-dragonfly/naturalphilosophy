@@ -1,6 +1,7 @@
 {
     "itemGroup.naturalphilosophy": "Natural Philosophy",
     "_comment": "NP Blocks",
+    "block.naturalphilosophy.wall_fern": "Wall Fern",
     "block.naturalphilosophy.dune_grass": "Dune Grass",
     "block.naturalphilosophy.tall_dune_grass": "Tall Dune Grass",
     "block.naturalphilosophy.rushes": "Rushes",

@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -15,6 +14,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import voidsong.naturalphilosophy.common.NPTags;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -53,7 +53,7 @@ public class WallFernBlock extends TallGrassBlock {
 
     @Override
     protected boolean mayPlaceOn(@Nonnull BlockState state, @Nonnull BlockGetter level, @Nonnull BlockPos pos) {
-        return super.mayPlaceOn(state, level, pos) || state.is(BlockTags.LOGS) || state.is(BlockTags.BASE_STONE_OVERWORLD);
+        return state.is(NPTags.Blocks.SUPPORTS_WALL_FERN);
     }
 
     @Override
@@ -65,9 +65,9 @@ public class WallFernBlock extends TallGrassBlock {
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         Direction direction = state.getValue(FACING);
-        BlockPos blockpos = pos.relative(direction.getOpposite());
-        BlockState blockstate = level.getBlockState(blockpos);
-        return blockstate.isFaceSturdy(level, blockpos, direction) && mayPlaceOn(state, level, pos);
+        BlockPos wallPos = pos.relative(direction.getOpposite());
+        BlockState wallState = level.getBlockState(wallPos);
+        return wallState.isFaceSturdy(level, wallPos, direction) && mayPlaceOn(wallState, level, wallPos);
     }
 
     @Nullable

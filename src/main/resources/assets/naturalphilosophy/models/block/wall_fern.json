@@ -1,7 +1,9 @@
 {
   "ambientocclusion": false,
+  "render_type": "cutout",
   "textures": {
-    "particle": "#fern"
+    "fern": "naturalphilosophy:block/wall_fern",
+    "particle": "naturalphilosophy:block/wall_fern"
   },
   "elements": [
     {   "from": [ 0, 8, 0 ],

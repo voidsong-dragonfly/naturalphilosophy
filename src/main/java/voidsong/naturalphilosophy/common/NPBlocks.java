@@ -38,6 +38,16 @@ public class NPBlocks {
         .offsetType(BlockBehaviour.OffsetType.XZ)
         .ignitedByLava()
         .pushReaction(PushReaction.DESTROY);
+
+    public static final DeferredBlock<Block> WALL_FERN = BLOCKS.registerBlock("wall_fern", WallFernBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .replaceable()
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.GRASS)
+            .ignitedByLava()
+            .pushReaction(PushReaction.DESTROY));
     public static final DeferredBlock<Block> DUNE_GRASS = BLOCKS.registerBlock("dune_grass", DuneGrass::new, GRASS_PROPERTIES);
     public static final DeferredBlock<Block> TALL_DUNE_GRASS = BLOCKS.registerBlock("tall_dune_grass", TallDuneGrass::new, TALL_GRASS_PROPERTIES);
     public static final DeferredBlock<Block> RUSHES = BLOCKS.registerBlock("rushes", WaterPlantBlock::new, TALL_GRASS_PROPERTIES);
