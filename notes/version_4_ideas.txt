@@ -100,22 +100,23 @@
 4.1.0 (Small features & new blocks)
 
 1.  Several new plants to add variety to biome decor in some areas that can be samey
-    Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
-        => this needs to have more purpose than lilypads do right now
-        => could also split lilypads better, into one for small lilypads and one for big lilypads
-        => could also add a pad variant for water lilies
-        => possibly even have small lilypads come with algae around them when there's enough of them in an area
+    ✓ Possibly some sort of algae plant? Would grow on top of water sort of like leaf litter, and be common in swamps/mangrove swamps
+        ✓ => this needs to have more purpose than lilypads do right now
+        ✓ => could also split lilypads better, into one for small lilypads and one for big lilypads
+        ✓ => could also add a pad variant for water lilies
+        ✓ => possibly even have small lilypads come with algae around them when there's enough of them in an area
     Plant ideas inspired by Immersive Weathering
         => ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else?
         => Moss outgrowths to place on other blocks? or make mossy stone? unsure.
             => If used, should make custom rock decorator able to place moss outgrowths like lichen rather than using mossy cobble
             => May just want to make them "lichen" blocks rather than moss outgrowths?
         => worn stone/cracked stone, mossy/overgrown stone
-    deal with epiphytes and fixing decoration to make better sense with rain/humidity values
-        => Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
-        => allow blue orchids to place on jungle logs specifically as well?
-    Add epiphytic orchids to Jungles instead of blue orchids, keep blue orchids as swamp flowers
-        => Add a few colors for variety? Purple, magenta, yellow, white, pink, orange? pick between these for 3 or 4 like tulips
+    ✓ deal with epiphytes and fixing decoration to make better sense with rain/humidity values
+        ✓ => Jungles should have more epipyhtes (add wall ferns, make moss layers omnidirectional, etc?)
+        ✓ => allow blue orchids to place on jungle logs specifically as well?
+    ✓ Add epiphytic orchids to Jungles instead of blue orchids, keep blue orchids as swamp flowers
+        ✓ => Add a few colors for variety? Purple, magenta, yellow, white, pink, orange? pick between these for 3 or 4 like tulips
+        ✓ => Instead ended up going with one color on a functional (light-producing) flower
 2.  new decor blocks for oceans and water biomes, to add variety (?)
     some more plants so it's not just kelp/seagrass/red algae?
         => flower-like blocks?
@@ -150,3 +151,31 @@ Decor blocks:
 Tweaks:
 ✓ 1. Reduce bamboo density in Cherry Groves
 ✓ 2. Change bamboo generation in Jungles to be more "check the heightmap in a 3x3 at least area, then place a stand of bamboo"
+
+
+
+4.3.0 (Compatibility with Streams Reflowing)
+Change the spawning requirements of rushes & cattails, allow them to place on mud
+Move rushes & cattails away from direct water contact and more towards low-lying ground in general
+    => this should just be the mud block, which will be placed by Streams Reflowing compat
+Modify several Streams Reflowing config options
+    => Remove flow direction for Minecraft rivers, as it currently has significant issues
+    => Move seagrass placement to patches underneath still water, remove it from most biomes when streams reflowing is installed
+    => Remove extra bank decorations entirely
+Complete overhaul of Streams Reflowing block placement
+    => Mud in stagnant areas & lakes; some sand; do not place above waterline
+    => Sand in slow-flowing areas; can place up banks
+    => Gravel in fast-flowing areas; can place up banks
+    => Stone in steep areas; possibly reskin by biome; can place at or below waterline
+Remove clay from rivers almost entirely; instead it should be placed in low areas with a chance to be carved out by streams
+    => Clay patches below Y72+=surface noise, happen at high surface noise
+    => May need to add new blocks for alfizol/podzol clay horizons, or redo the clay horizon block to actually be with dirt
+Filter trees out of low-lying areas across all biomes, make instead open "grassy" or "shrubby" or "rushy" areas at the edges of rivers/lakes
+    => Do not filter trees for streams, do filter trees for Minecraft river biomes
+    => Rushes, grasses, bushes, trees should be the general progression from y63 to y64-y65 or so
+    => Certain biomes should do this more strongly; may want to have this only be the case for certain thick biomes
+        => Old Growth Forests and Jungles might be a good place to filter these (Old Growth Pine Taiga, Old Growth Spruce Taiga, Jungle, Bamboo Jungle)
+        => Consider whether we want Dark Forests to also have younger river banks
+Consider using PV noise to determine "ephemeral lake" areas that are not steep from caves and placing mud there?
+    => Would these be converted to lakes by Streams Reflowing?
+    => If not, may want to consider using them
