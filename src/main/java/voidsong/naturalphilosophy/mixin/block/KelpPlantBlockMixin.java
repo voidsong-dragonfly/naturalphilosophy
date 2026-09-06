@@ -22,7 +22,7 @@ public class KelpPlantBlockMixin implements GrowingPlantBlockExtension {
 
     @ModifyArg(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/GrowingPlantBodyBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/core/Direction;Lnet/minecraft/world/phys/shapes/VoxelShape;Z)V"), index = 0)
     private static BlockBehaviour.Properties addOffset(BlockBehaviour.Properties props) {
-        return props.offsetType(BlockBehaviour.OffsetType.NONE);
+        return props.offsetType(BlockBehaviour.OffsetType.XZ);
     }
 
     @Unique

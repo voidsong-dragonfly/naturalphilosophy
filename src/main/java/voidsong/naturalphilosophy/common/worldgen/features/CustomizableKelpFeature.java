@@ -28,6 +28,10 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         WorldGenLevel level = config.level();
         BlockPos pos = config.origin();
         RandomSource random = config.random();
+        // Add an early exit if we are less than five blocks below water for the default surface heightmap pre-ice
+        if (level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pos.getX(), pos.getZ()) + 5 > level.getHeight(Heightmap.Types.WORLD_SURFACE_WG, pos.getX(), pos.getZ()))
+            return false;
+        // Continue on with the rest of the
         int j = level.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX(), pos.getZ());
         BlockPos current = j > level.getSeaLevel() ? pos : new BlockPos(pos.getX(), j, pos.getZ());
         if (level.getBlockState(current.below()).is(BlockTags.ICE) && j > pos.getY())
@@ -46,7 +50,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
                     } else {
                         level.setBlock(current, l == 0 ? kelpRootsState : kelpPlantState, 2);
                     }
-                } else if (l > 1) {
+                } else if (l > 0) {
                     BlockPos floorPos = current.below();
                     if (kelpState.canSurvive(level, floorPos) && !level.getBlockState(floorPos.below()).is(Blocks.KELP)) {
                         level.setBlock(floorPos, kelpState.setValue(KelpBlock.AGE, random.nextInt(4) + 20), 2);
