@@ -52,7 +52,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
                     }
                 } else if (l > 0) {
                     BlockPos floorPos = current.below();
-                    if (kelpState.canSurvive(level, floorPos) && !level.getBlockState(floorPos.below()).is(Blocks.KELP)) {
+                    if (kelpState.canSurvive(level, floorPos) && !level.getBlockState(floorPos.below()).is(kelpState.getBlock())) {
                         level.setBlock(floorPos, kelpState.setValue(KelpBlock.AGE, random.nextInt(4) + 20), 2);
                         i++;
                     }
