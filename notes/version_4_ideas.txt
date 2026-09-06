@@ -106,7 +106,7 @@
         ✓ => could also add a pad variant for water lilies
         ✓ => possibly even have small lilypads come with algae around them when there's enough of them in an area
     Plant ideas inspired by Immersive Weathering
-        => ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else?
+        ✓ => ivy block to add some flavor to forests that aren't rainforests? vines can stay for jungles, ivy for everywhere else? => not happening, no real need
         => Moss outgrowths to place on other blocks? or make mossy stone? unsure.
             => If used, should make custom rock decorator able to place moss outgrowths like lichen rather than using mossy cobble
             => May just want to make them "lichen" blocks rather than moss outgrowths?
@@ -139,7 +139,7 @@
 Plants:
 ✓ 1. split lilypads
 ✓ 2. wall fern => may not be necessary. will need to consider placement & if it would add much
-3. ivy => use vines but with a texture change or two instead of ivy
+✓ 3. ivy => use vines but with a texture change or two instead of ivy => changing vine texture is complicated by the item model and is not a high priority
 4. brown kelp
 5. moss growth => may not be necessary, moss carpet on top of rock features may be good enough, same with mossy stone
 ✓ 6. Epiphytic Orchid

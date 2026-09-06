@@ -34,6 +34,7 @@ public class NPItems {
     public static final DeferredItem<BlockItem> GRASS_CLAY_HORIZON = ITEMS.registerSimpleBlockItem("grassy_clay_horizon", NPBlocks.GRASSY_CLAY_HORIZON);
     public static final DeferredItem<BlockItem> ROOTED_MUD = ITEMS.registerSimpleBlockItem("rooted_mud", NPBlocks.ROOTED_MUD);
     public static final DeferredItem<BlockItem> RED_ALGAE = ITEMS.registerSimpleBlockItem("red_algae", NPBlocks.RED_ALGAE);
+    public static final DeferredItem<BlockItem> BROWN_KELP = ITEMS.registerSimpleBlockItem("brown_kelp", NPBlocks.BROWN_KELP);
     public static final DeferredItem<BlockItem> BONE_CORAL = ITEMS.registerSimpleBlockItem("bone_coral", NPBlocks.BONE_CORAL);
     public static final DeferredItem<BlockItem> BONE_CORAL_FAN = ITEMS.register("bone_coral_fan", rl ->
         new StandingAndWallBlockItem(NPBlocks.BONE_CORAL_FAN.get(), NPBlocks.BONE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN)
@@ -65,6 +66,7 @@ public class NPItems {
             output.accept(GRASS_CLAY_HORIZON);
             output.accept(ROOTED_MUD);
             output.accept(RED_ALGAE);
+            output.accept(BROWN_KELP);
             output.accept(BONE_CORAL);
             output.accept(BONE_CORAL_FAN);
             output.accept(DEAD_BONE_CORAL);

@@ -13,15 +13,17 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import voidsong.naturalphilosophy.common.blocks.interfaces.GrowingPlantBlockExtension;
 
 @Mixin(KelpBlock.class)
-public class KelpBlockMixin {
+public class KelpBlockMixin implements GrowingPlantBlockExtension {
+
     @Unique
     private static final VoxelShape naturalphilosophy$SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 9.0, 13.0);
 
     @ModifyArg(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/GrowingPlantHeadBlock;<init>(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;Lnet/minecraft/core/Direction;Lnet/minecraft/world/phys/shapes/VoxelShape;ZD)V"), index = 0)
     private static BlockBehaviour.Properties addOffset(BlockBehaviour.Properties props) {
-        return props.offsetType(BlockBehaviour.OffsetType.XZ);
+        return props.offsetType(BlockBehaviour.OffsetType.NONE);
     }
 
     @Unique

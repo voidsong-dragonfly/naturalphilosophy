@@ -175,6 +175,35 @@ public class NPBlocks {
             .sound(SoundType.WET_GRASS)
             .offsetType(BlockBehaviour.OffsetType.XZ)
             .pushReaction(PushReaction.DESTROY));
+    public static final DeferredBlock<Block> KELP_ROOTS = BLOCKS.registerBlock("kelp_roots", KelpRootsBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WATER)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY));
+    public static final DeferredBlock<Block> BROWN_KELP = BLOCKS.registerBlock("brown_kelp", BrownKelpBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WATER)
+            .noCollission()
+            .randomTicks()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY));
+    public static final DeferredBlock<Block> BROWN_KELP_PLANT = BLOCKS.registerBlock("brown_kelp_plant", BrownKelpPlantBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WATER)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY));
+    public static final DeferredBlock<Block> BROWN_KELP_ROOTS = BLOCKS.registerBlock("brown_kelp_roots", BrownKelpRootsBlock::new,
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WATER)
+            .noCollission()
+            .instabreak()
+            .sound(SoundType.WET_GRASS)
+            .pushReaction(PushReaction.DESTROY));
     public static final DeferredBlock<Block> DEAD_BONE_CORAL = BLOCKS.registerBlock("dead_bone_coral", BaseCoralPlantBlock::new,
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_GRAY)

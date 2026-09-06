@@ -3,6 +3,9 @@
     "naturalphilosophy:dune_grass": {
       "chance": 0.3
     },
+    "naturalphilosophy:brown_kelp": {
+      "chance": 0.3
+    },
     "naturalphilosophy:cattails": {
       "chance": 0.65
     },
