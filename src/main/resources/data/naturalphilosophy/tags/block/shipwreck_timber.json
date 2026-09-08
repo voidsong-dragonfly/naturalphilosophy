@@ -1,0 +1,10 @@
+{
+  "remove": [ ],
+  "values": [
+    "#minecraft:logs",
+    "#minecraft:planks",
+    "#minecraft:wooden_slabs",
+    "#minecraft:wooden_stairs",
+    "#minecraft:wooden_trapdoors"
+  ]
+}

@@ -1,11 +1,16 @@
 package voidsong.naturalphilosophy.common.worldgen.features;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.RegistryCodecs;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.KelpBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,8 +21,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import voidsong.naturalphilosophy.common.NPBlocks;
 import voidsong.naturalphilosophy.common.worldgen.features.CustomizableKelpFeature.KelpConfiguration;
+import voidsong.naturalphilosophy.common.worldgen.features.CustomizableKelpFeature.KelpConfiguration.KelpStrand;
 
 public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
+    public static final KelpStrand KELP = new KelpStrand(BlockStateProvider.simple(Blocks.KELP), BlockStateProvider.simple(Blocks.KELP_PLANT), BlockStateProvider.simple(NPBlocks.KELP_ROOTS.get()));
+    public static final KelpStrand BROWN_KELP = new KelpStrand(BlockStateProvider.simple(NPBlocks.BROWN_KELP.get()), BlockStateProvider.simple(NPBlocks.BROWN_KELP_PLANT.get()), BlockStateProvider.simple(NPBlocks.BROWN_KELP_ROOTS.get()));
+
     public CustomizableKelpFeature(Codec<KelpConfiguration> codec) {
         super(codec);
     }
@@ -36,10 +45,10 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         BlockPos current = j > level.getSeaLevel() ? pos : new BlockPos(pos.getX(), j, pos.getZ());
         if (level.getBlockState(current.below()).is(BlockTags.ICE) && j > pos.getY())
             current = pos;
-        if (level.getBlockState(current).is(Blocks.WATER)) {
-            BlockState kelpState = config.config().tip().getState(random, current);
-            BlockState kelpPlantState = config.config().plant().getState(random, current);
-            BlockState kelpRootsState = config.config().roots().getState(random, current);
+        if (checkGrowthConditions(current, level, config.config())) {
+            BlockState kelpState = config.config().kelp.tip().getState(random, current);
+            BlockState kelpPlantState = config.config().kelp.plant().getState(random, current);
+            BlockState kelpRootsState = config.config().kelp.roots().getState(random, current);
             int k = 1 + random.nextInt(10);
 
             for (int l = 0; l <= k; l++) {
@@ -66,11 +75,60 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         return i > 0;
     }
 
-    public record KelpConfiguration(BlockStateProvider tip, BlockStateProvider plant, BlockStateProvider roots) implements FeatureConfiguration {
+    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, KelpConfiguration config) {
+        if (!level.getBlockState(surface).is(Blocks.WATER))
+            return false;
+        if (level.getBlockState(surface.below()).is(config.shipwreckHoldfastAnchors))
+            return true;
+        if (!config.requireSediment && level.getBlockState(surface.below()).is(config.stoneHoldfastAnchors))
+            return true;
+        for (int i = 0; i<=config.maximumSedimentDepth;) {
+            if (level.getBlockState(surface.below(i + 1)).is(config.allowedSedimentCovering)) {
+                i++;
+            } else return level.getBlockState(surface.below(i + 1)).is(config.stoneHoldfastAnchors);
+        }
+        return false;
+    }
+
+    public record KelpConfiguration(KelpStrand kelp,
+                                    HolderSet<Block> shipwreckHoldfastAnchors,
+                                    HolderSet<Block> stoneHoldfastAnchors,
+                                    HolderSet<Block> allowedSedimentCovering,
+                                    int maximumSedimentDepth,
+                                    boolean requireSediment) implements FeatureConfiguration {
+        public record KelpStrand(BlockStateProvider tip, BlockStateProvider plant, BlockStateProvider roots) {
+            public static final Codec<KelpStrand> CODEC = Codec.withAlternative(
+                RecordCodecBuilder.create(builder -> builder.group(
+                    BlockStateProvider.CODEC.fieldOf("tip").forGetter(KelpStrand::tip),
+                    BlockStateProvider.CODEC.fieldOf("plant").forGetter(KelpStrand::plant),
+                    BlockStateProvider.CODEC.fieldOf("roots").forGetter(KelpStrand::roots)
+                ).apply(builder, KelpStrand::new)),
+                Codec.STRING.flatXmap(
+                    type -> {
+                        if (type.equals("minecraft:kelp"))
+                            return DataResult.success(KELP);
+                        else if (type.equals("naturalphilosophy:brown_kelp"))
+                            return DataResult.success(BROWN_KELP);
+                        return DataResult.error(() -> (type + " is not a shorthand kelp type."));
+                    },
+                    type -> {
+                        if (type.equals(KELP))
+                            return DataResult.success("minecraft:kelp");
+                        if (type.equals(BROWN_KELP))
+                            return DataResult.success("naturalphilosophy:brown_kelp");
+                        return DataResult.error(() -> type + " is not a shorthand kelp type.");
+                    }
+                ));
+        }
+
         public static final Codec<KelpConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-                BlockStateProvider.CODEC.optionalFieldOf("tip", BlockStateProvider.simple(Blocks.KELP)).forGetter(KelpConfiguration::tip),
-                BlockStateProvider.CODEC.optionalFieldOf("plant", BlockStateProvider.simple(Blocks.KELP_PLANT)).forGetter(KelpConfiguration::plant),
-                BlockStateProvider.CODEC.optionalFieldOf("roots", BlockStateProvider.simple(NPBlocks.KELP_ROOTS.get())).forGetter(KelpConfiguration::roots)
+                KelpStrand.CODEC.fieldOf("type").forGetter(KelpConfiguration::kelp),
+                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_holdfast_anchors").forGetter(KelpConfiguration::shipwreckHoldfastAnchors),
+                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_holdfast_anchors").forGetter(KelpConfiguration::stoneHoldfastAnchors),
+                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("holdfast_anchors_through").forGetter(KelpConfiguration::allowedSedimentCovering),
+                Codec.INT.fieldOf("maximum_sediment_depth").forGetter(KelpConfiguration::maximumSedimentDepth),
+                Codec.BOOL.fieldOf("require_sediment").forGetter(KelpConfiguration::requireSediment)
         ).apply(builder, KelpConfiguration::new));
     }
+
 }
