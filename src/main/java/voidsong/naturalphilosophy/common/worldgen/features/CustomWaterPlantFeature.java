@@ -55,7 +55,7 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
         for (int i = 0; i<=config.maximumSedimentDepth;) {
             if (level.getBlockState(surface.below(i + 1)).is(config.sedimentSubstrate)) {
                 i++;
-            } else return !level.isWaterAt(surface.below(i + 1)) && level.getBlockState(surface.below(i + 1)).isAir();
+            } else return !(level.isWaterAt(surface.below(i + 1)) && level.getBlockState(surface.below(i + 1)).isAir()) && i>=config.minimumSedimentDepth;
         }
         return false;
     }
@@ -63,12 +63,14 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
     public record WaterPlantConfiguration(BlockStateProvider provider,
                                           HolderSet<Block> shipwreckSubstrate,
                                           HolderSet<Block> sedimentSubstrate,
+                                          int minimumSedimentDepth,
                                           int maximumSedimentDepth) implements FeatureConfiguration {
         public static final Codec<WaterPlantConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-                BlockStateProvider.CODEC.fieldOf("to_place").forGetter(WaterPlantConfiguration::provider),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_substrate").forGetter(WaterPlantConfiguration::shipwreckSubstrate),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("sediment_substrate").forGetter(WaterPlantConfiguration::sedimentSubstrate),
-                Codec.INT.fieldOf("maximum_sediment_depth").forGetter(WaterPlantConfiguration::maximumSedimentDepth)
+            BlockStateProvider.CODEC.fieldOf("to_place").forGetter(WaterPlantConfiguration::provider),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_substrate").forGetter(WaterPlantConfiguration::shipwreckSubstrate),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("sediment_substrate").forGetter(WaterPlantConfiguration::sedimentSubstrate),
+            Codec.INT.fieldOf("minimum_sediment_depth").forGetter(WaterPlantConfiguration::minimumSedimentDepth),
+            Codec.INT.fieldOf("maximum_sediment_depth").forGetter(WaterPlantConfiguration::maximumSedimentDepth)
         ).apply(builder, WaterPlantConfiguration::new));
     }
 }
