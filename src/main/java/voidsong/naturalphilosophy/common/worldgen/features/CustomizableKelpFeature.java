@@ -80,8 +80,8 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
             return false;
         if (level.getBlockState(surface.below()).is(config.shipwreckHoldfastAnchors))
             return true;
-        if (!config.requireSediment && level.getBlockState(surface.below()).is(config.stoneHoldfastAnchors))
-            return true;
+        if (level.getBlockState(surface.below()).is(config.stoneHoldfastAnchors))
+            return !config.requireSediment;
         for (int i = 0; i<=config.maximumSedimentDepth;) {
             if (level.getBlockState(surface.below(i + 1)).is(config.allowedSedimentCovering)) {
                 i++;
