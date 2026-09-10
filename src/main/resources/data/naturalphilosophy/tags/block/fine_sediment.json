@@ -2,7 +2,6 @@
   "remove": [ ],
   "values": [
     "#c:sands",
-    "minecraft:clay",
     "minecraft:mud",
     "minecraft:muddy_mangrove_roots",
     "naturalphilosophy:rooted_mud"

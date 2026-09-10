@@ -1,23 +1,67 @@
 {
   "feature": {
-    "type": "minecraft:random_selector",
+    "type": "naturalphilosophy:seaplant",
     "config": {
-      "features": [
-        {
-          "chance": 0.875,
-          "feature": {
-            "feature": "naturalphilosophy:plant_patches/seagrass_mixed",
-            "placement": []
+      "to_place": {
+        "type": "minecraft:noise_provider",
+        "noise": {
+          "amplitudes": [
+            1,
+            0,
+            1
+          ],
+          "firstOctave": 0
+        },
+        "scale": 0.125,
+        "seed": 9786,
+        "states": [
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:water"
+          },
+          {
+            "Name": "minecraft:water"
+          },
+          {
+            "Name": "minecraft:water"
+          },
+          {
+            "Name": "minecraft:water"
           }
-        }
-      ],
-      "default": {
-        "feature": "naturalphilosophy:plant_patches/seagrass",
-        "placement": []
-      }
+        ]
+      },
+      "shipwreck_substrate": "#naturalphilosophy:shipwreck_timber",
+      "sediment_substrate": "#naturalphilosophy:fine_sediment",
+      "minimum_sediment_depth": 1,
+      "maximum_sediment_depth": 8,
+      "place_in_shallow_water": true
     }
   },
   "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 128
+    },
     {
       "type": "minecraft:in_square"
     },
@@ -26,22 +70,11 @@
       "heightmap": "OCEAN_FLOOR_WG"
     },
     {
-      "type": "minecraft:count",
-      "count": 20
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 4
     },
     {
       "type": "minecraft:biome"
-    },
-    {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:not",
-        "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [0, -1, 0],
-          "blocks": "#minecraft:sand"
-        }
-      }
     }
   ]
 }

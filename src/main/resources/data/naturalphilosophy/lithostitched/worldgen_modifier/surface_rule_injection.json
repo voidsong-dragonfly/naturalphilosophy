@@ -21,7 +21,7 @@
         },
         {
           "type": "lithostitched:reference",
-          "rules": "naturalphilosophy:ubiquitous/underwater_sediment"
+          "rules": "naturalphilosophy:ubiquitous/fluvial_sediment"
         },
         {
           "type": "naturalphilosophy:bilayer_fill",
@@ -272,6 +272,35 @@
                     "rules": "naturalphilosophy:blocks/red_sand"
                   }
                 }
+              },
+              {
+                "_comment": "Rivers have y63 (sea level) filled in with mud",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:river",
+                    "minecraft:frozen_river"
+                  ]
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:not",
+                    "invert": {
+                      "type": "minecraft:y_above",
+                      "add_stone_depth": true,
+                      "anchor": {
+                        "absolute": 64
+                      },
+                      "surface_depth_multiplier": 0
+                    }
+                  },
+                  "then_run": {
+                    "type": "lithostitched:reference",
+                    "rules": "naturalphilosophy:ubiquitous/alluvial_sediment"
+                  }
+                }
               }
             ]
           },
@@ -518,6 +547,35 @@
                   "then_run": {
                     "type": "lithostitched:reference",
                     "rules": "naturalphilosophy:blocks/red_sand"
+                  }
+                }
+              },
+              {
+                "_comment": "Rivers have y63 (sea level) filled in with mud",
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "minecraft:river",
+                    "minecraft:frozen_river"
+                  ]
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:not",
+                    "invert": {
+                      "type": "minecraft:y_above",
+                      "add_stone_depth": true,
+                      "anchor": {
+                        "absolute": 64
+                      },
+                      "surface_depth_multiplier": 0
+                    }
+                  },
+                  "then_run": {
+                    "type": "lithostitched:reference",
+                    "rules": "naturalphilosophy:ubiquitous/alluvial_sediment"
                   }
                 }
               }

@@ -31,8 +31,8 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
         BlockPos pos = config.origin();
         int k = level.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX(), pos.getZ());
         BlockPos floorPos = k > level.getSeaLevel() ? pos : new BlockPos(pos.getX(), k, pos.getZ());
-        if (checkGrowthConditions(floorPos, level, config.config())) {
-            BlockState state = config.config().provider().getState(config.random(), floorPos);
+        BlockState state = config.config().provider().getState(config.random(), floorPos);
+        if (checkGrowthConditions(floorPos, level, config.config(), state)) {
             if (state.canSurvive(level, floorPos)) {
                 if (state.getBlock() instanceof DoublePlantBlock) {
                     BlockPos topPos = floorPos.above();
@@ -47,8 +47,14 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
         return success;
     }
 
-    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, WaterPlantConfiguration config) {
-        if (!level.getBlockState(surface).is(Blocks.WATER) || !level.getBlockState(surface.above()).is(Blocks.WATER))
+    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, WaterPlantConfiguration config, BlockState place) {
+        if (!level.getBlockState(surface).is(Blocks.WATER))
+            return false;
+        if ((place.getBlock() instanceof DoublePlantBlock || !config.shallowPlacement) && !level.getBlockState(surface.above()).is(Blocks.WATER))
+            return false;
+        if (place.getBlock() instanceof DoublePlantBlock && level.getBlockState(surface.above(2)).isAir() && level.getBiome(surface.above()).value().shouldFreeze(level, surface.above()))
+            return false;
+        else if (level.getBlockState(surface.above()).isAir() && level.getBiome(surface).value().shouldFreeze(level, surface))
             return false;
         if (level.getBlockState(surface.below()).is(config.shipwreckSubstrate))
             return true;
@@ -64,13 +70,15 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
                                           HolderSet<Block> shipwreckSubstrate,
                                           HolderSet<Block> sedimentSubstrate,
                                           int minimumSedimentDepth,
-                                          int maximumSedimentDepth) implements FeatureConfiguration {
+                                          int maximumSedimentDepth,
+                                          boolean shallowPlacement) implements FeatureConfiguration {
         public static final Codec<WaterPlantConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             BlockStateProvider.CODEC.fieldOf("to_place").forGetter(WaterPlantConfiguration::provider),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_substrate").forGetter(WaterPlantConfiguration::shipwreckSubstrate),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("sediment_substrate").forGetter(WaterPlantConfiguration::sedimentSubstrate),
             Codec.INT.fieldOf("minimum_sediment_depth").forGetter(WaterPlantConfiguration::minimumSedimentDepth),
-            Codec.INT.fieldOf("maximum_sediment_depth").forGetter(WaterPlantConfiguration::maximumSedimentDepth)
+            Codec.INT.fieldOf("maximum_sediment_depth").forGetter(WaterPlantConfiguration::maximumSedimentDepth),
+            Codec.BOOL.optionalFieldOf("place_in_shallow_water", false).forGetter(WaterPlantConfiguration::shallowPlacement)
         ).apply(builder, WaterPlantConfiguration::new));
     }
 }
