@@ -49,7 +49,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
             BlockState kelpState = config.config().kelp.tip().getState(random, current);
             BlockState kelpPlantState = config.config().kelp.plant().getState(random, current);
             BlockState kelpRootsState = config.config().kelp.roots().getState(random, current);
-            int k = 1 + random.nextInt(10);
+            int k = 1 + random.nextInt(config.config().maximumHeight);
 
             for (int l = 0; l <= k; l++) {
                 if (level.getBlockState(current).is(Blocks.WATER) && level.getBlockState(current.above()).is(Blocks.WATER) && (l == 0 ? kelpRootsState : kelpPlantState).canSurvive(level, current)) {
@@ -81,11 +81,11 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         if (level.getBlockState(surface.below()).is(config.shipwreckHoldfastAnchors))
             return true;
         if (level.getBlockState(surface.below()).is(config.stoneHoldfastAnchors))
-            return !config.requireSediment;
+            return config.minimumSedimentDepth == 0;
         for (int i = 0; i<=config.maximumSedimentDepth;) {
             if (level.getBlockState(surface.below(i + 1)).is(config.allowedSedimentCovering)) {
                 i++;
-            } else return level.getBlockState(surface.below(i + 1)).is(config.stoneHoldfastAnchors);
+            } else return level.getBlockState(surface.below(i + 1)).is(config.stoneHoldfastAnchors) && i>=config.minimumSedimentDepth;
         }
         return false;
     }
@@ -94,8 +94,9 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
                                     HolderSet<Block> shipwreckHoldfastAnchors,
                                     HolderSet<Block> stoneHoldfastAnchors,
                                     HolderSet<Block> allowedSedimentCovering,
+                                    int minimumSedimentDepth,
                                     int maximumSedimentDepth,
-                                    boolean requireSediment) implements FeatureConfiguration {
+                                    int maximumHeight) implements FeatureConfiguration {
         public record KelpStrand(BlockStateProvider tip, BlockStateProvider plant, BlockStateProvider roots) {
             public static final Codec<KelpStrand> CODEC = Codec.withAlternative(
                 RecordCodecBuilder.create(builder -> builder.group(
@@ -122,12 +123,13 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         }
 
         public static final Codec<KelpConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-                KelpStrand.CODEC.fieldOf("type").forGetter(KelpConfiguration::kelp),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_holdfast_anchors").forGetter(KelpConfiguration::shipwreckHoldfastAnchors),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_holdfast_anchors").forGetter(KelpConfiguration::stoneHoldfastAnchors),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("holdfast_anchors_through").forGetter(KelpConfiguration::allowedSedimentCovering),
-                Codec.INT.fieldOf("maximum_sediment_depth").forGetter(KelpConfiguration::maximumSedimentDepth),
-                Codec.BOOL.fieldOf("require_sediment").forGetter(KelpConfiguration::requireSediment)
+            KelpStrand.CODEC.fieldOf("type").forGetter(KelpConfiguration::kelp),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_holdfast_anchors").forGetter(KelpConfiguration::shipwreckHoldfastAnchors),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_holdfast_anchors").forGetter(KelpConfiguration::stoneHoldfastAnchors),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("holdfast_anchors_through").forGetter(KelpConfiguration::allowedSedimentCovering),
+            Codec.INT.fieldOf("minimum_sediment_depth").forGetter(KelpConfiguration::minimumSedimentDepth),
+            Codec.INT.fieldOf("maximum_sediment_depth").forGetter(KelpConfiguration::maximumSedimentDepth),
+            Codec.INT.optionalFieldOf("maximum_height", 10).forGetter(KelpConfiguration::maximumHeight)
         ).apply(builder, KelpConfiguration::new));
     }
 
