@@ -1,11 +1,46 @@
 {
-  "feature": "naturalphilosophy:plant_patches/red_algae",
+  "feature": {
+    "type": "naturalphilosophy:seaplant",
+    "config": {
+      "to_place": {
+        "type": "minecraft:noise_threshold_provider",
+        "seed": 9876,
+        "noise": {
+          "amplitudes": [
+            1,
+            0,
+            1
+          ],
+          "firstOctave": 0
+        },
+        "scale": 0.1,
+        "threshold": 0.273,
+        "high_chance": 0.5,
+        "default_state": {
+          "Name": "naturalphilosophy:red_algae"
+        },
+        "low_states": [{
+          "Name": "naturalphilosophy:red_algae"
+        }],
+        "high_states": [{
+          "Name": "naturalphilosophy:red_algae",
+          "Properties": {
+            "large": "true"
+          }
+        }]
+      },
+      "shipwreck_substrate": "#naturalphilosophy:shipwreck_timber",
+      "sediment_substrate": "#naturalphilosophy:ocean_sediment",
+      "minimum_sediment_depth": 1,
+      "maximum_sediment_depth": 1
+    }
+  },
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_factor": 40,
-      "noise_offset": 0.25,
-      "noise_to_count_ratio": 4
+      "noise_to_count_ratio": 16,
+      "noise_factor": 80,
+      "noise_offset": 0.75
     },
     {
       "type": "minecraft:in_square"
@@ -18,27 +53,14 @@
       "type": "minecraft:biome"
     },
     {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:any_of",
-        "predicates": [
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [0, -3, 0],
-            "blocks": "#minecraft:base_stone_overworld"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [0, -3, 0],
-            "blocks": "minecraft:sandstone"
-          }
-        ]
-      }
-    },
-    {
       "type": "naturalphilosophy:depth_filter",
       "taper_start": 40,
       "taper_end": 25
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_end": 60,
+      "taper_start": 55
     }
   ]
 }
