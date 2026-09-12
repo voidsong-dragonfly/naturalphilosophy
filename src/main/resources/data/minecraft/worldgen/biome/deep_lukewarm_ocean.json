@@ -72,10 +72,9 @@
       "minecraft:spring_lava"
     ],
     [
-      "naturalphilosophy:water_supertype/ocean_type/kelp",
-      "naturalphilosophy:water_supertype/ocean_type/seagrass_lukewarm",
+      "naturalphilosophy:water_supertype/ocean_type/kelp_lukewarm",
       "naturalphilosophy:water_supertype/ocean_type/red_algae",
-      "naturalphilosophy:water_supertype/ocean_type/deep_reefs",
+      "naturalphilosophy:water_supertype/ocean_type/seagrass_lukewarm",
       "naturalphilosophy:water_supertype/ocean_type/mudflats_vegetation"
     ],
     [

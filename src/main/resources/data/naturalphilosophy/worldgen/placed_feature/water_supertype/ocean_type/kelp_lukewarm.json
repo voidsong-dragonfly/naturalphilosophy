@@ -1,7 +1,14 @@
 {
   "feature": {
     "type": "naturalphilosophy:kelp",
-    "config": {}
+    "config": {
+      "type": "minecraft:kelp",
+      "shipwreck_holdfast_anchors": "#naturalphilosophy:shipwreck_timber",
+      "stone_holdfast_anchors": "#minecraft:base_stone_overworld",
+      "holdfast_anchors_through": "#naturalphilosophy:coarse_sediment",
+      "minimum_sediment_depth": 0,
+      "maximum_sediment_depth": 1
+    }
   },
   "placement": [
     {
@@ -17,24 +24,6 @@
     },
     {
       "type": "minecraft:biome"
-    },
-    {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:any_of",
-        "predicates": [
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [0, -1, 0],
-            "blocks": "#minecraft:base_stone_overworld"
-          },
-          {
-            "type": "minecraft:matching_blocks",
-            "offset": [0, -2, 0],
-            "blocks": "#minecraft:base_stone_overworld"
-          }
-        ]
-      }
     },
     {
       "type": "naturalphilosophy:depth_filter",

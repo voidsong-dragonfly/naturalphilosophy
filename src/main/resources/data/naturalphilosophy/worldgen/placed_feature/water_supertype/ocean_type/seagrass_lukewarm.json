@@ -1,9 +1,65 @@
 {
-  "feature": "naturalphilosophy:plant_patches/seagrass_mixed",
+  "feature":  {
+    "type": "naturalphilosophy:seaplant",
+    "config": {
+      "to_place": {
+        "type": "minecraft:noise_provider",
+        "noise": {
+          "amplitudes": [
+            1,
+            0,
+            1
+          ],
+          "firstOctave": 0
+        },
+        "scale": 0.0625,
+        "seed": 9786,
+        "states": [
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:tall_seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          },
+          {
+            "Name": "minecraft:seagrass"
+          }
+        ]
+      },
+      "shipwreck_substrate": "#naturalphilosophy:shipwreck_timber",
+      "sediment_substrate": "#naturalphilosophy:ocean_sediment",
+      "minimum_sediment_depth": 1,
+      "maximum_sediment_depth": 2
+    }
+  },
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 48
+      "count": 256
     },
     {
       "type": "minecraft:in_square"
@@ -14,14 +70,6 @@
     },
     {
       "type": "minecraft:biome"
-    },
-    {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [0, -3, 0],
-        "blocks": "minecraft:sandstone"
-      }
     },
     {
       "type": "naturalphilosophy:depth_filter",
