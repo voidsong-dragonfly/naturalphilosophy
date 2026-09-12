@@ -1,0 +1,20 @@
+{
+  "feature": "minecraft:sea_pickle",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_start": 40,
+      "taper_end": 25
+    }
+  ]
+}

@@ -73,9 +73,9 @@
     ],
     [
       "naturalphilosophy:water_supertype/ocean_type/coral",
-      "naturalphilosophy:water_supertype/ocean_type/red_algae_warm",
-      "naturalphilosophy:water_supertype/ocean_type/seaplants_reef",
-      "naturalphilosophy:water_supertype/ocean_type/seagrass_warm",
+      "naturalphilosophy:water_supertype/ocean_type/red_algae",
+      "naturalphilosophy:water_supertype/ocean_type/sea_pickles",
+      "naturalphilosophy:water_supertype/ocean_type/seagrass_lukewarm",
       "naturalphilosophy:water_supertype/ocean_type/mudflats_vegetation"
     ],
     [
