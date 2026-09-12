@@ -74,9 +74,8 @@
     ],
     [
       "naturalphilosophy:water_supertype/shore_type/cliff_vegetation",
-      "naturalphilosophy:water_supertype/shore_type/kelp",
-      "naturalphilosophy:water_supertype/shore_type/red_algae",
-      "naturalphilosophy:water_supertype/ocean_type/deep_reefs"
+      "naturalphilosophy:water_supertype/ocean_type/kelp",
+      "naturalphilosophy:water_supertype/ocean_type/red_algae"
     ],
     [
       "minecraft:freeze_top_layer"
