@@ -1,14 +1,21 @@
 {
   "feature": {
     "type": "naturalphilosophy:kelp",
-    "config": {}
+    "config": {
+      "type": "naturalphilosophy:brown_kelp",
+      "shipwreck_holdfast_anchors": "#naturalphilosophy:shipwreck_timber",
+      "stone_holdfast_anchors": "#minecraft:base_stone_overworld",
+      "holdfast_anchors_through": "#naturalphilosophy:coarse_sediment",
+      "minimum_sediment_depth": 1,
+      "maximum_sediment_depth": 1
+    }
   },
   "placement": [
     {
       "type": "minecraft:noise_based_count",
       "noise_to_count_ratio": 120,
       "noise_factor": 80,
-      "noise_offset": 0.75
+      "noise_offset": 0.875
     },
     {
       "type": "minecraft:in_square"
@@ -21,17 +28,9 @@
       "type": "minecraft:biome"
     },
     {
-      "type": "minecraft:block_predicate_filter",
-      "predicate": {
-        "type": "minecraft:matching_blocks",
-        "offset": [0, -2, 0],
-        "blocks": "#minecraft:base_stone_overworld"
-      }
-    },
-    {
       "type": "naturalphilosophy:depth_filter",
       "taper_start": 40,
-      "taper_end": 25
+      "taper_end": 30
     }
   ]
 }
