@@ -3,31 +3,10 @@
     "type": "naturalphilosophy:seaplant",
     "config": {
       "to_place": {
-        "type": "minecraft:noise_threshold_provider",
-        "seed": 9876,
-        "noise": {
-          "amplitudes": [
-            1,
-            0,
-            1
-          ],
-          "firstOctave": 0
-        },
-        "scale": 0.1,
-        "threshold": 0.273,
-        "high_chance": 0.5,
-        "default_state": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
           "Name": "naturalphilosophy:red_algae"
-        },
-        "low_states": [{
-          "Name": "naturalphilosophy:red_algae"
-        }],
-        "high_states": [{
-          "Name": "naturalphilosophy:red_algae",
-          "Properties": {
-            "large": "true"
-          }
-        }]
+        }
       },
       "shipwreck_substrate": "#naturalphilosophy:shipwreck_timber_or_coral",
       "sediment_substrate": "#naturalphilosophy:ocean_sediment",

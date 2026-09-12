@@ -1,10 +1,7 @@
 {
-    "variants": {
-        "large=false": {
-            "model": "naturalphilosophy:block/small_red_algae"
-        },
-        "large=true": {
-            "model": "naturalphilosophy:block/large_red_algae"
-        }
+  "variants": {
+    "": {
+      "model": "naturalphilosophy:block/red_algae"
     }
+  }
 }
