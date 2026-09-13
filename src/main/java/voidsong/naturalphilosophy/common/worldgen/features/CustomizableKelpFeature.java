@@ -20,6 +20,8 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import voidsong.naturalphilosophy.common.NPBlocks;
+import voidsong.naturalphilosophy.common.blocks.KelpRootsBlock;
+import voidsong.naturalphilosophy.common.blocks.KelpRootsBlock.RootsSize;
 import voidsong.naturalphilosophy.common.worldgen.features.CustomizableKelpFeature.KelpConfiguration;
 import voidsong.naturalphilosophy.common.worldgen.features.CustomizableKelpFeature.KelpConfiguration.KelpStrand;
 
@@ -57,7 +59,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
                         level.setBlock(current, kelpState.setValue(KelpBlock.AGE, random.nextInt(4) + 20), 2);
                         i++;
                     } else {
-                        level.setBlock(current, l == 0 ? kelpRootsState : kelpPlantState, 2);
+                        level.setBlock(current, l == 0 ? (kelpRootsState.hasProperty(KelpRootsBlock.SIZE) ? kelpRootsState.setValue(KelpRootsBlock.SIZE, k < 6 ? RootsSize.SMALL : RootsSize.LARGE) : kelpRootsState) : kelpPlantState, 2);
                     }
                 } else if (l > 0) {
                     BlockPos floorPos = current.below();

@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import voidsong.naturalphilosophy.common.blocks.KelpRootsBlock;
+import voidsong.naturalphilosophy.common.blocks.KelpRootsBlock.RootsSize;
 import voidsong.naturalphilosophy.common.blocks.interfaces.GrowingPlantBlockExtension;
 
 @Mixin(GrowingPlantHeadBlock.class)
@@ -34,7 +36,7 @@ public abstract class GrowingPlantHeadBlockMixin extends GrowingPlantBlock {
         if (this instanceof GrowingPlantBlockExtension extension && extension.naturalphilosophy$hasRootsBlock()) {
             BlockState below = level.getBlockState(pos.below());
             if (!(below.is(extension.naturalphilosophy$getRootsBlock()) || below.is(getBodyBlock()))) {
-                return extension.naturalphilosophy$getRootsBlock().defaultBlockState();
+                return extension.naturalphilosophy$getRootsBlock().defaultBlockState().setValue(KelpRootsBlock.SIZE, level.getRandom().nextBoolean() ? RootsSize.SMALL : RootsSize.LARGE);
             }
         }
         return original;

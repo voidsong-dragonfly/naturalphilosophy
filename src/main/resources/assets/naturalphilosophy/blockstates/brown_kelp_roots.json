@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": {
+    "size=small": {
+      "model": "naturalphilosophy:block/brown_kelp_roots_small"
+    },
+    "size=large": {
       "model": "naturalphilosophy:block/brown_kelp_roots"
     }
   }
