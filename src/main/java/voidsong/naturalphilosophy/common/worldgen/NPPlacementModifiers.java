@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.worldgen.placementmodifiers.CanopyGapFilter;
 import voidsong.naturalphilosophy.common.worldgen.placementmodifiers.DepthFilter;
+import voidsong.naturalphilosophy.common.worldgen.placementmodifiers.FlatnessFilter;
 
 import javax.annotation.Nonnull;
 
@@ -23,11 +24,19 @@ public class NPPlacementModifiers {
             }
         });
     public static final DeferredHolder<PlacementModifierType<?>, PlacementModifierType<CanopyGapFilter>> CANOPY_GAP_FILTER = PLACEMENT_MODIFIERS.register("canopy_gap_filter",
-            () -> new PlacementModifierType<>() {
-                @Override
-                @Nonnull
-                public MapCodec<CanopyGapFilter> codec() {
+        () -> new PlacementModifierType<>() {
+            @Override
+            @Nonnull
+            public MapCodec<CanopyGapFilter> codec() {
                     return CanopyGapFilter.CODEC;
                 }
-            });
+        });
+    public static final DeferredHolder<PlacementModifierType<?>, PlacementModifierType<FlatnessFilter>> FLATNESS_FILTER = PLACEMENT_MODIFIERS.register("flatness_filter",
+        () -> new PlacementModifierType<>() {
+            @Override
+            @Nonnull
+            public MapCodec<FlatnessFilter> codec() {
+                return FlatnessFilter.CODEC;
+            }
+        });
 }

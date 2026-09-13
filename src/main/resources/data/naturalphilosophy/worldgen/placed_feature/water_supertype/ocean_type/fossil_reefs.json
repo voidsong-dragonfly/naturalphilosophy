@@ -1,0 +1,46 @@
+{
+  "feature": "naturalphilosophy:formations/fossil_reef",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 64
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:any_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -1, 0],
+            "blocks": "#naturalphilosophy:ocean_sediment"
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [0, -1, 0],
+            "blocks": "minecraft:clay"
+          }
+        ]
+      }
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_end": 20,
+      "taper_start": 15
+    },
+    {
+      "type": "naturalphilosophy:flatness_filter",
+      "radius": 8
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

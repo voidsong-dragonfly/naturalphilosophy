@@ -120,15 +120,15 @@
 2.  new decor blocks for oceans and water biomes, to add variety (?)
     some more plants so it's not just kelp/seagrass/red algae?
         => flower-like blocks?
-        => immature sponges?
         => can use anemonies for this, they place on rocks
-        => could consider a second kelp type instead, such as red/brown ("rose"? definitely a darker brown than red algae) kelp for frozen oceans
+        ✓ => could consider a second kelp type instead, such as red/brown ("rose"? definitely a darker brown than red algae) kelp for frozen oceans
     possibly some decor items like shells?
         => solitary clams or shellfish in or on seabed could work for barrens
-    more variety to deep ocean corals and their placement instead, perhaps?
-        => vary where they're placed, what chunks, etc
-        => check cliffs vs cave bottoms maybe? always in cave bottoms, not always on cliffs? often on rocks?
-        => checking cliffs specifically to filter allows for less spammed placement in the places they are most common
+    ✓ more variety to deep ocean corals and their placement instead, perhaps?
+        ✓ => vary where they're placed, what chunks, etc
+        ✓ => check cliffs vs cave bottoms maybe? always in cave bottoms, not always on cliffs? often on rocks?
+        ✓ => checking cliffs specifically to filter allows for less spammed placement in the places they are most common
+        ✓ => moved deep reefs to fossils instead, though this does make them less likely to spawn in Vanilla ocean depths
     barnacles block similar to glow lichen?
         => can only grow on blocks of `#minecraft:base_overworld_stone` plus some extras, maybe?
         => use to differentiate beach & stony shore cliffs near the waterline (and possibly somewhat above it too)
@@ -140,7 +140,7 @@ Plants:
 ✓ 1. split lilypads
 ✓ 2. wall fern => may not be necessary. will need to consider placement & if it would add much
 ✓ 3. ivy => use vines but with a texture change or two instead of ivy => changing vine texture is complicated by the item model and is not a high priority
-4. brown kelp
+✓ 4. brown kelp
 5. moss growth => may not be necessary, moss carpet on top of rock features may be good enough, same with mossy stone
 ✓ 6. Epiphytic Orchid
 Decor blocks:
@@ -151,7 +151,6 @@ Decor blocks:
 Tweaks:
 ✓ 1. Reduce bamboo density in Cherry Groves
 ✓ 2. Change bamboo generation in Jungles to be more "check the heightmap in a 3x3 at least area, then place a stand of bamboo"
-
 
 
 4.3.0 (Compatibility with Streams Reflowing)

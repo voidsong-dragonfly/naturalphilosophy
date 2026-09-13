@@ -3,6 +3,7 @@ package voidsong.naturalphilosophy.common.worldgen;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SpringConfiguration;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -25,4 +26,5 @@ public class NPFeatures {
     public static final DeferredHolder<Feature<?>, Feature<BlockStateConfiguration>> ROCK = FEATURES.register("rock", () -> new NonLimitedRockFeature(BlockStateConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<CarvedLimitedPoolFeatureConfiguration>> CARVED_LIMITED_POOL = FEATURES.register("carved_limited_pool", () -> new CarvedLimitedPoolFeature(CarvedLimitedPoolFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<MossPatchConfiguration>> MOSS_PATCH = FEATURES.register("moss_patch", () -> new MossPatchFeature(MossPatchConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FOSSIL_REEF = FEATURES.register("fossil_reef", () -> new FossilReefFeature(NoneFeatureConfiguration.CODEC));
 }
