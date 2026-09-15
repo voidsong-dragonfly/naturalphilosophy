@@ -14,6 +14,7 @@ import voidsong.naturalphilosophy.common.worldgen.features.CustomWaterPlantFeatu
 import voidsong.naturalphilosophy.common.worldgen.features.ArchaeologyBlockFeature.ArchaeologyBlockConfiguration;
 import voidsong.naturalphilosophy.common.worldgen.features.CarvedLimitedPoolFeature.CarvedLimitedPoolFeatureConfiguration;
 import voidsong.naturalphilosophy.common.worldgen.features.MossPatchFeature.MossPatchConfiguration;
+import voidsong.naturalphilosophy.common.worldgen.features.PerturbedCuboidRockFeature.PerturbedCuboidRockConfiguration;
 
 @SuppressWarnings("unused")
 public class NPFeatures {
@@ -27,4 +28,5 @@ public class NPFeatures {
     public static final DeferredHolder<Feature<?>, Feature<CarvedLimitedPoolFeatureConfiguration>> CARVED_LIMITED_POOL = FEATURES.register("carved_limited_pool", () -> new CarvedLimitedPoolFeature(CarvedLimitedPoolFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<MossPatchConfiguration>> MOSS_PATCH = FEATURES.register("moss_patch", () -> new MossPatchFeature(MossPatchConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FOSSIL_REEF = FEATURES.register("fossil_reef", () -> new FossilReefFeature(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<PerturbedCuboidRockConfiguration>> PERTURBED_CUBOID_ROCK = FEATURES.register("perturbed_cuboid_rock", () -> new PerturbedCuboidRockFeature(PerturbedCuboidRockConfiguration.CODEC));
 }
