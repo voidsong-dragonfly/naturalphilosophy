@@ -19,6 +19,9 @@
         "Name": "minecraft:dirt"
       }
     },
+    "intersection_cancels_placement": "#minecraft:base_stone_overworld",
+    "stone_amendment_replaceable": "#minecraft:base_stone_overworld",
+    "soil_amendment_replaceable": "#minecraft:dirt",
     "radius_1": {
       "type": "minecraft:biased_to_bottom",
       "min_inclusive": 2,
