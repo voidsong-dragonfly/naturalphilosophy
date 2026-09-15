@@ -1,0 +1,29 @@
+{
+  "feature": "naturalphilosophy:formations/large_rock_field",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 64
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": -1
+    },
+    {
+      "type": "naturalphilosophy:depth_filter",
+      "taper_end": 60,
+      "taper_start": 55
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

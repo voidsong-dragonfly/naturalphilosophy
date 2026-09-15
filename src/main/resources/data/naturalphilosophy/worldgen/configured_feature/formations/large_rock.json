@@ -1,0 +1,38 @@
+{
+  "type": "naturalphilosophy:perturbed_cuboid_rock",
+  "config": {
+    "rock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:stone"
+      }
+    },
+    "aggregate": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:gravel"
+      }
+    },
+    "soil": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "radius_1": {
+      "type": "minecraft:biased_to_bottom",
+      "min_inclusive": 2,
+      "max_inclusive": 6
+    },
+    "radius_2": {
+      "type": "minecraft:biased_to_bottom",
+      "min_inclusive": 2,
+      "max_inclusive": 6
+    },
+    "radius_3": {
+      "type": "minecraft:biased_to_bottom",
+      "min_inclusive": 2,
+      "max_inclusive": 6
+    }
+  }
+}
