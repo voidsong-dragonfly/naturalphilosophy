@@ -37,7 +37,8 @@
     },
     {
       "type": "naturalphilosophy:flatness_filter",
-      "radius": 8
+      "radius": 8,
+      "positive_only": true
     },
     {
       "type": "minecraft:biome"

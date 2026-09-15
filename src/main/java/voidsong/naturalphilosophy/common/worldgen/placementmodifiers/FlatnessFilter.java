@@ -17,19 +17,22 @@ public class FlatnessFilter extends PlacementFilter {
     public static final MapCodec<FlatnessFilter> CODEC = RecordCodecBuilder.mapCodec(
         builder -> builder.group(
                 Codec.INT.fieldOf("radius").forGetter(r -> r.radius),
-                Codec.BOOL.optionalFieldOf("square", false).forGetter(r -> r.square)
+                Codec.BOOL.optionalFieldOf("square", false).forGetter(r -> r.square),
+                Codec.BOOL.optionalFieldOf("positive_only", false).forGetter(r -> r.square)
         ).apply(builder, FlatnessFilter::new)
     );
     private final int radius;
     private final boolean square;
+    private final boolean positiveOnly;
 
-    private FlatnessFilter(int radius, boolean square) {
+    private FlatnessFilter(int radius, boolean square, boolean positiveOnly) {
         this.radius = radius;
         this.square = square;
+        this.positiveOnly = positiveOnly;
     }
 
-    public static FlatnessFilter of(int radius, boolean square) {
-        return new FlatnessFilter(radius, square);
+    public static FlatnessFilter of(int radius, boolean square, boolean positiveOnly) {
+        return new FlatnessFilter(radius, square, positiveOnly);
     }
 
     @Override
@@ -39,7 +42,9 @@ public class FlatnessFilter extends PlacementFilter {
                 // Continue early if we're outside our circular area & we're not checking a square
                 if (!square && radius*radius < (x_offset*x_offset + z_offset*z_offset)) continue;
                 // Check surface height vs placement height at this position
-                if (context.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX() + x_offset, pos.getZ() + z_offset) > pos.getY() + 3) return false;
+                int height = context.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX() + x_offset, pos.getZ() + z_offset);
+                if (height > pos.getY() + 3) return false;
+                if (!positiveOnly && height < pos.getY() - 3) return false;
             }
         }
         return true;
