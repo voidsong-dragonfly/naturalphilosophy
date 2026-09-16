@@ -1,0 +1,32 @@
+{
+  "type": "naturalphilosophy:perturbed_cuboid_rock",
+  "config": {
+    "rock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:stone"
+      }
+    },
+    "aggregate": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:gravel"
+      }
+    },
+    "soil": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "intersection_cancels_placement": "#minecraft:base_stone_overworld",
+    "stone_amendment_replaceable": "#minecraft:base_stone_overworld",
+    "soil_amendment_replaceable": "#minecraft:dirt",
+    "moss_chance": 0.375,
+    "radius": {
+      "type": "minecraft:biased_to_bottom",
+      "min_inclusive": 2,
+      "max_inclusive": 6
+    }
+  }
+}

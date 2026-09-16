@@ -7,18 +7,23 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.minecraft.core.*;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.phys.Vec3;
+import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.worldgen.features.PerturbedCuboidRockFeature.PerturbedCuboidRockConfiguration;
 
 import java.util.ArrayList;
@@ -26,6 +31,9 @@ import java.util.List;
 import java.util.Map;
 
 public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfiguration> {
+    private static final ResourceKey<NormalNoise.NoiseParameters> NOISE = ResourceKey.create(Registries.NOISE, ResourceLocation.fromNamespaceAndPath(NaturalPhilosophy.MODID, "moss_patch"));
+    private static final BlockState MOSS_CARPET = Blocks.MOSS_CARPET.defaultBlockState();
+
     public PerturbedCuboidRockFeature(Codec<PerturbedCuboidRockConfiguration> codec) {
         super(codec);
     }
@@ -97,16 +105,20 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
 
         //Place blocks at the available positions if we did not fail the checks
         // We place stone, then once the rock's shape is established we modify it to ensure we placed accurately.
-        // First comes the exterior replacement, then we place the ground-down aggregate bed and amend any grass/podzol/etc
         for (BlockPos stone : stonePositions)
             level.setBlock(stone, config.rock.getState(random, stone), 3);
+        // First comes the exterior replacement & moss layer placement
+        boolean moss = random.nextDouble() <= config.mossChance();
         for (BlockPos stone : exteriorStonePositions) {
             for (Direction direction : Direction.values())
                 if (level.getBlockState(stone.relative(direction)).isAir()) {
                     level.setBlock(stone, config.exteriorRock.getState(random, stone), 3);
+                    if (moss && level.getBlockState(stone.above()).isAir() && level.getLevel().getChunkSource().randomState().getOrCreateNoise(NOISE).getValue(stone.getX(), 0, stone.getZ()) > 0)
+                        level.setBlock(stone.above(), MOSS_CARPET, 3);
                     break;
                 }
         }
+        // Then we place the ground-down aggregate bed and amend any grass/podzol/etc
         for (BlockPos aggregate : aggregatePositions)
             level.setBlock(aggregate, config.aggregate.getState(random, aggregate), 3);
         for (BlockPos soil : soilPositions)
@@ -121,11 +133,11 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
 
     public record PerturbedCuboidRockConfiguration(BlockStateProvider rock, BlockStateProvider exteriorRock, BlockStateProvider aggregate, BlockStateProvider soil,
                                                    HolderSet<Block> intersectionCancelsPlacement, HolderSet<Block> stoneAmendmentReplaceable, HolderSet<Block> soilAmendmentReplaceable,
-                                                   IntProvider radius1, IntProvider radius2, IntProvider radius3) implements FeatureConfiguration {
+                                                   double mossChance, IntProvider radius1, IntProvider radius2, IntProvider radius3) implements FeatureConfiguration {
         public PerturbedCuboidRockConfiguration(BlockStateProvider rock, BlockStateProvider aggregate, BlockStateProvider soil,
                                                 HolderSet<Block> intersectionCancelsPlacement, HolderSet<Block> stoneAmendmentReplaceable, HolderSet<Block> soilAmendmentReplaceable,
-                                                IntProvider radius) {
-            this(rock, rock, aggregate, soil, intersectionCancelsPlacement, stoneAmendmentReplaceable, soilAmendmentReplaceable, radius, radius, radius);
+                                                double mossChance, IntProvider radius) {
+            this(rock, rock, aggregate, soil, intersectionCancelsPlacement, stoneAmendmentReplaceable, soilAmendmentReplaceable, mossChance, radius, radius, radius);
         }
 
         public static final Codec<PerturbedCuboidRockConfiguration> CODEC = Codec.withAlternative(
@@ -137,6 +149,7 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("intersection_cancels_placement").forGetter(PerturbedCuboidRockConfiguration::intersectionCancelsPlacement),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("soil_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
+                Codec.DOUBLE.optionalFieldOf("moss_chance", 0.0).forGetter(PerturbedCuboidRockConfiguration::mossChance),
                 IntProvider.CODEC.fieldOf("radius_1").forGetter(PerturbedCuboidRockConfiguration::radius1),
                 IntProvider.CODEC.fieldOf("radius_2").forGetter(PerturbedCuboidRockConfiguration::radius2),
                 IntProvider.CODEC.fieldOf("radius_3").forGetter(PerturbedCuboidRockConfiguration::radius3)
@@ -148,6 +161,7 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("intersection_cancels_placement").forGetter(PerturbedCuboidRockConfiguration::intersectionCancelsPlacement),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("soil_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
+                Codec.DOUBLE.optionalFieldOf("moss_chance", 0.0).forGetter(PerturbedCuboidRockConfiguration::mossChance),
                 IntProvider.CODEC.fieldOf("radius").forGetter(PerturbedCuboidRockConfiguration::radius1)
             ).apply(builder, PerturbedCuboidRockConfiguration::new)));
     }
