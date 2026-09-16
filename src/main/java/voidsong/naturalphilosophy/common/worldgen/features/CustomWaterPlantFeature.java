@@ -56,7 +56,7 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
             return false;
         else if (level.getBlockState(surface.above()).isAir() && level.getBiome(surface).value().shouldFreeze(level, surface))
             return false;
-        if (level.getBlockState(surface.below()).is(config.shipwreckSubstrate))
+        if (level.getBlockState(surface.below()).is(config.overrideSubstrate))
             return true;
         for (int i = 0; i<=config.maximumSedimentDepth;) {
             if (level.getBlockState(surface.below(i + 1)).is(config.sedimentSubstrate)) {
@@ -67,14 +67,14 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
     }
 
     public record WaterPlantConfiguration(BlockStateProvider provider,
-                                          HolderSet<Block> shipwreckSubstrate,
+                                          HolderSet<Block> overrideSubstrate,
                                           HolderSet<Block> sedimentSubstrate,
                                           int minimumSedimentDepth,
                                           int maximumSedimentDepth,
                                           boolean shallowPlacement) implements FeatureConfiguration {
         public static final Codec<WaterPlantConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             BlockStateProvider.CODEC.fieldOf("to_place").forGetter(WaterPlantConfiguration::provider),
-            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_substrate").forGetter(WaterPlantConfiguration::shipwreckSubstrate),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("override_substrate").forGetter(WaterPlantConfiguration::overrideSubstrate),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("sediment_substrate").forGetter(WaterPlantConfiguration::sedimentSubstrate),
             Codec.INT.fieldOf("minimum_sediment_depth").forGetter(WaterPlantConfiguration::minimumSedimentDepth),
             Codec.INT.fieldOf("maximum_sediment_depth").forGetter(WaterPlantConfiguration::maximumSedimentDepth),

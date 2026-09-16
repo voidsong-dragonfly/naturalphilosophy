@@ -10,7 +10,7 @@
             "config": {
               "type": "naturalphilosophy:brown_kelp",
               "maximum_height": 6,
-              "shipwreck_holdfast_anchors": "#naturalphilosophy:shipwreck_timber",
+              "override_holdfast_anchors": "#naturalphilosophy:shipwreck_timber_or_monument",
               "stone_holdfast_anchors": "#minecraft:base_stone_overworld",
               "holdfast_anchors_through": "#naturalphilosophy:coarse_sediment",
               "minimum_sediment_depth": 2,
@@ -26,7 +26,7 @@
           "config": {
             "type": "minecraft:kelp",
             "maximum_height": 6,
-            "shipwreck_holdfast_anchors": "#naturalphilosophy:shipwreck_timber",
+            "override_holdfast_anchors": "#naturalphilosophy:shipwreck_timber",
             "stone_holdfast_anchors": "#minecraft:base_stone_overworld",
             "holdfast_anchors_through": "#naturalphilosophy:coarse_sediment",
             "minimum_sediment_depth": 2,

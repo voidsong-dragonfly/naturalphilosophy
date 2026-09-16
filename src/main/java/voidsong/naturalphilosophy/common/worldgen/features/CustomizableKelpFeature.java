@@ -80,7 +80,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
     private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, KelpConfiguration config) {
         if (!level.getBlockState(surface).is(Blocks.WATER))
             return false;
-        if (level.getBlockState(surface.below()).is(config.shipwreckHoldfastAnchors))
+        if (level.getBlockState(surface.below()).is(config.overrideHoldfastAnchors))
             return true;
         if (level.getBlockState(surface.below()).is(config.stoneHoldfastAnchors))
             return config.minimumSedimentDepth == 0;
@@ -93,7 +93,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
     }
 
     public record KelpConfiguration(KelpStrand kelp,
-                                    HolderSet<Block> shipwreckHoldfastAnchors,
+                                    HolderSet<Block> overrideHoldfastAnchors,
                                     HolderSet<Block> stoneHoldfastAnchors,
                                     HolderSet<Block> allowedSedimentCovering,
                                     int minimumSedimentDepth,
@@ -126,7 +126,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
 
         public static final Codec<KelpConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             KelpStrand.CODEC.fieldOf("type").forGetter(KelpConfiguration::kelp),
-            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("shipwreck_holdfast_anchors").forGetter(KelpConfiguration::shipwreckHoldfastAnchors),
+            RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("override_holdfast_anchors").forGetter(KelpConfiguration::overrideHoldfastAnchors),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_holdfast_anchors").forGetter(KelpConfiguration::stoneHoldfastAnchors),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("holdfast_anchors_through").forGetter(KelpConfiguration::allowedSedimentCovering),
             Codec.INT.fieldOf("minimum_sediment_depth").forGetter(KelpConfiguration::minimumSedimentDepth),

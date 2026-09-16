@@ -8,7 +8,7 @@
           "Name": "naturalphilosophy:red_algae"
         }
       },
-      "shipwreck_substrate": "#naturalphilosophy:shipwreck_timber_or_coral",
+      "override_substrate": "#naturalphilosophy:shipwreck_timber_or_coral",
       "sediment_substrate": "#naturalphilosophy:ocean_sediment",
       "minimum_sediment_depth": 1,
       "maximum_sediment_depth": 1
