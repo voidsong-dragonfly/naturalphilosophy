@@ -47,7 +47,7 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         BlockPos current = j > level.getSeaLevel() ? pos : new BlockPos(pos.getX(), j, pos.getZ());
         if (level.getBlockState(current.below()).is(BlockTags.ICE) && j > pos.getY())
             current = pos;
-        if (checkGrowthConditions(current, level, config.config())) {
+        if (checkGrowthConditions(current, level, random, config.config())) {
             BlockState kelpState = config.config().kelp.tip().getState(random, current);
             BlockState kelpPlantState = config.config().kelp.plant().getState(random, current);
             BlockState kelpRootsState = config.config().kelp.roots().getState(random, current);
@@ -77,10 +77,10 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
         return i > 0;
     }
 
-    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, KelpConfiguration config) {
+    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, RandomSource random, KelpConfiguration config) {
         if (!level.getBlockState(surface).is(Blocks.WATER))
             return false;
-        if (level.getBlockState(surface.below()).is(config.overrideHoldfastAnchors))
+        if (level.getBlockState(surface.below()).is(config.overrideHoldfastAnchors) && random.nextDouble() < config.overrideChance)
             return true;
         if (level.getBlockState(surface.below()).is(config.stoneHoldfastAnchors))
             return config.minimumSedimentDepth == 0;
@@ -98,7 +98,8 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
                                     HolderSet<Block> allowedSedimentCovering,
                                     int minimumSedimentDepth,
                                     int maximumSedimentDepth,
-                                    int maximumHeight) implements FeatureConfiguration {
+                                    int maximumHeight,
+                                    double overrideChance) implements FeatureConfiguration {
         public record KelpStrand(BlockStateProvider tip, BlockStateProvider plant, BlockStateProvider roots) {
             public static final Codec<KelpStrand> CODEC = Codec.withAlternative(
                 RecordCodecBuilder.create(builder -> builder.group(
@@ -131,7 +132,8 @@ public class CustomizableKelpFeature extends Feature<KelpConfiguration> {
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("holdfast_anchors_through").forGetter(KelpConfiguration::allowedSedimentCovering),
             Codec.INT.fieldOf("minimum_sediment_depth").forGetter(KelpConfiguration::minimumSedimentDepth),
             Codec.INT.fieldOf("maximum_sediment_depth").forGetter(KelpConfiguration::maximumSedimentDepth),
-            Codec.INT.optionalFieldOf("maximum_height", 10).forGetter(KelpConfiguration::maximumHeight)
+            Codec.INT.optionalFieldOf("maximum_height", 10).forGetter(KelpConfiguration::maximumHeight),
+            Codec.DOUBLE.optionalFieldOf("override_chance", 1.0).forGetter(KelpConfiguration::overrideChance)
         ).apply(builder, KelpConfiguration::new));
     }
 

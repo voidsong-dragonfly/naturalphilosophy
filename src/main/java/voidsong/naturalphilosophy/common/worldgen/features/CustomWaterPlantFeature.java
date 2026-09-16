@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -29,10 +30,11 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
         boolean success = false;
         WorldGenLevel level = config.level();
         BlockPos pos = config.origin();
+        RandomSource random = config.random();
         int k = level.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX(), pos.getZ());
         BlockPos floorPos = k > level.getSeaLevel() ? pos : new BlockPos(pos.getX(), k, pos.getZ());
         BlockState state = config.config().provider().getState(config.random(), floorPos);
-        if (checkGrowthConditions(floorPos, level, config.config(), state)) {
+        if (checkGrowthConditions(floorPos, level, random, config.config(), state)) {
             if (state.canSurvive(level, floorPos)) {
                 if (state.getBlock() instanceof DoublePlantBlock) {
                     BlockPos topPos = floorPos.above();
@@ -47,7 +49,7 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
         return success;
     }
 
-    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, WaterPlantConfiguration config, BlockState place) {
+    private boolean checkGrowthConditions(BlockPos surface, WorldGenLevel level, RandomSource random, WaterPlantConfiguration config, BlockState place) {
         if (!level.getBlockState(surface).is(Blocks.WATER))
             return false;
         if ((place.getBlock() instanceof DoublePlantBlock || !config.shallowPlacement) && !level.getBlockState(surface.above()).is(Blocks.WATER))
@@ -56,7 +58,7 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
             return false;
         else if (level.getBlockState(surface.above()).isAir() && level.getBiome(surface).value().shouldFreeze(level, surface))
             return false;
-        if (level.getBlockState(surface.below()).is(config.overrideSubstrate))
+        if (level.getBlockState(surface.below()).is(config.overrideSubstrate) && random.nextDouble() < config.overrideChance)
             return true;
         for (int i = 0; i<=config.maximumSedimentDepth;) {
             if (level.getBlockState(surface.below(i + 1)).is(config.sedimentSubstrate)) {
@@ -71,14 +73,16 @@ public class CustomWaterPlantFeature extends Feature<WaterPlantConfiguration> {
                                           HolderSet<Block> sedimentSubstrate,
                                           int minimumSedimentDepth,
                                           int maximumSedimentDepth,
-                                          boolean shallowPlacement) implements FeatureConfiguration {
+                                          boolean shallowPlacement,
+                                          double overrideChance) implements FeatureConfiguration {
         public static final Codec<WaterPlantConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             BlockStateProvider.CODEC.fieldOf("to_place").forGetter(WaterPlantConfiguration::provider),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("override_substrate").forGetter(WaterPlantConfiguration::overrideSubstrate),
             RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("sediment_substrate").forGetter(WaterPlantConfiguration::sedimentSubstrate),
             Codec.INT.fieldOf("minimum_sediment_depth").forGetter(WaterPlantConfiguration::minimumSedimentDepth),
             Codec.INT.fieldOf("maximum_sediment_depth").forGetter(WaterPlantConfiguration::maximumSedimentDepth),
-            Codec.BOOL.optionalFieldOf("place_in_shallow_water", false).forGetter(WaterPlantConfiguration::shallowPlacement)
+            Codec.BOOL.optionalFieldOf("place_in_shallow_water", false).forGetter(WaterPlantConfiguration::shallowPlacement),
+            Codec.DOUBLE.optionalFieldOf("override_chance", 1.0).forGetter(WaterPlantConfiguration::overrideChance)
         ).apply(builder, WaterPlantConfiguration::new));
     }
 }

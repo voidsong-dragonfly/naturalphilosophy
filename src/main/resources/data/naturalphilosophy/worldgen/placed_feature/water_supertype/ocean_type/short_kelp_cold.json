@@ -14,7 +14,8 @@
               "stone_holdfast_anchors": "#minecraft:base_stone_overworld",
               "holdfast_anchors_through": "#naturalphilosophy:coarse_sediment",
               "minimum_sediment_depth": 2,
-              "maximum_sediment_depth": 2
+              "maximum_sediment_depth": 2,
+              "override_chance": 0.625
             }
           },
           "placement": []
@@ -30,7 +31,8 @@
             "stone_holdfast_anchors": "#minecraft:base_stone_overworld",
             "holdfast_anchors_through": "#naturalphilosophy:coarse_sediment",
             "minimum_sediment_depth": 2,
-            "maximum_sediment_depth": 2
+            "maximum_sediment_depth": 2,
+            "override_chance": 0.625
           }
         },
         "placement": []
