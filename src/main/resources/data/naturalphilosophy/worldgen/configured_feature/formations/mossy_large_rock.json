@@ -19,7 +19,7 @@
         "Name": "minecraft:dirt"
       }
     },
-    "intersection_cancels_placement": "#minecraft:base_stone_overworld",
+    "intersection_cancels_placement": "#naturalphilosophy:boulder_cannot_intersect",
     "stone_amendment_replaceable": "#minecraft:base_stone_overworld",
     "soil_amendment_replaceable": "#minecraft:dirt",
     "moss_chance": 0.375,

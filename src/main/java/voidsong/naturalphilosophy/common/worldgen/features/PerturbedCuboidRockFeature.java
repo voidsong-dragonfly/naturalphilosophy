@@ -62,7 +62,7 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
         }
 
         // Prep before running the check pass
-        int maxSurfaceHeight = level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, origin.getX(), origin.getZ());
+        int originSurfaceHeight = level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, origin.getX(), origin.getZ());
         int maxRadius = (int)Math.ceil(Math.max(Math.max(size.getX(), size.getY()), size.getZ())*1.5);
         List<BlockPos> exteriorStonePositions = new ArrayList<>();
         List<BlockPos> stonePositions = new ArrayList<>();
@@ -85,7 +85,7 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
                         pos.setWithOffset(origin, x, y, z);
                         // Stone from the rock, & gravel if it collides with the stone below
                         if (level.getBlockState(pos).is(config.intersectionCancelsPlacement)) {
-                            if ((origin.getY() + y) > maxSurfaceHeight) return false;
+                            if ((origin.getY() + y) > originSurfaceHeight) return false;
                             else if (!level.getBlockState(pos.above()).is(config.stoneAmendmentReplaceable)) aggregatePositions.add(pos.immutable());
                         } else {
                             // Add any blocks of the -1 isosurface to the list to check if they border an air block
@@ -147,7 +147,7 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
                 BlockStateProvider.CODEC.fieldOf("aggregate").forGetter(PerturbedCuboidRockConfiguration::aggregate),
                 BlockStateProvider.CODEC.fieldOf("soil").forGetter(PerturbedCuboidRockConfiguration::soil),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("intersection_cancels_placement").forGetter(PerturbedCuboidRockConfiguration::intersectionCancelsPlacement),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
+                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::stoneAmendmentReplaceable),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("soil_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
                 Codec.DOUBLE.optionalFieldOf("moss_chance", 0.0).forGetter(PerturbedCuboidRockConfiguration::mossChance),
                 IntProvider.CODEC.fieldOf("radius_1").forGetter(PerturbedCuboidRockConfiguration::radius1),
@@ -159,7 +159,7 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
                 BlockStateProvider.CODEC.fieldOf("aggregate").forGetter(PerturbedCuboidRockConfiguration::aggregate),
                 BlockStateProvider.CODEC.fieldOf("soil").forGetter(PerturbedCuboidRockConfiguration::soil),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("intersection_cancels_placement").forGetter(PerturbedCuboidRockConfiguration::intersectionCancelsPlacement),
-                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
+                RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("stone_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::stoneAmendmentReplaceable),
                 RegistryCodecs.homogeneousList(Registries.BLOCK).fieldOf("soil_amendment_replaceable").forGetter(PerturbedCuboidRockConfiguration::soilAmendmentReplaceable),
                 Codec.DOUBLE.optionalFieldOf("moss_chance", 0.0).forGetter(PerturbedCuboidRockConfiguration::mossChance),
                 IntProvider.CODEC.fieldOf("radius").forGetter(PerturbedCuboidRockConfiguration::radius1)

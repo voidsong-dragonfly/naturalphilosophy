@@ -1,0 +1,7 @@
+{
+  "remove": [ ],
+  "values": [
+    "#minecraft:base_stone_overworld",
+    "#naturalphilosophy:unique_village_blocks"
+  ]
+}
