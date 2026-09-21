@@ -14,5 +14,6 @@ public class NPFoliagePlacers {
     public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<BranchedMegaJungleFoliagePlacer>> BRANCHED_MEGA_JUNGLE = FOLIAGE_PLACERS.register("branched_jungle_foliage_placer", () -> new FoliagePlacerType<>(BranchedMegaJungleFoliagePlacer.CODEC));
     public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<RoundedBlobFoliagePlacer>> ROUNDED_BLOB = FOLIAGE_PLACERS.register("rounded_blob_foliage_placer", () -> new FoliagePlacerType<>(RoundedBlobFoliagePlacer.CODEC));
     public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<RedMushroomCapFoliagePlacer>> RED_MUSHROOM_CAP = FOLIAGE_PLACERS.register("red_mushroom_cap_foliage_placer", () -> new FoliagePlacerType<>(RedMushroomCapFoliagePlacer.CODEC));
+    public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<RoundedSpruceFoliagePlacer>> ROUNDED_SPRUCE = FOLIAGE_PLACERS.register("rounded_spruce_foliage_placer", () -> new FoliagePlacerType<>(RoundedSpruceFoliagePlacer.CODEC));
     public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<NoOpFoliagePlacer>> NO_OP = FOLIAGE_PLACERS.register("no_op_foliage_placer", () -> new FoliagePlacerType<>(NoOpFoliagePlacer.CODEC));
 }
