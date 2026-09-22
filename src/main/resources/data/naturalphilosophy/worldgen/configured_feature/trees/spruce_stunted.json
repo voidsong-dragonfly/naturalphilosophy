@@ -44,7 +44,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:spruce_foliage_placer",
+      "type": "naturalphilosophy:rounded_spruce_foliage_placer",
       "offset": {
         "type": "minecraft:uniform",
         "max_inclusive": 2,

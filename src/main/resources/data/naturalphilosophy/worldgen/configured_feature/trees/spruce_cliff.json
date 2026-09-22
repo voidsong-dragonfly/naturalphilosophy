@@ -36,7 +36,16 @@
         "hanging_root_placement_attempts": 12
       }
     },
-    "decorators": [],
+    "decorators": [{
+      "type": "naturalphilosophy:simple_alter_ground",
+      "provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:podzol"
+        }
+      },
+      "remove_grass": true
+    }],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
@@ -44,7 +53,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:spruce_foliage_placer",
+      "type": "naturalphilosophy:rounded_spruce_foliage_placer",
       "offset": {
         "type": "minecraft:uniform",
         "max_inclusive": 2,
