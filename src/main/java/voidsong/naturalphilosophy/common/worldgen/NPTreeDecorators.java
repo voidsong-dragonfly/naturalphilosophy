@@ -6,6 +6,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
 import voidsong.naturalphilosophy.common.worldgen.treedecorators.FlamingBromeliadDecorator;
+import voidsong.naturalphilosophy.common.worldgen.treedecorators.SimpleAlterGroundDecorator;
 import voidsong.naturalphilosophy.common.worldgen.treedecorators.WallFernDecorator;
 
 public class NPTreeDecorators {
@@ -13,4 +14,5 @@ public class NPTreeDecorators {
 
     public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<FlamingBromeliadDecorator>> FLAMING_BROMELIAD = TREE_DECORATORS.register("flaming_bromeliad", () -> new TreeDecoratorType<>(FlamingBromeliadDecorator.CODEC));
     public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<WallFernDecorator>> WALL_FERN = TREE_DECORATORS.register("wall_fern", () -> new TreeDecoratorType<>(WallFernDecorator.CODEC));
+    public static final DeferredHolder<TreeDecoratorType<?>, TreeDecoratorType<SimpleAlterGroundDecorator>> SIMPLE_ALTER_GROUND = TREE_DECORATORS.register("simple_alter_ground", () -> new TreeDecoratorType<>(SimpleAlterGroundDecorator.CODEC));
 }
