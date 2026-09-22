@@ -36,16 +36,7 @@
         "hanging_root_placement_attempts": 24
       }
     },
-    "decorators": [{
-      "type": "naturalphilosophy:simple_alter_ground",
-      "provider": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "minecraft:podzol"
-        }
-      },
-      "remove_grass": true
-    }],
+    "decorators": [],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {

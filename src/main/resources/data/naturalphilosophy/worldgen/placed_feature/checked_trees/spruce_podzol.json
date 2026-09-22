@@ -1,5 +1,5 @@
 {
-  "feature": "naturalphilosophy:trees/spruce_no_podzol",
+  "feature": "naturalphilosophy:trees/spruce_podzol",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
