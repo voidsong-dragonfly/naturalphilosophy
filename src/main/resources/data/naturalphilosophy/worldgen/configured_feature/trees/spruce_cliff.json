@@ -37,7 +37,7 @@
       }
     },
     "decorators": [{
-      "type": "naturalphilosophy:simple_alter_ground",
+      "type": "naturalphilosophy:root_area_alter_ground",
       "provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
