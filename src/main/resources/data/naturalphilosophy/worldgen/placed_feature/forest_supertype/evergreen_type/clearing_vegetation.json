@@ -1,32 +1,5 @@
 {
-  "feature": {
-    "type": "minecraft:random_selector",
-    "config": {
-      "features": [{
-        "chance": 0.875,
-        "feature": {
-          "feature": "naturalphilosophy:plant_patches/grass_mixed",
-          "placement": [{
-            "type": "minecraft:block_predicate_filter",
-            "predicate": {
-              "type": "minecraft:matching_blocks",
-              "offset": [0, -1, 0],
-              "blocks": "minecraft:grass_block"
-            }
-          }]
-        }
-      }],
-      "default": {
-        "feature": "naturalphilosophy:plant_patches/grass",
-        "placement": [{
-          "type": "minecraft:surface_relative_threshold_filter",
-          "heightmap": "WORLD_SURFACE",
-          "min_inclusive": 0,
-          "max_inclusive": 5
-        }]
-      }
-    }
-  },
+  "feature": "naturalphilosophy:plant_patches/grass",
   "placement": [
     {
       "type": "minecraft:count",
@@ -38,6 +11,14 @@
     {
       "type": "minecraft:heightmap",
       "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [0, -1, 0],
+        "blocks": "minecraft:grass_block"
+      }
     },
     {
       "type": "minecraft:biome"
