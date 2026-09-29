@@ -5,7 +5,10 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -23,16 +26,19 @@ import java.util.List;
 public class RootAreaAlterGroundDecorator extends TreeDecorator {
     public static final MapCodec<RootAreaAlterGroundDecorator> CODEC = RecordCodecBuilder.mapCodec(
     builder -> builder.group(
-        BlockStateProvider.CODEC.fieldOf("provider").forGetter(instance -> instance.provider),
-        Codec.BOOL.fieldOf("remove_grass").forGetter(instance -> instance.removeGrass)
+            BlockStateProvider.CODEC.fieldOf("provider").forGetter(instance -> instance.provider),
+            Codec.BOOL.fieldOf("remove_grass").forGetter(instance -> instance.removeGrass),
+            Codec.intRange(-1, 8).optionalFieldOf("max_leaf_distance", -1).forGetter(instance -> instance.maxLeafDistance)
         ).apply(builder, RootAreaAlterGroundDecorator::new)
     );
     private final BlockStateProvider provider;
     private final boolean removeGrass;
+    private final int maxLeafDistance;
 
-    public RootAreaAlterGroundDecorator(BlockStateProvider provider, boolean removeGrass) {
+    public RootAreaAlterGroundDecorator(BlockStateProvider provider, boolean removeGrass, int maxLeafDistance) {
         this.provider = provider;
         this.removeGrass = removeGrass;
+        this.maxLeafDistance = maxLeafDistance;
     }
 
     @Override
@@ -66,6 +72,14 @@ public class RootAreaAlterGroundDecorator extends TreeDecorator {
         return bound == 0 || random.nextInt(bound) == 0;
     }
 
+    private static boolean filterLeafHeight(BlockPos pos, LevelSimulatedReader level, int distance) {
+        if ((level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING, pos).getY() - pos.getY()) == 0) return true;
+        for (int i = 1; i < distance; i++) {
+            if (level.isStateAtPosition(pos.offset(0, i, 0), state -> state.is(BlockTags.LEAVES))) return false;
+        }
+        return true;
+    }
+
     private void placeCircle(TreeDecorator.Context context, BlockPos pos, AlterGroundEvent.StateProvider eventProvider) {
         int radius = context.roots().isEmpty() || context.logs().size() < 10 ? 1 : 2;
         for (int i = -radius; i <= radius; i++) {
@@ -82,6 +96,7 @@ public class RootAreaAlterGroundDecorator extends TreeDecorator {
         BlockPos heightmap = pos.equals(origin) ? origin.above() : context.level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, pos);
         if (!TreeFeature.validTreePos(context.level(), heightmap)) return;
         if (!Feature.isGrassOrDirt(context.level(), heightmap.below())) return;
+        if (maxLeafDistance != -1 && filterLeafHeight(heightmap, context.level(), maxLeafDistance)) return;
         // Modified version of the Minecraft version of this function; adds the option to replace grass above
         BlockPos below = heightmap.below();
         context.setBlock(below, eventProvider.getState(context.random(), heightmap.below()));
