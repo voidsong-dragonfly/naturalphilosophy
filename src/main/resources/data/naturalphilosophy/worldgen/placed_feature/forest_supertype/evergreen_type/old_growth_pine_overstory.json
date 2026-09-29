@@ -9,7 +9,7 @@
         },
         {
           "chance": 0.03125,
-          "feature": "naturalphilosophy:checked_trees/pine_thick"
+          "feature": "naturalphilosophy:checked_trees/pine"
         }
       ],
       "default": "naturalphilosophy:checked_trees/pine_mega"
