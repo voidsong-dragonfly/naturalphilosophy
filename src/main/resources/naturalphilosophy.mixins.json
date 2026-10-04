@@ -12,7 +12,6 @@
     "block.GrowingPlantHeadBlockMixin",
     "block.KelpBlockMixin",
     "block.KelpPlantBlockMixin",
-    "block.LeavesBlockMixin",
     "block.MushroomBlockMixin",
     "block.SaplingsMixin",
     "block.TallFlowerBlockMixin",
