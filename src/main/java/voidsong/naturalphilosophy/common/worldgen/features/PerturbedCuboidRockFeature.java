@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.phys.Vec3;
 import voidsong.naturalphilosophy.NaturalPhilosophy;
+import voidsong.naturalphilosophy.common.blocks.interfaces.GrowingPlantBlockExtension;
 import voidsong.naturalphilosophy.common.worldgen.features.PerturbedCuboidRockFeature.PerturbedCuboidRockConfiguration;
 
 import java.util.ArrayList;
@@ -110,13 +111,23 @@ public class PerturbedCuboidRockFeature extends Feature<PerturbedCuboidRockConfi
         // First comes the exterior replacement & moss layer placement
         boolean moss = random.nextDouble() <= config.mossChance();
         for (BlockPos stone : exteriorStonePositions) {
-            for (Direction direction : Direction.values())
-                if (level.getBlockState(stone.relative(direction)).isAir()) {
+            for (Direction direction : Direction.values()) {
+                BlockState relative = level.getBlockState(stone.relative(direction));
+                if (relative.isAir()) {
                     level.setBlock(stone, config.exteriorRock.getState(random, stone), 3);
                     if (moss && level.getBlockState(stone.above()).isAir() && level.getLevel().getChunkSource().randomState().getOrCreateNoise(NOISE).getValue(stone.getX(), 0, stone.getZ()) > 0)
                         level.setBlock(stone.above(), MOSS_CARPET, 3);
                     break;
+                } else if (direction.equals(Direction.UP) && !relative.canSurvive(level, stone.above())) {
+                    if (relative.getBlock() instanceof GrowingPlantBlockExtension extension && extension.naturalphilosophy$hasRootsBlock())
+                        level.setBlock(stone.above(), extension.naturalphilosophy$getRootsBlock().defaultBlockState(), 3);
+                    else {
+                        level.setBlock(stone.above(), Blocks.AIR.defaultBlockState(), 3);
+                        if (!level.getBlockState(stone.above(2)).canSurvive(level, stone.above(2)))
+                            level.setBlock(stone.above(2), Blocks.AIR.defaultBlockState(), 3);
+                    }
                 }
+            }
         }
         // Then we place the ground-down aggregate bed and amend any grass/podzol/etc
         for (BlockPos aggregate : aggregatePositions)
