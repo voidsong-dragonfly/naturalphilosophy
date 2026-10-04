@@ -174,7 +174,7 @@ biomes that should have large rocks:
      ✓ - forest
      ✓ - jungle
      ✓ - old growth birch forest
-     - snowy taiga
+     ✓ - snowy taiga
      ✓ - sparse jungle
      ✓ - taiga
 biomes that should NOT have large rocks:
