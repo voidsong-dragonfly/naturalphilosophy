@@ -153,6 +153,64 @@ Tweaks:
 ✓ 2. Change bamboo generation in Jungles to be more "check the heightmap in a 3x3 at least area, then place a stand of bamboo"
 
 
+
+biomes that should have large rocks:
+    => many large rocks
+     ✓ - bamboo jungle
+     ✓ - dark forest
+     ✓ - old growth pine taiga
+     ✓ - old growth spruce taiga
+     ✓ - stony shore
+     - cherry grove
+    => medium large rocks
+     - meadow
+     - windswept forest
+     - windswept gravelly hills
+     - windswept hills
+     - windswept savanna
+    => fewer large rocks
+     ✓ - birch forest
+     ✓ - flower forest
+     ✓ - forest
+     ✓ - jungle
+     ✓ - old growth birch forest
+     - snowy taiga
+     ✓ - sparse jungle
+     ✓ - taiga
+biomes that should NOT have large rocks:
+ - plains
+ - sunflower plains
+ - savanna
+ - savanna plateau
+ - all 3 cave biomes
+ - beach
+ - snowy beach
+ - desert
+ - badlands
+ - wooded badlands
+ - eroded badlands
+ - swamp
+ - mangrove swamp
+ - mushroom fields
+ - river
+ - frozen river
+ - snowy plains
+ - frozen peaks
+ - jagged peaks
+ - stony peaks
+ - grove
+ - snowy slopes
+
+
+forested biomes that include grass & might need changes:
+ - birch forest
+ - old growth birch forest
+ - forest
+ - flower forest
+ - taiga
+ - old growth pine taiga
+
+
 4.3.0 (Compatibility with Streams Reflowing)
 Change the spawning requirements of rushes & cattails, allow them to place on mud
 Move rushes & cattails away from direct water contact and more towards low-lying ground in general

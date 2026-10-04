@@ -32,7 +32,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "naturalphilosophy:forest_supertype/mossy_rocks"
     ],
     [
       "minecraft:monster_room",
