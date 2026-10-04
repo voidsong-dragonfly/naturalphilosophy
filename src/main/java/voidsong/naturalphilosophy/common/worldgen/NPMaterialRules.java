@@ -22,7 +22,7 @@ public class NPMaterialRules {
     public static final Supplier<MapCodec<? extends SurfaceRules.RuleSource>> BILAYER_FILL = MATERIAL_RULES.register("bilayer_fill", BilayerFillRuleSource.CODEC::codec);
 
     public static final Supplier<MapCodec<? extends SurfaceRules.ConditionSource>> CLIFF = MATERIAL_CONDITIONS.register("cliff", CliffConditionSource.CODEC::codec);
-    public static final Supplier<MapCodec<? extends SurfaceRules.ConditionSource>> FLAT = MATERIAL_CONDITIONS.register("flat", FlatConditionSource.CODEC::codec);
+    public static final Supplier<MapCodec<? extends SurfaceRules.ConditionSource>> SHALLOW_SLOPE = MATERIAL_CONDITIONS.register("shallow_slope", FlatConditionSource.CODEC::codec);
     public static final Supplier<MapCodec<? extends SurfaceRules.ConditionSource>> FLAT_LIQUID = MATERIAL_CONDITIONS.register("flat_liquid", FlatLiquidConditionSource.CODEC::codec);
     public static final Supplier<MapCodec<? extends SurfaceRules.ConditionSource>> UNDERWATER = MATERIAL_CONDITIONS.register("underwater", UnderwaterConditionSource.CODEC::codec);
     public static final Supplier<MapCodec<? extends SurfaceRules.ConditionSource>> CAVE_DEPTH = MATERIAL_CONDITIONS.register("cave_depth", CaveDepthConditionSource.CODEC::codec);

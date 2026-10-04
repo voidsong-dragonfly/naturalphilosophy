@@ -40,7 +40,7 @@ public class NPConditionSources {
 
         @SuppressWarnings("DataFlowIssue")
         public SurfaceRules.Condition apply(SurfaceRules.Context pContext) {
-            return ((ContextExtension)(Object)pContext).naturalphilosophy$getFlat();
+            return ((ContextExtension)(Object)pContext).naturalphilosophy$getShallowSlope();
         }
     }
 

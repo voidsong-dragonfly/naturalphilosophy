@@ -34,7 +34,7 @@ public final class ContextMixin implements ContextExtension {
     private SurfaceRules.Condition cliff;
     @Unique
     @SuppressWarnings("AddedMixinMembersNamePattern")
-    private SurfaceRules.Condition flat;
+    private SurfaceRules.Condition shallowSlope;
     @Unique
     @SuppressWarnings("AddedMixinMembersNamePattern")
     private SurfaceRules.Condition flatLiquid;
@@ -67,7 +67,7 @@ public final class ContextMixin implements ContextExtension {
                                       CallbackInfo ci) {
         SurfaceRules.Context self = (SurfaceRules.Context) (Object) this;
         cliff = new NPSurfaceConditions.CliffCondition(self);
-        flat = new NPSurfaceConditions.FlatCondition(self);
+        shallowSlope = new NPSurfaceConditions.ShallowSlopeCondition(self);
         flatLiquid = new NPSurfaceConditions.FlatLiquidCondition(self);
     }
 
@@ -77,8 +77,8 @@ public final class ContextMixin implements ContextExtension {
     }
 
     @Override
-    public SurfaceRules.Condition naturalphilosophy$getFlat() {
-        return flat;
+    public SurfaceRules.Condition naturalphilosophy$getShallowSlope() {
+        return shallowSlope;
     }
 
     @Override

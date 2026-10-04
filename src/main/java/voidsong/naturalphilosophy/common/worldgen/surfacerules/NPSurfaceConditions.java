@@ -52,8 +52,8 @@ public class NPSurfaceConditions {
         }
     }
 
-    public static class FlatCondition extends SurfaceRules.LazyXZCondition {
-        public FlatCondition(SurfaceRules.Context context) {
+    public static class ShallowSlopeCondition extends SurfaceRules.LazyXZCondition {
+        public ShallowSlopeCondition(SurfaceRules.Context context) {
             super(context);
         }
 
@@ -69,12 +69,16 @@ public class NPSurfaceConditions {
             int west  = Math.max(i - 1, 0);
             // Check the heightmaps of the neighboring blocks at water-level. This is not optimized because it's only used in one rule currently.
             ChunkAccess chunk = this.context.chunk;
+            int height = chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, j);
             int northHeight = chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, north);
             int eastHeight  = chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, east, j);
             int southHeight = chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, south);
             int westHeight  = chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, west, j);
+            // Get the max height
+            int maxHeight = Math.max(height, Math.max(northHeight, Math.max(southHeight, Math.max(westHeight, eastHeight))));
+            int minHeight = Math.min(height, Math.min(northHeight, Math.min(southHeight, Math.min(westHeight, eastHeight))));
             // Check deviation from expected height
-            return Math.max(northHeight, Math.max(southHeight, Math.max(westHeight, eastHeight))) - Math.min(northHeight, Math.min(southHeight, Math.min(westHeight, eastHeight))) == 0 && northHeight == chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, i, j);
+            return (maxHeight - minHeight) < 2;
         }
     }
 
