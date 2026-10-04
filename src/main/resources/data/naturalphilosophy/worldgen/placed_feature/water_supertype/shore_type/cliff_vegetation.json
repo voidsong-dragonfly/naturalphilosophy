@@ -16,11 +16,6 @@
       "type": "minecraft:biome"
     },
     {
-      "type": "naturalphilosophy:depth_filter",
-      "taper_start": 80,
-      "taper_end": 64
-    },
-    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
