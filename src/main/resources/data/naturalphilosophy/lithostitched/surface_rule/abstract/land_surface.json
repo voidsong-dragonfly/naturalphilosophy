@@ -1,0 +1,241 @@
+{
+  "type": "minecraft:sequence",
+  "sequence": [
+    {
+      "_comment": "Biomes with all-grass top blocks. Will not have the same sublayer.",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:cherry_grove",
+          "minecraft:plains",
+          "minecraft:sunflower_plains",
+          "minecraft:savanna",
+          "minecraft:savanna_plateau"
+        ]
+      },
+      "then_run": {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:grass_block"
+        }
+      }
+    },
+    {
+      "_comment": "Biomes with snowy permafrost. Will have similar sublayers.",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:snowy_plains",
+          "minecraft:snowy_taiga"
+        ]
+      },
+      "then_run": {
+        "type": "naturalphilosophy:noise_threshold_selector",
+        "noise": "minecraft:surface",
+        "default_rule": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:snow_block"
+          }
+        },
+        "lower_noise_thresholds": [ -0.3125 ],
+        "ruleset": [{
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:grass_block"
+          }
+        }]
+      }
+    },
+    {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [ "minecraft:grove" ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:mountain_supertype/grove_surface"
+      }
+    },
+    {
+      "_comment": "Pine (closed) taigas. Will have similar sublayers",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [ "minecraft:old_growth_pine_taiga" ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:forest_supertype/pine_taiga_surface"
+      }
+    },
+    {
+      "_comment": "Spruce (open) taigas. Will have similar sublayers",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:taiga",
+          "minecraft:old_growth_spruce_taiga"
+        ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:forest_supertype/spruce_taiga_surface"
+      }
+    },
+    {
+      "_comment": "Sparse, highly open forests. Will have similar sublayers",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:flower_forest",
+          "minecraft:birch_forest"
+        ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:forest_supertype/sparse_forest_surface"
+      }
+    },
+    {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [ "minecraft:old_growth_birch_forest" ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:forest_supertype/old_growth_birch_forest_surface"
+      }
+    },
+    {
+      "_comment": "Full cover non-rainforests. Small clearings dot the surface. Will have similar sublayers.",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:forest",
+          "minecraft:sparse_jungle"
+        ]
+      },
+      "then_run": {
+        "type": "naturalphilosophy:noise_threshold_selector",
+        "noise": "minecraft:surface",
+        "default_rule": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:grass_block"
+          }
+        },
+        "lower_noise_thresholds": [ -0.375 ],
+        "ruleset": [{
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "naturalphilosophy:alfizol"
+          }
+        }]
+      }
+    },
+    {
+      "_comment": "Rainforest with entirely alfizol surfaces. Will not have the same sublayer.",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:dark_forest",
+          "minecraft:jungle",
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "then_run": {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "naturalphilosophy:alfizol"
+        }
+      }
+    },
+    {
+      "_comment": "Swampy biomes with significant surface water coverage near sea level. Will have similar sublayers.",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:swamp",
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:water_supertype/swamp_surface"
+      }
+    },
+    {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [ "minecraft:stony_shore" ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:water_supertype/stony_shore_surface"
+      }
+    },
+    {
+      "_comment": "Wooded Badlands surface rules are fine as is, this adds terracotta channels to their tops",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [ "minecraft:wooded_badlands" ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:desert_supertype/wooded_badlands"
+      }
+    },
+    {
+      "_comment": "Badlands should have red sand as deep as normal deserts at their bases",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:badlands",
+          "minecraft:eroded_badlands",
+          "minecraft:wooded_badlands"
+        ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:desert_supertype/badlands"
+      }
+    },
+    {
+      "_comment": "Rivers and oceans have waterline sediment (gravel, sand, mud)",
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": [
+          "minecraft:river",
+          "minecraft:frozen_river",
+          "minecraft:warm_ocean",
+          "minecraft:lukewarm_ocean",
+          "minecraft:deep_lukewarm_ocean",
+          "minecraft:ocean",
+          "minecraft:deep_ocean",
+          "minecraft:cold_ocean",
+          "minecraft:deep_cold_ocean",
+          "minecraft:frozen_ocean",
+          "minecraft:deep_frozen_ocean"
+        ]
+      },
+      "then_run": {
+        "type": "lithostitched:reference",
+        "rules": "naturalphilosophy:water_supertype/alluvial_sediment"
+      }
+    }
+  ]
+}
