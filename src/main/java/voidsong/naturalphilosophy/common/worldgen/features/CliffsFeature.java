@@ -94,28 +94,54 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         continue;
                     }
                 }
-                // Place the cliff block if we don't need to passthrough it. Default passthrough is for all ores, stones, terracotta, etc.
-                mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
-                boolean place;
-                // We only iterate up to a max of 16 blocks down as blocks that need amendment should not place below that
-                while ((place = configuration.replaceable.test(level, mut.move(Direction.DOWN))) || configuration.passthrough.test(level, mut) && (centerHeight - mut.getY() < 16)) {
-                    if (place) level.setBlock(mut, configuration.provider.getState(context.random(), mut), 2);
+                // Update the cliff array for later processing
+                cliffPlacement[i + 1][j + 1] = true;
+            }
+        }
+
+        // Process the placement arrays
+        for (int i = 1; i < 17; i++) {
+            for (int j = 1; j < 17; j++) {
+                // Remove any cliff areas that are single columns with no cliffs surrounding them
+                boolean surroundings = false;
+                for (Direction offset : Direction.Plane.HORIZONTAL) {
+                    surroundings = cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()];
+                    if (surroundings) break;
                 }
-                // Remove any grass or other plants that can't survive above the cliff; amend kelp
-                mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
-                BlockState relative = level.getBlockState(mut);
-                if (!relative.canSurvive(level, mut)) {
-                    if (relative.getBlock() instanceof GrowingPlantBlockExtension extension && extension.naturalphilosophy$hasRootsBlock())
-                        level.setBlock(mut, extension.naturalphilosophy$getRootsBlock().defaultBlockState(), 3);
-                    else {
-                        BlockState replace = relative.hasProperty(BlockStateProperties.WATERLOGGED) && relative.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                        level.setBlock(mut, replace, 3);
-                        if (!level.getBlockState(mut.move(Direction.UP)).canSurvive(level, mut))
+                if (!surroundings) cliffPlacement[i][j] = false;
+                // Touch up cliff areas where the center point of an area between cliff sections is not but should be
+            }
+        }
+
+        // Actually place the subset of the placement arrays that fits within the chunk
+        for (int i = 0; i < 16; i++) {
+            for (int j = 0; j < 16; j++) {
+                if (cliffPlacement[i+1][j+1]) {
+                    int centerHeight = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i, 0, j)).getY();
+                    // Place the cliff block if we don't need to passthrough it. Default passthrough is for all ores, stones, terracotta, etc.
+                    mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
+                    boolean place;
+                    // We only iterate up to a max of 16 blocks down as blocks that need amendment should not place below that
+                    while ((place = configuration.replaceable.test(level, mut.move(Direction.DOWN))) || configuration.passthrough.test(level, mut) && (centerHeight - mut.getY() < 16)) {
+                        if (place) level.setBlock(mut, configuration.provider.getState(context.random(), mut), 2);
+                    }
+                    // Remove any grass or other plants that can't survive above the cliff; amend kelp
+                    mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
+                    BlockState relative = level.getBlockState(mut);
+                    if (!relative.canSurvive(level, mut)) {
+                        if (relative.getBlock() instanceof GrowingPlantBlockExtension extension && extension.naturalphilosophy$hasRootsBlock())
+                            level.setBlock(mut, extension.naturalphilosophy$getRootsBlock().defaultBlockState(), 3);
+                        else {
+                            BlockState replace = relative.hasProperty(BlockStateProperties.WATERLOGGED) && relative.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
                             level.setBlock(mut, replace, 3);
+                            if (!level.getBlockState(mut.move(Direction.UP)).canSurvive(level, mut))
+                                level.setBlock(mut, replace, 3);
+                        }
                     }
                 }
             }
         }
+
         return true;
     }
 
