@@ -132,10 +132,10 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         if (relative.getBlock() instanceof GrowingPlantBlockExtension extension && extension.naturalphilosophy$hasRootsBlock())
                             level.setBlock(mut, extension.naturalphilosophy$getRootsBlock().defaultBlockState(), 3);
                         else {
-                            BlockState replace = relative.hasProperty(BlockStateProperties.WATERLOGGED) && relative.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                            level.setBlock(mut, replace, 3);
-                            if (!level.getBlockState(mut.move(Direction.UP)).canSurvive(level, mut))
-                                level.setBlock(mut, replace, 3);
+                            level.setBlock(mut, relative.hasProperty(BlockStateProperties.WATERLOGGED) && relative.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
+                            relative = level.getBlockState(mut.move(Direction.UP));
+                            if (!relative.canSurvive(level, mut))
+                                level.setBlock(mut, relative.hasProperty(BlockStateProperties.WATERLOGGED) && relative.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
                         }
                     }
                 }
