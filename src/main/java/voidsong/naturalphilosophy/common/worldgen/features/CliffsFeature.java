@@ -25,12 +25,14 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<CliffsConfiguration> context) {
-        CliffsConfiguration configuration = context.config();
+        CliffsConfiguration config = context.config();
         WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
 
         // Data storage for cliff & cliff-edge processing
         boolean[][] cliffPlacement = new boolean[18][18];
+        boolean[][] cliffAmendmentPlacement = new boolean[18][18];
+        boolean[][] cliffLipFlat = new boolean[18][18];
         boolean[][] caveLipEdge = new boolean[18][18];
 
         // Fill the placement arrays with their values so they can be processed
@@ -49,8 +51,6 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 int min = Math.min(northHeight, Math.min(eastHeight, Math.min(southHeight, westHeight)));
                 int maxAdjacent = Math.max(northHeight, Math.max(eastHeight, Math.max(southHeight, westHeight)));
                 int max = Math.max(centerHeight, maxAdjacent);
-                // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
-                if ((max - min) < 3 && !(max > maxAdjacent && (max - min) == 2)) continue;
                 // Check if we're on a cliff lip (low depth, flat height profile) based on the top of this block column if run at the surface
                 mut.setWithOffset(origin, i, 0, j).setY(blockY);
                 boolean lip = false;
@@ -61,7 +61,12 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         break;
                     }
                 }
+
                 if (lip && (max - blockY < 3)) continue;
+                // Add to the potential amendment placement area if we are just on the border
+                if ((max - min) == 2 && !(max > maxAdjacent)) cliffAmendmentPlacement[i + 1][j + 1] = true;
+                // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
+                if ((max - min) < 3 && !(max > maxAdjacent && (max - min) == 2)) continue;
                 // Skip the next check if we're at in the middle of a large cliff, regardless of depth,
                 // to prevent 3D cliffs from having grass streaks due to lip-like behavior
                 if (!((max - blockY) > 11 && (blockY - min) > 1)) {
@@ -94,24 +99,69 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         continue;
                     }
                 }
+                // Remove this block from consideration if the base is already a passthrough cliff block
+                // We filter this to only within the current chunk to not filter out already-placed cliffs from other chunks
+                if ((i >= 0 && i <= 15 && j >= 0 && j <= 15) && config.passthrough.test(level, mut.setWithOffset(origin, i, 0, j).setY(blockY)) && config.test) continue;
                 // Update the cliff array for later processing
                 cliffPlacement[i + 1][j + 1] = true;
+                // Update the cliff lip flat array for later processing
+                if (maxAdjacent == centerHeight) {
+                    int numFlat = 0;
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        int surfaceHeight = switch (offset) {
+                            case NORTH -> northHeight;
+                            case EAST -> eastHeight;
+                            case SOUTH -> southHeight;
+                            case WEST -> westHeight;
+                            default -> Integer.MIN_VALUE;
+                        };
+                        if (surfaceHeight == centerHeight) numFlat++;
+                    }
+                    if (numFlat >= 2) cliffLipFlat[i + 1][j + 1] = true;
+                }
             }
         }
 
         // Process the placement arrays
-        for (int i = 1; i < 17; i++) {
-            for (int j = 1; j < 17; j++) {
-                // Remove any cliff areas that are single columns with no cliffs surrounding them
-                boolean surroundings = false;
-                for (Direction offset : Direction.Plane.HORIZONTAL) {
-                    surroundings = cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()];
-                    if (surroundings) break;
+        // We iterate once per check rather than once overall to ensure one pass is finished before the next
+        // Remove any cliff areas that are flat-top single columns connected on only one side to a cliff
+        if (config.test) {
+            for (int i = 1; i < 17; i++)
+                for (int j = 1; j < 17; j++) {
+                    if (cliffLipFlat[i][j]) {
+                        int surroundings = 0;
+                        for (Direction offset : Direction.Plane.HORIZONTAL) {
+                            if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] || cliffAmendmentPlacement[i + offset.getStepX()][j + offset.getStepZ()]) surroundings++;
+                        }
+                        if (surroundings == 1) cliffPlacement[i][j] = false;
+                        // Always passthrough if the height diff is >24 in the future; possibly consider filtering for perpendicularicity as well (blacklist if the block two back is also a cliff contiguously and is of abs(diff) == 1 height?
+                    }
                 }
-                if (!surroundings) cliffPlacement[i][j] = false;
-                // Touch up cliff areas where the center point of an area between cliff sections is not but should be
-            }
+
         }
+        // Remove any cliff areas that are single columns with no cliffs surrounding them
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++) {
+                if (cliffPlacement[i][j]) {
+                    boolean surroundings = false;
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        surroundings = surroundings || cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()];
+                    }
+                    if (!surroundings) cliffPlacement[i][j] = false;
+                    // Possibly limit some of these so if the block is sufficiently far below we can remove anyway? would need to see how that fares
+                }
+            }
+        // Fill in any potential cliff areas that are two blocks tall and surrounded by three or more cliff blocks
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (cliffAmendmentPlacement[i][j]) {
+                    int surroundings = 0;
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        surroundings += cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] ? 1 : 0;
+                    }
+                    if (surroundings > 2) cliffPlacement[i][j] = true;
+                }
+
 
         // Actually place the subset of the placement arrays that fits within the chunk
         for (int i = 0; i < 16; i++) {
@@ -122,8 +172,8 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
                     boolean place;
                     // We only iterate up to a max of 16 blocks down as blocks that need amendment should not place below that
-                    while ((place = configuration.replaceable.test(level, mut.move(Direction.DOWN))) || configuration.passthrough.test(level, mut) && (centerHeight - mut.getY() < 16)) {
-                        if (place) level.setBlock(mut, configuration.provider.getState(context.random(), mut), 2);
+                    while ((place = config.replaceable.test(level, mut.move(Direction.DOWN))) || config.passthrough.test(level, mut) && (centerHeight - mut.getY() < 16)) {
+                        if (place) level.setBlock(mut, config.provider.getState(context.random(), mut), 2);
                     }
                     // Remove any grass or other plants that can't survive above the cliff; amend kelp
                     mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
@@ -145,11 +195,12 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         return true;
     }
 
-    public record CliffsConfiguration(BlockStateProvider provider, BlockPredicate replaceable, BlockPredicate passthrough) implements FeatureConfiguration {
+    public record CliffsConfiguration(BlockStateProvider provider, BlockPredicate replaceable, BlockPredicate passthrough, boolean test) implements FeatureConfiguration {
         public static final Codec<CliffsConfiguration> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             BlockStateProvider.CODEC.fieldOf("to_place").forGetter(CliffsConfiguration::provider),
             BlockPredicate.CODEC.fieldOf("replaceable").forGetter(CliffsConfiguration::replaceable),
-            BlockPredicate.CODEC.fieldOf("passthrough").forGetter(CliffsConfiguration::passthrough)
+            BlockPredicate.CODEC.fieldOf("passthrough").forGetter(CliffsConfiguration::passthrough),
+            Codec.BOOL.optionalFieldOf("test", false).forGetter(CliffsConfiguration::test)
         ).apply(builder, CliffsConfiguration::new));
     }
 }
