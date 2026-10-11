@@ -5,6 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,11 +41,11 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         for (int i = -1; i < 17; i++) {
             for (int j = -1; j < 17; j++) {
                 // Get heightmap heights for the five blocks in a + pattern we care about for slope
-                int centerHeight = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i, 0, j)).getY();
-                int northHeight = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i, 0, j - 1)).getY();
-                int eastHeight  = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i + 1, 0, j)).getY();
-                int southHeight = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i, 0, j + 1)).getY();
-                int westHeight  = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i - 1, 0, j)).getY();
+                int centerHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j));
+                int northHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j - 1));
+                int eastHeight  = getHeight(level, mut.setWithOffset(origin, i + 1, 0, j));
+                int southHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j + 1));
+                int westHeight  = getHeight(level, mut.setWithOffset(origin, i - 1, 0, j));
                 // Get actual block position of this coordinate
                 int blockY = centerHeight - 1;
                 // Get adjacent heightmap min & max heights. We include this block in max but not min to keep spires but not pits as stone
@@ -167,7 +168,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 if (cliffPlacement[i+1][j+1]) {
-                    int centerHeight = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, mut.setWithOffset(origin, i, 0, j)).getY();
+                    int centerHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j));
                     // Place the cliff block if we don't need to passthrough it. Default passthrough is for all ores, stones, terracotta, etc.
                     mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
                     boolean place;
@@ -193,6 +194,10 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         }
 
         return true;
+    }
+
+    private static int getHeight(LevelReader level, BlockPos pos) {
+        return level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, pos).getY();
     }
 
     public record CliffsConfiguration(BlockStateProvider provider, BlockPredicate replaceable, BlockPredicate passthrough, boolean test) implements FeatureConfiguration {
