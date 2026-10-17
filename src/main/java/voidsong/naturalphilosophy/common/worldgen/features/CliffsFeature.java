@@ -30,6 +30,41 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
 
+        // Pre-process to mark one to two block thick overhangs without any other overhangs within a 3x3 area centered on them
+        // These mess up detection by being processed as overhangs to be avoided placement for & overhangs to not place by
+        byte[][] overhangDepth = new byte[18][18];
+        MutableBlockPos mut = origin.mutable();
+        for (int i = -1; i < 17; i++)
+            for (int j = -1; j < 17; j++) {
+                int centerHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j));
+                mut.setWithOffset(origin, i, 0, j).setY(centerHeight);
+                for (byte k = 0; k < 6; k++) {
+                    mut.move(Direction.DOWN);
+                    if (level.getBlockState(mut).canBeReplaced()) {
+                        overhangDepth[i + 1][j + 1] = k;
+                        break;
+                    }
+                }
+            }
+        // Remove all the marked overhangs by replacing them with air blocks
+        for (int i = 0; i < 16; i++)
+            for (int j = 0; j < 16; j++)
+                if (overhangDepth[i+1][j+1] < 3 && overhangDepth[i+1][j+1] > 0) {
+                    boolean neighbors = false;
+                    for (int k = -1; k < 2 && !neighbors; k++)
+                        for (int l = -1; l < 2; l++) {
+                            if (overhangDepth[i + 1 + k][j + 1 + l] != 0 && !(k == 0 && l == 0)) {
+                                neighbors = true;
+                                break;
+                            }
+                        }
+                    if (!neighbors) {
+                        int centerHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j));
+                        level.setBlock(mut.setWithOffset(origin, i, 0, j).setY(centerHeight - 1), Blocks.AIR.defaultBlockState(), 2);
+                        if (overhangDepth[i+1][j+1] == 2) level.setBlock(mut.below(), Blocks.AIR.defaultBlockState(), 2);
+                    }
+                }
+
         // Data storage for cliff & cliff-edge processing
         boolean[][] cliffPlacement = new boolean[18][18];
         boolean[][] cliffAmendmentPlacement = new boolean[18][18];
@@ -37,7 +72,6 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         boolean[][] caveLipEdge = new boolean[18][18];
 
         // Fill the placement arrays with their values so they can be processed
-        MutableBlockPos mut = origin.mutable();
         for (int i = -1; i < 17; i++) {
             for (int j = -1; j < 17; j++) {
                 // Get heightmap heights for the five blocks in a + pattern we care about for slope
@@ -53,17 +87,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 int maxAdjacent = Math.max(northHeight, Math.max(eastHeight, Math.max(southHeight, westHeight)));
                 int max = Math.max(centerHeight, maxAdjacent);
                 // Check if we're on a cliff lip (low depth, flat height profile) based on the top of this block column if run at the surface
-                mut.setWithOffset(origin, i, 0, j).setY(blockY);
-                boolean lip = false;
-                for (int k = 0; k < 3; k++) {
-                    mut.move(Direction.DOWN);
-                    if (level.getBlockState(mut).canBeReplaced()) {
-                        lip = true;
-                        break;
-                    }
-                }
-
-                if (lip && (max - blockY < 3)) continue;
+                if (overhangDepth[i+1][j+1] > 0 && overhangDepth[i+1][j+1] < 4 && (max - blockY < 3)) continue;
                 // Add to the potential amendment placement area if we are just on the border
                 if ((max - min) == 2 && !(max > maxAdjacent)) cliffAmendmentPlacement[i + 1][j + 1] = true;
                 // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
@@ -197,7 +221,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
     }
 
     private static int getHeight(LevelReader level, BlockPos pos) {
-        return level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, pos).getY();
+        return Math.min(level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, pos).getY(), level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, pos).getY());
     }
 
     public record CliffsConfiguration(BlockStateProvider provider, BlockPredicate replaceable, BlockPredicate passthrough, boolean test) implements FeatureConfiguration {
