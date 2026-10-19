@@ -144,7 +144,6 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         surroundings = surroundings || cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()];
                     }
                     if (!surroundings) cliffPlacement[i][j] = false;
-                    // Possibly limit some of these so if the block is sufficiently far below we can remove anyway? would need to see how that fares
                 }
             }
         // Fill in any potential cliff areas that are two blocks tall and surrounded by three or more cliff blocks
@@ -157,6 +156,28 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     }
                     if (surroundings > 2) cliffPlacement[i][j] = true;
                 }
+        // Remove any cliff areas that are double columns with no cliffs surrounding them
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++) {
+                if (cliffPlacement[i][j]) {
+                    int surroundings = 0;
+                    Direction second = null;
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()]) {
+                            surroundings++;
+                            boolean surroundingsRelative = false;
+                            for (Direction offsetRelative : Direction.Plane.HORIZONTAL) {
+                                surroundingsRelative = surroundingsRelative || (!offsetRelative.equals(offset.getOpposite()) && arrayGetOrDefault(cliffPlacement, i, j, offset, offsetRelative, true));
+                            }
+                            if (!surroundingsRelative) second = offset;
+                        }
+                    }
+                    if (surroundings == 1 && second != null) {
+                        cliffPlacement[i][j] = false;
+                        cliffPlacement[i + second.getStepX()][j + second.getStepZ()] = false;
+                    }
+                }
+            }
 
 
         // Actually place the subset of the placement arrays that fits within the chunk
@@ -191,6 +212,10 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         return true;
     }
 
+    /**
+     * Gets the "true" height of the top of terrain for a column
+     * Takes the lowest of OCEAN_FLOOR and OCEAN_FLOOR_WG to allow for filtering to work as well as get underneath trees
+     */
     private static int getHeight(LevelReader level, BlockPos pos) {
         return Math.min(level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, pos).getY(), level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, pos).getY());
     }
