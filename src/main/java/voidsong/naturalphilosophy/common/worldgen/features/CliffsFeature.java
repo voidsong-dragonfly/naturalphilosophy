@@ -68,7 +68,6 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         // Data storage for cliff & cliff-edge processing
         boolean[][] cliffPlacement = new boolean[18][18];
         boolean[][] cliffAmendmentPlacement = new boolean[18][18];
-        boolean[][] cliffLipFlat = new boolean[18][18];
         boolean[][] caveLipEdge = new boolean[18][18];
 
         // Fill the placement arrays with their values so they can be processed
@@ -131,41 +130,11 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 }
                 // Update the cliff array for later processing
                 cliffPlacement[i + 1][j + 1] = true;
-                // Update the cliff lip flat array for later processing
-                if (maxAdjacent == centerHeight) {
-                    int numFlat = 0;
-                    for (Direction offset : Direction.Plane.HORIZONTAL) {
-                        int surfaceHeight = switch (offset) {
-                            case NORTH -> northHeight;
-                            case EAST -> eastHeight;
-                            case SOUTH -> southHeight;
-                            case WEST -> westHeight;
-                            default -> Integer.MIN_VALUE;
-                        };
-                        if (surfaceHeight == centerHeight) numFlat++;
-                    }
-                    if (numFlat >= 2) cliffLipFlat[i + 1][j + 1] = true;
-                }
             }
         }
 
         // Process the placement arrays
         // We iterate once per check rather than once overall to ensure one pass is finished before the next
-        // Remove any cliff areas that are flat-top single columns connected on only one side to a cliff
-        if (config.test) {
-            for (int i = 1; i < 17; i++)
-                for (int j = 1; j < 17; j++) {
-                    if (cliffLipFlat[i][j]) {
-                        int surroundings = 0;
-                        for (Direction offset : Direction.Plane.HORIZONTAL) {
-                            if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] || cliffAmendmentPlacement[i + offset.getStepX()][j + offset.getStepZ()]) surroundings++;
-                        }
-                        if (surroundings == 1) cliffPlacement[i][j] = false;
-                        // Always passthrough if the height diff is >24 in the future; possibly consider filtering for perpendicularicity as well (blacklist if the block two back is also a cliff contiguously and is of abs(diff) == 1 height?
-                    }
-                }
-
-        }
         // Remove any cliff areas that are single columns with no cliffs surrounding them
         for (int i = 1; i < 17; i++)
             for (int j = 1; j < 17; j++) {
