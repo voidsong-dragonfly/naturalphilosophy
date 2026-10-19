@@ -124,9 +124,11 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         continue;
                     }
                 }
-                // Remove this block from consideration if the base is already a passthrough cliff block
-                // We filter this to only within the current chunk to not filter out already-placed cliffs from other chunks
-                if ((i >= 0 && i <= 15 && j >= 0 && j <= 15) && config.passthrough.test(level, mut.setWithOffset(origin, i, 0, j).setY(blockY)) && config.test) continue;
+                // Check if we're at the bottom of the edge of a shallow cave (stone bottom, smaller than 5 block drop)
+                // We filter this to within the current chunk to not filter out already-placed cliffs from other chunks
+                if ((i >= 0 && i <= 15 && j >= 0 && j <= 15) && (maxAdjacent - centerHeight) < 5) {
+                    if (config.passthrough.test(level, mut.setWithOffset(origin, i, 0, j).setY(blockY))) continue;
+                }
                 // Update the cliff array for later processing
                 cliffPlacement[i + 1][j + 1] = true;
                 // Update the cliff lip flat array for later processing
@@ -222,6 +224,19 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
 
     private static int getHeight(LevelReader level, BlockPos pos) {
         return Math.min(level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, pos).getY(), level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, pos).getY());
+    }
+
+    /**
+     * Gets placement from the provided (18x18) array, or returns true if out of range
+     */
+    private static boolean arrayGetOrDefault(boolean[][] placement, int i, int j, Direction offset1, Direction offset2, boolean defaultValue) {
+        int indexX = i + offset1.getStepX() + offset2.getStepX();
+        int indexZ = j + offset1.getStepZ() + offset2.getStepZ();
+        if (indexX < 0 || indexX > 17 || indexZ < 0 || indexZ > 17) {
+            return defaultValue;
+        } else {
+            return placement[indexX][indexZ];
+        }
     }
 
     public record CliffsConfiguration(BlockStateProvider provider, BlockPredicate replaceable, BlockPredicate passthrough, boolean test) implements FeatureConfiguration {
