@@ -62,6 +62,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         int centerHeight = getHeight(level, mut.setWithOffset(origin, i, 0, j));
                         level.setBlock(mut.setWithOffset(origin, i, 0, j).setY(centerHeight - 1), Blocks.AIR.defaultBlockState(), 2);
                         if (overhangDepth[i+1][j+1] == 2) level.setBlock(mut.below(), Blocks.AIR.defaultBlockState(), 2);
+                        overhangDepth[i+1][j+1] = 0;
                     }
                 }
 
