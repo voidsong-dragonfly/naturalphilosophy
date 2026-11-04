@@ -157,6 +157,18 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
             }
         }
 
+        // Pre-process to copy overhang discontinuities across to their opposite pairings
+        // This is a secondary post-assignment iteration to not require removal of copies for non-cliff columns' neighbors
+        for (int i = 0; i < 18; i++)
+            for (int j = 0; j < 18; j++)
+                for (Direction offset : Direction.Plane.HORIZONTAL) {
+                    int xStep = i + offset.getStepX();
+                    int zStep = j + offset.getStepZ();
+                    if (overhangDiscontinuityDirections[i][j][offset.get2DDataValue()] && xStep > -1 && xStep < 18 && zStep > -1 && zStep < 18) {
+                        overhangDiscontinuityDirections[xStep][zStep][offset.getOpposite().get2DDataValue()] = true;
+                    }
+                }
+
         // Process the placement arrays
         // We iterate once per check rather than once overall to ensure one pass is finished before the next
         // Remove any cliff areas that are single columns with no cliffs surrounding them
@@ -165,7 +177,8 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 if (cliffPlacement[i][j]) {
                     boolean surroundings = false;
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
-                        surroundings = surroundings || cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()];
+                        // Surroundings does not increment for discontinuous contact across cliff overhangs even if cliff placement is present
+                        surroundings = surroundings || (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]);
                     }
                     if (!surroundings) cliffPlacement[i][j] = false;
                 }
@@ -187,15 +200,20 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     int surroundings = 0;
                     Direction second = null;
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
-                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()]) {
+                        // Calculate the above for surrounding columns, with bounds checks, if the second column is contiguous
+                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) {
                             surroundings++;
                             boolean surroundingsRelative = false;
                             for (Direction offsetRelative : Direction.Plane.HORIZONTAL) {
-                                surroundingsRelative = surroundingsRelative || (!offsetRelative.equals(offset.getOpposite()) && arrayGetOrDefault(cliffPlacement, i, j, offset, offsetRelative, true));
+                                // This calculation should be disregarded if offset is back towards the origin point or the column is discontinuous across an overhang
+                                boolean disregard = offsetRelative.equals(offset.getOpposite()) || overhangDiscontinuityDirections[i + offset.getStepX()][j + offset.getStepZ()][offsetRelative.get2DDataValue()];
+                                // Surroundings only updates if the location shouldn't be disregarded due to any of the above the factors
+                                surroundingsRelative = surroundingsRelative || (!disregard && arrayGetOrDefault(cliffPlacement, i, j, offset, offsetRelative, true));
                             }
                             if (!surroundingsRelative) second = offset;
                         }
                     }
+                    // Remove cliff placement if there is only one neighboring truly contiguous column (disregarding discontinuities across overhangs, etc)
                     if (surroundings == 1 && second != null) {
                         cliffPlacement[i][j] = false;
                         cliffPlacement[i + second.getStepX()][j + second.getStepZ()] = false;
