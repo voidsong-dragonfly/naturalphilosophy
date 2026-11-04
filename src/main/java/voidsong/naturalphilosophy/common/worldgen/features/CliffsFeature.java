@@ -70,6 +70,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         boolean[][] cliffPlacement = new boolean[18][18];
         boolean[][] cliffAmendmentPlacement = new boolean[18][18];
         boolean[][] caveLipEdge = new boolean[18][18];
+        boolean[][][] overhangDiscontinuityDirections = new boolean[18][18][4];
 
         // Fill the placement arrays with their values so they can be processed
         for (int i = -1; i < 17; i++) {
@@ -98,15 +99,10 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     // Set offset height
                     mut.setWithOffset(origin, i, 0, j).setY(blockY + 2);
                     boolean caveLipFloor = false;
+                    boolean unlippedCliff = false;
                     // Check that we're not at the bottom of a hanging-over cave entrance by checking if there's air pockets beneath ground height on the sides
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
-                        // Get the replaceability of the block to any side, then reset the mutable pos
-                        mut.move(offset);
-                        boolean replaceable = level.getBlockState(mut).canBeReplaced();
-                        // We need to always analyze the bottom block to ensure we don't desync from the true position
-                        replaceable = level.getBlockState(mut.move(Direction.DOWN)).canBeReplaced() || replaceable;
-                        mut.move(offset.getOpposite()).move(Direction.UP);
-                        // Check the height to see if there is a replaceable block below heightmap
+                        // Get the surface height to determine if this direction has potential to be an overhang
                         int surfaceHeight = switch (offset) {
                             case NORTH -> northHeight;
                             case EAST -> eastHeight;
@@ -114,13 +110,40 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                             case WEST -> westHeight;
                             default -> Integer.MIN_VALUE;
                         };
-                        if (replaceable && blockY + 2 < surfaceHeight) {
-                            caveLipFloor = true;
+                        // If this direction has potential to be an overhang for this column, determine whether it is or not
+                        if (surfaceHeight > centerHeight + 1) {
+                            boolean gappedColumn = false;
+                            // Get whether the column to the side is gapped; check overhang depth first then replaceability
+                            // Should cut down on expensive world queries while not disrupting position setting
+                            // Only checks overhang array when we are within bounds for it
+                            if (i + offset.getStepX() > -2 && i + offset.getStepX() < 17 && j + offset.getStepZ() > -2 && j + offset.getStepZ() < 17) {
+                                int offsetOverhang = overhangDepth[i + 1 + offset.getStepX()][j + 1 + offset.getStepZ()];
+                                gappedColumn = offsetOverhang < (surfaceHeight - centerHeight) && offsetOverhang > 0;
+                            }
+                            if (!gappedColumn) {
+                                // Get the replaceability of the block to any side, then reset the mutable pos
+                                mut.move(offset);
+                                gappedColumn = level.getBlockState(mut).canBeReplaced();
+                                // We need to always analyze the bottom block to ensure we don't desync from the true position
+                                gappedColumn = level.getBlockState(mut.move(Direction.DOWN)).canBeReplaced() || gappedColumn;
+                                mut.move(offset.getOpposite()).move(Direction.UP);
+                            }
+                            // Check the height to see if there is a gapped column below heightmap
+                            if (gappedColumn) {
+                                overhangDiscontinuityDirections[i + 1][j + 1][offset.get2DDataValue()] = true;
+                                caveLipFloor = true;
+                            }
+                            // unlipped cliff should also require this to be grass or otherwise a replaceable block
+                            if (!gappedColumn && (surfaceHeight - centerHeight) > 2)
+                                unlippedCliff = true;
+                        } else if (centerHeight > surfaceHeight + 2 && overhangDepth[i + 1][j + 1] == 0) {
+                            unlippedCliff = true;
                         }
                     }
-                    // Update the cave lip edge array and continue
-                    if (caveLipFloor) {
-                        if (i >= 0 && i <= 15 && j >= 0 && j <= 15) caveLipEdge[i + 1][j + 1] = true;
+                    // Update the cave lip edge array, reset overhang discontinuity array, and continue
+                    if (caveLipFloor && !unlippedCliff) {
+                        caveLipEdge[i + 1][j + 1] = true;
+                        overhangDiscontinuityDirections[i + 1][j + 1] = new boolean[]{false, false, false, false};
                         continue;
                     }
                 }
