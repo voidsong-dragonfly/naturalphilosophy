@@ -93,59 +93,56 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 if ((max - min) == 2 && !(max > maxAdjacent)) cliffAmendmentPlacement[i + 1][j + 1] = true;
                 // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
                 if ((max - min) < 3 && !(max > maxAdjacent && (max - min) == 2)) continue;
-                // Skip the next check if we're at in the middle of a large cliff, regardless of depth,
-                // to prevent 3D cliffs from having grass streaks due to lip-like behavior
-                if (!((max - blockY) > 11 && (blockY - min) > 1)) {
-                    // Set offset height
-                    mut.setWithOffset(origin, i, 0, j).setY(blockY + 2);
-                    boolean caveLipFloor = false;
-                    boolean unlippedCliff = false;
-                    // Check that we're not at the bottom of a hanging-over cave entrance by checking if there's air pockets beneath ground height on the sides
-                    for (Direction offset : Direction.Plane.HORIZONTAL) {
-                        // Get the surface height to determine if this direction has potential to be an overhang
-                        int surfaceHeight = switch (offset) {
-                            case NORTH -> northHeight;
-                            case EAST -> eastHeight;
-                            case SOUTH -> southHeight;
-                            case WEST -> westHeight;
-                            default -> Integer.MIN_VALUE;
-                        };
-                        // If this direction has potential to be an overhang for this column, determine whether it is or not
-                        if (surfaceHeight > centerHeight + 1) {
-                            boolean gappedColumn = false;
-                            // Get whether the column to the side is gapped; check overhang depth first then replaceability
-                            // Should cut down on expensive world queries while not disrupting position setting
-                            // Only checks overhang array when we are within bounds for it
-                            if (i + offset.getStepX() > -2 && i + offset.getStepX() < 17 && j + offset.getStepZ() > -2 && j + offset.getStepZ() < 17) {
-                                int offsetOverhang = overhangDepth[i + 1 + offset.getStepX()][j + 1 + offset.getStepZ()];
-                                gappedColumn = offsetOverhang < (surfaceHeight - centerHeight) && offsetOverhang > 0;
-                            }
-                            if (!gappedColumn) {
-                                // Get the replaceability of the block to any side, then reset the mutable pos
-                                mut.move(offset);
-                                gappedColumn = level.getBlockState(mut).canBeReplaced();
-                                // We need to always analyze the bottom block to ensure we don't desync from the true position
-                                gappedColumn = level.getBlockState(mut.move(Direction.DOWN)).canBeReplaced() || gappedColumn;
-                                mut.move(offset.getOpposite()).move(Direction.UP);
-                            }
-                            // Check the height to see if there is a gapped column below heightmap
-                            if (gappedColumn) {
-                                overhangDiscontinuityDirections[i + 1][j + 1][offset.get2DDataValue()] = true;
-                                caveLipFloor = true;
-                            }
-                            // unlipped cliff should also require this to be grass or otherwise a replaceable block
-                            if (!gappedColumn && (surfaceHeight - centerHeight) > 2)
-                                unlippedCliff = true;
-                        } else if (centerHeight > surfaceHeight + 2 && overhangDepth[i + 1][j + 1] == 0) {
-                            unlippedCliff = true;
+                // Process cliff overhang checks for this column
+                // Set offset height
+                mut.setWithOffset(origin, i, 0, j).setY(blockY + 2);
+                boolean caveLipFloor = false;
+                boolean unlippedCliff = false;
+                // Check that we're not at the bottom of a hanging-over cave entrance by checking if there's air pockets beneath ground height on the sides
+                for (Direction offset : Direction.Plane.HORIZONTAL) {
+                    // Get the surface height to determine if this direction has potential to be an overhang
+                    int surfaceHeight = switch (offset) {
+                        case NORTH -> northHeight;
+                        case EAST -> eastHeight;
+                        case SOUTH -> southHeight;
+                        case WEST -> westHeight;
+                        default -> Integer.MIN_VALUE;
+                    };
+                    // If this direction has potential to be an overhang for this column, determine whether it is or not
+                    if (surfaceHeight > centerHeight + 1) {
+                        boolean gappedColumn = false;
+                        // Get whether the column to the side is gapped; check overhang depth first then replaceability
+                        // Should cut down on expensive world queries while not disrupting position setting
+                        // Only checks overhang array when we are within bounds for it
+                        if (i + offset.getStepX() > -2 && i + offset.getStepX() < 17 && j + offset.getStepZ() > -2 && j + offset.getStepZ() < 17) {
+                            int offsetOverhang = overhangDepth[i + 1 + offset.getStepX()][j + 1 + offset.getStepZ()];
+                            gappedColumn = offsetOverhang < (surfaceHeight - centerHeight) && offsetOverhang > 0;
                         }
+                        if (!gappedColumn) {
+                            // Get the replaceability of the block to any side, then reset the mutable pos
+                            mut.move(offset);
+                            gappedColumn = level.getBlockState(mut).canBeReplaced();
+                            // We need to always analyze the bottom block to ensure we don't desync from the true position
+                            gappedColumn = level.getBlockState(mut.move(Direction.DOWN)).canBeReplaced() || gappedColumn;
+                            mut.move(offset.getOpposite()).move(Direction.UP);
+                        }
+                        // Check the height to see if there is a gapped column below heightmap
+                        if (gappedColumn) {
+                            overhangDiscontinuityDirections[i + 1][j + 1][offset.get2DDataValue()] = true;
+                            caveLipFloor = true;
+                        }
+                        // unlipped cliff should also require this to be grass or otherwise a replaceable block
+                        if (!gappedColumn && (surfaceHeight - centerHeight) > 2)
+                            unlippedCliff = true;
+                    } else if (centerHeight > surfaceHeight + 2 && overhangDepth[i + 1][j + 1] == 0) {
+                        unlippedCliff = true;
                     }
-                    // Update the cave lip edge array, reset overhang discontinuity array, and continue
-                    if (caveLipFloor && !unlippedCliff) {
-                        caveLipEdge[i + 1][j + 1] = true;
-                        overhangDiscontinuityDirections[i + 1][j + 1] = new boolean[]{false, false, false, false};
-                        continue;
-                    }
+                }
+                // Update the cave lip edge array, reset overhang discontinuity array, and continue
+                if (caveLipFloor && !unlippedCliff) {
+                    caveLipEdge[i + 1][j + 1] = true;
+                    overhangDiscontinuityDirections[i + 1][j + 1] = new boolean[]{false, false, false, false};
+                    continue;
                 }
                 // Check if we're at the bottom of the edge of a shallow cave (stone bottom, smaller than 5 block drop)
                 // We filter this to within the current chunk to not filter out already-placed cliffs from other chunks
