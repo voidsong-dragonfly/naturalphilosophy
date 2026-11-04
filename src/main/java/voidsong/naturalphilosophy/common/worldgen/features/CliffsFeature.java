@@ -193,6 +193,11 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     while ((place = config.replaceable.test(level, mut.move(Direction.DOWN))) || config.passthrough.test(level, mut) && (centerHeight - mut.getY() < 16)) {
                         if (place) level.setBlock(mut, config.provider.getState(context.random(), mut), 2);
                     }
+                    if (level.getBlockState(mut).canBeReplaced() && ((config.replaceable.test(level, mut.below())) || config.passthrough.test(level, mut.below()))) {
+                        while ((place = config.replaceable.test(level, mut.move(Direction.DOWN))) || config.passthrough.test(level, mut) && (centerHeight - mut.getY() < 16)) {
+                            if (place) level.setBlock(mut, config.provider.getState(context.random(), mut), 2);
+                        }
+                    }
                     // Remove any grass or other plants that can't survive above the cliff; amend kelp
                     mut.setWithOffset(origin, i, 0, j ).setY(centerHeight);
                     BlockState relative = level.getBlockState(mut);
