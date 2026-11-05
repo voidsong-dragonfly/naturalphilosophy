@@ -190,6 +190,22 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     }
                     if (surroundings > 2) cliffPlacement[i][j] = true;
                 }
+        // Fill in any potential columns where a single block of overhang is adjacent to a combination of four cliffs or drops
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (overhangDepth[i][j] > 0 && !cliffPlacement[i][j]) {
+                    int drops = 0;
+                    int cliffs = 0;
+                    int centerHeight = getHeight(level, mut.setWithOffset(origin, i-1, 0, j-1));
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        int offsetHeight = getHeight(level, mut.setWithOffset(origin, i-1 + offset.getStepX(), 0, j-1 + offset.getStepZ()));
+                        // Increment the number of discontinuous overhang drops adjacent to this block
+                        if (centerHeight > offsetHeight + Math.max(overhangDepth[i][j], 0)) drops++;
+                        // Increment the number of adjacent cliff blocks that are not discontinuous
+                        else if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) cliffs++;
+                    }
+                    if (drops > 0 && cliffs + drops == 4) cliffPlacement[i][j] = true;
+                }
         // Remove any cliff areas that are double columns with no cliffs surrounding them
         for (int i = 1; i < 17; i++)
             for (int j = 1; j < 17; j++) {
