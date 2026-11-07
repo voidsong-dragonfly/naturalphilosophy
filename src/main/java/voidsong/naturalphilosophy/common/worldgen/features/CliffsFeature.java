@@ -131,11 +131,13 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                             overhangDiscontinuityDirections[i + 1][j + 1][offset.get2DDataValue()] = true;
                             caveLipFloor = true;
                         }
-                        // unlipped cliff should also require this to be grass or otherwise a replaceable block
+                        // Unlipped cliff should also require this to be grass or otherwise a replaceable block
                         if (!gappedColumn && (surfaceHeight - centerHeight) > 2)
                             unlippedCliff = true;
-                    } else if (centerHeight > surfaceHeight + 2 && overhangDepth[i + 1][j + 1] == 0) {
-                        unlippedCliff = true;
+                    // This check passes for a depth change for the column of at least 2, as well as if the columns are not discontinuous across that direction
+                    // Discontinuity is determined if the overhang depth of the center column is greater than or equal to the height change across the columns
+                    } else if (centerHeight > surfaceHeight + 1) {
+                        if ((centerHeight - surfaceHeight) <= overhangDepth[i + 1][j + 1]) unlippedCliff = true;
                     }
                 }
                 // Update the cave lip edge array, reset overhang discontinuity array, and continue
