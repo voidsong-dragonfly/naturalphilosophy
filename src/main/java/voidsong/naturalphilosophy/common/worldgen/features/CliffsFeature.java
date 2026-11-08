@@ -230,11 +230,12 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     }
                     if (drops > 0 && cliffs + drops == 4) cliffPlacement[i][j] = true;
                 }
-        // Remove any cliff areas that are double columns with no cliffs surrounding them
+        // Remove any cliff areas that are two adjacent columns with no cliffs surrounding them or isolated adjacent triple columns
         for (int i = 1; i < 17; i++)
             for (int j = 1; j < 17; j++) {
                 if (cliffPlacement[i][j]) {
                     int surroundings = 0;
+                    int surroundingsWithRelativeSurroundings = 0;
                     Direction second = null;
                     // Search the directly adjacent columns (plus shape) to determine the count of first- and second- order connected columns
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
@@ -249,7 +250,8 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                                 // Surroundings only updates if the location shouldn't be disregarded due to any of the above the factors
                                 surroundingsRelative = surroundingsRelative || (!disregard && arrayGetOrDefault(cliffPlacement, i, j, offset, offsetRelative, true));
                             }
-                            if (!surroundingsRelative) second = offset;
+                            if (surroundingsRelative) surroundingsWithRelativeSurroundings++;
+                            else second = offset;
                         }
                     }
                     // Remove cliff placement if there are zero neighboring columns; this catches previous removals if they did not process fully
@@ -258,6 +260,12 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     if (surroundings == 1 && second != null) {
                         cliffPlacement[i][j] = false;
                         cliffPlacement[i + second.getStepX()][j + second.getStepZ()] = false;
+                    }
+                    if (surroundings == 2 && surroundingsWithRelativeSurroundings == 0) {
+                        cliffPlacement[i][j] = false;
+                        for (Direction offset : Direction.Plane.HORIZONTAL) {
+                            if (!overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] = false;
+                        }
                     }
                 }
             }
