@@ -137,7 +137,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     // This check passes for a depth change for the column of at least 2, as well as if the columns are not discontinuous across that direction
                     // Discontinuity is determined if the overhang depth of the center column is greater than or equal to the height change across the columns
                     } else if (centerHeight > surfaceHeight + 1) {
-                        if ((centerHeight - surfaceHeight) <= overhangDepth[i + 1][j + 1]) unlippedCliff = true;
+                        if (overhangDepth[i + 1][j + 1] == 0 || ((centerHeight - surfaceHeight) <= overhangDepth[i + 1][j + 1])) unlippedCliff = true;
                     }
                 }
                 // Update the cave lip edge array, reset overhang discontinuity array, and continue
