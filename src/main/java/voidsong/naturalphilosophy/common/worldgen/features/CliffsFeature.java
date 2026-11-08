@@ -170,16 +170,37 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
 
         // Process the placement arrays
         // We iterate once per check rather than once overall to ensure one pass is finished before the next
-        // Remove any cliff areas that are single columns with no cliffs surrounding them
+        // Remove any cliff areas that are single columns with either no cliffs surrounding them, OR a significant drop with few nearby columns
+        // The second set are functionally equivalent to single columns with no communicating cliffs nearby
         for (int i = 1; i < 17; i++)
             for (int j = 1; j < 17; j++) {
                 if (cliffPlacement[i][j]) {
-                    boolean surroundings = false;
+                    // Set up search variables
+                    int centerHeight = getHeight(level, mut.setWithOffset(origin, i-1, 0, j-1));
+                    int surroundings = 0;
+                    int maxHeightDiff = Integer.MIN_VALUE;
+                    int squareSurroundings = 0;
+                    boolean equalHeightColumns = false;
+                    // Search the directly adjacent columns (plus shape) to count the number of adjacent columns & get the max height difference
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
                         // Surroundings does not increment for discontinuous contact across cliff overhangs even if cliff placement is present
-                        surroundings = surroundings || (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]);
+                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) {
+                            surroundings++;
+                            maxHeightDiff = Math.max(maxHeightDiff, centerHeight - getHeight(level, mut.move(offset)));
+                            mut.move(offset.getOpposite());
+                        }
                     }
-                    if (!surroundings) cliffPlacement[i][j] = false;
+                    // If there is a single directly adjacent column with "a significant drop", determine if it has "few nearby columns" and whether they are equal in height to the central column
+                    if (surroundings == 1 && maxHeightDiff > 2) {
+                        for (int k = -1; k < 2; k++)
+                            for (int l = -1; l < 2; l++)
+                                if (cliffPlacement[i+k][j+l] && !(k == 0 && l == 0)) {
+                                    if(centerHeight == getHeight(level, mut.setWithOffset(origin, i-1+k, 0, j-1+l))) equalHeightColumns = true;
+                                    squareSurroundings++;
+                                }
+                    }
+                    // If we have zero surroundings or a significant drop with few nearby columns without any equal in height to the central column, remove it from the placement array
+                    if (surroundings == 0 || (squareSurroundings > 0 && squareSurroundings < 3 && !equalHeightColumns)) cliffPlacement[i][j] = false;
                 }
             }
         // Fill in any potential cliff areas that are two blocks tall and surrounded by three or more cliff blocks
@@ -199,6 +220,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     int drops = 0;
                     int cliffs = 0;
                     int centerHeight = getHeight(level, mut.setWithOffset(origin, i-1, 0, j-1));
+                    // Search the directly adjacent columns (plus shape) to count the number of adjacent cliff column and drop columns
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
                         int offsetHeight = getHeight(level, mut.setWithOffset(origin, i-1 + offset.getStepX(), 0, j-1 + offset.getStepZ()));
                         // Increment the number of discontinuous overhang drops adjacent to this block
@@ -214,11 +236,13 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 if (cliffPlacement[i][j]) {
                     int surroundings = 0;
                     Direction second = null;
+                    // Search the directly adjacent columns (plus shape) to determine the count of first- and second- order connected columns
                     for (Direction offset : Direction.Plane.HORIZONTAL) {
-                        // Calculate the above for surrounding columns, with bounds checks, if the second column is contiguous
+                        // Increment count of first-order contiguous columns, and proceed to check second-order contiguous columns
                         if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) {
                             surroundings++;
                             boolean surroundingsRelative = false;
+                            // Count second-order contiguous columns with bounds checks (arrayGetOrDefault) that return true if we cannot get cliff placement due to it being two blocks outside the chunk
                             for (Direction offsetRelative : Direction.Plane.HORIZONTAL) {
                                 // This calculation should be disregarded if offset is back towards the origin point or the column is discontinuous across an overhang
                                 boolean disregard = offsetRelative.equals(offset.getOpposite()) || overhangDiscontinuityDirections[i + offset.getStepX()][j + offset.getStepZ()][offsetRelative.get2DDataValue()];
@@ -228,6 +252,8 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                             if (!surroundingsRelative) second = offset;
                         }
                     }
+                    // Remove cliff placement if there are zero neighboring columns; this catches previous removals if they did not process fully
+                    if (surroundings == 0) cliffPlacement[i][j] = false;
                     // Remove cliff placement if there is only one neighboring truly contiguous column (disregarding discontinuities across overhangs, etc)
                     if (surroundings == 1 && second != null) {
                         cliffPlacement[i][j] = false;
@@ -235,6 +261,39 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     }
                 }
             }
+        // Removes singular columns protruding above cliff faces that are placed inverse normal (upslope) of the cliff face
+        // These occur in single columns where one column satisfies the cliff height (>= 3 block change) but the rest of its "block pane" does not
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (cliffPlacement[i][j]) {
+                    // Set up search variables
+                    int centerHeight = getHeight(level, mut.setWithOffset(origin, i-1, 0, j-1));
+                    int surroundings = 0;
+                    int maxHeightDiff = Integer.MIN_VALUE;
+                    int squareSurroundings = 0;
+                    boolean equalHeightColumns = false;
+                    // Search the directly adjacent columns (plus shape) to count the number of adjacent columns & get the max height difference
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        // Surroundings does not increment for discontinuous contact across cliff overhangs even if cliff placement is present
+                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) {
+                            surroundings++;
+                            maxHeightDiff = Math.max(maxHeightDiff, centerHeight - getHeight(level, mut.move(offset)));
+                            mut.move(offset.getOpposite());
+                        }
+                    }
+                    // If there is a single directly adjacent column within a pane of otherwise non-cliff columns (occurs at drop height of 2, this columns will have a height of 1 above that for 3)
+                    // Determine the number of nearby columns and whether they are equal in height to the central column
+                    if (surroundings == 1 && maxHeightDiff ==  2) {
+                        for (int k = -1; k < 2; k++)
+                            for (int l = -1; l < 2; l++)
+                                if (cliffPlacement[i+k][j+l] && !(k == 0 && l == 0)) {
+                                    if(centerHeight == getHeight(level, mut.setWithOffset(origin, i-1+k, 0, j-1+l))) equalHeightColumns = true;
+                                    squareSurroundings++;
+                                }
+                    }
+                    // If the above criterion are satisfied (nearby columns count was incremented, none equal in height to the central column), remove this column from the placement array
+                    if (squareSurroundings > 0 && squareSurroundings < 4 && !equalHeightColumns) cliffPlacement[i][j] = false;
+                }
 
 
         // Actually place the subset of the placement arrays that fits within the chunk
