@@ -243,18 +243,18 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         surroundings += cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !cliffPaneAmendmentShort[i + offset.getStepX()][j + offset.getStepZ()] ? 1 : 0;
                     }
                     if (surroundings < 2) {
-                        cliffPaneAmendment[i][j] = false;
                         cliffPlacement[i][j] = false;
                     }
                 }
         // Remove long, single-column thick "panes" of cliff columns with two block drops that have no contiguous panes up- or down- slope
         for (int i = 1; i < 17; i++)
             for (int j = 1; j < 17; j++)
-                if (cliffPaneAmendment[i][j]) {
+                if (cliffPaneAmendment[i][j] && !cliffPaneAmendmentShort[i][j]) {
                     boolean pane = false;
-                    if (cliffPaneAmendment[i-1][j] && cliffPaneAmendment[i+1][j] && !(cliffPlacement[i][j-1] || cliffPlacement[i][j+1])) pane = true;
-                    else if (cliffPaneAmendment[i][j-1] && cliffPaneAmendment[i][j+1] && !(cliffPlacement[i-1][j] || cliffPlacement[i+1][j])) pane = true;
-
+                    // The pane-detection checks for one or two parallel offset single-width pane columns that are not short, then checks to make sure there's no cliff columns of any type in the perpendicular direction
+                    if ((cliffPaneAmendment[i-1][j] && !cliffPaneAmendmentShort[i-1][j]) && (cliffPaneAmendment[i+1][j] && !cliffPaneAmendmentShort[i+1][j]) && !(cliffPlacement[i][j-1] || cliffPlacement[i][j+1])) pane = true;
+                    else if ((cliffPaneAmendment[i][j-1] && !cliffPaneAmendmentShort[i][j-1]) && (cliffPaneAmendment[i][j+1] && !cliffPaneAmendmentShort[i][j+1]) && !(cliffPlacement[i-1][j] || cliffPlacement[i+1][j])) pane = true;
+                    // If the above two conditions are satisfied (one single-column thick pane of cliffs) we remove this column from placement
                     if (pane) cliffPlacement[i][j] = false;
                 }
         // Remove any cliff areas that are two adjacent columns with no cliffs surrounding them or isolated adjacent triple columns
