@@ -69,6 +69,8 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         // Data storage for cliff & cliff-edge processing
         boolean[][] cliffPlacement = new boolean[18][18];
         boolean[][] cliffAmendmentPlacement = new boolean[18][18];
+        boolean[][] cliffPaneAmendment = new boolean[18][18];
+        boolean[][] cliffPaneAmendmentShort = new boolean[18][18];
         boolean[][] caveLipEdge = new boolean[18][18];
         boolean[][][] overhangDiscontinuityDirections = new boolean[18][18][4];
 
@@ -91,6 +93,8 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 if (overhangDepth[i+1][j+1] > 0 && overhangDepth[i+1][j+1] < 4 && (max - blockY < 3)) continue;
                 // Add to the potential amendment placement area if we are just on the border
                 if ((max - min) == 2 && !(max > maxAdjacent)) cliffAmendmentPlacement[i + 1][j + 1] = true;
+                if (max - min == 3) cliffPaneAmendment[i + 1][j + 1] = true;
+                if (max - min == 3 && centerHeight - min == 1) cliffPaneAmendmentShort[i + 1][j + 1] = true;
                 // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
                 if ((max - min) < 3 && !(max > maxAdjacent && (max - min) == 2)) continue;
                 // Process cliff overhang checks for this column
@@ -229,6 +233,19 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         else if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) cliffs++;
                     }
                     if (drops > 0 && cliffs + drops == 4) cliffPlacement[i][j] = true;
+                }
+        // Remove long, single-column thick "panes" of cliff columns with no two-block drops that form along the bottom of short, sharp drops of three blocks
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (cliffPaneAmendmentShort[i][j]) {
+                    int surroundings = 0;
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        surroundings += cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !cliffPaneAmendmentShort[i + offset.getStepX()][j + offset.getStepZ()] ? 1 : 0;
+                    }
+                    if (surroundings < 2) {
+                        cliffPaneAmendment[i][j] = false;
+                        cliffPlacement[i][j] = false;
+                    }
                 }
         // Remove any cliff areas that are two adjacent columns with no cliffs surrounding them or isolated adjacent triple columns
         for (int i = 1; i < 17; i++)
