@@ -247,6 +247,16 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         cliffPlacement[i][j] = false;
                     }
                 }
+        // Remove long, single-column thick "panes" of cliff columns with two block drops that have no contiguous panes up- or down- slope
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (cliffPaneAmendment[i][j]) {
+                    boolean pane = false;
+                    if (cliffPaneAmendment[i-1][j] && cliffPaneAmendment[i+1][j] && !(cliffPlacement[i][j-1] || cliffPlacement[i][j+1])) pane = true;
+                    else if (cliffPaneAmendment[i][j-1] && cliffPaneAmendment[i][j+1] && !(cliffPlacement[i-1][j] || cliffPlacement[i+1][j])) pane = true;
+
+                    if (pane) cliffPlacement[i][j] = false;
+                }
         // Remove any cliff areas that are two adjacent columns with no cliffs surrounding them or isolated adjacent triple columns
         for (int i = 1; i < 17; i++)
             for (int j = 1; j < 17; j++) {
