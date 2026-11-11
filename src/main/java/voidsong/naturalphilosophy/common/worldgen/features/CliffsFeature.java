@@ -296,6 +296,60 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     }
                 }
             }
+        // Re-add any removed cliff amendment columns that are between two cliff columns after the above removals
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (cliffPaneAmendment[i][j] && !cliffPlacement[i][j]) {
+                    int surroundings = 0;
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        surroundings += cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] ? 1 : 0;
+                    }
+                    if (surroundings > (cliffPaneAmendmentShort[i][j] ? 2 : 1)) cliffPlacement[i][j] = true;
+                }
+        // Remove any cliff areas that are two or three adjacent pane-amendment columns with no cliffs surrounding them, discounting other columns that cross chunk boundaries
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++) {
+                if (cliffPaneAmendment[i][j] && (i == 1 || i == 16 || j == 1 || j == 16)) {
+                    int surroundings = 0;
+                    int surroundingsAmendment = 0;
+                    Direction second = null;
+                    boolean crossesChunkBoundary = false;
+                    boolean secondOrderColumns = false;
+                    // Search the directly adjacent columns (plus shape) to determine the count of first- and second- order connected columns
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        // Increment count of first-order contiguous columns, and proceed to check second-order contiguous columns
+                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) {
+                            surroundings++;
+                            if (i + offset.getStepX() == 0 || i + offset.getStepX() == 17 || j + offset.getStepZ() == 0 || j + offset.getStepZ() == 17) crossesChunkBoundary = true;
+                            else {
+                                // Count second-order contiguous columns with bounds checks (arrayGetOrDefault) that return true if we cannot get cliff placement due to it being two blocks outside the chunk
+                                for (Direction offsetRelative : Direction.Plane.HORIZONTAL) {
+                                    if (!offsetRelative.equals(offset.getOpposite()) && cliffPlacement[i + offset.getStepX() + offsetRelative.getStepX()][j + offset.getStepZ() + offsetRelative.getStepZ()]) secondOrderColumns = true;
+                                }
+                            }
+                            boolean amendment = cliffPaneAmendment[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()];
+                            if (amendment) {
+                                second = offset;
+                                if (cliffPaneAmendmentShort[i][j]) surroundingsAmendment++;
+                            }
+                        }
+                    }
+                    // Remove cliff placement if there are zero neighboring columns; this catches previous removals if they did not process fully
+                    if (surroundings == 0) cliffPlacement[i][j] = false;
+                    // Remove cliff placement if there is only one neighboring truly contiguous column (disregarding discontinuities across overhangs, etc)
+                    if (surroundings == 1 && second != null && crossesChunkBoundary) {
+                        cliffPlacement[i][j] = false;
+                        cliffPlacement[i + second.getStepX()][j + second.getStepZ()] = false;
+                    }
+                    if (origin.getX() + i -1 == -625 && origin.getZ() + j -1 == -90) System.out.println(surroundings + " " + second + " " + crossesChunkBoundary + " " + surroundingsAmendment);
+                    if (surroundings == 2 && surroundingsAmendment == 2 && crossesChunkBoundary && !secondOrderColumns) {
+                        cliffPlacement[i][j] = false;
+                        for (Direction offset : Direction.Plane.HORIZONTAL) {
+                            if (!overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] = false;
+                        }
+                    }
+                }
+            }
         // Removes singular columns protruding above cliff faces that are placed inverse normal (upslope) of the cliff face
         // These occur in single columns where one column satisfies the cliff height (>= 3 block change) but the rest of its "block pane" does not
         for (int i = 1; i < 17; i++)
