@@ -427,6 +427,30 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                     // If the above criterion are satisfied (nearby columns count was incremented, none equal in height to the central column), remove this column from the placement array
                     if (squareSurroundings > 0 && squareSurroundings < 4 && !equalHeightColumns) cliffPlacement[i][j] = false;
                 }
+        // Remove groups of quad columns in a 2x2 arrangement with no external attachments
+        for (int i = 1; i < 16; i++)
+            for (int j = 1; j < 16; j++)
+                if (cliffPlacement[i][j] && cliffPlacement[i+1][j] && cliffPlacement[i][j+1] && cliffPlacement[i+1][j+1]) {
+                    int count = 0;
+                    int countOutsideChunk = 0;
+                    int countShortOutsideChunk = 0;
+                    for (int k = -1; k < 3; k++)
+                        for (int l = -1; l < 3; l++) {
+                            if (cliffPlacement[i + k][j + l]) {
+                                count++;
+                                if (i + k == 0 || i + k == 17 || j + l == 0 || j + l == 17) {
+                                    countOutsideChunk++;
+                                    if (cliffPaneAmendment[i + k][j + l]) countShortOutsideChunk++;
+                                }
+                            }
+                        }
+                    if (count == (countOutsideChunk < 2 && countShortOutsideChunk > 0 ? countOutsideChunk : 0) + 4) {
+                        cliffPlacement[i][j] = false;
+                        cliffPlacement[i+1][j] = false;
+                        cliffPlacement[i][j+1] = false;
+                        cliffPlacement[i+1][j+1] = false;
+                    }
+                }
 
 
         // Actually place the subset of the placement arrays that fits within the chunk
