@@ -386,7 +386,6 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         cliffPlacement[i][j] = false;
                         cliffPlacement[i + second.getStepX()][j + second.getStepZ()] = false;
                     }
-                    if (origin.getX() + i -1 == -625 && origin.getZ() + j -1 == -90) System.out.println(surroundings + " " + second + " " + crossesChunkBoundary + " " + surroundingsAmendment);
                     if (surroundings == 2 && surroundingsAmendment == 2 && crossesChunkBoundary && !secondOrderColumns) {
                         cliffPlacement[i][j] = false;
                         for (Direction offset : Direction.Plane.HORIZONTAL) {
