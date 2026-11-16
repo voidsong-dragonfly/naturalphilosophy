@@ -69,6 +69,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
         // Data storage for cliff & cliff-edge processing
         boolean[][] cliffPlacement = new boolean[18][18];
         boolean[][] cliffAmendmentPlacement = new boolean[18][18];
+        boolean[][] cliffUpslopeAmendment = new boolean[18][18];
         boolean[][] cliffPaneAmendment = new boolean[18][18];
         boolean[][] cliffPaneAmendmentShort = new boolean[18][18];
         boolean[][] caveLipEdge = new boolean[18][18];
@@ -93,6 +94,7 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                 if (overhangDepth[i+1][j+1] > 0 && overhangDepth[i+1][j+1] < 4 && (max - blockY < 3)) continue;
                 // Add to the potential amendment placement area if we are just on the border
                 if ((max - min) == 2 && !(max > maxAdjacent)) cliffAmendmentPlacement[i + 1][j + 1] = true;
+                if (centerHeight - min == 2) cliffUpslopeAmendment[i + 1][j + 1] = true;
                 if (max - min == 3) cliffPaneAmendment[i + 1][j + 1] = true;
                 if (max - min == 3 && centerHeight - min == 1) cliffPaneAmendmentShort[i + 1][j + 1] = true;
                 // Use the height difference we need to check to ensure this is a cliff (max - min >= 3) or a one-block spire (max > maxAdjacent)
@@ -305,6 +307,49 @@ public class CliffsFeature extends Feature<CliffsConfiguration> {
                         surroundings += cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] ? 1 : 0;
                     }
                     if (surroundings > (cliffPaneAmendmentShort[i][j] ? 2 : 1)) cliffPlacement[i][j] = true;
+                }
+        // Add in any two or more column length top-of-cliff not-quite-cliff (2 block difference) panes bookended by at least one cliff block perpendicular to the direction of travel
+        for (int i = 1; i < 17; i++)
+            for (int j = 1; j < 17; j++)
+                if (cliffUpslopeAmendment[i][j] && !cliffPlacement[i][j]) {
+                    // Set up search variables
+                    int surroundings = 0;
+                    int height = getHeight(level, mut.setWithOffset(origin, i-1, 0, j-1));
+                    Direction move = null;
+                    // Search the directly adjacent columns (plus shape) to count the number of adjacent columns & get the max height difference
+                    for (Direction offset : Direction.Plane.HORIZONTAL) {
+                        // Surroundings does not increment for discontinuous contact across cliff overhangs even if cliff placement is present
+                        if (cliffPlacement[i + offset.getStepX()][j + offset.getStepZ()] && !overhangDiscontinuityDirections[i][j][offset.get2DDataValue()]) {
+                            surroundings++;
+                            if (height -2 < getHeight(level, mut.setWithOffset(origin, i-1+offset.getStepX(), 0, j-1+offset.getStepZ()))) move = offset.getOpposite();
+                        }
+                    }
+                    // If the origin column has two or more adjacent columns and the direction of travel has been specified, we check to place the amendment pane
+                    if (surroundings >= 2 && move != null) {
+                        // Set up search variables
+                        int count = 1;
+                        int xOffset = i + move.getStepX();
+                        int zOffset = j + move.getStepZ();
+                        boolean lastValid = true;
+                        // While we are not outside the chunk, and we have amendment columns to continue into, continue searching
+                        while (xOffset > 0 && xOffset < 18 && zOffset > 0 && zOffset < 18 && cliffUpslopeAmendment[xOffset][zOffset] && !cliffPlacement[xOffset][zOffset] && lastValid) {
+                            boolean sides = cliffPlacement[xOffset + move.getClockWise().getStepX()][zOffset + move.getClockWise().getStepZ()] || cliffPlacement[xOffset + move.getCounterClockWise().getStepX()][zOffset + move.getCounterClockWise().getStepZ()];
+                            boolean equalHeight = getHeight(level, mut.setWithOffset(origin, xOffset-1, 0, zOffset-1)) == height;
+                            // If we have at least one perpendicular cliff column and the next amendment is at equal height to the pane, continue and mark this column as cliff
+                            if (sides && equalHeight) {
+                                count++;
+                                cliffPlacement[xOffset][zOffset] = true;
+                                // Otherwise, we exit early by telling the while loop that the last column was invalid
+                            } else {
+                                lastValid = false;
+                            }
+                            // Update offsets last to ensure we have continuity through the entire loop body
+                            xOffset = xOffset + move.getStepX();
+                            zOffset = zOffset + move.getStepZ();
+                        }
+                        // If we placed one or more columns that are not the origin column, mark the origin column as a cliff as well
+                        if (count > 1) cliffPlacement[i][j] = true;
+                    }
                 }
         // Remove any cliff areas that are two or three adjacent pane-amendment columns with no cliffs surrounding them, discounting other columns that cross chunk boundaries
         for (int i = 1; i < 17; i++)
